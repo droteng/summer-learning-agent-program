@@ -16,6 +16,12 @@ export function getLocalDb() {
         progress_json TEXT NOT NULL,
         updated_at TEXT NOT NULL
       );
+
+      CREATE TABLE IF NOT EXISTS profile_snapshots (
+        profile_id TEXT PRIMARY KEY,
+        profile_json TEXT NOT NULL,
+        updated_at TEXT NOT NULL
+      );
     `);
   }
 
@@ -52,3 +58,32 @@ export function saveProgressSnapshot({ studentId, progress }) {
   };
 }
 
+export function loadProfileSnapshot(profileId) {
+  const row = getLocalDb()
+    .prepare("SELECT profile_json FROM profile_snapshots WHERE profile_id = ?")
+    .get(profileId);
+
+  if (!row) {
+    return null;
+  }
+
+  return JSON.parse(row.profile_json);
+}
+
+export function saveProfileSnapshot({ profileId, profile }) {
+  const updatedAt = new Date().toISOString();
+
+  getLocalDb()
+    .prepare(
+      `INSERT INTO profile_snapshots (profile_id, profile_json, updated_at)
+       VALUES (?, ?, ?)
+       ON CONFLICT(profile_id)
+       DO UPDATE SET profile_json = excluded.profile_json, updated_at = excluded.updated_at`
+    )
+    .run(profileId, JSON.stringify(profile), updatedAt);
+
+  return {
+    profile,
+    updatedAt
+  };
+}

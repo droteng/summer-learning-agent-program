@@ -39,7 +39,9 @@
 - [ ] Authenticate local Git and push main to GitHub.
 - [x] Replace localStorage progress with database-backed persistence.
 - [x] Add parent/child role-gated MVP mode.
+- [x] Add saved parent onboarding profile with Grade 6 launch selection.
 - [ ] Replace demo role switch with real parent/child authentication.
+- [ ] Expand curriculum tuning beyond the Grade 6 launch track.
 
 ## Later
 

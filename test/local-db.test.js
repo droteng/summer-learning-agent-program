@@ -1,6 +1,11 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { loadProgressSnapshot, saveProgressSnapshot } from "../src/data/localDb.js";
+import {
+  loadProfileSnapshot,
+  loadProgressSnapshot,
+  saveProfileSnapshot,
+  saveProgressSnapshot
+} from "../src/data/localDb.js";
 
 test("saves and loads a local progress snapshot", () => {
   const studentId = `test-student-${Date.now()}`;
@@ -21,3 +26,25 @@ test("saves and loads a local progress snapshot", () => {
   assert.deepEqual(loaded, progress);
 });
 
+test("saves and loads a parent onboarding profile", () => {
+  const profile = {
+    id: "db-profile-student",
+    firstName: "Avery",
+    gradeLevel: 6,
+    interests: ["coding", "science"],
+    selectedEnrichmentTracks: ["healthWellness", "financialLiteracy"],
+    faithSetting: "parent-controlled",
+    activityPreferences: {
+      outdoorAllowed: true
+    }
+  };
+
+  const saved = saveProfileSnapshot({
+    profileId: "test-parent-profile",
+    profile
+  });
+  const loaded = loadProfileSnapshot("test-parent-profile");
+
+  assert.equal(saved.profile.firstName, "Avery");
+  assert.deepEqual(loaded, profile);
+});

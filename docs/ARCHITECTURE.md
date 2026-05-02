@@ -69,6 +69,7 @@ Current MVP data layer:
 - Local SQLite database at `data/local.sqlite`.
 - Progress snapshots are keyed by student id.
 - `app/api/progress` loads and saves progress for the Next app.
+- Parent onboarding profiles are saved through `app/api/profile`.
 - The data access layer lives in `src/data/localDb.js` so production storage can be swapped later.
 
 ## Recommended Technical Path
@@ -105,6 +106,7 @@ Current MVP shell:
 - Original dependency-free prototype remains in `prototype/` and can run with `npm run prototype`.
 - Local progress persistence is handled by `node:sqlite`; Node 24 currently marks this API experimental.
 - The current app has a demo parent/child role switch. Parent-only actions are setup changes, reward approval, and teacher sharing. Child view can complete missions and write reflections.
+- The current onboarding profile saves child name, Grade 6 launch selection, interests, enrichment tracks, and activity preferences.
 
 ### Distribution
 

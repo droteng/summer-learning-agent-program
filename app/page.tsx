@@ -56,11 +56,35 @@ type Progress = {
 
 type UserRole = "parent" | "child";
 
+type StudentProfile = {
+  id: string;
+  firstName: string;
+  gradeLevel: number;
+  interests: string[];
+  selectedEnrichmentTracks: string[];
+  faithSetting: string;
+  activityPreferences: {
+    outdoorAllowed: boolean;
+  };
+};
+
+const profileId = "mvp-preview-profile";
+const studentId = "mvp-preview-student";
+
 const trackOptions = [
   ["healthWellness", "Health & Wellness"],
   ["christianLeadership", "Christian Leadership"],
   ["financialLiteracy", "Financial Literacy"],
   ["mediaLiteracy", "Media Literacy"]
+];
+
+const interestOptions = ["games", "sports", "projects", "music", "art", "science", "coding", "reading", "entrepreneurship"];
+
+const gradeOptions = [
+  { value: 6, label: "Grade 6", enabled: true },
+  { value: 5, label: "Grade 5", enabled: false },
+  { value: 7, label: "Grade 7", enabled: false },
+  { value: 8, label: "Grade 8", enabled: false }
 ];
 
 const emptyProgress: Progress = {
@@ -73,6 +97,8 @@ const emptyProgress: Progress = {
 
 export default function Home() {
   const [childName, setChildName] = useState("Avery");
+  const [gradeLevel, setGradeLevel] = useState(6);
+  const [selectedInterests, setSelectedInterests] = useState(["games", "sports", "projects"]);
   const [selectedTracks, setSelectedTracks] = useState(["healthWellness", "financialLiteracy"]);
   const [outdoorAllowed, setOutdoorAllowed] = useState(true);
   const [teacherSharing, setTeacherSharing] = useState(true);
@@ -85,6 +111,8 @@ export default function Home() {
   const [selectedReward, setSelectedReward] = useState("");
   const [rewardStatus, setRewardStatus] = useState("Complete a mission to request a parent-approved reward.");
   const [shareExport, setShareExport] = useState("");
+  const [profileStatus, setProfileStatus] = useState("Loading saved profile...");
+  const [profileReady, setProfileReady] = useState(false);
   const [persistenceStatus, setPersistenceStatus] = useState("Loading saved progress...");
   const [role, setRole] = useState<UserRole>("parent");
   const isParent = role === "parent";
@@ -92,10 +120,10 @@ export default function Home() {
   const payload = useMemo(
     () => ({
       studentProfile: {
-        id: "mvp-preview-student",
+        id: studentId,
         firstName: childName || "Student",
-        gradeLevel: 6,
-        interests: ["games", "sports", "projects"],
+        gradeLevel,
+        interests: selectedInterests,
         selectedEnrichmentTracks: selectedTracks.slice(0, 2),
         faithSetting: "parent-controlled",
         activityPreferences: {
@@ -113,17 +141,21 @@ export default function Home() {
         physicalActivityRestrictions: []
       }
     }),
-    [childName, friendInvites, outdoorAllowed, selectedTracks, teacherSharing]
+    [childName, friendInvites, gradeLevel, outdoorAllowed, selectedInterests, selectedTracks, teacherSharing]
   );
 
   useEffect(() => {
+    loadProfile();
     loadProgress();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    generatePlan();
+    if (profileReady) {
+      generatePlan();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [profileReady]);
 
   const selectedWeek = plan?.weeklyMissionPlans.find((week) => week.weekNumber === weekNumber);
   const selectedMission = selectedWeek?.missions.find((mission) => mission.dayNumber === dayNumber);
@@ -144,6 +176,10 @@ export default function Home() {
   }, [plan, selectedReward]);
 
   async function generatePlan() {
+    if (isParent) {
+      await saveProfile(payload.studentProfile);
+    }
+
     const response = await fetch("/api/program-plan", {
       method: "POST",
       headers: {
@@ -157,6 +193,51 @@ export default function Home() {
     setDayNumber(1);
   }
 
+  async function loadProfile() {
+    try {
+      const response = await fetch(`/api/profile?profileId=${profileId}`);
+      const result = await response.json();
+      applyProfile(result.profile);
+      setProfileStatus("Profile is saved in local SQLite.");
+    } catch {
+      const saved = localStorage.getItem("learning-squad-profile-v1");
+      if (saved) {
+        applyProfile(JSON.parse(saved));
+      }
+      setProfileStatus("Using browser fallback profile.");
+    } finally {
+      setProfileReady(true);
+    }
+  }
+
+  function applyProfile(profile: StudentProfile) {
+    setChildName(profile.firstName ?? "Student");
+    setGradeLevel(profile.gradeLevel ?? 6);
+    setSelectedInterests((profile.interests?.length ? profile.interests : ["games", "sports", "projects"]).slice(0, 4));
+    setSelectedTracks((profile.selectedEnrichmentTracks?.length ? profile.selectedEnrichmentTracks : selectedTracks).slice(0, 2));
+    setOutdoorAllowed(profile.activityPreferences?.outdoorAllowed ?? true);
+  }
+
+  async function saveProfile(profile: StudentProfile) {
+    localStorage.setItem("learning-squad-profile-v1", JSON.stringify(profile));
+
+    try {
+      await fetch("/api/profile", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          profileId,
+          profile
+        })
+      });
+      setProfileStatus("Profile saved.");
+    } catch {
+      setProfileStatus("Profile saved in browser fallback only.");
+    }
+  }
+
   function toggleTrack(trackKey: string) {
     setSelectedTracks((tracks) => {
       if (tracks.includes(trackKey)) {
@@ -164,6 +245,16 @@ export default function Home() {
       }
 
       return [...tracks, trackKey].slice(0, 2);
+    });
+  }
+
+  function toggleInterest(interest: string) {
+    setSelectedInterests((interests) => {
+      if (interests.includes(interest)) {
+        return interests.filter((item) => item !== interest);
+      }
+
+      return [...interests, interest].slice(0, 4);
     });
   }
 
@@ -318,24 +409,55 @@ export default function Home() {
             <p className="eyebrow">Parent Setup</p>
             <h2>Profile and controls</h2>
             {!isParent && <p className="quiet">Switch to parent view to change setup and permissions.</p>}
+            {isParent && <p className="quiet">{profileStatus}</p>}
           </div>
           <div className="setup-form">
             <label>
               Child first name
               <input disabled={!isParent} value={childName} onChange={(event) => setChildName(event.target.value)} />
             </label>
-            <div className="track-list">
-              {trackOptions.map(([key, label]) => (
-                <label key={key}>
-                  <input
-                    type="checkbox"
-                    disabled={!isParent}
-                    checked={selectedTracks.includes(key)}
-                    onChange={() => toggleTrack(key)}
-                  />
-                  {label}
-                </label>
-              ))}
+            <label>
+              Launch grade
+              <select disabled={!isParent} value={gradeLevel} onChange={(event) => setGradeLevel(Number(event.target.value))}>
+                {gradeOptions.map((grade) => (
+                  <option key={grade.value} value={grade.value} disabled={!grade.enabled}>
+                    {grade.label}{grade.enabled ? "" : " - coming soon"}
+                  </option>
+                ))}
+              </select>
+            </label>
+            <div className="form-group">
+              <span>Interests</span>
+              <div className="choice-list">
+                {interestOptions.map((interest) => (
+                  <label key={interest}>
+                    <input
+                      type="checkbox"
+                      disabled={!isParent}
+                      checked={selectedInterests.includes(interest)}
+                      onChange={() => toggleInterest(interest)}
+                    />
+                    {interest}
+                  </label>
+                ))}
+              </div>
+            </div>
+            <div className="form-group">
+              <span>Optional tracks</span>
+              <small>Choose up to 2 for the next 3-4 weeks.</small>
+              <div className="choice-list">
+                {trackOptions.map(([key, label]) => (
+                  <label key={key}>
+                    <input
+                      type="checkbox"
+                      disabled={!isParent}
+                      checked={selectedTracks.includes(key)}
+                      onChange={() => toggleTrack(key)}
+                    />
+                    {label}
+                  </label>
+                ))}
+              </div>
             </div>
             <label>
               <input

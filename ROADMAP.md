@@ -41,11 +41,13 @@
 - Weekly parent report.
 - Database-backed progress persistence.
 - Parent/child role-gated MVP mode.
+- Saved parent onboarding profile for the Grade 6 launch track.
 - Parent/child authentication and accounts.
 
 ## Phase 3: Curriculum Depth
 
 - Full 8-week Grade 6 core curriculum.
+- Grade tuning framework for additional U.S. grade levels.
 - Health & Wellness enrichment.
 - Christian Leadership enrichment.
 - Financial Literacy enrichment.
