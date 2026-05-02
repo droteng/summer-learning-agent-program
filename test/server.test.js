@@ -85,6 +85,21 @@ test("reward request endpoint returns a parent approval prompt", async () => {
   }
 });
 
+test("static report route is available", async () => {
+  const baseUrl = await startTestServer();
+
+  try {
+    const response = await fetch(`${baseUrl}/report.html`);
+    const html = await response.text();
+
+    assert.equal(response.status, 200);
+    assert.ok(html.includes("Printable Learning Report"));
+    assert.ok(html.includes("report.js"));
+  } finally {
+    await stopTestServer();
+  }
+});
+
 test("teacher share endpoint accepts progress evidence", async () => {
   const baseUrl = await startTestServer();
 

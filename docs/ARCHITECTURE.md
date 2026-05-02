@@ -80,6 +80,8 @@ Early local data can be plain JSON. Production should use a real database with s
 - Parent summary panel derived from completed mission progress.
 - Student reflections stored with completed missions in prototype progress state.
 - Teacher-share export preview generated from parent-approved progress evidence.
+- Printable report route reads local prototype settings/progress and renders a teacher-share report.
+- Child-facing mission mode reuses the selected mission plan without duplicating curriculum logic.
 
 ### MVP Web App
 

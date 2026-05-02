@@ -48,6 +48,11 @@ button.secondary {
   border: 1px solid #b8d8d9;
 }
 
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.62;
+}
+
 .app-shell {
   display: grid;
   grid-template-columns: 260px minmax(0, 1fr);
@@ -251,11 +256,37 @@ fieldset input {
 .mission-actions,
 .mission-controls,
 .mission-list,
+.mission-mode-list,
 .check-list,
 .reward-list,
+.report-links,
 .share-package {
   display: grid;
   gap: 10px;
+}
+
+.mission-mode-panel {
+  background: #fdfefe;
+}
+
+.mission-mode-list {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.mission-mode-item {
+  display: grid;
+  align-content: start;
+  min-height: 128px;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--blue);
+  border-radius: 8px;
+  padding: 14px;
+  background: #f5f8fd;
+}
+
+.mission-mode-item strong {
+  margin-bottom: 8px;
+  color: var(--blue);
 }
 
 .mission-controls {
@@ -272,6 +303,26 @@ fieldset input {
 .reflection-field {
   display: block;
   margin-top: 14px;
+}
+
+.report-links {
+  grid-template-columns: auto auto minmax(0, 1fr);
+  align-items: center;
+  margin-top: 14px;
+}
+
+.report-links a,
+.report-actions a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  border-radius: 8px;
+  padding: 0 14px;
+  color: var(--teal);
+  background: #e7f3f3;
+  border: 1px solid #b8d8d9;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .progress-grid {
@@ -348,6 +399,83 @@ fieldset input {
   background: #fbfcfd;
 }
 
+.report-page {
+  background: #eef3f7;
+}
+
+.report-shell {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 28px;
+}
+
+.report-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-bottom: 18px;
+}
+
+.print-report {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 28px;
+  background: white;
+  box-shadow: var(--shadow);
+}
+
+.print-report h1 {
+  margin-bottom: 12px;
+  font-size: 2.4rem;
+}
+
+.print-report h2 {
+  margin-top: 24px;
+  margin-bottom: 10px;
+}
+
+.print-report table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+.print-report th,
+.print-report td {
+  border: 1px solid var(--line);
+  padding: 9px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.report-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.report-stats div {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #f8fafc;
+}
+
+.report-stats strong,
+.report-stats span {
+  display: block;
+}
+
+.report-stats strong {
+  font-size: 1.35rem;
+}
+
+.report-stats span {
+  color: var(--muted);
+}
+
 @media (max-width: 860px) {
   .app-shell {
     grid-template-columns: 1fr;
@@ -359,7 +487,7 @@ fieldset input {
   }
 
   .nav-list {
-    grid-template-columns: repeat(6, minmax(120px, 1fr));
+    grid-template-columns: repeat(7, minmax(120px, 1fr));
     overflow-x: auto;
   }
 
@@ -399,7 +527,29 @@ fieldset input {
   }
 
   .mission-actions,
+  .mission-mode-list,
+  .report-links,
+  .report-stats,
   .progress-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  .report-actions {
+    display: none;
+  }
+
+  .report-shell,
+  .print-report {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-shadow: none;
   }
 }

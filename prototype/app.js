@@ -10,11 +10,17 @@ const childNameInput = document.querySelector("#childName");
 const missionTitle = document.querySelector("#missionTitle");
 const missionPill = document.querySelector("#missionPill");
 const missionList = document.querySelector("#missionList");
+const missionModeTitle = document.querySelector("#missionModeTitle");
+const missionModeMeta = document.querySelector("#missionModeMeta");
+const missionModeList = document.querySelector("#missionModeList");
+const missionModeCompleteButton = document.querySelector("#missionModeCompleteButton");
+const missionModeStatus = document.querySelector("#missionModeStatus");
 const reflectionInput = document.querySelector("#reflectionInput");
 const completeMissionButton = document.querySelector("#completeMissionButton");
 const missionCompletionStatus = document.querySelector("#missionCompletionStatus");
 const bodyCheckList = document.querySelector("#bodyCheckList");
 const rewardList = document.querySelector("#rewardList");
+const rewardSelect = document.querySelector("#rewardSelect");
 const rewardButton = document.querySelector("#rewardButton");
 const rewardStatus = document.querySelector("#rewardStatus");
 const inviteButton = document.querySelector("#inviteButton");
@@ -22,6 +28,7 @@ const inviteStatus = document.querySelector("#inviteStatus");
 const shareButton = document.querySelector("#shareButton");
 const sharePackage = document.querySelector("#sharePackage");
 const shareExport = document.querySelector("#shareExport");
+const downloadReportButton = document.querySelector("#downloadReportButton");
 const xpValue = document.querySelector("#xpValue");
 const coinValue = document.querySelector("#coinValue");
 const completedValue = document.querySelector("#completedValue");
@@ -35,6 +42,7 @@ const weekSelect = document.querySelector("#weekSelect");
 const daySelect = document.querySelector("#daySelect");
 
 const progressStorageKey = "summer-learning-progress-v1";
+const settingsStorageKey = "summer-learning-settings-v1";
 
 let currentPayload = buildPayload();
 let currentPlan = null;
@@ -79,6 +87,7 @@ function buildPayload() {
 
 async function generatePlan() {
   currentPayload = buildPayload();
+  saveSettings();
   const response = await fetch("/api/program-plan", {
     method: "POST",
     headers: {
@@ -151,6 +160,7 @@ function renderDayOptions() {
 function renderSelectedMission() {
   const mission = getSelectedMission();
   renderMission(mission);
+  renderMissionMode(mission);
   renderBodyCheck(mission.bodyCheck);
   xpValue.textContent = mission.rewardOpportunity.xp;
   coinValue.textContent = mission.rewardOpportunity.campCoins;
@@ -181,6 +191,24 @@ function renderMission(mission) {
   });
 }
 
+function renderMissionMode(mission) {
+  missionModeTitle.textContent = mission.theme;
+  missionModeMeta.textContent = `Week ${currentWeekNumber} / ${mission.dayLabel}`;
+  missionModeList.innerHTML = "";
+
+  [
+    ["Warm-up", mission.warmup],
+    ...mission.lessons.map((lesson) => [lesson.subject, lesson.task]),
+    ["Create", mission.creativeChallenge],
+    ["Reflect", mission.reflectionPrompt]
+  ].forEach(([label, text]) => {
+    const item = document.createElement("div");
+    item.className = "mission-mode-item";
+    item.innerHTML = `<strong>${escapeHtml(label)}</strong><span>${escapeHtml(text)}</span>`;
+    missionModeList.append(item);
+  });
+}
+
 function renderBodyCheck(prompts) {
   bodyCheckList.innerHTML = "";
   prompts.forEach((prompt) => {
@@ -193,7 +221,13 @@ function renderBodyCheck(prompts) {
 
 function renderRewards(rewards) {
   rewardList.innerHTML = "";
+  rewardSelect.innerHTML = "";
   rewards.forEach((reward) => {
+    const option = document.createElement("option");
+    option.value = reward;
+    option.textContent = reward;
+    rewardSelect.append(option);
+
     const item = document.createElement("div");
     item.className = "reward-item";
     item.textContent = reward;
@@ -239,7 +273,10 @@ daySelect.addEventListener("change", () => {
   renderSelectedMission();
 });
 
-completeMissionButton.addEventListener("click", () => {
+completeMissionButton.addEventListener("click", completeSelectedMission);
+missionModeCompleteButton.addEventListener("click", completeSelectedMission);
+
+function completeSelectedMission() {
   const mission = getSelectedMission();
   const missionId = getSelectedMissionId();
   const reflection = reflectionInput.value.trim();
@@ -269,7 +306,7 @@ completeMissionButton.addEventListener("click", () => {
 
   renderMissionCompletionState();
   renderProgressSummary();
-});
+}
 
 resetProgressButton.addEventListener("click", () => {
   progress = createEmptyProgress();
@@ -300,7 +337,7 @@ rewardButton.addEventListener("click", async () => {
     return;
   }
 
-  const firstReward = currentPlan.rewardPlan.weeklyRewardMenu[0] ?? "Parent-approved reward";
+  const selectedReward = rewardSelect.value || currentPlan.rewardPlan.weeklyRewardMenu[0] || "Parent-approved reward";
   currentPayload = buildPayload();
   const response = await fetch("/api/reward-request", {
     method: "POST",
@@ -311,7 +348,7 @@ rewardButton.addEventListener("click", async () => {
       ...currentPayload,
       weekNumber: currentWeekNumber,
       dayNumber: currentDayNumber,
-      requestedReward: firstReward
+      requestedReward: selectedReward
     })
   });
   const result = await response.json();
@@ -339,7 +376,9 @@ inviteButton.addEventListener("click", async () => {
     result.status === "needs_parent_approval" ? result.nextStep : result.reason;
 });
 
-shareButton.addEventListener("click", async () => {
+shareButton.addEventListener("click", prepareSharePackage);
+
+async function prepareSharePackage() {
   currentPayload = buildPayload();
   const response = await fetch("/api/teacher-share", {
     method: "POST",
@@ -354,6 +393,17 @@ shareButton.addEventListener("click", async () => {
   });
   const result = await response.json();
   renderSharePackage(result);
+  return result;
+}
+
+downloadReportButton.addEventListener("click", async () => {
+  await prepareSharePackage();
+  const blob = new Blob([shareExport.value], { type: "text/plain;charset=utf-8" });
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "summer-learning-report.txt";
+  link.click();
+  URL.revokeObjectURL(link.href);
 });
 
 function escapeHtml(value) {
@@ -383,9 +433,14 @@ function renderMissionCompletionState() {
   reflectionInput.value = progress.reflections?.[getSelectedMissionId()] ?? "";
   completeMissionButton.disabled = isComplete;
   completeMissionButton.textContent = isComplete ? "Mission complete" : "Complete mission";
+  missionModeCompleteButton.disabled = isComplete;
+  missionModeCompleteButton.textContent = isComplete ? "Mission complete" : "Complete mission";
   missionCompletionStatus.textContent = isComplete
     ? "Completed. Progress has been added to the parent dashboard."
     : "Not completed yet.";
+  missionModeStatus.textContent = isComplete
+    ? "Done. Nice work. Your parent dashboard has been updated."
+    : "Focus on the cards above, then complete the mission.";
 }
 
 function renderProgressSummary() {
@@ -457,6 +512,10 @@ function loadProgress() {
 
 function saveProgress() {
   localStorage.setItem(progressStorageKey, JSON.stringify(progress));
+}
+
+function saveSettings() {
+  localStorage.setItem(settingsStorageKey, JSON.stringify(currentPayload));
 }
 
 function formatTeacherShareExport(packageData) {

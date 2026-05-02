@@ -29,8 +29,11 @@
 - [x] Add parent dashboard summary panel.
 - [x] Add teacher-share export preview from live progress.
 - [x] Add child reflection input for completed missions.
-- [ ] Add printable parent/teacher report route.
-- [ ] Add reward choice selector instead of first reward default.
+- [x] Add printable parent/teacher report route.
+- [x] Add reward choice selector instead of first reward default.
+- [x] Add child-facing mission mode screen.
+- [x] Add GitHub setup handoff doc.
+- [ ] Attach GitHub remote after repo URL is available.
 
 ## Later
 

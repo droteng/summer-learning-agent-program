@@ -71,3 +71,13 @@ npm run dev
 ```
 
 Then open `http://localhost:4173`.
+
+Printable report route:
+
+```text
+http://localhost:4173/report.html
+```
+
+## GitHub
+
+No GitHub remote is attached yet. See `docs/GITHUB_SETUP.md`.

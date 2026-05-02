@@ -19,6 +19,7 @@
 
         <nav class="nav-list">
           <a href="#setup" class="active">Setup</a>
+          <a href="#mission-mode">Mission Mode</a>
           <a href="#mission">Daily Mission</a>
           <a href="#progress">Progress</a>
           <a href="#rewards">Rewards</a>
@@ -79,6 +80,21 @@
         </section>
 
         <section class="dashboard-grid">
+          <article id="mission-mode" class="panel wide mission-mode-panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Child Mission Mode</p>
+                <h2 id="missionModeTitle">Start today's mission</h2>
+              </div>
+              <span class="pill" id="missionModeMeta">Week 1 / Day 1</span>
+            </div>
+            <div id="missionModeList" class="mission-mode-list"></div>
+            <div class="mission-actions">
+              <button id="missionModeCompleteButton" type="button">Complete mission</button>
+              <span id="missionModeStatus" class="quiet">Ready when you are.</span>
+            </div>
+          </article>
+
           <article id="mission" class="panel">
             <div class="section-head">
               <div>
@@ -148,6 +164,10 @@
               </div>
               <button id="rewardButton" type="button" class="secondary">Request reward</button>
             </div>
+            <label>
+              Reward choice
+              <select id="rewardSelect"></select>
+            </label>
             <div class="reward-list" id="rewardList"></div>
             <p id="rewardStatus" class="quiet">Complete a mission to request a parent-approved reward.</p>
           </article>
@@ -172,6 +192,10 @@
               <button id="shareButton" type="button" class="secondary">Prepare share</button>
             </div>
             <div id="sharePackage" class="share-package"></div>
+            <div class="report-links">
+              <a href="/report.html" target="_blank" rel="noreferrer">Open printable report</a>
+              <button id="downloadReportButton" type="button" class="secondary">Download report</button>
+            </div>
             <textarea id="shareExport" class="export-box" rows="10" readonly aria-label="Teacher share export"></textarea>
           </article>
         </section>

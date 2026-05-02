@@ -23,6 +23,10 @@
 - Add parent progress summary panel.
 - Add child reflections as completed-mission evidence.
 - Add teacher-share export preview from live progress.
+- Add printable parent/teacher report route.
+- Add reward choice selector.
+- Add child-facing mission mode.
+- Prepare GitHub remote handoff.
 
 ## Phase 2: Web App MVP
 
