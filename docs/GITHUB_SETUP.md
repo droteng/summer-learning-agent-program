@@ -1,6 +1,6 @@
 # GitHub Setup
 
-The local repo is ready to connect to GitHub, but no remote is currently attached and GitHub CLI is not installed on this machine.
+The local repo is connected to GitHub, but the first push is pending because this terminal does not have GitHub credentials configured. GitHub CLI is not installed on this machine.
 
 ## Current Local Repo
 
@@ -26,9 +26,23 @@ summer-learning-agent-program
 
 The product name can still change later.
 
-## Attach Remote
+## Current Remote
 
-After the empty GitHub repo exists, run:
+```bash
+origin https://github.com/droteng/summer-learning-agent-program.git
+```
+
+## Push Main
+
+Run this after GitHub authentication is configured:
+
+```bash
+git push -u origin main
+```
+
+## If Remote Needs To Be Reattached
+
+If the remote is removed or changed later, run:
 
 ```bash
 git remote add origin <GITHUB_REPO_URL>
@@ -47,4 +61,3 @@ git push -u origin main
 - Do not initialize the GitHub repo with a README, license, or `.gitignore`; this local repo already has those project files.
 - Keep the repo private while the product direction, child-safety policy, and monetization plan are still changing.
 - Once connected, other computers with Codex can use `git clone <GITHUB_REPO_URL>`.
-

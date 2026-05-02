@@ -3,7 +3,7 @@
 ## Now
 
 - [x] Initialize local Git repo.
-- [ ] Confirm GitHub repo name and visibility.
+- [x] Confirm GitHub repo name and visibility.
 - [x] Decide initial technical stack.
 - [x] Draft system architecture.
 - [x] Draft Grade 6 8-week curriculum.
@@ -33,7 +33,8 @@
 - [x] Add reward choice selector instead of first reward default.
 - [x] Add child-facing mission mode screen.
 - [x] Add GitHub setup handoff doc.
-- [ ] Attach GitHub remote after repo URL is available.
+- [x] Attach GitHub remote after repo URL is available.
+- [ ] Authenticate local Git and push main to GitHub.
 
 ## Later
 

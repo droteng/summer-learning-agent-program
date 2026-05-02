@@ -80,4 +80,4 @@ http://localhost:4173/report.html
 
 ## GitHub
 
-No GitHub remote is attached yet. See `docs/GITHUB_SETUP.md`.
+GitHub remote is attached, but the first push needs local GitHub authentication. See `docs/GITHUB_SETUP.md`.
