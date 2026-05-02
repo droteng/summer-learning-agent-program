@@ -86,10 +86,16 @@ Early local data can be plain JSON. Production should use a real database with s
 ### MVP Web App
 
 - TypeScript.
-- React or Next.js.
+- Next.js and React.
 - SQLite/Postgres depending on deployment.
 - Server-side agent orchestration.
 - Parent-controlled auth and permissions.
+
+Current MVP shell:
+
+- Next.js app router in `app/`.
+- API routes call the existing agent modules in `src/agents`.
+- Original dependency-free prototype remains in `prototype/` and can run with `npm run prototype`.
 
 ### Distribution
 

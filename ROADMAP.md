@@ -30,6 +30,7 @@
 
 ## Phase 2: Web App MVP
 
+- Next.js/TypeScript app shell.
 - Parent onboarding.
 - Child profile and grade selection.
 - Grade 6 diagnostic quest.
@@ -38,6 +39,8 @@
 - XP, mastery stars, and camp coins.
 - Parent reward approval.
 - Weekly parent report.
+- Database-backed progress persistence.
+- Parent/child authentication and roles.
 
 ## Phase 3: Curriculum Depth
 

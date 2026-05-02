@@ -10,6 +10,8 @@
 - [x] Draft agent role definitions.
 - [x] Build dependency-free local agent prototype.
 - [x] Add first automated test.
+- [x] Scaffold Next.js/TypeScript MVP app shell.
+- [x] Connect Next API routes to existing agent engine.
 
 ## Next
 
@@ -35,6 +37,8 @@
 - [x] Add GitHub setup handoff doc.
 - [x] Attach GitHub remote after repo URL is available.
 - [ ] Authenticate local Git and push main to GitHub.
+- [ ] Replace localStorage progress with database-backed persistence.
+- [ ] Add parent/child authentication and roles.
 
 ## Later
 

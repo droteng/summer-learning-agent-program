@@ -50,7 +50,7 @@ Physical activity prompts are included in the daily planner for every student, e
 - Curriculum plan: `CURRICULUM_PLAN.md`
 - Safety and compliance notes: `COMPLIANCE_NOTES.md`
 
-## Local Prototype
+## Local App
 
 Run the agent demo:
 
@@ -64,10 +64,18 @@ Run tests:
 npm test
 ```
 
-Run the local web prototype:
+Run the MVP Next.js app:
 
 ```bash
 npm run dev
+```
+
+Then open `http://localhost:3000`.
+
+Run the original no-dependency prototype:
+
+```bash
+npm run prototype
 ```
 
 Then open `http://localhost:4173`.
@@ -81,3 +89,7 @@ http://localhost:4173/report.html
 ## GitHub
 
 GitHub remote is attached, but the first push needs local GitHub authentication. See `docs/GITHUB_SETUP.md`.
+
+## Dependency Notes
+
+`npm audit --audit-level=moderate` currently reports a PostCSS advisory through Next.js. npm suggests a forced downgrade to an old Next version, so do not apply `npm audit fix --force` blindly.
