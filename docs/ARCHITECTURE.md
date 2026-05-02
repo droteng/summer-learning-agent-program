@@ -72,6 +72,8 @@ Early local data can be plain JSON. Production should use a real database with s
 - Plain JavaScript modules.
 - JSON-like curriculum definitions.
 - Local generated reports.
+- No-dependency local HTTP server.
+- Static dashboard calling local agent endpoints.
 
 ### MVP Web App
 
@@ -86,4 +88,3 @@ Early local data can be plain JSON. Production should use a real database with s
 - Website subscription product.
 - PWA for desktop, iPad, and Android tablets.
 - OpenClaw/ClawHub package for agent-native users.
-

@@ -20,6 +20,11 @@
 - [x] Build first UI wireframe or dashboard prototype.
 - [x] Add social invitation data model and workflow prototype.
 - [x] Add teacher share package generator.
+- [x] Add local web server and API endpoints.
+- [x] Connect prototype UI to agent engine.
+- [x] Add server endpoint test.
+- [ ] Add selectable week/day mission browser.
+- [ ] Add parent reward approval workflow.
 
 ## Later
 

@@ -50,3 +50,24 @@ Physical activity prompts are included in the daily planner for every student, e
 - Curriculum plan: `CURRICULUM_PLAN.md`
 - Safety and compliance notes: `COMPLIANCE_NOTES.md`
 
+## Local Prototype
+
+Run the agent demo:
+
+```bash
+npm run demo
+```
+
+Run tests:
+
+```bash
+npm test
+```
+
+Run the local web prototype:
+
+```bash
+npm run dev
+```
+
+Then open `http://localhost:4173`.

@@ -12,10 +12,11 @@
 ## Phase 1: Planning Prototype
 
 - Build command-line or local app prototype of the Principal Agent workflow.
-- Generate a sample Grade 6 8-week plan.
-- Generate one week of daily missions.
-- Generate a parent-facing weekly report.
-- Generate a child-facing dashboard mock.
+- Generate a Grade 6 8-week plan.
+- Generate 40 daily missions across 8 weeks.
+- Generate parent-facing weekly summaries.
+- Generate a child-facing dashboard prototype.
+- Connect the dashboard to the local agent API.
 
 ## Phase 2: Web App MVP
 
@@ -54,4 +55,3 @@
 - Desktop-friendly PWA.
 - iPad and Android tablet responsive layouts.
 - Later native wrappers if needed for deeper parental control integration.
-

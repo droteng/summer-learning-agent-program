@@ -6,10 +6,10 @@
   "description": "Local-first multi-agent summer learning program prototype.",
   "scripts": {
     "demo": "node src/run-demo.js",
+    "dev": "node src/server.js",
     "test": "node --test"
   },
   "engines": {
     "node": ">=22"
   }
 }
-

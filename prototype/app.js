@@ -1,27 +1,9 @@
-const weeks = [
-  "Explorer Mode",
-  "Numbers in the Real World",
-  "Story Builders",
-  "Code Your First Tool",
-  "Earth and Inventions",
-  "World Affairs for Kids",
-  "History Missions",
-  "Capstone Week"
-];
-
-const rewards = [
-  "30 minutes of extra parent-approved device time",
-  "Park, sports, bike, or swimming outing",
-  "Movie night",
-  "Invite a friend for a parent-approved activity"
-];
-
-const missionTemplates = [
-  ["Math", "Review one skill through a real-world example."],
-  ["ELA/Writing", "Read a short passage and write a clear response."],
-  ["Coding/AI", "Complete a tiny logic or debugging challenge."],
-  ["World/History", "Connect today's theme to a place, event, or leader."]
-];
+const trackKeys = {
+  "Health & Wellness": "healthWellness",
+  "Christian Leadership": "christianLeadership",
+  "Financial Literacy": "financialLiteracy",
+  "Media Literacy": "mediaLiteracy"
+};
 
 const form = document.querySelector("#setupForm");
 const childNameInput = document.querySelector("#childName");
@@ -33,55 +15,123 @@ const inviteButton = document.querySelector("#inviteButton");
 const inviteStatus = document.querySelector("#inviteStatus");
 const shareButton = document.querySelector("#shareButton");
 const sharePackage = document.querySelector("#sharePackage");
+const xpValue = document.querySelector("#xpValue");
+const coinValue = document.querySelector("#coinValue");
 
-function selectedTracks() {
-  return [...document.querySelectorAll("input[name='track']:checked")].map((item) => item.value);
+let currentPayload = buildPayload();
+let currentPlan = null;
+
+function selectedTrackKeys() {
+  return [...document.querySelectorAll("input[name='track']:checked")]
+    .map((item) => trackKeys[item.value])
+    .filter(Boolean)
+    .slice(0, 2);
 }
 
-function renderMission() {
-  const name = childNameInput.value.trim() || "Student";
-  const tracks = selectedTracks();
+function buildPayload() {
+  const childName = childNameInput.value.trim() || "Student";
 
-  missionTitle.textContent = `${weeks[0]} for ${name}`;
+  return {
+    studentProfile: {
+      id: "local-preview-student",
+      firstName: childName,
+      gradeLevel: Number(document.querySelector("#gradeLevel").value),
+      interests: ["games", "sports", "projects"],
+      selectedEnrichmentTracks: selectedTrackKeys(),
+      faithSetting: "parent-controlled",
+      activityPreferences: {
+        outdoorAllowed: document.querySelector("#outdoorAllowed").checked
+      }
+    },
+    parentPolicy: {
+      allowedRewards: ["device", "park", "movie", "friend"],
+      friendInvitesEnabled: document.querySelector("#friendInvites").checked,
+      progressSharingEnabled: true,
+      externalMessagingEnabled: false,
+      liveSessionsEnabled: false,
+      teacherSharingEnabled: document.querySelector("#teacherSharing").checked,
+      faithContentLevel: selectedTrackKeys().includes("christianLeadership") ? "christian-character" : "none",
+      physicalActivityRestrictions: []
+    }
+  };
+}
+
+async function generatePlan() {
+  currentPayload = buildPayload();
+  const response = await fetch("/api/program-plan", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(currentPayload)
+  });
+
+  if (!response.ok) {
+    throw new Error("Could not generate program plan.");
+  }
+
+  currentPlan = await response.json();
+  renderPlan(currentPlan);
+}
+
+function renderPlan(plan) {
+  renderMission(plan.firstDailyMission);
+  renderBodyCheck(plan.firstDailyMission.bodyCheck);
+  renderRewards(plan.rewardPlan.weeklyRewardMenu);
+  renderSharePackage({
+    status: "preview",
+    includedSections: [
+      "Core subject participation",
+      "Weekly theme completion",
+      "Selected project samples",
+      "Certificates and badges"
+    ],
+    excludedByDefault: [
+      "Private health check answers",
+      "Faith reflections",
+      "Exact scores unless parent opts in",
+      "Friend messages"
+    ]
+  });
+
+  xpValue.textContent = plan.firstDailyMission.rewardOpportunity.xp;
+  coinValue.textContent = plan.firstDailyMission.rewardOpportunity.campCoins;
+}
+
+function renderMission(mission) {
+  missionTitle.textContent = `${mission.theme} for ${currentPayload.studentProfile.firstName}`;
   missionList.innerHTML = "";
 
   const items = [
-    ["Warm-up", "Solve a 5-minute puzzle connected to today's mission."],
-    ...missionTemplates,
-    ["Creative challenge", "Create a personal learning map."],
-    ["Optional tracks", tracks.length ? tracks.join(" and ") : "Parent can add two enrichment tracks."]
+    ["Warm-up", mission.warmup],
+    ...mission.lessons.map((lesson) => [
+      lesson.subject,
+      `${lesson.task} ${lesson.masteryCheck.prompt}`
+    ]),
+    ...mission.enrichmentConnections.map((connection) => [connection.track, connection.task]),
+    ["Creative challenge", mission.creativeChallenge],
+    ["Reflection", mission.reflectionPrompt]
   ];
 
   items.forEach(([label, text]) => {
     const item = document.createElement("div");
     item.className = "mission-item";
-    item.innerHTML = `<strong>${label}</strong><br><span>${text}</span>`;
+    item.innerHTML = `<strong>${escapeHtml(label)}</strong><br><span>${escapeHtml(text)}</span>`;
     missionList.append(item);
   });
 }
 
-function renderBodyCheck() {
-  const outdoorAllowed = document.querySelector("#outdoorAllowed").checked;
-  const prompts = [
-    "Did you move your body today?",
-    outdoorAllowed
-      ? "Did you get safe outdoor time with parent permission or supervision?"
-      : "Did you do a safe indoor movement break today?",
-    "Did you drink water today?",
-    "Name one healthy food you ate today.",
-    "What time are you aiming to sleep tonight?"
-  ];
-
+function renderBodyCheck(prompts) {
   bodyCheckList.innerHTML = "";
   prompts.forEach((prompt) => {
     const item = document.createElement("label");
     item.className = "check-item";
-    item.innerHTML = `<input type="checkbox"> ${prompt}`;
+    item.innerHTML = `<input type="checkbox"> ${escapeHtml(prompt)}`;
     bodyCheckList.append(item);
   });
 }
 
-function renderRewards() {
+function renderRewards(rewards) {
   rewardList.innerHTML = "";
   rewards.forEach((reward) => {
     const item = document.createElement("div");
@@ -91,21 +141,16 @@ function renderRewards() {
   });
 }
 
-function renderSharePackage() {
-  const name = childNameInput.value.trim() || "Student";
-  const enabled = document.querySelector("#teacherSharing").checked;
-
+function renderSharePackage(packageData) {
   sharePackage.innerHTML = "";
 
-  const items = enabled
-    ? [
-        `${name}'s Grade 6 weekly progress summary`,
-        "Core subject participation",
-        "Selected project samples",
-        "Certificates and badges",
-        "Hidden by default: health answers, faith reflections, exact scores, friend messages"
-      ]
-    : ["Teacher sharing is disabled until the parent turns it on."];
+  const items =
+    packageData.status === "blocked"
+      ? [packageData.reason]
+      : [
+          ...(packageData.includedSections ?? []),
+          ...((packageData.excludedByDefault ?? []).map((item) => `Hidden by default: ${item}`))
+        ];
 
   items.forEach((text) => {
     const item = document.createElement("div");
@@ -115,25 +160,57 @@ function renderSharePackage() {
   });
 }
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
-  renderMission();
-  renderBodyCheck();
-  renderRewards();
-  renderSharePackage();
+  await generatePlan();
 });
 
-inviteButton.addEventListener("click", () => {
-  const enabled = document.querySelector("#friendInvites").checked;
-  inviteStatus.textContent = enabled
-    ? "Invite request created. Parent must approve and send the link to the friend's parent."
-    : "Friend invitations are disabled by the parent.";
+inviteButton.addEventListener("click", async () => {
+  currentPayload = buildPayload();
+  const response = await fetch("/api/invite-request", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      child: currentPayload.studentProfile,
+      friendName: "Friend",
+      parentPolicy: currentPayload.parentPolicy
+    })
+  });
+  const result = await response.json();
+
+  inviteStatus.textContent =
+    result.status === "needs_parent_approval" ? result.nextStep : result.reason;
 });
 
-shareButton.addEventListener("click", renderSharePackage);
+shareButton.addEventListener("click", async () => {
+  currentPayload = buildPayload();
+  const response = await fetch("/api/teacher-share", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      ...currentPayload,
+      parentApproved: currentPayload.parentPolicy.teacherSharingEnabled
+    })
+  });
+  const result = await response.json();
+  renderSharePackage(result);
+});
 
-renderMission();
-renderBodyCheck();
-renderRewards();
-renderSharePackage();
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+generatePlan().catch((error) => {
+  missionTitle.textContent = "Could not load plan";
+  inviteStatus.textContent = error.message;
+});
 
