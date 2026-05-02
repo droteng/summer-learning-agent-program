@@ -46,12 +46,27 @@ type ProgramPlan = {
   weeklyMissionPlans: WeeklyPlan[];
 };
 
+type DiagnosticQuest = {
+  title: string;
+  purpose: string;
+  parentNote: string;
+  questions: Array<{
+    id: string;
+    subject: string;
+    prompt: string;
+    lookFor: string;
+  }>;
+  completionRule: string;
+};
+
 type Progress = {
   completedMissionIds: string[];
   xp: number;
   masteryStars: number;
   campCoins: number;
   reflections: Record<string, string>;
+  diagnosticAnswers: Record<string, string>;
+  diagnosticCompleted: boolean;
 };
 
 type UserRole = "parent" | "child";
@@ -92,7 +107,9 @@ const emptyProgress: Progress = {
   xp: 0,
   masteryStars: 0,
   campCoins: 0,
-  reflections: {}
+  reflections: {},
+  diagnosticAnswers: {},
+  diagnosticCompleted: false
 };
 
 export default function Home() {
@@ -104,6 +121,8 @@ export default function Home() {
   const [teacherSharing, setTeacherSharing] = useState(true);
   const [friendInvites, setFriendInvites] = useState(true);
   const [plan, setPlan] = useState<ProgramPlan | null>(null);
+  const [diagnosticQuest, setDiagnosticQuest] = useState<DiagnosticQuest | null>(null);
+  const [diagnosticDrafts, setDiagnosticDrafts] = useState<Record<string, string>>({});
   const [weekNumber, setWeekNumber] = useState(1);
   const [dayNumber, setDayNumber] = useState(1);
   const [progress, setProgress] = useState<Progress>(emptyProgress);
@@ -161,6 +180,9 @@ export default function Home() {
   const selectedMission = selectedWeek?.missions.find((mission) => mission.dayNumber === dayNumber);
   const missionId = `week-${weekNumber}-day-${dayNumber}`;
   const isComplete = progress.completedMissionIds.includes(missionId);
+  const diagnosticAnsweredCount = diagnosticQuest
+    ? diagnosticQuest.questions.filter((question) => (diagnosticDrafts[question.id] ?? "").trim()).length
+    : 0;
   const completionPercent = plan
     ? Math.round((progress.completedMissionIds.length / plan.parentSummary.totalPlannedMissions) * 100)
     : 0;
@@ -168,6 +190,10 @@ export default function Home() {
   useEffect(() => {
     setReflectionDraft(progress.reflections[missionId] ?? "");
   }, [missionId, progress.reflections]);
+
+  useEffect(() => {
+    setDiagnosticDrafts(progress.diagnosticAnswers ?? {});
+  }, [progress.diagnosticAnswers]);
 
   useEffect(() => {
     if (plan?.rewardPlan.weeklyRewardMenu.length && !selectedReward) {
@@ -191,6 +217,20 @@ export default function Home() {
     setPlan(nextPlan);
     setWeekNumber(1);
     setDayNumber(1);
+    await generateDiagnostic();
+  }
+
+  async function generateDiagnostic() {
+    const response = await fetch("/api/diagnostic", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    });
+    const quest = await response.json();
+    setDiagnosticQuest(quest);
+    setDiagnosticDrafts(progress.diagnosticAnswers);
   }
 
   async function loadProfile() {
@@ -294,6 +334,23 @@ export default function Home() {
     }
   }
 
+  async function saveDiagnostic() {
+    if (!diagnosticQuest) {
+      return;
+    }
+
+    const cleanedAnswers = Object.fromEntries(
+      diagnosticQuest.questions.map((question) => [question.id, (diagnosticDrafts[question.id] ?? "").trim()])
+    );
+    const answeredCount = Object.values(cleanedAnswers).filter(Boolean).length;
+
+    await saveProgress({
+      ...progress,
+      diagnosticAnswers: cleanedAnswers,
+      diagnosticCompleted: answeredCount >= 5
+    });
+  }
+
   async function completeMission() {
     if (!selectedMission) {
       return;
@@ -308,6 +365,7 @@ export default function Home() {
           }
         }
       : {
+          ...progress,
           completedMissionIds: [...progress.completedMissionIds, missionId],
           xp: progress.xp + selectedMission.rewardOpportunity.xp,
           masteryStars: progress.masteryStars + selectedMission.rewardOpportunity.masteryStars,
@@ -376,6 +434,7 @@ export default function Home() {
         </div>
         <nav>
           <a href="#setup">Setup</a>
+          <a href="#diagnostic">Diagnostic</a>
           <a href="#mission-mode">Mission</a>
           <a href="#progress">Progress</a>
           <a href="#share">Share</a>
@@ -488,6 +547,48 @@ export default function Home() {
             </label>
             <button disabled={!isParent} onClick={generatePlan}>Generate plan</button>
           </div>
+        </section>
+
+        <section id="diagnostic" className="panel diagnostic-panel">
+          <div className="section-head">
+            <div>
+              <p className="eyebrow">Grade 6 Diagnostic Quest</p>
+              <h2>{diagnosticQuest?.title ?? "Loading check-in"}</h2>
+            </div>
+            <span className="pill">
+              {diagnosticAnsweredCount}/{diagnosticQuest?.questions.length ?? 7} answered
+            </span>
+          </div>
+          <p className="quiet">{diagnosticQuest?.purpose}</p>
+          <div className="diagnostic-grid">
+            {diagnosticQuest?.questions.map((question) => (
+              <label key={question.id} className="diagnostic-card">
+                <strong>{question.subject}</strong>
+                <span>{question.prompt}</span>
+                <textarea
+                  rows={3}
+                  value={diagnosticDrafts[question.id] ?? ""}
+                  onChange={(event) =>
+                    setDiagnosticDrafts((drafts) => ({
+                      ...drafts,
+                      [question.id]: event.target.value
+                    }))
+                  }
+                  placeholder="Child response"
+                />
+                {isParent && <small>{question.lookFor}</small>}
+              </label>
+            ))}
+          </div>
+          <div className="actions diagnostic-actions">
+            <button onClick={saveDiagnostic}>Save diagnostic</button>
+            <span>
+              {progress.diagnosticCompleted
+                ? "Diagnostic ready for parent review."
+                : diagnosticQuest?.completionRule ?? "Answer at least 5 prompts."}
+            </span>
+          </div>
+          {isParent && <p className="quiet">{diagnosticQuest?.parentNote}</p>}
         </section>
 
         <section className="grid">

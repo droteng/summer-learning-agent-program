@@ -239,6 +239,10 @@ h2 {
   margin-bottom: 20px;
 }
 
+.diagnostic-panel {
+  margin-bottom: 20px;
+}
+
 .setup-form,
 .choice-list,
 .form-group {
@@ -299,6 +303,42 @@ h2 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
+}
+
+.diagnostic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.diagnostic-card {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  min-height: 220px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  background: #f8fafc;
+}
+
+.diagnostic-card strong {
+  color: var(--blue);
+}
+
+.diagnostic-card span,
+.diagnostic-card small {
+  color: var(--muted);
+}
+
+.diagnostic-card textarea {
+  margin-top: 0;
+}
+
+.diagnostic-actions {
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
 }
 
 .task-card {
@@ -381,6 +421,7 @@ h2 {
   }
 
   .mission-cards,
+  .diagnostic-grid,
   .progress-grid {
     grid-template-columns: 1fr;
   }
