@@ -1,0 +1,15 @@
+{
+  "name": "paperclip-academy",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local-first multi-agent summer learning program prototype.",
+  "scripts": {
+    "demo": "node src/run-demo.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
+

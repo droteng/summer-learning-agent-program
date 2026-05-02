@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Summer Learning Agent Prototype</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Program navigation">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">P</span>
+          <div>
+            <strong>Working Name</strong>
+            <span>Grade 6 Summer Camp</span>
+          </div>
+        </div>
+
+        <nav class="nav-list">
+          <a href="#setup" class="active">Setup</a>
+          <a href="#mission">Daily Mission</a>
+          <a href="#rewards">Rewards</a>
+          <a href="#squad">Friend Squad</a>
+          <a href="#share">Teacher Share</a>
+        </nav>
+      </aside>
+
+      <main class="main">
+        <section class="topbar" aria-label="Program status">
+          <div>
+            <p class="eyebrow">Principal Agent</p>
+            <h1>Summer learning plan</h1>
+          </div>
+          <div class="status-strip">
+            <span><strong id="xpValue">20</strong> XP</span>
+            <span><strong id="coinValue">5</strong> Coins</span>
+            <span><strong>8</strong> Weeks</span>
+          </div>
+        </section>
+
+        <section id="setup" class="panel setup-grid">
+          <div>
+            <p class="eyebrow">Parent Setup</p>
+            <h2>Choose the child profile and two optional tracks</h2>
+          </div>
+
+          <form id="setupForm" class="setup-form">
+            <label>
+              Child first name
+              <input id="childName" value="Avery" autocomplete="off" />
+            </label>
+
+            <label>
+              Grade
+              <select id="gradeLevel">
+                <option value="6" selected>Grade 6</option>
+              </select>
+            </label>
+
+            <fieldset>
+              <legend>Optional enrichment tracks</legend>
+              <label><input type="checkbox" name="track" value="Health & Wellness" checked /> Health & Wellness</label>
+              <label><input type="checkbox" name="track" value="Christian Leadership" /> Christian Leadership</label>
+              <label><input type="checkbox" name="track" value="Financial Literacy" checked /> Financial Literacy</label>
+              <label><input type="checkbox" name="track" value="Media Literacy" /> Media Literacy</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Parent controls</legend>
+              <label><input id="outdoorAllowed" type="checkbox" checked /> Outdoor play allowed with supervision</label>
+              <label><input id="friendInvites" type="checkbox" checked /> Friend invitations enabled</label>
+              <label><input id="teacherSharing" type="checkbox" checked /> Teacher sharing enabled</label>
+            </fieldset>
+
+            <button type="submit">Generate plan</button>
+          </form>
+        </section>
+
+        <section class="dashboard-grid">
+          <article id="mission" class="panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Today</p>
+                <h2 id="missionTitle">Explorer Mode</h2>
+              </div>
+              <span class="pill">Day 1</span>
+            </div>
+
+            <div class="mission-list" id="missionList"></div>
+          </article>
+
+          <article class="panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Activity Coach</p>
+                <h2>Body check</h2>
+              </div>
+            </div>
+            <div class="check-list" id="bodyCheckList"></div>
+          </article>
+
+          <article id="rewards" class="panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Rewards Agent</p>
+                <h2>Parent-approved rewards</h2>
+              </div>
+            </div>
+            <div class="reward-list" id="rewardList"></div>
+          </article>
+
+          <article id="squad" class="panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Social Coordinator</p>
+                <h2>Friend squad</h2>
+              </div>
+              <button id="inviteButton" type="button" class="secondary">Request invite</button>
+            </div>
+            <p id="inviteStatus" class="quiet">Friend invites are parent-approved and sent parent-to-parent.</p>
+          </article>
+
+          <article id="share" class="panel wide">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Teacher Liaison</p>
+                <h2>School sharing package</h2>
+              </div>
+              <button id="shareButton" type="button" class="secondary">Prepare share</button>
+            </div>
+            <div id="sharePackage" class="share-package"></div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
+
