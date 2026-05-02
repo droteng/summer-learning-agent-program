@@ -54,6 +54,8 @@ type Progress = {
   reflections: Record<string, string>;
 };
 
+type UserRole = "parent" | "child";
+
 const trackOptions = [
   ["healthWellness", "Health & Wellness"],
   ["christianLeadership", "Christian Leadership"],
@@ -84,6 +86,8 @@ export default function Home() {
   const [rewardStatus, setRewardStatus] = useState("Complete a mission to request a parent-approved reward.");
   const [shareExport, setShareExport] = useState("");
   const [persistenceStatus, setPersistenceStatus] = useState("Loading saved progress...");
+  const [role, setRole] = useState<UserRole>("parent");
+  const isParent = role === "parent";
 
   const payload = useMemo(
     () => ({
@@ -227,6 +231,11 @@ export default function Home() {
   }
 
   async function requestReward() {
+    if (!isParent) {
+      setRewardStatus("Ask your parent to review and approve rewards.");
+      return;
+    }
+
     const response = await fetch("/api/reward-request", {
       method: "POST",
       headers: {
@@ -244,6 +253,11 @@ export default function Home() {
   }
 
   async function prepareTeacherShare() {
+    if (!isParent) {
+      setShareExport("Teacher sharing is parent-controlled. Switch to parent view to prepare a report.");
+      return;
+    }
+
     const response = await fetch("/api/teacher-share", {
       method: "POST",
       headers: {
@@ -284,27 +298,38 @@ export default function Home() {
             <h1>Summer learning plan</h1>
           </div>
           <div className="metrics">
+            <RoleSwitch role={role} setRole={setRole} />
             <span>{progress.xp} XP</span>
             <span>{progress.campCoins} Coins</span>
             <span>{progress.masteryStars} Stars</span>
           </div>
         </header>
 
-        <section id="setup" className="panel setup">
+        <section className={`role-banner ${role}`}>
+          <div>
+            <p className="eyebrow">{isParent ? "Parent View" : "Child View"}</p>
+            <h2>{isParent ? "Approvals and setup are available." : "Focus mode is on. Parent-only actions are locked."}</h2>
+          </div>
+          <span>{isParent ? "Rewards, sharing, and setup controls enabled" : "Mission, reflection, and progress enabled"}</span>
+        </section>
+
+        <section id="setup" className={`panel setup ${!isParent ? "locked-panel" : ""}`}>
           <div>
             <p className="eyebrow">Parent Setup</p>
             <h2>Profile and controls</h2>
+            {!isParent && <p className="quiet">Switch to parent view to change setup and permissions.</p>}
           </div>
           <div className="setup-form">
             <label>
               Child first name
-              <input value={childName} onChange={(event) => setChildName(event.target.value)} />
+              <input disabled={!isParent} value={childName} onChange={(event) => setChildName(event.target.value)} />
             </label>
             <div className="track-list">
               {trackOptions.map(([key, label]) => (
                 <label key={key}>
                   <input
                     type="checkbox"
+                    disabled={!isParent}
                     checked={selectedTracks.includes(key)}
                     onChange={() => toggleTrack(key)}
                   />
@@ -315,6 +340,7 @@ export default function Home() {
             <label>
               <input
                 type="checkbox"
+                disabled={!isParent}
                 checked={outdoorAllowed}
                 onChange={(event) => setOutdoorAllowed(event.target.checked)}
               />
@@ -323,6 +349,7 @@ export default function Home() {
             <label>
               <input
                 type="checkbox"
+                disabled={!isParent}
                 checked={friendInvites}
                 onChange={(event) => setFriendInvites(event.target.checked)}
               />
@@ -331,12 +358,13 @@ export default function Home() {
             <label>
               <input
                 type="checkbox"
+                disabled={!isParent}
                 checked={teacherSharing}
                 onChange={(event) => setTeacherSharing(event.target.checked)}
               />
               Teacher sharing enabled
             </label>
-            <button onClick={generatePlan}>Generate plan</button>
+            <button disabled={!isParent} onClick={generatePlan}>Generate plan</button>
           </div>
         </section>
 
@@ -404,7 +432,7 @@ export default function Home() {
 
           <article id="progress" className="panel">
             <p className="eyebrow">Parent Dashboard</p>
-            <h2>Progress summary</h2>
+            <h2>{isParent ? "Progress summary" : "Your progress"}</h2>
             <div className="progress-grid">
               <div><strong>{progress.completedMissionIds.length}/{plan?.parentSummary.totalPlannedMissions ?? 40}</strong><span>Missions</span></div>
               <div><strong>{progress.xp}</strong><span>XP</span></div>
@@ -417,16 +445,17 @@ export default function Home() {
 
           <article className="panel">
             <p className="eyebrow">Rewards Agent</p>
-            <h2>Reward request</h2>
+            <h2>{isParent ? "Reward approval" : "Reward preview"}</h2>
+            {!isParent && <p className="quiet">Rewards are visible here, but approval stays with your parent.</p>}
             <label>
               Reward choice
-              <select value={selectedReward} onChange={(event) => setSelectedReward(event.target.value)}>
+              <select disabled={!isParent} value={selectedReward} onChange={(event) => setSelectedReward(event.target.value)}>
                 {plan?.rewardPlan.weeklyRewardMenu.map((reward) => (
                   <option key={reward} value={reward}>{reward}</option>
                 ))}
               </select>
             </label>
-            <button onClick={requestReward}>Request reward</button>
+            <button disabled={!isParent} onClick={requestReward}>Request reward</button>
             <p className="quiet">{rewardStatus}</p>
           </article>
 
@@ -436,13 +465,33 @@ export default function Home() {
                 <p className="eyebrow">Teacher Liaison</p>
                 <h2>Teacher share export</h2>
               </div>
-              <button onClick={prepareTeacherShare}>Prepare share</button>
+              <button disabled={!isParent} onClick={prepareTeacherShare}>Prepare share</button>
             </div>
+            {!isParent && <p className="quiet">Teacher sharing is hidden from child view until a parent prepares it.</p>}
             <textarea value={shareExport} readOnly rows={12} placeholder="Prepare a share package to preview the report." />
           </article>
         </section>
       </section>
     </main>
+  );
+}
+
+function RoleSwitch({
+  role,
+  setRole
+}: {
+  role: UserRole;
+  setRole: (role: UserRole) => void;
+}) {
+  return (
+    <div className="role-switch" aria-label="Demo role switch">
+      <button className={role === "parent" ? "active" : ""} onClick={() => setRole("parent")}>
+        Parent
+      </button>
+      <button className={role === "child" ? "active" : ""} onClick={() => setRole("child")}>
+        Child
+      </button>
+    </div>
   );
 }
 

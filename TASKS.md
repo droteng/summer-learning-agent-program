@@ -38,7 +38,8 @@
 - [x] Attach GitHub remote after repo URL is available.
 - [ ] Authenticate local Git and push main to GitHub.
 - [x] Replace localStorage progress with database-backed persistence.
-- [ ] Add parent/child authentication and roles.
+- [x] Add parent/child role-gated MVP mode.
+- [ ] Replace demo role switch with real parent/child authentication.
 
 ## Later
 

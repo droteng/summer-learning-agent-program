@@ -104,6 +104,7 @@ Current MVP shell:
 - API routes call the existing agent modules in `src/agents`.
 - Original dependency-free prototype remains in `prototype/` and can run with `npm run prototype`.
 - Local progress persistence is handled by `node:sqlite`; Node 24 currently marks this API experimental.
+- The current app has a demo parent/child role switch. Parent-only actions are setup changes, reward approval, and teacher sharing. Child view can complete missions and write reflections.
 
 ### Distribution
 

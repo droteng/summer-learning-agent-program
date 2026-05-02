@@ -40,6 +40,13 @@ button {
   cursor: pointer;
 }
 
+button:disabled,
+input:disabled,
+select:disabled {
+  cursor: not-allowed;
+  opacity: 0.62;
+}
+
 input,
 select,
 textarea {
@@ -159,6 +166,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  align-items: center;
 }
 
 .metrics span,
@@ -176,6 +184,52 @@ h2 {
   padding: 20px;
   background: var(--paper);
   box-shadow: var(--shadow);
+}
+
+.role-switch {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(76px, 1fr));
+  gap: 4px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 4px;
+  background: white;
+}
+
+.role-switch button {
+  min-height: 34px;
+  color: var(--muted);
+  background: transparent;
+}
+
+.role-switch button.active {
+  color: white;
+  background: var(--teal);
+}
+
+.role-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin-bottom: 20px;
+  background: #f5f8fd;
+}
+
+.role-banner.child {
+  background: #f4faf4;
+}
+
+.role-banner span {
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.locked-panel {
+  background: #fbfcfd;
 }
 
 .setup {
@@ -307,4 +361,3 @@ h2 {
     grid-template-columns: 1fr;
   }
 }
-

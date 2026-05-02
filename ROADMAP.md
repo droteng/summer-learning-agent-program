@@ -40,7 +40,8 @@
 - Parent reward approval.
 - Weekly parent report.
 - Database-backed progress persistence.
-- Parent/child authentication and roles.
+- Parent/child role-gated MVP mode.
+- Parent/child authentication and accounts.
 
 ## Phase 3: Curriculum Depth
 
