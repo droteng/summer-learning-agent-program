@@ -238,12 +238,18 @@ fieldset input {
   margin-bottom: 16px;
 }
 
+.mission-controls,
 .mission-list,
 .check-list,
 .reward-list,
 .share-package {
   display: grid;
   gap: 10px;
+}
+
+.mission-controls {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 14px;
 }
 
 .mission-item,
@@ -319,5 +325,8 @@ fieldset input {
     align-items: stretch;
     flex-direction: column;
   }
-}
 
+  .mission-controls {
+    grid-template-columns: 1fr;
+  }
+}

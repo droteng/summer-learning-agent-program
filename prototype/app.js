@@ -8,18 +8,25 @@ const trackKeys = {
 const form = document.querySelector("#setupForm");
 const childNameInput = document.querySelector("#childName");
 const missionTitle = document.querySelector("#missionTitle");
+const missionPill = document.querySelector("#missionPill");
 const missionList = document.querySelector("#missionList");
 const bodyCheckList = document.querySelector("#bodyCheckList");
 const rewardList = document.querySelector("#rewardList");
+const rewardButton = document.querySelector("#rewardButton");
+const rewardStatus = document.querySelector("#rewardStatus");
 const inviteButton = document.querySelector("#inviteButton");
 const inviteStatus = document.querySelector("#inviteStatus");
 const shareButton = document.querySelector("#shareButton");
 const sharePackage = document.querySelector("#sharePackage");
 const xpValue = document.querySelector("#xpValue");
 const coinValue = document.querySelector("#coinValue");
+const weekSelect = document.querySelector("#weekSelect");
+const daySelect = document.querySelector("#daySelect");
 
 let currentPayload = buildPayload();
 let currentPlan = null;
+let currentWeekNumber = 1;
+let currentDayNumber = 1;
 
 function selectedTrackKeys() {
   return [...document.querySelectorAll("input[name='track']:checked")]
@@ -75,8 +82,10 @@ async function generatePlan() {
 }
 
 function renderPlan(plan) {
-  renderMission(plan.firstDailyMission);
-  renderBodyCheck(plan.firstDailyMission.bodyCheck);
+  currentWeekNumber = 1;
+  currentDayNumber = 1;
+  renderMissionSelectors(plan);
+  renderSelectedMission();
   renderRewards(plan.rewardPlan.weeklyRewardMenu);
   renderSharePackage({
     status: "preview",
@@ -94,8 +103,43 @@ function renderPlan(plan) {
     ]
   });
 
-  xpValue.textContent = plan.firstDailyMission.rewardOpportunity.xp;
-  coinValue.textContent = plan.firstDailyMission.rewardOpportunity.campCoins;
+  rewardStatus.textContent = "Complete a mission to request a parent-approved reward.";
+}
+
+function renderMissionSelectors(plan) {
+  weekSelect.innerHTML = "";
+  plan.weeklyMissionPlans.forEach((weeklyPlan) => {
+    const option = document.createElement("option");
+    option.value = weeklyPlan.weekNumber;
+    option.textContent = `Week ${weeklyPlan.weekNumber}: ${weeklyPlan.theme}`;
+    weekSelect.append(option);
+  });
+
+  weekSelect.value = String(currentWeekNumber);
+  renderDayOptions();
+}
+
+function renderDayOptions() {
+  const weeklyPlan = getSelectedWeeklyPlan();
+  daySelect.innerHTML = "";
+
+  weeklyPlan.missions.forEach((mission) => {
+    const option = document.createElement("option");
+    option.value = mission.dayNumber;
+    option.textContent = `${mission.dayLabel} / Day ${mission.dayNumber}`;
+    daySelect.append(option);
+  });
+
+  daySelect.value = String(currentDayNumber);
+}
+
+function renderSelectedMission() {
+  const mission = getSelectedMission();
+  renderMission(mission);
+  renderBodyCheck(mission.bodyCheck);
+  xpValue.textContent = mission.rewardOpportunity.xp;
+  coinValue.textContent = mission.rewardOpportunity.campCoins;
+  missionPill.textContent = `Week ${currentWeekNumber} / Day ${currentDayNumber}`;
 }
 
 function renderMission(mission) {
@@ -165,6 +209,43 @@ form.addEventListener("submit", async (event) => {
   await generatePlan();
 });
 
+weekSelect.addEventListener("change", () => {
+  currentWeekNumber = Number(weekSelect.value);
+  currentDayNumber = 1;
+  renderDayOptions();
+  renderSelectedMission();
+});
+
+daySelect.addEventListener("change", () => {
+  currentDayNumber = Number(daySelect.value);
+  renderSelectedMission();
+});
+
+rewardButton.addEventListener("click", async () => {
+  if (!currentPlan) {
+    return;
+  }
+
+  const firstReward = currentPlan.rewardPlan.weeklyRewardMenu[0] ?? "Parent-approved reward";
+  currentPayload = buildPayload();
+  const response = await fetch("/api/reward-request", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      ...currentPayload,
+      weekNumber: currentWeekNumber,
+      dayNumber: currentDayNumber,
+      requestedReward: firstReward
+    })
+  });
+  const result = await response.json();
+
+  rewardStatus.textContent =
+    result.status === "needs_parent_approval" ? result.parentPrompt : "Reward request could not be created.";
+});
+
 inviteButton.addEventListener("click", async () => {
   currentPayload = buildPayload();
   const response = await fetch("/api/invite-request", {
@@ -209,8 +290,16 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
+function getSelectedWeeklyPlan() {
+  return currentPlan.weeklyMissionPlans.find((weeklyPlan) => weeklyPlan.weekNumber === currentWeekNumber);
+}
+
+function getSelectedMission() {
+  const weeklyPlan = getSelectedWeeklyPlan();
+  return weeklyPlan.missions.find((mission) => mission.dayNumber === currentDayNumber);
+}
+
 generatePlan().catch((error) => {
   missionTitle.textContent = "Could not load plan";
   inviteStatus.textContent = error.message;
 });
-

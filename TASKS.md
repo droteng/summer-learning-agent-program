@@ -23,8 +23,10 @@
 - [x] Add local web server and API endpoints.
 - [x] Connect prototype UI to agent engine.
 - [x] Add server endpoint test.
-- [ ] Add selectable week/day mission browser.
-- [ ] Add parent reward approval workflow.
+- [x] Add selectable week/day mission browser.
+- [x] Add parent reward approval workflow.
+- [ ] Add mission completion tracking and local progress state.
+- [ ] Add parent dashboard summary panel.
 
 ## Later
 

@@ -17,6 +17,8 @@
 - Generate parent-facing weekly summaries.
 - Generate a child-facing dashboard prototype.
 - Connect the dashboard to the local agent API.
+- Add week/day mission browsing.
+- Add parent reward approval request flow.
 
 ## Phase 2: Web App MVP
 

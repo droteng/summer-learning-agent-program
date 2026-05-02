@@ -30,3 +30,22 @@ export function suggestDailyRewardOpportunity(dayNumber) {
   };
 }
 
+export function createRewardApprovalRequest({ student, mission, requestedReward }) {
+  return {
+    status: "needs_parent_approval",
+    student: {
+      firstName: student.firstName,
+      gradeLevel: student.gradeLevel
+    },
+    requestedReward,
+    earnedBy: {
+      theme: mission.theme,
+      dayLabel: mission.dayLabel,
+      xp: mission.rewardOpportunity.xp,
+      masteryStars: mission.rewardOpportunity.masteryStars,
+      campCoins: mission.rewardOpportunity.campCoins
+    },
+    parentPrompt: `Approve ${requestedReward} for ${student.firstName} after completing the ${mission.theme} ${mission.dayLabel} mission?`,
+    approvalOptions: ["approve", "choose different reward", "save for later"]
+  };
+}

@@ -74,6 +74,8 @@ Early local data can be plain JSON. Production should use a real database with s
 - Local generated reports.
 - No-dependency local HTTP server.
 - Static dashboard calling local agent endpoints.
+- Mission browser powered by generated weekly mission plans.
+- Reward approval endpoint for parent-facing approval prompts.
 
 ### MVP Web App
 

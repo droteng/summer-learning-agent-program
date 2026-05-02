@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 import { extname, join, normalize } from "node:path";
 import { fileURLToPath } from "node:url";
 import { createProgramPlan } from "./agents/principalAgent.js";
+import { createRewardApprovalRequest } from "./agents/rewardsAgent.js";
 import { createInvitationRequest } from "./agents/socialCoordinatorAgent.js";
 import { createTeacherSharePackage } from "./agents/teacherLiaisonAgent.js";
 
@@ -31,6 +32,27 @@ export const server = createServer(async (request, response) => {
     if (request.method === "POST" && url.pathname === "/api/invite-request") {
       const payload = await readJson(request);
       const result = createInvitationRequest(payload);
+      return sendJson(response, result);
+    }
+
+    if (request.method === "POST" && url.pathname === "/api/reward-request") {
+      const payload = await readJson(request);
+      const programPlan = createProgramPlan(payload.studentProfile, payload.parentPolicy);
+      const mission = findMission({
+        weeklyMissionPlans: programPlan.weeklyMissionPlans,
+        weekNumber: payload.weekNumber,
+        dayNumber: payload.dayNumber
+      });
+
+      if (!mission) {
+        return sendJson(response, { error: "Mission not found" }, 404);
+      }
+
+      const result = createRewardApprovalRequest({
+        student: payload.studentProfile,
+        mission,
+        requestedReward: payload.requestedReward
+      });
       return sendJson(response, result);
     }
 
@@ -72,8 +94,20 @@ function summarizeProgramPlan(plan) {
       weekNumber: week.weekNumber,
       theme: week.theme,
       project: week.project
+    })),
+    weeklyMissionPlans: plan.weeklyMissionPlans.map((weeklyPlan) => ({
+      weekNumber: weeklyPlan.week.weekNumber,
+      theme: weeklyPlan.week.theme,
+      project: weeklyPlan.week.project,
+      weeklyProgressSummary: weeklyPlan.weeklyProgressSummary,
+      missions: weeklyPlan.missions
     }))
   };
+}
+
+function findMission({ weeklyMissionPlans, weekNumber, dayNumber }) {
+  const weeklyPlan = weeklyMissionPlans.find((plan) => plan.week.weekNumber === Number(weekNumber));
+  return weeklyPlan?.missions.find((mission) => mission.dayNumber === Number(dayNumber));
 }
 
 async function readJson(request) {

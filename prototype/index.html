@@ -84,7 +84,18 @@
                 <p class="eyebrow">Today</p>
                 <h2 id="missionTitle">Explorer Mode</h2>
               </div>
-              <span class="pill">Day 1</span>
+              <span class="pill" id="missionPill">Week 1 / Day 1</span>
+            </div>
+
+            <div class="mission-controls" aria-label="Mission selector">
+              <label>
+                Week
+                <select id="weekSelect"></select>
+              </label>
+              <label>
+                Day
+                <select id="daySelect"></select>
+              </label>
             </div>
 
             <div class="mission-list" id="missionList"></div>
@@ -106,8 +117,10 @@
                 <p class="eyebrow">Rewards Agent</p>
                 <h2>Parent-approved rewards</h2>
               </div>
+              <button id="rewardButton" type="button" class="secondary">Request reward</button>
             </div>
             <div class="reward-list" id="rewardList"></div>
+            <p id="rewardStatus" class="quiet">Complete a mission to request a parent-approved reward.</p>
           </article>
 
           <article id="squad" class="panel">
@@ -138,4 +151,3 @@
     <script src="./app.js"></script>
   </body>
 </html>
-
