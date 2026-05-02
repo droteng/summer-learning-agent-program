@@ -25,5 +25,15 @@ const parentPolicy = {
 
 const programPlan = createProgramPlan(studentProfile, parentPolicy);
 
-console.log(JSON.stringify(programPlan, null, 2));
-
+console.log(
+  JSON.stringify(
+    {
+      parentSummary: programPlan.parentSummary,
+      rewardPlan: programPlan.rewardPlan,
+      firstWeekSummary: programPlan.weeklyMissionPlans[0].weeklyProgressSummary,
+      firstDailyMission: programPlan.dailyMissionPreview
+    },
+    null,
+    2
+  )
+);

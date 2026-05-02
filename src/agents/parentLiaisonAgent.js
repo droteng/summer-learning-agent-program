@@ -4,6 +4,10 @@ export function createParentSummary(programPlan) {
     coreSubjects: programPlan.curriculum.coreSubjects,
     enrichmentTracks: programPlan.curriculum.selectedEnrichmentTracks.map((track) => track.label),
     weeklyThemes: programPlan.curriculum.weeks.map((week) => `${week.weekNumber}. ${week.theme}`),
+    totalPlannedMissions: programPlan.weeklyMissionPlans.reduce(
+      (total, weeklyPlan) => total + weeklyPlan.missions.length,
+      0
+    ),
     parentApprovalsNeeded: [
       "Reward menu",
       "Friend invitations",
@@ -13,4 +17,3 @@ export function createParentSummary(programPlan) {
     ]
   };
 }
-
