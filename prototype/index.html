@@ -20,6 +20,7 @@
         <nav class="nav-list">
           <a href="#setup" class="active">Setup</a>
           <a href="#mission">Daily Mission</a>
+          <a href="#progress">Progress</a>
           <a href="#rewards">Rewards</a>
           <a href="#squad">Friend Squad</a>
           <a href="#share">Teacher Share</a>
@@ -99,6 +100,30 @@
             </div>
 
             <div class="mission-list" id="missionList"></div>
+            <div class="mission-actions">
+              <button id="completeMissionButton" type="button">Complete mission</button>
+              <span id="missionCompletionStatus" class="quiet">Not completed yet.</span>
+            </div>
+          </article>
+
+          <article id="progress" class="panel">
+            <div class="section-head">
+              <div>
+                <p class="eyebrow">Parent Dashboard</p>
+                <h2>Progress summary</h2>
+              </div>
+              <button id="resetProgressButton" type="button" class="secondary">Reset</button>
+            </div>
+            <div class="progress-grid">
+              <div><strong id="completedValue">0</strong><span>Missions</span></div>
+              <div><strong id="totalXpValue">0</strong><span>Total XP</span></div>
+              <div><strong id="totalCoinsValue">0</strong><span>Coins</span></div>
+              <div><strong id="totalStarsValue">0</strong><span>Stars</span></div>
+            </div>
+            <div class="progress-bar" aria-label="Completion progress">
+              <span id="progressBarFill"></span>
+            </div>
+            <div id="parentNextSteps" class="share-package"></div>
           </article>
 
           <article class="panel">

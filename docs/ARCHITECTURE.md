@@ -76,6 +76,8 @@ Early local data can be plain JSON. Production should use a real database with s
 - Static dashboard calling local agent endpoints.
 - Mission browser powered by generated weekly mission plans.
 - Reward approval endpoint for parent-facing approval prompts.
+- Browser-local progress state for prototype completion tracking.
+- Parent summary panel derived from completed mission progress.
 
 ### MVP Web App
 

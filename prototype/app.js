@@ -10,6 +10,8 @@ const childNameInput = document.querySelector("#childName");
 const missionTitle = document.querySelector("#missionTitle");
 const missionPill = document.querySelector("#missionPill");
 const missionList = document.querySelector("#missionList");
+const completeMissionButton = document.querySelector("#completeMissionButton");
+const missionCompletionStatus = document.querySelector("#missionCompletionStatus");
 const bodyCheckList = document.querySelector("#bodyCheckList");
 const rewardList = document.querySelector("#rewardList");
 const rewardButton = document.querySelector("#rewardButton");
@@ -20,13 +22,23 @@ const shareButton = document.querySelector("#shareButton");
 const sharePackage = document.querySelector("#sharePackage");
 const xpValue = document.querySelector("#xpValue");
 const coinValue = document.querySelector("#coinValue");
+const completedValue = document.querySelector("#completedValue");
+const totalXpValue = document.querySelector("#totalXpValue");
+const totalCoinsValue = document.querySelector("#totalCoinsValue");
+const totalStarsValue = document.querySelector("#totalStarsValue");
+const progressBarFill = document.querySelector("#progressBarFill");
+const parentNextSteps = document.querySelector("#parentNextSteps");
+const resetProgressButton = document.querySelector("#resetProgressButton");
 const weekSelect = document.querySelector("#weekSelect");
 const daySelect = document.querySelector("#daySelect");
+
+const progressStorageKey = "summer-learning-progress-v1";
 
 let currentPayload = buildPayload();
 let currentPlan = null;
 let currentWeekNumber = 1;
 let currentDayNumber = 1;
+let progress = loadProgress();
 
 function selectedTrackKeys() {
   return [...document.querySelectorAll("input[name='track']:checked")]
@@ -104,6 +116,7 @@ function renderPlan(plan) {
   });
 
   rewardStatus.textContent = "Complete a mission to request a parent-approved reward.";
+  renderProgressSummary();
 }
 
 function renderMissionSelectors(plan) {
@@ -140,6 +153,7 @@ function renderSelectedMission() {
   xpValue.textContent = mission.rewardOpportunity.xp;
   coinValue.textContent = mission.rewardOpportunity.campCoins;
   missionPill.textContent = `Week ${currentWeekNumber} / Day ${currentDayNumber}`;
+  renderMissionCompletionState();
 }
 
 function renderMission(mission) {
@@ -221,6 +235,31 @@ daySelect.addEventListener("change", () => {
   renderSelectedMission();
 });
 
+completeMissionButton.addEventListener("click", () => {
+  const mission = getSelectedMission();
+  const missionId = getSelectedMissionId();
+
+  if (!progress.completedMissionIds.includes(missionId)) {
+    progress = {
+      completedMissionIds: [...progress.completedMissionIds, missionId],
+      xp: progress.xp + mission.rewardOpportunity.xp,
+      masteryStars: progress.masteryStars + mission.rewardOpportunity.masteryStars,
+      campCoins: progress.campCoins + mission.rewardOpportunity.campCoins
+    };
+    saveProgress();
+  }
+
+  renderMissionCompletionState();
+  renderProgressSummary();
+});
+
+resetProgressButton.addEventListener("click", () => {
+  progress = createEmptyProgress();
+  saveProgress();
+  renderMissionCompletionState();
+  renderProgressSummary();
+});
+
 rewardButton.addEventListener("click", async () => {
   if (!currentPlan) {
     return;
@@ -297,6 +336,89 @@ function getSelectedWeeklyPlan() {
 function getSelectedMission() {
   const weeklyPlan = getSelectedWeeklyPlan();
   return weeklyPlan.missions.find((mission) => mission.dayNumber === currentDayNumber);
+}
+
+function getSelectedMissionId() {
+  return `week-${currentWeekNumber}-day-${currentDayNumber}`;
+}
+
+function renderMissionCompletionState() {
+  const isComplete = progress.completedMissionIds.includes(getSelectedMissionId());
+  completeMissionButton.disabled = isComplete;
+  completeMissionButton.textContent = isComplete ? "Mission complete" : "Complete mission";
+  missionCompletionStatus.textContent = isComplete
+    ? "Completed. Progress has been added to the parent dashboard."
+    : "Not completed yet.";
+}
+
+function renderProgressSummary() {
+  if (!currentPlan) {
+    return;
+  }
+
+  const totalMissions = currentPlan.parentSummary.totalPlannedMissions;
+  const completedCount = progress.completedMissionIds.length;
+  const completionPercent = totalMissions === 0 ? 0 : Math.round((completedCount / totalMissions) * 100);
+
+  completedValue.textContent = `${completedCount}/${totalMissions}`;
+  totalXpValue.textContent = progress.xp;
+  totalCoinsValue.textContent = progress.campCoins;
+  totalStarsValue.textContent = progress.masteryStars;
+  progressBarFill.style.width = `${completionPercent}%`;
+
+  parentNextSteps.innerHTML = "";
+  createParentNextSteps({ completedCount, totalMissions }).forEach((text) => {
+    const item = document.createElement("div");
+    item.className = "share-item";
+    item.textContent = text;
+    parentNextSteps.append(item);
+  });
+}
+
+function createParentNextSteps({ completedCount, totalMissions }) {
+  if (completedCount === 0) {
+    return ["Help the child complete the first mission and body check."];
+  }
+
+  if (completedCount >= totalMissions) {
+    return ["Prepare the final showcase and export a teacher share package."];
+  }
+
+  const nextSteps = ["Review today's reflection and approve a fitting reward if earned."];
+
+  if (progress.campCoins >= 25) {
+    nextSteps.push("Consider letting the child spend camp coins on a parent-approved reward.");
+  }
+
+  if (completedCount % 5 === 0) {
+    nextSteps.push("Review the weekly summary and decide whether any subject needs reteaching.");
+  }
+
+  return nextSteps;
+}
+
+function createEmptyProgress() {
+  return {
+    completedMissionIds: [],
+    xp: 0,
+    masteryStars: 0,
+    campCoins: 0
+  };
+}
+
+function loadProgress() {
+  try {
+    return {
+      ...createEmptyProgress(),
+      ...JSON.parse(localStorage.getItem(progressStorageKey))
+    };
+  } catch {
+    return createEmptyProgress();
+  }
+}
+
+function saveProgress() {
+  localStorage.setItem(progressStorageKey, JSON.stringify(progress));
 }
 
 generatePlan().catch((error) => {

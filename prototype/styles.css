@@ -238,6 +238,7 @@ fieldset input {
   margin-bottom: 16px;
 }
 
+.mission-actions,
 .mission-controls,
 .mission-list,
 .check-list,
@@ -250,6 +251,51 @@ fieldset input {
 .mission-controls {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-bottom: 14px;
+}
+
+.mission-actions {
+  align-items: center;
+  grid-template-columns: auto minmax(0, 1fr);
+  margin-top: 14px;
+}
+
+.progress-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.progress-grid div {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #f8fafc;
+}
+
+.progress-grid strong {
+  display: block;
+  font-size: 1.45rem;
+}
+
+.progress-grid span {
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.progress-bar {
+  height: 12px;
+  margin: 14px 0;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e4eaf0;
+}
+
+.progress-bar span {
+  display: block;
+  width: 0%;
+  height: 100%;
+  background: var(--green);
+  transition: width 160ms ease;
 }
 
 .mission-item,
@@ -291,7 +337,7 @@ fieldset input {
   }
 
   .nav-list {
-    grid-template-columns: repeat(5, minmax(120px, 1fr));
+    grid-template-columns: repeat(6, minmax(120px, 1fr));
     overflow-x: auto;
   }
 
@@ -327,6 +373,11 @@ fieldset input {
   }
 
   .mission-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-actions,
+  .progress-grid {
     grid-template-columns: 1fr;
   }
 }

@@ -19,6 +19,8 @@
 - Connect the dashboard to the local agent API.
 - Add week/day mission browsing.
 - Add parent reward approval request flow.
+- Add local mission completion tracking.
+- Add parent progress summary panel.
 
 ## Phase 2: Web App MVP
 

@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { createProgramPlan } from "../src/agents/principalAgent.js";
+import { completeMission, createEmptyProgress, summarizeProgress } from "../src/agents/progressAgent.js";
 import { createRewardApprovalRequest } from "../src/agents/rewardsAgent.js";
 
 test("creates a Grade 6 program with core subjects and two enrichment tracks", () => {
@@ -62,4 +63,43 @@ test("creates parent approval request for a mission reward", () => {
   assert.equal(request.status, "needs_parent_approval");
   assert.equal(request.earnedBy.xp, 20);
   assert.ok(request.parentPrompt.includes("Avery"));
+});
+
+test("tracks completed mission progress without double counting", () => {
+  const student = {
+    id: "progress-test",
+    firstName: "Avery",
+    gradeLevel: 6,
+    interests: ["coding"],
+    selectedEnrichmentTracks: ["healthWellness", "mediaLiteracy"],
+    activityPreferences: {
+      outdoorAllowed: true
+    }
+  };
+  const plan = createProgramPlan(student, {
+    allowedRewards: ["device", "park"],
+    friendInvitesEnabled: true,
+    teacherSharingEnabled: true
+  });
+  const mission = plan.weeklyMissionPlans[0].missions[1];
+  const empty = createEmptyProgress();
+  const once = completeMission({
+    progress: empty,
+    weekNumber: 1,
+    mission
+  });
+  const twice = completeMission({
+    progress: once,
+    weekNumber: 1,
+    mission
+  });
+  const summary = summarizeProgress({
+    progress: twice,
+    totalMissions: 40
+  });
+
+  assert.equal(twice.completedMissionIds.length, 1);
+  assert.equal(twice.xp, 20);
+  assert.equal(twice.masteryStars, 1);
+  assert.equal(summary.completionPercent, 3);
 });

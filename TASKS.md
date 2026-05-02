@@ -25,8 +25,10 @@
 - [x] Add server endpoint test.
 - [x] Add selectable week/day mission browser.
 - [x] Add parent reward approval workflow.
-- [ ] Add mission completion tracking and local progress state.
-- [ ] Add parent dashboard summary panel.
+- [x] Add mission completion tracking and local progress state.
+- [x] Add parent dashboard summary panel.
+- [ ] Add teacher-share export preview from live progress.
+- [ ] Add child reflection input for completed missions.
 
 ## Later
 
