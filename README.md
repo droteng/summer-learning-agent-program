@@ -93,3 +93,5 @@ GitHub remote is attached, but the first push needs local GitHub authentication.
 ## Dependency Notes
 
 `npm audit --audit-level=moderate` currently reports a PostCSS advisory through Next.js. npm suggests a forced downgrade to an old Next version, so do not apply `npm audit fix --force` blindly.
+
+The MVP currently uses Node's built-in `node:sqlite` module for local persistence. Node 24 marks that API experimental, so production can later swap this layer for managed Postgres without changing the agent engine.

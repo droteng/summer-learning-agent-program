@@ -64,6 +64,13 @@ Parents control:
 
 Early local data can be plain JSON. Production should use a real database with strict child privacy controls.
 
+Current MVP data layer:
+
+- Local SQLite database at `data/local.sqlite`.
+- Progress snapshots are keyed by student id.
+- `app/api/progress` loads and saves progress for the Next app.
+- The data access layer lives in `src/data/localDb.js` so production storage can be swapped later.
+
 ## Recommended Technical Path
 
 ### Prototype
@@ -96,6 +103,7 @@ Current MVP shell:
 - Next.js app router in `app/`.
 - API routes call the existing agent modules in `src/agents`.
 - Original dependency-free prototype remains in `prototype/` and can run with `npm run prototype`.
+- Local progress persistence is handled by `node:sqlite`; Node 24 currently marks this API experimental.
 
 ### Distribution
 

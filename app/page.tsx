@@ -83,6 +83,7 @@ export default function Home() {
   const [selectedReward, setSelectedReward] = useState("");
   const [rewardStatus, setRewardStatus] = useState("Complete a mission to request a parent-approved reward.");
   const [shareExport, setShareExport] = useState("");
+  const [persistenceStatus, setPersistenceStatus] = useState("Loading saved progress...");
 
   const payload = useMemo(
     () => ({
@@ -112,10 +113,7 @@ export default function Home() {
   );
 
   useEffect(() => {
-    const saved = localStorage.getItem("learning-squad-progress-v1");
-    if (saved) {
-      setProgress({ ...emptyProgress, ...JSON.parse(saved) });
-    }
+    loadProgress();
   }, []);
 
   useEffect(() => {
@@ -165,12 +163,43 @@ export default function Home() {
     });
   }
 
-  function saveProgress(nextProgress: Progress) {
-    setProgress(nextProgress);
-    localStorage.setItem("learning-squad-progress-v1", JSON.stringify(nextProgress));
+  async function loadProgress() {
+    try {
+      const response = await fetch(`/api/progress?studentId=${payload.studentProfile.id}`);
+      const result = await response.json();
+      setProgress({ ...emptyProgress, ...result.progress });
+      setPersistenceStatus("Progress is saved in local SQLite.");
+    } catch {
+      const saved = localStorage.getItem("learning-squad-progress-v1");
+      if (saved) {
+        setProgress({ ...emptyProgress, ...JSON.parse(saved) });
+      }
+      setPersistenceStatus("Using browser fallback progress.");
+    }
   }
 
-  function completeMission() {
+  async function saveProgress(nextProgress: Progress) {
+    setProgress(nextProgress);
+    localStorage.setItem("learning-squad-progress-v1", JSON.stringify(nextProgress));
+
+    try {
+      await fetch("/api/progress", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          studentId: payload.studentProfile.id,
+          progress: nextProgress
+        })
+      });
+      setPersistenceStatus("Progress saved.");
+    } catch {
+      setPersistenceStatus("Progress saved in browser fallback only.");
+    }
+  }
+
+  async function completeMission() {
     if (!selectedMission) {
       return;
     }
@@ -194,7 +223,7 @@ export default function Home() {
           }
         };
 
-    saveProgress(nextProgress);
+    await saveProgress(nextProgress);
   }
 
   async function requestReward() {
@@ -383,6 +412,7 @@ export default function Home() {
               <div><strong>{progress.masteryStars}</strong><span>Stars</span></div>
             </div>
             <div className="progress-bar"><span style={{ width: `${completionPercent}%` }} /></div>
+            <p className="quiet">{persistenceStatus}</p>
           </article>
 
           <article className="panel">
@@ -454,4 +484,3 @@ function formatTeacherShare(packageData: any) {
 
   return lines.join("\n");
 }
-

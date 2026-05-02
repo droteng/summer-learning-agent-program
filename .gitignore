@@ -31,3 +31,7 @@ pnpm-debug.log*
 .openclaw/
 agent-logs/
 tmp/
+
+# Local development data
+data/*.sqlite
+data/*.sqlite-*

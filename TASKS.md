@@ -37,7 +37,7 @@
 - [x] Add GitHub setup handoff doc.
 - [x] Attach GitHub remote after repo URL is available.
 - [ ] Authenticate local Git and push main to GitHub.
-- [ ] Replace localStorage progress with database-backed persistence.
+- [x] Replace localStorage progress with database-backed persistence.
 - [ ] Add parent/child authentication and roles.
 
 ## Later
