@@ -59,6 +59,21 @@ type DiagnosticQuest = {
   completionRule: string;
 };
 
+type LessonGuide = {
+  title: string;
+  openingMove: string;
+  miniLessons: Array<{
+    subject: string;
+    teach: string;
+    coachQuestion: string;
+    support: string;
+    stretch: string;
+  }>;
+  activityBridge: string;
+  closingReflection: string;
+  parentTip: string;
+};
+
 type Progress = {
   completedMissionIds: string[];
   xp: number;
@@ -123,6 +138,8 @@ export default function Home() {
   const [plan, setPlan] = useState<ProgramPlan | null>(null);
   const [diagnosticQuest, setDiagnosticQuest] = useState<DiagnosticQuest | null>(null);
   const [diagnosticDrafts, setDiagnosticDrafts] = useState<Record<string, string>>({});
+  const [lessonGuide, setLessonGuide] = useState<LessonGuide | null>(null);
+  const [lessonStatus, setLessonStatus] = useState("Loading teacher guide...");
   const [weekNumber, setWeekNumber] = useState(1);
   const [dayNumber, setDayNumber] = useState(1);
   const [progress, setProgress] = useState<Progress>(emptyProgress);
@@ -196,6 +213,13 @@ export default function Home() {
   }, [progress.diagnosticAnswers]);
 
   useEffect(() => {
+    if (selectedMission) {
+      generateLessonGuide(selectedMission);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedMission?.dayNumber, selectedMission?.theme]);
+
+  useEffect(() => {
     if (plan?.rewardPlan.weeklyRewardMenu.length && !selectedReward) {
       setSelectedReward(plan.rewardPlan.weeklyRewardMenu[0]);
     }
@@ -231,6 +255,29 @@ export default function Home() {
     const quest = await response.json();
     setDiagnosticQuest(quest);
     setDiagnosticDrafts(progress.diagnosticAnswers);
+  }
+
+  async function generateLessonGuide(mission: Mission) {
+    setLessonStatus("Loading teacher guide...");
+
+    try {
+      const response = await fetch("/api/lesson", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          mission,
+          studentProfile: payload.studentProfile
+        })
+      });
+      const guide = await response.json();
+      setLessonGuide(guide);
+      setLessonStatus("Teacher guide ready.");
+    } catch {
+      setLessonGuide(null);
+      setLessonStatus("Teacher guide could not be loaded.");
+    }
   }
 
   async function loadProfile() {
@@ -633,6 +680,33 @@ export default function Home() {
                   ))}
                   <TaskCard title="Create" body={selectedMission.creativeChallenge} />
                   <TaskCard title="Move" body={selectedMission.bodyCheck[0]} />
+                </div>
+
+                <div className="teacher-guide">
+                  <div className="section-head">
+                    <div>
+                      <p className="eyebrow">Teacher Agents</p>
+                      <h3>{lessonGuide?.title ?? "Teacher guide"}</h3>
+                    </div>
+                    <span className="pill">{lessonStatus}</span>
+                  </div>
+                  {lessonGuide && (
+                    <>
+                      <p>{lessonGuide.openingMove}</p>
+                      <div className="lesson-grid">
+                        {lessonGuide.miniLessons.map((lesson) => (
+                          <article key={lesson.subject}>
+                            <strong>{lesson.subject}</strong>
+                            <span>{lesson.teach}</span>
+                            <small>Ask: {lesson.coachQuestion}</small>
+                            {isParent && <small>Support: {lesson.support}</small>}
+                            {isParent && <small>Stretch: {lesson.stretch}</small>}
+                          </article>
+                        ))}
+                      </div>
+                      {isParent && <p className="quiet">{lessonGuide.parentTip}</p>}
+                    </>
+                  )}
                 </div>
 
                 <label className="reflection">

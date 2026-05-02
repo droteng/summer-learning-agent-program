@@ -148,7 +148,8 @@ input[type="checkbox"] {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   margin: 0;
   line-height: 1.12;
   letter-spacing: 0;
@@ -160,6 +161,10 @@ h1 {
 
 h2 {
   font-size: 1.25rem;
+}
+
+h3 {
+  font-size: 1rem;
 }
 
 .metrics {
@@ -357,6 +362,41 @@ h2 {
   color: var(--blue);
 }
 
+.teacher-guide {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 14px;
+  background: white;
+}
+
+.lesson-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.lesson-grid article {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  min-height: 190px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #f8fafc;
+}
+
+.lesson-grid strong {
+  color: var(--blue);
+}
+
+.lesson-grid span,
+.lesson-grid small {
+  color: var(--muted);
+}
+
 .reflection {
   display: block;
   margin-top: 14px;
@@ -422,6 +462,7 @@ h2 {
 
   .mission-cards,
   .diagnostic-grid,
+  .lesson-grid,
   .progress-grid {
     grid-template-columns: 1fr;
   }

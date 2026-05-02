@@ -43,6 +43,7 @@
 - Parent/child role-gated MVP mode.
 - Saved parent onboarding profile for the Grade 6 launch track.
 - Low-pressure Grade 6 diagnostic quest with saved child responses.
+- Teacher Agent lesson guide for the selected daily mission.
 - Parent/child authentication and accounts.
 
 ## Phase 3: Curriculum Depth
