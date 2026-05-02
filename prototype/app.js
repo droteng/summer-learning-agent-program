@@ -10,6 +10,7 @@ const childNameInput = document.querySelector("#childName");
 const missionTitle = document.querySelector("#missionTitle");
 const missionPill = document.querySelector("#missionPill");
 const missionList = document.querySelector("#missionList");
+const reflectionInput = document.querySelector("#reflectionInput");
 const completeMissionButton = document.querySelector("#completeMissionButton");
 const missionCompletionStatus = document.querySelector("#missionCompletionStatus");
 const bodyCheckList = document.querySelector("#bodyCheckList");
@@ -20,6 +21,7 @@ const inviteButton = document.querySelector("#inviteButton");
 const inviteStatus = document.querySelector("#inviteStatus");
 const shareButton = document.querySelector("#shareButton");
 const sharePackage = document.querySelector("#sharePackage");
+const shareExport = document.querySelector("#shareExport");
 const xpValue = document.querySelector("#xpValue");
 const coinValue = document.querySelector("#coinValue");
 const completedValue = document.querySelector("#completedValue");
@@ -216,6 +218,8 @@ function renderSharePackage(packageData) {
     item.textContent = text;
     sharePackage.append(item);
   });
+
+  shareExport.value = packageData.status === "ready_to_share" ? formatTeacherShareExport(packageData) : "";
 }
 
 form.addEventListener("submit", async (event) => {
@@ -238,16 +242,30 @@ daySelect.addEventListener("change", () => {
 completeMissionButton.addEventListener("click", () => {
   const mission = getSelectedMission();
   const missionId = getSelectedMissionId();
+  const reflection = reflectionInput.value.trim();
 
   if (!progress.completedMissionIds.includes(missionId)) {
     progress = {
       completedMissionIds: [...progress.completedMissionIds, missionId],
       xp: progress.xp + mission.rewardOpportunity.xp,
       masteryStars: progress.masteryStars + mission.rewardOpportunity.masteryStars,
-      campCoins: progress.campCoins + mission.rewardOpportunity.campCoins
+      campCoins: progress.campCoins + mission.rewardOpportunity.campCoins,
+      reflections: {
+        ...(progress.reflections ?? {}),
+        [missionId]: reflection
+      }
     };
-    saveProgress();
+  } else {
+    progress = {
+      ...progress,
+      reflections: {
+        ...(progress.reflections ?? {}),
+        [missionId]: reflection
+      }
+    };
   }
+
+  saveProgress();
 
   renderMissionCompletionState();
   renderProgressSummary();
@@ -258,6 +276,23 @@ resetProgressButton.addEventListener("click", () => {
   saveProgress();
   renderMissionCompletionState();
   renderProgressSummary();
+});
+
+reflectionInput.addEventListener("change", () => {
+  const missionId = getSelectedMissionId();
+
+  if (!progress.completedMissionIds.includes(missionId)) {
+    return;
+  }
+
+  progress = {
+    ...progress,
+    reflections: {
+      ...(progress.reflections ?? {}),
+      [missionId]: reflectionInput.value.trim()
+    }
+  };
+  saveProgress();
 });
 
 rewardButton.addEventListener("click", async () => {
@@ -313,7 +348,8 @@ shareButton.addEventListener("click", async () => {
     },
     body: JSON.stringify({
       ...currentPayload,
-      parentApproved: currentPayload.parentPolicy.teacherSharingEnabled
+      parentApproved: currentPayload.parentPolicy.teacherSharingEnabled,
+      progress
     })
   });
   const result = await response.json();
@@ -344,6 +380,7 @@ function getSelectedMissionId() {
 
 function renderMissionCompletionState() {
   const isComplete = progress.completedMissionIds.includes(getSelectedMissionId());
+  reflectionInput.value = progress.reflections?.[getSelectedMissionId()] ?? "";
   completeMissionButton.disabled = isComplete;
   completeMissionButton.textContent = isComplete ? "Mission complete" : "Complete mission";
   missionCompletionStatus.textContent = isComplete
@@ -402,7 +439,8 @@ function createEmptyProgress() {
     completedMissionIds: [],
     xp: 0,
     masteryStars: 0,
-    campCoins: 0
+    campCoins: 0,
+    reflections: {}
   };
 }
 
@@ -419,6 +457,47 @@ function loadProgress() {
 
 function saveProgress() {
   localStorage.setItem(progressStorageKey, JSON.stringify(progress));
+}
+
+function formatTeacherShareExport(packageData) {
+  const progressSummary = packageData.progressSummary;
+  const lines = [
+    `${packageData.student.firstName} - Grade ${packageData.student.gradeLevel} Summer Learning Report`,
+    "",
+    packageData.summary,
+    "",
+    "Included sections:",
+    ...packageData.includedSections.map((section) => `- ${section}`),
+    "",
+    "Hidden by default:",
+    ...packageData.excludedByDefault.map((section) => `- ${section}`)
+  ];
+
+  if (progressSummary) {
+    lines.push(
+      "",
+      "Progress evidence:",
+      `- Completed missions: ${progressSummary.completedMissionCount}/${progressSummary.totalMissionCount}`,
+      `- XP: ${progressSummary.xp}`,
+      `- Mastery stars: ${progressSummary.masteryStars}`,
+      `- Camp coins: ${progressSummary.campCoins}`,
+      "",
+      "Completed mission samples:"
+    );
+
+    progressSummary.completedMissions.slice(0, 6).forEach((mission) => {
+      lines.push(
+        `- Week ${mission.weekNumber}, ${mission.dayLabel}: ${mission.theme}`,
+        `  Subjects: ${mission.subjects.join(", ")}`
+      );
+
+      if (mission.reflection) {
+        lines.push(`  Student reflection: ${mission.reflection}`);
+      }
+    });
+  }
+
+  return lines.join("\n");
 }
 
 generatePlan().catch((error) => {

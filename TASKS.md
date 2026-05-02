@@ -27,8 +27,10 @@
 - [x] Add parent reward approval workflow.
 - [x] Add mission completion tracking and local progress state.
 - [x] Add parent dashboard summary panel.
-- [ ] Add teacher-share export preview from live progress.
-- [ ] Add child reflection input for completed missions.
+- [x] Add teacher-share export preview from live progress.
+- [x] Add child reflection input for completed missions.
+- [ ] Add printable parent/teacher report route.
+- [ ] Add reward choice selector instead of first reward default.
 
 ## Later
 

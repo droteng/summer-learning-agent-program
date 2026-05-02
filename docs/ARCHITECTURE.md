@@ -78,6 +78,8 @@ Early local data can be plain JSON. Production should use a real database with s
 - Reward approval endpoint for parent-facing approval prompts.
 - Browser-local progress state for prototype completion tracking.
 - Parent summary panel derived from completed mission progress.
+- Student reflections stored with completed missions in prototype progress state.
+- Teacher-share export preview generated from parent-approved progress evidence.
 
 ### MVP Web App
 

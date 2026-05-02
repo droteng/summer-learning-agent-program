@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { createProgramPlan } from "../src/agents/principalAgent.js";
-import { completeMission, createEmptyProgress, summarizeProgress } from "../src/agents/progressAgent.js";
+import { completeMission, createEmptyProgress, saveReflection, summarizeProgress } from "../src/agents/progressAgent.js";
 import { createRewardApprovalRequest } from "../src/agents/rewardsAgent.js";
 
 test("creates a Grade 6 program with core subjects and two enrichment tracks", () => {
@@ -97,9 +97,16 @@ test("tracks completed mission progress without double counting", () => {
     progress: twice,
     totalMissions: 40
   });
+  const withReflection = saveReflection({
+    progress: twice,
+    weekNumber: 1,
+    dayNumber: 2,
+    reflection: " I learned how to explain my answer. "
+  });
 
   assert.equal(twice.completedMissionIds.length, 1);
   assert.equal(twice.xp, 20);
   assert.equal(twice.masteryStars, 1);
   assert.equal(summary.completionPercent, 3);
+  assert.equal(withReflection.reflections["week-1-day-2"], "I learned how to explain my answer.");
 });

@@ -27,7 +27,8 @@ body {
 
 button,
 input,
-select {
+select,
+textarea {
   font: inherit;
 }
 
@@ -193,15 +194,24 @@ legend {
 }
 
 input,
-select {
+select,
+textarea {
   width: 100%;
-  min-height: 42px;
   margin-top: 6px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 0 12px;
+  padding: 10px 12px;
   background: white;
   color: var(--ink);
+}
+
+input,
+select {
+  min-height: 42px;
+}
+
+textarea {
+  resize: vertical;
 }
 
 fieldset {
@@ -256,6 +266,11 @@ fieldset input {
 .mission-actions {
   align-items: center;
   grid-template-columns: auto minmax(0, 1fr);
+  margin-top: 14px;
+}
+
+.reflection-field {
+  display: block;
   margin-top: 14px;
 }
 
@@ -324,6 +339,13 @@ fieldset input {
 
 .quiet {
   color: var(--muted);
+}
+
+.export-box {
+  margin-top: 14px;
+  min-height: 220px;
+  color: var(--ink);
+  background: #fbfcfd;
 }
 
 @media (max-width: 860px) {

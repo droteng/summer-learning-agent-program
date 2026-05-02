@@ -62,7 +62,8 @@ export const server = createServer(async (request, response) => {
       const result = createTeacherSharePackage({
         student: payload.studentProfile,
         programPlan,
-        parentApproved: Boolean(payload.parentApproved)
+        parentApproved: Boolean(payload.parentApproved),
+        progress: payload.progress
       });
       return sendJson(response, result);
     }

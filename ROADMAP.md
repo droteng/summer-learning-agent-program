@@ -21,6 +21,8 @@
 - Add parent reward approval request flow.
 - Add local mission completion tracking.
 - Add parent progress summary panel.
+- Add child reflections as completed-mission evidence.
+- Add teacher-share export preview from live progress.
 
 ## Phase 2: Web App MVP
 

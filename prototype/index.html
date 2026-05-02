@@ -100,6 +100,10 @@
             </div>
 
             <div class="mission-list" id="missionList"></div>
+            <label class="reflection-field">
+              Child reflection
+              <textarea id="reflectionInput" rows="4" placeholder="What did you learn or feel proud of today?"></textarea>
+            </label>
             <div class="mission-actions">
               <button id="completeMissionButton" type="button">Complete mission</button>
               <span id="missionCompletionStatus" class="quiet">Not completed yet.</span>
@@ -168,6 +172,7 @@
               <button id="shareButton" type="button" class="secondary">Prepare share</button>
             </div>
             <div id="sharePackage" class="share-package"></div>
+            <textarea id="shareExport" class="export-box" rows="10" readonly aria-label="Teacher share export"></textarea>
           </article>
         </section>
       </main>

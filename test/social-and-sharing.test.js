@@ -70,3 +70,27 @@ test("teacher share packages require parent approval", () => {
   assert.ok(approved.excludedByDefault.includes("Private health check answers"));
 });
 
+test("teacher share packages can include parent-approved progress evidence", () => {
+  const programPlan = createProgramPlan(student, parentPolicy);
+  const approved = createTeacherSharePackage({
+    student,
+    programPlan,
+    parentApproved: true,
+    progress: {
+      completedMissionIds: ["week-1-day-1"],
+      xp: 20,
+      masteryStars: 0,
+      campCoins: 5,
+      reflections: {
+        "week-1-day-1": "I learned how to explain an algorithm."
+      }
+    }
+  });
+
+  assert.equal(approved.progressSummary.completedMissionCount, 1);
+  assert.equal(approved.progressSummary.completedMissions[0].theme, "Explorer Mode");
+  assert.equal(
+    approved.progressSummary.completedMissions[0].reflection,
+    "I learned how to explain an algorithm."
+  );
+});

@@ -85,6 +85,54 @@ test("reward request endpoint returns a parent approval prompt", async () => {
   }
 });
 
+test("teacher share endpoint accepts progress evidence", async () => {
+  const baseUrl = await startTestServer();
+
+  try {
+    const response = await fetch(`${baseUrl}/api/teacher-share`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        parentApproved: true,
+        studentProfile: {
+          id: "server-test-student",
+          firstName: "Avery",
+          gradeLevel: 6,
+          interests: ["coding"],
+          selectedEnrichmentTracks: ["healthWellness", "financialLiteracy"],
+          activityPreferences: {
+            outdoorAllowed: true
+          }
+        },
+        parentPolicy: {
+          allowedRewards: ["movie"],
+          friendInvitesEnabled: true,
+          teacherSharingEnabled: true
+        },
+        progress: {
+          completedMissionIds: ["week-1-day-1"],
+          xp: 20,
+          masteryStars: 0,
+          campCoins: 5,
+          reflections: {
+            "week-1-day-1": "I learned how to explain an algorithm."
+          }
+        }
+      })
+    });
+
+    const payload = await response.json();
+
+    assert.equal(response.status, 200);
+    assert.equal(payload.status, "ready_to_share");
+    assert.equal(payload.progressSummary.completedMissionCount, 1);
+  } finally {
+    await stopTestServer();
+  }
+});
+
 function startTestServer() {
   return new Promise((resolve) => {
     server.listen(0, () => {

@@ -3,7 +3,8 @@ export function createEmptyProgress() {
     completedMissionIds: [],
     xp: 0,
     masteryStars: 0,
-    campCoins: 0
+    campCoins: 0,
+    reflections: {}
   };
 }
 
@@ -22,7 +23,20 @@ export function completeMission({ progress, weekNumber, mission }) {
     completedMissionIds: [...progress.completedMissionIds, missionId],
     xp: progress.xp + mission.rewardOpportunity.xp,
     masteryStars: progress.masteryStars + mission.rewardOpportunity.masteryStars,
-    campCoins: progress.campCoins + mission.rewardOpportunity.campCoins
+    campCoins: progress.campCoins + mission.rewardOpportunity.campCoins,
+    reflections: progress.reflections ?? {}
+  };
+}
+
+export function saveReflection({ progress, weekNumber, dayNumber, reflection }) {
+  const missionId = createMissionId({ weekNumber, dayNumber });
+
+  return {
+    ...progress,
+    reflections: {
+      ...(progress.reflections ?? {}),
+      [missionId]: reflection.trim()
+    }
   };
 }
 
@@ -62,4 +76,3 @@ function createParentNextSteps({ completedCount, totalMissions, progress }) {
 
   return nextSteps;
 }
-
