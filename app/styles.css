@@ -441,8 +441,36 @@ h3 {
 }
 
 .task-card strong {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 8px;
   color: var(--blue);
+}
+
+.task-card strong small {
+  border-radius: 999px;
+  padding: 3px 7px;
+  background: white;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.task-card.support {
+  border-top-color: var(--amber);
+}
+
+.task-card.stretch {
+  border-top-color: var(--green);
+}
+
+.task-card em {
+  margin-top: 8px;
+  color: var(--muted);
+  font-style: normal;
 }
 
 .teacher-guide {

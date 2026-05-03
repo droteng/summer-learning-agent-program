@@ -13,6 +13,11 @@ type Mission = {
     masteryCheck: {
       prompt: string;
     };
+    adaptive?: {
+      mode: "support" | "standard" | "stretch";
+      adjustedTask: string;
+      coachCue: string;
+    };
   }>;
   enrichmentConnections: Array<{
     track: string;
@@ -42,6 +47,10 @@ type ProgramPlan = {
   };
   rewardPlan: {
     weeklyRewardMenu: string[];
+  };
+  adaptiveTuning?: {
+    difficultyOverride: string;
+    summary: string;
   };
   weeklyMissionPlans: WeeklyPlan[];
 };
@@ -156,6 +165,7 @@ export default function Home() {
   const [diagnosticQuest, setDiagnosticQuest] = useState<DiagnosticQuest | null>(null);
   const [diagnosticDrafts, setDiagnosticDrafts] = useState<Record<string, string>>({});
   const [diagnosticSummary, setDiagnosticSummary] = useState<DiagnosticSummary | null>(null);
+  const [difficultyOverride, setDifficultyOverride] = useState("auto");
   const [lessonGuide, setLessonGuide] = useState<LessonGuide | null>(null);
   const [lessonStatus, setLessonStatus] = useState("Loading teacher guide...");
   const [weekNumber, setWeekNumber] = useState(1);
@@ -255,7 +265,14 @@ export default function Home() {
     }
   }, [plan, selectedReward]);
 
-  async function generatePlan() {
+  useEffect(() => {
+    if (diagnosticSummary) {
+      generatePlan(diagnosticSummary);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [difficultyOverride]);
+
+  async function generatePlan(summaryOverride = diagnosticSummary) {
     if (isParent) {
       await saveProfile(payload.studentProfile);
     }
@@ -265,7 +282,11 @@ export default function Home() {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(payload)
+      body: JSON.stringify({
+        ...payload,
+        diagnosticSummary: summaryOverride,
+        difficultyOverride
+      })
     });
     const nextPlan = await response.json();
     setPlan(nextPlan);
@@ -305,6 +326,7 @@ export default function Home() {
     });
     const summary = await response.json();
     setDiagnosticSummary(summary);
+    await generatePlan(summary);
   }
 
   async function generateLessonGuide(mission: Mission) {
@@ -688,6 +710,19 @@ export default function Home() {
               </div>
             </div>
             <label>
+              Mission difficulty
+              <select
+                disabled={!isParent}
+                value={difficultyOverride}
+                onChange={(event) => setDifficultyOverride(event.target.value)}
+              >
+                <option value="auto">Auto from diagnostic</option>
+                <option value="support">Support mode</option>
+                <option value="standard">Standard mode</option>
+                <option value="stretch">Stretch mode</option>
+              </select>
+            </label>
+            <label>
               <input
                 type="checkbox"
                 disabled={!isParent}
@@ -714,7 +749,7 @@ export default function Home() {
               />
               Teacher sharing enabled
             </label>
-            <button disabled={!isParent} onClick={generatePlan}>Generate plan</button>
+            <button disabled={!isParent} onClick={() => generatePlan()}>Generate plan</button>
           </div>
         </section>
 
@@ -842,7 +877,13 @@ export default function Home() {
                 <div className="mission-cards">
                   <TaskCard title="Warm-up" body={selectedMission.warmup} />
                   {selectedMission.lessons.map((lesson) => (
-                    <TaskCard key={lesson.subject} title={lesson.subject} body={lesson.task} />
+                    <TaskCard
+                      key={lesson.subject}
+                      title={lesson.subject}
+                      body={lesson.adaptive?.adjustedTask ?? lesson.task}
+                      mode={lesson.adaptive?.mode}
+                      cue={lesson.adaptive?.coachCue}
+                    />
                   ))}
                   <TaskCard title="Create" body={selectedMission.creativeChallenge} />
                   <TaskCard title="Move" body={selectedMission.bodyCheck[0]} />
@@ -856,6 +897,9 @@ export default function Home() {
                     </div>
                     <span className="pill">{lessonStatus}</span>
                   </div>
+                  {plan?.adaptiveTuning && (
+                    <p className="quiet">Adaptive tuning: {plan.adaptiveTuning.summary}</p>
+                  )}
                   {lessonGuide && (
                     <>
                       <p>{lessonGuide.openingMove}</p>
@@ -998,11 +1042,15 @@ function AuthPanel({
   );
 }
 
-function TaskCard({ title, body }: { title: string; body: string }) {
+function TaskCard({ title, body, mode, cue }: { title: string; body: string; mode?: string; cue?: string }) {
   return (
-    <div className="task-card">
-      <strong>{title}</strong>
+    <div className={`task-card ${mode ?? ""}`}>
+      <strong>
+        {title}
+        {mode && <small>{mode}</small>}
+      </strong>
       <span>{body}</span>
+      {cue && <em>{cue}</em>}
     </div>
   );
 }
