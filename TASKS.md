@@ -42,7 +42,8 @@
 - [x] Add saved parent onboarding profile with Grade 6 launch selection.
 - [x] Add Grade 6 diagnostic quest.
 - [x] Add Teacher Agent lesson guidance for selected missions.
-- [ ] Replace demo role switch with real parent/child authentication.
+- [x] Replace demo role switch with local parent/child passcode authentication.
+- [ ] Replace local MVP passcodes with production parent/child accounts.
 - [ ] Expand curriculum tuning beyond the Grade 6 launch track.
 
 ## Later

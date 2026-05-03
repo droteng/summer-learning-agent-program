@@ -191,25 +191,47 @@ h3 {
   box-shadow: var(--shadow);
 }
 
-.role-switch {
+.auth-panel {
   display: grid;
-  grid-template-columns: repeat(2, minmax(76px, 1fr));
-  gap: 4px;
+  gap: 6px;
+  width: min(100%, 390px);
   border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 4px;
+  padding: 8px;
   background: white;
 }
 
-.role-switch button {
-  min-height: 34px;
-  color: var(--muted);
-  background: transparent;
+.auth-fields,
+.auth-actions {
+  display: grid;
+  grid-template-columns: 110px minmax(130px, 1fr);
+  gap: 6px;
+  align-items: center;
 }
 
-.role-switch button.active {
-  color: white;
-  background: var(--teal);
+.auth-panel input,
+.auth-panel select {
+  margin-top: 0;
+}
+
+.auth-actions button {
+  min-height: 36px;
+}
+
+.auth-actions span {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.auth-actions span.signed-in.parent {
+  color: var(--teal);
+}
+
+.auth-actions span.signed-in.child {
+  color: var(--green);
 }
 
 .role-banner {
@@ -458,6 +480,11 @@ h3 {
   .actions {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .auth-fields,
+  .auth-actions {
+    grid-template-columns: 1fr;
   }
 
   .mission-cards,

@@ -150,8 +150,13 @@ export default function Home() {
   const [profileStatus, setProfileStatus] = useState("Loading saved profile...");
   const [profileReady, setProfileReady] = useState(false);
   const [persistenceStatus, setPersistenceStatus] = useState("Loading saved progress...");
-  const [role, setRole] = useState<UserRole>("parent");
-  const isParent = role === "parent";
+  const [role, setRole] = useState<UserRole>("child");
+  const [authRole, setAuthRole] = useState<UserRole>("child");
+  const [passcode, setPasscode] = useState("");
+  const [authStatus, setAuthStatus] = useState("Signed out.");
+  const [isSignedIn, setIsSignedIn] = useState(false);
+  const isParent = isSignedIn && role === "parent";
+  const canUseLearning = isSignedIn;
 
   const payload = useMemo(
     () => ({
@@ -382,6 +387,11 @@ export default function Home() {
   }
 
   async function saveDiagnostic() {
+    if (!canUseLearning) {
+      setPersistenceStatus("Sign in to save progress.");
+      return;
+    }
+
     if (!diagnosticQuest) {
       return;
     }
@@ -399,6 +409,11 @@ export default function Home() {
   }
 
   async function completeMission() {
+    if (!canUseLearning) {
+      setPersistenceStatus("Sign in to save progress.");
+      return;
+    }
+
     if (!selectedMission) {
       return;
     }
@@ -469,6 +484,45 @@ export default function Home() {
     setShareExport(formatTeacherShare(result));
   }
 
+  async function signIn() {
+    try {
+      const response = await fetch("/api/auth", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          role: authRole,
+          passcode
+        })
+      });
+      const result = await response.json();
+
+      if (!response.ok || result.status !== "signed_in") {
+        setIsSignedIn(false);
+        setRole("child");
+        setAuthStatus(result.reason ?? "Sign-in failed.");
+        return;
+      }
+
+      setRole(result.role);
+      setIsSignedIn(true);
+      setPasscode("");
+      setAuthStatus(result.role === "parent" ? "Signed in as parent." : "Signed in as child.");
+    } catch {
+      setIsSignedIn(false);
+      setAuthStatus("Sign-in service is unavailable.");
+    }
+  }
+
+  function signOut() {
+    setRole("child");
+    setAuthRole("child");
+    setIsSignedIn(false);
+    setPasscode("");
+    setAuthStatus("Signed out.");
+  }
+
   return (
     <main className="shell">
       <aside className="sidebar">
@@ -495,7 +549,17 @@ export default function Home() {
             <h1>Summer learning plan</h1>
           </div>
           <div className="metrics">
-            <RoleSwitch role={role} setRole={setRole} />
+            <AuthPanel
+              authRole={authRole}
+              authStatus={authStatus}
+              isSignedIn={isSignedIn}
+              passcode={passcode}
+              role={role}
+              setAuthRole={setAuthRole}
+              setPasscode={setPasscode}
+              signIn={signIn}
+              signOut={signOut}
+            />
             <span>{progress.xp} XP</span>
             <span>{progress.campCoins} Coins</span>
             <span>{progress.masteryStars} Stars</span>
@@ -505,16 +569,28 @@ export default function Home() {
         <section className={`role-banner ${role}`}>
           <div>
             <p className="eyebrow">{isParent ? "Parent View" : "Child View"}</p>
-            <h2>{isParent ? "Approvals and setup are available." : "Focus mode is on. Parent-only actions are locked."}</h2>
+            <h2>
+              {isParent
+                ? "Approvals and setup are available."
+                : isSignedIn
+                  ? "Focus mode is on. Parent-only actions are locked."
+                  : "Sign in to save learning progress."}
+            </h2>
           </div>
-          <span>{isParent ? "Rewards, sharing, and setup controls enabled" : "Mission, reflection, and progress enabled"}</span>
+          <span>
+            {isParent
+              ? "Rewards, sharing, and setup controls enabled"
+              : isSignedIn
+                ? "Mission, reflection, and progress enabled"
+                : "Viewing is open; saving is locked"}
+          </span>
         </section>
 
         <section id="setup" className={`panel setup ${!isParent ? "locked-panel" : ""}`}>
           <div>
             <p className="eyebrow">Parent Setup</p>
             <h2>Profile and controls</h2>
-            {!isParent && <p className="quiet">Switch to parent view to change setup and permissions.</p>}
+            {!isParent && <p className="quiet">Parent sign-in is required to change setup and permissions.</p>}
             {isParent && <p className="quiet">{profileStatus}</p>}
           </div>
           <div className="setup-form">
@@ -628,7 +704,7 @@ export default function Home() {
             ))}
           </div>
           <div className="actions diagnostic-actions">
-            <button onClick={saveDiagnostic}>Save diagnostic</button>
+            <button disabled={!canUseLearning} onClick={saveDiagnostic}>Save diagnostic</button>
             <span>
               {progress.diagnosticCompleted
                 ? "Diagnostic ready for parent review."
@@ -720,8 +796,14 @@ export default function Home() {
                 </label>
 
                 <div className="actions">
-                  <button onClick={completeMission}>{isComplete ? "Save reflection" : "Complete mission"}</button>
-                  <span>{isComplete ? "Mission completed." : "Ready when the mission is done."}</span>
+                  <button disabled={!canUseLearning} onClick={completeMission}>{isComplete ? "Save reflection" : "Complete mission"}</button>
+                  <span>
+                    {!canUseLearning
+                      ? "Sign in to save mission progress."
+                      : isComplete
+                        ? "Mission completed."
+                        : "Ready when the mission is done."}
+                  </span>
                 </div>
               </>
             )}
@@ -773,21 +855,55 @@ export default function Home() {
   );
 }
 
-function RoleSwitch({
+function AuthPanel({
+  authRole,
+  authStatus,
+  isSignedIn,
+  passcode,
   role,
-  setRole
+  setAuthRole,
+  setPasscode,
+  signIn,
+  signOut
 }: {
+  authRole: UserRole;
+  authStatus: string;
+  isSignedIn: boolean;
+  passcode: string;
   role: UserRole;
-  setRole: (role: UserRole) => void;
+  setAuthRole: (role: UserRole) => void;
+  setPasscode: (passcode: string) => void;
+  signIn: () => void;
+  signOut: () => void;
 }) {
   return (
-    <div className="role-switch" aria-label="Demo role switch">
-      <button className={role === "parent" ? "active" : ""} onClick={() => setRole("parent")}>
-        Parent
-      </button>
-      <button className={role === "child" ? "active" : ""} onClick={() => setRole("child")}>
-        Child
-      </button>
+    <div className="auth-panel" aria-label="Role sign-in">
+      <div className="auth-fields">
+        <select disabled={isSignedIn} value={authRole} onChange={(event) => setAuthRole(event.target.value as UserRole)}>
+          <option value="child">Child</option>
+          <option value="parent">Parent</option>
+        </select>
+        <input
+          disabled={isSignedIn}
+          type="password"
+          value={passcode}
+          onChange={(event) => setPasscode(event.target.value)}
+          onKeyDown={(event) => {
+            if (event.key === "Enter") {
+              signIn();
+            }
+          }}
+          placeholder="Passcode"
+        />
+      </div>
+      <div className="auth-actions">
+        {isSignedIn ? (
+          <button onClick={signOut}>Sign out</button>
+        ) : (
+          <button onClick={signIn}>Sign in</button>
+        )}
+        <span className={isSignedIn ? `signed-in ${role}` : ""}>{authStatus}</span>
+      </div>
     </div>
   );
 }
