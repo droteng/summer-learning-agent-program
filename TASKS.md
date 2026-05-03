@@ -51,6 +51,7 @@
 - [x] Replace hardcoded MVP passcodes with saved local family account credentials.
 - [ ] Replace local family account with production parent/child accounts and sessions.
 - [x] Expand curriculum tuning framework beyond the Grade 6 launch track.
+- [x] Add desktop and tablet PWA install shell.
 - [ ] Author full grade-specific curriculum for Grades 5, 7, and 8.
 
 ## Later

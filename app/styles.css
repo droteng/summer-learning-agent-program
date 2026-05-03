@@ -259,6 +259,31 @@ h3 {
   background: #fbfcfd;
 }
 
+.device-panel {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.device-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.device-grid div {
+  display: grid;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #f8fafc;
+}
+
+.device-grid span {
+  color: var(--muted);
+}
+
 .account-panel {
   display: grid;
   gap: 16px;
@@ -704,6 +729,7 @@ h3 {
 @media (max-width: 900px) {
   .shell,
   .account-grid,
+  .device-grid,
   .setup,
   .grid {
     grid-template-columns: 1fr;

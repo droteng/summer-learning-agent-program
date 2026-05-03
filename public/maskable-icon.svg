@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="learning-squad.ai maskable icon">
+  <rect width="512" height="512" fill="#167c80"/>
+  <circle cx="256" cy="256" r="184" fill="#17202a"/>
+  <path d="M160 170h192v142H160z" fill="#ffffff"/>
+  <path d="M184 198h144v24H184zm0 46h96v20h-96zm0 42h124v20H184z" fill="#2f64b1"/>
+  <circle cx="340" cy="318" r="44" fill="#f5c46b"/>
+  <path d="M318 318l14 14 30-34" fill="none" stroke="#17202a" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -51,6 +51,7 @@
 - Friend invite MVP.
 - Local parent/child passcode authentication.
 - Saved local family account credentials.
+- Desktop and tablet PWA install shell.
 - Production parent/child accounts.
 
 ## Phase 3: Curriculum Depth

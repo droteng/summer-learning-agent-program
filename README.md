@@ -72,6 +72,8 @@ npm run dev
 
 Then open `http://localhost:3000`.
 
+The Next.js app includes a PWA manifest, app icons, service worker registration, and an offline fallback for desktop, iPad, and Android tablet install testing. Service worker registration is limited to production builds so development stays fresh while the app is changing quickly.
+
 Run the original no-dependency prototype:
 
 ```bash

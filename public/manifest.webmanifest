@@ -1,0 +1,40 @@
+{
+  "name": "learning-squad.ai",
+  "short_name": "Learning Squad",
+  "description": "Parent-supervised multi-agent summer learning program.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f5f7fa",
+  "theme_color": "#167c80",
+  "categories": ["education", "kids", "productivity"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/maskable-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Today Mission",
+      "short_name": "Mission",
+      "url": "/#mission-mode",
+      "description": "Open the current daily mission."
+    },
+    {
+      "name": "Parent Dashboard",
+      "short_name": "Parent",
+      "url": "/#progress",
+      "description": "Review progress, rewards, and sharing."
+    }
+  ]
+}

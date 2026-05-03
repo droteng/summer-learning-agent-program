@@ -21,6 +21,7 @@ Future surfaces:
 - Teacher/school share portal.
 - OpenClaw/ClawHub package.
 - Tablet-friendly responsive web app.
+- Desktop and tablet installable PWA.
 
 ### 2. Agent Orchestration Layer
 
@@ -117,6 +118,7 @@ Current MVP shell:
 - The selected mission can request a Teacher Agent lesson guide from `src/agents/lessonAgent.js`.
 - Week 1 launch content is enriched by `src/agents/weekOneLaunchAgent.js`.
 - Reward requests and friend invites are saved in progress state for the current MVP.
+- PWA install metadata lives in `public/manifest.webmanifest`; the service worker and offline fallback live in `public/sw.js` and `public/offline.html`.
 
 ### Distribution
 

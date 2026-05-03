@@ -182,6 +182,11 @@ type FamilyAccount = {
   credentialVersion: string;
 };
 
+type InstallPromptEvent = Event & {
+  prompt: () => Promise<void>;
+  userChoice: Promise<{ outcome: "accepted" | "dismissed"; platform: string }>;
+};
+
 const profileId = "mvp-preview-profile";
 const studentId = "mvp-preview-student";
 
@@ -251,6 +256,9 @@ export default function Home() {
   const [passcode, setPasscode] = useState("");
   const [authStatus, setAuthStatus] = useState("Signed out.");
   const [isSignedIn, setIsSignedIn] = useState(false);
+  const [installPrompt, setInstallPrompt] = useState<InstallPromptEvent | null>(null);
+  const [deviceStatus, setDeviceStatus] = useState("Desktop and tablet web app ready.");
+  const [isStandalone, setIsStandalone] = useState(false);
   const isParent = isSignedIn && role === "parent";
   const canUseLearning = isSignedIn;
 
@@ -285,6 +293,20 @@ export default function Home() {
     loadAccount();
     loadProfile();
     loadProgress();
+    setIsStandalone(
+      window.matchMedia("(display-mode: standalone)").matches ||
+        (window.navigator as Navigator & { standalone?: boolean }).standalone === true
+    );
+
+    const onBeforeInstallPrompt = (event: Event) => {
+      event.preventDefault();
+      setInstallPrompt(event as InstallPromptEvent);
+      setDeviceStatus("Install is available on this device.");
+    };
+
+    window.addEventListener("beforeinstallprompt", onBeforeInstallPrompt);
+
+    return () => window.removeEventListener("beforeinstallprompt", onBeforeInstallPrompt);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -830,6 +852,18 @@ export default function Home() {
     setAuthStatus("Signed out.");
   }
 
+  async function installApp() {
+    if (!installPrompt) {
+      setDeviceStatus("Use your browser menu to add this app to the home screen or dock.");
+      return;
+    }
+
+    await installPrompt.prompt();
+    const choice = await installPrompt.userChoice;
+    setInstallPrompt(null);
+    setDeviceStatus(choice.outcome === "accepted" ? "Install accepted." : "Install dismissed.");
+  }
+
   return (
     <main className="shell">
       <aside className="sidebar">
@@ -841,6 +875,7 @@ export default function Home() {
           </div>
         </div>
         <nav>
+          <a href="#device">Device</a>
           <a href="#account">Account</a>
           <a href="#setup">Setup</a>
           <a href="#diagnostic">Diagnostic</a>
@@ -893,6 +928,32 @@ export default function Home() {
                 ? "Mission, reflection, and progress enabled"
                 : "Viewing is open; saving is locked"}
           </span>
+        </section>
+
+        <section id="device" className="panel device-panel">
+          <div>
+            <p className="eyebrow">Device Readiness</p>
+            <h2>{isStandalone ? "Installed app mode" : "Desktop, iPad, and Android tablet ready"}</h2>
+            <p className="quiet">{deviceStatus}</p>
+          </div>
+          <div className="device-grid">
+            <div>
+              <strong>PWA install</strong>
+              <span>Manifest, app icon, shortcuts, and service worker are configured.</span>
+            </div>
+            <div>
+              <strong>Offline fallback</strong>
+              <span>Core shell and offline message are cached for connection drops.</span>
+            </div>
+            <div>
+              <strong>Tablet layout</strong>
+              <span>Panels collapse cleanly for iPad and Android tablet widths.</span>
+            </div>
+          </div>
+          <div className="actions">
+            <button onClick={installApp}>{installPrompt ? "Install app" : "Install help"}</button>
+            <span>Best tested in a production build or deployed website.</span>
+          </div>
         </section>
 
         <section id="account" className="panel account-panel">
