@@ -1,0 +1,21 @@
+{
+  "currencies": ["XP", "Mastery Stars", "Camp Coins"],
+  "rule": "Rewards require parent approval and should recognize effort, consistency, mastery, creativity, and healthy activity.",
+  "defaultRewards": [
+    "30 minutes of extra parent-approved device time",
+    "Choose a family dinner",
+    "Ice cream or smoothie trip",
+    "Park, sports, bike, or swimming outing",
+    "Movie night",
+    "Invite a friend for a parent-approved activity",
+    "Small allowance bonus",
+    "Project showcase celebration"
+  ],
+  "nonScreenSuggestions": [
+    "Family walk, park, sports, bike, or swimming time",
+    "Cook a favorite healthy snack together",
+    "Board game or movie night",
+    "Project showcase call with a relative",
+    "Small allowance, savings, or giving jar bonus"
+  ]
+}

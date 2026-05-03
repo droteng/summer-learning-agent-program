@@ -19,15 +19,13 @@ The OpenClaw package should behave like a school operating system:
 
 ## Likely Package Contents
 
-- Agent definitions.
-- Curriculum templates.
-- Parent onboarding workflow.
-- Grade 6 starter syllabus.
-- Optional enrichment templates.
-- Reward templates.
-- Report templates.
-- Safety and moderation prompts.
-- Demo data.
+- Agent definitions: `openclaw/agents.json`.
+- Curriculum templates: `openclaw/curriculum.grade6.json`.
+- Package metadata: `openclaw/package.json`.
+- Reward templates: `openclaw/reward-menu.json`.
+- Report template: `openclaw/teacher-share-template.md`.
+- Safety and moderation defaults: `openclaw/safety-policy.json`.
+- Package readme: `openclaw/README.md`.
 
 ## ClawHub Listing Positioning
 
@@ -70,6 +68,10 @@ The website version should eventually offer:
 - Teacher sharing.
 - Subscription billing.
 
+Current website route:
+
+- `/product` presents the sellable product summary, feature set, and OpenClaw/ClawHub package readiness.
+
 ## Technical Packaging Direction
 
 Keep core logic portable:
@@ -82,8 +84,7 @@ Keep core logic portable:
 ## Open Questions
 
 - Final product name.
-- ClawHub package format and metadata requirements.
+- Final ClawHub package format and metadata requirements.
 - Whether OpenClaw handles payments directly or only listing/discovery.
 - Whether the first ClawHub version should include UI or be agent-workflow only.
 - Which model providers should be supported by default.
-

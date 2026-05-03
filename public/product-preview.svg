@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="learning-squad.ai product preview background">
+  <rect width="1600" height="1000" fill="#e8eef4"/>
+  <rect x="90" y="90" width="1420" height="820" rx="42" fill="#ffffff"/>
+  <rect x="90" y="90" width="250" height="820" rx="42" fill="#17202a"/>
+  <rect x="130" y="140" width="70" height="70" rx="14" fill="#f5c46b"/>
+  <text x="151" y="184" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#17202a">LS</text>
+  <rect x="130" y="270" width="150" height="30" rx="8" fill="#34495e"/>
+  <rect x="130" y="325" width="170" height="30" rx="8" fill="#34495e"/>
+  <rect x="130" y="380" width="130" height="30" rx="8" fill="#34495e"/>
+  <rect x="400" y="150" width="460" height="56" rx="12" fill="#17202a"/>
+  <rect x="400" y="240" width="1010" height="110" rx="22" fill="#f5f8fd" stroke="#dce3ea"/>
+  <rect x="430" y="275" width="210" height="24" rx="8" fill="#2f64b1"/>
+  <rect x="430" y="310" width="540" height="18" rx="8" fill="#5a6573"/>
+  <rect x="400" y="395" width="315" height="170" rx="20" fill="#f8fafc" stroke="#dce3ea"/>
+  <rect x="745" y="395" width="315" height="170" rx="20" fill="#f8fafc" stroke="#dce3ea"/>
+  <rect x="1095" y="395" width="315" height="170" rx="20" fill="#f8fafc" stroke="#dce3ea"/>
+  <rect x="430" y="430" width="120" height="22" rx="8" fill="#2f64b1"/>
+  <rect x="775" y="430" width="160" height="22" rx="8" fill="#167c80"/>
+  <rect x="1125" y="430" width="150" height="22" rx="8" fill="#b87018"/>
+  <rect x="430" y="470" width="220" height="18" rx="8" fill="#5a6573"/>
+  <rect x="775" y="470" width="225" height="18" rx="8" fill="#5a6573"/>
+  <rect x="1125" y="470" width="220" height="18" rx="8" fill="#5a6573"/>
+  <rect x="400" y="610" width="1010" height="190" rx="24" fill="#f5fbfb" stroke="#dce3ea"/>
+  <rect x="430" y="645" width="220" height="24" rx="8" fill="#167c80"/>
+  <rect x="430" y="690" width="760" height="18" rx="8" fill="#5a6573"/>
+  <rect x="430" y="725" width="680" height="18" rx="8" fill="#5a6573"/>
+  <circle cx="1320" cy="705" r="62" fill="#f5c46b"/>
+  <path d="M1290 705l22 22 46-56" fill="none" stroke="#17202a" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

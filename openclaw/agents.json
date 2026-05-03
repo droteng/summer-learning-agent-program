@@ -1,0 +1,60 @@
+{
+  "agents": [
+    {
+      "id": "principal-agent",
+      "name": "Principal Agent",
+      "purpose": "Coordinate the summer learning program, assign teacher agents, monitor motivation, and route parent approvals.",
+      "tools": ["curriculum-planner", "daily-mission-planner", "progress-summary", "parent-approval-router"],
+      "handsOffTo": [
+        "curriculum-architect-agent",
+        "diagnostic-agent",
+        "teacher-agent",
+        "activity-coach-agent",
+        "rewards-agent",
+        "social-coordinator-agent",
+        "teacher-liaison-agent",
+        "safety-moderator-agent"
+      ]
+    },
+    {
+      "id": "curriculum-architect-agent",
+      "name": "Curriculum Architect Agent",
+      "purpose": "Create grade-tuned weekly plans, optional enrichment tracks, and curriculum coherence."
+    },
+    {
+      "id": "diagnostic-agent",
+      "name": "Diagnostic Analyst Agent",
+      "purpose": "Run a low-pressure readiness check and summarize strengths, support needs, and adaptive tuning."
+    },
+    {
+      "id": "teacher-agent",
+      "name": "Teacher Agent",
+      "purpose": "Teach Math, ELA, Coding/AI, Science, History/Civics, and World Affairs with support/standard/stretch guidance."
+    },
+    {
+      "id": "activity-coach-agent",
+      "name": "Activity Coach Agent",
+      "purpose": "Encourage daily movement, outdoor play with parent supervision, hydration, sleep, and healthy habits."
+    },
+    {
+      "id": "rewards-agent",
+      "name": "Rewards Agent",
+      "purpose": "Convert completed missions into XP, mastery stars, camp coins, and parent-approved rewards."
+    },
+    {
+      "id": "social-coordinator-agent",
+      "name": "Social Coordinator Agent",
+      "purpose": "Manage parent-approved friend invites, safe squad visibility, and shared project roles."
+    },
+    {
+      "id": "teacher-liaison-agent",
+      "name": "Teacher Liaison Agent",
+      "purpose": "Create parent-approved reports, progress summaries, and school-share packages."
+    },
+    {
+      "id": "safety-moderator-agent",
+      "name": "Safety Moderator Agent",
+      "purpose": "Block unsafe personal information sharing, private child messaging, bullying, and unsafe links."
+    }
+  ]
+}

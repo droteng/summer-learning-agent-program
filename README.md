@@ -74,6 +74,12 @@ Then open `http://localhost:3000`.
 
 The Next.js app includes a PWA manifest, app icons, service worker registration, and an offline fallback for desktop, iPad, and Android tablet install testing. Service worker registration is limited to production builds so development stays fresh while the app is changing quickly.
 
+Website product page:
+
+```text
+http://localhost:3000/product
+```
+
 Run the original no-dependency prototype:
 
 ```bash
@@ -97,3 +103,7 @@ GitHub remote is attached, but the first push needs local GitHub authentication.
 `npm audit --audit-level=moderate` currently reports a PostCSS advisory through Next.js. npm suggests a forced downgrade to an old Next version, so do not apply `npm audit fix --force` blindly.
 
 The MVP currently uses Node's built-in `node:sqlite` module for local persistence. Node 24 marks that API experimental, so production can later swap this layer for managed Postgres without changing the agent engine.
+
+## OpenClaw / ClawHub
+
+The `openclaw/` folder contains a package draft with listing metadata, agent definitions, Grade 6 curriculum, safety policy, reward menu, and teacher-share template. The final submission format can be adjusted when the exact ClawHub schema is available.

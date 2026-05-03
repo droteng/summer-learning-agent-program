@@ -52,6 +52,8 @@
 - Local parent/child passcode authentication.
 - Saved local family account credentials.
 - Desktop and tablet PWA install shell.
+- Website product page.
+- OpenClaw/ClawHub package draft assets.
 - Production parent/child accounts.
 
 ## Phase 3: Curriculum Depth
@@ -79,6 +81,7 @@
 
 - Website subscription flow.
 - ClawHub/OpenClaw packaging.
+- ClawHub listing submission once final schema is known.
 - Desktop-friendly PWA.
 - iPad and Android tablet responsive layouts.
 - Later native wrappers if needed for deeper parental control integration.

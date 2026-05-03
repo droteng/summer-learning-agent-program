@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "0.1",
+  "packageId": "learning-squad-ai.grade6-summer",
+  "name": "learning-squad.ai Grade 6 Summer Learning Squad",
+  "version": "0.1.0",
+  "status": "mvp",
+  "category": "education",
+  "audience": ["parents", "homeschool families", "tutors", "summer programs"],
+  "summary": "A parent-supervised multi-agent summer learning program with daily missions, adaptive teacher guidance, rewards, wellness prompts, friend invites, and teacher-share reports.",
+  "entryAgent": "principal-agent",
+  "recommendedRuntime": {
+    "node": ">=22",
+    "web": "Next.js PWA",
+    "storage": "local SQLite for MVP"
+  },
+  "distribution": {
+    "clawHub": {
+      "listingTitle": "Grade 6 Summer Learning Agent Program",
+      "priceModel": "subscription-or-one-time-template",
+      "buyerControlsRequired": true
+    },
+    "website": {
+      "route": "/product",
+      "pwaReady": true
+    }
+  },
+  "privacy": {
+    "parentControlled": true,
+    "childDirectMessages": false,
+    "teacherSharingRequiresParentApproval": true,
+    "friendInvitesRequireParentApproval": true
+  },
+  "includedFiles": [
+    "agents.json",
+    "curriculum.grade6.json",
+    "safety-policy.json",
+    "reward-menu.json",
+    "teacher-share-template.md"
+  ]
+}

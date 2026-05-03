@@ -1,0 +1,27 @@
+{
+  "parentApprovalRequiredFor": [
+    "friend invitations",
+    "teacher sharing",
+    "reward approval",
+    "external messaging",
+    "live sessions",
+    "faith content",
+    "school report sharing"
+  ],
+  "blockedByDefault": [
+    "private unsupervised child-to-child direct messages",
+    "public child discovery",
+    "public leaderboards",
+    "exact score sharing with friends",
+    "health answer sharing with friends",
+    "faith reflection sharing with friends"
+  ],
+  "moderationRules": [
+    "Block phone numbers, emails, addresses, and other personal identifiers.",
+    "Block bullying, insults, sexual content, and unsafe links.",
+    "Keep parent-visible logs for social learning actions.",
+    "Use encouraging academic feedback and avoid shaming."
+  ],
+  "healthDisclaimer": "Health & Wellness content is general education about nutrition, activity, hydration, sleep, and chronic disease prevention. It does not diagnose, treat, or shame children.",
+  "faithDisclaimer": "Christian Leadership content is optional and parent-controlled."
+}

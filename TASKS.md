@@ -52,6 +52,8 @@
 - [ ] Replace local family account with production parent/child accounts and sessions.
 - [x] Expand curriculum tuning framework beyond the Grade 6 launch track.
 - [x] Add desktop and tablet PWA install shell.
+- [x] Add OpenClaw/ClawHub package draft assets.
+- [x] Add website product page.
 - [ ] Author full grade-specific curriculum for Grades 5, 7, and 8.
 
 ## Later

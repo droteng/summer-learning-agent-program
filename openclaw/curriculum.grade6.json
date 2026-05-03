@@ -1,0 +1,63 @@
+{
+  "gradeLevel": 6,
+  "programLengthWeeks": 8,
+  "dailySessionMinutes": "45-60",
+  "coreSubjects": [
+    "Math",
+    "ELA/Writing",
+    "Coding/Computer Science/AI",
+    "Science",
+    "History/Civics",
+    "World/Current Affairs"
+  ],
+  "optionalTracks": [
+    "Health & Wellness",
+    "Christian Leadership",
+    "Financial Literacy",
+    "Media Literacy",
+    "Creativity / Design",
+    "Study Skills"
+  ],
+  "weeks": [
+    {
+      "weekNumber": 1,
+      "theme": "Explorer Mode",
+      "project": "Create a personal learning map."
+    },
+    {
+      "weekNumber": 2,
+      "theme": "Numbers in the Real World",
+      "project": "Build a mini data dashboard about a favorite activity."
+    },
+    {
+      "weekNumber": 3,
+      "theme": "Story Builders",
+      "project": "Write and polish a short adventure story."
+    },
+    {
+      "weekNumber": 4,
+      "theme": "Code Your First Tool",
+      "project": "Create a simple quiz, calculator, or game logic plan."
+    },
+    {
+      "weekNumber": 5,
+      "theme": "Earth and Inventions",
+      "project": "Pitch an invention that solves a real problem."
+    },
+    {
+      "weekNumber": 6,
+      "theme": "World Affairs for Kids",
+      "project": "Create a kid-friendly explainer about a world issue."
+    },
+    {
+      "weekNumber": 7,
+      "theme": "History Missions",
+      "project": "Create a history mission board."
+    },
+    {
+      "weekNumber": 8,
+      "theme": "Capstone Week",
+      "project": "Complete a showcase project."
+    }
+  ]
+}
