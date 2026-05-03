@@ -59,6 +59,23 @@ type DiagnosticQuest = {
   completionRule: string;
 };
 
+type DiagnosticSummary = {
+  status: string;
+  answeredCount: number;
+  totalQuestions: number;
+  headline: string;
+  subjectSummaries: Array<{
+    id: string;
+    subject: string;
+    readiness: "support" | "standard" | "stretch";
+    strength: string;
+    supportNeed: string;
+  }>;
+  strengths: string[];
+  supportPriorities: string[];
+  parentNextSteps: string[];
+};
+
 type LessonGuide = {
   title: string;
   openingMove: string;
@@ -138,6 +155,7 @@ export default function Home() {
   const [plan, setPlan] = useState<ProgramPlan | null>(null);
   const [diagnosticQuest, setDiagnosticQuest] = useState<DiagnosticQuest | null>(null);
   const [diagnosticDrafts, setDiagnosticDrafts] = useState<Record<string, string>>({});
+  const [diagnosticSummary, setDiagnosticSummary] = useState<DiagnosticSummary | null>(null);
   const [lessonGuide, setLessonGuide] = useState<LessonGuide | null>(null);
   const [lessonStatus, setLessonStatus] = useState("Loading teacher guide...");
   const [weekNumber, setWeekNumber] = useState(1);
@@ -218,6 +236,13 @@ export default function Home() {
   }, [progress.diagnosticAnswers]);
 
   useEffect(() => {
+    if (diagnosticQuest && Object.values(progress.diagnosticAnswers ?? {}).some(Boolean)) {
+      generateDiagnosticSummary(progress.diagnosticAnswers);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [diagnosticQuest?.title, progress.diagnosticAnswers]);
+
+  useEffect(() => {
     if (selectedMission) {
       generateLessonGuide(selectedMission);
     }
@@ -260,6 +285,26 @@ export default function Home() {
     const quest = await response.json();
     setDiagnosticQuest(quest);
     setDiagnosticDrafts(progress.diagnosticAnswers);
+  }
+
+  async function generateDiagnosticSummary(answers: Record<string, string>) {
+    if (!diagnosticQuest) {
+      return;
+    }
+
+    const response = await fetch("/api/diagnostic-summary", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        studentProfile: payload.studentProfile,
+        quest: diagnosticQuest,
+        answers
+      })
+    });
+    const summary = await response.json();
+    setDiagnosticSummary(summary);
   }
 
   async function generateLessonGuide(mission: Mission) {
@@ -406,6 +451,7 @@ export default function Home() {
       diagnosticAnswers: cleanedAnswers,
       diagnosticCompleted: answeredCount >= 5
     });
+    await generateDiagnosticSummary(cleanedAnswers);
   }
 
   async function completeMission() {
@@ -712,6 +758,50 @@ export default function Home() {
             </span>
           </div>
           {isParent && <p className="quiet">{diagnosticQuest?.parentNote}</p>}
+          {diagnosticSummary && (
+            <div className="diagnostic-summary">
+              <div className="section-head">
+                <div>
+                  <p className="eyebrow">Diagnostic Analyst</p>
+                  <h3>{diagnosticSummary.headline}</h3>
+                </div>
+                <span className="pill">
+                  {diagnosticSummary.answeredCount}/{diagnosticSummary.totalQuestions}
+                </span>
+              </div>
+              <div className="summary-columns">
+                <div>
+                  <strong>Strengths</strong>
+                  {diagnosticSummary.strengths.map((item) => (
+                    <span key={item}>{item}</span>
+                  ))}
+                </div>
+                <div>
+                  <strong>Support priorities</strong>
+                  {diagnosticSummary.supportPriorities.map((item) => (
+                    <span key={item}>{item}</span>
+                  ))}
+                </div>
+              </div>
+              <div className="readiness-list">
+                {diagnosticSummary.subjectSummaries.map((summary) => (
+                  <article key={summary.id} className={`readiness ${summary.readiness}`}>
+                    <strong>{summary.subject}</strong>
+                    <span>{summary.readiness}</span>
+                    {isParent && <small>{summary.supportNeed}</small>}
+                  </article>
+                ))}
+              </div>
+              {isParent && (
+                <div className="next-steps">
+                  <strong>Parent next steps</strong>
+                  {diagnosticSummary.parentNextSteps.map((step) => (
+                    <span key={step}>{step}</span>
+                  ))}
+                </div>
+              )}
+            </div>
+          )}
         </section>
 
         <section className="grid">

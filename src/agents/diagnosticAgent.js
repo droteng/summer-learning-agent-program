@@ -63,3 +63,90 @@ export function createDiagnosticQuest(studentProfile) {
     completionRule: "Answer at least 5 prompts, then the parent can review the pattern of strengths and supports."
   };
 }
+
+export function summarizeDiagnosticResults({ quest, answers = {} }) {
+  const questionSummaries = quest.questions.map((question) => {
+    const answer = (answers[question.id] ?? "").trim();
+    const wordCount = answer ? answer.split(/\s+/).length : 0;
+    const readiness = getReadinessLevel({ answer, wordCount });
+
+    return {
+      id: question.id,
+      subject: question.subject,
+      readiness,
+      wordCount,
+      strength: createStrengthNote({ subject: question.subject, readiness }),
+      supportNeed: createSupportNeed({ subject: question.subject, readiness }),
+      lookFor: question.lookFor
+    };
+  });
+  const answeredCount = questionSummaries.filter((item) => item.wordCount > 0).length;
+  const strengthSubjects = questionSummaries
+    .filter((item) => item.readiness === "stretch")
+    .map((item) => item.subject);
+  const supportSubjects = questionSummaries
+    .filter((item) => item.readiness === "support")
+    .map((item) => item.subject);
+
+  return {
+    status: answeredCount >= 5 ? "ready_for_parent_review" : "needs_more_answers",
+    answeredCount,
+    totalQuestions: quest.questions.length,
+    headline:
+      answeredCount >= 5
+        ? "Diagnostic summary is ready for parent review."
+        : "Answer at least 5 prompts to unlock a fuller readiness summary.",
+    subjectSummaries: questionSummaries,
+    strengths: strengthSubjects.length > 0 ? strengthSubjects : ["Effort and willingness to begin"],
+    supportPriorities: supportSubjects.length > 0 ? supportSubjects : ["Keep building consistency across subjects"],
+    parentNextSteps: [
+      "Praise effort before correcting answers.",
+      "Choose one support subject for short daily practice.",
+      "Use stretch prompts only when the child can explain their thinking calmly.",
+      "Revisit the diagnostic after Week 1 to compare growth."
+    ]
+  };
+}
+
+function getReadinessLevel({ answer, wordCount }) {
+  if (!answer) {
+    return "support";
+  }
+
+  const lower = answer.toLowerCase();
+  const evidenceWords = ["because", "therefore", "for example", "measure", "change", "first", "then", "fact"];
+
+  if (wordCount >= 22 && evidenceWords.some((word) => lower.includes(word))) {
+    return "stretch";
+  }
+
+  if (wordCount >= 8) {
+    return "standard";
+  }
+
+  return "support";
+}
+
+function createStrengthNote({ subject, readiness }) {
+  if (readiness === "stretch") {
+    return `${subject}: strong explanation and enough detail for stretch work.`;
+  }
+
+  if (readiness === "standard") {
+    return `${subject}: ready for on-grade practice with light coaching.`;
+  }
+
+  return `${subject}: ready to start with guided examples and confidence-building prompts.`;
+}
+
+function createSupportNeed({ subject, readiness }) {
+  if (readiness === "stretch") {
+    return "Offer extension questions and ask the child to teach the idea back.";
+  }
+
+  if (readiness === "standard") {
+    return "Ask for one more detail, example, or explanation step.";
+  }
+
+  return `Use shorter ${subject} tasks, sentence starters, and parent encouragement.`;
+}

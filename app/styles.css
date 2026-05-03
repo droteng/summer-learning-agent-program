@@ -368,6 +368,67 @@ h3 {
   padding-top: 14px;
 }
 
+.diagnostic-summary {
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  margin-top: 16px;
+}
+
+.summary-columns,
+.readiness-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.summary-columns div,
+.next-steps {
+  display: grid;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #f8fafc;
+}
+
+.summary-columns span,
+.next-steps span {
+  color: var(--muted);
+}
+
+.readiness-list {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.readiness {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  border-top: 4px solid var(--blue);
+  padding: 10px;
+  background: white;
+}
+
+.readiness.support {
+  border-top-color: var(--amber);
+}
+
+.readiness.stretch {
+  border-top-color: var(--green);
+}
+
+.readiness span,
+.readiness small {
+  color: var(--muted);
+}
+
+.next-steps {
+  margin-top: 12px;
+}
+
 .task-card {
   display: grid;
   align-content: start;
@@ -489,7 +550,9 @@ h3 {
 
   .mission-cards,
   .diagnostic-grid,
+  .summary-columns,
   .lesson-grid,
+  .readiness-list,
   .progress-grid {
     grid-template-columns: 1fr;
   }
