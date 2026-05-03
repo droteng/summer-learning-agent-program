@@ -26,6 +26,10 @@ type Mission = {
   creativeChallenge: string;
   reflectionPrompt: string;
   bodyCheck: string[];
+  launchBrief?: string;
+  parentReview?: string;
+  projectMilestone?: string;
+  celebrationPrompt?: string;
   rewardOpportunity: {
     xp: number;
     masteryStars: number;
@@ -874,6 +878,19 @@ export default function Home() {
 
             {selectedMission && (
               <>
+                {selectedMission.launchBrief && (
+                  <div className="launch-brief">
+                    <div>
+                      <p className="eyebrow">Week 1 Launch</p>
+                      <h3>{selectedMission.launchBrief}</h3>
+                    </div>
+                    <div className="launch-details">
+                      <span>{selectedMission.projectMilestone}</span>
+                      {isParent && <span>{selectedMission.parentReview}</span>}
+                      <span>{selectedMission.celebrationPrompt}</span>
+                    </div>
+                  </div>
+                )}
                 <div className="mission-cards">
                   <TaskCard title="Warm-up" body={selectedMission.warmup} />
                   {selectedMission.lessons.map((lesson) => (

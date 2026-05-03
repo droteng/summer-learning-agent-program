@@ -332,6 +332,31 @@ h3 {
   gap: 10px;
 }
 
+.launch-brief {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.8fr) minmax(280px, 1.2fr);
+  gap: 16px;
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--teal);
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  background: #f5fbfb;
+}
+
+.launch-details {
+  display: grid;
+  gap: 8px;
+}
+
+.launch-details span {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  background: white;
+  color: var(--muted);
+}
+
 .diagnostic-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -577,6 +602,7 @@ h3 {
   }
 
   .mission-cards,
+  .launch-brief,
   .diagnostic-grid,
   .summary-columns,
   .lesson-grid,

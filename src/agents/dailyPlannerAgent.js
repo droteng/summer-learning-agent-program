@@ -1,6 +1,7 @@
 import { createBodyCheck } from "./activityCoachAgent.js";
 import { createMasteryCheck, summarizeWeeklyProgress } from "./assessmentAgent.js";
 import { suggestDailyRewardOpportunity } from "./rewardsAgent.js";
+import { enrichWeekOneMission } from "./weekOneLaunchAgent.js";
 import { enrichmentMissionTemplates, subjectMissions } from "../data/subjectMissions.js";
 
 const weekdayLabels = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
@@ -38,7 +39,7 @@ export function createDailyMission({ week, studentProfile, dayLabel, dayNumber, 
     task: chooseEnrichmentTask(trackLabel, dayNumber)
   }));
 
-  return {
+  const mission = {
     dayLabel,
     dayNumber,
     theme: week.theme,
@@ -50,6 +51,8 @@ export function createDailyMission({ week, studentProfile, dayLabel, dayNumber, 
     bodyCheck: createBodyCheck(studentProfile.activityPreferences),
     rewardOpportunity: suggestDailyRewardOpportunity(dayNumber)
   };
+
+  return week.weekNumber === 1 ? enrichWeekOneMission({ mission, dayNumber }) : mission;
 }
 
 function chooseFocusSubjects({ weekNumber, dayNumber }) {
@@ -92,4 +95,3 @@ function createReflectionPrompt(dayNumber) {
 
   return prompts[(dayNumber - 1) % prompts.length];
 }
-
