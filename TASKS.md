@@ -50,7 +50,8 @@
 - [x] Add friend invite MVP UI.
 - [x] Replace hardcoded MVP passcodes with saved local family account credentials.
 - [ ] Replace local family account with production parent/child accounts and sessions.
-- [ ] Expand curriculum tuning beyond the Grade 6 launch track.
+- [x] Expand curriculum tuning framework beyond the Grade 6 launch track.
+- [ ] Author full grade-specific curriculum for Grades 5, 7, and 8.
 
 ## Later
 

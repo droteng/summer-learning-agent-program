@@ -17,6 +17,8 @@ export async function POST(request: Request) {
     parentSummary: plan.parentSummary,
     rewardPlan: plan.rewardPlan,
     adaptiveTuning: plan.adaptiveTuning,
+    gradeTuning: plan.curriculum.gradeTuning,
+    tunedCoreSubjects: plan.curriculum.tunedCoreSubjects,
     firstWeekSummary: plan.weeklyMissionPlans[0].weeklyProgressSummary,
     firstDailyMission: plan.dailyMissionPreview,
     weeklyThemes: plan.curriculum.weeks.map((week: any) => ({

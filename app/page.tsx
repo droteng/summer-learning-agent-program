@@ -49,6 +49,14 @@ type ProgramPlan = {
     headline: string;
     totalPlannedMissions: number;
   };
+  gradeTuning?: {
+    label: string;
+    status: string;
+  };
+  tunedCoreSubjects?: Array<{
+    name: string;
+    guidance: string;
+  }>;
   rewardPlan: {
     weeklyRewardMenu: string[];
   };
@@ -188,9 +196,9 @@ const interestOptions = ["games", "sports", "projects", "music", "art", "science
 
 const gradeOptions = [
   { value: 6, label: "Grade 6", enabled: true },
-  { value: 5, label: "Grade 5", enabled: false },
-  { value: 7, label: "Grade 7", enabled: false },
-  { value: 8, label: "Grade 8", enabled: false }
+  { value: 5, label: "Grade 5 preview", enabled: true },
+  { value: 7, label: "Grade 7 preview", enabled: true },
+  { value: 8, label: "Grade 8 preview", enabled: true }
 ];
 
 const emptyProgress: Progress = {
@@ -966,6 +974,16 @@ export default function Home() {
                 ))}
               </select>
             </label>
+            {plan?.gradeTuning && (
+              <div className="grade-tuning-note">
+                <strong>{plan.gradeTuning.label}</strong>
+                <span>
+                  {plan.gradeTuning.status === "launch"
+                    ? "Full Grade 6 launch curriculum is active."
+                    : "Preview tuning changes difficulty language while full grade-specific curriculum is still planned."}
+                </span>
+              </div>
+            )}
             <div className="form-group">
               <span>Interests</span>
               <div className="choice-list">
@@ -1161,6 +1179,17 @@ export default function Home() {
                 </select>
               </label>
             </div>
+
+            {plan?.tunedCoreSubjects && (
+              <div className="subject-tuning">
+                {plan.tunedCoreSubjects.slice(0, 4).map((subject) => (
+                  <article key={subject.name}>
+                    <strong>{subject.name}</strong>
+                    <span>{subject.guidance}</span>
+                  </article>
+                ))}
+              </div>
+            )}
 
             {selectedMission && (
               <>

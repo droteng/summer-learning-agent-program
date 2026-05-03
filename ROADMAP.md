@@ -57,6 +57,7 @@
 
 - Full 8-week Grade 6 core curriculum.
 - Grade tuning framework for additional U.S. grade levels.
+- Full grade-specific curriculum expansion for Grades 5, 7, and 8.
 - Health & Wellness enrichment.
 - Christian Leadership enrichment.
 - Financial Literacy enrichment.

@@ -312,6 +312,20 @@ h3 {
   text-transform: capitalize;
 }
 
+.grade-tuning-note {
+  display: grid;
+  gap: 6px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--blue);
+  border-radius: 8px;
+  padding: 12px;
+  background: #f8fafc;
+}
+
+.grade-tuning-note span {
+  color: var(--muted);
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -342,6 +356,26 @@ h3 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
+}
+
+.subject-tuning {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.subject-tuning article {
+  display: grid;
+  gap: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: white;
+}
+
+.subject-tuning span {
+  color: var(--muted);
 }
 
 .launch-brief {
@@ -698,6 +732,7 @@ h3 {
 
   .mission-cards,
   .launch-brief,
+  .subject-tuning,
   .diagnostic-grid,
   .squad-grid,
   .summary-columns,
