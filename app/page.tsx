@@ -160,6 +160,20 @@ type StudentProfile = {
   };
 };
 
+type FamilyAccount = {
+  id: string;
+  parent: {
+    name: string;
+    email: string;
+  };
+  children: Array<{
+    id: string;
+    firstName: string;
+    role: string;
+  }>;
+  credentialVersion: string;
+};
+
 const profileId = "mvp-preview-profile";
 const studentId = "mvp-preview-student";
 
@@ -217,6 +231,12 @@ export default function Home() {
   const [shareExport, setShareExport] = useState("");
   const [profileStatus, setProfileStatus] = useState("Loading saved profile...");
   const [profileReady, setProfileReady] = useState(false);
+  const [familyAccount, setFamilyAccount] = useState<FamilyAccount | null>(null);
+  const [parentName, setParentName] = useState("Parent");
+  const [parentEmail, setParentEmail] = useState("");
+  const [setupParentPasscode, setSetupParentPasscode] = useState("");
+  const [setupChildPasscode, setSetupChildPasscode] = useState("");
+  const [accountStatus, setAccountStatus] = useState("Loading family account...");
   const [persistenceStatus, setPersistenceStatus] = useState("Loading saved progress...");
   const [role, setRole] = useState<UserRole>("child");
   const [authRole, setAuthRole] = useState<UserRole>("child");
@@ -254,6 +274,7 @@ export default function Home() {
   );
 
   useEffect(() => {
+    loadAccount();
     loadProfile();
     loadProgress();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -394,6 +415,59 @@ export default function Home() {
       setLessonGuide(null);
       setLessonStatus("Teacher guide could not be loaded.");
     }
+  }
+
+  async function loadAccount() {
+    try {
+      const response = await fetch("/api/account");
+      const result = await response.json();
+
+      if (result.account) {
+        setFamilyAccount(result.account);
+        setParentName(result.account.parent?.name ?? "Parent");
+        setParentEmail(result.account.parent?.email ?? "");
+        setAccountStatus("Family account loaded.");
+      } else {
+        setAccountStatus("Create a local family account to replace default MVP passcodes.");
+      }
+    } catch {
+      setAccountStatus("Family account service is unavailable.");
+    }
+  }
+
+  async function saveFamilyAccount() {
+    if (!isParent && familyAccount) {
+      setAccountStatus("Parent sign-in is required to update the family account.");
+      return;
+    }
+
+    if (!setupParentPasscode || !setupChildPasscode) {
+      setAccountStatus("Set both parent and child passcodes.");
+      return;
+    }
+
+    const response = await fetch("/api/account", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        parentName,
+        parentEmail,
+        childName,
+        childId: studentId,
+        parentPasscode: setupParentPasscode,
+        childPasscode: setupChildPasscode
+      })
+    });
+    const result = await response.json();
+    setFamilyAccount(result.account);
+    setSetupParentPasscode("");
+    setSetupChildPasscode("");
+    setRole("child");
+    setAuthRole("child");
+    setIsSignedIn(false);
+    setAccountStatus("Family account saved. Sign in again with the new passcode.");
   }
 
   async function loadProfile() {
@@ -759,6 +833,7 @@ export default function Home() {
           </div>
         </div>
         <nav>
+          <a href="#account">Account</a>
           <a href="#setup">Setup</a>
           <a href="#diagnostic">Diagnostic</a>
           <a href="#mission-mode">Mission</a>
@@ -810,6 +885,63 @@ export default function Home() {
                 ? "Mission, reflection, and progress enabled"
                 : "Viewing is open; saving is locked"}
           </span>
+        </section>
+
+        <section id="account" className="panel account-panel">
+          <div>
+            <p className="eyebrow">Family Account</p>
+            <h2>Parent-owned local account</h2>
+            <p className="quiet">{accountStatus}</p>
+          </div>
+          <div className="account-grid">
+            <label>
+              Parent name
+              <input
+                disabled={!isParent && !!familyAccount}
+                value={parentName}
+                onChange={(event) => setParentName(event.target.value)}
+              />
+            </label>
+            <label>
+              Parent email
+              <input
+                disabled={!isParent && !!familyAccount}
+                value={parentEmail}
+                onChange={(event) => setParentEmail(event.target.value)}
+                placeholder="parent@example.com"
+              />
+            </label>
+            <label>
+              Parent passcode
+              <input
+                disabled={!isParent && !!familyAccount}
+                type="password"
+                value={setupParentPasscode}
+                onChange={(event) => setSetupParentPasscode(event.target.value)}
+                placeholder={familyAccount ? "New parent passcode" : "Create parent passcode"}
+              />
+            </label>
+            <label>
+              Child passcode
+              <input
+                disabled={!isParent && !!familyAccount}
+                type="password"
+                value={setupChildPasscode}
+                onChange={(event) => setSetupChildPasscode(event.target.value)}
+                placeholder={familyAccount ? "New child passcode" : "Create child passcode"}
+              />
+            </label>
+          </div>
+          <div className="actions">
+            <button disabled={!isParent && !!familyAccount} onClick={saveFamilyAccount}>
+              {familyAccount ? "Update account" : "Create account"}
+            </button>
+            <span>
+              {familyAccount
+                ? `Account: ${familyAccount.parent.name || "Parent"} / ${familyAccount.children[0]?.firstName || childName}`
+                : "Until this is created, the default MVP passcodes still work."}
+            </span>
+          </div>
         </section>
 
         <section id="setup" className={`panel setup ${!isParent ? "locked-panel" : ""}`}>

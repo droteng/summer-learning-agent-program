@@ -11,6 +11,21 @@
 - activityPreferences
 - rewardPreferences
 
+## FamilyAccount
+
+- id
+- parent
+- parent.name
+- parent.email
+- children
+- children.id
+- children.firstName
+- credentials.version
+- credentials.parentSalt
+- credentials.childSalt
+- credentials.parentPasscodeHash
+- credentials.childPasscodeHash
+
 ## ParentPolicy
 
 - allowedRewards
@@ -68,4 +83,3 @@
 - includedProjects
 - transcriptSummary
 - certificateLinks
-

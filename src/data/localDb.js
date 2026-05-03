@@ -22,6 +22,12 @@ export function getLocalDb() {
         profile_json TEXT NOT NULL,
         updated_at TEXT NOT NULL
       );
+
+      CREATE TABLE IF NOT EXISTS family_accounts (
+        account_id TEXT PRIMARY KEY,
+        account_json TEXT NOT NULL,
+        updated_at TEXT NOT NULL
+      );
     `);
   }
 
@@ -84,6 +90,41 @@ export function saveProfileSnapshot({ profileId, profile }) {
 
   return {
     profile,
+    updatedAt
+  };
+}
+
+export function loadFamilyAccount(accountId = "local-family") {
+  const row = getLocalDb()
+    .prepare("SELECT account_json FROM family_accounts WHERE account_id = ?")
+    .get(accountId);
+
+  if (!row) {
+    return null;
+  }
+
+  return JSON.parse(row.account_json);
+}
+
+export function saveFamilyAccount({ accountId = "local-family", account }) {
+  const updatedAt = new Date().toISOString();
+  const nextAccount = {
+    ...account,
+    id: accountId,
+    updatedAt
+  };
+
+  getLocalDb()
+    .prepare(
+      `INSERT INTO family_accounts (account_id, account_json, updated_at)
+       VALUES (?, ?, ?)
+       ON CONFLICT(account_id)
+       DO UPDATE SET account_json = excluded.account_json, updated_at = excluded.updated_at`
+    )
+    .run(accountId, JSON.stringify(nextAccount), updatedAt);
+
+  return {
+    account: nextAccount,
     updatedAt
   };
 }

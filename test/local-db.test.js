@@ -1,8 +1,10 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {
+  loadFamilyAccount,
   loadProfileSnapshot,
   loadProgressSnapshot,
+  saveFamilyAccount,
   saveProfileSnapshot,
   saveProgressSnapshot
 } from "../src/data/localDb.js";
@@ -47,4 +49,31 @@ test("saves and loads a parent onboarding profile", () => {
 
   assert.equal(saved.profile.firstName, "Avery");
   assert.deepEqual(loaded, profile);
+});
+
+test("saves and loads a local family account", () => {
+  const account = {
+    id: "test-family",
+    parent: {
+      name: "Leo",
+      email: "leo@example.com"
+    },
+    children: [{ id: "student-test", firstName: "Avery", role: "child" }],
+    credentials: {
+      version: "test",
+      parentSalt: "a",
+      childSalt: "b",
+      parentPasscodeHash: "hash-a",
+      childPasscodeHash: "hash-b"
+    }
+  };
+  const saved = saveFamilyAccount({
+    accountId: "test-family",
+    account
+  });
+  const loaded = loadFamilyAccount("test-family");
+
+  assert.ok(saved.updatedAt);
+  assert.equal(loaded.parent.name, "Leo");
+  assert.equal(loaded.credentials.parentPasscodeHash, "hash-a");
 });

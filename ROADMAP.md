@@ -50,6 +50,7 @@
 - Parent reward center.
 - Friend invite MVP.
 - Local parent/child passcode authentication.
+- Saved local family account credentials.
 - Production parent/child accounts.
 
 ## Phase 3: Curriculum Depth

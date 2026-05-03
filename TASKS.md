@@ -48,7 +48,8 @@
 - [x] Upgrade Week 1 launch content.
 - [x] Add parent reward center.
 - [x] Add friend invite MVP UI.
-- [ ] Replace local MVP passcodes with production parent/child accounts.
+- [x] Replace hardcoded MVP passcodes with saved local family account credentials.
+- [ ] Replace local family account with production parent/child accounts and sessions.
 - [ ] Expand curriculum tuning beyond the Grade 6 launch track.
 
 ## Later

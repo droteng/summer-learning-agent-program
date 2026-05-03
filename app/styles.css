@@ -259,6 +259,18 @@ h3 {
   background: #fbfcfd;
 }
 
+.account-panel {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.account-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
 .setup {
   display: grid;
   grid-template-columns: minmax(220px, 0.7fr) minmax(280px, 1.3fr);
@@ -657,6 +669,7 @@ h3 {
 
 @media (max-width: 900px) {
   .shell,
+  .account-grid,
   .setup,
   .grid {
     grid-template-columns: 1fr;

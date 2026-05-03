@@ -70,6 +70,7 @@ Current MVP data layer:
 - Progress snapshots are keyed by student id.
 - `app/api/progress` loads and saves progress for the Next app.
 - Parent onboarding profiles are saved through `app/api/profile`.
+- Local family account credentials are saved through `app/api/account` and stored as salted hashes.
 - Diagnostic quest answers are stored inside progress snapshots.
 - Diagnostic summaries convert child responses into strengths, support priorities, readiness levels, and parent next steps.
 - The data access layer lives in `src/data/localDb.js` so production storage can be swapped later.
@@ -100,7 +101,7 @@ Current MVP data layer:
 - SQLite/Postgres depending on deployment.
 - Server-side agent orchestration.
 - Parent-controlled auth and permissions.
-- Current MVP authentication uses local passcodes through `src/agents/authAgent.js`; production should replace this with real parent-owned accounts, child profiles, and secure session management.
+- Current MVP authentication can use saved local family account credentials through `src/agents/accountAgent.js`; production should replace this with real parent-owned accounts, child profiles, and secure session management.
 
 Current MVP shell:
 
