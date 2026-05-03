@@ -43,7 +43,12 @@
 - Parent/child role-gated MVP mode.
 - Saved parent onboarding profile for the Grade 6 launch track.
 - Low-pressure Grade 6 diagnostic quest with saved child responses.
+- Diagnostic results summary with strengths, support needs, and parent next steps.
+- Adaptive mission tuning with parent override.
 - Teacher Agent lesson guide for the selected daily mission.
+- Week 1 launch content with learning map milestones.
+- Parent reward center.
+- Friend invite MVP.
 - Local parent/child passcode authentication.
 - Production parent/child accounts.
 

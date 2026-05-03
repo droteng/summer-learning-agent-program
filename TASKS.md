@@ -43,6 +43,11 @@
 - [x] Add Grade 6 diagnostic quest.
 - [x] Add Teacher Agent lesson guidance for selected missions.
 - [x] Replace demo role switch with local parent/child passcode authentication.
+- [x] Add diagnostic results summary.
+- [x] Add adaptive mission tuning from diagnostic results.
+- [x] Upgrade Week 1 launch content.
+- [x] Add parent reward center.
+- [x] Add friend invite MVP UI.
 - [ ] Replace local MVP passcodes with production parent/child accounts.
 - [ ] Expand curriculum tuning beyond the Grade 6 launch track.
 
