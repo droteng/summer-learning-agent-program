@@ -607,6 +607,54 @@ h3 {
   justify-self: start;
 }
 
+.squad-panel {
+  display: grid;
+  gap: 14px;
+}
+
+.squad-grid {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.7fr) minmax(320px, 1.3fr);
+  gap: 16px;
+}
+
+.invite-form,
+.invite-list,
+.squad-visibility {
+  display: grid;
+  gap: 10px;
+}
+
+.invite-list article,
+.squad-visibility {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #f8fafc;
+}
+
+.invite-list article {
+  display: grid;
+  gap: 8px;
+}
+
+.invite-list span,
+.squad-visibility span {
+  color: var(--muted);
+}
+
+.invite-list code {
+  overflow-wrap: anywhere;
+  border-radius: 8px;
+  padding: 8px;
+  background: white;
+  color: var(--blue);
+}
+
+.invite-list button {
+  justify-self: start;
+}
+
 @media (max-width: 900px) {
   .shell,
   .setup,
@@ -638,6 +686,7 @@ h3 {
   .mission-cards,
   .launch-brief,
   .diagnostic-grid,
+  .squad-grid,
   .summary-columns,
   .lesson-grid,
   .readiness-list,

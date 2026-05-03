@@ -113,6 +113,7 @@ type Progress = {
   diagnosticAnswers: Record<string, string>;
   diagnosticCompleted: boolean;
   rewardRequests: RewardRequest[];
+  friendInvites: FriendInvite[];
 };
 
 type RewardRequest = {
@@ -130,6 +131,19 @@ type RewardRequest = {
     masteryStars: number;
     campCoins: number;
   };
+};
+
+type FriendInvite = {
+  id: string;
+  status: "needs_parent_approval" | "approved" | "blocked";
+  requestedBy?: string;
+  friendName: string;
+  nextStep?: string;
+  reason?: string;
+  inviteLink?: string;
+  parentMessage?: string;
+  safetyRules?: string[];
+  sharingDefaults?: Record<string, boolean>;
 };
 
 type UserRole = "parent" | "child";
@@ -173,7 +187,8 @@ const emptyProgress: Progress = {
   reflections: {},
   diagnosticAnswers: {},
   diagnosticCompleted: false,
-  rewardRequests: []
+  rewardRequests: [],
+  friendInvites: []
 };
 
 export default function Home() {
@@ -197,6 +212,8 @@ export default function Home() {
   const [reflectionDraft, setReflectionDraft] = useState("");
   const [selectedReward, setSelectedReward] = useState("");
   const [rewardStatus, setRewardStatus] = useState("Complete a mission to request a parent-approved reward.");
+  const [friendName, setFriendName] = useState("");
+  const [inviteStatus, setInviteStatus] = useState("Suggest a friend to start a parent-approved learning squad.");
   const [shareExport, setShareExport] = useState("");
   const [profileStatus, setProfileStatus] = useState("Loading saved profile...");
   const [profileReady, setProfileReady] = useState(false);
@@ -261,6 +278,8 @@ export default function Home() {
     : 0;
   const pendingRewards = progress.rewardRequests.filter((request) => request.status === "pending_parent");
   const approvedRewards = progress.rewardRequests.filter((request) => request.status === "approved");
+  const pendingInvites = progress.friendInvites.filter((invite) => invite.status === "needs_parent_approval");
+  const approvedInvites = progress.friendInvites.filter((invite) => invite.status === "approved");
 
   useEffect(() => {
     setReflectionDraft(progress.reflections[missionId] ?? "");
@@ -591,6 +610,84 @@ export default function Home() {
     setRewardStatus("Reward approved.");
   }
 
+  async function requestFriendInvite() {
+    if (!canUseLearning) {
+      setInviteStatus("Sign in to suggest a friend.");
+      return;
+    }
+
+    if (!friendName.trim()) {
+      setInviteStatus("Enter a friend's first name.");
+      return;
+    }
+
+    const response = await fetch("/api/friend-invite", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        ...payload,
+        friendName: friendName.trim()
+      })
+    });
+    const result = await response.json();
+    const invite: FriendInvite = {
+      id: `invite-${Date.now()}`,
+      ...result,
+      friendName: friendName.trim()
+    };
+
+    await saveProgress({
+      ...progress,
+      friendInvites: [invite, ...progress.friendInvites]
+    });
+    setFriendName("");
+    setInviteStatus(result.status === "blocked" ? result.reason : "Friend invite sent to parent review.");
+  }
+
+  async function approveFriendInvite(inviteId: string) {
+    if (!isParent) {
+      setInviteStatus("Parent sign-in is required to approve friend invites.");
+      return;
+    }
+
+    const invite = progress.friendInvites.find((item) => item.id === inviteId);
+
+    if (!invite) {
+      return;
+    }
+
+    const response = await fetch("/api/friend-invite", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        ...payload,
+        friendName: invite.friendName,
+        approve: true,
+        baseUrl: "https://learning-squad.ai"
+      })
+    });
+    const result = await response.json();
+
+    await saveProgress({
+      ...progress,
+      friendInvites: progress.friendInvites.map((item) =>
+        item.id === inviteId
+          ? {
+              ...item,
+              ...result,
+              id: item.id,
+              friendName: item.friendName
+            }
+          : item
+      )
+    });
+    setInviteStatus("Parent-approved invite link created.");
+  }
+
   async function prepareTeacherShare() {
     if (!isParent) {
       setShareExport("Teacher sharing is parent-controlled. Switch to parent view to prepare a report.");
@@ -666,6 +763,7 @@ export default function Home() {
           <a href="#diagnostic">Diagnostic</a>
           <a href="#mission-mode">Mission</a>
           <a href="#progress">Progress</a>
+          <a href="#squad">Squad</a>
           <a href="#share">Share</a>
         </nav>
       </aside>
@@ -1064,6 +1162,49 @@ export default function Home() {
               <span>Family walk, park, sports, bike, or swimming time</span>
               <span>Cook a favorite healthy snack together</span>
               <span>Board game, movie night, or project showcase call</span>
+            </div>
+          </article>
+
+          <article id="squad" className="panel wide squad-panel">
+            <div className="section-head">
+              <div>
+                <p className="eyebrow">Social Coordinator</p>
+                <h2>Friend invite MVP</h2>
+              </div>
+              <span className="pill">{pendingInvites.length} pending / {approvedInvites.length} approved</span>
+            </div>
+            <div className="squad-grid">
+              <div className="invite-form">
+                <label>
+                  Friend first name
+                  <input
+                    disabled={!canUseLearning}
+                    value={friendName}
+                    onChange={(event) => setFriendName(event.target.value)}
+                    placeholder="Jordan"
+                  />
+                </label>
+                <button disabled={!canUseLearning} onClick={requestFriendInvite}>Suggest friend</button>
+                <p className="quiet">{inviteStatus}</p>
+              </div>
+              <div className="invite-list">
+                {progress.friendInvites.length === 0 && <p className="quiet">No friend invites yet.</p>}
+                {progress.friendInvites.map((invite) => (
+                  <article key={invite.id}>
+                    <strong>{invite.friendName}</strong>
+                    <span>{invite.status === "approved" ? invite.parentMessage : invite.nextStep ?? invite.reason}</span>
+                    {invite.inviteLink && <code>{invite.inviteLink}</code>}
+                    {invite.status === "needs_parent_approval" && (
+                      <button disabled={!isParent} onClick={() => approveFriendInvite(invite.id)}>Approve invite</button>
+                    )}
+                  </article>
+                ))}
+              </div>
+            </div>
+            <div className="squad-visibility">
+              <strong>Default squad visibility</strong>
+              <span>Shows badges and completed missions.</span>
+              <span>Hides exact scores, private reflections, health answers, and faith reflections.</span>
             </div>
           </article>
 

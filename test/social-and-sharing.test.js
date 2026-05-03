@@ -2,7 +2,11 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { createProgramPlan } from "../src/agents/principalAgent.js";
 import { moderateChildMessage } from "../src/agents/safetyModeratorAgent.js";
-import { createInvitationRequest, createLearningSquad } from "../src/agents/socialCoordinatorAgent.js";
+import {
+  approveInvitationRequest,
+  createInvitationRequest,
+  createLearningSquad
+} from "../src/agents/socialCoordinatorAgent.js";
 import { createTeacherSharePackage } from "../src/agents/teacherLiaisonAgent.js";
 
 const student = {
@@ -31,6 +35,23 @@ test("friend invitations require parent approval", () => {
 
   assert.equal(request.status, "needs_parent_approval");
   assert.ok(request.safetyRules.some((rule) => rule.includes("parent")));
+});
+
+test("parent approval creates a safe friend invite link", () => {
+  const request = createInvitationRequest({
+    child: student,
+    friendName: "Jordan",
+    parentPolicy
+  });
+  const approved = approveInvitationRequest({
+    invitationRequest: request,
+    baseUrl: "https://learning-squad.ai"
+  });
+
+  assert.equal(approved.status, "approved");
+  assert.ok(approved.inviteLink.includes("/join/"));
+  assert.equal(approved.sharingDefaults.showExactScores, false);
+  assert.equal(approved.sharingDefaults.showHealthAnswers, false);
 });
 
 test("learning squads hide sensitive details by default", () => {

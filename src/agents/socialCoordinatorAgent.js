@@ -20,6 +20,26 @@ export function createInvitationRequest({ child, friendName, parentPolicy }) {
   };
 }
 
+export function approveInvitationRequest({ invitationRequest, approvedBy = "parent", baseUrl = "https://learning-squad.ai" }) {
+  const token = createInviteToken(invitationRequest.requestedBy, invitationRequest.friendName);
+
+  return {
+    ...invitationRequest,
+    status: "approved",
+    approvedBy,
+    inviteLink: `${baseUrl}/join/${token}`,
+    parentMessage: `A parent-approved learning squad invitation is ready for ${invitationRequest.friendName}'s parent.`,
+    sharingDefaults: {
+      showBadges: true,
+      showCompletedMissions: true,
+      showExactScores: false,
+      showPrivateReflections: false,
+      showHealthAnswers: false,
+      showFaithReflections: false
+    }
+  };
+}
+
 export function createLearningSquad({ name, students }) {
   return {
     name,
@@ -40,3 +60,10 @@ export function createLearningSquad({ name, students }) {
   };
 }
 
+function createInviteToken(requestedBy = "student", friendName = "friend") {
+  return `${requestedBy}-${friendName}`
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "")
+    .slice(0, 48);
+}
