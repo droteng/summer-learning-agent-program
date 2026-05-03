@@ -112,6 +112,24 @@ type Progress = {
   reflections: Record<string, string>;
   diagnosticAnswers: Record<string, string>;
   diagnosticCompleted: boolean;
+  rewardRequests: RewardRequest[];
+};
+
+type RewardRequest = {
+  id: string;
+  status: "pending_parent" | "approved";
+  requestedBy: string;
+  requestedReward: string;
+  parentPrompt: string;
+  createdAt: string;
+  approvedAt?: string;
+  earnedBy: {
+    theme: string;
+    dayLabel: string;
+    xp: number;
+    masteryStars: number;
+    campCoins: number;
+  };
 };
 
 type UserRole = "parent" | "child";
@@ -154,7 +172,8 @@ const emptyProgress: Progress = {
   campCoins: 0,
   reflections: {},
   diagnosticAnswers: {},
-  diagnosticCompleted: false
+  diagnosticCompleted: false,
+  rewardRequests: []
 };
 
 export default function Home() {
@@ -240,6 +259,8 @@ export default function Home() {
   const completionPercent = plan
     ? Math.round((progress.completedMissionIds.length / plan.parentSummary.totalPlannedMissions) * 100)
     : 0;
+  const pendingRewards = progress.rewardRequests.filter((request) => request.status === "pending_parent");
+  const approvedRewards = progress.rewardRequests.filter((request) => request.status === "approved");
 
   useEffect(() => {
     setReflectionDraft(progress.reflections[missionId] ?? "");
@@ -514,8 +535,8 @@ export default function Home() {
   }
 
   async function requestReward() {
-    if (!isParent) {
-      setRewardStatus("Ask your parent to review and approve rewards.");
+    if (!canUseLearning) {
+      setRewardStatus("Sign in to request a parent-approved reward.");
       return;
     }
 
@@ -532,7 +553,42 @@ export default function Home() {
       })
     });
     const result = await response.json();
-    setRewardStatus(result.parentPrompt ?? "Reward request could not be created.");
+    const pendingRequest: RewardRequest = {
+      id: `reward-${Date.now()}`,
+      status: "pending_parent",
+      requestedBy: role,
+      requestedReward: result.requestedReward,
+      parentPrompt: result.parentPrompt,
+      earnedBy: result.earnedBy,
+      createdAt: new Date().toISOString()
+    };
+
+    await saveProgress({
+      ...progress,
+      rewardRequests: [pendingRequest, ...progress.rewardRequests]
+    });
+    setRewardStatus("Reward request sent to the parent center.");
+  }
+
+  async function approveReward(rewardId: string) {
+    if (!isParent) {
+      setRewardStatus("Parent sign-in is required to approve rewards.");
+      return;
+    }
+
+    await saveProgress({
+      ...progress,
+      rewardRequests: progress.rewardRequests.map((request) =>
+        request.id === rewardId
+          ? {
+              ...request,
+              status: "approved",
+              approvedAt: new Date().toISOString()
+            }
+          : request
+      )
+    });
+    setRewardStatus("Reward approved.");
   }
 
   async function prepareTeacherShare() {
@@ -975,18 +1031,40 @@ export default function Home() {
 
           <article className="panel">
             <p className="eyebrow">Rewards Agent</p>
-            <h2>{isParent ? "Reward approval" : "Reward preview"}</h2>
-            {!isParent && <p className="quiet">Rewards are visible here, but approval stays with your parent.</p>}
+            <h2>Reward request</h2>
+            {!isParent && <p className="quiet">Choose a reward idea. Parent approval still happens in the reward center.</p>}
             <label>
               Reward choice
-              <select disabled={!isParent} value={selectedReward} onChange={(event) => setSelectedReward(event.target.value)}>
+              <select disabled={!canUseLearning} value={selectedReward} onChange={(event) => setSelectedReward(event.target.value)}>
                 {plan?.rewardPlan.weeklyRewardMenu.map((reward) => (
                   <option key={reward} value={reward}>{reward}</option>
                 ))}
               </select>
             </label>
-            <button disabled={!isParent} onClick={requestReward}>Request reward</button>
+            <button disabled={!canUseLearning} onClick={requestReward}>Request reward</button>
             <p className="quiet">{rewardStatus}</p>
+          </article>
+
+          <article className="panel reward-center">
+            <p className="eyebrow">Parent Reward Center</p>
+            <h2>{pendingRewards.length} pending / {approvedRewards.length} approved</h2>
+            <div className="reward-list">
+              {pendingRewards.length === 0 && <p className="quiet">No pending reward requests yet.</p>}
+              {pendingRewards.map((request) => (
+                <article key={request.id}>
+                  <strong>{request.requestedReward}</strong>
+                  <span>{request.parentPrompt}</span>
+                  <small>{request.earnedBy.theme} - {request.earnedBy.dayLabel}</small>
+                  <button disabled={!isParent} onClick={() => approveReward(request.id)}>Approve</button>
+                </article>
+              ))}
+            </div>
+            <div className="reward-suggestions">
+              <strong>Non-screen ideas</strong>
+              <span>Family walk, park, sports, bike, or swimming time</span>
+              <span>Cook a favorite healthy snack together</span>
+              <span>Board game, movie night, or project showcase call</span>
+            </div>
           </article>
 
           <article id="share" className="panel wide">

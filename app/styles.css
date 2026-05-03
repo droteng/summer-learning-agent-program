@@ -573,6 +573,40 @@ h3 {
   background: var(--green);
 }
 
+.reward-center {
+  display: grid;
+  gap: 12px;
+}
+
+.reward-list,
+.reward-suggestions {
+  display: grid;
+  gap: 10px;
+}
+
+.reward-list article,
+.reward-suggestions {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #f8fafc;
+}
+
+.reward-list article {
+  display: grid;
+  gap: 8px;
+}
+
+.reward-list span,
+.reward-list small,
+.reward-suggestions span {
+  color: var(--muted);
+}
+
+.reward-list button {
+  justify-self: start;
+}
+
 @media (max-width: 900px) {
   .shell,
   .setup,

@@ -49,3 +49,38 @@ export function createRewardApprovalRequest({ student, mission, requestedReward 
     approvalOptions: ["approve", "choose different reward", "save for later"]
   };
 }
+
+export function createPendingRewardRequest({ approvalRequest, requestedBy = "child", id }) {
+  return {
+    id: id ?? `reward-${Date.now()}`,
+    status: "pending_parent",
+    requestedBy,
+    requestedReward: approvalRequest.requestedReward,
+    earnedBy: approvalRequest.earnedBy,
+    parentPrompt: approvalRequest.parentPrompt,
+    createdAt: new Date().toISOString()
+  };
+}
+
+export function approveRewardRequest({ rewardRequest, approvedBy = "parent" }) {
+  return {
+    ...rewardRequest,
+    status: "approved",
+    approvedBy,
+    approvedAt: new Date().toISOString()
+  };
+}
+
+export function summarizeRewardCenter(rewardRequests = []) {
+  return {
+    pendingCount: rewardRequests.filter((request) => request.status === "pending_parent").length,
+    approvedCount: rewardRequests.filter((request) => request.status === "approved").length,
+    suggestedNonScreenRewards: [
+      "Family walk, park, sports, bike, or swimming time",
+      "Cook a favorite healthy snack together",
+      "Board game or movie night",
+      "Project showcase call with a relative",
+      "Small allowance, savings, or giving jar bonus"
+    ]
+  };
+}

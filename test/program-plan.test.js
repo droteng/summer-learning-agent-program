@@ -2,7 +2,12 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { createProgramPlan } from "../src/agents/principalAgent.js";
 import { completeMission, createEmptyProgress, saveReflection, summarizeProgress } from "../src/agents/progressAgent.js";
-import { createRewardApprovalRequest } from "../src/agents/rewardsAgent.js";
+import {
+  approveRewardRequest,
+  createPendingRewardRequest,
+  createRewardApprovalRequest,
+  summarizeRewardCenter
+} from "../src/agents/rewardsAgent.js";
 
 test("creates a Grade 6 program with core subjects and two enrichment tracks", () => {
   const plan = createProgramPlan(
@@ -63,6 +68,33 @@ test("creates parent approval request for a mission reward", () => {
   assert.equal(request.status, "needs_parent_approval");
   assert.equal(request.earnedBy.xp, 20);
   assert.ok(request.parentPrompt.includes("Avery"));
+});
+
+test("tracks reward requests through parent approval", () => {
+  const approvalRequest = {
+    requestedReward: "Movie night",
+    earnedBy: {
+      theme: "Explorer Mode",
+      dayLabel: "Monday",
+      xp: 20,
+      masteryStars: 0,
+      campCoins: 5
+    },
+    parentPrompt: "Approve Movie night?"
+  };
+  const pending = createPendingRewardRequest({
+    id: "reward-test",
+    approvalRequest,
+    requestedBy: "child"
+  });
+  const approved = approveRewardRequest({ rewardRequest: pending });
+  const summary = summarizeRewardCenter([pending, approved]);
+
+  assert.equal(pending.status, "pending_parent");
+  assert.equal(approved.status, "approved");
+  assert.equal(summary.pendingCount, 1);
+  assert.equal(summary.approvedCount, 1);
+  assert.ok(summary.suggestedNonScreenRewards.some((reward) => reward.includes("Family")));
 });
 
 test("tracks completed mission progress without double counting", () => {
