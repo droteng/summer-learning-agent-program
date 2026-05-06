@@ -49,6 +49,7 @@
 - [x] Add parent reward center.
 - [x] Add friend invite MVP UI.
 - [x] Replace hardcoded MVP passcodes with saved local family account credentials.
+- [x] Add local session cookies for parent/child sign-in restore.
 - [ ] Replace local family account with production parent/child accounts and sessions.
 - [x] Expand curriculum tuning framework beyond the Grade 6 launch track.
 - [x] Add desktop and tablet PWA install shell.

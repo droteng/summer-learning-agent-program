@@ -28,6 +28,13 @@ export function getLocalDb() {
         account_json TEXT NOT NULL,
         updated_at TEXT NOT NULL
       );
+
+      CREATE TABLE IF NOT EXISTS auth_sessions (
+        session_id TEXT PRIMARY KEY,
+        session_json TEXT NOT NULL,
+        expires_at TEXT NOT NULL,
+        updated_at TEXT NOT NULL
+      );
     `);
   }
 
@@ -126,5 +133,47 @@ export function saveFamilyAccount({ accountId = "local-family", account }) {
   return {
     account: nextAccount,
     updatedAt
+  };
+}
+
+export function loadAuthSession(sessionId) {
+  const row = getLocalDb()
+    .prepare("SELECT session_json, expires_at FROM auth_sessions WHERE session_id = ?")
+    .get(sessionId);
+
+  if (!row || new Date(row.expires_at).getTime() <= Date.now()) {
+    if (row) {
+      deleteAuthSession(sessionId);
+    }
+    return null;
+  }
+
+  return JSON.parse(row.session_json);
+}
+
+export function saveAuthSession(session) {
+  const updatedAt = new Date().toISOString();
+
+  getLocalDb()
+    .prepare(
+      `INSERT INTO auth_sessions (session_id, session_json, expires_at, updated_at)
+       VALUES (?, ?, ?, ?)
+       ON CONFLICT(session_id)
+       DO UPDATE SET session_json = excluded.session_json, expires_at = excluded.expires_at, updated_at = excluded.updated_at`
+    )
+    .run(session.id, JSON.stringify(session), session.expiresAt, updatedAt);
+
+  return {
+    session,
+    updatedAt
+  };
+}
+
+export function deleteAuthSession(sessionId) {
+  getLocalDb().prepare("DELETE FROM auth_sessions WHERE session_id = ?").run(sessionId);
+
+  return {
+    deleted: true,
+    sessionId
   };
 }

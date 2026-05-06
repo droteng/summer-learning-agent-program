@@ -80,6 +80,33 @@ export function verifyAccountSignIn({ account, role, passcode }) {
   };
 }
 
+export function createSession({ accountId = "local-family", role, ttlHours = 24 }) {
+  const createdAt = new Date();
+  const expiresAt = new Date(createdAt.getTime() + ttlHours * 60 * 60 * 1000);
+
+  return {
+    id: randomUUID(),
+    accountId,
+    role: role === "parent" ? "parent" : "child",
+    createdAt: createdAt.toISOString(),
+    expiresAt: expiresAt.toISOString()
+  };
+}
+
+export function publicSessionView(session) {
+  if (!session || new Date(session.expiresAt).getTime() <= Date.now()) {
+    return null;
+  }
+
+  return {
+    id: session.id,
+    accountId: session.accountId,
+    role: session.role,
+    expiresAt: session.expiresAt,
+    permissions: getRolePermissions(session.role)
+  };
+}
+
 function hashPasscode(passcode = "", salt) {
   return createHash("sha256").update(`${salt}:${passcode}`).digest("hex");
 }

@@ -1,7 +1,9 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {
+  createSession,
   createFamilyAccount,
+  publicSessionView,
   publicAccountView,
   verifyAccountSignIn
 } from "../src/agents/accountAgent.js";
@@ -50,4 +52,27 @@ test("verifies parent and child sign-in against saved account credentials", () =
   assert.equal(child.status, "signed_in");
   assert.equal(child.permissions.canApproveRewards, false);
   assert.equal(blocked.status, "blocked");
+});
+
+test("creates public session views with role permissions", () => {
+  const session = createSession({
+    accountId: "local-family",
+    role: "parent",
+    ttlHours: 1
+  });
+  const publicSession = publicSessionView(session);
+
+  assert.equal(publicSession.role, "parent");
+  assert.equal(publicSession.accountId, "local-family");
+  assert.equal(publicSession.permissions.canPrepareTeacherShare, true);
+});
+
+test("hides expired sessions from public session view", () => {
+  const session = createSession({
+    accountId: "local-family",
+    role: "child",
+    ttlHours: -1
+  });
+
+  assert.equal(publicSessionView(session), null);
 });

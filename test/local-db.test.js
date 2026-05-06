@@ -1,10 +1,13 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {
+  deleteAuthSession,
   loadFamilyAccount,
+  loadAuthSession,
   loadProfileSnapshot,
   loadProgressSnapshot,
   saveFamilyAccount,
+  saveAuthSession,
   saveProfileSnapshot,
   saveProgressSnapshot
 } from "../src/data/localDb.js";
@@ -76,4 +79,22 @@ test("saves and loads a local family account", () => {
   assert.ok(saved.updatedAt);
   assert.equal(loaded.parent.name, "Leo");
   assert.equal(loaded.credentials.parentPasscodeHash, "hash-a");
+});
+
+test("saves, loads, and deletes an auth session", () => {
+  const session = {
+    id: `session-${Date.now()}`,
+    accountId: "test-family",
+    role: "parent",
+    createdAt: new Date().toISOString(),
+    expiresAt: new Date(Date.now() + 60_000).toISOString()
+  };
+
+  saveAuthSession(session);
+  const loaded = loadAuthSession(session.id);
+  const deleted = deleteAuthSession(session.id);
+
+  assert.equal(loaded.role, "parent");
+  assert.equal(deleted.deleted, true);
+  assert.equal(loadAuthSession(session.id), null);
 });

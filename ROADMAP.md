@@ -51,6 +51,7 @@
 - Friend invite MVP.
 - Local parent/child passcode authentication.
 - Saved local family account credentials.
+- Local session cookies for parent/child sign-in restore.
 - Desktop and tablet PWA install shell.
 - Website product page.
 - OpenClaw/ClawHub package draft assets.

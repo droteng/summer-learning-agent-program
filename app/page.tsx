@@ -290,6 +290,7 @@ export default function Home() {
   );
 
   useEffect(() => {
+    loadSession();
     loadAccount();
     loadProfile();
     loadProgress();
@@ -444,6 +445,22 @@ export default function Home() {
     } catch {
       setLessonGuide(null);
       setLessonStatus("Teacher guide could not be loaded.");
+    }
+  }
+
+  async function loadSession() {
+    try {
+      const response = await fetch("/api/session");
+      const result = await response.json();
+
+      if (result.status === "signed_in" && result.session?.role) {
+        setRole(result.session.role);
+        setAuthRole(result.session.role);
+        setIsSignedIn(true);
+        setAuthStatus(result.session.role === "parent" ? "Session restored as parent." : "Session restored as child.");
+      }
+    } catch {
+      setAuthStatus("Signed out.");
     }
   }
 
@@ -844,7 +861,15 @@ export default function Home() {
     }
   }
 
-  function signOut() {
+  async function signOut() {
+    try {
+      await fetch("/api/session", {
+        method: "DELETE"
+      });
+    } catch {
+      // Local UI still signs out even if the server cleanup fails.
+    }
+
     setRole("child");
     setAuthRole("child");
     setIsSignedIn(false);
