@@ -644,6 +644,104 @@ h3 {
   background: var(--green);
 }
 
+.weekly-report,
+.report-body,
+.report-evidence,
+.report-next-steps,
+.privacy-list {
+  display: grid;
+  gap: 12px;
+}
+
+.report-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.report-grid div,
+.report-columns section,
+.report-evidence article,
+.privacy-list {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #f8fafc;
+}
+
+.report-grid strong {
+  display: block;
+  font-size: 1.35rem;
+}
+
+.report-grid span,
+.report-subjects span,
+.report-next-steps span,
+.report-evidence span,
+.report-evidence small,
+.privacy-list span {
+  color: var(--muted);
+}
+
+.report-columns {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(320px, 1.2fr);
+  gap: 12px;
+}
+
+.report-columns section,
+.report-evidence article {
+  display: grid;
+  gap: 8px;
+}
+
+.report-subjects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.report-subjects span {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 7px 9px;
+  background: white;
+}
+
+.report-evidence {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.report-evidence h3,
+.report-evidence .quiet {
+  grid-column: 1 / -1;
+}
+
+.report-evidence em {
+  border-left: 4px solid var(--teal);
+  padding-left: 10px;
+  color: var(--ink);
+  font-style: normal;
+}
+
+.teacher-summary textarea {
+  background: #fbfcfd;
+}
+
+.privacy-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.privacy-list strong {
+  grid-column: 1 / -1;
+}
+
 .reward-center {
   display: grid;
   gap: 12px;
@@ -924,6 +1022,10 @@ h3 {
   .subject-tuning,
   .diagnostic-grid,
   .squad-grid,
+  .report-grid,
+  .report-columns,
+  .report-evidence,
+  .privacy-list,
   .summary-columns,
   .lesson-grid,
   .readiness-list,

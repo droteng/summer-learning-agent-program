@@ -38,7 +38,7 @@
 - Teacher agent lesson generation.
 - XP, mastery stars, and camp coins.
 - Parent reward approval.
-- Weekly parent report.
+- Weekly parent report generated from live mission evidence, reward status, social status, and parent next steps.
 - Database-backed progress persistence.
 - Parent/child role-gated MVP mode.
 - Saved parent onboarding profile for the Grade 6 launch track.

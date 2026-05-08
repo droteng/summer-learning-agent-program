@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { createProgramPlan } from "../src/agents/principalAgent.js";
+import { createWeeklyParentReport } from "../src/agents/parentLiaisonAgent.js";
 import { completeMission, createEmptyProgress, saveReflection, summarizeProgress } from "../src/agents/progressAgent.js";
 import {
   approveRewardRequest,
@@ -141,4 +142,68 @@ test("tracks completed mission progress without double counting", () => {
   assert.equal(twice.masteryStars, 1);
   assert.equal(summary.completionPercent, 3);
   assert.equal(withReflection.reflections["week-1-day-2"], "I learned how to explain my answer.");
+});
+
+test("creates a weekly parent report from completed missions", () => {
+  const student = {
+    id: "weekly-report-test",
+    firstName: "Avery",
+    gradeLevel: 6,
+    interests: ["coding"],
+    selectedEnrichmentTracks: ["healthWellness", "financialLiteracy"],
+    activityPreferences: {
+      outdoorAllowed: true
+    }
+  };
+  const plan = createProgramPlan(student, {
+    allowedRewards: ["device", "park"],
+    friendInvitesEnabled: true,
+    teacherSharingEnabled: true
+  });
+  const report = createWeeklyParentReport({
+    student,
+    programPlan: plan,
+    weekNumber: 1,
+    progress: {
+      completedMissionIds: ["week-1-day-1", "week-1-day-2"],
+      xp: 40,
+      masteryStars: 1,
+      campCoins: 10,
+      reflections: {
+        "week-1-day-1": "I made a learning map and explained one algorithm."
+      },
+      rewardRequests: [
+        {
+          id: "reward-1",
+          status: "pending_parent",
+          requestedReward: "Park outing",
+          earnedBy: {
+            theme: "Explorer Mode",
+            dayLabel: "Monday"
+          }
+        }
+      ],
+      friendInvites: [
+        {
+          id: "invite-1",
+          status: "approved",
+          friendName: "Jordan"
+        }
+      ]
+    }
+  });
+
+  assert.equal(report.status, "ready");
+  assert.equal(report.completion.completedCount, 2);
+  assert.equal(report.completion.totalMissions, 5);
+  assert.equal(report.completion.completionPercent, 40);
+  assert.equal(report.weeklyEarnings.xp, 40);
+  assert.equal(report.weeklyEarnings.masteryStars, 1);
+  assert.equal(report.rewards.pendingCount, 1);
+  assert.equal(report.invitations.approvedCount, 1);
+  assert.ok(report.subjectCoverage.some((item) => item.subject === "ELA/Writing"));
+  assert.equal(report.completedMissions[0].reflection, "I made a learning map and explained one algorithm.");
+  assert.ok(report.parentNextSteps.some((step) => step.includes("physical activity")));
+  assert.ok(report.teacherSummary.includes("Avery completed 2/5 Week 1 missions"));
+  assert.ok(report.excludedPrivateData.includes("Private health check answers"));
 });

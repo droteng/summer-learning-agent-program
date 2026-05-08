@@ -154,6 +154,59 @@ type FriendInvite = {
   sharingDefaults?: Record<string, boolean>;
 };
 
+type WeeklyParentReport = {
+  status: "ready" | "not_found";
+  reason?: string;
+  headline: string;
+  student: {
+    firstName: string;
+    gradeLevel: number;
+  };
+  week: {
+    weekNumber: number;
+    theme: string;
+    project: string;
+  };
+  completion: {
+    completedCount: number;
+    totalMissions: number;
+    completionPercent: number;
+  };
+  weeklyEarnings: {
+    xp: number;
+    masteryStars: number;
+    campCoins: number;
+  };
+  subjectCoverage: Array<{
+    subject: string;
+    completedLessons: number;
+  }>;
+  completedMissions: Array<{
+    missionId: string;
+    dayLabel: string;
+    theme: string;
+    subjects: string[];
+    projectMilestone: string;
+    reflection: string;
+  }>;
+  rewards: {
+    pendingCount: number;
+    approvedCount: number;
+    requests: Array<{
+      requestedReward: string;
+      status: string;
+      dayLabel: string;
+    }>;
+  };
+  invitations: {
+    pendingCount: number;
+    approvedCount: number;
+  };
+  parentNextSteps: string[];
+  teacherSummary: string;
+  excludedPrivateData: string[];
+};
+
 type UserRole = "parent" | "child";
 
 type StudentProfile = {
@@ -242,6 +295,8 @@ export default function Home() {
   const [friendName, setFriendName] = useState("");
   const [inviteStatus, setInviteStatus] = useState("Suggest a friend to start a parent-approved learning squad.");
   const [shareExport, setShareExport] = useState("");
+  const [weeklyReport, setWeeklyReport] = useState<WeeklyParentReport | null>(null);
+  const [reportStatus, setReportStatus] = useState("Prepare a weekly parent report after missions are completed.");
   const [profileStatus, setProfileStatus] = useState("Loading saved profile...");
   const [profileReady, setProfileReady] = useState(false);
   const [familyAccount, setFamilyAccount] = useState<FamilyAccount | null>(null);
@@ -809,6 +864,35 @@ export default function Home() {
     setInviteStatus("Parent-approved invite link created.");
   }
 
+  async function prepareWeeklyReport() {
+    if (!isParent) {
+      setReportStatus("Weekly parent reports are parent-controlled. Switch to parent view to prepare one.");
+      return;
+    }
+
+    const response = await fetch("/api/weekly-report", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        ...payload,
+        weekNumber,
+        progress
+      })
+    });
+    const result = await response.json();
+
+    if (!response.ok || result.status !== "ready") {
+      setWeeklyReport(null);
+      setReportStatus(result.reason ?? "Weekly report could not be prepared.");
+      return;
+    }
+
+    setWeeklyReport(result);
+    setReportStatus(`Week ${result.week.weekNumber} report ready for parent review.`);
+  }
+
   async function prepareTeacherShare() {
     if (!isParent) {
       setShareExport("Teacher sharing is parent-controlled. Switch to parent view to prepare a report.");
@@ -906,6 +990,7 @@ export default function Home() {
           <a href="#diagnostic">Diagnostic</a>
           <a href="#mission-mode">Mission</a>
           <a href="#progress">Progress</a>
+          <a href="#weekly-report">Report</a>
           <a href="#squad">Squad</a>
           <a href="#share">Share</a>
         </nav>
@@ -1388,6 +1473,97 @@ export default function Home() {
             </label>
             <button disabled={!canUseLearning} onClick={requestReward}>Request reward</button>
             <p className="quiet">{rewardStatus}</p>
+          </article>
+
+          <article id="weekly-report" className="panel wide weekly-report">
+            <div className="section-head">
+              <div>
+                <p className="eyebrow">Parent Liaison</p>
+                <h2>{weeklyReport?.headline ?? "Weekly parent report"}</h2>
+              </div>
+              <div className="report-actions">
+                <span className="pill">Week {weekNumber}</span>
+                <button disabled={!isParent} onClick={prepareWeeklyReport}>Prepare report</button>
+              </div>
+            </div>
+            <p className="quiet">{reportStatus}</p>
+            {!isParent && <p className="quiet">Weekly reports are hidden from child view until a parent prepares them.</p>}
+            {weeklyReport && weeklyReport.status === "ready" && (
+              <div className="report-body">
+                <div className="report-grid">
+                  <div>
+                    <strong>{weeklyReport.completion.completedCount}/{weeklyReport.completion.totalMissions}</strong>
+                    <span>Missions completed</span>
+                  </div>
+                  <div>
+                    <strong>{weeklyReport.completion.completionPercent}%</strong>
+                    <span>Week progress</span>
+                  </div>
+                  <div>
+                    <strong>{weeklyReport.weeklyEarnings.xp}</strong>
+                    <span>Week XP</span>
+                  </div>
+                  <div>
+                    <strong>{weeklyReport.weeklyEarnings.campCoins}</strong>
+                    <span>Week coins</span>
+                  </div>
+                  <div>
+                    <strong>{weeklyReport.rewards.pendingCount}</strong>
+                    <span>Pending rewards</span>
+                  </div>
+                  <div>
+                    <strong>{weeklyReport.invitations.approvedCount}</strong>
+                    <span>Approved friends</span>
+                  </div>
+                </div>
+
+                <div className="report-columns">
+                  <section>
+                    <h3>{weeklyReport.week.theme}</h3>
+                    <p className="quiet">Project: {weeklyReport.week.project}</p>
+                    <div className="report-subjects">
+                      {weeklyReport.subjectCoverage.length === 0 && <span>No completed subject lessons yet.</span>}
+                      {weeklyReport.subjectCoverage.map((item) => (
+                        <span key={item.subject}>{item.subject}: {item.completedLessons}</span>
+                      ))}
+                    </div>
+                  </section>
+                  <section>
+                    <h3>Parent next steps</h3>
+                    <div className="report-next-steps">
+                      {weeklyReport.parentNextSteps.map((step) => (
+                        <span key={step}>{step}</span>
+                      ))}
+                    </div>
+                  </section>
+                </div>
+
+                <div className="report-evidence">
+                  <h3>Completed mission evidence</h3>
+                  {weeklyReport.completedMissions.length === 0 && <p className="quiet">No completed missions for this week yet.</p>}
+                  {weeklyReport.completedMissions.map((mission) => (
+                    <article key={mission.missionId}>
+                      <strong>{mission.dayLabel}: {mission.theme}</strong>
+                      <span>{mission.subjects.join(", ")}</span>
+                      <small>{mission.projectMilestone}</small>
+                      {mission.reflection && <em>{mission.reflection}</em>}
+                    </article>
+                  ))}
+                </div>
+
+                <label className="teacher-summary">
+                  School-friendly summary
+                  <textarea readOnly rows={4} value={weeklyReport.teacherSummary} />
+                </label>
+
+                <div className="privacy-list">
+                  <strong>Kept private by default</strong>
+                  {weeklyReport.excludedPrivateData.map((item) => (
+                    <span key={item}>{item}</span>
+                  ))}
+                </div>
+              </div>
+            )}
           </article>
 
           <article className="panel reward-center">
