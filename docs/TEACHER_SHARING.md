@@ -36,6 +36,10 @@ The app can now prepare a parent-approved transcript package with:
 - School-share summary text.
 - Parent checklist for removing private details before sharing.
 
+## Printable Package MVP
+
+Parents can open `/printable-package` from the dashboard to review a combined package and use the browser print dialog to print or save as PDF. The package combines the weekly report, transcript, certificate preview, badges, portfolio highlights, squad project updates, privacy exclusions, and parent checklist.
+
 ## Future Formats
 
 - PDF export.

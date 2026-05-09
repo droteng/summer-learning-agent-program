@@ -55,6 +55,7 @@
 - Local session cookies for parent/child sign-in restore.
 - Desktop and tablet PWA install shell.
 - Parent-approved achievement transcript, certificate preview, badge list, and portfolio highlights.
+- Printable parent and school report package with browser Save as PDF workflow.
 - Website product page.
 - OpenClaw/ClawHub package draft assets.
 - Production parent/child accounts.

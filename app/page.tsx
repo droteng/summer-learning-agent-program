@@ -1891,7 +1891,10 @@ export default function Home() {
                 <p className="eyebrow">Achievement Agent</p>
                 <h2>Transcript and certificate</h2>
               </div>
-              <button disabled={!isParent} onClick={prepareAchievementExport}>Prepare transcript</button>
+              <div className="report-actions">
+                <a className="secondary-link" href="/printable-package" target="_blank" rel="noreferrer">Open printable package</a>
+                <button disabled={!isParent} onClick={prepareAchievementExport}>Prepare transcript</button>
+              </div>
             </div>
             <p className="quiet">{achievementStatus}</p>
             {!isParent && <p className="quiet">Achievement exports are hidden from child view until a parent prepares them.</p>}

@@ -1203,3 +1203,183 @@ h3 {
     grid-template-columns: 1fr;
   }
 }
+
+.secondary-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0 14px;
+  background: white;
+  color: var(--blue);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.print-shell {
+  min-height: 100vh;
+  padding: 24px;
+  background: #e9eef3;
+}
+
+.print-toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 980px;
+  margin: 0 auto 16px;
+}
+
+.print-toolbar a {
+  color: var(--blue);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.print-toolbar span {
+  color: var(--muted);
+}
+
+.print-page {
+  display: grid;
+  gap: 16px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 34px;
+  background: white;
+  box-shadow: var(--shadow);
+}
+
+.print-hero {
+  border-bottom: 3px solid var(--ink);
+  padding-bottom: 18px;
+}
+
+.print-hero h1 {
+  font-size: 2.4rem;
+}
+
+.print-section {
+  break-inside: avoid;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 16px;
+  background: #fbfcfd;
+}
+
+.section-index,
+.compact-list {
+  display: grid;
+  gap: 8px;
+}
+
+.section-index span,
+.compact-list span,
+.print-table article {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px;
+  background: white;
+}
+
+.print-certificate {
+  border-left: 8px solid var(--amber);
+  background: #fffaf0;
+  text-align: center;
+}
+
+.print-certificate h2 {
+  font-size: 1.8rem;
+}
+
+.print-certificate strong,
+.print-certificate span {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+}
+
+.print-metrics {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.print-metrics div {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: white;
+}
+
+.print-metrics strong {
+  display: block;
+  font-size: 1.35rem;
+}
+
+.print-metrics span,
+.print-table span,
+.print-table small,
+.print-section p,
+.compact-list span {
+  color: var(--muted);
+}
+
+.two-column-print,
+.print-table {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.print-table article {
+  display: grid;
+  gap: 6px;
+}
+
+@media (max-width: 900px) {
+  .print-toolbar,
+  .two-column-print,
+  .print-table,
+  .print-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .print-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .print-page {
+    padding: 20px;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  .sidebar,
+  .print-toolbar {
+    display: none !important;
+  }
+
+  .print-shell {
+    padding: 0;
+    background: white;
+  }
+
+  .print-page {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .print-section {
+    background: white;
+  }
+}

@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { createAchievementExport } from "../src/agents/achievementAgent.js";
 import { createProgramPlan } from "../src/agents/principalAgent.js";
+import { createPrintableReportPackage } from "../src/agents/printableReportAgent.js";
 import { moderateChildMessage } from "../src/agents/safetyModeratorAgent.js";
 import {
   approveInvitationRequest,
@@ -242,4 +243,61 @@ test("squad project updates are parent-visible and moderated", () => {
   assert.equal(allowed.safetyLabel, "Parent-visible project update");
   assert.equal(blocked.status, "blocked");
   assert.equal(blocked.parentVisible, true);
+});
+
+
+test("printable report packages combine reports, transcripts, and squad evidence", () => {
+  const programPlan = createProgramPlan(student, parentPolicy);
+  const reportPackage = createPrintableReportPackage({
+    student,
+    programPlan,
+    weekNumber: 1,
+    parentPolicy,
+    parentApproved: true,
+    progress: {
+      completedMissionIds: ["week-1-day-1", "week-1-day-2", "week-1-day-3", "week-1-day-4", "week-1-day-5"],
+      xp: 100,
+      masteryStars: 6,
+      campCoins: 25,
+      reflections: {
+        "week-1-day-1": "I explained a learning map."
+      },
+      friendInvites: [
+        {
+          id: "invite-1",
+          status: "approved",
+          friendName: "Jordan"
+        }
+      ],
+      squadProjectUpdates: [
+        {
+          id: "update-1",
+          status: "allowed",
+          author: "Avery",
+          message: "I drafted the project question.",
+          parentVisible: true
+        }
+      ]
+    }
+  });
+
+  assert.equal(reportPackage.status, "ready_to_print");
+  assert.ok(reportPackage.sections.includes("Weekly parent report"));
+  assert.equal(reportPackage.weeklyReport.completion.completedCount, 5);
+  assert.equal(reportPackage.achievementExport.transcript.completedMissionCount, 5);
+  assert.equal(reportPackage.squadRoom.projectUpdates.length, 1);
+  assert.ok(reportPackage.privacyNotice.some((item) => item.includes("health")));
+});
+
+test("printable report packages require parent approval", () => {
+  const programPlan = createProgramPlan(student, parentPolicy);
+  const blocked = createPrintableReportPackage({
+    student,
+    programPlan,
+    parentPolicy,
+    parentApproved: false,
+    progress: {}
+  });
+
+  assert.equal(blocked.status, "blocked");
 });
