@@ -53,6 +53,7 @@
 - Saved local family account credentials.
 - Local session cookies for parent/child sign-in restore.
 - Desktop and tablet PWA install shell.
+- Parent-approved achievement transcript, certificate preview, badge list, and portfolio highlights.
 - Website product page.
 - OpenClaw/ClawHub package draft assets.
 - Production parent/child accounts.

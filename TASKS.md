@@ -51,6 +51,7 @@
 - [x] Replace hardcoded MVP passcodes with saved local family account credentials.
 - [x] Add local session cookies for parent/child sign-in restore.
 - [x] Add weekly parent report dashboard.
+- [x] Add parent-approved achievement transcript and certificate export.
 - [ ] Replace local family account with production parent/child accounts and sessions.
 - [x] Expand curriculum tuning framework beyond the Grade 6 launch track.
 - [x] Add desktop and tablet PWA install shell.

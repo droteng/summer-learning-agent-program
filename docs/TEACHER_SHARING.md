@@ -25,6 +25,17 @@ The product can generate useful educational records, but it should not send chil
 - Parent reward settings.
 - Exact scores unless parent opts in.
 
+## Achievement Export MVP
+
+The app can now prepare a parent-approved transcript package with:
+
+- Certificate preview.
+- Attendance transcript by week.
+- Shareable badges.
+- Parent-approved portfolio highlights.
+- School-share summary text.
+- Parent checklist for removing private details before sharing.
+
 ## Future Formats
 
 - PDF export.

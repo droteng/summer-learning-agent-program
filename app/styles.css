@@ -742,6 +742,99 @@ h3 {
   grid-column: 1 / -1;
 }
 
+.achievement-export,
+.achievement-body,
+.badge-list,
+.transcript-table,
+.portfolio-highlights,
+.share-checklist {
+  display: grid;
+  gap: 12px;
+}
+
+.certificate-preview {
+  display: grid;
+  gap: 8px;
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--amber);
+  border-radius: 8px;
+  padding: 18px;
+  background: #fffaf0;
+}
+
+.certificate-preview h3 {
+  font-size: 1.35rem;
+}
+
+.certificate-preview span,
+.certificate-preview strong {
+  color: var(--muted);
+}
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.achievement-grid div,
+.badge-list article,
+.transcript-table article,
+.portfolio-highlights article,
+.share-checklist {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #f8fafc;
+}
+
+.achievement-grid strong {
+  display: block;
+  font-size: 1.35rem;
+}
+
+.achievement-grid span,
+.badge-list span,
+.transcript-table span,
+.transcript-table small,
+.portfolio-highlights span,
+.share-checklist span {
+  color: var(--muted);
+}
+
+.badge-list,
+.transcript-table,
+.portfolio-highlights {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.badge-list h3,
+.badge-list .quiet,
+.transcript-table h3,
+.portfolio-highlights h3,
+.portfolio-highlights .quiet {
+  grid-column: 1 / -1;
+}
+
+.badge-list article,
+.transcript-table article,
+.portfolio-highlights article {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.portfolio-highlights em {
+  border-left: 4px solid var(--blue);
+  padding-left: 10px;
+  color: var(--ink);
+  font-style: normal;
+}
+
+.school-summary textarea {
+  background: #fbfcfd;
+}
+
 .reward-center {
   display: grid;
   gap: 12px;
@@ -1023,6 +1116,10 @@ h3 {
   .diagnostic-grid,
   .squad-grid,
   .report-grid,
+  .achievement-grid,
+  .badge-list,
+  .transcript-table,
+  .portfolio-highlights,
   .report-columns,
   .report-evidence,
   .privacy-list,

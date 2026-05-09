@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { createAchievementExport } from "../src/agents/achievementAgent.js";
 import { createProgramPlan } from "../src/agents/principalAgent.js";
 import { moderateChildMessage } from "../src/agents/safetyModeratorAgent.js";
 import {
@@ -114,4 +115,57 @@ test("teacher share packages can include parent-approved progress evidence", () 
     approved.progressSummary.completedMissions[0].reflection,
     "I learned how to explain an algorithm."
   );
+});
+
+test("achievement exports require parent approval", () => {
+  const programPlan = createProgramPlan(student, parentPolicy);
+  const blocked = createAchievementExport({
+    student,
+    programPlan,
+    parentApproved: false,
+    progress: {
+      completedMissionIds: ["week-1-day-1"]
+    }
+  });
+
+  assert.equal(blocked.status, "blocked");
+  assert.ok(blocked.reason.includes("parent approval"));
+});
+
+test("achievement exports create transcripts, certificates, badges, and privacy defaults", () => {
+  const programPlan = createProgramPlan(student, parentPolicy);
+  const report = createAchievementExport({
+    student,
+    programPlan,
+    parentApproved: true,
+    progress: {
+      completedMissionIds: ["week-1-day-1", "week-1-day-2", "week-1-day-3", "week-1-day-4", "week-1-day-5"],
+      xp: 100,
+      masteryStars: 6,
+      campCoins: 25,
+      reflections: {
+        "week-1-day-1": "I explained a learning map.",
+        "week-1-day-2": "I compared strategies.",
+        "week-1-day-3": "I revised my project."
+      },
+      friendInvites: [
+        {
+          id: "invite-1",
+          status: "approved",
+          friendName: "Jordan"
+        }
+      ]
+    }
+  });
+
+  assert.equal(report.status, "ready_to_share");
+  assert.equal(report.transcript.completedMissionCount, 5);
+  assert.equal(report.transcript.completionPercent, 13);
+  assert.equal(report.transcript.weeklyTranscript[0].completionPercent, 100);
+  assert.ok(report.certificate.subtitle.includes("Avery"));
+  assert.ok(report.badges.some((badge) => badge.name === "Week Finisher"));
+  assert.ok(report.badges.some((badge) => badge.name === "Squad Starter"));
+  assert.ok(report.portfolioHighlights[0].reflection.includes("learning map"));
+  assert.ok(report.schoolShareSummary.includes("Subjects represented"));
+  assert.ok(report.excludedByDefault.includes("Private health check answers"));
 });

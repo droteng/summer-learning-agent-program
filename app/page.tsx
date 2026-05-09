@@ -207,6 +207,54 @@ type WeeklyParentReport = {
   excludedPrivateData: string[];
 };
 
+type AchievementExport = {
+  status: "ready_to_share" | "blocked";
+  reason?: string;
+  generatedAt?: string;
+  certificate?: {
+    title: string;
+    subtitle: string;
+    signatureLine: string;
+  };
+  transcript?: {
+    programName: string;
+    gradeLevel: number;
+    completedMissionCount: number;
+    totalMissionCount: number;
+    completionPercent: number;
+    xp: number;
+    masteryStars: number;
+    campCoins: number;
+    weeklyTranscript: Array<{
+      weekNumber: number;
+      theme: string;
+      project: string;
+      completedMissionCount: number;
+      totalMissionCount: number;
+      completionPercent: number;
+      subjects: string[];
+    }>;
+    subjectTotals: Array<{
+      subject: string;
+      completedLessons: number;
+    }>;
+  };
+  badges?: Array<{
+    name: string;
+    description: string;
+    shareable: boolean;
+  }>;
+  portfolioHighlights?: Array<{
+    title: string;
+    subjects: string[];
+    project: string;
+    reflection: string;
+  }>;
+  schoolShareSummary?: string;
+  parentChecklist?: string[];
+  excludedByDefault?: string[];
+};
+
 type UserRole = "parent" | "child";
 
 type StudentProfile = {
@@ -297,6 +345,8 @@ export default function Home() {
   const [shareExport, setShareExport] = useState("");
   const [weeklyReport, setWeeklyReport] = useState<WeeklyParentReport | null>(null);
   const [reportStatus, setReportStatus] = useState("Prepare a weekly parent report after missions are completed.");
+  const [achievementExport, setAchievementExport] = useState<AchievementExport | null>(null);
+  const [achievementStatus, setAchievementStatus] = useState("Prepare a parent-approved transcript and certificate package.");
   const [profileStatus, setProfileStatus] = useState("Loading saved profile...");
   const [profileReady, setProfileReady] = useState(false);
   const [familyAccount, setFamilyAccount] = useState<FamilyAccount | null>(null);
@@ -893,6 +943,35 @@ export default function Home() {
     setReportStatus(`Week ${result.week.weekNumber} report ready for parent review.`);
   }
 
+  async function prepareAchievementExport() {
+    if (!isParent) {
+      setAchievementStatus("Achievement exports are parent-controlled. Switch to parent view to prepare one.");
+      return;
+    }
+
+    const response = await fetch("/api/achievement-export", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        ...payload,
+        parentApproved: teacherSharing,
+        progress
+      })
+    });
+    const result = await response.json();
+
+    if (result.status !== "ready_to_share") {
+      setAchievementExport(null);
+      setAchievementStatus(result.reason ?? "Achievement export could not be prepared.");
+      return;
+    }
+
+    setAchievementExport(result);
+    setAchievementStatus("Transcript and certificate package ready for parent review.");
+  }
+
   async function prepareTeacherShare() {
     if (!isParent) {
       setShareExport("Teacher sharing is parent-controlled. Switch to parent view to prepare a report.");
@@ -991,6 +1070,7 @@ export default function Home() {
           <a href="#mission-mode">Mission</a>
           <a href="#progress">Progress</a>
           <a href="#weekly-report">Report</a>
+          <a href="#achievement-export">Transcript</a>
           <a href="#squad">Squad</a>
           <a href="#share">Share</a>
         </nav>
@@ -1629,6 +1709,80 @@ export default function Home() {
               <span>Shows badges and completed missions.</span>
               <span>Hides exact scores, private reflections, health answers, and faith reflections.</span>
             </div>
+          </article>
+
+          <article id="achievement-export" className="panel wide achievement-export">
+            <div className="section-head">
+              <div>
+                <p className="eyebrow">Achievement Agent</p>
+                <h2>Transcript and certificate</h2>
+              </div>
+              <button disabled={!isParent} onClick={prepareAchievementExport}>Prepare transcript</button>
+            </div>
+            <p className="quiet">{achievementStatus}</p>
+            {!isParent && <p className="quiet">Achievement exports are hidden from child view until a parent prepares them.</p>}
+            {achievementExport?.status === "ready_to_share" && achievementExport.transcript && achievementExport.certificate && (
+              <div className="achievement-body">
+                <section className="certificate-preview">
+                  <p className="eyebrow">Certificate</p>
+                  <h3>{achievementExport.certificate.title}</h3>
+                  <strong>{achievementExport.certificate.subtitle}</strong>
+                  <span>{achievementExport.certificate.signatureLine}</span>
+                </section>
+
+                <div className="achievement-grid">
+                  <div><strong>{achievementExport.transcript.completedMissionCount}/{achievementExport.transcript.totalMissionCount}</strong><span>Missions</span></div>
+                  <div><strong>{achievementExport.transcript.completionPercent}%</strong><span>Completion</span></div>
+                  <div><strong>{achievementExport.transcript.xp}</strong><span>XP</span></div>
+                  <div><strong>{achievementExport.transcript.masteryStars}</strong><span>Stars</span></div>
+                  <div><strong>{achievementExport.badges?.length ?? 0}</strong><span>Badges</span></div>
+                </div>
+
+                <div className="badge-list">
+                  <h3>Shareable badges</h3>
+                  {achievementExport.badges?.length === 0 && <p className="quiet">No badges earned yet.</p>}
+                  {achievementExport.badges?.map((badge) => (
+                    <article key={badge.name}>
+                      <strong>{badge.name}</strong>
+                      <span>{badge.description}</span>
+                    </article>
+                  ))}
+                </div>
+
+                <div className="transcript-table">
+                  <h3>Attendance transcript</h3>
+                  {achievementExport.transcript.weeklyTranscript.map((week) => (
+                    <article key={week.weekNumber}>
+                      <strong>Week {week.weekNumber}: {week.theme}</strong>
+                      <span>{week.completedMissionCount}/{week.totalMissionCount} missions - {week.completionPercent}%</span>
+                      <small>{week.subjects.length ? week.subjects.join(", ") : "No completed subjects yet"}</small>
+                    </article>
+                  ))}
+                </div>
+
+                <div className="portfolio-highlights">
+                  <h3>Portfolio highlights</h3>
+                  {achievementExport.portfolioHighlights?.length === 0 && <p className="quiet">Complete missions to create portfolio highlights.</p>}
+                  {achievementExport.portfolioHighlights?.map((highlight) => (
+                    <article key={highlight.title}>
+                      <strong>{highlight.title}</strong>
+                      <span>{highlight.project}</span>
+                      {highlight.reflection && <em>{highlight.reflection}</em>}
+                    </article>
+                  ))}
+                </div>
+
+                <label className="school-summary">
+                  School-share summary
+                  <textarea readOnly rows={5} value={achievementExport.schoolShareSummary ?? ""} />
+                </label>
+
+                <div className="share-checklist">
+                  <strong>Parent checklist</strong>
+                  {achievementExport.parentChecklist?.map((item) => <span key={item}>{item}</span>)}
+                </div>
+              </div>
+            )}
           </article>
 
           <article id="share" className="panel wide">
