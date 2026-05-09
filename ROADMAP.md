@@ -49,6 +49,7 @@
 - Week 1 launch content with learning map milestones.
 - Parent reward center.
 - Friend invite MVP.
+- Parent-approved Learning Squad shared project room with moderated project updates.
 - Local parent/child passcode authentication.
 - Saved local family account credentials.
 - Local session cookies for parent/child sign-in restore.

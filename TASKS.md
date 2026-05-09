@@ -52,6 +52,7 @@
 - [x] Add local session cookies for parent/child sign-in restore.
 - [x] Add weekly parent report dashboard.
 - [x] Add parent-approved achievement transcript and certificate export.
+- [x] Add parent-approved Learning Squad shared project room.
 - [ ] Replace local family account with production parent/child accounts and sessions.
 - [x] Expand curriculum tuning framework beyond the Grade 6 launch track.
 - [x] Add desktop and tablet PWA install shell.

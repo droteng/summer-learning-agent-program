@@ -1,3 +1,5 @@
+import { moderateChildMessage } from "./safetyModeratorAgent.js";
+
 export function createInvitationRequest({ child, friendName, parentPolicy }) {
   if (!parentPolicy.friendInvitesEnabled) {
     return {
@@ -66,4 +68,143 @@ function createInviteToken(requestedBy = "student", friendName = "friend") {
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "")
     .slice(0, 48);
+}
+
+export function createLearningSquadRoom({ student, programPlan, progress, weekNumber = 1, parentPolicy }) {
+  if (!parentPolicy.friendInvitesEnabled) {
+    return {
+      status: "blocked",
+      reason: "Learning Squads are disabled by the parent."
+    };
+  }
+
+  const approvedInvites = (progress?.friendInvites ?? []).filter((invite) => invite.status === "approved");
+  const selectedWeekNumber = Number(weekNumber ?? 1);
+  const weeklyPlan = programPlan.weeklyMissionPlans.find((plan) => plan.week.weekNumber === selectedWeekNumber) ??
+    programPlan.weeklyMissionPlans[0];
+  const completedMissionCount = (progress?.completedMissionIds ?? []).length;
+  const projectUpdates = (progress?.squadProjectUpdates ?? []).filter((update) => update.status === "allowed");
+
+  return {
+    status: "ready",
+    name: approvedInvites.length > 0 ? student.firstName + "'s Learning Squad" : "Learning Squad preview",
+    approvedFriendCount: approvedInvites.length,
+    nextStep: approvedInvites.length > 0
+      ? "Use the shared project room for parent-visible project updates."
+      : "Approve at least one friend invite to turn this preview into a shared room.",
+    sharedProject: {
+      weekNumber: weeklyPlan.week.weekNumber,
+      theme: weeklyPlan.week.theme,
+      project: weeklyPlan.week.project,
+      prompt: "Work on the same weekly project, then share one parent-visible update about what each person contributed.",
+      roles: createProjectRoles(approvedInvites.length + 1),
+      milestones: [
+        "Choose one project question together.",
+        "Each student contributes one artifact, example, or explanation.",
+        "Post a parent-visible update without private contact details.",
+        "Ask a parent to approve any showcase, screen share, or outside app session."
+      ]
+    },
+    members: [
+      {
+        firstName: student.firstName,
+        role: "student",
+        gradeLevel: student.gradeLevel,
+        completedMissionCount,
+        badgeCount: estimateBadgeCount(progress),
+        visibilityNote: "Shows completed missions and badges only."
+      },
+      ...approvedInvites.map((invite) => ({
+        firstName: invite.friendName,
+        role: "friend",
+        visibilityNote: "Friend progress appears only after that parent approves sharing."
+      }))
+    ],
+    projectUpdates,
+    sharedRewardIdeas: [
+      "Parent-approved project showcase call",
+      "Shared park or sports activity with parents supervising",
+      "Family movie or game night after both students finish the weekly project",
+      "Healthy snack challenge that each family can approve separately"
+    ],
+    visibility: {
+      showCompletedMissions: true,
+      showBadges: true,
+      showProjectUpdates: true,
+      showExactScores: false,
+      showPrivateReflections: false,
+      showHealthAnswers: false,
+      showFaithReflections: false,
+      allowPrivateChildMessages: false
+    },
+    parentControls: [
+      "Parents approve every friend invite before a child joins the squad.",
+      "Project updates are visible to parents and moderated for personal information.",
+      "External apps, live sessions, screen share, Discord, Teams, and Zoom stay locked until parents approve them.",
+      "Exact scores, health answers, faith reflections, and private writing stay hidden by default."
+    ],
+    externalIntegrations: {
+      discord: "planned_parent_approved",
+      microsoftTeams: "planned_parent_approved",
+      zoom: "planned_parent_approved",
+      screenShare: "planned_parent_approved"
+    }
+  };
+}
+
+export function createSquadProjectUpdate({ student, message }) {
+  const cleanedMessage = (message ?? "").trim();
+
+  if (!cleanedMessage) {
+    return {
+      status: "blocked",
+      reason: "Write a short project update before posting.",
+      parentVisible: true
+    };
+  }
+
+  const moderation = moderateChildMessage(cleanedMessage);
+
+  if (moderation.status === "blocked") {
+    return {
+      status: "blocked",
+      reason: moderation.reason,
+      parentVisible: true
+    };
+  }
+
+  return {
+    id: "squad-update-" + Date.now(),
+    status: "allowed",
+    author: student.firstName,
+    message: cleanedMessage,
+    createdAt: new Date().toISOString(),
+    parentVisible: true,
+    safetyLabel: "Parent-visible project update"
+  };
+}
+
+function createProjectRoles(memberCount) {
+  const roles = ["Researcher", "Writer", "Designer", "Presenter", "Fact-checker", "Team Captain"];
+
+  return roles.slice(0, Math.max(2, Math.min(memberCount + 1, roles.length)));
+}
+
+function estimateBadgeCount(progress) {
+  const completedCount = (progress?.completedMissionIds ?? []).length;
+  let badgeCount = completedCount > 0 ? 1 : 0;
+
+  if (completedCount >= 5) {
+    badgeCount += 1;
+  }
+
+  if ((progress?.masteryStars ?? 0) >= 5) {
+    badgeCount += 1;
+  }
+
+  if ((progress?.friendInvites ?? []).some((invite) => invite.status === "approved")) {
+    badgeCount += 1;
+  }
+
+  return badgeCount;
 }

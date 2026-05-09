@@ -6,7 +6,9 @@ import { moderateChildMessage } from "../src/agents/safetyModeratorAgent.js";
 import {
   approveInvitationRequest,
   createInvitationRequest,
-  createLearningSquad
+  createLearningSquad,
+  createLearningSquadRoom,
+  createSquadProjectUpdate
 } from "../src/agents/socialCoordinatorAgent.js";
 import { createTeacherSharePackage } from "../src/agents/teacherLiaisonAgent.js";
 
@@ -168,4 +170,76 @@ test("achievement exports create transcripts, certificates, badges, and privacy 
   assert.ok(report.portfolioHighlights[0].reflection.includes("learning map"));
   assert.ok(report.schoolShareSummary.includes("Subjects represented"));
   assert.ok(report.excludedByDefault.includes("Private health check answers"));
+});
+
+test("learning squad rooms expose shared projects with safe visibility", () => {
+  const programPlan = createProgramPlan(student, parentPolicy);
+  const room = createLearningSquadRoom({
+    student,
+    programPlan,
+    weekNumber: 1,
+    parentPolicy,
+    progress: {
+      completedMissionIds: ["week-1-day-1", "week-1-day-2"],
+      masteryStars: 5,
+      friendInvites: [
+        {
+          id: "invite-1",
+          status: "approved",
+          friendName: "Jordan"
+        }
+      ],
+      squadProjectUpdates: [
+        {
+          id: "update-1",
+          status: "allowed",
+          author: "Avery",
+          message: "I drafted the first project question.",
+          parentVisible: true
+        }
+      ]
+    }
+  });
+
+  assert.equal(room.status, "ready");
+  assert.equal(room.approvedFriendCount, 1);
+  assert.equal(room.members.length, 2);
+  assert.equal(room.members[1].visibilityNote.includes("parent approves"), true);
+  assert.equal(room.visibility.showExactScores, false);
+  assert.equal(room.visibility.allowPrivateChildMessages, false);
+  assert.equal(room.sharedProject.weekNumber, 1);
+  assert.equal(room.projectUpdates.length, 1);
+  assert.ok(room.parentControls.some((control) => control.includes("Discord")));
+});
+
+test("learning squad rooms respect parent invite settings", () => {
+  const programPlan = createProgramPlan(student, parentPolicy);
+  const blocked = createLearningSquadRoom({
+    student,
+    programPlan,
+    parentPolicy: {
+      ...parentPolicy,
+      friendInvitesEnabled: false
+    },
+    progress: {}
+  });
+
+  assert.equal(blocked.status, "blocked");
+});
+
+test("squad project updates are parent-visible and moderated", () => {
+  const allowed = createSquadProjectUpdate({
+    student,
+    message: "I finished the project outline and added one source."
+  });
+  const blocked = createSquadProjectUpdate({
+    student,
+    message: "My email is child@example.com"
+  });
+
+  assert.equal(allowed.status, "allowed");
+  assert.equal(allowed.parentVisible, true);
+  assert.equal(allowed.safetyLabel, "Parent-visible project update");
+  assert.equal(blocked.status, "blocked");
+  assert.equal(blocked.parentVisible, true);
 });

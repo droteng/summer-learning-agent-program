@@ -31,6 +31,19 @@ Hidden by default:
 - Private writing unless selected.
 - Friend messages outside the squad.
 
+## Learning Squad Room MVP
+
+The app now supports an internal shared project room before external integrations are enabled. The room includes:
+
+- Approved squad members and safe progress visibility.
+- A shared weekly project prompt.
+- Suggested collaboration roles and milestones.
+- Parent-visible, moderated project updates.
+- Shared reward ideas that still require parent approval.
+- Parent controls for external tools, live sessions, screen share, and visibility.
+
+Private child-to-child DMs remain disabled. Discord, Microsoft Teams, Zoom, and screen share are planned as parent-approved integrations after the internal room model is stable.
+
 ## Collaboration Projects
 
 Project examples:

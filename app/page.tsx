@@ -122,6 +122,7 @@ type Progress = {
   diagnosticCompleted: boolean;
   rewardRequests: RewardRequest[];
   friendInvites: FriendInvite[];
+  squadProjectUpdates: SquadProjectUpdate[];
 };
 
 type RewardRequest = {
@@ -152,6 +153,44 @@ type FriendInvite = {
   parentMessage?: string;
   safetyRules?: string[];
   sharingDefaults?: Record<string, boolean>;
+};
+
+type SquadProjectUpdate = {
+  id: string;
+  status: "allowed" | "blocked";
+  author?: string;
+  message?: string;
+  createdAt?: string;
+  parentVisible: boolean;
+  reason?: string;
+  safetyLabel?: string;
+};
+
+type LearningSquadRoom = {
+  status: "ready" | "blocked";
+  reason?: string;
+  name?: string;
+  approvedFriendCount?: number;
+  nextStep?: string;
+  sharedProject?: {
+    weekNumber: number;
+    theme: string;
+    project: string;
+    prompt: string;
+    roles: string[];
+    milestones: string[];
+  };
+  members?: Array<{
+    firstName: string;
+    role: string;
+    gradeLevel?: number;
+    completedMissionCount?: number;
+    badgeCount?: number;
+    visibilityNote: string;
+  }>;
+  projectUpdates?: SquadProjectUpdate[];
+  sharedRewardIdeas?: string[];
+  parentControls?: string[];
 };
 
 type WeeklyParentReport = {
@@ -316,7 +355,8 @@ const emptyProgress: Progress = {
   diagnosticAnswers: {},
   diagnosticCompleted: false,
   rewardRequests: [],
-  friendInvites: []
+  friendInvites: [],
+  squadProjectUpdates: []
 };
 
 export default function Home() {
@@ -342,6 +382,9 @@ export default function Home() {
   const [rewardStatus, setRewardStatus] = useState("Complete a mission to request a parent-approved reward.");
   const [friendName, setFriendName] = useState("");
   const [inviteStatus, setInviteStatus] = useState("Suggest a friend to start a parent-approved learning squad.");
+  const [squadRoom, setSquadRoom] = useState<LearningSquadRoom | null>(null);
+  const [squadRoomStatus, setSquadRoomStatus] = useState("Open a parent-approved Learning Squad room after a friend invite is approved.");
+  const [projectUpdateDraft, setProjectUpdateDraft] = useState("");
   const [shareExport, setShareExport] = useState("");
   const [weeklyReport, setWeeklyReport] = useState<WeeklyParentReport | null>(null);
   const [reportStatus, setReportStatus] = useState("Prepare a weekly parent report after missions are completed.");
@@ -912,6 +955,64 @@ export default function Home() {
       )
     });
     setInviteStatus("Parent-approved invite link created.");
+  }
+
+  async function openSquadRoom(nextProgress = progress) {
+    const response = await fetch("/api/learning-squad-room", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        ...payload,
+        weekNumber,
+        progress: nextProgress
+      })
+    });
+    const result = await response.json();
+
+    if (result.status !== "ready") {
+      setSquadRoom(null);
+      setSquadRoomStatus(result.reason ?? "Learning Squad room could not be opened.");
+      return;
+    }
+
+    setSquadRoom(result);
+    setSquadRoomStatus(result.nextStep ?? "Learning Squad room is ready.");
+  }
+
+  async function postSquadProjectUpdate() {
+    if (!canUseLearning) {
+      setSquadRoomStatus("Sign in to post a parent-visible project update.");
+      return;
+    }
+
+    const response = await fetch("/api/squad-project-update", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        ...payload,
+        message: projectUpdateDraft
+      })
+    });
+    const result: SquadProjectUpdate = await response.json();
+
+    if (result.status !== "allowed") {
+      setSquadRoomStatus(result.reason ?? "Project update was blocked for parent review.");
+      return;
+    }
+
+    const nextProgress = {
+      ...progress,
+      squadProjectUpdates: [result, ...(progress.squadProjectUpdates ?? [])]
+    };
+
+    await saveProgress(nextProgress);
+    setProjectUpdateDraft("");
+    setSquadRoom((room) => room ? { ...room, projectUpdates: [result, ...(room.projectUpdates ?? [])] } : room);
+    setSquadRoomStatus("Project update posted for parent-visible squad sharing.");
   }
 
   async function prepareWeeklyReport() {
@@ -1700,6 +1801,7 @@ export default function Home() {
                     {invite.status === "needs_parent_approval" && (
                       <button disabled={!isParent} onClick={() => approveFriendInvite(invite.id)}>Approve invite</button>
                     )}
+                    {invite.status === "approved" && <button onClick={() => openSquadRoom()}>Open room</button>}
                   </article>
                 ))}
               </div>
@@ -1709,6 +1811,78 @@ export default function Home() {
               <span>Shows badges and completed missions.</span>
               <span>Hides exact scores, private reflections, health answers, and faith reflections.</span>
             </div>
+            <div className="actions">
+              <button disabled={!canUseLearning && !isParent} onClick={() => openSquadRoom()}>Open shared project room</button>
+              <span>{squadRoomStatus}</span>
+            </div>
+            {squadRoom?.status === "ready" && squadRoom.sharedProject && (
+              <div className="squad-room">
+                <div className="section-head">
+                  <div>
+                    <p className="eyebrow">Learning Squad Room</p>
+                    <h3>{squadRoom.name}</h3>
+                  </div>
+                  <span className="pill">{squadRoom.approvedFriendCount} approved friends</span>
+                </div>
+                <section className="shared-project">
+                  <strong>Week {squadRoom.sharedProject.weekNumber}: {squadRoom.sharedProject.theme}</strong>
+                  <span>{squadRoom.sharedProject.project}</span>
+                  <small>{squadRoom.sharedProject.prompt}</small>
+                </section>
+                <div className="squad-members">
+                  {squadRoom.members?.map((member) => (
+                    <article key={member.firstName}>
+                      <strong>{member.firstName}</strong>
+                      <span>{member.role === "student" ? `${member.completedMissionCount ?? 0} missions / ${member.badgeCount ?? 0} badges` : "Progress hidden until parent sharing is approved"}</span>
+                      <small>{member.visibilityNote}</small>
+                    </article>
+                  ))}
+                </div>
+                <div className="squad-milestones">
+                  <section>
+                    <h3>Project roles</h3>
+                    {squadRoom.sharedProject.roles.map((roleName) => <span key={roleName}>{roleName}</span>)}
+                  </section>
+                  <section>
+                    <h3>Milestones</h3>
+                    {squadRoom.sharedProject.milestones.map((milestone) => <span key={milestone}>{milestone}</span>)}
+                  </section>
+                </div>
+                <div className="project-update-box">
+                  <label>
+                    Parent-visible project update
+                    <textarea
+                      rows={3}
+                      value={projectUpdateDraft}
+                      onChange={(event) => setProjectUpdateDraft(event.target.value)}
+                      placeholder="Share what you worked on, without phone numbers, addresses, emails, passwords, or private details."
+                    />
+                  </label>
+                  <button disabled={!canUseLearning} onClick={postSquadProjectUpdate}>Post update</button>
+                </div>
+                <div className="project-updates">
+                  <h3>Project updates</h3>
+                  {(squadRoom.projectUpdates?.length ?? 0) === 0 && <p className="quiet">No project updates yet.</p>}
+                  {squadRoom.projectUpdates?.map((update) => (
+                    <article key={update.id}>
+                      <strong>{update.author}</strong>
+                      <span>{update.message}</span>
+                      <small>{update.safetyLabel}</small>
+                    </article>
+                  ))}
+                </div>
+                <div className="squad-rewards">
+                  <h3>Shared reward ideas</h3>
+                  {squadRoom.sharedRewardIdeas?.map((reward) => <span key={reward}>{reward}</span>)}
+                </div>
+                {isParent && (
+                  <div className="squad-controls">
+                    <h3>Parent controls</h3>
+                    {squadRoom.parentControls?.map((control) => <span key={control}>{control}</span>)}
+                  </div>
+                )}
+              </div>
+            )}
           </article>
 
           <article id="achievement-export" className="panel wide achievement-export">

@@ -869,6 +869,77 @@ h3 {
   justify-self: start;
 }
 
+.squad-panel,
+.squad-room,
+.project-updates,
+.squad-rewards,
+.squad-controls {
+  display: grid;
+  gap: 14px;
+}
+
+.squad-room {
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+.shared-project,
+.squad-members article,
+.squad-milestones section,
+.project-update-box,
+.project-updates article,
+.squad-rewards,
+.squad-controls {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #f8fafc;
+}
+
+.shared-project,
+.squad-members article,
+.squad-milestones section,
+.project-update-box,
+.project-updates article {
+  display: grid;
+  gap: 8px;
+}
+
+.squad-members,
+.squad-milestones {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.squad-milestones section,
+.squad-rewards,
+.squad-controls {
+  align-content: start;
+}
+
+.squad-milestones span,
+.squad-rewards span,
+.squad-controls span {
+  display: block;
+}
+
+.shared-project span,
+.shared-project small,
+.squad-members span,
+.squad-members small,
+.squad-milestones span,
+.project-updates span,
+.project-updates small,
+.squad-rewards span,
+.squad-controls span {
+  color: var(--muted);
+}
+
+.project-update-box button {
+  justify-self: start;
+}
+
 .squad-panel {
   display: grid;
   gap: 14px;
@@ -1115,6 +1186,8 @@ h3 {
   .subject-tuning,
   .diagnostic-grid,
   .squad-grid,
+  .squad-members,
+  .squad-milestones,
   .report-grid,
   .achievement-grid,
   .badge-list,
