@@ -322,6 +322,42 @@ type FamilyAccount = {
   credentialVersion: string;
 };
 
+type AccountFoundation = {
+  status: "ready_for_provider" | "needs_setup";
+  version: string;
+  parentAccount: {
+    ownerName: string;
+    email: string;
+    emailStatus: string;
+    requiredProviderFields: string[];
+  };
+  childProfiles: Array<{
+    id: string;
+    firstName: string;
+    role: string;
+    gradeLevel: number;
+    parentManaged: boolean;
+    productionFields: string[];
+    hiddenFromChild: string[];
+  }>;
+  dataAccessPolicy: Record<string, boolean>;
+  sessionPlan: {
+    localMvp: string;
+    production: string;
+    recommendedProviderOptions: string[];
+    requiredHardening: string[];
+  };
+  migrationPlan: Array<{
+    step: string;
+    detail: string;
+  }>;
+  readinessChecks: Array<{
+    label: string;
+    status: "ready" | "needs_setup" | "planned";
+  }>;
+  launchBlockers: string[];
+};
+
 type InstallPromptEvent = Event & {
   prompt: () => Promise<void>;
   userChoice: Promise<{ outcome: "accepted" | "dismissed"; platform: string }>;
@@ -393,11 +429,13 @@ export default function Home() {
   const [profileStatus, setProfileStatus] = useState("Loading saved profile...");
   const [profileReady, setProfileReady] = useState(false);
   const [familyAccount, setFamilyAccount] = useState<FamilyAccount | null>(null);
+  const [accountFoundation, setAccountFoundation] = useState<AccountFoundation | null>(null);
   const [parentName, setParentName] = useState("Parent");
   const [parentEmail, setParentEmail] = useState("");
   const [setupParentPasscode, setSetupParentPasscode] = useState("");
   const [setupChildPasscode, setSetupChildPasscode] = useState("");
   const [accountStatus, setAccountStatus] = useState("Loading family account...");
+  const [accountReadinessStatus, setAccountReadinessStatus] = useState("Prepare production account readiness after setup.");
   const [persistenceStatus, setPersistenceStatus] = useState("Loading saved progress...");
   const [role, setRole] = useState<UserRole>("child");
   const [authRole, setAuthRole] = useState<UserRole>("child");
@@ -630,6 +668,29 @@ export default function Home() {
     }
   }
 
+  async function prepareAccountReadiness() {
+    if (!isParent) {
+      setAccountReadinessStatus("Parent sign-in is required to prepare production account readiness.");
+      return;
+    }
+
+    const response = await fetch("/api/account-readiness", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    });
+    const result = await response.json();
+
+    setAccountFoundation(result);
+    setAccountReadinessStatus(
+      result.status === "ready_for_provider"
+        ? "Account foundation is ready for hosted provider selection."
+        : "Account foundation still has setup or launch blockers."
+    );
+  }
+
   async function saveFamilyAccount() {
     if (!isParent && familyAccount) {
       setAccountStatus("Parent sign-in is required to update the family account.");
@@ -663,6 +724,8 @@ export default function Home() {
     setAuthRole("child");
     setIsSignedIn(false);
     setAccountStatus("Family account saved. Sign in again with the new passcode.");
+    setAccountFoundation(null);
+    setAccountReadinessStatus("Sign in as parent to refresh production account readiness.");
   }
 
   async function loadProfile() {
@@ -1301,6 +1364,59 @@ export default function Home() {
                 ? `Account: ${familyAccount.parent.name || "Parent"} / ${familyAccount.children[0]?.firstName || childName}`
                 : "Until this is created, the default MVP passcodes still work."}
             </span>
+          </div>
+          <div className="account-readiness">
+            <div className="section-head">
+              <div>
+                <p className="eyebrow">Production Account Foundation</p>
+                <h3>{accountFoundation ? accountFoundation.status.replaceAll("_", " ") : "Hosted account readiness"}</h3>
+              </div>
+              <button disabled={!isParent} onClick={prepareAccountReadiness}>Check readiness</button>
+            </div>
+            <p className="quiet">{accountReadinessStatus}</p>
+            {accountFoundation && (
+              <>
+                <div className="readiness-checks">
+                  {accountFoundation.readinessChecks.map((check) => (
+                    <span key={check.label} className={check.status}>{check.label}: {check.status.replaceAll("_", " ")}</span>
+                  ))}
+                </div>
+                <div className="account-foundation-grid">
+                  <section>
+                    <h3>Parent owner</h3>
+                    <span>{accountFoundation.parentAccount.ownerName}</span>
+                    <span>{accountFoundation.parentAccount.email || "Parent email missing"}</span>
+                    <small>{accountFoundation.parentAccount.emailStatus.replaceAll("_", " ")}</small>
+                  </section>
+                  <section>
+                    <h3>Child profiles</h3>
+                    {accountFoundation.childProfiles.map((child) => (
+                      <span key={child.id}>{child.firstName} - Grade {child.gradeLevel}</span>
+                    ))}
+                  </section>
+                  <section>
+                    <h3>Provider options</h3>
+                    {accountFoundation.sessionPlan.recommendedProviderOptions.map((provider) => (
+                      <span key={provider}>{provider}</span>
+                    ))}
+                  </section>
+                  <section>
+                    <h3>Launch blockers</h3>
+                    {accountFoundation.launchBlockers.length === 0 && <span>No launch blockers from this checklist.</span>}
+                    {accountFoundation.launchBlockers.map((blocker) => <span key={blocker}>{blocker}</span>)}
+                  </section>
+                </div>
+                <div className="migration-plan">
+                  <h3>Migration path from local MVP</h3>
+                  {accountFoundation.migrationPlan.map((item) => (
+                    <article key={item.step}>
+                      <strong>{item.step}</strong>
+                      <span>{item.detail}</span>
+                    </article>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
         </section>
 

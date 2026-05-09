@@ -296,6 +296,68 @@ h3 {
   gap: 12px;
 }
 
+.account-readiness,
+.migration-plan {
+  display: grid;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+}
+
+.readiness-checks,
+.account-foundation-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.readiness-checks {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.readiness-checks span,
+.account-foundation-grid section,
+.migration-plan article {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #f8fafc;
+}
+
+.readiness-checks span.ready {
+  border-color: #b9d7bd;
+  background: #f4faf4;
+  color: var(--green);
+}
+
+.readiness-checks span.needs_setup {
+  border-color: #f0d1aa;
+  background: #fff8ef;
+  color: var(--amber);
+}
+
+.readiness-checks span.planned {
+  border-color: #bfd0ec;
+  background: #f5f8fd;
+  color: var(--blue);
+}
+
+.account-foundation-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.account-foundation-grid section,
+.migration-plan article {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.account-foundation-grid span,
+.account-foundation-grid small,
+.migration-plan span {
+  color: var(--muted);
+}
+
 .setup {
   display: grid;
   grid-template-columns: minmax(220px, 0.7fr) minmax(280px, 1.3fr);
@@ -1149,6 +1211,8 @@ h3 {
 @media (max-width: 900px) {
   .shell,
   .account-grid,
+  .account-foundation-grid,
+  .readiness-checks,
   .device-grid,
   .setup,
   .grid {

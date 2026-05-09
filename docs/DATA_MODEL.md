@@ -26,6 +26,27 @@
 - credentials.parentPasscodeHash
 - credentials.childPasscodeHash
 
+## ProductionAccountFoundation
+
+- version
+- parentAccount.ownerName
+- parentAccount.email
+- parentAccount.emailStatus
+- parentAccount.requiredProviderFields
+- childProfiles
+- childProfiles.id
+- childProfiles.firstName
+- childProfiles.gradeLevel
+- childProfiles.parentManaged
+- rolePermissions
+- dataAccessPolicy
+- sessionPlan
+- sessionPlan.recommendedProviderOptions
+- sessionPlan.requiredHardening
+- migrationPlan
+- readinessChecks
+- launchBlockers
+
 ## ParentPolicy
 
 - allowedRewards

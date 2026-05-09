@@ -53,6 +53,7 @@
 - Local parent/child passcode authentication.
 - Saved local family account credentials.
 - Local session cookies for parent/child sign-in restore.
+- Production parent/child account foundation and migration plan.
 - Desktop and tablet PWA install shell.
 - Parent-approved achievement transcript, certificate preview, badge list, and portfolio highlights.
 - Printable parent and school report package with browser Save as PDF workflow.
