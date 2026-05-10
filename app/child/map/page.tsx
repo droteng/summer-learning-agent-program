@@ -41,7 +41,7 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
   const requestedQuestId = typeof params?.quest === "string" ? params.quest : null;
 
   const profile = { ...DEMO_PROFILE, id: studentId };
-  const progress = loadProgressSafely(studentId);
+  const progress = await loadProgressSafely(studentId);
   const programPlan = createProgramPlan(profile, DEMO_PARENT_POLICY);
 
   const skillMastery = progress?.skillMastery ?? {};
@@ -260,9 +260,9 @@ function patternUrl(patternSvg: string, color: string) {
   return `url("data:image/svg+xml,${encoded}")`;
 }
 
-function loadProgressSafely(studentId: string) {
+async function loadProgressSafely(studentId: string) {
   try {
-    return loadProgressSnapshot(studentId);
+    return await loadProgressSnapshot(studentId);
   } catch {
     return null;
   }

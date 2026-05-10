@@ -1,16 +1,19 @@
 import { NextResponse } from "next/server";
 import { httpStatusForHealth, runHealthChecks } from "../../../lib/health.js";
-import { getLocalDb } from "../../../src/data/localDb.js";
+import { pingDb, getDb } from "../../../src/data/db.js";
 
 export const dynamic = "force-dynamic";
 
 export async function GET() {
   const db = {
     async ping() {
-      const row = getLocalDb().prepare("SELECT 1 AS ok").get() as { ok?: number } | undefined;
-      return row?.ok === 1;
+      return pingDb();
     }
   };
   const report = await runHealthChecks({ db });
-  return NextResponse.json(report, { status: httpStatusForHealth(report) });
+  const backend = await getDb();
+  return NextResponse.json(
+    { ...report, dbBackend: backend.name },
+    { status: httpStatusForHealth(report) }
+  );
 }

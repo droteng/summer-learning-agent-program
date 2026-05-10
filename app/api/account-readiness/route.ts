@@ -6,7 +6,7 @@ export const runtime = "nodejs";
 
 export async function POST(request: Request) {
   const payload = await request.json();
-  const account = loadFamilyAccount();
+  const account = await loadFamilyAccount();
 
   return NextResponse.json(
     createProductionAccountFoundation({

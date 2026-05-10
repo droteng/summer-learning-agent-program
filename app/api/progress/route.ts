@@ -14,7 +14,7 @@ const emptyProgress = {
 export async function GET(request: Request) {
   const url = new URL(request.url);
   const studentId = url.searchParams.get("studentId") ?? "mvp-preview-student";
-  const progress = loadProgressSnapshot(studentId) ?? emptyProgress;
+  const progress = (await loadProgressSnapshot(studentId)) ?? emptyProgress;
 
   return NextResponse.json({ progress });
 }
@@ -22,7 +22,7 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   const payload = await request.json();
   const studentId = payload.studentId ?? "mvp-preview-student";
-  const saved = saveProgressSnapshot({
+  const saved = await saveProgressSnapshot({
     studentId,
     progress: {
       ...emptyProgress,

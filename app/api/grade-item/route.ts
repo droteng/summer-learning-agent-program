@@ -39,9 +39,9 @@ export async function POST(request: Request) {
   let diagnosticSummaryFromMastery: ReturnType<typeof masteryToDiagnosticSummary> | null = null;
   let savedAt: string | null = null;
   if (persist) {
-    const existing = loadProgressSnapshot(studentId) ?? null;
+    const existing = (await loadProgressSnapshot(studentId)) ?? null;
     const next = recordGradedItem({ progress: existing, item, gradeResult: grade });
-    const saved = saveProgressSnapshot({ studentId, progress: next });
+    const saved = await saveProgressSnapshot({ studentId, progress: next });
     savedAt = saved.updatedAt;
     masterySummary = summarizeMasteryBySubject(next.skillMastery ?? {});
     diagnosticSummaryFromMastery = masteryToDiagnosticSummary(next.skillMastery ?? {});

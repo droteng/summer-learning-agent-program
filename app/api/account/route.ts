@@ -5,7 +5,7 @@ import { loadFamilyAccount, saveFamilyAccount } from "../../../src/data/localDb.
 export const runtime = "nodejs";
 
 export async function GET() {
-  const account = loadFamilyAccount();
+  const account = await loadFamilyAccount();
 
   return NextResponse.json({
     account: publicAccountView(account)
@@ -15,7 +15,7 @@ export async function GET() {
 export async function POST(request: Request) {
   const payload = await request.json();
   const account = createFamilyAccount(payload);
-  const saved = saveFamilyAccount({ account });
+  const saved = await saveFamilyAccount({ account });
 
   return NextResponse.json({
     account: publicAccountView(saved.account),

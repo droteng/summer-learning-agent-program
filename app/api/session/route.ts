@@ -12,7 +12,7 @@ export async function GET(request: Request) {
     .map((item) => item.trim())
     .find((item) => item.startsWith(`${sessionCookieName}=`))
     ?.split("=")[1];
-  const session = sessionId ? publicSessionView(loadAuthSession(sessionId)) : null;
+  const session = sessionId ? publicSessionView(await loadAuthSession(sessionId)) : null;
 
   return NextResponse.json({
     status: session ? "signed_in" : "signed_out",
@@ -29,7 +29,7 @@ export async function DELETE(request: Request) {
     ?.split("=")[1];
 
   if (sessionId) {
-    deleteAuthSession(sessionId);
+    await deleteAuthSession(sessionId);
   }
 
   const response = NextResponse.json({
