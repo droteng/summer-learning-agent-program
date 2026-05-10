@@ -66,6 +66,24 @@ export function createSqliteBackend({ dbPath = DEFAULT_DB_PATH } = {}) {
 
         CREATE INDEX IF NOT EXISTS subscriptions_customer_idx
           ON subscriptions(stripe_customer_id);
+
+        CREATE TABLE IF NOT EXISTS weekly_report_narratives (
+          parent_email TEXT NOT NULL,
+          week_number INTEGER NOT NULL,
+          narrative_json TEXT NOT NULL,
+          updated_at TEXT NOT NULL,
+          PRIMARY KEY (parent_email, week_number)
+        );
+
+        CREATE TABLE IF NOT EXISTS report_batches (
+          batch_id TEXT PRIMARY KEY,
+          status TEXT NOT NULL,
+          submission_json TEXT NOT NULL,
+          last_result_json TEXT,
+          submitted_at TEXT NOT NULL,
+          completed_at TEXT,
+          updated_at TEXT NOT NULL
+        );
       `);
     }
     return db;
@@ -155,6 +173,68 @@ export function createSqliteBackend({ dbPath = DEFAULT_DB_PATH } = {}) {
     deleteAuthSession(sessionId) {
       getDb().prepare("DELETE FROM auth_sessions WHERE session_id = ?").run(sessionId);
       return { deleted: true, sessionId };
+    },
+    loadWeeklyReportNarrative({ parentEmail, weekNumber }) {
+      const row = getDb()
+        .prepare(
+          "SELECT narrative_json, updated_at FROM weekly_report_narratives WHERE parent_email = ? AND week_number = ?"
+        )
+        .get(parentEmail.toLowerCase(), Number(weekNumber));
+      if (!row) return null;
+      return { ...JSON.parse(row.narrative_json), updatedAt: row.updated_at };
+    },
+    saveWeeklyReportNarrative({ parentEmail, weekNumber, narrative }) {
+      const updatedAt = new Date().toISOString();
+      getDb()
+        .prepare(
+          `INSERT INTO weekly_report_narratives (parent_email, week_number, narrative_json, updated_at)
+           VALUES (?, ?, ?, ?)
+           ON CONFLICT(parent_email, week_number)
+           DO UPDATE SET narrative_json = excluded.narrative_json, updated_at = excluded.updated_at`
+        )
+        .run(parentEmail.toLowerCase(), Number(weekNumber), JSON.stringify(narrative), updatedAt);
+      return { narrative, updatedAt };
+    },
+    loadReportBatch(batchId) {
+      const row = getDb()
+        .prepare(
+          "SELECT batch_id, status, submission_json, last_result_json, submitted_at, completed_at FROM report_batches WHERE batch_id = ?"
+        )
+        .get(batchId);
+      if (!row) return null;
+      return {
+        batchId: row.batch_id,
+        status: row.status,
+        submission: JSON.parse(row.submission_json),
+        lastResult: row.last_result_json ? JSON.parse(row.last_result_json) : null,
+        submittedAt: row.submitted_at,
+        completedAt: row.completed_at
+      };
+    },
+    saveReportBatch({ batchId, status, submission, lastResult = null, submittedAt = null, completedAt = null }) {
+      const updatedAt = new Date().toISOString();
+      const existing = this.loadReportBatch(batchId);
+      const finalSubmittedAt = submittedAt ?? existing?.submittedAt ?? updatedAt;
+      getDb()
+        .prepare(
+          `INSERT INTO report_batches (batch_id, status, submission_json, last_result_json, submitted_at, completed_at, updated_at)
+           VALUES (?, ?, ?, ?, ?, ?, ?)
+           ON CONFLICT(batch_id)
+           DO UPDATE SET status = excluded.status,
+                         last_result_json = excluded.last_result_json,
+                         completed_at = excluded.completed_at,
+                         updated_at = excluded.updated_at`
+        )
+        .run(
+          batchId,
+          status,
+          JSON.stringify(submission ?? existing?.submission ?? {}),
+          lastResult ? JSON.stringify(lastResult) : null,
+          finalSubmittedAt,
+          completedAt,
+          updatedAt
+        );
+      return { batchId, status, updatedAt };
     },
     loadConsentRecords(studentId) {
       const row = getDb().prepare("SELECT records_json FROM consent_records WHERE student_id = ?").get(studentId);

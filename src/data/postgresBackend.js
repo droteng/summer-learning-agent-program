@@ -64,6 +64,24 @@ const SCHEMA_SQL = `
 
   CREATE INDEX IF NOT EXISTS subscriptions_customer_idx
     ON subscriptions(stripe_customer_id);
+
+  CREATE TABLE IF NOT EXISTS weekly_report_narratives (
+    parent_email TEXT NOT NULL,
+    week_number INTEGER NOT NULL,
+    narrative_json JSONB NOT NULL,
+    updated_at TIMESTAMPTZ NOT NULL,
+    PRIMARY KEY (parent_email, week_number)
+  );
+
+  CREATE TABLE IF NOT EXISTS report_batches (
+    batch_id TEXT PRIMARY KEY,
+    status TEXT NOT NULL,
+    submission_json JSONB NOT NULL,
+    last_result_json JSONB,
+    submitted_at TIMESTAMPTZ NOT NULL,
+    completed_at TIMESTAMPTZ,
+    updated_at TIMESTAMPTZ NOT NULL
+  );
 `;
 
 export function createPostgresBackend({
@@ -292,6 +310,73 @@ export function createPostgresBackend({
         [parentEmail.toLowerCase()]
       );
       return result.rows[0] ? result.rows[0].subscription_json : null;
+    },
+    async loadWeeklyReportNarrative({ parentEmail, weekNumber }) {
+      await ensureSchema();
+      const result = await pool.query(
+        "SELECT narrative_json, updated_at FROM weekly_report_narratives WHERE parent_email = $1 AND week_number = $2",
+        [parentEmail.toLowerCase(), Number(weekNumber)]
+      );
+      if (!result.rows[0]) return null;
+      const updated = result.rows[0].updated_at;
+      return {
+        ...result.rows[0].narrative_json,
+        updatedAt: updated instanceof Date ? updated.toISOString() : updated
+      };
+    },
+    async saveWeeklyReportNarrative({ parentEmail, weekNumber, narrative }) {
+      await ensureSchema();
+      const updatedAt = new Date().toISOString();
+      await pool.query(
+        `INSERT INTO weekly_report_narratives (parent_email, week_number, narrative_json, updated_at)
+         VALUES ($1, $2, $3::jsonb, $4)
+         ON CONFLICT (parent_email, week_number)
+         DO UPDATE SET narrative_json = EXCLUDED.narrative_json, updated_at = EXCLUDED.updated_at`,
+        [parentEmail.toLowerCase(), Number(weekNumber), JSON.stringify(narrative), updatedAt]
+      );
+      return { narrative, updatedAt };
+    },
+    async loadReportBatch(batchId) {
+      await ensureSchema();
+      const result = await pool.query(
+        "SELECT batch_id, status, submission_json, last_result_json, submitted_at, completed_at FROM report_batches WHERE batch_id = $1",
+        [batchId]
+      );
+      const row = result.rows[0];
+      if (!row) return null;
+      return {
+        batchId: row.batch_id,
+        status: row.status,
+        submission: row.submission_json,
+        lastResult: row.last_result_json,
+        submittedAt: row.submitted_at instanceof Date ? row.submitted_at.toISOString() : row.submitted_at,
+        completedAt: row.completed_at instanceof Date ? row.completed_at.toISOString() : row.completed_at
+      };
+    },
+    async saveReportBatch({ batchId, status, submission, lastResult = null, submittedAt = null, completedAt = null }) {
+      await ensureSchema();
+      const updatedAt = new Date().toISOString();
+      const existing = await this.loadReportBatch(batchId);
+      const finalSubmittedAt = submittedAt ?? existing?.submittedAt ?? updatedAt;
+      await pool.query(
+        `INSERT INTO report_batches (batch_id, status, submission_json, last_result_json, submitted_at, completed_at, updated_at)
+         VALUES ($1, $2, $3::jsonb, $4::jsonb, $5, $6, $7)
+         ON CONFLICT (batch_id)
+         DO UPDATE SET status = EXCLUDED.status,
+                       last_result_json = EXCLUDED.last_result_json,
+                       completed_at = EXCLUDED.completed_at,
+                       updated_at = EXCLUDED.updated_at`,
+        [
+          batchId,
+          status,
+          JSON.stringify(submission ?? existing?.submission ?? {}),
+          lastResult ? JSON.stringify(lastResult) : null,
+          finalSubmittedAt,
+          completedAt,
+          updatedAt
+        ]
+      );
+      return { batchId, status, updatedAt };
     },
     async loadSubscriptionByCustomerId(stripeCustomerId) {
       await ensureSchema();

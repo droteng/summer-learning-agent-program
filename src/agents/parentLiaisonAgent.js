@@ -1,4 +1,5 @@
 import { TIERS } from "./llm/index.js";
+import { loadWeeklyReportNarrative } from "../data/db.js";
 
 export function createParentSummary(programPlan) {
   return {
@@ -108,10 +109,40 @@ export async function createWeeklyParentReportWithLlm({
   programPlan,
   progress,
   weekNumber,
-  llm = null
+  llm = null,
+  parentEmail = null
 }) {
   const baseReport = createWeeklyParentReport({ student, programPlan, progress, weekNumber });
   if (baseReport.status !== "ready") return baseReport;
+
+  // Cache check: a prior batch run may have already populated the narrative
+  // for this (parent, week) at 50% off. Use it and skip the LLM call.
+  if (parentEmail) {
+    try {
+      const cached = await loadWeeklyReportNarrative({
+        parentEmail,
+        weekNumber: baseReport.week.weekNumber
+      });
+      if (cached?.narrative && cached?.coachingTips && cached?.nextWeekPriorities) {
+        return {
+          ...baseReport,
+          narrative: cached.narrative,
+          coachingTips: cached.coachingTips,
+          nextWeekPriorities: cached.nextWeekPriorities,
+          narrativeMeta: {
+            provider: "batch_cache",
+            model: null,
+            fallback: false,
+            source: cached.source ?? "batch",
+            batchId: cached.batchId ?? null,
+            cachedAt: cached.updatedAt ?? null
+          }
+        };
+      }
+    } catch {
+      // cache miss is non-fatal — fall through to synthesis
+    }
+  }
 
   const synthesis = await synthesizeReportNarrative({ baseReport, student, llm });
   return {
@@ -211,7 +242,7 @@ function heuristicNarrative({ baseReport, student }) {
   };
 }
 
-const NARRATIVE_SYSTEM_PROMPT = [
+export const NARRATIVE_SYSTEM_PROMPT = [
   "You write warm, specific weekly parent reports for a Grade 6 summer learning program.",
   "Output JSON only with this exact shape:",
   '{"narrative": string, "coachingTips": string[], "nextWeekPriorities": [{"subject": string, "reason": string}]}.',
@@ -221,7 +252,7 @@ const NARRATIVE_SYSTEM_PROMPT = [
   "Never include private health, faith, or message content. Output JSON only."
 ].join(" ");
 
-function buildNarrativePrompt({ baseReport, student }) {
+export function buildNarrativePrompt({ baseReport, student }) {
   const reflections = baseReport.completedMissions
     .filter((m) => m.reflection)
     .map((m) => `${m.dayLabel}: "${m.reflection}"`)
@@ -239,7 +270,7 @@ function buildNarrativePrompt({ baseReport, student }) {
   ].join("\n");
 }
 
-function parseNarrativeJson(text) {
+export function parseNarrativeJson(text) {
   if (typeof text !== "string") return null;
   const match = text.match(/\{[\s\S]*\}/);
   if (!match) return null;

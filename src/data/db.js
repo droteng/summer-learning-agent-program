@@ -119,3 +119,19 @@ export async function loadSubscriptionByCustomerId(stripeCustomerId) {
 export async function saveSubscription(args) {
   return (await getDb()).saveSubscription(args);
 }
+
+export async function loadWeeklyReportNarrative(args) {
+  return (await getDb()).loadWeeklyReportNarrative(args);
+}
+
+export async function saveWeeklyReportNarrative(args) {
+  return (await getDb()).saveWeeklyReportNarrative(args);
+}
+
+export async function loadReportBatch(batchId) {
+  return (await getDb()).loadReportBatch(batchId);
+}
+
+export async function saveReportBatch(args) {
+  return (await getDb()).saveReportBatch(args);
+}
