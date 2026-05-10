@@ -141,16 +141,5 @@ export const grade6MathWeek1Day1 = {
   ]
 };
 
-export const authoredMissions = {
-  [grade6MathWeek1Day1.id]: grade6MathWeek1Day1
-};
-
-export function findAuthoredMission({ gradeLevel, weekNumber, dayNumber, subject } = {}) {
-  return Object.values(authoredMissions).find(
-    (mission) =>
-      mission.gradeLevel === gradeLevel &&
-      mission.weekNumber === weekNumber &&
-      mission.dayNumber === dayNumber &&
-      mission.subject === subject
-  );
-}
+// Registry helpers moved to ../../index.js so adding a new mission is a
+// single import line. Mission data stays here for readability.

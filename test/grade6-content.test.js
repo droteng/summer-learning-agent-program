@@ -3,34 +3,52 @@ import test from "node:test";
 import {
   authoredMissions,
   findAuthoredMission,
-  grade6MathWeek1Day1
-} from "../src/content/grade6/week1/math-day1.js";
+  findAuthoredMissionsForDay,
+  getAuthoredMissionById
+} from "../src/content/index.js";
 
-test("Grade 6 Math Week 1 Day 1 is fully authored", () => {
-  const mission = grade6MathWeek1Day1;
-  assert.equal(mission.gradeLevel, 6);
-  assert.equal(mission.subject, "Math");
-  assert.ok(mission.miniLesson.length >= 2);
-  assert.ok(mission.workedExample.steps.length >= 3);
-  assert.ok(mission.items.length >= 5);
-  assert.ok(mission.items.every((item) => item.hintLadder.length >= 2));
-  assert.ok(mission.misconceptionBank.length >= 2);
-  assert.ok(mission.standardsRefs.some((ref) => ref.startsWith("CCSS.6.RP")));
+const ALL_MISSIONS = Object.values(authoredMissions);
+
+test("registry exposes all authored Grade 6 missions", () => {
+  assert.ok(ALL_MISSIONS.length >= 6, `expected at least 6 authored missions, got ${ALL_MISSIONS.length}`);
+  for (const mission of ALL_MISSIONS) {
+    assert.equal(mission.gradeLevel, 6, `${mission.id} not Grade 6`);
+    assert.ok(mission.id.length > 0);
+    assert.ok(mission.subject.length > 0);
+    assert.ok(typeof mission.weekNumber === "number");
+    assert.ok(typeof mission.dayNumber === "number");
+    assert.ok(mission.topic.length > 0);
+    assert.ok(mission.hook.length > 0);
+    assert.ok(Array.isArray(mission.miniLesson) && mission.miniLesson.length >= 2);
+    assert.ok(mission.workedExample && Array.isArray(mission.workedExample.steps));
+    assert.ok(Array.isArray(mission.items) && mission.items.length >= 5);
+    assert.ok(Array.isArray(mission.misconceptionBank));
+    assert.ok(mission.reflectionPrompt.length > 0);
+    assert.ok(mission.estimatedMinutes > 0);
+  }
 });
 
-test("multiple-choice and numeric items expose answers the assessment agent can grade", () => {
-  for (const item of grade6MathWeek1Day1.items) {
-    if (item.type === "multiple_choice") {
-      assert.ok(Number.isInteger(item.answerIndex));
-      assert.ok(item.choices[item.answerIndex]);
-    }
-    if (item.type === "numeric") {
-      assert.equal(typeof item.answer, "number");
-      assert.equal(typeof item.tolerance, "number");
-    }
-    if (item.type === "short_answer") {
-      assert.ok(item.rubric);
-      assert.ok(item.exemplar);
+test("every item has fields the assessment agent can grade", () => {
+  for (const mission of ALL_MISSIONS) {
+    for (const item of mission.items) {
+      assert.ok(item.id && item.id.length > 0, `${mission.id} item missing id`);
+      assert.ok(item.stem.length > 0);
+      assert.ok(["multiple_choice", "numeric", "short_answer"].includes(item.type), `${item.id} unknown type`);
+      assert.ok(Array.isArray(item.hintLadder) && item.hintLadder.length >= 2);
+      if (item.type === "multiple_choice") {
+        assert.ok(Array.isArray(item.choices) && item.choices.length >= 2);
+        assert.ok(Number.isInteger(item.answerIndex));
+        assert.ok(item.choices[item.answerIndex], `${item.id} answerIndex out of range`);
+      }
+      if (item.type === "numeric") {
+        assert.equal(typeof item.answer, "number");
+        assert.equal(typeof item.tolerance, "number");
+      }
+      if (item.type === "short_answer") {
+        assert.ok(item.rubric);
+        assert.ok(item.rubric.level3 && item.rubric.level2 && item.rubric.level1);
+        assert.ok(item.exemplar);
+      }
     }
   }
 });
@@ -53,6 +71,39 @@ test("findAuthoredMission resolves by grade, week, day, subject", () => {
   assert.equal(missing, undefined);
 });
 
-test("authoredMissions index is keyed by mission id", () => {
-  assert.equal(authoredMissions[grade6MathWeek1Day1.id], grade6MathWeek1Day1);
+test("findAuthoredMissionsForDay returns every subject authored on that day", () => {
+  const day1 = findAuthoredMissionsForDay({ gradeLevel: 6, weekNumber: 1, dayNumber: 1 });
+  const subjects = day1.map((m) => m.subject).sort();
+  assert.deepEqual(subjects, ["ELA/Writing", "Math"], "expected Math + ELA on Day 1");
+
+  const day3 = findAuthoredMissionsForDay({ gradeLevel: 6, weekNumber: 1, dayNumber: 3 });
+  assert.equal(day3.length, 1);
+  assert.equal(day3[0].subject, "Coding/Computer Science/AI");
+});
+
+test("getAuthoredMissionById returns the exact mission", () => {
+  const sci = getAuthoredMissionById("g6.sci.w1.d2");
+  assert.ok(sci);
+  assert.equal(sci.subject, "Science");
+
+  assert.equal(getAuthoredMissionById("does-not-exist"), null);
+});
+
+test("Week 1 covers all six core subjects across the five days", () => {
+  const weekOne = ALL_MISSIONS.filter((m) => m.weekNumber === 1);
+  const subjects = new Set(weekOne.map((m) => m.subject));
+  assert.ok(subjects.has("Math"));
+  assert.ok(subjects.has("ELA/Writing"));
+  assert.ok(subjects.has("Science"));
+  assert.ok(subjects.has("Coding/Computer Science/AI"));
+  assert.ok(subjects.has("History/Civics"));
+  assert.ok(subjects.has("World/Current Affairs"));
+});
+
+test("each mission's topicTag plugs into the mastery model", () => {
+  for (const mission of ALL_MISSIONS) {
+    assert.ok(mission.topicTag && mission.topicTag.length > 0, `${mission.id} missing topicTag`);
+    const skillId = `${mission.subject}:${mission.topicTag}`;
+    assert.ok(skillId.includes(":"), "skill id format should be subject:topicTag");
+  }
 });

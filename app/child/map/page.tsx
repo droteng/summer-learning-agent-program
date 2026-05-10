@@ -8,7 +8,11 @@ import {
 } from "../../../src/agents/masteryAgent.js";
 import { loadProgressSnapshot } from "../../../src/data/localDb.js";
 import { SUBJECT_ORDER, SUBJECT_THEMES, themeForSubject } from "../../../src/data/subjectTheme.js";
-import { authoredMissions } from "../../../src/content/grade6/week1/math-day1.js";
+import {
+  authoredMissions,
+  findAuthoredMissionsForDay,
+  getAuthoredMissionById
+} from "../../../src/content/index.js";
 import { PageDecorations, ProgressRing, SubjectIcon } from "./decorations";
 import { QuestRunner } from "./QuestRunner";
 
@@ -56,7 +60,7 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
   const stars = progress?.masteryStars ?? 0;
   const coins = progress?.campCoins ?? 0;
 
-  const activeQuest = requestedQuestId ? findClientSafeMission(requestedQuestId) : null;
+  const activeQuest = requestedQuestId ? getAuthoredMissionById(requestedQuestId) : null;
   const activeQuestTheme = activeQuest ? themeForSubject(activeQuest.subject) : null;
   const backHref = `/child/map${studentId !== "demo-student" ? `?student=${encodeURIComponent(studentId)}` : ""}`;
 
@@ -206,14 +210,22 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
                           );
                         })}
                       </div>
-                      {quest.authoredId && island.state !== "locked" ? (
-                        <Link
-                          className="qm-quest-cta"
-                          href={`/child/map?student=${encodeURIComponent(studentId)}&quest=${encodeURIComponent(quest.authoredId)}#quest`}
-                        >
-                          <span>Start quest</span>
-                          <span className="qm-quest-cta-arrow" aria-hidden="true">→</span>
-                        </Link>
+                      {quest.authored.length > 0 && island.state !== "locked" ? (
+                        <div className="qm-quest-ctas">
+                          {quest.authored.map((mission) => (
+                            <Link
+                              key={mission.id}
+                              className="qm-quest-cta"
+                              data-subject={mission.token}
+                              href={`/child/map?student=${encodeURIComponent(studentId)}&quest=${encodeURIComponent(mission.id)}#quest`}
+                              title={mission.topic}
+                            >
+                              <span className="qm-quest-cta-mono" aria-hidden="true">{mission.monogram}</span>
+                              <span className="qm-quest-cta-label">Start {themeForSubject(mission.subject)?.label}</span>
+                              <span className="qm-quest-cta-arrow" aria-hidden="true">→</span>
+                            </Link>
+                          ))}
+                        </div>
                       ) : (
                         <span className="qm-quest-coming">Coming soon</span>
                       )}
@@ -256,10 +268,6 @@ function loadProgressSafely(studentId: string) {
   }
 }
 
-function findClientSafeMission(questId: string) {
-  return Object.values(authoredMissions as Record<string, any>).find((m) => m.id === questId) ?? null;
-}
-
 function stripServerOnlyFields(mission: any) {
   return {
     id: mission.id,
@@ -293,6 +301,14 @@ function stripServerOnlyFields(mission: any) {
 
 type IslandState = "locked" | "active" | "complete";
 
+interface AuthoredQuestEntry {
+  id: string;
+  subject: string;
+  topic: string;
+  token: string;
+  monogram: string;
+}
+
 interface QuestRow {
   dayNumber: number;
   dayLabel: string;
@@ -300,7 +316,7 @@ interface QuestRow {
   subjects: string[];
   primaryToken: string;
   completed: boolean;
-  authoredId: string | null;
+  authored: AuthoredQuestEntry[];
 }
 
 interface IslandRow {
@@ -321,9 +337,21 @@ function buildIslandStates(weeklyMissionPlans: any[], completedMissionIds: strin
       const id = `week-${week.weekNumber}-day-${mission.dayNumber}`;
       const subjects = mission.lessons.map((l: any) => l.subject);
       const primary = themeForSubject(subjects[0]);
-      const authored = Object.values(authoredMissions as Record<string, any>).find(
-        (m: any) => m.weekNumber === week.weekNumber && m.dayNumber === mission.dayNumber
-      );
+      const authoredForDay = findAuthoredMissionsForDay({
+        gradeLevel: 6,
+        weekNumber: week.weekNumber,
+        dayNumber: mission.dayNumber
+      });
+      const authored: AuthoredQuestEntry[] = authoredForDay.map((m: any) => {
+        const theme = themeForSubject(m.subject);
+        return {
+          id: m.id,
+          subject: m.subject,
+          topic: m.topic,
+          token: theme?.token ?? "default",
+          monogram: theme?.monogram ?? "?"
+        };
+      });
       return {
         dayNumber: mission.dayNumber,
         dayLabel: mission.dayLabel,
@@ -331,7 +359,7 @@ function buildIslandStates(weeklyMissionPlans: any[], completedMissionIds: strin
         subjects,
         primaryToken: primary?.token ?? "default",
         completed: completedSet.has(id),
-        authoredId: authored?.id ?? null
+        authored
       };
     });
     const completedCount = quests.filter((q) => q.completed).length;

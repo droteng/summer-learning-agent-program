@@ -1,6 +1,6 @@
 import { TIERS } from "./llm/index.js";
 import { isHardSubject } from "./llm/router.js";
-import { findAuthoredMission } from "../content/grade6/week1/math-day1.js";
+import { findAuthoredMission } from "../content/index.js";
 
 export function createTeacherLessonGuide({ mission, studentProfile }) {
   const studentName = studentProfile.firstName || "Student";

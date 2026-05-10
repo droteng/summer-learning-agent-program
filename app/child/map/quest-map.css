@@ -597,22 +597,43 @@
   box-shadow: 0 2px 6px -2px color-mix(in srgb, var(--subject) 70%, transparent);
 }
 
+.qm-quest-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
 .qm-quest-cta {
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  margin-top: 4px;
-  padding: 8px 12px;
+  gap: 6px;
+  padding: 8px 10px 8px 8px;
   border-radius: 10px;
   background: linear-gradient(135deg, var(--subject), var(--subject-accent));
   color: white;
   text-decoration: none;
   font-weight: 800;
-  font-size: 13px;
+  font-size: 12px;
   letter-spacing: 0.02em;
   box-shadow: 0 4px 10px -2px color-mix(in srgb, var(--subject) 60%, transparent);
   transition: transform 160ms ease, box-shadow 160ms ease;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+.qm-quest-cta-mono {
+  width: 22px; height: 22px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.22);
+  display: grid; place-items: center;
+  font-size: 11px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.qm-quest-cta-label {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .qm-quest-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 18px -4px color-mix(in srgb, var(--subject) 60%, transparent); }
 .qm-quest-cta:focus-visible { outline: 3px solid white; outline-offset: 2px; }
