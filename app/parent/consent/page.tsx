@@ -135,6 +135,24 @@ export default async function ConsentPage({ searchParams }: { searchParams: Sear
           </section>
         )}
 
+        <section className="pd-card">
+          <div className="pd-section-head">
+            <h3>Right to delete</h3>
+            <p>You can request permanent deletion of {childFirstName}'s data at any time.</p>
+          </div>
+          <p style={{ margin: 0, fontSize: 14, lineHeight: 1.55, color: "var(--qm-muted)" }}>
+            Deletion removes every progress, profile, and consent record for this child. We keep
+            only an audit row to prove the deletion happened.
+          </p>
+          <Link
+            className="pd-banner-cta"
+            style={{ marginTop: 16, display: "inline-flex" }}
+            href={`/parent/data-deletion?student=${encodeURIComponent(studentId)}&child=${encodeURIComponent(childFirstName)}`}
+          >
+            Request data deletion →
+          </Link>
+        </section>
+
         <footer className="qm-footer">
           This disclosure is not legal advice. Have counsel review before launch.
         </footer>

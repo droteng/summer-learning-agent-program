@@ -46,6 +46,16 @@ export function createSqliteBackend({ dbPath = DEFAULT_DB_PATH } = {}) {
           records_json TEXT NOT NULL,
           updated_at TEXT NOT NULL
         );
+
+        CREATE TABLE IF NOT EXISTS erasure_audit (
+          audit_id TEXT PRIMARY KEY,
+          student_id TEXT NOT NULL,
+          audit_json TEXT NOT NULL,
+          created_at TEXT NOT NULL
+        );
+
+        CREATE INDEX IF NOT EXISTS erasure_audit_student_idx
+          ON erasure_audit(student_id);
       `);
     }
     return db;
@@ -165,6 +175,62 @@ export function createSqliteBackend({ dbPath = DEFAULT_DB_PATH } = {}) {
         )
         .run(studentId, JSON.stringify(records), updatedAt);
       return { records, updatedAt };
+    },
+    purgeStudentData(studentId) {
+      const db = getDb();
+      const counts = { progress: 0, profile: 0, consent_records: 0, item_grades: 0 };
+
+      const progressRow = db
+        .prepare("SELECT progress_json FROM progress_snapshots WHERE student_id = ?")
+        .get(studentId);
+      if (progressRow) {
+        try {
+          const parsed = JSON.parse(progressRow.progress_json);
+          counts.item_grades = Object.keys(parsed.itemGrades ?? {}).length;
+        } catch {
+          // ignore
+        }
+        const progressDel = db
+          .prepare("DELETE FROM progress_snapshots WHERE student_id = ?")
+          .run(studentId);
+        counts.progress = progressDel.changes ?? 0;
+      }
+
+      const profileDel = db
+        .prepare("DELETE FROM profile_snapshots WHERE profile_id = ?")
+        .run(studentId);
+      counts.profile = profileDel.changes ?? 0;
+
+      const consentRow = db
+        .prepare("SELECT records_json FROM consent_records WHERE student_id = ?")
+        .get(studentId);
+      if (consentRow) {
+        try {
+          const parsed = JSON.parse(consentRow.records_json);
+          counts.consent_records = Array.isArray(parsed) ? parsed.length : 0;
+        } catch {
+          // ignore
+        }
+        db.prepare("DELETE FROM consent_records WHERE student_id = ?").run(studentId);
+      }
+
+      return counts;
+    },
+    saveErasureAudit(record) {
+      const createdAt = new Date().toISOString();
+      getDb()
+        .prepare(
+          `INSERT INTO erasure_audit (audit_id, student_id, audit_json, created_at)
+           VALUES (?, ?, ?, ?)`
+        )
+        .run(record.auditId, record.studentId, JSON.stringify(record), createdAt);
+      return { record, createdAt };
+    },
+    loadErasureAudits(studentId) {
+      const rows = getDb()
+        .prepare("SELECT audit_json FROM erasure_audit WHERE student_id = ? ORDER BY created_at DESC")
+        .all(studentId);
+      return rows.map((r) => JSON.parse(r.audit_json));
     },
     _getRawDb: getDb
   };

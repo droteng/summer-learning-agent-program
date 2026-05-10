@@ -44,6 +44,16 @@ const SCHEMA_SQL = `
     records_json JSONB NOT NULL,
     updated_at TIMESTAMPTZ NOT NULL
   );
+
+  CREATE TABLE IF NOT EXISTS erasure_audit (
+    audit_id TEXT PRIMARY KEY,
+    student_id TEXT NOT NULL,
+    audit_json JSONB NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL
+  );
+
+  CREATE INDEX IF NOT EXISTS erasure_audit_student_idx
+    ON erasure_audit(student_id);
 `;
 
 export function createPostgresBackend({
@@ -211,6 +221,59 @@ export function createPostgresBackend({
         [studentId, JSON.stringify(records), updatedAt]
       );
       return { records, updatedAt };
+    },
+    async purgeStudentData(studentId) {
+      await ensureSchema();
+      const counts = { progress: 0, profile: 0, consent_records: 0, item_grades: 0 };
+
+      const progressRows = await pool.query(
+        "SELECT progress_json FROM progress_snapshots WHERE student_id = $1",
+        [studentId]
+      );
+      if (progressRows.rows[0]) {
+        counts.item_grades = Object.keys(progressRows.rows[0].progress_json?.itemGrades ?? {}).length;
+        const r = await pool.query(
+          "DELETE FROM progress_snapshots WHERE student_id = $1",
+          [studentId]
+        );
+        counts.progress = r.rowCount ?? 0;
+      }
+
+      const profileResult = await pool.query(
+        "DELETE FROM profile_snapshots WHERE profile_id = $1",
+        [studentId]
+      );
+      counts.profile = profileResult.rowCount ?? 0;
+
+      const consentRows = await pool.query(
+        "SELECT records_json FROM consent_records WHERE student_id = $1",
+        [studentId]
+      );
+      if (consentRows.rows[0]) {
+        const records = consentRows.rows[0].records_json;
+        counts.consent_records = Array.isArray(records) ? records.length : 0;
+        await pool.query("DELETE FROM consent_records WHERE student_id = $1", [studentId]);
+      }
+
+      return counts;
+    },
+    async saveErasureAudit(record) {
+      await ensureSchema();
+      const createdAt = new Date().toISOString();
+      await pool.query(
+        `INSERT INTO erasure_audit (audit_id, student_id, audit_json, created_at)
+         VALUES ($1, $2, $3::jsonb, $4)`,
+        [record.auditId, record.studentId, JSON.stringify(record), createdAt]
+      );
+      return { record, createdAt };
+    },
+    async loadErasureAudits(studentId) {
+      await ensureSchema();
+      const result = await pool.query(
+        "SELECT audit_json FROM erasure_audit WHERE student_id = $1 ORDER BY created_at DESC",
+        [studentId]
+      );
+      return result.rows.map((r) => r.audit_json);
     },
     async close() {
       await pool.end();

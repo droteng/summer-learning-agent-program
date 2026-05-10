@@ -92,6 +92,18 @@ export async function appendConsentRecord(args) {
   return (await getDb()).appendConsentRecord(args);
 }
 
+export async function purgeStudentData(studentId) {
+  return (await getDb()).purgeStudentData(studentId);
+}
+
+export async function saveErasureAudit(record) {
+  return (await getDb()).saveErasureAudit(record);
+}
+
+export async function loadErasureAudits(studentId) {
+  return (await getDb()).loadErasureAudits(studentId);
+}
+
 export async function replaceConsentRecords(args) {
   return (await getDb()).replaceConsentRecords(args);
 }
