@@ -35,5 +35,15 @@ test("hex colors are well-formed", () => {
     assert.match(theme.color, /^#[0-9a-fA-F]{6}$/);
     assert.match(theme.accent, /^#[0-9a-fA-F]{6}$/);
     assert.match(theme.soft, /^#[0-9a-fA-F]{6}$/);
+    assert.match(theme.deep, /^#[0-9a-fA-F]{6}$/);
+  }
+});
+
+test("each theme has an inline SVG icon and a tileable pattern", () => {
+  for (const theme of Object.values(SUBJECT_THEMES)) {
+    assert.ok(theme.iconSvg.length > 0, `${theme.label} missing iconSvg`);
+    assert.ok(theme.iconSvg.includes("currentColor"), `${theme.label} icon must use currentColor for theming`);
+    assert.ok(theme.patternSvg.startsWith("<svg"), `${theme.label} patternSvg must be standalone svg`);
+    assert.ok(theme.keyword.length > 0, `${theme.label} missing keyword`);
   }
 });

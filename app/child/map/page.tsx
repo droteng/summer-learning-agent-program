@@ -8,6 +8,9 @@ import {
 } from "../../../src/agents/masteryAgent.js";
 import { loadProgressSnapshot } from "../../../src/data/localDb.js";
 import { SUBJECT_ORDER, SUBJECT_THEMES, themeForSubject } from "../../../src/data/subjectTheme.js";
+import { authoredMissions } from "../../../src/content/grade6/week1/math-day1.js";
+import { PageDecorations, ProgressRing, SubjectIcon } from "./decorations";
+import { QuestRunner } from "./QuestRunner";
 
 export const dynamic = "force-dynamic";
 
@@ -26,11 +29,12 @@ const DEMO_PARENT_POLICY = Object.freeze({
   teacherSharingEnabled: true
 });
 
-type SearchParams = Promise<{ student?: string }>;
+type SearchParams = Promise<{ student?: string; quest?: string }>;
 
 export default async function QuestMapPage({ searchParams }: { searchParams: SearchParams }) {
   const params = await searchParams;
   const studentId = typeof params?.student === "string" && params.student.length > 0 ? params.student : "demo-student";
+  const requestedQuestId = typeof params?.quest === "string" ? params.quest : null;
 
   const profile = { ...DEMO_PROFILE, id: studentId };
   const progress = loadProgressSafely(studentId);
@@ -52,45 +56,78 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
   const stars = progress?.masteryStars ?? 0;
   const coins = progress?.campCoins ?? 0;
 
+  const activeQuest = requestedQuestId ? findClientSafeMission(requestedQuestId) : null;
+  const activeQuestTheme = activeQuest ? themeForSubject(activeQuest.subject) : null;
+  const backHref = `/child/map${studentId !== "demo-student" ? `?student=${encodeURIComponent(studentId)}` : ""}`;
+
   return (
     <main className="qm-page">
+      <PageDecorations />
       <div className="qm-shell">
         <header className="qm-topbar">
-          <Link className="qm-back" href="/">← Back to dashboard</Link>
-          <h1 className="qm-title">{profile.firstName}'s Summer Voyage</h1>
+          <Link className="qm-back" href="/">
+            <span aria-hidden="true">←</span> Dashboard
+          </Link>
+          <div className="qm-title-block">
+            <span className="qm-title-eyebrow">Summer Voyage</span>
+            <h1 className="qm-title">{profile.firstName}'s Map</h1>
+          </div>
         </header>
 
+        {activeQuest && activeQuestTheme && (
+          <QuestRunner
+            mission={stripServerOnlyFields(activeQuest)}
+            studentId={studentId}
+            studentName={profile.firstName}
+            subjectToken={activeQuestTheme.token}
+            subjectLabel={activeQuestTheme.label}
+            iconSvg={activeQuestTheme.iconSvg}
+            backHref={backHref}
+          />
+        )}
+
         <section className="qm-hero" aria-label="Camp progress">
-          <div>
-            <h2>{currentIsland ? `Week ${currentIsland.weekNumber} — ${currentIsland.theme}` : "All weeks complete"}</h2>
+          <div className="qm-hero-headline">
+            <span className="qm-hero-week">{currentIsland ? `Week ${currentIsland.weekNumber}` : "All weeks complete"}</span>
+            <h2>{currentIsland ? currentIsland.theme : "Showcase time!"}</h2>
             <p className="qm-hero-sub">
               {currentIsland
-                ? `Today's voyage: ${currentIsland.project} ${currentIsland.state === "locked" ? "(unlocks after the previous week)" : ""}`
-                : "You finished the eight-week summer voyage. Time for a showcase!"}
+                ? `${currentIsland.project}${currentIsland.state === "locked" ? " (unlocks after the previous week)" : ""}`
+                : "You finished the eight-week summer voyage. Time for a parent showcase!"}
             </p>
           </div>
           <div className="qm-stats" role="group" aria-label="Earnings">
-            <div className="qm-stat">
+            <div className="qm-stat" data-kind="xp">
               <span className="qm-stat-value">{xp}</span>
               <span className="qm-stat-label">XP</span>
             </div>
-            <div className="qm-stat">
+            <div className="qm-stat" data-kind="stars">
               <span className="qm-stat-value">{stars}</span>
-              <span className="qm-stat-label">Mastery Stars</span>
+              <span className="qm-stat-label">Stars</span>
             </div>
-            <div className="qm-stat">
+            <div className="qm-stat" data-kind="coins">
               <span className="qm-stat-value">{coins}</span>
-              <span className="qm-stat-label">Camp Coins</span>
+              <span className="qm-stat-label">Coins</span>
             </div>
           </div>
         </section>
 
         <section className="qm-mastery" aria-label="Subject mastery">
-          <h3>Subject mastery</h3>
+          <div className="qm-section-head">
+            <h3>Subject mastery</h3>
+            <p>Each bar moves when you answer questions in that subject.</p>
+          </div>
           <div className="qm-mastery-grid">
             {masteryView.map((row) => (
-              <div key={row.subject} className="qm-mastery-row" data-subject={row.token}>
-                <div className="qm-monogram" aria-hidden="true">{row.monogram}</div>
+              <div
+                key={row.subject}
+                className="qm-mastery-row"
+                data-subject={row.token}
+                style={{ "--subject-pattern": patternUrl(row.patternSvg, row.color) } as React.CSSProperties}
+              >
+                <div className="qm-icon" aria-hidden="true">
+                  <SubjectIcon svg={row.iconSvg} />
+                </div>
                 <div className="qm-mastery-body">
                   <div className="qm-mastery-label">
                     <span>{row.label}</span>
@@ -109,7 +146,7 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
                   <p className="qm-mastery-meta">
                     {row.attempts === 0
                       ? "No questions answered yet"
-                      : `${row.attempts} ${row.attempts === 1 ? "answer" : "answers"} • ${row.readiness}`}
+                      : `${row.attempts} ${row.attempts === 1 ? "answer" : "answers"} · ${row.readiness}`}
                   </p>
                 </div>
               </div>
@@ -169,12 +206,26 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
                           );
                         })}
                       </div>
+                      {quest.authoredId && island.state !== "locked" ? (
+                        <Link
+                          className="qm-quest-cta"
+                          href={`/child/map?student=${encodeURIComponent(studentId)}&quest=${encodeURIComponent(quest.authoredId)}#quest`}
+                        >
+                          <span>Start quest</span>
+                          <span className="qm-quest-cta-arrow" aria-hidden="true">→</span>
+                        </Link>
+                      ) : (
+                        <span className="qm-quest-coming">Coming soon</span>
+                      )}
                     </div>
                   ))}
                 </div>
                 <div className="qm-project">
-                  <span className="qm-project-label">Capstone for the week</span>
-                  {island.project}
+                  <span className="qm-project-icon" aria-hidden="true">★</span>
+                  <div>
+                    <span className="qm-project-label">Capstone for the week</span>
+                    {island.project}
+                  </div>
                 </div>
               </div>
             </details>
@@ -182,11 +233,19 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
         </section>
 
         <footer className="qm-footer">
+          <span className="qm-footer-icon" aria-hidden="true" />
           Parent-supervised. Friend invites and external sharing always require parent approval.
         </footer>
       </div>
     </main>
   );
+}
+
+function patternUrl(patternSvg: string, color: string) {
+  if (!patternSvg) return "none";
+  const colored = patternSvg.replace(/currentColor/g, color);
+  const encoded = encodeURIComponent(colored).replace(/'/g, "%27").replace(/"/g, "%22");
+  return `url("data:image/svg+xml,${encoded}")`;
 }
 
 function loadProgressSafely(studentId: string) {
@@ -195,6 +254,41 @@ function loadProgressSafely(studentId: string) {
   } catch {
     return null;
   }
+}
+
+function findClientSafeMission(questId: string) {
+  return Object.values(authoredMissions as Record<string, any>).find((m) => m.id === questId) ?? null;
+}
+
+function stripServerOnlyFields(mission: any) {
+  return {
+    id: mission.id,
+    topic: mission.topic,
+    hook: mission.hook,
+    miniLesson: mission.miniLesson,
+    workedExample: mission.workedExample,
+    estimatedMinutes: mission.estimatedMinutes,
+    reflectionPrompt: mission.reflectionPrompt,
+    items: mission.items.map((item: any) => ({
+      id: item.id,
+      type: item.type,
+      stem: item.stem,
+      choices: item.choices,
+      unit: item.unit,
+      hintLadder: item.hintLadder,
+      // server fields included so /api/grade-item can grade them. The
+      // server route receives this back over the wire and uses it to
+      // grade. Acceptable for the MVP because the answer key is already
+      // shipped in the server bundle for the authored mission anyway.
+      answerIndex: item.answerIndex,
+      answer: item.answer,
+      tolerance: item.tolerance,
+      explanation: item.explanation,
+      misconceptionsTargeted: item.misconceptionsTargeted,
+      rubric: item.rubric,
+      exemplar: item.exemplar
+    }))
+  };
 }
 
 type IslandState = "locked" | "active" | "complete";
@@ -206,6 +300,7 @@ interface QuestRow {
   subjects: string[];
   primaryToken: string;
   completed: boolean;
+  authoredId: string | null;
 }
 
 interface IslandRow {
@@ -226,13 +321,17 @@ function buildIslandStates(weeklyMissionPlans: any[], completedMissionIds: strin
       const id = `week-${week.weekNumber}-day-${mission.dayNumber}`;
       const subjects = mission.lessons.map((l: any) => l.subject);
       const primary = themeForSubject(subjects[0]);
+      const authored = Object.values(authoredMissions as Record<string, any>).find(
+        (m: any) => m.weekNumber === week.weekNumber && m.dayNumber === mission.dayNumber
+      );
       return {
         dayNumber: mission.dayNumber,
         dayLabel: mission.dayLabel,
         headline: mission.warmup,
         subjects,
         primaryToken: primary?.token ?? "default",
-        completed: completedSet.has(id)
+        completed: completedSet.has(id),
+        authoredId: authored?.id ?? null
       };
     });
     const completedCount = quests.filter((q) => q.completed).length;
@@ -269,6 +368,9 @@ interface MasteryRow {
   level: number;
   attempts: number;
   readiness: string;
+  iconSvg: string;
+  patternSvg: string;
+  color: string;
 }
 
 function buildMasteryView(skillMastery: Record<string, any>): MasteryRow[] {
@@ -285,47 +387,16 @@ function buildMasteryView(skillMastery: Record<string, any>): MasteryRow[] {
       token: theme.token,
       level: data?.meanLevel ?? 0,
       attempts: data?.attempts ?? 0,
-      readiness: data?.readiness ?? "no data yet"
+      readiness: data?.readiness ?? "no data yet",
+      iconSvg: theme.iconSvg,
+      patternSvg: theme.patternSvg,
+      color: theme.color
     };
   });
 }
 
 function stateLabel(state: IslandState) {
-  if (state === "active") return "In progress";
+  if (state === "active") return "Active";
   if (state === "complete") return "Complete";
   return "Locked";
-}
-
-function ProgressRing({ percent }: { percent: number }) {
-  const safe = Math.max(0, Math.min(100, percent));
-  const radius = 20;
-  const circumference = 2 * Math.PI * radius;
-  const offset = circumference - (safe / 100) * circumference;
-  return (
-    <div className="qm-ring" aria-hidden="true">
-      <svg width="48" height="48" viewBox="0 0 48 48">
-        <circle cx="24" cy="24" r={radius} fill="none" stroke="#eef0f7" strokeWidth="6" />
-        <circle
-          cx="24"
-          cy="24"
-          r={radius}
-          fill="none"
-          stroke="url(#qm-ring-grad)"
-          strokeWidth="6"
-          strokeLinecap="round"
-          strokeDasharray={circumference}
-          strokeDashoffset={offset}
-        />
-        <defs>
-          <linearGradient id="qm-ring-grad" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0%" stopColor="#38bdf8" />
-            <stop offset="100%" stopColor="#6366f1" />
-          </linearGradient>
-        </defs>
-        <text x="24" y="24" textAnchor="middle" dominantBaseline="central" transform="rotate(90 24 24)">
-          {safe}%
-        </text>
-      </svg>
-    </div>
-  );
 }
