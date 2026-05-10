@@ -107,3 +107,15 @@ export async function loadErasureAudits(studentId) {
 export async function replaceConsentRecords(args) {
   return (await getDb()).replaceConsentRecords(args);
 }
+
+export async function loadSubscription(parentEmail) {
+  return (await getDb()).loadSubscription(parentEmail);
+}
+
+export async function loadSubscriptionByCustomerId(stripeCustomerId) {
+  return (await getDb()).loadSubscriptionByCustomerId(stripeCustomerId);
+}
+
+export async function saveSubscription(args) {
+  return (await getDb()).saveSubscription(args);
+}

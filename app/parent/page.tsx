@@ -309,6 +309,17 @@ export default async function ParentDashboardPage({ searchParams }: { searchPara
                 <span className="pd-share-sub">Approve invites and rewards on the dashboard</span>
               </div>
             </Link>
+            <Link
+              href={`/parent/billing?student=${encodeURIComponent(studentId)}`}
+              className="pd-share-link"
+              data-kind="billing"
+            >
+              <span className="pd-share-icon" aria-hidden="true">$</span>
+              <div className="pd-share-body">
+                <span className="pd-share-title">Billing & plan</span>
+                <span className="pd-share-sub">Free Week 1; upgrade to unlock Weeks 2-8</span>
+              </div>
+            </Link>
           </div>
         </section>
 

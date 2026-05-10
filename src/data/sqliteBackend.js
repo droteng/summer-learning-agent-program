@@ -56,6 +56,16 @@ export function createSqliteBackend({ dbPath = DEFAULT_DB_PATH } = {}) {
 
         CREATE INDEX IF NOT EXISTS erasure_audit_student_idx
           ON erasure_audit(student_id);
+
+        CREATE TABLE IF NOT EXISTS subscriptions (
+          parent_email TEXT PRIMARY KEY,
+          subscription_json TEXT NOT NULL,
+          stripe_customer_id TEXT,
+          updated_at TEXT NOT NULL
+        );
+
+        CREATE INDEX IF NOT EXISTS subscriptions_customer_idx
+          ON subscriptions(stripe_customer_id);
       `);
     }
     return db;
@@ -231,6 +241,34 @@ export function createSqliteBackend({ dbPath = DEFAULT_DB_PATH } = {}) {
         .prepare("SELECT audit_json FROM erasure_audit WHERE student_id = ? ORDER BY created_at DESC")
         .all(studentId);
       return rows.map((r) => JSON.parse(r.audit_json));
+    },
+    loadSubscription(parentEmail) {
+      const row = getDb()
+        .prepare("SELECT subscription_json FROM subscriptions WHERE parent_email = ?")
+        .get(parentEmail.toLowerCase());
+      return row ? JSON.parse(row.subscription_json) : null;
+    },
+    loadSubscriptionByCustomerId(stripeCustomerId) {
+      const row = getDb()
+        .prepare("SELECT subscription_json FROM subscriptions WHERE stripe_customer_id = ?")
+        .get(stripeCustomerId);
+      return row ? JSON.parse(row.subscription_json) : null;
+    },
+    saveSubscription({ parentEmail, subscription }) {
+      const updatedAt = new Date().toISOString();
+      const lowerEmail = parentEmail.toLowerCase();
+      const merged = { ...subscription, parentEmail: lowerEmail, updatedAt };
+      getDb()
+        .prepare(
+          `INSERT INTO subscriptions (parent_email, subscription_json, stripe_customer_id, updated_at)
+           VALUES (?, ?, ?, ?)
+           ON CONFLICT(parent_email)
+           DO UPDATE SET subscription_json = excluded.subscription_json,
+                         stripe_customer_id = excluded.stripe_customer_id,
+                         updated_at = excluded.updated_at`
+        )
+        .run(lowerEmail, JSON.stringify(merged), merged.stripeCustomerId ?? null, updatedAt);
+      return { subscription: merged, updatedAt };
     },
     _getRawDb: getDb
   };

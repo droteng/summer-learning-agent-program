@@ -54,6 +54,16 @@ const SCHEMA_SQL = `
 
   CREATE INDEX IF NOT EXISTS erasure_audit_student_idx
     ON erasure_audit(student_id);
+
+  CREATE TABLE IF NOT EXISTS subscriptions (
+    parent_email TEXT PRIMARY KEY,
+    subscription_json JSONB NOT NULL,
+    stripe_customer_id TEXT,
+    updated_at TIMESTAMPTZ NOT NULL
+  );
+
+  CREATE INDEX IF NOT EXISTS subscriptions_customer_idx
+    ON subscriptions(stripe_customer_id);
 `;
 
 export function createPostgresBackend({
@@ -274,6 +284,38 @@ export function createPostgresBackend({
         [studentId]
       );
       return result.rows.map((r) => r.audit_json);
+    },
+    async loadSubscription(parentEmail) {
+      await ensureSchema();
+      const result = await pool.query(
+        "SELECT subscription_json FROM subscriptions WHERE parent_email = $1",
+        [parentEmail.toLowerCase()]
+      );
+      return result.rows[0] ? result.rows[0].subscription_json : null;
+    },
+    async loadSubscriptionByCustomerId(stripeCustomerId) {
+      await ensureSchema();
+      const result = await pool.query(
+        "SELECT subscription_json FROM subscriptions WHERE stripe_customer_id = $1",
+        [stripeCustomerId]
+      );
+      return result.rows[0] ? result.rows[0].subscription_json : null;
+    },
+    async saveSubscription({ parentEmail, subscription }) {
+      await ensureSchema();
+      const updatedAt = new Date().toISOString();
+      const lowerEmail = parentEmail.toLowerCase();
+      const merged = { ...subscription, parentEmail: lowerEmail, updatedAt };
+      await pool.query(
+        `INSERT INTO subscriptions (parent_email, subscription_json, stripe_customer_id, updated_at)
+         VALUES ($1, $2::jsonb, $3, $4)
+         ON CONFLICT (parent_email)
+         DO UPDATE SET subscription_json = EXCLUDED.subscription_json,
+                       stripe_customer_id = EXCLUDED.stripe_customer_id,
+                       updated_at = EXCLUDED.updated_at`,
+        [lowerEmail, JSON.stringify(merged), merged.stripeCustomerId ?? null, updatedAt]
+      );
+      return { subscription: merged, updatedAt };
     },
     async close() {
       await pool.end();
