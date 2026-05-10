@@ -6,35 +6,33 @@ import { useRouter } from "next/navigation";
 interface ConsentFormProps {
   studentId: string;
   defaultChildFirstName: string;
+  stripeConfigured: boolean;
 }
 
 type Method = "self_attest" | "card_auth" | "signed_form";
 
-const METHODS: { value: Method; title: string; sub: string; verifiable: boolean; tag: string }[] = [
-  {
-    value: "self_attest",
+const METHOD_LIBRARY: Record<Method, { title: string; sub: string; verifiable: boolean; tag: string }> = {
+  self_attest: {
     title: "Self-attest (closed beta only)",
     sub: "You confirm under penalty of perjury that you are the parent or legal guardian. Acceptable for a closed family beta; not a substitute for verifiable consent at scale.",
     verifiable: false,
     tag: "Beta"
   },
-  {
-    value: "card_auth",
-    title: "Card $0 authorization (verifiable)",
-    sub: "Adult-only payment card receives a $0 authorization. Stripe must be enabled for this option. Coming soon.",
+  card_auth: {
+    title: "Card verification (verifiable)",
+    sub: "We send you to Stripe for a one-time card check. No charge — Stripe just confirms the card is real, which under FTC guidance satisfies COPPA's monetary-transaction method.",
     verifiable: true,
     tag: "Verifiable"
   },
-  {
-    value: "signed_form",
+  signed_form: {
     title: "Signed PDF form (verifiable)",
     sub: "Print, sign, and upload the consent PDF. We email you the form to sign. Coming soon.",
     verifiable: true,
     tag: "Verifiable"
   }
-];
+};
 
-export function ConsentForm({ studentId, defaultChildFirstName }: ConsentFormProps) {
+export function ConsentForm({ studentId, defaultChildFirstName, stripeConfigured }: ConsentFormProps) {
   const router = useRouter();
   const [parentName, setParentName] = useState("");
   const [parentEmail, setParentEmail] = useState("");
@@ -44,7 +42,18 @@ export function ConsentForm({ studentId, defaultChildFirstName }: ConsentFormPro
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const cardOrFormUnavailable = method !== "self_attest";
+  const METHODS: { value: Method; title: string; sub: string; verifiable: boolean; tag: string; disabled?: boolean }[] = [
+    { value: "self_attest", ...METHOD_LIBRARY.self_attest },
+    {
+      value: "card_auth",
+      ...METHOD_LIBRARY.card_auth,
+      sub: stripeConfigured
+        ? METHOD_LIBRARY.card_auth.sub
+        : METHOD_LIBRARY.card_auth.sub + " Stripe isn't configured on this server yet, so this option is unavailable.",
+      disabled: !stripeConfigured
+    },
+    { value: "signed_form", ...METHOD_LIBRARY.signed_form, disabled: true }
+  ];
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -52,13 +61,35 @@ export function ConsentForm({ studentId, defaultChildFirstName }: ConsentFormPro
       setError("You must confirm you are the parent or legal guardian.");
       return;
     }
-    if (cardOrFormUnavailable) {
-      setError("That method isn't enabled yet. Use self-attest for now, or check back after billing launches.");
+    if (method === "signed_form") {
+      setError("Signed-form upload isn't enabled yet. Use card verification or self-attest.");
+      return;
+    }
+    if (method === "card_auth" && !stripeConfigured) {
+      setError("Card verification needs Stripe configured on the server.");
       return;
     }
     setSubmitting(true);
     setError(null);
     try {
+      if (method === "card_auth") {
+        const res = await fetch("/api/consent/card-auth/start", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ studentId, parentName, parentEmail, childFirstName })
+        });
+        if (!res.ok) {
+          const body = await res.json().catch(() => null);
+          throw new Error(body?.message ?? body?.error ?? `http_${res.status}`);
+        }
+        const body = await res.json();
+        if (body.url) {
+          window.location.assign(body.url);
+          return;
+        }
+        throw new Error("missing_checkout_url");
+      }
+
       const res = await fetch("/api/consent", {
         method: "POST",
         headers: { "Content-Type": "application/json" },

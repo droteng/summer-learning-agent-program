@@ -9,7 +9,7 @@ import { ConsentForm } from "./ConsentForm";
 
 export const dynamic = "force-dynamic";
 
-type SearchParams = Promise<{ student?: string; child?: string }>;
+type SearchParams = Promise<{ student?: string; child?: string; card_auth?: string }>;
 
 export default async function ConsentPage({ searchParams }: { searchParams: SearchParams }) {
   const params = await searchParams;
@@ -17,9 +17,12 @@ export default async function ConsentPage({ searchParams }: { searchParams: Sear
     typeof params?.student === "string" && params.student.length > 0 ? params.student : "demo-student";
   const childFirstName =
     typeof params?.child === "string" && params.child.length > 0 ? params.child : "Avery";
+  const cardAuthStatus =
+    typeof params?.card_auth === "string" ? params.card_auth : null;
 
   const records = await loadConsentRecords(studentId);
   const status = consentStatusForParent({ records, studentId });
+  const stripeConfigured = !!process.env.STRIPE_SECRET_KEY;
 
   return (
     <main className="cs-page">
@@ -48,6 +51,17 @@ export default async function ConsentPage({ searchParams }: { searchParams: Sear
               {status.disclosureVersion}. Expires {new Date(status.expiresAt as string).toLocaleDateString()}.
               {status.verifiable ? " (Verifiable method.)" : " (Self-attest — closed beta only.)"}
             </p>
+          </section>
+        )}
+
+        {cardAuthStatus === "cancelled" && (
+          <section className="bl-error" role="status" style={{ background: "#fef2f2", border: "2px solid #fecaca", borderRadius: 14, padding: "10px 14px", color: "#991b1b", fontSize: 13 }}>
+            Card verification cancelled. Your consent wasn't recorded.
+          </section>
+        )}
+        {cardAuthStatus === "incomplete" && (
+          <section className="bl-error" role="status" style={{ background: "#fff7ed", border: "2px solid #fdba74", borderRadius: 14, padding: "10px 14px", color: "#9a3412", fontSize: 13 }}>
+            Card verification didn't complete. Try again or pick another method below.
           </section>
         )}
 
@@ -112,7 +126,11 @@ export default async function ConsentPage({ searchParams }: { searchParams: Sear
           </div>
         </section>
 
-        <ConsentForm studentId={studentId} defaultChildFirstName={childFirstName} />
+        <ConsentForm
+          studentId={studentId}
+          defaultChildFirstName={childFirstName}
+          stripeConfigured={stripeConfigured}
+        />
 
         {records.length > 0 && (
           <section className="pd-card">
