@@ -8,7 +8,8 @@ import {
 } from "../../src/agents/masteryAgent.js";
 import { createWeeklyParentReportWithLlm } from "../../src/agents/parentLiaisonAgent.js";
 import { createLlm } from "../../src/agents/llm/index.js";
-import { loadProgressSnapshot } from "../../src/data/db.js";
+import { loadConsentRecords, loadProgressSnapshot } from "../../src/data/db.js";
+import { consentStatusForParent } from "../../src/agents/consentAgent.js";
 import { SUBJECT_ORDER, SUBJECT_THEMES, themeForSubject } from "../../src/data/subjectTheme.js";
 import { PageDecorations, SubjectIcon } from "../child/map/decorations";
 import { ApprovalControls } from "./ApprovalControls";
@@ -46,6 +47,8 @@ export default async function ParentDashboardPage({ searchParams }: { searchPara
 
   const profile = { ...DEMO_PROFILE, id: studentId };
   const progress = await loadProgressSafely(studentId);
+  const consentRecords = await loadConsentSafely(studentId);
+  const consent = consentStatusForParent({ records: consentRecords, studentId });
   const programPlan = createProgramPlan(profile, DEMO_POLICY);
 
   const skillMastery = progress?.skillMastery ?? {};
@@ -81,6 +84,25 @@ export default async function ParentDashboardPage({ searchParams }: { searchPara
             <h1 className="pd-title">{profile.firstName}'s Summer</h1>
           </div>
         </header>
+
+        {consent.status !== "active" && (
+          <section className="pd-banner" aria-label="Consent required">
+            <div className="pd-banner-body">
+              <span className="pd-banner-eyebrow">COPPA · Consent required</span>
+              <span className="pd-banner-title">
+                {consent.status === "missing"
+                  ? "Record parental consent before we save more of your child's data."
+                  : "Your current consent is missing some scopes. Update it to keep using full features."}
+              </span>
+            </div>
+            <Link
+              className="pd-banner-cta"
+              href={`/parent/consent?student=${encodeURIComponent(studentId)}&child=${encodeURIComponent(profile.firstName)}`}
+            >
+              Record consent →
+            </Link>
+          </section>
+        )}
 
         <section className="pd-hero" aria-label="At a glance">
           <div>
@@ -303,6 +325,14 @@ async function loadProgressSafely(studentId: string) {
     return await loadProgressSnapshot(studentId);
   } catch {
     return null;
+  }
+}
+
+async function loadConsentSafely(studentId: string) {
+  try {
+    return await loadConsentRecords(studentId);
+  } catch {
+    return [];
   }
 }
 

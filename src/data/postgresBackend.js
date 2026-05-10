@@ -38,6 +38,12 @@ const SCHEMA_SQL = `
     expires_at TIMESTAMPTZ NOT NULL,
     updated_at TIMESTAMPTZ NOT NULL
   );
+
+  CREATE TABLE IF NOT EXISTS consent_records (
+    student_id TEXT PRIMARY KEY,
+    records_json JSONB NOT NULL,
+    updated_at TIMESTAMPTZ NOT NULL
+  );
 `;
 
 export function createPostgresBackend({
@@ -171,6 +177,40 @@ export function createPostgresBackend({
       await ensureSchema();
       await pool.query("DELETE FROM auth_sessions WHERE session_id = $1", [sessionId]);
       return { deleted: true, sessionId };
+    },
+    async loadConsentRecords(studentId) {
+      await ensureSchema();
+      const result = await pool.query(
+        "SELECT records_json FROM consent_records WHERE student_id = $1",
+        [studentId]
+      );
+      return result.rows[0] ? result.rows[0].records_json : [];
+    },
+    async appendConsentRecord({ studentId, record }) {
+      await ensureSchema();
+      const existing = await this.loadConsentRecords(studentId);
+      const next = [...existing, record];
+      const updatedAt = new Date().toISOString();
+      await pool.query(
+        `INSERT INTO consent_records (student_id, records_json, updated_at)
+         VALUES ($1, $2::jsonb, $3)
+         ON CONFLICT (student_id)
+         DO UPDATE SET records_json = EXCLUDED.records_json, updated_at = EXCLUDED.updated_at`,
+        [studentId, JSON.stringify(next), updatedAt]
+      );
+      return { records: next, updatedAt };
+    },
+    async replaceConsentRecords({ studentId, records }) {
+      await ensureSchema();
+      const updatedAt = new Date().toISOString();
+      await pool.query(
+        `INSERT INTO consent_records (student_id, records_json, updated_at)
+         VALUES ($1, $2::jsonb, $3)
+         ON CONFLICT (student_id)
+         DO UPDATE SET records_json = EXCLUDED.records_json, updated_at = EXCLUDED.updated_at`,
+        [studentId, JSON.stringify(records), updatedAt]
+      );
+      return { records, updatedAt };
     },
     async close() {
       await pool.end();

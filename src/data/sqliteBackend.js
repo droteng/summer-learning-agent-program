@@ -40,6 +40,12 @@ export function createSqliteBackend({ dbPath = DEFAULT_DB_PATH } = {}) {
           expires_at TEXT NOT NULL,
           updated_at TEXT NOT NULL
         );
+
+        CREATE TABLE IF NOT EXISTS consent_records (
+          student_id TEXT PRIMARY KEY,
+          records_json TEXT NOT NULL,
+          updated_at TEXT NOT NULL
+        );
       `);
     }
     return db;
@@ -129,6 +135,36 @@ export function createSqliteBackend({ dbPath = DEFAULT_DB_PATH } = {}) {
     deleteAuthSession(sessionId) {
       getDb().prepare("DELETE FROM auth_sessions WHERE session_id = ?").run(sessionId);
       return { deleted: true, sessionId };
+    },
+    loadConsentRecords(studentId) {
+      const row = getDb().prepare("SELECT records_json FROM consent_records WHERE student_id = ?").get(studentId);
+      return row ? JSON.parse(row.records_json) : [];
+    },
+    appendConsentRecord({ studentId, record }) {
+      const existing = this.loadConsentRecords(studentId);
+      const next = [...existing, record];
+      const updatedAt = new Date().toISOString();
+      getDb()
+        .prepare(
+          `INSERT INTO consent_records (student_id, records_json, updated_at)
+           VALUES (?, ?, ?)
+           ON CONFLICT(student_id)
+           DO UPDATE SET records_json = excluded.records_json, updated_at = excluded.updated_at`
+        )
+        .run(studentId, JSON.stringify(next), updatedAt);
+      return { records: next, updatedAt };
+    },
+    replaceConsentRecords({ studentId, records }) {
+      const updatedAt = new Date().toISOString();
+      getDb()
+        .prepare(
+          `INSERT INTO consent_records (student_id, records_json, updated_at)
+           VALUES (?, ?, ?)
+           ON CONFLICT(student_id)
+           DO UPDATE SET records_json = excluded.records_json, updated_at = excluded.updated_at`
+        )
+        .run(studentId, JSON.stringify(records), updatedAt);
+      return { records, updatedAt };
     },
     _getRawDb: getDb
   };

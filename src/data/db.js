@@ -83,3 +83,15 @@ export async function deleteAuthSession(sessionId) {
 export async function pingDb() {
   return (await getDb()).ping();
 }
+
+export async function loadConsentRecords(studentId) {
+  return (await getDb()).loadConsentRecords(studentId);
+}
+
+export async function appendConsentRecord(args) {
+  return (await getDb()).appendConsentRecord(args);
+}
+
+export async function replaceConsentRecords(args) {
+  return (await getDb()).replaceConsentRecords(args);
+}
