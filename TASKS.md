@@ -54,6 +54,7 @@
 - [x] Add parent-approved achievement transcript and certificate export.
 - [x] Add parent-approved Learning Squad shared project room.
 - [x] Add printable parent and school report package.
+- [x] Add downloadable report package exports.
 - [x] Add production parent/child account foundation and migration plan.
 - [ ] Connect hosted auth provider for production parent/child accounts and sessions.
 - [x] Expand curriculum tuning framework beyond the Grade 6 launch track.

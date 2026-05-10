@@ -1296,6 +1296,17 @@ h3 {
   margin: 0 auto 16px;
 }
 
+.print-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.print-actions button {
+  min-height: 38px;
+}
+
 .print-toolbar a {
   color: var(--blue);
   font-weight: 800;
@@ -1414,6 +1425,10 @@ h3 {
   .print-toolbar {
     align-items: stretch;
     flex-direction: column;
+  }
+
+  .print-actions {
+    justify-content: stretch;
   }
 
   .print-page {

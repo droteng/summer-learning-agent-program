@@ -44,6 +44,7 @@ const defaultProgress = {
 export default function PrintablePackagePage() {
   const [reportPackage, setReportPackage] = useState<PrintablePackage | null>(null);
   const [status, setStatus] = useState("Preparing printable package...");
+  const [downloadPayload, setDownloadPayload] = useState<any | null>(null);
 
   useEffect(() => {
     loadPrintablePackage();
@@ -86,10 +87,59 @@ export default function PrintablePackagePage() {
       const result = await response.json();
 
       setReportPackage(result);
+      setDownloadPayload({
+        studentProfile,
+        parentPolicy: {
+          allowedRewards: ["device", "park", "movie", "friend"],
+          friendInvitesEnabled: true,
+          teacherSharingEnabled: true,
+          progressSharingEnabled: true,
+          externalMessagingEnabled: false,
+          liveSessionsEnabled: false
+        },
+        progress,
+        weekNumber: 1,
+        parentApproved: true
+      });
       setStatus(result.status === "ready_to_print" ? "Ready to print or save as PDF." : result.reason);
     } catch {
       setStatus("Printable package could not be prepared.");
     }
+  }
+
+  async function downloadReport(format: "markdown" | "json") {
+    if (!downloadPayload) {
+      setStatus("Download is not ready yet.");
+      return;
+    }
+
+    const response = await fetch("/api/report-download", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        ...downloadPayload,
+        format
+      })
+    });
+    const result = await response.json();
+
+    if (result.status !== "ready_to_download") {
+      setStatus(result.reason ?? "Download could not be prepared.");
+      return;
+    }
+
+    const blob = new Blob([result.content], { type: result.mimeType });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = result.filename;
+    document.body.appendChild(anchor);
+    anchor.click();
+    anchor.remove();
+    URL.revokeObjectURL(url);
+    setStatus(`${result.format.toUpperCase()} download prepared.`);
   }
 
   if (!reportPackage || reportPackage.status !== "ready_to_print") {
@@ -114,7 +164,11 @@ export default function PrintablePackagePage() {
       <div className="print-toolbar">
         <a href="/">Back to dashboard</a>
         <span>{status}</span>
-        <button onClick={() => window.print()}>Print / Save PDF</button>
+        <div className="print-actions">
+          <button onClick={() => downloadReport("markdown")}>Download Markdown</button>
+          <button onClick={() => downloadReport("json")}>Download JSON</button>
+          <button onClick={() => window.print()}>Print / Save PDF</button>
+        </div>
       </div>
 
       <article className="print-page">

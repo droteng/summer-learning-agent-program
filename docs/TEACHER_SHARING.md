@@ -40,6 +40,8 @@ The app can now prepare a parent-approved transcript package with:
 
 Parents can open `/printable-package` from the dashboard to review a combined package and use the browser print dialog to print or save as PDF. The package combines the weekly report, transcript, certificate preview, badges, portfolio highlights, squad project updates, privacy exclusions, and parent checklist.
 
+The same package can be downloaded as Markdown for teacher-friendly sharing or JSON for backup/import workflows.
+
 ## Future Formats
 
 - PDF export.
@@ -47,4 +49,3 @@ Parents can open `/printable-package` from the dashboard to review a combined pa
 - Email package.
 - Google Classroom integration.
 - Microsoft Teams for Education integration.
-

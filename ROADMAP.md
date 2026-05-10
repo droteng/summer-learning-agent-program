@@ -57,6 +57,7 @@
 - Desktop and tablet PWA install shell.
 - Parent-approved achievement transcript, certificate preview, badge list, and portfolio highlights.
 - Printable parent and school report package with browser Save as PDF workflow.
+- Downloadable Markdown and JSON report package exports.
 - Website product page.
 - OpenClaw/ClawHub package draft assets.
 - Production parent/child accounts.

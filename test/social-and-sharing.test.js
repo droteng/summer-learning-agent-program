@@ -2,7 +2,11 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { createAchievementExport } from "../src/agents/achievementAgent.js";
 import { createProgramPlan } from "../src/agents/principalAgent.js";
-import { createPrintableReportPackage } from "../src/agents/printableReportAgent.js";
+import {
+  createPrintableReportPackage,
+  createReportDownload,
+  formatReportPackageMarkdown
+} from "../src/agents/printableReportAgent.js";
 import { moderateChildMessage } from "../src/agents/safetyModeratorAgent.js";
 import {
   approveInvitationRequest,
@@ -300,4 +304,44 @@ test("printable report packages require parent approval", () => {
   });
 
   assert.equal(blocked.status, "blocked");
+});
+
+test("printable report packages can be downloaded as markdown and json", () => {
+  const programPlan = createProgramPlan(student, parentPolicy);
+  const reportPackage = createPrintableReportPackage({
+    student,
+    programPlan,
+    weekNumber: 1,
+    parentPolicy,
+    parentApproved: true,
+    progress: {
+      completedMissionIds: ["week-1-day-1"],
+      xp: 20,
+      masteryStars: 0,
+      campCoins: 5,
+      reflections: {
+        "week-1-day-1": "I explained a learning map."
+      },
+      friendInvites: [],
+      squadProjectUpdates: []
+    }
+  });
+  const markdown = createReportDownload({
+    reportPackage,
+    format: "markdown"
+  });
+  const json = createReportDownload({
+    reportPackage,
+    format: "json"
+  });
+
+  assert.equal(markdown.status, "ready_to_download");
+  assert.equal(markdown.mimeType, "text/markdown");
+  assert.ok(markdown.filename.endsWith(".md"));
+  assert.ok(markdown.content.includes("# Avery's Parent + School Report Package"));
+  assert.equal(json.status, "ready_to_download");
+  assert.equal(json.mimeType, "application/json");
+  assert.ok(json.filename.endsWith(".json"));
+  assert.equal(JSON.parse(json.content).status, "ready_to_print");
+  assert.ok(formatReportPackageMarkdown(reportPackage).includes("## Kept Private By Default"));
 });
