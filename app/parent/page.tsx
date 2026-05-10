@@ -11,6 +11,7 @@ import { createLlm } from "../../src/agents/llm/index.js";
 import { loadProgressSnapshot } from "../../src/data/db.js";
 import { SUBJECT_ORDER, SUBJECT_THEMES, themeForSubject } from "../../src/data/subjectTheme.js";
 import { PageDecorations, SubjectIcon } from "../child/map/decorations";
+import { ApprovalControls } from "./ApprovalControls";
 
 export const dynamic = "force-dynamic";
 
@@ -198,20 +199,36 @@ export default async function ParentDashboardPage({ searchParams }: { searchPara
           <div className="pd-approvals-grid">
             <div className="pd-approvals-bucket" data-kind="rewards">
               <span className="pd-approvals-eyebrow">Reward requests</span>
-              <ApprovalList
+              <ApprovalControls
+                studentId={studentId}
+                bucket="rewards"
                 items={(progress?.rewardRequests ?? []).map((r: any) => ({
+                  id: r.id,
                   label: r.requestedReward,
-                  status: r.status === "approved" ? "approved" : "pending"
+                  status:
+                    r.status === "approved"
+                      ? "approved"
+                      : r.status === "declined"
+                        ? "declined"
+                        : "pending"
                 }))}
                 emptyText={`No reward requests yet. ${profile.firstName} can request one after a mission.`}
               />
             </div>
             <div className="pd-approvals-bucket" data-kind="invites">
               <span className="pd-approvals-eyebrow">Friend invites</span>
-              <ApprovalList
+              <ApprovalControls
+                studentId={studentId}
+                bucket="invites"
                 items={(progress?.friendInvites ?? []).map((i: any) => ({
+                  id: i.id,
                   label: i.friendName ?? "Unnamed friend",
-                  status: i.status === "approved" ? "approved" : "pending"
+                  status:
+                    i.status === "approved"
+                      ? "approved"
+                      : i.status === "declined"
+                        ? "declined"
+                        : "pending"
                 }))}
                 emptyText="No invitations yet. Children must request these and only with parent approval."
               />
@@ -278,22 +295,6 @@ export default async function ParentDashboardPage({ searchParams }: { searchPara
         </footer>
       </div>
     </main>
-  );
-}
-
-function ApprovalList({ items, emptyText }: { items: { label: string; status: "approved" | "pending" }[]; emptyText: string }) {
-  if (items.length === 0) {
-    return <p className="pd-empty-state">{emptyText}</p>;
-  }
-  return (
-    <ul className="pd-approvals-list">
-      {items.map((item, i) => (
-        <li key={i} className="pd-approval-item" data-status={item.status}>
-          <span>{item.label}</span>
-          <span className="pd-approval-status">{item.status === "approved" ? "Approved" : "Pending"}</span>
-        </li>
-      ))}
-    </ul>
   );
 }
 
