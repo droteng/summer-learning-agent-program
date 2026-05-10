@@ -1,4 +1,4 @@
-import { moderateChildMessage } from "./safetyModeratorAgent.js";
+import { moderateChildMessage, moderateChildMessageWithLlm } from "./safetyModeratorAgent.js";
 
 export function createInvitationRequest({ child, friendName, parentPolicy }) {
   if (!parentPolicy.friendInvitesEnabled) {
@@ -169,7 +169,11 @@ export function createSquadProjectUpdate({ student, message }) {
     return {
       status: "blocked",
       reason: moderation.reason,
-      parentVisible: true
+      severity: moderation.severity,
+      categories: moderation.categories,
+      parentVisible: true,
+      parentAlertRequired: moderation.parentAlertRequired,
+      crisisResources: moderation.crisisResources ?? null
     };
   }
 
@@ -181,6 +185,51 @@ export function createSquadProjectUpdate({ student, message }) {
     createdAt: new Date().toISOString(),
     parentVisible: true,
     safetyLabel: "Parent-visible project update"
+  };
+}
+
+// Async variant that adds nuanced moderation via the LLM safety tier.
+// Falls back to the deterministic decision when no LLM is available.
+export async function createSquadProjectUpdateWithLlm({ student, message, llm = null }) {
+  const cleanedMessage = (message ?? "").trim();
+  if (!cleanedMessage) {
+    return {
+      status: "blocked",
+      reason: "Write a short project update before posting.",
+      parentVisible: true
+    };
+  }
+
+  const moderation = await moderateChildMessageWithLlm({
+    message: cleanedMessage,
+    llm,
+    context: "squad_project_update"
+  });
+
+  if (moderation.status === "blocked") {
+    return {
+      status: "blocked",
+      reason: moderation.reason,
+      severity: moderation.severity,
+      categories: moderation.categories,
+      parentVisible: true,
+      parentAlertRequired: moderation.parentAlertRequired,
+      crisisResources: moderation.crisisResources ?? null,
+      suggestedRewrite: moderation.suggestedRewrite ?? null,
+      classifier: moderation.classifier ?? null
+    };
+  }
+
+  return {
+    id: "squad-update-" + Date.now(),
+    status: "allowed",
+    author: student.firstName,
+    message: cleanedMessage,
+    createdAt: new Date().toISOString(),
+    parentVisible: true,
+    safetyLabel: moderation.severity === "warn" ? "Parent-visible · flagged for review" : "Parent-visible project update",
+    severity: moderation.severity,
+    classifier: moderation.classifier ?? null
   };
 }
 
