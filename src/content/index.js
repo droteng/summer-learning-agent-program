@@ -7,6 +7,16 @@ import { grade6ScienceWeek1Day2 } from "./grade6/week1/science-day2.js";
 import { grade6CodingWeek1Day3 } from "./grade6/week1/coding-day3.js";
 import { grade6WorldWeek1Day4 } from "./grade6/week1/world-day4.js";
 import { grade6HistoryWeek1Day5 } from "./grade6/week1/history-day5.js";
+import { grade6MathWeek2Day1 } from "./grade6/week2/math-day1.js";
+import { grade6ScienceWeek2Day2 } from "./grade6/week2/science-day2.js";
+import { grade6CodingWeek2Day3 } from "./grade6/week2/coding-day3.js";
+import { grade6WorldWeek2Day4 } from "./grade6/week2/world-day4.js";
+import { grade6MathWeek2Day5 } from "./grade6/week2/math-day5.js";
+import { grade6ElaWeek3Day1 } from "./grade6/week3/ela-day1.js";
+import { grade6ElaWeek3Day2 } from "./grade6/week3/ela-day2.js";
+import { grade6ElaWeek3Day3 } from "./grade6/week3/ela-day3.js";
+import { grade6HistoryWeek3Day4 } from "./grade6/week3/history-day4.js";
+import { grade6ElaWeek3Day5 } from "./grade6/week3/ela-day5.js";
 
 const ALL_MISSIONS = [
   grade6MathWeek1Day1,
@@ -14,7 +24,17 @@ const ALL_MISSIONS = [
   grade6ScienceWeek1Day2,
   grade6CodingWeek1Day3,
   grade6WorldWeek1Day4,
-  grade6HistoryWeek1Day5
+  grade6HistoryWeek1Day5,
+  grade6MathWeek2Day1,
+  grade6ScienceWeek2Day2,
+  grade6CodingWeek2Day3,
+  grade6WorldWeek2Day4,
+  grade6MathWeek2Day5,
+  grade6ElaWeek3Day1,
+  grade6ElaWeek3Day2,
+  grade6ElaWeek3Day3,
+  grade6HistoryWeek3Day4,
+  grade6ElaWeek3Day5
 ];
 
 export const authoredMissions = Object.freeze(
@@ -37,6 +57,12 @@ export function findAuthoredMissionsForDay({ gradeLevel, weekNumber, dayNumber }
       mission.gradeLevel === gradeLevel &&
       mission.weekNumber === weekNumber &&
       mission.dayNumber === dayNumber
+  );
+}
+
+export function findAuthoredMissionsForWeek({ gradeLevel, weekNumber } = {}) {
+  return ALL_MISSIONS.filter(
+    (mission) => mission.gradeLevel === gradeLevel && mission.weekNumber === weekNumber
   );
 }
 

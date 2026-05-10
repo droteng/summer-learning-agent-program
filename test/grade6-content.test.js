@@ -10,7 +10,7 @@ import {
 const ALL_MISSIONS = Object.values(authoredMissions);
 
 test("registry exposes all authored Grade 6 missions", () => {
-  assert.ok(ALL_MISSIONS.length >= 6, `expected at least 6 authored missions, got ${ALL_MISSIONS.length}`);
+  assert.ok(ALL_MISSIONS.length >= 16, `expected at least 16 authored missions, got ${ALL_MISSIONS.length}`);
   for (const mission of ALL_MISSIONS) {
     assert.equal(mission.gradeLevel, 6, `${mission.id} not Grade 6`);
     assert.ok(mission.id.length > 0);
@@ -98,6 +98,35 @@ test("Week 1 covers all six core subjects across the five days", () => {
   assert.ok(subjects.has("Coding/Computer Science/AI"));
   assert.ok(subjects.has("History/Civics"));
   assert.ok(subjects.has("World/Current Affairs"));
+});
+
+test("Weeks 2 and 3 each have at least one authored mission per day", () => {
+  for (const weekNumber of [2, 3]) {
+    for (let dayNumber = 1; dayNumber <= 5; dayNumber++) {
+      const missions = ALL_MISSIONS.filter(
+        (m) => m.weekNumber === weekNumber && m.dayNumber === dayNumber
+      );
+      assert.ok(
+        missions.length >= 1,
+        `Week ${weekNumber} Day ${dayNumber} has no authored mission`
+      );
+    }
+  }
+});
+
+test("Week 2 emphasizes data and numbers; Week 3 emphasizes narrative", () => {
+  const week2Topics = ALL_MISSIONS.filter((m) => m.weekNumber === 2).map((m) => m.topicTag);
+  const week3Topics = ALL_MISSIONS.filter((m) => m.weekNumber === 3).map((m) => m.topicTag);
+  // Week 2 should include at least one chart/data/measurement topic
+  assert.ok(
+    week2Topics.some((t) => /data|chart|measure|stat|variable|numerical/.test(t)),
+    "Week 2 missing data-themed content"
+  );
+  // Week 3 should include at least one narrative/story topic
+  assert.ok(
+    week3Topics.some((t) => /narrative|sensory|dialogue|revision|story/.test(t)),
+    "Week 3 missing narrative-themed content"
+  );
 });
 
 test("each mission's topicTag plugs into the mastery model", () => {
