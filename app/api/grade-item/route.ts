@@ -32,8 +32,15 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "missing_item" }, { status: 400 });
   }
 
-  const llm = useLlm ? getLlm() : null;
-  const grade = await gradeItem({ item, response, llm, studentId });
+  let effectiveLlm = useLlm ? getLlm() : null;
+  if (effectiveLlm && typeof studentId === "string" && studentId.length > 0) {
+    const { resolveEntitlement } = await import("../../../src/agents/entitlementAgent.js");
+    const entitlement = await resolveEntitlement({ studentId });
+    if (!entitlement.llmTutoring) {
+      effectiveLlm = null;
+    }
+  }
+  const grade = await gradeItem({ item, response, llm: effectiveLlm, studentId });
 
   let masterySummary: ReturnType<typeof summarizeMasteryBySubject> | null = null;
   let diagnosticSummaryFromMastery: ReturnType<typeof masteryToDiagnosticSummary> | null = null;

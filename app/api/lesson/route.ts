@@ -16,7 +16,6 @@ function getLlm() {
 
 export async function POST(request: Request) {
   const payload = await request.json();
-  const llm = getLlm();
 
   if (payload?.useLlm === false) {
     const guide = createTeacherLessonGuide({
@@ -24,6 +23,16 @@ export async function POST(request: Request) {
       studentProfile: payload.studentProfile
     });
     return NextResponse.json(guide);
+  }
+
+  let llm: ReturnType<typeof createLlm> | null = getLlm();
+  const studentId = payload?.studentProfile?.id;
+  if (typeof studentId === "string" && studentId.length > 0) {
+    const { resolveEntitlement } = await import("../../../src/agents/entitlementAgent.js");
+    const entitlement = await resolveEntitlement({ studentId });
+    if (!entitlement.llmTutoring) {
+      llm = null;
+    }
   }
 
   const guide = await createTeacherLessonGuideWithLlm({

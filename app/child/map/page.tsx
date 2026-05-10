@@ -7,6 +7,7 @@ import {
   summarizeMasteryBySubject
 } from "../../../src/agents/masteryAgent.js";
 import { loadProgressSnapshot } from "../../../src/data/localDb.js";
+import { resolveEntitlement, isWeekUnlocked } from "../../../src/agents/entitlementAgent.js";
 import { SUBJECT_ORDER, SUBJECT_THEMES, themeForSubject } from "../../../src/data/subjectTheme.js";
 import {
   authoredMissions,
@@ -50,8 +51,13 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
     diagnosticSummary: masteryToDiagnosticSummary(skillMastery)
   });
 
+  const entitlement = await resolveEntitlement({ studentId });
   const completedMissionIds: string[] = progress?.completedMissionIds ?? [];
-  const islands = buildIslandStates(tuned.weeklyMissionPlans, completedMissionIds);
+  const islands = buildIslandStates(
+    tuned.weeklyMissionPlans,
+    completedMissionIds,
+    entitlement.weeksUnlocked
+  );
   const currentIslandIndex = islands.findIndex((island) => island.state !== "complete");
   const currentIsland = islands[currentIslandIndex === -1 ? islands.length - 1 : currentIslandIndex];
   const masteryView = buildMasteryView(skillMastery);
@@ -158,6 +164,23 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
           </div>
         </section>
 
+        {entitlement.tier === "free" && entitlement.weeksUnlocked === 1 && (
+          <aside className="qm-upgrade-banner" aria-label="Upgrade to unlock more weeks">
+            <div className="qm-upgrade-body">
+              <span className="qm-upgrade-eyebrow">Free Week 1 — unlock Weeks 2-8</span>
+              <span className="qm-upgrade-title">
+                Family plan: full 8-week voyage, real LLM tutor, weekly parent narratives.
+              </span>
+            </div>
+            <Link
+              className="qm-upgrade-cta"
+              href={`/parent/billing?student=${encodeURIComponent(studentId)}`}
+            >
+              See plans →
+            </Link>
+          </aside>
+        )}
+
         <section className="qm-map" aria-label="Weekly islands">
           {islands.map((island) => (
             <details
@@ -210,7 +233,15 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
                           );
                         })}
                       </div>
-                      {quest.authored.length > 0 && island.state !== "locked" ? (
+                      {island.state === "paywall" ? (
+                        <Link
+                          className="qm-quest-upgrade"
+                          href={`/parent/billing?student=${encodeURIComponent(studentId)}`}
+                        >
+                          <span aria-hidden="true">🔒</span>
+                          <span>Family plan unlocks this week</span>
+                        </Link>
+                      ) : quest.authored.length > 0 && island.state !== "locked" ? (
                         <div className="qm-quest-ctas">
                           {quest.authored.map((mission) => (
                             <Link
@@ -299,7 +330,7 @@ function stripServerOnlyFields(mission: any) {
   };
 }
 
-type IslandState = "locked" | "active" | "complete";
+type IslandState = "locked" | "active" | "complete" | "paywall";
 
 interface AuthoredQuestEntry {
   id: string;
@@ -328,11 +359,16 @@ interface IslandRow {
   quests: QuestRow[];
 }
 
-function buildIslandStates(weeklyMissionPlans: any[], completedMissionIds: string[]): IslandRow[] {
+function buildIslandStates(
+  weeklyMissionPlans: any[],
+  completedMissionIds: string[],
+  weeksUnlocked: number = 1
+): IslandRow[] {
   const completedSet = new Set(completedMissionIds);
   let unlocked = true;
   return weeklyMissionPlans.map((weekly) => {
     const week = weekly.week;
+    const paywalled = !isWeekUnlocked({ weekNumber: week.weekNumber, weeksUnlocked });
     const quests: QuestRow[] = weekly.missions.map((mission: any) => {
       const id = `week-${week.weekNumber}-day-${mission.dayNumber}`;
       const subjects = mission.lessons.map((l: any) => l.subject);
@@ -366,7 +402,9 @@ function buildIslandStates(weeklyMissionPlans: any[], completedMissionIds: strin
     const completionPercent = quests.length === 0 ? 0 : Math.round((completedCount / quests.length) * 100);
 
     let state: IslandState;
-    if (!unlocked) {
+    if (paywalled) {
+      state = "paywall";
+    } else if (!unlocked) {
       state = "locked";
     } else if (completedCount === quests.length) {
       state = "complete";
@@ -426,5 +464,6 @@ function buildMasteryView(skillMastery: Record<string, any>): MasteryRow[] {
 function stateLabel(state: IslandState) {
   if (state === "active") return "Active";
   if (state === "complete") return "Complete";
+  if (state === "paywall") return "Family plan";
   return "Locked";
 }
