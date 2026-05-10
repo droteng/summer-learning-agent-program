@@ -1,10 +1,14 @@
+import { applyGradeResultToMastery } from "./masteryAgent.js";
+
 export function createEmptyProgress() {
   return {
     completedMissionIds: [],
     xp: 0,
     masteryStars: 0,
     campCoins: 0,
-    reflections: {}
+    reflections: {},
+    skillMastery: {},
+    itemGrades: {}
   };
 }
 
@@ -24,7 +28,44 @@ export function completeMission({ progress, weekNumber, mission }) {
     xp: progress.xp + mission.rewardOpportunity.xp,
     masteryStars: progress.masteryStars + mission.rewardOpportunity.masteryStars,
     campCoins: progress.campCoins + mission.rewardOpportunity.campCoins,
-    reflections: progress.reflections ?? {}
+    reflections: progress.reflections ?? {},
+    skillMastery: progress.skillMastery ?? {},
+    itemGrades: progress.itemGrades ?? {}
+  };
+}
+
+/**
+ * @param {{
+ *   progress?: any,
+ *   item: { id: string, subject?: string, topicTag?: string },
+ *   gradeResult: { score: number, correct?: boolean|null, attempts?: number, rubricLevel?: number|null, feedback?: string },
+ *   now?: () => string
+ * }} args
+ */
+export function recordGradedItem(args) {
+  const { progress, item, gradeResult, now = () => new Date().toISOString() } = args;
+  const baseProgress = progress ?? createEmptyProgress();
+  const skillMastery = applyGradeResultToMastery({
+    mastery: baseProgress.skillMastery ?? {},
+    item,
+    gradeResult,
+    now
+  });
+  const itemGrades = {
+    ...(baseProgress.itemGrades ?? {}),
+    [item.id]: {
+      score: gradeResult.score,
+      correct: gradeResult.correct,
+      attempts: gradeResult.attempts,
+      rubricLevel: gradeResult.rubricLevel,
+      lastFeedback: gradeResult.feedback,
+      lastGradedAt: now()
+    }
+  };
+  return {
+    ...baseProgress,
+    skillMastery,
+    itemGrades
   };
 }
 
