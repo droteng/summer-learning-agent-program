@@ -13,6 +13,28 @@ import { consentStatusForParent } from "../../src/agents/consentAgent.js";
 import { SUBJECT_ORDER, SUBJECT_THEMES, themeForSubject } from "../../src/data/subjectTheme.js";
 import { PageDecorations, SubjectIcon } from "../child/map/decorations";
 import { ApprovalControls } from "./ApprovalControls";
+import { createImageAgent, INTENTS } from "../../src/agents/imageAgent.js";
+
+let cachedImageAgent: ReturnType<typeof createImageAgent> | null = null;
+function imageAgent() {
+  if (!cachedImageAgent) cachedImageAgent = createImageAgent();
+  return cachedImageAgent;
+}
+
+async function getWeekIllustration(theme: string | null, project: string | null): Promise<string | null> {
+  if (!theme) return null;
+  try {
+    const result = await imageAgent().generate({
+      intent: INTENTS.DECORATION,
+      topic: theme,
+      scene: `Summer camp week themed "${theme}".${project ? ` Capstone project: ${project}.` : ""} Bright outdoor adventure scene with kid-friendly tools and gear, no faces, no text.`,
+      aspectRatio: "16:9"
+    });
+    return result.url;
+  } catch {
+    return null;
+  }
+}
 
 export const dynamic = "force-dynamic";
 
@@ -67,6 +89,10 @@ export default async function ParentDashboardPage({ searchParams }: { searchPara
 
   const masteryView = buildMasteryView(skillMastery);
   const completionPct = report.status === "ready" ? report.completion.completionPercent : 0;
+  const weekIllustration =
+    report.status === "ready"
+      ? await getWeekIllustration(report.week.theme, report.week.project)
+      : null;
   const pendingApprovals =
     (progress?.rewardRequests ?? []).filter((r: any) => r.status === "pending_parent").length +
     (progress?.friendInvites ?? []).filter((i: any) => i.status === "needs_parent_approval").length;
@@ -105,6 +131,13 @@ export default async function ParentDashboardPage({ searchParams }: { searchPara
         )}
 
         <section className="pd-hero" aria-label="At a glance">
+          {weekIllustration && (
+            <img
+              className="pd-hero-illustration"
+              src={weekIllustration}
+              alt={report.status === "ready" ? `Week ${weekNumber} ${report.week.theme} illustration` : "Week illustration"}
+            />
+          )}
           <div>
             <h2>Week {weekNumber} — {report.status === "ready" ? report.week.theme : "Not started"}</h2>
             <p className="pd-hero-sub">
