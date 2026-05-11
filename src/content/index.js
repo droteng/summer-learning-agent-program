@@ -47,6 +47,16 @@ import { grade6FinanceDay2 } from "./grade6/enrichment/finance-day2.js";
 import { grade6FinanceDay3 } from "./grade6/enrichment/finance-day3.js";
 import { grade6FinanceDay4 } from "./grade6/enrichment/finance-day4.js";
 import { grade6FinanceDay5 } from "./grade6/enrichment/finance-day5.js";
+import { grade6MediaDay1 } from "./grade6/enrichment/media-day1.js";
+import { grade6MediaDay2 } from "./grade6/enrichment/media-day2.js";
+import { grade6MediaDay3 } from "./grade6/enrichment/media-day3.js";
+import { grade6MediaDay4 } from "./grade6/enrichment/media-day4.js";
+import { grade6MediaDay5 } from "./grade6/enrichment/media-day5.js";
+import { grade6StudyDay1 } from "./grade6/enrichment/study-day1.js";
+import { grade6StudyDay2 } from "./grade6/enrichment/study-day2.js";
+import { grade6StudyDay3 } from "./grade6/enrichment/study-day3.js";
+import { grade6StudyDay4 } from "./grade6/enrichment/study-day4.js";
+import { grade6StudyDay5 } from "./grade6/enrichment/study-day5.js";
 
 const ALL_MISSIONS = [
   grade6MathWeek1Day1,
@@ -94,7 +104,17 @@ const ALL_MISSIONS = [
   grade6FinanceDay2,
   grade6FinanceDay3,
   grade6FinanceDay4,
-  grade6FinanceDay5
+  grade6FinanceDay5,
+  grade6MediaDay1,
+  grade6MediaDay2,
+  grade6MediaDay3,
+  grade6MediaDay4,
+  grade6MediaDay5,
+  grade6StudyDay1,
+  grade6StudyDay2,
+  grade6StudyDay3,
+  grade6StudyDay4,
+  grade6StudyDay5
 ];
 
 export const authoredMissions = Object.freeze(

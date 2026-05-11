@@ -117,6 +117,38 @@ export const SUBJECT_THEMES = Object.freeze({
       '<g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 4 V20"/><path d="M16 8 a4 3 0 1 0 -4 -3 v14 a4 3 0 1 0 -4 -3"/></g>',
     patternSvg:
       '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><g fill="currentColor" opacity="0.2" font-family="ui-rounded,system-ui,sans-serif" font-size="14" font-weight="700"><text x="8" y="22">$</text><text x="36" y="18">$</text><text x="22" y="44">$</text><text x="44" y="48">$</text></g></svg>'
+  },
+  "Media Literacy": {
+    token: "media",
+    label: "Media Literacy",
+    monogram: "M",
+    color: "#db2777",
+    accent: "#9d174d",
+    soft: "#fce7f3",
+    deep: "#500724",
+    description: "Sources, AI-generated content, ads, misinformation, and online safety.",
+    keyword: "Signal Spotters",
+    enrichment: true,
+    iconSvg:
+      '<g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12 l2 2 l4 -4"/></g>',
+    patternSvg:
+      '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.22"><circle cx="16" cy="16" r="6"/><path d="M14 16 l2 2 l4 -4"/><circle cx="44" cy="44" r="6"/><path d="M42 44 l2 2 l4 -4"/></g></svg>'
+  },
+  "Study Skills": {
+    token: "study",
+    label: "Study Skills",
+    monogram: "S",
+    color: "#4338ca",
+    accent: "#312e81",
+    soft: "#e0e7ff",
+    deep: "#1e1b4b",
+    description: "Focus, notes, memory, planning, and goal-setting.",
+    keyword: "Mind Lab",
+    enrichment: true,
+    iconSvg:
+      '<g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7 H20 V19 H4 Z"/><path d="M12 4 V7"/><path d="M8 11 H16"/><path d="M8 15 H13"/></g>',
+    patternSvg:
+      '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.22"><rect x="8" y="10" width="14" height="18" rx="2"/><line x1="12" y1="16" x2="20" y2="16"/><line x1="12" y1="20" x2="18" y2="20"/><rect x="38" y="36" width="14" height="14" rx="2"/><line x1="42" y1="42" x2="50" y2="42"/></g></svg>'
   }
 });
 
