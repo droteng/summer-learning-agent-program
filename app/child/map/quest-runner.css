@@ -406,6 +406,52 @@
   line-height: 1.55;
 }
 
+.qr-vocab {
+  width: 100%;
+  max-width: 560px;
+  text-align: left;
+}
+.qr-vocab-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  margin-top: 8px;
+}
+.qr-vocab-card {
+  margin: 0;
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid color-mix(in srgb, var(--subject) 22%, transparent);
+  border-radius: var(--qm-radius);
+  box-shadow: 0 6px 16px -12px color-mix(in srgb, var(--subject-accent) 60%, transparent);
+}
+.qr-vocab-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: calc(var(--qm-radius) - 6px);
+  background: color-mix(in srgb, var(--subject) 10%, #ffffff);
+}
+.qr-vocab-image-placeholder {
+  background: color-mix(in srgb, var(--subject) 14%, #ffffff);
+}
+.qr-vocab-card figcaption {
+  display: grid;
+  gap: 2px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.qr-vocab-card figcaption strong {
+  color: var(--subject-accent);
+  font-weight: 800;
+}
+.qr-vocab-card figcaption span {
+  color: var(--qm-fg);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .qr-primary, .qr-secondary, .qr-choice, .qr-progress-fill, .qr-close { transition: none !important; }
 }

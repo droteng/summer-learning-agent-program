@@ -99,15 +99,28 @@ async function main() {
     aspectRatio: "16:9",
     label: `mission:${m.id} ${m.subject} – ${m.topic}`
   }));
+  const vocabJobs = missions.flatMap((m) =>
+    Array.isArray(m.keyTerms)
+      ? m.keyTerms.map((t) => ({
+          kind: "vocab",
+          intent: INTENTS.VOCAB_CARD,
+          subject: m.subject,
+          topic: t.term,
+          scene: `Vocabulary card for the term "${t.term}" — a small friendly cartoon illustration that visualizes: ${t.definition}. Big readable term label. No human faces.`,
+          aspectRatio: "1:1",
+          label: `vocab:${m.id} ${t.term}`
+        }))
+      : []
+  );
 
   const islands = ARGS.includeIslands ? islandJobs() : [];
   const subjects = ARGS.includeSubjects ? subjectHeroJobs() : [];
-  const allJobs = [...missionJobs, ...islands, ...subjects];
+  const allJobs = [...missionJobs, ...vocabJobs, ...islands, ...subjects];
   const jobs = ARGS.limit != null ? allJobs.slice(0, ARGS.limit) : allJobs;
 
   console.log(
     `Warming ${jobs.length} illustration${jobs.length === 1 ? "" : "s"} ` +
-      `(missions=${missionJobs.length}, islands=${islands.length}, subjects=${subjects.length}${ARGS.limit != null ? `, capped at ${ARGS.limit}` : ""}).`
+      `(missions=${missionJobs.length}, vocab=${vocabJobs.length}, islands=${islands.length}, subjects=${subjects.length}${ARGS.limit != null ? `, capped at ${ARGS.limit}` : ""}).`
   );
   if (ARGS.dryRun) {
     for (const j of jobs) console.log(`  · ${j.label}`);

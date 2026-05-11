@@ -12,6 +12,11 @@ export const grade6ScienceWeek1Day2 = {
   estimatedMinutes: 18,
   standardsRefs: ["NGSS.MS-LS1-1", "NGSS.SEP.3"],
   hook: "Scientists ask questions they can actually test. Today you turn a curious thought into a fair experiment.",
+  keyTerms: [
+    { term: "Variable", definition: "Something in an experiment that can change or be measured." },
+    { term: "Fair test", definition: "An experiment where only one variable changes and everything else stays the same." },
+    { term: "Result", definition: "The measurable outcome you observe and compare across trials." }
+  ],
   miniLesson: [
     "A testable question can be answered by an experiment or observation, not by an opinion.",
     "A fair test changes only one thing at a time — that one thing is called the variable.",

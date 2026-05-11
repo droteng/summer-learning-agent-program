@@ -59,6 +59,29 @@ async function getConceptDiagram(mission: any): Promise<string | null> {
   }
 }
 
+async function getVocabCardUrl(mission: any, term: { term: string; definition: string }): Promise<string | null> {
+  if (!term?.term) return null;
+  try {
+    const result = await imageAgent().generate({
+      intent: INTENTS.VOCAB_CARD,
+      subject: mission?.subject,
+      topic: term.term,
+      scene: `Vocabulary card for the term "${term.term}" — a small friendly cartoon illustration that visualizes: ${term.definition}. Big readable term label. No human faces.`,
+      aspectRatio: "1:1"
+    });
+    return result.url;
+  } catch {
+    return null;
+  }
+}
+
+async function buildVocabCardMap(mission: any): Promise<Record<string, string | null>> {
+  const terms: { term: string; definition: string }[] = Array.isArray(mission?.keyTerms) ? mission.keyTerms : [];
+  if (terms.length === 0) return {};
+  const entries = await Promise.all(terms.map(async (t) => [t.term, await getVocabCardUrl(mission, t)] as const));
+  return Object.fromEntries(entries);
+}
+
 async function getSubjectHero(subject: string, label: string): Promise<string | null> {
   if (!subject) return null;
   try {
@@ -182,11 +205,13 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
   const [
     activeQuestIllustration,
     activeQuestConceptDiagram,
+    activeQuestVocabMap,
     islandIllustration,
     subjectHeroMap
   ] = await Promise.all([
     getMissionIllustration(activeQuest),
     getConceptDiagram(activeQuest),
+    buildVocabCardMap(activeQuest),
     getIslandIllustration(currentIsland),
     buildSubjectHeroMap([...masterySubjects, ...enrichmentTrackSubjects])
   ]);
@@ -211,6 +236,7 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
             mission={stripServerOnlyFields(activeQuest)}
             illustrationUrl={activeQuestIllustration ?? undefined}
             conceptDiagramUrl={activeQuestConceptDiagram ?? undefined}
+            vocabCardUrls={activeQuestVocabMap}
             studentId={studentId}
             studentName={profile.firstName}
             subjectToken={activeQuestTheme.token}
@@ -528,6 +554,7 @@ function stripServerOnlyFields(mission: any) {
     topic: mission.topic,
     hook: mission.hook,
     miniLesson: mission.miniLesson,
+    keyTerms: mission.keyTerms ?? null,
     workedExample: mission.workedExample,
     estimatedMinutes: mission.estimatedMinutes,
     reflectionPrompt: mission.reflectionPrompt,
