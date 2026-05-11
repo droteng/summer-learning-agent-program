@@ -48,6 +48,7 @@ interface QuestRunnerProps {
   iconSvg: string;
   backHref: string;
   illustrationUrl?: string;
+  conceptDiagramUrl?: string;
 }
 
 type Stage = { kind: "intro" } | { kind: "item"; index: number } | { kind: "done" };
@@ -139,6 +140,7 @@ export function QuestRunner(props: QuestRunnerProps) {
           studentName={props.studentName}
           onStart={startQuest}
           illustrationUrl={props.illustrationUrl}
+          conceptDiagramUrl={props.conceptDiagramUrl}
           subjectLabel={props.subjectLabel}
         />
       ) : stage.kind === "item" ? (
@@ -185,12 +187,14 @@ function IntroStage({
   studentName,
   onStart,
   illustrationUrl,
+  conceptDiagramUrl,
   subjectLabel
 }: {
   mission: AuthoredMission;
   studentName: string;
   onStart: () => void;
   illustrationUrl?: string;
+  conceptDiagramUrl?: string;
   subjectLabel: string;
 }) {
   return (
@@ -203,13 +207,22 @@ function IntroStage({
         />
       )}
       <p className="qr-hook">{mission.hook}</p>
-      <div className="qr-mini-lesson">
+      <div className="qr-mini-lesson" data-has-diagram={conceptDiagramUrl ? "true" : "false"}>
         <span className="qr-eyebrow">Quick recap</span>
-        <ul>
-          {mission.miniLesson.map((line, i) => (
-            <li key={i}>{line}</li>
-          ))}
-        </ul>
+        <div className="qr-mini-lesson-body">
+          <ul>
+            {mission.miniLesson.map((line, i) => (
+              <li key={i}>{line}</li>
+            ))}
+          </ul>
+          {conceptDiagramUrl && (
+            <img
+              className="qr-concept-diagram"
+              src={conceptDiagramUrl}
+              alt={`Concept diagram for ${mission.topic}`}
+            />
+          )}
+        </div>
       </div>
       <div className="qr-worked">
         <span className="qr-eyebrow">Worked example</span>

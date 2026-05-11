@@ -42,6 +42,23 @@ async function getMissionIllustration(mission: any): Promise<string | null> {
   }
 }
 
+async function getConceptDiagram(mission: any): Promise<string | null> {
+  if (!mission) return null;
+  try {
+    const recap = Array.isArray(mission.miniLesson) ? mission.miniLesson.slice(0, 2).join(" ") : "";
+    const result = await imageAgent().generate({
+      intent: INTENTS.CONCEPT_DIAGRAM,
+      subject: mission.subject,
+      topic: mission.topic,
+      scene: `Labeled educational diagram explaining: ${mission.topic}. Key idea: ${recap}. Clear labels, arrows, friendly cartoon style, no human faces.`,
+      aspectRatio: "4:3"
+    });
+    return result.url;
+  } catch {
+    return null;
+  }
+}
+
 async function getIslandIllustration(island: { theme: string; project: string } | undefined | null): Promise<string | null> {
   if (!island) return null;
   try {
@@ -133,8 +150,9 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
 
   const activeQuest = requestedQuestId ? getAuthoredMissionById(requestedQuestId) : null;
   const activeQuestTheme = activeQuest ? themeForSubject(activeQuest.subject) : null;
-  const [activeQuestIllustration, islandIllustration] = await Promise.all([
+  const [activeQuestIllustration, activeQuestConceptDiagram, islandIllustration] = await Promise.all([
     getMissionIllustration(activeQuest),
+    getConceptDiagram(activeQuest),
     getIslandIllustration(currentIsland)
   ]);
   const backHref = `/child/map${studentId !== "demo-student" ? `?student=${encodeURIComponent(studentId)}` : ""}`;
@@ -157,6 +175,7 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
           <QuestRunner
             mission={stripServerOnlyFields(activeQuest)}
             illustrationUrl={activeQuestIllustration ?? undefined}
+            conceptDiagramUrl={activeQuestConceptDiagram ?? undefined}
             studentId={studentId}
             studentName={profile.firstName}
             subjectToken={activeQuestTheme.token}
