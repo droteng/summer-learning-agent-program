@@ -27,6 +27,16 @@ import { grade6ScienceWeek5Day2 } from "./grade6/week5/science-day2.js";
 import { grade6MathWeek5Day3 } from "./grade6/week5/math-day3.js";
 import { grade6ElaWeek5Day4 } from "./grade6/week5/ela-day4.js";
 import { grade6HistoryWeek5Day5 } from "./grade6/week5/history-day5.js";
+import { grade6WorldWeek6Day1 } from "./grade6/week6/world-day1.js";
+import { grade6WorldWeek6Day2 } from "./grade6/week6/world-day2.js";
+import { grade6ElaWeek6Day3 } from "./grade6/week6/ela-day3.js";
+import { grade6WorldWeek6Day4 } from "./grade6/week6/world-day4.js";
+import { grade6HistoryWeek6Day5 } from "./grade6/week6/history-day5.js";
+import { grade6HistoryWeek7Day1 } from "./grade6/week7/history-day1.js";
+import { grade6HistoryWeek7Day2 } from "./grade6/week7/history-day2.js";
+import { grade6HistoryWeek7Day3 } from "./grade6/week7/history-day3.js";
+import { grade6HistoryWeek7Day4 } from "./grade6/week7/history-day4.js";
+import { grade6ElaWeek7Day5 } from "./grade6/week7/ela-day5.js";
 
 const ALL_MISSIONS = [
   grade6MathWeek1Day1,
@@ -54,7 +64,17 @@ const ALL_MISSIONS = [
   grade6ScienceWeek5Day2,
   grade6MathWeek5Day3,
   grade6ElaWeek5Day4,
-  grade6HistoryWeek5Day5
+  grade6HistoryWeek5Day5,
+  grade6WorldWeek6Day1,
+  grade6WorldWeek6Day2,
+  grade6ElaWeek6Day3,
+  grade6WorldWeek6Day4,
+  grade6HistoryWeek6Day5,
+  grade6HistoryWeek7Day1,
+  grade6HistoryWeek7Day2,
+  grade6HistoryWeek7Day3,
+  grade6HistoryWeek7Day4,
+  grade6ElaWeek7Day5
 ];
 
 export const authoredMissions = Object.freeze(
