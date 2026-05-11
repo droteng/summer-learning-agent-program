@@ -10,7 +10,7 @@ import {
 const ALL_MISSIONS = Object.values(authoredMissions);
 
 test("registry exposes all authored Grade 6 missions", () => {
-  assert.ok(ALL_MISSIONS.length >= 16, `expected at least 16 authored missions, got ${ALL_MISSIONS.length}`);
+  assert.ok(ALL_MISSIONS.length >= 26, `expected at least 26 authored missions, got ${ALL_MISSIONS.length}`);
   for (const mission of ALL_MISSIONS) {
     assert.equal(mission.gradeLevel, 6, `${mission.id} not Grade 6`);
     assert.ok(mission.id.length > 0);
@@ -100,8 +100,8 @@ test("Week 1 covers all six core subjects across the five days", () => {
   assert.ok(subjects.has("World/Current Affairs"));
 });
 
-test("Weeks 2 and 3 each have at least one authored mission per day", () => {
-  for (const weekNumber of [2, 3]) {
+test("Weeks 2 through 5 each have at least one authored mission per day", () => {
+  for (const weekNumber of [2, 3, 4, 5]) {
     for (let dayNumber = 1; dayNumber <= 5; dayNumber++) {
       const missions = ALL_MISSIONS.filter(
         (m) => m.weekNumber === weekNumber && m.dayNumber === dayNumber
@@ -126,6 +126,19 @@ test("Week 2 emphasizes data and numbers; Week 3 emphasizes narrative", () => {
   assert.ok(
     week3Topics.some((t) => /narrative|sensory|dialogue|revision|story/.test(t)),
     "Week 3 missing narrative-themed content"
+  );
+});
+
+test("Week 4 emphasizes coding/AI; Week 5 emphasizes earth and invention", () => {
+  const week4Topics = ALL_MISSIONS.filter((m) => m.weekNumber === 4).map((m) => m.topicTag);
+  const week5Topics = ALL_MISSIONS.filter((m) => m.weekNumber === 5).map((m) => m.topicTag);
+  assert.ok(
+    week4Topics.some((t) => /function|debug|ai|tool|logic/.test(t)),
+    "Week 4 missing coding/AI-themed content"
+  );
+  assert.ok(
+    week5Topics.some((t) => /ecosystem|engineer|scale|invention|research/.test(t)),
+    "Week 5 missing earth-and-invention-themed content"
   );
 });
 
