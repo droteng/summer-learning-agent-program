@@ -372,6 +372,13 @@
   box-shadow: 0 6px 14px -4px color-mix(in srgb, var(--subject) 60%, transparent);
 }
 .qm-icon svg { width: 26px; height: 26px; }
+.qm-icon-hero {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+  display: block;
+}
 .qm-mastery-body { flex: 1; min-width: 0; position: relative; z-index: 1; }
 .qm-mastery-label {
   display: flex; justify-content: space-between; align-items: baseline;
@@ -942,6 +949,15 @@
   border: 2px solid color-mix(in srgb, var(--subject) 28%, transparent);
   border-radius: var(--qm-radius);
   padding: 14px 16px;
+  overflow: hidden;
+}
+.qm-enrichment-track-hero {
+  display: block;
+  width: calc(100% + 32px);
+  margin: -14px -16px 12px;
+  aspect-ratio: 4 / 1;
+  object-fit: cover;
+  border-bottom: 1px solid color-mix(in srgb, var(--subject) 28%, transparent);
 }
 .qm-enrichment-track-head {
   display: flex;

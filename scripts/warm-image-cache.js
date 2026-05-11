@@ -21,11 +21,19 @@
 import { createImageAgent, INTENTS } from "../src/agents/imageAgent.js";
 import { ALL_MISSIONS } from "../src/content/index.js";
 import { grade6Weeks } from "../src/data/grade6Curriculum.js";
+import { SUBJECT_THEMES } from "../src/data/subjectTheme.js";
 
 const ARGS = parseArgs(process.argv.slice(2));
 
 function parseArgs(argv) {
-  const out = { grade: null, week: null, limit: null, dryRun: false, includeIslands: false };
+  const out = {
+    grade: null,
+    week: null,
+    limit: null,
+    dryRun: false,
+    includeIslands: false,
+    includeSubjects: false
+  };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (a === "--grade") out.grade = Number(argv[++i]);
@@ -33,9 +41,13 @@ function parseArgs(argv) {
     else if (a === "--limit") out.limit = Number(argv[++i]);
     else if (a === "--dry-run") out.dryRun = true;
     else if (a === "--include-islands") out.includeIslands = true;
-    else if (a === "--help" || a === "-h") {
+    else if (a === "--include-subjects") out.includeSubjects = true;
+    else if (a === "--all") {
+      out.includeIslands = true;
+      out.includeSubjects = true;
+    } else if (a === "--help" || a === "-h") {
       console.log(
-        "Usage: node scripts/warm-image-cache.js [--grade N] [--week N] [--limit N] [--dry-run] [--include-islands]"
+        "Usage: node scripts/warm-image-cache.js [--grade N] [--week N] [--limit N] [--dry-run] [--include-islands] [--include-subjects] [--all]"
       );
       process.exit(0);
     }
@@ -49,6 +61,18 @@ function filtered(missions) {
     if (ARGS.week != null && m.weekNumber !== ARGS.week) return false;
     return true;
   });
+}
+
+function subjectHeroJobs() {
+  return Object.entries(SUBJECT_THEMES).map(([subjectKey, t]) => ({
+    kind: "subject-hero",
+    intent: INTENTS.SUBJECT_HERO,
+    subject: subjectKey,
+    topic: t.label,
+    scene: `Decorative banner illustrating the school subject "${t.label}". Iconic objects and symbols for the subject arranged in a friendly cartoon collage. Bright vibrant colors, no human faces, no text.`,
+    aspectRatio: "3:1",
+    label: `subject-hero:${t.label}`
+  }));
 }
 
 function islandJobs() {
@@ -77,12 +101,13 @@ async function main() {
   }));
 
   const islands = ARGS.includeIslands ? islandJobs() : [];
-  const allJobs = [...missionJobs, ...islands];
+  const subjects = ARGS.includeSubjects ? subjectHeroJobs() : [];
+  const allJobs = [...missionJobs, ...islands, ...subjects];
   const jobs = ARGS.limit != null ? allJobs.slice(0, ARGS.limit) : allJobs;
 
   console.log(
     `Warming ${jobs.length} illustration${jobs.length === 1 ? "" : "s"} ` +
-      `(missions=${missionJobs.length}, islands=${islands.length}${ARGS.limit != null ? `, capped at ${ARGS.limit}` : ""}).`
+      `(missions=${missionJobs.length}, islands=${islands.length}, subjects=${subjects.length}${ARGS.limit != null ? `, capped at ${ARGS.limit}` : ""}).`
   );
   if (ARGS.dryRun) {
     for (const j of jobs) console.log(`  · ${j.label}`);

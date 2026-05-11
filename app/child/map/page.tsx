@@ -59,6 +59,28 @@ async function getConceptDiagram(mission: any): Promise<string | null> {
   }
 }
 
+async function getSubjectHero(subject: string, label: string): Promise<string | null> {
+  if (!subject) return null;
+  try {
+    const result = await imageAgent().generate({
+      intent: INTENTS.SUBJECT_HERO,
+      subject,
+      topic: label,
+      scene: `Decorative banner illustrating the school subject "${label}". Iconic objects and symbols for the subject arranged in a friendly cartoon collage. Bright vibrant colors, no human faces, no text.`,
+      aspectRatio: "3:1"
+    });
+    return result.url;
+  } catch {
+    return null;
+  }
+}
+
+async function buildSubjectHeroMap(subjects: { subject: string; label: string }[]): Promise<Record<string, string | null>> {
+  const unique = Array.from(new Map(subjects.map((s) => [s.subject, s])).values());
+  const entries = await Promise.all(unique.map(async (s) => [s.subject, await getSubjectHero(s.subject, s.label)] as const));
+  return Object.fromEntries(entries);
+}
+
 async function getIslandIllustration(island: { theme: string; project: string } | undefined | null): Promise<string | null> {
   if (!island) return null;
   try {
@@ -150,10 +172,23 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
 
   const activeQuest = requestedQuestId ? getAuthoredMissionById(requestedQuestId) : null;
   const activeQuestTheme = activeQuest ? themeForSubject(activeQuest.subject) : null;
-  const [activeQuestIllustration, activeQuestConceptDiagram, islandIllustration] = await Promise.all([
+  const enrichmentTrackSubjects = enrichmentTracks
+    .map((t) => {
+      const firstMission = enrichmentMissions.find((m) => m.track === t.track);
+      return firstMission ? { subject: firstMission.subject, label: firstMission.label } : null;
+    })
+    .filter((x): x is { subject: string; label: string } => Boolean(x));
+  const masterySubjects = masteryView.map((row) => ({ subject: row.subject, label: row.label }));
+  const [
+    activeQuestIllustration,
+    activeQuestConceptDiagram,
+    islandIllustration,
+    subjectHeroMap
+  ] = await Promise.all([
     getMissionIllustration(activeQuest),
     getConceptDiagram(activeQuest),
-    getIslandIllustration(currentIsland)
+    getIslandIllustration(currentIsland),
+    buildSubjectHeroMap([...masterySubjects, ...enrichmentTrackSubjects])
   ]);
   const backHref = `/child/map${studentId !== "demo-student" ? `?student=${encodeURIComponent(studentId)}` : ""}`;
 
@@ -278,7 +313,11 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
                 style={{ "--subject-pattern": patternUrl(row.patternSvg, row.color) } as React.CSSProperties}
               >
                 <div className="qm-icon" aria-hidden="true">
-                  <SubjectIcon svg={row.iconSvg} />
+                  {subjectHeroMap[row.subject] ? (
+                    <img className="qm-icon-hero" src={subjectHeroMap[row.subject]!} alt="" />
+                  ) : (
+                    <SubjectIcon svg={row.iconSvg} />
+                  )}
                 </div>
                 <div className="qm-mastery-body">
                   <div className="qm-mastery-label">
@@ -423,8 +462,14 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
               <h3>Optional enrichment</h3>
               <p>Parent-selected mini-tracks that run alongside the 8-week core. Pick one and try a day.</p>
             </div>
-            {enrichmentTracks.map((track) => (
+            {enrichmentTracks.map((track) => {
+              const trackSubject = enrichmentMissions.find((m) => m.track === track.track)?.subject;
+              const trackHeroUrl = trackSubject ? subjectHeroMap[trackSubject] : null;
+              return (
               <div key={track.track} className="qm-enrichment-track" data-subject={track.token}>
+                {trackHeroUrl && (
+                  <img className="qm-enrichment-track-hero" src={trackHeroUrl} alt="" />
+                )}
                 <div className="qm-enrichment-track-head">
                   <span className="qm-enrichment-monogram" aria-hidden="true">
                     {enrichmentMissions.find((m) => m.track === track.track)?.monogram ?? "?"}
@@ -448,7 +493,8 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
                     ))}
                 </div>
               </div>
-            ))}
+              );
+            })}
           </section>
         )}
 
