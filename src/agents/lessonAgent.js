@@ -1,3 +1,7 @@
+import { TIERS } from "./llm/index.js";
+import { isHardSubject } from "./llm/router.js";
+import { findAuthoredMission } from "../content/index.js";
+
 export function createTeacherLessonGuide({ mission, studentProfile }) {
   const studentName = studentProfile.firstName || "Student";
 
@@ -17,6 +21,102 @@ export function createTeacherLessonGuide({ mission, studentProfile }) {
     parentTip:
       "Praise explanation, effort, and revision. If the child gets stuck, reduce the task size before giving the answer."
   };
+}
+
+// Async variant that augments the deterministic guide with an LLM-generated
+// kid-friendly explanation per mini-lesson, plus any authored content that
+// matches the mission. When no LLM is configured the mock provider produces
+// the same shape, so callers always get the richer payload.
+export async function createTeacherLessonGuideWithLlm({ mission, studentProfile, llm, weekNumber }) {
+  const guide = createTeacherLessonGuide({ mission, studentProfile });
+
+  if (!llm) {
+    return guide;
+  }
+
+  const enriched = await Promise.all(
+    guide.miniLessons.map(async (lesson, index) => {
+      const sourceLesson = mission.lessons[index];
+      const authored = findAuthoredMission({
+        gradeLevel: studentProfile.gradeLevel,
+        weekNumber,
+        dayNumber: mission.dayNumber,
+        subject: sourceLesson.subject
+      });
+
+      const response = await llm.complete({
+        tier: TIERS.TUTOR,
+        hardSubject: isHardSubject(sourceLesson.subject, authored?.topicTag),
+        studentId: studentProfile.id,
+        studentName: studentProfile.firstName,
+        subject: sourceLesson.subject,
+        task: sourceLesson.task,
+        system: buildTutorSystemPrompt(),
+        messages: [
+          {
+            role: "user",
+            content: buildTutorUserPrompt({
+              studentProfile,
+              subject: sourceLesson.subject,
+              task: sourceLesson.task,
+              missionTheme: mission.theme,
+              authored
+            })
+          }
+        ]
+      });
+
+      return {
+        ...lesson,
+        kidExplanation: response.text,
+        modelMeta: {
+          provider: response.provider,
+          model: response.model,
+          fallback: response.fallback
+        },
+        authoredContent: authored
+          ? {
+              id: authored.id,
+              topic: authored.topic,
+              hook: authored.hook,
+              miniLesson: authored.miniLesson,
+              workedExample: authored.workedExample,
+              itemCount: authored.items.length,
+              estimatedMinutes: authored.estimatedMinutes
+            }
+          : null
+      };
+    })
+  );
+
+  return { ...guide, miniLessons: enriched };
+}
+
+function buildTutorSystemPrompt() {
+  return [
+    "You are a warm, encouraging Grade 6 teacher agent for a parent-supervised summer learning program.",
+    "Your audience is a child aged 11–12. Use clear, friendly language. Avoid sarcasm. Never ask for personal information.",
+    "Never diagnose, shame, or give medical advice. Encourage effort and revision over speed.",
+    "Keep responses short: a 2–3 sentence kid-friendly explanation, then one guiding question, then one if-stuck hint.",
+    "Stay on the assigned subject and task."
+  ].join(" ");
+}
+
+function buildTutorUserPrompt({ studentProfile, subject, task, missionTheme, authored }) {
+  const studentName = studentProfile.firstName || "the student";
+  const interests = (studentProfile.interests ?? []).slice(0, 3).join(", ");
+  const authoredContext = authored
+    ? `\nAuthored mini-lesson context (use it, don't restate it):\n- Topic: ${authored.topic}\n- Hook: ${authored.hook}\n- Key ideas: ${authored.miniLesson.join(" ")}\n- Worked example answer: ${authored.workedExample.answer}`
+    : "";
+
+  return [
+    `Student: ${studentName}, Grade ${studentProfile.gradeLevel ?? 6}.`,
+    interests ? `Interests: ${interests}.` : "",
+    `Mission theme: ${missionTheme}. Subject: ${subject}. Task: ${task}.${authoredContext}`,
+    `Write a 2–3 sentence kid-friendly explanation, then one guiding question, then one if-stuck hint. No more than 90 words total.`
+  ]
+    .filter(Boolean)
+    .join("\n");
 }
 
 function createTeachingMove(subject, task) {

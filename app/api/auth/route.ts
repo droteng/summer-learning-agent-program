@@ -8,7 +8,7 @@ const sessionCookieName = "learning_squad_session";
 
 export async function POST(request: Request) {
   const payload = await request.json();
-  const account = loadFamilyAccount();
+  const account = await loadFamilyAccount();
   const result = account
     ? verifyAccountSignIn({
         account,
@@ -29,7 +29,7 @@ export async function POST(request: Request) {
       accountId: account?.id ?? "default-mvp",
       role: result.role
     });
-    saveAuthSession(session);
+    await saveAuthSession(session);
     response.cookies.set(sessionCookieName, session.id, {
       httpOnly: true,
       sameSite: "lax",

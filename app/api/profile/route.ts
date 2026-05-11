@@ -18,7 +18,7 @@ const defaultProfile = {
 export async function GET(request: Request) {
   const url = new URL(request.url);
   const profileId = url.searchParams.get("profileId") ?? "mvp-preview-profile";
-  const profile = loadProfileSnapshot(profileId) ?? defaultProfile;
+  const profile = (await loadProfileSnapshot(profileId)) ?? defaultProfile;
 
   return NextResponse.json({ profile });
 }
@@ -26,7 +26,7 @@ export async function GET(request: Request) {
 export async function POST(request: Request) {
   const payload = await request.json();
   const profileId = payload.profileId ?? "mvp-preview-profile";
-  const saved = saveProfileSnapshot({
+  const saved = await saveProfileSnapshot({
     profileId,
     profile: {
       ...defaultProfile,
