@@ -1,4 +1,5 @@
 import { applyGradeResultToMastery } from "./masteryAgent.js";
+import { buildCompletionEntry } from "./streakAgent.js";
 
 export function createEmptyProgress() {
   return {
@@ -8,7 +9,9 @@ export function createEmptyProgress() {
     campCoins: 0,
     reflections: {},
     skillMastery: {},
-    itemGrades: {}
+    itemGrades: {},
+    completionLog: [],
+    streakFreezesAvailable: 0
   };
 }
 
@@ -16,12 +19,15 @@ export function createMissionId({ weekNumber, dayNumber }) {
   return `week-${weekNumber}-day-${dayNumber}`;
 }
 
-export function completeMission({ progress, weekNumber, mission }) {
+export function completeMission({ progress, weekNumber, mission, now }) {
   const missionId = createMissionId({ weekNumber, dayNumber: mission.dayNumber });
 
   if (progress.completedMissionIds.includes(missionId)) {
     return progress;
   }
+
+  const baseLog = Array.isArray(progress.completionLog) ? progress.completionLog : [];
+  const entry = buildCompletionEntry({ missionId }, { now });
 
   return {
     completedMissionIds: [...progress.completedMissionIds, missionId],
@@ -30,7 +36,9 @@ export function completeMission({ progress, weekNumber, mission }) {
     campCoins: progress.campCoins + mission.rewardOpportunity.campCoins,
     reflections: progress.reflections ?? {},
     skillMastery: progress.skillMastery ?? {},
-    itemGrades: progress.itemGrades ?? {}
+    itemGrades: progress.itemGrades ?? {},
+    completionLog: [...baseLog, entry],
+    streakFreezesAvailable: progress.streakFreezesAvailable ?? 0
   };
 }
 

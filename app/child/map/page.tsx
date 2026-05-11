@@ -8,6 +8,7 @@ import {
 } from "../../../src/agents/masteryAgent.js";
 import { loadProgressSnapshot } from "../../../src/data/localDb.js";
 import { resolveEntitlement, isWeekUnlocked } from "../../../src/agents/entitlementAgent.js";
+import { computeStreak, streakMessage } from "../../../src/agents/streakAgent.js";
 import { SUBJECT_ORDER, SUBJECT_THEMES, themeForSubject } from "../../../src/data/subjectTheme.js";
 import {
   authoredMissions,
@@ -66,6 +67,14 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
   const stars = progress?.masteryStars ?? 0;
   const coins = progress?.campCoins ?? 0;
 
+  const streak = computeStreak({
+    completionLog: progress?.completionLog ?? [],
+    streakFreezesAvailable: progress?.streakFreezesAvailable ?? 0
+  });
+  const freshlyCompletedIsland = islands.find(
+    (island) => island.state === "complete" && island.weekNumber === (currentIsland?.weekNumber ?? 1) - 1
+  );
+
   const activeQuest = requestedQuestId ? getAuthoredMissionById(requestedQuestId) : null;
   const activeQuestTheme = activeQuest ? themeForSubject(activeQuest.subject) : null;
   const backHref = `/child/map${studentId !== "demo-student" ? `?student=${encodeURIComponent(studentId)}` : ""}`;
@@ -107,6 +116,18 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
             </p>
           </div>
           <div className="qm-stats" role="group" aria-label="Earnings">
+            <div className="qm-stat" data-kind="streak" data-active={streak.currentDays > 0 ? "true" : "false"}>
+              <span className="qm-stat-value">
+                <svg className="qm-streak-flame" aria-hidden="true" viewBox="0 0 24 24" width="20" height="20">
+                  <path
+                    d="M12 2 C 10 6, 7 8, 7 12 C 7 16, 9 19, 12 22 C 15 19, 17 16, 17 12 C 17 9, 15 7, 13 5 C 13 7, 12 8, 11 9 C 11 6, 12 4, 12 2 Z"
+                    fill="currentColor"
+                  />
+                </svg>
+                <span>{streak.currentDays}</span>
+              </span>
+              <span className="qm-stat-label">Day streak</span>
+            </div>
             <div className="qm-stat" data-kind="xp">
               <span className="qm-stat-value">{xp}</span>
               <span className="qm-stat-label">XP</span>
@@ -121,6 +142,40 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
             </div>
           </div>
         </section>
+
+        <section className="qm-streak-strip" aria-label="Streak status" data-active={streak.currentDays > 0 ? "true" : "false"}>
+          <span className="qm-streak-strip-label">{streakMessage(streak)}</span>
+          {streak.currentDays > 0 && (
+            <div className="qm-streak-ladder" aria-hidden="true">
+              {[3, 5, 7, 10, 14].map((m) => (
+                <span
+                  key={m}
+                  className="qm-streak-ladder-step"
+                  data-reached={streak.currentDays >= m ? "true" : "false"}
+                >
+                  {m}
+                </span>
+              ))}
+            </div>
+          )}
+        </section>
+
+        {freshlyCompletedIsland && (
+          <section className="qm-capstone-cheer" aria-live="polite">
+            <div className="qm-capstone-confetti" aria-hidden="true">
+              {Array.from({ length: 12 }).map((_, i) => (
+                <span key={i} className="qm-confetti-bit" style={{ "--i": i } as React.CSSProperties} />
+              ))}
+            </div>
+            <div className="qm-capstone-body">
+              <span className="qm-capstone-eyebrow">Week {freshlyCompletedIsland.weekNumber} complete</span>
+              <span className="qm-capstone-title">{freshlyCompletedIsland.theme} — done!</span>
+              <span className="qm-capstone-sub">
+                Capstone earned: {freshlyCompletedIsland.project}. The next island is open.
+              </span>
+            </div>
+          </section>
+        )}
 
         <section className="qm-mastery" aria-label="Subject mastery">
           <div className="qm-section-head">
