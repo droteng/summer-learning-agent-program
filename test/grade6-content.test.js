@@ -10,7 +10,7 @@ import {
 const ALL_MISSIONS = Object.values(authoredMissions);
 
 test("registry exposes all authored Grade 6 missions", () => {
-  assert.ok(ALL_MISSIONS.length >= 36, `expected at least 36 authored missions, got ${ALL_MISSIONS.length}`);
+  assert.ok(ALL_MISSIONS.length >= 41, `expected at least 41 authored missions, got ${ALL_MISSIONS.length}`);
   for (const mission of ALL_MISSIONS) {
     assert.equal(mission.gradeLevel, 6, `${mission.id} not Grade 6`);
     assert.ok(mission.id.length > 0);
@@ -100,8 +100,8 @@ test("Week 1 covers all six core subjects across the five days", () => {
   assert.ok(subjects.has("World/Current Affairs"));
 });
 
-test("Weeks 2 through 7 each have at least one authored mission per day", () => {
-  for (const weekNumber of [2, 3, 4, 5, 6, 7]) {
+test("Weeks 2 through 8 each have at least one authored mission per day", () => {
+  for (const weekNumber of [2, 3, 4, 5, 6, 7, 8]) {
     for (let dayNumber = 1; dayNumber <= 5; dayNumber++) {
       const missions = ALL_MISSIONS.filter(
         (m) => m.weekNumber === weekNumber && m.dayNumber === dayNumber
