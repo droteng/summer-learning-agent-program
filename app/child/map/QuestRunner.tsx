@@ -21,6 +21,7 @@ interface AuthoredMission {
   topic: string;
   hook: string;
   miniLesson: string[];
+  keyTerms?: { term: string; definition: string }[] | null;
   workedExample: { prompt: string; steps: string[]; answer: string };
   items: AuthoredItem[];
   estimatedMinutes: number;
@@ -49,6 +50,7 @@ interface QuestRunnerProps {
   backHref: string;
   illustrationUrl?: string;
   conceptDiagramUrl?: string;
+  vocabCardUrls?: Record<string, string | null>;
 }
 
 type Stage = { kind: "intro" } | { kind: "item"; index: number } | { kind: "done" };
@@ -162,7 +164,12 @@ export function QuestRunner(props: QuestRunnerProps) {
           error={error}
         />
       ) : (
-        <DoneStage mission={props.mission} grades={grades} backHref={props.backHref} />
+        <DoneStage
+          mission={props.mission}
+          grades={grades}
+          backHref={props.backHref}
+          vocabCardUrls={props.vocabCardUrls}
+        />
       )}
     </section>
   );
@@ -379,15 +386,18 @@ function ItemStage({
 function DoneStage({
   mission,
   grades,
-  backHref
+  backHref,
+  vocabCardUrls
 }: {
   mission: AuthoredMission;
   grades: Record<string, GradeResult>;
   backHref: string;
+  vocabCardUrls?: Record<string, string | null>;
 }) {
   const totalScore = Object.values(grades).reduce((sum, g) => sum + g.score, 0);
   const max = mission.items.length;
   const pct = max === 0 ? 0 : Math.round((totalScore / max) * 100);
+  const terms = Array.isArray(mission.keyTerms) ? mission.keyTerms : [];
   return (
     <div className="qr-done">
       <div className="qr-done-trophy" aria-hidden="true">
@@ -414,6 +424,29 @@ function DoneStage({
       <h2 className="qr-done-title">Quest complete!</h2>
       <p className="qr-done-score">Score: {pct}%</p>
       <p className="qr-done-reflect">{mission.reflectionPrompt}</p>
+      {terms.length > 0 && (
+        <div className="qr-vocab" aria-label="Key terms to remember">
+          <span className="qr-eyebrow">Key terms</span>
+          <div className="qr-vocab-grid">
+            {terms.map((t) => {
+              const url = vocabCardUrls?.[t.term];
+              return (
+                <figure key={t.term} className="qr-vocab-card">
+                  {url ? (
+                    <img className="qr-vocab-image" src={url} alt={`${t.term} illustration`} />
+                  ) : (
+                    <div className="qr-vocab-image qr-vocab-image-placeholder" aria-hidden="true" />
+                  )}
+                  <figcaption>
+                    <strong>{t.term}</strong>
+                    <span>{t.definition}</span>
+                  </figcaption>
+                </figure>
+              );
+            })}
+          </div>
+        </div>
+      )}
       <a className="qr-primary" href={backHref}>
         Back to the map
         <span aria-hidden="true">→</span>

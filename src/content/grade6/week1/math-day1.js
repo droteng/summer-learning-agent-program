@@ -19,6 +19,11 @@ export const grade6MathWeek1Day1 = {
   estimatedMinutes: 18,
   standardsRefs: ["CCSS.6.RP.A.1", "CCSS.6.RP.A.2"],
   hook: "Your summer is full of numbers. How many bike rides equal one movie night? Today you compare amounts using ratios.",
+  keyTerms: [
+    { term: "Ratio", definition: "A way to compare two amounts, like 3:2 or 3 to 2." },
+    { term: "Unit rate", definition: "How much of one amount you get per one of another (miles per hour)." },
+    { term: "Equivalent ratios", definition: "Ratios that stay equal when both numbers scale by the same factor." }
+  ],
   miniLesson: [
     "A ratio compares two amounts. We can write it as 3:2, as 3 to 2, or as the fraction 3/2.",
     "Ratios stay equal when you multiply or divide both numbers by the same value, just like equivalent fractions.",
