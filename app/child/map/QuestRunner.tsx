@@ -47,6 +47,7 @@ interface QuestRunnerProps {
   subjectLabel: string;
   iconSvg: string;
   backHref: string;
+  illustrationUrl?: string;
 }
 
 type Stage = { kind: "intro" } | { kind: "item"; index: number } | { kind: "done" };
@@ -133,7 +134,13 @@ export function QuestRunner(props: QuestRunnerProps) {
       <ProgressBar answered={answered} total={total} />
 
       {stage.kind === "intro" ? (
-        <IntroStage mission={props.mission} studentName={props.studentName} onStart={startQuest} />
+        <IntroStage
+          mission={props.mission}
+          studentName={props.studentName}
+          onStart={startQuest}
+          illustrationUrl={props.illustrationUrl}
+          subjectLabel={props.subjectLabel}
+        />
       ) : stage.kind === "item" ? (
         <ItemStage
           item={props.mission.items[stage.index]}
@@ -176,14 +183,25 @@ function ProgressBar({ answered, total }: { answered: number; total: number }) {
 function IntroStage({
   mission,
   studentName,
-  onStart
+  onStart,
+  illustrationUrl,
+  subjectLabel
 }: {
   mission: AuthoredMission;
   studentName: string;
   onStart: () => void;
+  illustrationUrl?: string;
+  subjectLabel: string;
 }) {
   return (
     <div className="qr-intro">
+      {illustrationUrl && (
+        <img
+          className="qr-illustration"
+          src={illustrationUrl}
+          alt={`${subjectLabel} illustration for ${mission.topic}`}
+        />
+      )}
       <p className="qr-hook">{mission.hook}</p>
       <div className="qr-mini-lesson">
         <span className="qr-eyebrow">Quick recap</span>

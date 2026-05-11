@@ -99,6 +99,16 @@
   gap: 18px;
   position: relative;
 }
+.qr-illustration {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--qm-radius);
+  border: 1px solid color-mix(in srgb, var(--subject) 28%, transparent);
+  box-shadow: 0 10px 28px -18px color-mix(in srgb, var(--subject-accent) 60%, transparent);
+  background: color-mix(in srgb, var(--subject) 10%, #ffffff);
+}
 .qr-hook {
   margin: 0;
   font-size: clamp(16px, 2vw, 18px);

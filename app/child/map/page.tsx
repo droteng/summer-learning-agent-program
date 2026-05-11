@@ -18,6 +18,29 @@ import {
 } from "../../../src/content/index.js";
 import { PageDecorations, ProgressRing, SubjectIcon } from "./decorations";
 import { QuestRunner } from "./QuestRunner";
+import { createImageAgent, INTENTS } from "../../../src/agents/imageAgent.js";
+
+let cachedImageAgent: ReturnType<typeof createImageAgent> | null = null;
+function imageAgent() {
+  if (!cachedImageAgent) cachedImageAgent = createImageAgent();
+  return cachedImageAgent;
+}
+
+async function getMissionIllustration(mission: any): Promise<string | null> {
+  if (!mission) return null;
+  try {
+    const result = await imageAgent().generate({
+      intent: INTENTS.MISSION_HERO,
+      subject: mission.subject,
+      topic: mission.topic,
+      scene: mission.hook,
+      aspectRatio: "16:9"
+    });
+    return result.url;
+  } catch {
+    return null;
+  }
+}
 
 export const dynamic = "force-dynamic";
 
@@ -95,6 +118,7 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
 
   const activeQuest = requestedQuestId ? getAuthoredMissionById(requestedQuestId) : null;
   const activeQuestTheme = activeQuest ? themeForSubject(activeQuest.subject) : null;
+  const activeQuestIllustration = await getMissionIllustration(activeQuest);
   const backHref = `/child/map${studentId !== "demo-student" ? `?student=${encodeURIComponent(studentId)}` : ""}`;
 
   return (
@@ -114,6 +138,7 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
         {activeQuest && activeQuestTheme && (
           <QuestRunner
             mission={stripServerOnlyFields(activeQuest)}
+            illustrationUrl={activeQuestIllustration ?? undefined}
             studentId={studentId}
             studentName={profile.firstName}
             subjectToken={activeQuestTheme.token}
