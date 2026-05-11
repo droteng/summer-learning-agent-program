@@ -1,17 +1,26 @@
 // Billing + entitlements agent.
 //
-// The product has three plans. Each plan unlocks a flat set of features so
-// the gate is a simple boolean check, not a matrix. Adding a new feature
-// means adding it to a plan's `features` array.
+// Three plans (Free, Family, Family Plus) and three cadences (Summer pass,
+// Monthly, Yearly). The Summer pass is a one-time payment that grants 90
+// days of access — Stripe Checkout in mode=payment rather than subscription.
+// Monthly and Yearly are standard recurring subscriptions.
 //
-// Pricing is config — actual Stripe Price IDs come from env so test/staging
-// can use different prices without a code change.
+// Pricing is configured in PLAN_CATALOG below; Stripe Price IDs come from
+// env so test/staging can use different prices without a code change.
 
 export const PLAN_TIERS = Object.freeze({
   FREE: "free",
   FAMILY: "family",
   FAMILY_PLUS: "family_plus"
 });
+
+export const CADENCES = Object.freeze({
+  SUMMER_PASS: "summer_pass",
+  MONTHLY: "monthly",
+  YEARLY: "yearly"
+});
+
+export const SUMMER_PASS_DAYS = 90;
 
 export const FEATURES = Object.freeze({
   WEEKS_BEYOND_ONE: "weeks_beyond_one",
@@ -21,7 +30,9 @@ export const FEATURES = Object.freeze({
   TEACHER_SHARE: "teacher_share",
   ACHIEVEMENT_EXPORT: "achievement_export",
   MULTIPLE_CHILDREN: "multiple_children",
-  PRIORITY_SUPPORT: "priority_support"
+  PRIORITY_SUPPORT: "priority_support",
+  ENRICHMENT_TRACKS: "enrichment_tracks",
+  YEAR_ROUND_PRACTICE: "year_round_practice"
 });
 
 const PLAN_FEATURES = {
@@ -32,7 +43,8 @@ const PLAN_FEATURES = {
     FEATURES.LLM_TUTORING,
     FEATURES.LLM_REPORTS,
     FEATURES.TEACHER_SHARE,
-    FEATURES.ACHIEVEMENT_EXPORT
+    FEATURES.ACHIEVEMENT_EXPORT,
+    FEATURES.ENRICHMENT_TRACKS
   ],
   [PLAN_TIERS.FAMILY_PLUS]: [
     FEATURES.PRINTABLE_REPORTS,
@@ -41,41 +53,50 @@ const PLAN_FEATURES = {
     FEATURES.LLM_REPORTS,
     FEATURES.TEACHER_SHARE,
     FEATURES.ACHIEVEMENT_EXPORT,
+    FEATURES.ENRICHMENT_TRACKS,
     FEATURES.MULTIPLE_CHILDREN,
-    FEATURES.PRIORITY_SUPPORT
+    FEATURES.PRIORITY_SUPPORT,
+    FEATURES.YEAR_ROUND_PRACTICE
   ]
 };
 
+// Summer programs are bought as a one-time package, not as a subscription.
+// Anchor pricing on the summer pass; monthly + yearly are convenience
+// alternatives for parents who want to keep going past the 8-week core.
 export const PLAN_CATALOG = Object.freeze([
   {
     tier: PLAN_TIERS.FREE,
     name: "Free",
     tagline: "Diagnostic + Week 1",
+    oneTimeUSD: 0,
     monthlyUSD: 0,
     yearlyUSD: 0,
     features: PLAN_FEATURES[PLAN_TIERS.FREE],
     description:
-      "Try the program. Your child completes the diagnostic and the full first week with the deterministic offline tutor."
+      "Try the program. Your child completes the diagnostic and the full first week with the deterministic offline tutor. No card required."
   },
   {
     tier: PLAN_TIERS.FAMILY,
     name: "Family",
     tagline: "Full 8-week summer for one child",
-    monthlyUSD: 7.99,
-    yearlyUSD: 69,
+    oneTimeUSD: 99,
+    monthlyUSD: 29,
+    yearlyUSD: 249,
     features: PLAN_FEATURES[PLAN_TIERS.FAMILY],
     description:
-      "All 8 weeks, real LLM tutoring, weekly parent narratives, parent-approved teacher shares, and the printable transcript."
+      "All 8 weeks of authored Grade 6 missions, real LLM tutoring, weekly parent narratives, parent-approved teacher share, achievement transcript, and one enrichment track. Summer pass covers 90 days; yearly adds year-round access to new enrichment tracks as they ship.",
+    recommended: true
   },
   {
     tier: PLAN_TIERS.FAMILY_PLUS,
     name: "Family Plus",
-    tagline: "Up to 4 children + priority support",
-    monthlyUSD: 14.99,
-    yearlyUSD: 129,
+    tagline: "Up to 4 children + every enrichment track",
+    oneTimeUSD: 149,
+    monthlyUSD: 49,
+    yearlyUSD: 399,
     features: PLAN_FEATURES[PLAN_TIERS.FAMILY_PLUS],
     description:
-      "Everything in Family for up to 4 siblings. Priority support and early access to new content tracks."
+      "Everything in Family for up to 4 siblings. All enrichment tracks unlocked. Yearly adds year-round skill-sharpener practice between summers. Priority support and early access to new content."
   }
 ]);
 
@@ -92,12 +113,15 @@ export function entitlementsForTier(tier) {
 export function getActivePlan(subscription, { now = () => new Date() } = {}) {
   if (!subscription) return PLAN_TIERS.FREE;
   if (!subscription.tier || !ALL_TIERS.includes(subscription.tier)) return PLAN_TIERS.FREE;
-  // Active includes paid + grace + trialing. Past-due drops to free.
   const liveStatuses = new Set(["active", "trialing", "past_due_grace"]);
   if (!liveStatuses.has(subscription.status)) return PLAN_TIERS.FREE;
   if (subscription.currentPeriodEnd) {
-    const grace = new Date(subscription.currentPeriodEnd).getTime() + 3 * 86_400_000;
-    if (grace < now().getTime()) return PLAN_TIERS.FREE;
+    // Summer pass expires hard at currentPeriodEnd — no grace. Subscriptions
+    // get a 3-day grace because Stripe retries failed charges.
+    const isSummerPass = subscription.cadence === CADENCES.SUMMER_PASS;
+    const graceMs = isSummerPass ? 0 : 3 * 86_400_000;
+    const deadline = new Date(subscription.currentPeriodEnd).getTime() + graceMs;
+    if (deadline < now().getTime()) return PLAN_TIERS.FREE;
   }
   return subscription.tier;
 }
@@ -107,8 +131,6 @@ export function isFeatureUnlocked({ subscription, feature, now }) {
   return entitlementsForTier(tier).features.includes(feature);
 }
 
-// Normalize a Stripe subscription into our shape. We only persist what we
-// need; the source of truth lives in Stripe.
 export function subscriptionFromStripeEvent(event) {
   const sub = event?.data?.object;
   if (!sub || typeof sub !== "object") return null;
@@ -122,6 +144,7 @@ export function subscriptionFromStripeEvent(event) {
     tier: tierForPriceId(priceId),
     status: normalizeStripeStatus(sub.status),
     priceId,
+    cadence: cadenceForPriceId(priceId),
     currentPeriodEnd: sub.current_period_end
       ? new Date(sub.current_period_end * 1000).toISOString()
       : null,
@@ -130,13 +153,52 @@ export function subscriptionFromStripeEvent(event) {
   });
 }
 
-// Map a Stripe Price ID to our tier. Tests inject the env directly.
+// One-time summer-pass purchases come through checkout.session.completed
+// (mode=payment), not via subscription events. Build a synthetic
+// subscription record with a hard 90-day expiry.
+/**
+ * @param {{ session: object, env?: NodeJS.ProcessEnv, now?: () => Date }} args
+ */
+export function subscriptionFromCheckoutSession(args) {
+  const { session, env = process.env, now = () => new Date() } = args ?? {};
+  if (!session || session.mode !== "payment") return null;
+  const lineItem = session?.line_items?.data?.[0];
+  const priceId = lineItem?.price?.id ?? session?.metadata?.price_id ?? null;
+  const tier = tierForPriceId(priceId, env);
+  if (!tier) return null;
+  const customerEmail =
+    session?.customer_details?.email ??
+    session?.customer_email ??
+    session?.metadata?.parent_email ??
+    null;
+  if (!customerEmail) return null;
+  const expiresAt = new Date(now().getTime() + SUMMER_PASS_DAYS * 86_400_000);
+  return Object.freeze({
+    stripeSubscriptionId: null,
+    stripeCustomerId: session.customer ?? null,
+    parentEmail: customerEmail.toLowerCase(),
+    studentId: session?.metadata?.student_id ?? null,
+    tier,
+    status: "active",
+    priceId,
+    cadence: CADENCES.SUMMER_PASS,
+    currentPeriodEnd: expiresAt.toISOString(),
+    cancelAtPeriodEnd: false,
+    updatedAt: new Date().toISOString()
+  });
+}
+
 export function tierForPriceId(priceId, env = process.env) {
   if (!priceId) return null;
-  if (priceId === env.STRIPE_PRICE_FAMILY_MONTHLY || priceId === env.STRIPE_PRICE_FAMILY_YEARLY) {
+  if (
+    priceId === env.STRIPE_PRICE_FAMILY_SUMMER ||
+    priceId === env.STRIPE_PRICE_FAMILY_MONTHLY ||
+    priceId === env.STRIPE_PRICE_FAMILY_YEARLY
+  ) {
     return PLAN_TIERS.FAMILY;
   }
   if (
+    priceId === env.STRIPE_PRICE_FAMILY_PLUS_SUMMER ||
     priceId === env.STRIPE_PRICE_FAMILY_PLUS_MONTHLY ||
     priceId === env.STRIPE_PRICE_FAMILY_PLUS_YEARLY
   ) {
@@ -145,15 +207,35 @@ export function tierForPriceId(priceId, env = process.env) {
   return null;
 }
 
+export function cadenceForPriceId(priceId, env = process.env) {
+  if (!priceId) return null;
+  if (priceId === env.STRIPE_PRICE_FAMILY_SUMMER || priceId === env.STRIPE_PRICE_FAMILY_PLUS_SUMMER) {
+    return CADENCES.SUMMER_PASS;
+  }
+  if (priceId === env.STRIPE_PRICE_FAMILY_MONTHLY || priceId === env.STRIPE_PRICE_FAMILY_PLUS_MONTHLY) {
+    return CADENCES.MONTHLY;
+  }
+  if (priceId === env.STRIPE_PRICE_FAMILY_YEARLY || priceId === env.STRIPE_PRICE_FAMILY_PLUS_YEARLY) {
+    return CADENCES.YEARLY;
+  }
+  return null;
+}
+
 export function priceIdForTier({ tier, cadence, env = process.env }) {
   const key = `${tier.toUpperCase()}_${cadence.toUpperCase()}`;
   const map = {
+    FAMILY_SUMMER_PASS: env.STRIPE_PRICE_FAMILY_SUMMER,
     FAMILY_MONTHLY: env.STRIPE_PRICE_FAMILY_MONTHLY,
     FAMILY_YEARLY: env.STRIPE_PRICE_FAMILY_YEARLY,
+    FAMILY_PLUS_SUMMER_PASS: env.STRIPE_PRICE_FAMILY_PLUS_SUMMER,
     FAMILY_PLUS_MONTHLY: env.STRIPE_PRICE_FAMILY_PLUS_MONTHLY,
     FAMILY_PLUS_YEARLY: env.STRIPE_PRICE_FAMILY_PLUS_YEARLY
   };
   return map[key] ?? null;
+}
+
+export function stripeCheckoutModeForCadence(cadence) {
+  return cadence === CADENCES.SUMMER_PASS ? "payment" : "subscription";
 }
 
 export function normalizeStripeStatus(status) {
@@ -178,12 +260,14 @@ export function summarizeBilling(subscription, opts) {
   const entitlements = entitlementsForTier(tier);
   return {
     tier,
+    cadence: subscription?.cadence ?? null,
     isPaid: tier !== PLAN_TIERS.FREE,
     weeksUnlocked: entitlements.weeksUnlocked,
     maxChildren: entitlements.maxChildren,
     cancelAtPeriodEnd: subscription?.cancelAtPeriodEnd ?? false,
     currentPeriodEnd: subscription?.currentPeriodEnd ?? null,
-    stripeCustomerId: subscription?.stripeCustomerId ?? null
+    stripeCustomerId: subscription?.stripeCustomerId ?? null,
+    isSummerPass: subscription?.cadence === CADENCES.SUMMER_PASS
   };
 }
 

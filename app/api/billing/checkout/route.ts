@@ -1,8 +1,15 @@
 import { NextResponse } from "next/server";
-import { priceIdForTier } from "../../../../src/agents/billingAgent.js";
+import {
+  CADENCES,
+  priceIdForTier,
+  stripeCheckoutModeForCadence
+} from "../../../../src/agents/billingAgent.js";
 import { createStripeClient, StripeError } from "../../../../src/integrations/stripe.js";
 
 export const runtime = "nodejs";
+
+const ALLOWED_TIERS = new Set(["family", "family_plus"]);
+const ALLOWED_CADENCES = new Set([CADENCES.SUMMER_PASS, CADENCES.MONTHLY, CADENCES.YEARLY]);
 
 export async function POST(request: Request) {
   let payload: any;
@@ -13,13 +20,13 @@ export async function POST(request: Request) {
   }
 
   const tier = payload?.tier;
-  const cadence = payload?.cadence ?? "monthly";
+  const cadence = payload?.cadence ?? CADENCES.SUMMER_PASS;
   const parentEmail = typeof payload?.parentEmail === "string" ? payload.parentEmail.trim() : null;
   const studentId = typeof payload?.studentId === "string" ? payload.studentId : null;
-  if (!tier || !["family", "family_plus"].includes(tier)) {
+  if (!tier || !ALLOWED_TIERS.has(tier)) {
     return NextResponse.json({ error: "invalid_tier" }, { status: 400 });
   }
-  if (!["monthly", "yearly"].includes(cadence)) {
+  if (!ALLOWED_CADENCES.has(cadence)) {
     return NextResponse.json({ error: "invalid_cadence" }, { status: 400 });
   }
   if (!parentEmail) {
@@ -37,11 +44,15 @@ export async function POST(request: Request) {
   const priceId = priceIdForTier({ tier, cadence });
   if (!priceId) {
     return NextResponse.json(
-      { error: "missing_price_id", message: `Set STRIPE_PRICE_${tier.toUpperCase()}_${cadence.toUpperCase()} in env.` },
+      {
+        error: "missing_price_id",
+        message: `Set STRIPE_PRICE_${tier.toUpperCase()}_${cadence === CADENCES.SUMMER_PASS ? "SUMMER" : cadence.toUpperCase()} in env.`
+      },
       { status: 503 }
     );
   }
 
+  const mode = stripeCheckoutModeForCadence(cadence);
   const baseUrl = process.env.APP_URL ?? new URL(request.url).origin;
   const successUrl = `${baseUrl}/parent/billing?status=success&session={CHECKOUT_SESSION_ID}`;
   const cancelUrl = `${baseUrl}/parent/billing?status=cancelled`;
@@ -49,12 +60,17 @@ export async function POST(request: Request) {
   try {
     const stripe = createStripeClient({ apiKey });
     const session = await stripe.createCheckoutSession({
-      mode: "subscription",
+      mode,
       priceId,
       customerEmail: parentEmail,
       successUrl,
       cancelUrl,
-      metadata: studentId ? { student_id: studentId, parent_email: parentEmail } : { parent_email: parentEmail }
+      metadata: {
+        parent_email: parentEmail,
+        cadence,
+        price_id: priceId,
+        ...(studentId ? { student_id: studentId } : {})
+      }
     });
     return NextResponse.json({ ok: true, url: session.url, sessionId: session.id });
   } catch (err) {

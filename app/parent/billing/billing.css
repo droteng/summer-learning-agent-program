@@ -133,6 +133,15 @@
   color: white;
 }
 
+.bl-cadence-note {
+  text-align: center;
+  font-size: 13px;
+  color: var(--qm-muted);
+  margin: -8px auto 4px;
+  max-width: 60ch;
+  line-height: 1.55;
+}
+
 .bl-plans {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));

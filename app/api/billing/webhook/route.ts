@@ -3,7 +3,10 @@ import {
   StripeError,
   verifyWebhookSignature
 } from "../../../../src/integrations/stripe.js";
-import { subscriptionFromStripeEvent } from "../../../../src/agents/billingAgent.js";
+import {
+  subscriptionFromCheckoutSession,
+  subscriptionFromStripeEvent
+} from "../../../../src/agents/billingAgent.js";
 import {
   loadSubscriptionByCustomerId,
   saveSubscription
@@ -68,21 +71,36 @@ async function dispatch(event: any) {
       session?.customer_email ??
       session?.metadata?.parent_email ??
       null;
-    if (!customerEmail || !session?.subscription || !session?.customer) return;
-    await saveSubscription({
-      parentEmail: customerEmail,
-      subscription: {
-        stripeSubscriptionId: session.subscription,
-        stripeCustomerId: session.customer,
-        parentEmail: customerEmail.toLowerCase(),
-        studentId: session?.metadata?.student_id ?? null,
-        tier: null,
-        status: "active",
-        priceId: null,
-        currentPeriodEnd: null,
-        cancelAtPeriodEnd: false,
-        updatedAt: new Date().toISOString()
-      }
-    });
+    if (!customerEmail) return;
+
+    // mode=payment → one-time summer pass. Build a synthetic 90-day record.
+    if (session?.mode === "payment") {
+      const summer = subscriptionFromCheckoutSession({ session });
+      if (!summer) return;
+      await saveSubscription({ parentEmail: customerEmail, subscription: summer });
+      return;
+    }
+
+    // mode=subscription → tier/dates will arrive in the customer.subscription.*
+    // event right after this one. Pre-create a record so the parent isn't
+    // briefly free between checkout and the subscription event.
+    if (session?.subscription && session?.customer) {
+      await saveSubscription({
+        parentEmail: customerEmail,
+        subscription: {
+          stripeSubscriptionId: session.subscription,
+          stripeCustomerId: session.customer,
+          parentEmail: customerEmail.toLowerCase(),
+          studentId: session?.metadata?.student_id ?? null,
+          tier: null,
+          status: "active",
+          priceId: null,
+          cadence: session?.metadata?.cadence ?? null,
+          currentPeriodEnd: null,
+          cancelAtPeriodEnd: false,
+          updatedAt: new Date().toISOString()
+        }
+      });
+    }
   }
 }

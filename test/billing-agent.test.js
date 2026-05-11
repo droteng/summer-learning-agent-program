@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {
+  CADENCES,
+  cadenceForPriceId,
   entitlementsForTier,
   FEATURES,
   getActivePlan,
@@ -9,8 +11,11 @@ import {
   PLAN_CATALOG,
   PLAN_TIERS,
   priceIdForTier,
+  stripeCheckoutModeForCadence,
+  subscriptionFromCheckoutSession,
   subscriptionFromStripeEvent,
   summarizeBilling,
+  SUMMER_PASS_DAYS,
   tierForPriceId
 } from "../src/agents/billingAgent.js";
 
@@ -109,9 +114,11 @@ test("tierForPriceId reads env mapping", () => {
 
 test("priceIdForTier composes the env key correctly", () => {
   const env = {
+    STRIPE_PRICE_FAMILY_SUMMER: "price_fam_s",
     STRIPE_PRICE_FAMILY_MONTHLY: "price_fam_m",
     STRIPE_PRICE_FAMILY_PLUS_YEARLY: "price_plus_y"
   };
+  assert.equal(priceIdForTier({ tier: "family", cadence: "summer_pass", env }), "price_fam_s");
   assert.equal(priceIdForTier({ tier: "family", cadence: "monthly", env }), "price_fam_m");
   assert.equal(priceIdForTier({ tier: "family_plus", cadence: "yearly", env }), "price_plus_y");
   assert.equal(priceIdForTier({ tier: "family", cadence: "yearly", env }), null);
@@ -163,4 +170,76 @@ test("summarizeBilling exposes UI-ready fields", () => {
   assert.equal(summary.weeksUnlocked, 8);
   assert.equal(summary.cancelAtPeriodEnd, true);
   assert.equal(summary.stripeCustomerId, "cus_xyz");
+});
+
+test("PLAN_CATALOG carries the new summer-pass + monthly + yearly prices", () => {
+  const family = PLAN_CATALOG.find((p) => p.tier === PLAN_TIERS.FAMILY);
+  const familyPlus = PLAN_CATALOG.find((p) => p.tier === PLAN_TIERS.FAMILY_PLUS);
+  assert.equal(family.oneTimeUSD, 99);
+  assert.equal(family.monthlyUSD, 29);
+  assert.equal(family.yearlyUSD, 249);
+  assert.equal(familyPlus.oneTimeUSD, 149);
+  assert.equal(familyPlus.monthlyUSD, 49);
+  assert.equal(familyPlus.yearlyUSD, 399);
+  assert.equal(family.recommended, true);
+});
+
+test("stripeCheckoutModeForCadence picks payment for summer pass and subscription otherwise", () => {
+  assert.equal(stripeCheckoutModeForCadence(CADENCES.SUMMER_PASS), "payment");
+  assert.equal(stripeCheckoutModeForCadence(CADENCES.MONTHLY), "subscription");
+  assert.equal(stripeCheckoutModeForCadence(CADENCES.YEARLY), "subscription");
+});
+
+test("cadenceForPriceId maps each env-injected price to its cadence", () => {
+  const env = {
+    STRIPE_PRICE_FAMILY_SUMMER: "price_fs",
+    STRIPE_PRICE_FAMILY_MONTHLY: "price_fm",
+    STRIPE_PRICE_FAMILY_YEARLY: "price_fy",
+    STRIPE_PRICE_FAMILY_PLUS_SUMMER: "price_ps"
+  };
+  assert.equal(cadenceForPriceId("price_fs", env), CADENCES.SUMMER_PASS);
+  assert.equal(cadenceForPriceId("price_fm", env), CADENCES.MONTHLY);
+  assert.equal(cadenceForPriceId("price_fy", env), CADENCES.YEARLY);
+  assert.equal(cadenceForPriceId("price_ps", env), CADENCES.SUMMER_PASS);
+  assert.equal(cadenceForPriceId("price_unknown", env), null);
+});
+
+test("subscriptionFromCheckoutSession builds a 90-day summer pass from a payment session", () => {
+  const env = { STRIPE_PRICE_FAMILY_SUMMER: "price_fam_s" };
+  const fixed = () => new Date("2026-05-10T12:00:00Z");
+  const session = {
+    mode: "payment",
+    customer: "cus_xyz",
+    customer_email: "Leo@Example.com",
+    metadata: { student_id: "child-1", parent_email: "leo@example.com", price_id: "price_fam_s" }
+  };
+  const sub = subscriptionFromCheckoutSession({ session, env, now: fixed });
+  assert.equal(sub.tier, PLAN_TIERS.FAMILY);
+  assert.equal(sub.status, "active");
+  assert.equal(sub.cadence, CADENCES.SUMMER_PASS);
+  assert.equal(sub.parentEmail, "leo@example.com");
+  assert.equal(sub.studentId, "child-1");
+  assert.equal(sub.stripeSubscriptionId, null);
+  const days = (new Date(sub.currentPeriodEnd).getTime() - fixed().getTime()) / 86_400_000;
+  assert.equal(Math.round(days), SUMMER_PASS_DAYS);
+});
+
+test("subscriptionFromCheckoutSession returns null for subscription-mode sessions", () => {
+  const session = { mode: "subscription", customer: "cus_x", customer_email: "x@y.z" };
+  assert.equal(subscriptionFromCheckoutSession({ session }), null);
+});
+
+test("getActivePlan: summer pass expires hard at currentPeriodEnd with no grace", () => {
+  const recentExpiry = new Date(Date.now() - 60 * 60 * 1000).toISOString(); // 1 hour ago
+  const sub = {
+    tier: PLAN_TIERS.FAMILY,
+    status: "active",
+    cadence: CADENCES.SUMMER_PASS,
+    currentPeriodEnd: recentExpiry
+  };
+  assert.equal(getActivePlan(sub), PLAN_TIERS.FREE, "summer pass past expiry should expire immediately");
+
+  // Same expiry shape but a monthly subscription should still grant the 3-day grace.
+  const monthly = { ...sub, cadence: CADENCES.MONTHLY, status: "past_due_grace" };
+  assert.equal(getActivePlan(monthly), PLAN_TIERS.FAMILY, "monthly subscription gets 3-day grace");
 });
