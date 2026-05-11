@@ -101,6 +101,22 @@ export const SUBJECT_THEMES = Object.freeze({
       '<g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><line x1="3" y1="12" x2="21" y2="12"/></g>',
     patternSvg:
       '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.22"><circle cx="20" cy="20" r="10"/><ellipse cx="20" cy="20" rx="4" ry="10"/><line x1="10" y1="20" x2="30" y2="20"/><circle cx="48" cy="46" r="2" fill="currentColor"/></g></svg>'
+  },
+  "Financial Literacy": {
+    token: "fin",
+    label: "Financial Literacy",
+    monogram: "$",
+    color: "#059669",
+    accent: "#065f46",
+    soft: "#d1fae5",
+    deep: "#064e3b",
+    description: "Needs vs wants, saving, smart spending, and small business.",
+    keyword: "Money Smart",
+    enrichment: true,
+    iconSvg:
+      '<g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 4 V20"/><path d="M16 8 a4 3 0 1 0 -4 -3 v14 a4 3 0 1 0 -4 -3"/></g>',
+    patternSvg:
+      '<svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60"><g fill="currentColor" opacity="0.2" font-family="ui-rounded,system-ui,sans-serif" font-size="14" font-weight="700"><text x="8" y="22">$</text><text x="36" y="18">$</text><text x="22" y="44">$</text><text x="44" y="48">$</text></g></svg>'
   }
 });
 

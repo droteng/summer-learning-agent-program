@@ -42,6 +42,11 @@ import { grade6ElaWeek8Day2 } from "./grade6/week8/ela-day2.js";
 import { grade6ElaWeek8Day3 } from "./grade6/week8/ela-day3.js";
 import { grade6ElaWeek8Day4 } from "./grade6/week8/ela-day4.js";
 import { grade6ElaWeek8Day5 } from "./grade6/week8/ela-day5.js";
+import { grade6FinanceDay1 } from "./grade6/enrichment/finance-day1.js";
+import { grade6FinanceDay2 } from "./grade6/enrichment/finance-day2.js";
+import { grade6FinanceDay3 } from "./grade6/enrichment/finance-day3.js";
+import { grade6FinanceDay4 } from "./grade6/enrichment/finance-day4.js";
+import { grade6FinanceDay5 } from "./grade6/enrichment/finance-day5.js";
 
 const ALL_MISSIONS = [
   grade6MathWeek1Day1,
@@ -84,7 +89,12 @@ const ALL_MISSIONS = [
   grade6ElaWeek8Day2,
   grade6ElaWeek8Day3,
   grade6ElaWeek8Day4,
-  grade6ElaWeek8Day5
+  grade6ElaWeek8Day5,
+  grade6FinanceDay1,
+  grade6FinanceDay2,
+  grade6FinanceDay3,
+  grade6FinanceDay4,
+  grade6FinanceDay5
 ];
 
 export const authoredMissions = Object.freeze(
@@ -118,4 +128,10 @@ export function findAuthoredMissionsForWeek({ gradeLevel, weekNumber } = {}) {
 
 export function getAuthoredMissionById(id) {
   return authoredMissions[id] ?? null;
+}
+
+export function findEnrichmentMissions(track) {
+  return ALL_MISSIONS.filter(
+    (mission) => mission.enrichment === true && (track ? mission.track === track : true)
+  );
 }

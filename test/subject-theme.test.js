@@ -19,10 +19,30 @@ test("subject tokens are unique so CSS data-subject scoping does not collide", (
   assert.equal(new Set(tokens).size, tokens.length);
 });
 
-test("subject order covers every theme", () => {
-  assert.equal(SUBJECT_ORDER.length, Object.keys(SUBJECT_THEMES).length);
+test("subject order covers every non-enrichment theme", () => {
+  const coreThemeKeys = Object.keys(SUBJECT_THEMES).filter(
+    (key) => !SUBJECT_THEMES[key].enrichment
+  );
+  assert.equal(
+    SUBJECT_ORDER.length,
+    coreThemeKeys.length,
+    "SUBJECT_ORDER must match the number of non-enrichment themes"
+  );
   for (const subject of SUBJECT_ORDER) {
     assert.ok(SUBJECT_THEMES[subject], `subject ${subject} missing from SUBJECT_THEMES`);
+    assert.equal(
+      SUBJECT_THEMES[subject].enrichment,
+      undefined,
+      `${subject} is enrichment and should not appear in SUBJECT_ORDER`
+    );
+  }
+});
+
+test("enrichment themes carry the enrichment flag and stay out of SUBJECT_ORDER", () => {
+  const enrichment = Object.entries(SUBJECT_THEMES).filter(([, theme]) => theme.enrichment);
+  assert.ok(enrichment.length >= 1, "expected at least one enrichment theme");
+  for (const [key] of enrichment) {
+    assert.equal(SUBJECT_ORDER.includes(key), false);
   }
 });
 

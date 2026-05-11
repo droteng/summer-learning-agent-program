@@ -10,7 +10,7 @@ import {
 const ALL_MISSIONS = Object.values(authoredMissions);
 
 test("registry exposes all authored Grade 6 missions", () => {
-  assert.ok(ALL_MISSIONS.length >= 41, `expected at least 41 authored missions, got ${ALL_MISSIONS.length}`);
+  assert.ok(ALL_MISSIONS.length >= 46, `expected at least 46 authored missions, got ${ALL_MISSIONS.length}`);
   for (const mission of ALL_MISSIONS) {
     assert.equal(mission.gradeLevel, 6, `${mission.id} not Grade 6`);
     assert.ok(mission.id.length > 0);

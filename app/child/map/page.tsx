@@ -13,6 +13,7 @@ import { SUBJECT_ORDER, SUBJECT_THEMES, themeForSubject } from "../../../src/dat
 import {
   authoredMissions,
   findAuthoredMissionsForDay,
+  findEnrichmentMissions,
   getAuthoredMissionById
 } from "../../../src/content/index.js";
 import { PageDecorations, ProgressRing, SubjectIcon } from "./decorations";
@@ -73,6 +74,23 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
   });
   const freshlyCompletedIsland = islands.find(
     (island) => island.state === "complete" && island.weekNumber === (currentIsland?.weekNumber ?? 1) - 1
+  );
+
+  const enrichmentMissions = findEnrichmentMissions().map((mission: any) => {
+    const theme = themeForSubject(mission.subject);
+    return {
+      id: mission.id,
+      topic: mission.topic,
+      dayNumber: mission.dayNumber,
+      subject: mission.subject,
+      track: mission.track,
+      monogram: theme?.monogram ?? "?",
+      token: theme?.token ?? "default",
+      label: theme?.label ?? mission.subject
+    };
+  });
+  const enrichmentTracks = Array.from(
+    new Map(enrichmentMissions.map((m) => [m.track, { track: m.track, label: m.label, token: m.token }])).values()
   );
 
   const activeQuest = requestedQuestId ? getAuthoredMissionById(requestedQuestId) : null;
@@ -329,6 +347,41 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
             </details>
           ))}
         </section>
+
+        {enrichmentMissions.length > 0 && (
+          <section className="qm-enrichment" aria-label="Optional enrichment tracks">
+            <div className="qm-section-head">
+              <h3>Optional enrichment</h3>
+              <p>Parent-selected mini-tracks that run alongside the 8-week core. Pick one and try a day.</p>
+            </div>
+            {enrichmentTracks.map((track) => (
+              <div key={track.track} className="qm-enrichment-track" data-subject={track.token}>
+                <div className="qm-enrichment-track-head">
+                  <span className="qm-enrichment-monogram" aria-hidden="true">
+                    {enrichmentMissions.find((m) => m.track === track.track)?.monogram ?? "?"}
+                  </span>
+                  <h4>{track.label}</h4>
+                </div>
+                <div className="qm-enrichment-grid">
+                  {enrichmentMissions
+                    .filter((m) => m.track === track.track)
+                    .map((m) => (
+                      <Link
+                        key={m.id}
+                        className="qm-enrichment-card"
+                        data-subject={m.token}
+                        href={`/child/map?student=${encodeURIComponent(studentId)}&quest=${encodeURIComponent(m.id)}#quest`}
+                      >
+                        <span className="qm-enrichment-day">Day {m.dayNumber}</span>
+                        <span className="qm-enrichment-topic">{m.topic}</span>
+                        <span className="qm-enrichment-cta">Start →</span>
+                      </Link>
+                    ))}
+                </div>
+              </div>
+            ))}
+          </section>
+        )}
 
         <footer className="qm-footer">
           <span className="qm-footer-icon" aria-hidden="true" />
