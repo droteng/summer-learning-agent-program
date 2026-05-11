@@ -135,3 +135,19 @@ export async function loadReportBatch(batchId) {
 export async function saveReportBatch(args) {
   return (await getDb()).saveReportBatch(args);
 }
+
+export async function loadGeneratedImage(cacheKey) {
+  return (await getDb()).loadGeneratedImage(cacheKey);
+}
+
+export async function saveGeneratedImage(record) {
+  return (await getDb()).saveGeneratedImage(record);
+}
+
+export async function loadImageBudgetUsage(monthKey) {
+  return (await getDb()).loadImageBudgetUsage(monthKey);
+}
+
+export async function recordImageBudgetSpend(cents, monthKey) {
+  return (await getDb()).recordImageBudgetSpend(cents, monthKey);
+}

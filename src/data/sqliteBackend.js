@@ -84,6 +84,32 @@ export function createSqliteBackend({ dbPath = DEFAULT_DB_PATH } = {}) {
           completed_at TEXT,
           updated_at TEXT NOT NULL
         );
+
+        CREATE TABLE IF NOT EXISTS generated_images (
+          cache_key TEXT PRIMARY KEY,
+          intent TEXT NOT NULL,
+          subject TEXT,
+          prompt TEXT NOT NULL,
+          aspect_ratio TEXT NOT NULL,
+          url TEXT NOT NULL,
+          provider TEXT NOT NULL,
+          model TEXT,
+          width_px INTEGER,
+          height_px INTEGER,
+          estimated_cost_cents REAL,
+          fallback INTEGER NOT NULL DEFAULT 0,
+          created_at TEXT NOT NULL
+        );
+
+        CREATE INDEX IF NOT EXISTS generated_images_intent_idx
+          ON generated_images(intent);
+
+        CREATE TABLE IF NOT EXISTS image_budget_usage (
+          month_key TEXT PRIMARY KEY,
+          spent_cents REAL NOT NULL,
+          call_count INTEGER NOT NULL,
+          updated_at TEXT NOT NULL
+        );
       `);
     }
     return db;
@@ -350,6 +376,85 @@ export function createSqliteBackend({ dbPath = DEFAULT_DB_PATH } = {}) {
         .run(lowerEmail, JSON.stringify(merged), merged.stripeCustomerId ?? null, updatedAt);
       return { subscription: merged, updatedAt };
     },
+    loadGeneratedImage(cacheKey) {
+      const row = getDb()
+        .prepare(
+          "SELECT cache_key, intent, subject, prompt, aspect_ratio, url, provider, model, width_px, height_px, estimated_cost_cents, fallback, created_at FROM generated_images WHERE cache_key = ?"
+        )
+        .get(cacheKey);
+      if (!row) return null;
+      return {
+        cacheKey: row.cache_key,
+        intent: row.intent,
+        subject: row.subject,
+        prompt: row.prompt,
+        aspectRatio: row.aspect_ratio,
+        url: row.url,
+        provider: row.provider,
+        model: row.model,
+        widthPx: row.width_px,
+        heightPx: row.height_px,
+        estimatedCostCents: row.estimated_cost_cents,
+        fallback: row.fallback === 1,
+        createdAt: row.created_at
+      };
+    },
+    saveGeneratedImage(record) {
+      getDb()
+        .prepare(
+          `INSERT INTO generated_images (cache_key, intent, subject, prompt, aspect_ratio, url, provider, model, width_px, height_px, estimated_cost_cents, fallback, created_at)
+           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+           ON CONFLICT(cache_key)
+           DO UPDATE SET url = excluded.url,
+                         provider = excluded.provider,
+                         model = excluded.model,
+                         width_px = excluded.width_px,
+                         height_px = excluded.height_px,
+                         estimated_cost_cents = excluded.estimated_cost_cents,
+                         fallback = excluded.fallback,
+                         created_at = excluded.created_at`
+        )
+        .run(
+          record.cacheKey,
+          record.intent,
+          record.subject ?? null,
+          record.prompt,
+          record.aspectRatio,
+          record.url,
+          record.provider,
+          record.model ?? null,
+          record.widthPx ?? null,
+          record.heightPx ?? null,
+          record.estimatedCostCents ?? 0,
+          record.fallback ? 1 : 0,
+          record.createdAt
+        );
+      return record;
+    },
+    loadImageBudgetUsage(monthKey = currentMonthKey()) {
+      const row = getDb()
+        .prepare("SELECT spent_cents FROM image_budget_usage WHERE month_key = ?")
+        .get(monthKey);
+      return row ? row.spent_cents : 0;
+    },
+    recordImageBudgetSpend(cents, monthKey = currentMonthKey()) {
+      const updatedAt = new Date().toISOString();
+      getDb()
+        .prepare(
+          `INSERT INTO image_budget_usage (month_key, spent_cents, call_count, updated_at)
+           VALUES (?, ?, 1, ?)
+           ON CONFLICT(month_key)
+           DO UPDATE SET spent_cents = spent_cents + excluded.spent_cents,
+                         call_count = call_count + 1,
+                         updated_at = excluded.updated_at`
+        )
+        .run(monthKey, Number(cents) || 0, updatedAt);
+      return { monthKey };
+    },
     _getRawDb: getDb
   };
+}
+
+function currentMonthKey(date = new Date()) {
+  return `${date.getUTCFullYear()}-${String(date.getUTCMonth() + 1).padStart(2, "0")}`;
 }

@@ -82,6 +82,32 @@ const SCHEMA_SQL = `
     completed_at TIMESTAMPTZ,
     updated_at TIMESTAMPTZ NOT NULL
   );
+
+  CREATE TABLE IF NOT EXISTS generated_images (
+    cache_key TEXT PRIMARY KEY,
+    intent TEXT NOT NULL,
+    subject TEXT,
+    prompt TEXT NOT NULL,
+    aspect_ratio TEXT NOT NULL,
+    url TEXT NOT NULL,
+    provider TEXT NOT NULL,
+    model TEXT,
+    width_px INTEGER,
+    height_px INTEGER,
+    estimated_cost_cents NUMERIC,
+    fallback BOOLEAN NOT NULL DEFAULT FALSE,
+    created_at TIMESTAMPTZ NOT NULL
+  );
+
+  CREATE INDEX IF NOT EXISTS generated_images_intent_idx
+    ON generated_images(intent);
+
+  CREATE TABLE IF NOT EXISTS image_budget_usage (
+    month_key TEXT PRIMARY KEY,
+    spent_cents NUMERIC NOT NULL,
+    call_count INTEGER NOT NULL,
+    updated_at TIMESTAMPTZ NOT NULL
+  );
 `;
 
 export function createPostgresBackend({
@@ -402,10 +428,92 @@ export function createPostgresBackend({
       );
       return { subscription: merged, updatedAt };
     },
+    async loadGeneratedImage(cacheKey) {
+      await ensureSchema();
+      const result = await pool.query(
+        "SELECT cache_key, intent, subject, prompt, aspect_ratio, url, provider, model, width_px, height_px, estimated_cost_cents, fallback, created_at FROM generated_images WHERE cache_key = $1",
+        [cacheKey]
+      );
+      const row = result.rows[0];
+      if (!row) return null;
+      return {
+        cacheKey: row.cache_key,
+        intent: row.intent,
+        subject: row.subject,
+        prompt: row.prompt,
+        aspectRatio: row.aspect_ratio,
+        url: row.url,
+        provider: row.provider,
+        model: row.model,
+        widthPx: row.width_px,
+        heightPx: row.height_px,
+        estimatedCostCents: Number(row.estimated_cost_cents ?? 0),
+        fallback: !!row.fallback,
+        createdAt: row.created_at instanceof Date ? row.created_at.toISOString() : row.created_at
+      };
+    },
+    async saveGeneratedImage(record) {
+      await ensureSchema();
+      await pool.query(
+        `INSERT INTO generated_images (cache_key, intent, subject, prompt, aspect_ratio, url, provider, model, width_px, height_px, estimated_cost_cents, fallback, created_at)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
+         ON CONFLICT (cache_key)
+         DO UPDATE SET url = EXCLUDED.url,
+                       provider = EXCLUDED.provider,
+                       model = EXCLUDED.model,
+                       width_px = EXCLUDED.width_px,
+                       height_px = EXCLUDED.height_px,
+                       estimated_cost_cents = EXCLUDED.estimated_cost_cents,
+                       fallback = EXCLUDED.fallback,
+                       created_at = EXCLUDED.created_at`,
+        [
+          record.cacheKey,
+          record.intent,
+          record.subject ?? null,
+          record.prompt,
+          record.aspectRatio,
+          record.url,
+          record.provider,
+          record.model ?? null,
+          record.widthPx ?? null,
+          record.heightPx ?? null,
+          record.estimatedCostCents ?? 0,
+          record.fallback === true,
+          record.createdAt
+        ]
+      );
+      return record;
+    },
+    async loadImageBudgetUsage(monthKey = currentMonthKey()) {
+      await ensureSchema();
+      const result = await pool.query(
+        "SELECT spent_cents FROM image_budget_usage WHERE month_key = $1",
+        [monthKey]
+      );
+      return result.rows[0] ? Number(result.rows[0].spent_cents) : 0;
+    },
+    async recordImageBudgetSpend(cents, monthKey = currentMonthKey()) {
+      await ensureSchema();
+      const updatedAt = new Date().toISOString();
+      await pool.query(
+        `INSERT INTO image_budget_usage (month_key, spent_cents, call_count, updated_at)
+         VALUES ($1, $2, 1, $3)
+         ON CONFLICT (month_key)
+         DO UPDATE SET spent_cents = image_budget_usage.spent_cents + EXCLUDED.spent_cents,
+                       call_count = image_budget_usage.call_count + 1,
+                       updated_at = EXCLUDED.updated_at`,
+        [monthKey, Number(cents) || 0, updatedAt]
+      );
+      return { monthKey };
+    },
     async close() {
       await pool.end();
     }
   };
+}
+
+function currentMonthKey(date = new Date()) {
+  return `${date.getUTCFullYear()}-${String(date.getUTCMonth() + 1).padStart(2, "0")}`;
 }
 
 function inferSsl(connectionString) {
