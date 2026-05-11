@@ -58,7 +58,7 @@ import { grade6StudyDay3 } from "./grade6/enrichment/study-day3.js";
 import { grade6StudyDay4 } from "./grade6/enrichment/study-day4.js";
 import { grade6StudyDay5 } from "./grade6/enrichment/study-day5.js";
 
-const ALL_MISSIONS = [
+export const ALL_MISSIONS = [
   grade6MathWeek1Day1,
   grade6ElaWeek1Day1,
   grade6ScienceWeek1Day2,

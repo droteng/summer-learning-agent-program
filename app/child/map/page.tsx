@@ -42,6 +42,21 @@ async function getMissionIllustration(mission: any): Promise<string | null> {
   }
 }
 
+async function getIslandIllustration(island: { theme: string; project: string } | undefined | null): Promise<string | null> {
+  if (!island) return null;
+  try {
+    const result = await imageAgent().generate({
+      intent: INTENTS.DECORATION,
+      topic: island.theme,
+      scene: `Summer camp week themed "${island.theme}". Capstone project: ${island.project}. Bright outdoor adventure scene with kid-friendly tools and gear, no faces, no text.`,
+      aspectRatio: "16:9"
+    });
+    return result.url;
+  } catch {
+    return null;
+  }
+}
+
 export const dynamic = "force-dynamic";
 
 const DEMO_PROFILE = Object.freeze({
@@ -118,7 +133,10 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
 
   const activeQuest = requestedQuestId ? getAuthoredMissionById(requestedQuestId) : null;
   const activeQuestTheme = activeQuest ? themeForSubject(activeQuest.subject) : null;
-  const activeQuestIllustration = await getMissionIllustration(activeQuest);
+  const [activeQuestIllustration, islandIllustration] = await Promise.all([
+    getMissionIllustration(activeQuest),
+    getIslandIllustration(currentIsland)
+  ]);
   const backHref = `/child/map${studentId !== "demo-student" ? `?student=${encodeURIComponent(studentId)}` : ""}`;
 
   return (
@@ -149,6 +167,13 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
         )}
 
         <section className="qm-hero" aria-label="Camp progress">
+          {islandIllustration && (
+            <img
+              className="qm-hero-illustration"
+              src={islandIllustration}
+              alt={currentIsland ? `Week ${currentIsland.weekNumber} ${currentIsland.theme} illustration` : "Summer voyage illustration"}
+            />
+          )}
           <div className="qm-hero-headline">
             <span className="qm-hero-week">{currentIsland ? `Week ${currentIsland.weekNumber}` : "All weeks complete"}</span>
             <h2>{currentIsland ? currentIsland.theme : "Showcase time!"}</h2>
