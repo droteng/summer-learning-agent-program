@@ -176,31 +176,12 @@
 }
 @media (max-width: 640px) { .pd-book-body { grid-template-columns: 1fr; } }
 .pd-book-cover {
-  display: grid;
-  place-content: center;
-  text-align: center;
+  display: block;
   width: 160px;
-  height: 220px;
+  height: auto;
   border-radius: 12px;
-  background: linear-gradient(160deg, #1e3a8a 0%, #6d28d9 70%, #ec4899 100%);
-  color: white;
-  padding: 16px;
-  box-shadow: 0 14px 32px -16px rgba(15, 23, 42, 0.5);
-  font-family: ui-rounded, system-ui, sans-serif;
-}
-.pd-book-cover-title {
-  display: block;
-  font-size: 18px;
-  font-weight: 800;
-  line-height: 1.15;
-  margin-bottom: 12px;
-}
-.pd-book-cover-author {
-  display: block;
-  font-size: 12px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  opacity: 0.85;
+  box-shadow: 0 14px 32px -16px rgba(15, 23, 42, 0.55);
+  object-fit: cover;
 }
 .pd-book-cta { display: grid; gap: 10px; }
 .pd-book-note { margin: 0; color: var(--qm-muted); font-size: 13px; }

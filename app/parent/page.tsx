@@ -254,10 +254,13 @@ export default async function ParentDashboardPage({ searchParams }: { searchPara
             <p>By Dr. Spark. Included with every paid plan. Read together, then unlock the 5-day book-club enrichment track.</p>
           </div>
           <div className="pd-book-body">
-            <div className="pd-book-cover" aria-hidden="true">
-              <span className="pd-book-cover-title">Leo and The Game Squad</span>
-              <span className="pd-book-cover-author">Dr. Spark</span>
-            </div>
+            <img
+              className="pd-book-cover"
+              src="/book-cover.jpg"
+              alt="Cover of Leo and The Game Squad by Dr. Spark"
+              width={160}
+              height={240}
+            />
             <div className="pd-book-cta">
               {entitlement.founderBook ? (
                 <a
