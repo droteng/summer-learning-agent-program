@@ -53,7 +53,7 @@ test("parent approval creates a safe friend invite link", () => {
   });
   const approved = approveInvitationRequest({
     invitationRequest: request,
-    baseUrl: "https://learning-squad.ai"
+    baseUrl: "https://drsparkacademy.com"
   });
 
   assert.equal(approved.status, "approved");

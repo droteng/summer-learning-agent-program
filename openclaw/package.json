@@ -1,7 +1,7 @@
 {
   "schemaVersion": "0.1",
-  "packageId": "learning-squad-ai.grade6-summer",
-  "name": "learning-squad.ai Grade 6 Summer Learning Squad",
+  "packageId": "dr-spark-academy.grade6-summer",
+  "name": "Dr. Spark Academy Grade 6 Summer Learning Program",
   "version": "0.1.0",
   "status": "mvp",
   "category": "education",

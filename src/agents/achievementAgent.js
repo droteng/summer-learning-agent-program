@@ -27,7 +27,7 @@ export function createAchievementExport({ student, programPlan, progress, parent
       signatureLine: "Parent / Learning Coach approval"
     },
     transcript: {
-      programName: "learning-squad.ai Summer Learning Program",
+      programName: "Dr. Spark Academy Summer Learning Program",
       gradeLevel: student.gradeLevel,
       completedMissionCount: completedCount,
       totalMissionCount: totalMissions,
@@ -161,7 +161,7 @@ function createSchoolShareSummary({ student, completedCount, totalMissions, subj
   const subjects = subjectTotals.map((item) => item.subject).join(", ") || "no completed subject lessons yet";
   const earnedBadges = badges.map((badge) => badge.name).join(", ") || "no badges earned yet";
 
-  return student.firstName + " completed " + completedCount + "/" + totalMissions + " missions in the learning-squad.ai summer program. Subjects represented: " + subjects + ". Shareable badges: " + earnedBadges + ". This summary excludes private health, faith, friend-message, reward, and diagnostic details by default.";
+  return student.firstName + " completed " + completedCount + "/" + totalMissions + " missions in the Dr. Spark Academy summer program. Subjects represented: " + subjects + ". Shareable badges: " + earnedBadges + ". This summary excludes private health, faith, friend-message, reward, and diagnostic details by default.";
 }
 
 function createMissionId(weekNumber, dayNumber) {

@@ -2,13 +2,13 @@ import "./styles.css";
 import { PWARegister } from "./pwa-register";
 
 export const metadata = {
-  title: "learning-squad.ai",
+  title: "Dr. Spark Academy",
   description: "Parent-supervised multi-agent summer learning program.",
   manifest: "/manifest.webmanifest",
-  applicationName: "learning-squad.ai",
+  applicationName: "Dr. Spark Academy",
   appleWebApp: {
     capable: true,
-    title: "Learning Squad",
+    title: "Dr. Spark Academy",
     statusBarStyle: "default"
   },
   icons: {

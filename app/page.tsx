@@ -370,7 +370,8 @@ const trackOptions = [
   ["healthWellness", "Health & Wellness"],
   ["christianLeadership", "Christian Leadership"],
   ["financialLiteracy", "Financial Literacy"],
-  ["mediaLiteracy", "Media Literacy"]
+  ["mediaLiteracy", "Media Literacy"],
+  ["bookClub", "Founder's Book Club"]
 ];
 
 const interestOptions = ["games", "sports", "projects", "music", "art", "science", "coding", "reading", "entrepreneurship"];
@@ -999,7 +1000,7 @@ export default function Home() {
         ...payload,
         friendName: invite.friendName,
         approve: true,
-        baseUrl: "https://learning-squad.ai"
+        baseUrl: "https://drsparkacademy.com"
       })
     });
     const result = await response.json();
@@ -1220,9 +1221,9 @@ export default function Home() {
     <main className="shell">
       <aside className="sidebar">
         <div className="brand">
-          <span>LS</span>
+          <span>DSA</span>
           <div>
-            <strong>learning-squad.ai</strong>
+            <strong>Dr. Spark Academy</strong>
             <small>Grade 6 MVP shell</small>
           </div>
         </div>

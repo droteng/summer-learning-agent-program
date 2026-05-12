@@ -173,7 +173,7 @@ export default function PrintablePackagePage() {
 
       <article className="print-page">
         <header className="print-hero">
-          <p className="eyebrow">learning-squad.ai</p>
+          <p className="eyebrow">Dr. Spark Academy</p>
           <h1>{reportPackage.title}</h1>
           <p>Generated {reportPackage.generatedAt ? new Date(reportPackage.generatedAt).toLocaleDateString() : "today"}</p>
         </header>

@@ -118,7 +118,7 @@ function buildProvidersFromEnv(env, fetchImpl) {
       apiKey: env.OPENROUTER_API_KEY,
       fetchImpl,
       appUrl: env.LLM_APP_URL,
-      appTitle: env.LLM_APP_TITLE ?? "learning-squad.ai"
+      appTitle: env.LLM_APP_TITLE ?? "Dr. Spark Academy"
     });
   }
 

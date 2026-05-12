@@ -150,7 +150,7 @@ function createDownloadFilename({ reportPackage, extension }) {
   const safeName = studentName.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
   const date = new Date(reportPackage.generatedAt ?? Date.now()).toISOString().slice(0, 10);
 
-  return `${safeName || "student"}-learning-squad-report-${date}.${extension}`;
+  return `${safeName || "student"}-dr-spark-report-${date}.${extension}`;
 }
 
 function formatWeeklyTranscript(weeks) {
