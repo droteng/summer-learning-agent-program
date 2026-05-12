@@ -1,7 +1,8 @@
 // Grade 6 Founder's Book Club — Enrichment Day 4.
 // Reading: Levels 10–11 of "Leo and The Game Squad" by Dr. Spark.
 // (The Gut Galaxy, The Way Home.)
-// Focus: the climax — what the squad learns and how they leave the body.
+// Focus: the final boss Toxina, the temptation scene, "become the path,"
+// and the long victory lap through the body — where Flo can't come with them.
 
 import { BOOK_METADATA } from "./book-club-day1.js";
 
@@ -13,99 +14,101 @@ export const grade6BookClubDay4 = {
   subject: "ELA/Writing",
   track: "bookClub",
   enrichment: true,
-  topic: "Climax — the Gut Galaxy and finding the way home",
+  topic: "Toxina, the temptation, and the way home",
   topicTag: "narrative-climax",
-  estimatedMinutes: 32,
+  estimatedMinutes: 35,
   standardsRefs: ["CCSS.RL.6.2", "CCSS.RL.6.5"],
-  hook: `📖 Read Levels 10–11 of "${BOOK_METADATA.title}" — "The Gut Galaxy" and "The Way Home". This is where everything the squad has learned comes together — and where the story turns toward home.`,
+  hook: `📖 Read Levels 10–11 of "${BOOK_METADATA.title}" — "The Gut Galaxy" and "The Way Home". This is the climax: Toxina the Queen of Chaos tries to tempt each squad member with their favorite junk food. Then the long ride home — and a goodbye.`,
   miniLesson: [
-    "The book's structure builds toward a climax: in the Gut Galaxy, the squad faces the biggest, most varied ecosystem in the body — trillions of helpful microbes alongside threats. Notice how the rules change here: the bacteria aren't all enemies. Some are allies you have to feed.",
-    "Watch what each squad member does when things get hardest. Trouble is the truest test of growth. By Level 11, Leo, Nia, and Jamal aren't the kids who fell asleep on the couch — and Agent T isn't the suspicious T-cell who first scanned them.",
-    "**Theme** is the bigger idea the book is exploring through everything it shows you. By this point, several themes are visible: balance, teamwork, military-family resilience, taking responsibility for your own body. A strong theme is a CLAIM, not a topic — 'balance is the greatest power-up' is a claim. 'Health' is just a topic."
+    "Level 10 is the **climax** — the highest-stakes moment. Gut Galaxy is a whole universe of microbes: probiotics in yogurt capes versus Grease Goblins, Sugar Slimes, and Bad Bacteria, all led by **Toxina, Queen of Chaos**. Her weapon isn't strength — it's temptation. She conjures up a table for each kid with their favorite foods and whispers 'just one bite.'",
+    "The turning point isn't a fight scene. It's Jamal noticing Flo (still recovering) and putting down the burger: 'This is what she did to you, isn't it?' Nia sees her mom's cookies but realizes 'food isn't the enemy — but using it to hide from feelings doesn't help.' Leo steps away from the pizza. **All three resist. Toxina shrinks to marble size.**",
+    "Level 11 (The Way Home) is the victory lap. The squad rides the Blood-Brain Express through every restored Level — calm arteries, busy Muscle Town making new mitochondria, peaceful Immune City with Mac and Memoria. Then the hardest moment of the book: **Flo can't come home with them.** 'I'm part of your knowledge now. But you'll remember me.'"
   ],
   workedExample: {
     prompt: "How do you spot a story's theme?",
     steps: [
-      "Find the moments where the squad almost falls apart and then finds a way through.",
-      "Look at what Leo realizes or learns each time.",
-      "Pull out the lesson in your own words — not what Flo says, but what the book is teaching through what happens.",
+      "Find the moments where the squad ALMOST fails and then chooses differently (Jamal almost eats the burger; Leo almost reaches for the pizza).",
+      "Look at what they realize in those moments.",
+      "Pull out the lesson in your own words — not what Flo says, but what the book is teaching through what they do.",
       "Test it: does the rest of the book support that idea? If yes, you've found a theme."
     ],
-    answer: "A theme is a one-sentence claim about how the world works (e.g., 'small healthy choices stack up into real change')."
+    answer: "A theme is a one-sentence claim about how the world works (e.g., 'resisting cravings is harder than fighting monsters — but it's the win that lasts')."
   },
   keyTerms: [
-    { term: "Climax", definition: "The story's peak moment of tension — for this book, the Gut Galaxy challenge plus the decision to head home." },
-    { term: "Theme", definition: "The big idea the book is exploring — a claim about life, not just a topic. ('Balance is the greatest power-up' beats 'balance.')" },
-    { term: "Turning point", definition: "A moment that changes the direction of the story — like Agent T deciding the squad are allies." }
+    { term: "Climax", definition: "The story's peak moment — for this book, the Gut Galaxy battle where Toxina tempts the squad and all three resist." },
+    { term: "Theme", definition: "The big idea the book is exploring — a claim about life. 'Balance is the greatest power-up' is a theme; 'health' is just a topic." },
+    { term: "Turning point", definition: "Jamal putting down the burger after he recognizes Toxina's voice from Flo's eating disorder story." }
   ],
   items: [
     {
       id: "g6.book.e.d4.q1",
       type: "short_answer",
-      stem: "In Level 10 (Gut Galaxy), the squad learns that not every microbe is an enemy. Describe the crisis they face AND one new rule the gut teaches them that no other Level taught.",
+      stem: "In Level 10, Toxina conjures three tables — one for each squad member, covered in THEIR specific favorite foods. Name what's on each table and what each kid does.",
       hintLadder: [
-        "What's the threat or imbalance in the Gut Galaxy?",
-        "Which microbes turn out to be helpful?",
-        "How is this different from Immune City, where the squad fought defenders?"
+        "Leo's table: what kind of food?",
+        "Nia's table: what does her mom make for her when she's sad?",
+        "Jamal's table: what does he see from his birthday party?",
+        "What does each kid finally choose?"
       ],
       rubric: {
-        level3: "Names the gut crisis (imbalance / threats to good bacteria) AND identifies that some bacteria are allies to feed, not enemies to fight. Specific to Level 10.",
-        level2: "Captures the crisis OR the new rule but not both clearly.",
-        level1: "Generic 'they explored the gut' with no specifics."
+        level3: "Names what's on each kid's table (pizza/chips/soda for Leo; cookies/brownies/cake for Nia; burgers/fries/milkshakes for Jamal) AND describes each kid's choice to step away.",
+        level2: "Captures the tables but mixes up which kid got what, OR misses what each chose.",
+        level1: "Generic 'they were tempted' with no specifics."
       },
-      exemplar: "The Gut Galaxy is in danger of imbalance, where harmful bacteria outnumber the helpful ones that keep digestion and immunity strong. The new rule is that not every bacteria is an enemy — the squad has to feed and protect good microbes instead of fighting everything they see.",
+      exemplar: "Leo's table has hot pizza, chips, and ice-cold soda — he reaches for the pizza, then steps away saying 'I don't want to feel like that anymore.' Nia's table has cookies, brownies, and chocolate cake — her favorites — but she turns away saying 'food isn't the enemy, but using it to hide from feelings doesn't help.' Jamal's table has burgers, fries, and milkshakes from his last birthday party — he lifts a burger to his mouth, then sees Flo struggling and puts it down: 'I'm not giving her that power.'",
       misconceptionsTargeted: ["summarizing-everything"]
     },
     {
       id: "g6.book.e.d4.q2",
       type: "short_answer",
-      stem: "What's ONE theme this book is exploring? Write it as a complete sentence (a claim, not a topic) and back it up with one moment from Levels 1–11.",
+      stem: "What's ONE theme this book is exploring? Write it as a complete sentence (a claim, not a topic) and back it up with one specific moment from Level 10 or 11.",
       hintLadder: [
-        "Look at what Leo learns across multiple Levels.",
+        "Look at what the squad learns when they CHOOSE rather than fight.",
         "Turn it into a claim: 'In life, ___ matters because ___.'",
-        "Find one moment that proves the claim (Pressure Beast, Sticky Locks, or Gut Galaxy)."
+        "Find one specific moment that proves the claim (the temptation tables, the 'become the path' charge, or Flo's goodbye)."
       ],
       rubric: {
-        level3: "Theme stated as a general life claim (not plot summary) AND backed with one specific moment from a named Level.",
+        level3: "Theme stated as a general life claim (not plot summary) AND backed with one specific named moment from Level 10 or 11.",
         level2: "Theme stated but too narrow (just retelling plot) OR weak evidence.",
         level1: "Theme is just a one-word topic ('health' or 'friendship') with no claim or evidence."
       },
-      exemplar: "Theme: balance is more powerful than effort — sometimes the strongest move is to rest. Moment: in Level 8 Leo defeats the Pressure Beast by closing his eyes and slowing his breath, not by hitting harder.",
+      exemplar: "Theme: choice is stronger than craving — what you walk away from defines you as much as what you fight. Moment: Jamal lifts the burger from Toxina's table, then puts it down when he sees Flo, saying 'I'm not giving her that power.' Toxina shrinks to marble size right there.",
       misconceptionsTargeted: ["theme-too-narrow"]
     },
     {
       id: "g6.book.e.d4.q3",
       type: "multiple_choice",
-      stem: "Why do good books have moments where the plan FAILS or shifts (like the buttons not working in Level 8, or the squad realizing they can't fight gut bacteria the same way they fought plaque)?",
+      stem: "When the squad has to push the FERMENTED FOODS crate to the probiotics through a swarm of Toxina's army, Leo says 'We don't carry it — we become the path.' What does he mean?",
       choices: [
-        "To make readers feel sad.",
-        "To pad out the page count.",
-        "Because pressure and surprise reveal what characters truly value — and force them to grow.",
-        "To make the ending shorter."
+        "Each kid carries the crate alone in turn.",
+        "They line up shoulder to shoulder, link arms, and shove the crate forward together — the enemies can't stop all of them at once.",
+        "They abandon the crate and run away.",
+        "They build a literal bridge out of bones."
       ],
-      answerIndex: 2,
-      explanation: "Failure and surprise force characters to act on what they really believe. That's how the reader sees their values clearly, and how the character grows.",
+      answerIndex: 1,
+      explanation: "Nia calls it 'either brilliant or really stupid.' Leo says 'probably both.' They link arms — Flo too — and charge as one body. It's the book's most direct picture of teamwork.",
       hintLadder: [
-        "Easy moments don't test anyone.",
-        "Pressure reveals.",
-        "Which option is about character growth?"
+        "Re-read the moment Leo proposes the plan.",
+        "What does Nia say about the idea?",
+        "How are they arranged when they charge?"
       ]
     },
     {
       id: "g6.book.e.d4.q4",
       type: "short_answer",
-      stem: "Group prompt (skip if alone): predict how the book will end. What will Leo, Nia, and Jamal be like back home in the real world? Trade predictions and explain. (Don't read ahead — Day 5 covers the ending.)",
+      stem: "Level 11 ends with Flo telling the squad she can't come home with them: 'I'm part of your knowledge now. But you'll remember me.' Why does the book end her arc this way — what's it telling you about how learning works?",
       hintLadder: [
-        "Look at how each squad member has changed across the Levels.",
-        "Make a specific prediction (e.g., what habit will Leo bring home?).",
-        "Compare with the other reader."
+        "Flo started the book as the squad's tour guide.",
+        "By the end of Level 11, what does she represent?",
+        "Where does knowledge LIVE once you've really learned it?"
       ],
       rubric: {
-        level3: "Specific prediction with reasoning grounded in what's changed across the Levels AND captures the other reader's prediction.",
-        level2: "Has a prediction but reasoning thin OR misses the second reader.",
-        level1: "Vague or generic prediction with no grounding."
+        level3: "Connects Flo staying behind to the idea that real learning lives INSIDE you — once internalized, the teacher doesn't have to walk beside you. Cites Flo's line or Leo tapping his chest.",
+        level2: "Captures the sad goodbye but doesn't link it to learning/internalization.",
+        level1: "Just describes the scene with no claim."
       },
-      exemplar: "I think Leo will eat better, rest more, and look out for his little brother Marcus — the inside-body trip changed how he sees food and sleep. My friend thinks Jamal will start working harder at sports because of what he saw in Muscle Town."
+      exemplar: "Flo can't come home because she IS what they learned — her voice is now Leo's voice when he says no to chips, Nia's voice when she counts her breath. The book is saying real learning isn't a teacher next to you, it's a teacher you carry inside. When Flo taps Leo's chest and says 'your body remembers,' she's telling him she's already there.",
+      misconceptionsTargeted: []
     },
     {
       id: "g6.book.e.d4.q5",
@@ -118,7 +121,7 @@ export const grade6BookClubDay4 = {
         "The author's introduction."
       ],
       answerIndex: 1,
-      explanation: "The climax is the highest-stakes moment where everything that's been building has to be resolved. The Gut Galaxy + decision to head home is this book's climax.",
+      explanation: "The climax is the highest-stakes moment where everything that's been building has to be resolved. For this book, Toxina's temptation in Level 10 is the climax.",
       hintLadder: [
         "Check today's key terms.",
         "Think 'peak tension.'",
@@ -129,17 +132,17 @@ export const grade6BookClubDay4 = {
   misconceptionBank: [
     {
       id: "summarizing-everything",
-      label: "Retells the whole Level instead of naming the new rule or crisis",
-      description: "Blow-by-blow recap of Level 10 with no clear 'this is what's different about the gut.'",
-      coachMove: "Force two sentences: one for the crisis, one for the new rule (some microbes are allies)."
+      label: "Retells Level 10 instead of naming the temptation scene",
+      description: "Long blow-by-blow recap with no clear focus on the three tables.",
+      coachMove: "Force the structure: one table per kid, one bite of evidence each, one choice each."
     },
     {
       id: "theme-too-narrow",
       label: "Confuses topic with theme",
       description: "Says theme is 'health' or 'gaming' — the topic, not a claim about it.",
-      coachMove: "Theme is a SENTENCE. 'Small healthy choices stack into big change' beats 'health.'"
+      coachMove: "Theme is a SENTENCE. 'Choice is stronger than craving' beats 'choice.'"
     }
   ],
   reflectionPrompt:
-    "Think of a time YOUR plan broke or had to change shape. What did you do next? Did you discover anything about yourself that day?"
+    "Think of a craving you've resisted — not because someone told you to, but because YOU decided to. What did it feel like in your body? Save this — it's the same muscle the squad just used."
 };

@@ -1,7 +1,13 @@
 // Grade 6 Founder's Book Club — Enrichment Day 3.
 // Reading: Levels 7–9 of "Leo and The Game Squad" by Dr. Spark.
 // (Immune City: The Defenders, The Pressure Beast, Emergency Response Zone.)
-// Focus: external challenges vs. internal pressure — and the choice to rest.
+// Focus: defenders, stress, and the book's emotional core — the Anxiety Titan
+// and Flo's reveal about her eating disorder.
+//
+// PARENT NOTE: Level 9 covers anxiety, panic attacks, and a guide character
+// who shares she has an eating disorder. The book handles this with care —
+// the message is "asking for help isn't weakness." This mission is designed
+// to be parent-supervised; consider reading and discussing together.
 
 import { BOOK_METADATA } from "./book-club-day1.js";
 
@@ -13,116 +19,116 @@ export const grade6BookClubDay3 = {
   subject: "ELA/Writing",
   track: "bookClub",
   enrichment: true,
-  topic: "Defenders, the Pressure Beast, and the choice to rest",
+  topic: "Defenders, the Pressure Beast, and asking for help",
   topicTag: "narrative-conflict",
-  estimatedMinutes: 32,
+  estimatedMinutes: 35,
   standardsRefs: ["CCSS.RL.6.2", "CCSS.RL.6.3"],
-  hook: `📖 Read Levels 7–9 of "${BOOK_METADATA.title}" — "Immune City: The Defenders", "The Pressure Beast", and "Emergency Response Zone". Today the squad takes on the biggest external threat in the book AND the inner enemy made of stress, salt, grease, and sitting still.`,
+  hook: `📖 Read Levels 7–9 of "${BOOK_METADATA.title}" — "Immune City", "The Pressure Beast", and "Emergency Response Zone". Today the squad meets the body's army, defeats a stress monster, and faces something harder: an Anxiety Titan, a panic attack, and a friend who finally asks for help.`,
   miniLesson: [
-    "Every story has two kinds of conflict. **External**: villains, broken arteries, plaque clots — something or someone outside the character. **Internal**: doubt, fear, the urge to push past your limits — something inside. The Pressure Beast is BOTH at once: he's outside (smashing walls) AND he feeds on what's inside (stress, sitting still).",
-    "Notice the moment when a character has to choose between two things they care about — a 'dilemma.' That's the most revealing moment in any chapter. The book gives you a great one in Level 8 when Leo realizes the answer to defeating the Pressure Beast is REST, not more fighting.",
-    "Agent T has been watching the squad since Level 2. Track what happens to his badge color across Levels 7–8 — it tells you he's changing his mind."
+    "Every story has two kinds of conflict. **External**: villains, plaque clots, the Pressure Beast smashing artery walls. **Internal**: doubt, fear, anxiety — what the Anxiety Titan whispers in Level 9 ('what if you fail what if they laugh what if you're not good enough'). The book shows that internal conflict can be just as dangerous as external — Nia has a real panic attack, Leo's heart rate spikes to 170 BPM.",
+    "Level 7 (Immune City) introduces the body's army: Mac the Macrophage (first responder), Memoria (Memory B-Cell with files on every enemy), Tessa (T-Cell), Benny (antibody factory worker), and General False Alarm — the retired officer whose panic drills keep Mac's team chasing shadows. Watch how the squad helps tell real threats from fake.",
+    "Level 9 is the emotional turning point. Flo, the green guide who's been leading the squad all book, collapses. She confesses she has an eating disorder — 'I thought if I just ate less... stayed smaller... the bosses wouldn't be so scary.' Leo's response, and the squad's, IS the lesson: asking for help isn't weakness."
   ],
   workedExample: {
     prompt: "How do you analyze a character's tough choice?",
     steps: [
-      "Name what the character wanted (Leo wanted to beat the Pressure Beast by hitting harder).",
-      "Identify what they actually picked (he chose to REST — to close his eyes, slow his breath).",
-      "Name what they gave up (the heroic 'fight everything' approach).",
-      "Decide what the choice tells you about Leo's values — that he's learning balance over force."
+      "Name what the character wanted (Leo wanted to stay at his Rest Chamber station to protect his heart).",
+      "Identify what they actually picked (he left his station and ran to Nia, who was hyperventilating).",
+      "Name what they gave up (his own safety — his heart rate spiked to 170 BPM, cardiac arrest imminent).",
+      "Decide what the choice tells you about Leo's values — friendship over self-protection."
     ],
     answer: "A short paragraph linking choice + sacrifice + character growth."
   },
   keyTerms: [
-    { term: "Dilemma", definition: "A hard choice between two things a character cares about (fight more vs. rest)." },
-    { term: "External conflict", definition: "A problem from outside — the Pressure Beast smashing artery walls, plaque clots blocking flow." },
-    { term: "Internal conflict", definition: "A problem from inside — stress, the urge to keep pushing, the part of Leo that won't slow down." }
+    { term: "Anxiety Titan", definition: "Level 9's villain — chains and lightning made of worry whispers ('what if you fail'). Defeated by Breath Regulator + Movement Engine + Rest Chamber working together." },
+    { term: "Panic attack", definition: "What happens to Nia at the Breath Regulator — short fast breathing, the room tilts, can't think clearly. Box breathing (4-count) calms it." },
+    { term: "Asking for help", definition: "Flo's lesson at the end of Level 9 — 'I need help. Real help. Not just knowing what to do, but actually doing it.'" }
   ],
   items: [
     {
       id: "g6.book.e.d3.q1",
       type: "short_answer",
-      stem: "Name ONE external conflict and ONE internal conflict the squad faces in Levels 7–9. Use specific details from those chapters.",
+      stem: "Name ONE external conflict and ONE internal conflict the squad faces in Levels 7–9. Use specific details from those Levels.",
       hintLadder: [
-        "External: who or what is fighting the squad — Pressure Beast? plaque clots? something else?",
-        "Internal: what does the Pressure Beast 'feed on' from inside Leo's life?",
+        "External: who or what is fighting the squad on the OUTSIDE — Pressure Beast smashing walls? plaque clots? General False Alarm's drills?",
+        "Internal: what's happening INSIDE Nia or Leo — anxiety, panic, the Titan's whispers?",
         "Write one sentence for each."
       ],
       rubric: {
-        level3: "Correctly distinguishes external vs internal with one specific example of each from Levels 7–9 (e.g., Pressure Beast + plaque clots vs. stress/sitting still/late-night pushes).",
+        level3: "Correctly distinguishes external vs internal with one specific example of each from Levels 7–9 (e.g., Pressure Beast OR plaque clots vs. Nia's panic attack OR Anxiety Titan's whispers).",
         level2: "Names both but one is mislabeled OR vague.",
         level1: "Only names one type, or confuses the two."
       },
-      exemplar: "External: the Pressure Beast smashes the artery walls and a plaque clot avalanche threatens to block the flow. Internal: the same beast feeds on Leo's stress, his salty snacks, and his habit of sitting still and pushing through late nights.",
+      exemplar: "External: in Level 8 the Pressure Beast smashes artery walls and a plaque clot avalanche threatens to block the flow. Internal: in Level 9 Nia has a panic attack at the Breath Regulator — she can't breathe, her thoughts spiral 'what if I mess up,' and the Anxiety Titan grows stronger.",
       misconceptionsTargeted: ["confusing-internal-external"]
     },
     {
       id: "g6.book.e.d3.q2",
       type: "short_answer",
-      stem: "In Level 8, Leo's plan stops working — buttons aren't enough. What does he finally choose to do, and what does he give up to do it?",
+      stem: "In Level 9, Leo's heart rate hits 170 BPM and his monitor warns 'cardiac arrest imminent.' He leaves the Rest Chamber anyway to help Nia. What did he say to himself to make that choice, and what does it tell you about him?",
       hintLadder: [
-        "Find the moment near the end of Level 8 when Leo whispers 'Rest.'",
-        "What had he been trying instead?",
-        "What did he give up (the 'fight harder' instinct) to choose rest?"
+        "Find the line where Leo decides to leave his station.",
+        "He asks himself: 'What's the point of any of this if ___?'",
+        "What does choosing his friend over his own safety say about Leo?"
       ],
       rubric: {
-        level3: "Specific moment named, clear choice (REST), explicit cost (giving up the push-through-pressure instinct).",
-        level2: "Has the choice but the cost is glossed over or missing.",
-        level1: "Generic 'they did the right thing' with no specifics."
+        level3: "Quotes or paraphrases Leo's 'what's the point of any of this' line AND draws out what it shows about his values (friendship over self-protection, growth from the Day 1 'snacking past full' Leo).",
+        level2: "Has the choice but the reasoning is glossed over.",
+        level1: "Generic 'he did the right thing' with no specifics."
       },
-      exemplar: "Leo whispers 'Rest' in Level 8 when nothing else is calming the Pressure Beast. He gives up the instinct to fight harder — closing his eyes and slowing his breath instead. Melatonin mist drops, the beast shrinks, and the artery glows pink again.",
+      exemplar: "Leo says 'What's the point of any of this if I stay here doing nothing while she's drowning?' His heart rate spikes to 170 BPM but he runs to Nia anyway and breathes the 4-count box breathing with her until she steadies. It shows he values his friends more than his own safety — and that he's grown a lot from the Leo who used to zone out on the couch.",
       misconceptionsTargeted: ["skipping-the-cost"]
     },
     {
       id: "g6.book.e.d3.q3",
       type: "multiple_choice",
-      stem: "By the end of Level 8, Agent T's badge changes color. What does it tell you about how Agent T has changed?",
+      stem: "When Flo collapses and reveals she has an eating disorder, Leo's response shows the book's key lesson about mental health. What does Leo (and Nia, and Jamal) demonstrate?",
       choices: [
-        "Nothing — his badge always changes color.",
-        "He's about to attack the squad.",
-        "His suspicion is softening — he's starting to see the squad as allies, not invaders.",
-        "He's lost his weapons."
+        "That smart people don't get mental health problems.",
+        "That Flo should have figured it out on her own.",
+        "That asking for help isn't weakness — even the expert can need help, and that's okay.",
+        "That the squad should stop trusting Flo."
       ],
       answerIndex: 2,
-      explanation: "The badge moves from yellow to pale green to steady green as Agent T watches the squad solve the Pressure Beast crisis together. He updates his file: 'Squad understands balance.'",
+      explanation: "Flo's line is exactly this: 'I need help. Real help. Not just knowing what to do, but actually doing it.' Leo responds 'We all need help sometimes.' The book treats asking for help as strength.",
       hintLadder: [
-        "Look at what Agent T logs as he watches them work.",
-        "What does he type into his file at the end?",
-        "His weapon goes from drawn to holstered — what does that signal?"
+        "Re-read Flo's confession and Leo's response.",
+        "What does Leo say after Flo asks for help?",
+        "The book's message about mental health."
       ]
     },
     {
       id: "g6.book.e.d3.q4",
       type: "short_answer",
-      stem: "Group prompt (skip if alone): if YOU were in the squad facing the Pressure Beast, what would you do? Trade answers and discuss — would you both make the same call?",
+      stem: "Group prompt (skip if alone): if YOU were on the squad in the Emergency Response Zone, which station would you have chosen — Breath Regulator, Movement Engine, or Rest Chamber — and why? Trade answers and discuss.",
       hintLadder: [
-        "Re-read the moment when buttons and breathing aren't enough.",
-        "Write what you'd do.",
-        "Compare with the other reader — write down where you agree or disagree."
+        "Re-read the three stations and what each one did.",
+        "Pick the one that matches what you'd be best at.",
+        "Compare with the other reader."
       ],
       rubric: {
-        level3: "Concrete personal choice, clear reasoning grounded in the Pressure Beast scene, captures the other reader's perspective.",
-        level2: "Has personal choice but reasoning thin OR misses the discussion.",
+        level3: "Picks a specific station, names a real-life reason that matches the station's function, captures the other reader's pick + reasoning.",
+        level2: "Names a station but reasoning is thin OR misses the other reader.",
         level1: "Vague or off-topic."
       },
-      exemplar: "I'd choose rest like Leo did, because the buttons weren't working and pushing harder was just making the beast stronger. My friend would have tried to break the clot first — we agreed Leo's call was smarter once we re-read the scene."
+      exemplar: "I'd pick the Breath Regulator because I'm calm under pressure and I'd want to be the one helping someone like Nia steady their breathing. My friend picked the Movement Engine because he likes physical jobs where you keep going."
     },
     {
       id: "g6.book.e.d3.q5",
       type: "multiple_choice",
-      stem: "A 'dilemma' is BEST described as:",
+      stem: "Which is the BEST description of what 'box breathing' (4-count) does for someone in a panic attack, in the book and in real life?",
       choices: [
-        "A boring part of the book.",
-        "A hard choice between two things a character cares about (like fighting harder vs. resting).",
-        "Any time a character feels happy.",
-        "A grammar error in a sentence."
+        "It cures all anxiety forever.",
+        "It slows breathing, calms the fight-or-flight system, and gives the body and brain time to reset.",
+        "It makes you fall asleep.",
+        "It's a punishment for being anxious."
       ],
       answerIndex: 1,
-      explanation: "Dilemmas are the genuine forks in the road where character is revealed. Leo's 'fight or rest' moment is a dilemma.",
+      explanation: "Leo breathes 'in two three four, hold two three four, out two three four, hold two three four' with Nia. Slow breathing tells the body the danger is over.",
       hintLadder: [
-        "Look at today's key terms.",
-        "It involves two values pulling in opposite directions.",
-        "The character can't have both."
+        "Check today's key terms.",
+        "What did Leo count out loud with Nia?",
+        "Slow steady breath = brain hears 'safe.'"
       ]
     }
   ],
@@ -130,16 +136,16 @@ export const grade6BookClubDay3 = {
     {
       id: "confusing-internal-external",
       label: "Mixes up internal vs external conflict",
-      description: "Labels the Pressure Beast as purely internal or purely external, missing that he's both at once.",
-      coachMove: "Internal = inside Leo's head + habits. External = what's smashing artery walls. The book makes both visible at once."
+      description: "Labels the Anxiety Titan as purely external or Nia's panic as a 'fight scene' — missing that the body's emergency system is responding to FEAR, not a real attacker.",
+      coachMove: "Internal = inside the head + body's fear response. External = something physically smashing walls. Level 9 makes the internal visible."
     },
     {
       id: "skipping-the-cost",
-      label: "Describes a choice without naming the cost",
-      description: "Says 'Leo rested' but doesn't note he had to give up the 'fight harder' instinct.",
-      coachMove: "Every real choice has a cost. Ask: 'What did Leo walk away from to choose rest?'"
+      label: "Describes Leo's choice without naming the cost",
+      description: "Says 'Leo helped Nia' but doesn't note his heart rate hit 170 BPM and he risked cardiac arrest.",
+      coachMove: "Every real choice has a cost. Ask: 'What did Leo's monitor show? What was he risking?'"
     }
   ],
   reflectionPrompt:
-    "Have you ever had to STOP doing something hard to actually solve it? Write a few sentences. (Save this — it's a great seed for a writing piece later.)"
+    "Flo says 'I'm the expert. I'm supposed to know better. But knowing doesn't always fix it.' Have you ever known what you should do but still struggled to do it? Write a few sentences — no one else has to see this. (Save it: the courage to NOTICE is the first step.)"
 };
