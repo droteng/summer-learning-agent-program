@@ -1,13 +1,11 @@
 // Grade 6 Founder's Book Club — Enrichment Day 1.
-// Reading: Chapters 1–2 of "Leo and The Game Squad" by Dr. Spark.
+// Reading: "Readers" intro + Levels 1–3 of "Leo and The Game Squad" by Dr. Spark.
+// (Into The Game, The Bloodstream Superhighway, The Brain Control Center.)
 //
 // This is a parent-supervised reading mission. Solo or group mode is up
 // to the parent and child. The book can be read aloud together (group),
 // silently and then discussed, or chapter-by-chapter with a friend over
 // video call after a parent has approved the connection.
-//
-// Author (Dr. Spark) can swap in chapter-specific details for the items
-// over time without touching the structure.
 
 export const BOOK_METADATA = Object.freeze({
   title: "Leo and The Game Squad",
@@ -25,99 +23,99 @@ export const grade6BookClubDay1 = {
   subject: "ELA/Writing",
   track: "bookClub",
   enrichment: true,
-  topic: "Meeting Leo — characters and setting",
+  topic: "Meeting the squad — Leo, Nia, Jamal, and Flo",
   topicTag: "narrative-characters",
   estimatedMinutes: 30,
   standardsRefs: ["CCSS.RL.6.1", "CCSS.RL.6.3"],
-  hook: `📖 Read Chapters 1–2 of "Leo and The Game Squad" by Dr. Spark before you start (get the book at ${BOOK_METADATA.url}). Today you focus on who Leo is and where the story takes place.`,
+  hook: `📖 Read the "Readers" welcome plus Levels 1–3 ("Into The Game", "The Bloodstream Superhighway", "The Brain Control Center") of "Leo and The Game Squad" by Dr. Spark before you start. Get the book at ${BOOK_METADATA.url}. Today you meet the squad and the strange world inside Leo's body.`,
   miniLesson: [
-    "A strong reader notices three things in the opening of a story: who is the main character, where and when the story happens, and what they want.",
-    "Pay attention to small details — a character's room, what they carry, who they sit with — those details tell you what matters to them.",
-    "If you're reading with someone, take turns saying one thing you noticed before you talk about the questions."
+    "Three military families. One block. While the parents are deployed, Leo (7th grade), Jamal (6th grade), and Nia (5th grade) hang out at Leo's house — and one game-and-junk-food night, they fall asleep on the couch and wake up *inside* Leo's body.",
+    "A strong reader builds a quick mental file for each main character: what they do, what they say, who they care about. Look at Leo's snacking, Jamal's nervous energy, Nia's glasses and the way she sorts controllers — every small detail tells you something.",
+    "The world has rules: Flo is the green-skinned game guide. Hemo is a red blood cell. Agent T is a memory T-cell who watches the squad with suspicion. Notice how the body works like a city full of jobs."
   ],
   workedExample: {
-    prompt: "How would you describe a main character after reading the first two chapters?",
+    prompt: "How do you describe Leo as you meet him in Levels 1–2?",
     steps: [
-      "Note 2–3 actions the character takes — what they do shows you who they are.",
-      "Note 1–2 things they say or think — words reveal hopes, fears, and goals.",
-      "Note who they hang out with — friendships shape character.",
-      "Put it together in one sentence: 'Leo is the kind of person who ___.'"
+      "Note 2–3 actions: he plays past tiredness, skips real dinner, snacks on chips and soda, falls asleep on the couch.",
+      "Note 1–2 thoughts or words: he says 'Something's weird. Not the game. Me.' — he notices his fingers lagging.",
+      "Note relationships: he's the oldest in the squad, his mom is holding down the fort for four kids, his little brother Marcus is asleep upstairs.",
+      "Put it together: 'Leo is the kind of person who ___ — you can see it when ___.'"
     ],
     answer: "A short character sketch built from actions + words + relationships, in 1–2 sentences."
   },
   keyTerms: [
-    { term: "Protagonist", definition: "The main character whose journey the story follows." },
-    { term: "Setting", definition: "The time and place where the story unfolds." },
-    { term: "Character trait", definition: "A consistent quality a person shows through what they do and say." }
+    { term: "Protagonist", definition: "The main character whose journey the story follows — in this book, Leo." },
+    { term: "Setting", definition: "The time and place where a story unfolds — here, Leo's living room AND the inside of Leo's body." },
+    { term: "Character trait", definition: "A consistent quality a person shows through what they do and say (Nia is observant, Jamal is loyal, Leo is curious)." }
   ],
   items: [
     {
       id: "g6.book.e.d1.q1",
       type: "short_answer",
-      stem: "In 1–2 sentences, describe Leo as you meet him in Chapters 1–2. Use one detail from his actions and one from his thoughts or words.",
+      stem: "In 1–2 sentences, describe Leo as you meet him in Levels 1–2. Use one detail from his actions and one from his thoughts or words.",
       hintLadder: [
-        "What does Leo do in Chapter 1?",
-        "What does Leo say or think that surprised you?",
+        "What does Leo do during the gaming marathon and at dinner?",
+        "What does he notice or say about himself ('Not the game. ___')?",
         "Combine: 'Leo is the kind of person who ___ because he ___.'"
       ],
       rubric: {
-        level3: "Names a specific trait, supports it with one action AND one thought/word, in 1–2 clear sentences.",
+        level3: "Names a specific trait, supports it with one action AND one thought/quote, in 1–2 clear sentences.",
         level2: "Names a trait with only one piece of evidence OR drifts into plot summary halfway.",
         level1: "Just retells what happened with no description of Leo as a person."
       },
-      exemplar: "Leo is curious and a little nervous — he stays up late even though he's tired because he wants to find out what's happening in the game.",
+      exemplar: "Leo is curious about himself even when it's uncomfortable — he keeps snacking and gaming, but he also notices his fingers lagging and says 'Not the game. Me.'",
       misconceptionsTargeted: ["plot-summary-instead-of-character"]
     },
     {
       id: "g6.book.e.d1.q2",
       type: "short_answer",
-      stem: "Where and when does the story take place? Name two details about the setting that you noticed.",
+      stem: "The story has TWO settings in Levels 1–3. Name them both and give one specific detail for each.",
       hintLadder: [
-        "Look for places: home, school, online, a specific room.",
-        "Look for time clues: time of day, season, school year.",
-        "Pick the two clearest details and write them in one sentence each."
+        "Setting 1 is the real world. Where do the kids hang out and what's around them?",
+        "Setting 2 is where they end up after they fall asleep. What does Flo show them?",
+        "Format: 'Setting one: ___ (detail). Setting two: ___ (detail).'"
       ],
       rubric: {
-        level3: "Identifies a place AND a time clue with specific details from the book.",
-        level2: "Identifies one of place/time clearly; the other is vague.",
-        level1: "Generic answer with no details from the book."
+        level3: "Identifies both settings (Leo's living room AND inside Leo's body) with a specific detail from the book for each.",
+        level2: "Names both settings but one detail is generic.",
+        level1: "Names only one setting or gives no details from the book."
       },
-      exemplar: "The story takes place at Leo's home and on the Game Squad's online server. It's the start of summer break.",
+      exemplar: "Setting one: Leo's living room — beanbags, controllers, and a tray of lemonade from his mom. Setting two: the bloodstream inside Leo's body — Hemo the red blood cell zips by with oxygen.",
       misconceptionsTargeted: ["missing-setting-details"]
     },
     {
       id: "g6.book.e.d1.q3",
       type: "multiple_choice",
-      stem: "Which is the BEST way to describe a character?",
+      stem: "What do Leo, Jamal, and Nia have in common in their real lives BEFORE they enter Leo's body?",
       choices: [
-        "Repeat exactly what the book said about them.",
-        "Pick one detail and decide that's all there is.",
-        "Combine actions, words, and relationships into a short description.",
-        "Guess based on the cover art."
+        "They are all in the same grade.",
+        "They are all only children.",
+        "Their parents are all deployed in the military together.",
+        "They have never met before this night."
       ],
       answerIndex: 2,
-      explanation: "Strong character descriptions combine evidence from multiple parts of the text.",
+      explanation: "All three are military kids whose parents deployed together; Leo's mom is watching all four kids on her own.",
       hintLadder: [
-        "Strong descriptions use evidence from inside the book.",
-        "More than one kind of evidence helps.",
-        "What three things did the mini-lesson say to combine?"
+        "Look at the description of the families on the block.",
+        "Why are the kids all at Leo's house?",
+        "What did the parents do that morning in uniforms?"
       ]
     },
     {
       id: "g6.book.e.d1.q4",
       type: "short_answer",
-      stem: "Group prompt (skip if you're reading alone): share one thing about Leo that the other reader noticed but you didn't. Write down what they said.",
+      stem: "When the squad first arrives in the bloodstream, Agent T is suspicious. What does he notice about each kid and what does he decide to do?",
       hintLadder: [
-        "Ask: 'What did you notice about Leo that I might have missed?'",
-        "Listen for a detail, write it down word-for-word.",
-        "If reading alone, write a question you'd ask another reader about Leo."
+        "Find Agent T's introduction in Level 2.",
+        "What does he say about Nia's glasses? About Jamal? About Leo?",
+        "What protocol does he initiate?"
       ],
       rubric: {
-        level3: "Captures another reader's specific observation OR (if solo) writes a thoughtful new question about Leo.",
-        level2: "Records a vague observation or generic question.",
-        level1: "Skipped or unrelated to Leo."
+        level3: "Names what Agent T flags for each squad member AND that he 'initiates watch protocol' / monitors them.",
+        level2: "Captures Agent T's suspicion but misses what he flags for each kid OR misses the watch protocol.",
+        level1: "Just says 'he's suspicious' without specifics."
       },
-      exemplar: "My sister noticed Leo keeps checking his phone even when his mom is talking — she thought it showed he's distracted, not rude.",
+      exemplar: "Agent T flags Nia's glasses as unknown function with a high alert, marks Jamal for nervous energy, and Leo for unusual host activity. He calls in a watch protocol and reports the squad as possible viral agents.",
       misconceptionsTargeted: []
     },
     {
@@ -131,11 +129,11 @@ export const grade6BookClubDay1 = {
         "A narrator who isn't in the story."
       ],
       answerIndex: 1,
-      explanation: "Protagonist = main character driving the story forward.",
+      explanation: "Protagonist = main character driving the story forward. In this book, Leo is the protagonist.",
       hintLadder: [
         "Check today's key terms.",
-        "Who does the story follow throughout?",
-        "It's about the journey, not just any role."
+        "Whose body do they travel inside?",
+        "It's about whose journey we follow."
       ]
     }
   ],
@@ -149,7 +147,7 @@ export const grade6BookClubDay1 = {
     {
       id: "missing-setting-details",
       label: "Generic setting description",
-      description: "Says 'a house' or 'a game' without naming clues from the text.",
+      description: "Says 'a house' or 'a game' without naming clues from the text (Hemo, Flo, bloodstream).",
       coachMove: "Point back to specific lines that mention place or time."
     }
   ],
