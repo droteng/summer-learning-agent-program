@@ -13,7 +13,8 @@ export const BOOK_METADATA = Object.freeze({
   title: "Leo and The Game Squad",
   author: "Dr. Spark",
   ageRange: "10+",
-  url: "https://www.amazon.com/stores/Dr-Spark/author/B0G6VLJTZN"
+  url: "https://www.amazon.com/dp/B0G4HQ21D1",
+  authorStorefrontUrl: "https://www.amazon.com/stores/Dr-Spark/author/B0G6VLJTZN"
 });
 
 export const grade6BookClubDay1 = {
