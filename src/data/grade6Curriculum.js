@@ -55,6 +55,14 @@ export const enrichmentTracks = {
       "Practice note-taking and memory strategies.",
       "Set weekly goals and reflect on progress."
     ]
+  },
+  bookClub: {
+    label: "Founder's Book Club",
+    goals: [
+      "Read \"Leo and The Game Squad\" by Dr. Spark over 5 sessions.",
+      "Practice close reading: characters, conflict, theme, and growth.",
+      "Respond to a book with a short Claim → Evidence → Connection piece."
+    ]
   }
 };
 

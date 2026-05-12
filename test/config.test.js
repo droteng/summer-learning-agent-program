@@ -9,7 +9,7 @@ function configFromEnv(env) {
 
 test("loads with all defaults when env is empty", () => {
   const config = configFromEnv({});
-  assert.equal(config.appName, "learning-squad.ai");
+  assert.equal(config.appName, "Dr. Spark Academy");
   assert.equal(config.llm.monthlyTokenCap, 250_000);
   assert.equal(config.llm.anthropicApiKey, null);
   assert.equal(config.llm.openrouterApiKey, null);
@@ -70,7 +70,7 @@ test("collects every error in a single throw", () => {
 test("accepts a valid environment", () => {
   const config = configFromEnv({
     NODE_ENV: "production",
-    APP_URL: "https://learning-squad.ai",
+    APP_URL: "https://drsparkacademy.com",
     ANTHROPIC_API_KEY: "sk-test",
     OPENROUTER_API_KEY: " or-test ",
     LLM_MONTHLY_TOKEN_CAP: "100000",

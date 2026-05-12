@@ -1,4 +1,4 @@
-const CACHE_NAME = "learning-squad-v1";
+const CACHE_NAME = "dr-spark-v1";
 const APP_SHELL = ["/", "/offline.html", "/manifest.webmanifest", "/icon.svg", "/maskable-icon.svg"];
 
 self.addEventListener("install", (event) => {

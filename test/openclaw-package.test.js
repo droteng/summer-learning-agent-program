@@ -7,7 +7,7 @@ test("OpenClaw package metadata defines a sellable education package", async () 
   const agents = JSON.parse(await readFile("openclaw/agents.json", "utf8"));
   const safety = JSON.parse(await readFile("openclaw/safety-policy.json", "utf8"));
 
-  assert.equal(packageMetadata.packageId, "learning-squad-ai.grade6-summer");
+  assert.equal(packageMetadata.packageId, "dr-spark-academy.grade6-summer");
   assert.equal(packageMetadata.entryAgent, "principal-agent");
   assert.ok(packageMetadata.distribution.clawHub.listingTitle.includes("Grade 6"));
   assert.ok(agents.agents.some((agent) => agent.id === "safety-moderator-agent"));

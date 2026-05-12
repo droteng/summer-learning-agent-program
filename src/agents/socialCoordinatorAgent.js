@@ -22,7 +22,7 @@ export function createInvitationRequest({ child, friendName, parentPolicy }) {
   };
 }
 
-export function approveInvitationRequest({ invitationRequest, approvedBy = "parent", baseUrl = "https://learning-squad.ai" }) {
+export function approveInvitationRequest({ invitationRequest, approvedBy = "parent", baseUrl = "https://drsparkacademy.com" }) {
   const token = createInviteToken(invitationRequest.requestedBy, invitationRequest.friendName);
 
   return {

@@ -57,6 +57,11 @@ import { grade6StudyDay2 } from "./grade6/enrichment/study-day2.js";
 import { grade6StudyDay3 } from "./grade6/enrichment/study-day3.js";
 import { grade6StudyDay4 } from "./grade6/enrichment/study-day4.js";
 import { grade6StudyDay5 } from "./grade6/enrichment/study-day5.js";
+import { grade6BookClubDay1 } from "./grade6/enrichment/book-club-day1.js";
+import { grade6BookClubDay2 } from "./grade6/enrichment/book-club-day2.js";
+import { grade6BookClubDay3 } from "./grade6/enrichment/book-club-day3.js";
+import { grade6BookClubDay4 } from "./grade6/enrichment/book-club-day4.js";
+import { grade6BookClubDay5 } from "./grade6/enrichment/book-club-day5.js";
 
 export const ALL_MISSIONS = [
   grade6MathWeek1Day1,
@@ -114,7 +119,12 @@ export const ALL_MISSIONS = [
   grade6StudyDay2,
   grade6StudyDay3,
   grade6StudyDay4,
-  grade6StudyDay5
+  grade6StudyDay5,
+  grade6BookClubDay1,
+  grade6BookClubDay2,
+  grade6BookClubDay3,
+  grade6BookClubDay4,
+  grade6BookClubDay5
 ];
 
 export const authoredMissions = Object.freeze(

@@ -9,7 +9,7 @@
 // What this module is NOT: legal advice. Have counsel review the disclosure
 // copy and the chosen verification method before launch.
 
-export const DISCLOSURE_VERSION = "v1";
+export const DISCLOSURE_VERSION = "v2";
 export const DEFAULT_CONSENT_DURATION_DAYS = 365;
 
 export const CONSENT_SCOPES = Object.freeze({
@@ -179,8 +179,8 @@ export function consentStatusForParent(args) {
 // the disclosure they actually accepted.
 export const PARENT_DISCLOSURE = Object.freeze({
   version: DISCLOSURE_VERSION,
-  operator: "learning-squad.ai",
-  contactEmail: "privacy@learning-squad.ai",
+  operator: "Dr. Spark Academy",
+  contactEmail: "privacy@drsparkacademy.com",
   contactMailing: "[Mailing address goes here before launch]",
   summary:
     "We provide a parent-supervised summer learning program for children. We collect only what is needed to teach your child and to send you weekly reports.",
@@ -202,7 +202,7 @@ export const PARENT_DISCLOSURE = Object.freeze({
   ],
   parentalRights: [
     "Review the data we have stored for your child at any time on the Parent dashboard.",
-    "Request deletion of all of your child's data by emailing privacy@learning-squad.ai. We will delete within 30 days.",
+    "Request deletion of all of your child's data by emailing privacy@drsparkacademy.com. We will delete within 30 days.",
     "Revoke this consent at any time. Revocation stops collection going forward; previously collected data is deleted within 30 days unless you ask us to retain a copy."
   ],
   retention:

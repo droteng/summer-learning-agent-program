@@ -35,3 +35,4 @@ tmp/
 # Local development data
 data/*.sqlite
 data/*.sqlite-*
+.vercel

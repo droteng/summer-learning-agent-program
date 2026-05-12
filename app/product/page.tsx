@@ -31,7 +31,7 @@ export default function ProductPage() {
     <main className="product-page">
       <section className="product-hero">
         <div className="product-hero-copy">
-          <p className="eyebrow">learning-squad.ai</p>
+          <p className="eyebrow">Dr. Spark Academy</p>
           <h1>Summer learning that feels like a mission, not a worksheet.</h1>
           <p>
             A parent-supervised multi-agent program that keeps Grade 6 students engaged with daily lessons,
