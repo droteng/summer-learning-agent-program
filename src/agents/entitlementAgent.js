@@ -62,6 +62,7 @@ export async function resolveEntitlement(args) {
       feature: FEATURES.ACHIEVEMENT_EXPORT,
       now
     }),
+    founderBook: isFeatureUnlocked({ subscription, feature: FEATURES.FOUNDER_BOOK, now }),
     cancelAtPeriodEnd: summary.cancelAtPeriodEnd,
     currentPeriodEnd: summary.currentPeriodEnd
   });
@@ -78,6 +79,7 @@ function defaultEntitlement() {
     llmReports: false,
     teacherShare: false,
     achievementExport: false,
+    founderBook: false,
     cancelAtPeriodEnd: false,
     currentPeriodEnd: null
   });

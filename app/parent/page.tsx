@@ -10,6 +10,7 @@ import { createWeeklyParentReportWithLlm } from "../../src/agents/parentLiaisonA
 import { createLlm } from "../../src/agents/llm/index.js";
 import { loadConsentRecords, loadProgressSnapshot } from "../../src/data/db.js";
 import { consentStatusForParent } from "../../src/agents/consentAgent.js";
+import { resolveEntitlement } from "../../src/agents/entitlementAgent.js";
 import { SUBJECT_ORDER, SUBJECT_THEMES, themeForSubject } from "../../src/data/subjectTheme.js";
 import { PageDecorations, SubjectIcon } from "../child/map/decorations";
 import { ApprovalControls } from "./ApprovalControls";
@@ -71,6 +72,7 @@ export default async function ParentDashboardPage({ searchParams }: { searchPara
   const progress = await loadProgressSafely(studentId);
   const consentRecords = await loadConsentSafely(studentId);
   const consent = consentStatusForParent({ records: consentRecords, studentId });
+  const entitlement = await resolveEntitlement({ studentId });
   const programPlan = createProgramPlan(profile, DEMO_POLICY);
 
   const skillMastery = progress?.skillMastery ?? {};
@@ -243,6 +245,40 @@ export default async function ParentDashboardPage({ searchParams }: { searchPara
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        <section className="pd-card pd-book-card" aria-label="Founder's Book">
+          <div className="pd-section-head">
+            <h3>Founder's Book — Leo and The Game Squad</h3>
+            <p>By Dr. Spark. Included with every paid plan. Read together, then unlock the 5-day book-club enrichment track.</p>
+          </div>
+          <div className="pd-book-body">
+            <div className="pd-book-cover" aria-hidden="true">
+              <span className="pd-book-cover-title">Leo and The Game Squad</span>
+              <span className="pd-book-cover-author">Dr. Spark</span>
+            </div>
+            <div className="pd-book-cta">
+              {entitlement.founderBook ? (
+                <a
+                  className="pd-primary"
+                  href={`/api/book-download?student=${encodeURIComponent(studentId)}`}
+                  download
+                >
+                  Download PDF →
+                </a>
+              ) : (
+                <Link
+                  className="pd-primary"
+                  href={`/parent/billing?student=${encodeURIComponent(studentId)}`}
+                >
+                  Subscribe to unlock →
+                </Link>
+              )}
+              <p className="pd-book-note">
+                Ages 10+. Pairs with the Founder's Book Club enrichment track on the child map.
+              </p>
+            </div>
           </div>
         </section>
 
