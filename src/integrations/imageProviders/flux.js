@@ -10,7 +10,7 @@
 
 import { ImageProviderError } from "./google.js";
 
-const CREATE_PREDICTION = "https://api.replicate.com/v1/predictions";
+const PREDICTIONS_FOR_MODEL = (slug) => `https://api.replicate.com/v1/models/${slug}/predictions`;
 const POLL_INTERVAL_MS = 1500;
 const MAX_POLL_ATTEMPTS = 60;
 
@@ -58,8 +58,7 @@ export function createFluxImageProvider({
     async generate(req) {
       const t0 = now();
       const aspect = req.aspectRatio ?? "1:1";
-      const created = await call("POST", CREATE_PREDICTION, {
-        model,
+      const created = await call("POST", PREDICTIONS_FOR_MODEL(model), {
         input: {
           prompt: req.prompt,
           aspect_ratio: aspect,

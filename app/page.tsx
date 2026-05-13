@@ -106,10 +106,10 @@ export default function LandingPage() {
         </div>
         <div className="ls-hero-art">
           <img
-            src="/landing-hero.svg"
-            alt="A parent and two children learning together at a sunny kitchen table with a glowing tablet"
+            src="/landing-hero.jpg"
+            alt="A parent and two children learning together at a sunny kitchen table with a tablet"
             width={1280}
-            height={720}
+            height={731}
           />
         </div>
       </section>
