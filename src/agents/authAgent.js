@@ -83,13 +83,13 @@ export async function signupParent({ email, password, parentName, childName, chi
         id: childId,
         firstName: childName?.trim() || "Student",
         gradeLevel: 6,
-        role: "child"
+        role: "child",
+        pinHash: childPinHash
       }
     ],
     credentials: {
       version: "scrypt-v1",
-      passwordHash,
-      childPinHash
+      passwordHash
     }
   };
 
@@ -121,21 +121,70 @@ export async function signinChild({ email, pin }) {
   if (!account) {
     return { status: "error", code: "bad_credentials", message: "Email or PIN is incorrect." };
   }
-  const hash = account?.credentials?.childPinHash;
-  if (!hash) {
-    return { status: "error", code: "no_pin_set", message: "Ask a parent to set up a PIN first." };
+  const paddedPin = String(pin ?? "").padStart(8, "0");
+
+  // Match against per-child pinHash (preferred). Fall back to the
+  // legacy account-wide credentials.childPinHash for accounts created
+  // before the multi-child migration — first child wins in that case.
+  const children = Array.isArray(account.children) ? account.children : [];
+  let matched = null;
+  for (const child of children) {
+    if (child?.pinHash && (await verifyPassword(paddedPin, child.pinHash))) {
+      matched = child;
+      break;
+    }
   }
-  const ok = await verifyPassword(String(pin ?? "").padStart(8, "0"), hash);
-  if (!ok) {
+  if (!matched) {
+    const legacyHash = account?.credentials?.childPinHash;
+    if (legacyHash && (await verifyPassword(paddedPin, legacyHash))) {
+      matched = children[0] ?? null;
+    }
+  }
+  if (!matched) {
     return { status: "error", code: "bad_credentials", message: "Email or PIN is incorrect." };
   }
-  const child = account?.children?.[0];
   const session = await createAccountSession({
     accountId: account.id,
     role: "child",
-    childId: child?.id ?? null
+    childId: matched.id ?? null
   });
-  return { status: "ok", account, childId: child?.id ?? null, sessionId: session.id };
+  return { status: "ok", account, childId: matched.id, sessionId: session.id, childName: matched.firstName };
+}
+
+export async function addChildToAccount({ accountId, firstName, gradeLevel, pin, maxChildren }) {
+  const account = await loadFamilyAccount(accountId);
+  if (!account) {
+    return { status: "error", code: "account_not_found", message: "Account not found." };
+  }
+  const children = Array.isArray(account.children) ? account.children : [];
+  if (typeof maxChildren === "number" && children.length >= maxChildren) {
+    return {
+      status: "error",
+      code: "max_children_reached",
+      message: `Your plan supports up to ${maxChildren} child${maxChildren === 1 ? "" : "ren"}. Upgrade to add more.`
+    };
+  }
+  const trimmed = firstName?.trim();
+  if (!trimmed) {
+    return { status: "error", code: "missing_name", message: "Enter the child's first name." };
+  }
+  if (!pin || !/^\d{4,8}$/.test(String(pin))) {
+    return { status: "error", code: "invalid_pin", message: "PIN must be 4–8 digits." };
+  }
+  const newChild = {
+    id: `child_${randomUUID()}`,
+    firstName: trimmed,
+    gradeLevel: Number.isFinite(Number(gradeLevel)) ? Number(gradeLevel) : 6,
+    role: "child",
+    pinHash: await hashPassword(String(pin).padStart(8, "0"))
+  };
+  const nextAccount = {
+    ...account,
+    children: [...children, newChild],
+    updatedAt: new Date().toISOString()
+  };
+  await saveFamilyAccount({ accountId, account: nextAccount });
+  return { status: "ok", child: newChild, account: nextAccount };
 }
 
 export async function createAccountSession({
