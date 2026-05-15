@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { requireStudent } from "../../../lib/auth-server";
 import "../../../landing.css";
 import "../quest-map.css";
 import "../child-hub.css";
@@ -13,8 +14,7 @@ type SearchParams = Promise<{ student?: string }>;
 
 export default async function StarsScreen({ searchParams }: { searchParams: SearchParams }) {
   const params = await searchParams;
-  const studentId =
-    typeof params?.student === "string" && params.student.length > 0 ? params.student : "demo-student";
+  const { studentId } = await requireStudent("/child/signin");
 
   let progress: any = null;
   try {

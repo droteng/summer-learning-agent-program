@@ -2,6 +2,7 @@ import Link from "next/link";
 import "../../landing.css";
 import "../parent.css";
 import { loadParentData } from "../_data";
+import { requireParent } from "../../lib/auth-server";
 import { SubjectIcon } from "../../child/map/decorations";
 
 export const dynamic = "force-dynamic";
@@ -10,8 +11,7 @@ type SearchParams = Promise<{ student?: string; week?: string }>;
 
 export default async function MasteryScreen({ searchParams }: { searchParams: SearchParams }) {
   const params = await searchParams;
-  const studentId =
-    typeof params?.student === "string" && params.student.length > 0 ? params.student : "demo-student";
+  const { studentId } = await requireParent();
   const weekNumber = Number(params?.week ?? 1) || 1;
   const { masteryView, profile } = await loadParentData({ studentId, weekNumber });
 

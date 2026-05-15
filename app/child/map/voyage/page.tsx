@@ -1,5 +1,6 @@
 import Link from "next/link";
 import "../quest-map.css";
+import { requireStudent } from "../../../lib/auth-server";
 import { createProgramPlan } from "../../../../src/agents/principalAgent.js";
 import { tuneProgramPlan } from "../../../../src/agents/adaptiveTuningAgent.js";
 import {
@@ -140,10 +141,10 @@ type SearchParams = Promise<{ student?: string; quest?: string }>;
 
 export default async function QuestMapPage({ searchParams }: { searchParams: SearchParams }) {
   const params = await searchParams;
-  const studentId = typeof params?.student === "string" && params.student.length > 0 ? params.student : "demo-student";
+  const { studentId, studentName } = await requireStudent("/child/signin");
   const requestedQuestId = typeof params?.quest === "string" ? params.quest : null;
 
-  const profile = { ...DEMO_PROFILE, id: studentId };
+  const profile = { ...DEMO_PROFILE, id: studentId, firstName: studentName };
   const progress = await loadProgressSafely(studentId);
   const programPlan = createProgramPlan(profile, DEMO_PARENT_POLICY);
 
@@ -215,7 +216,7 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
     getIslandIllustration(currentIsland),
     buildSubjectHeroMap([...masterySubjects, ...enrichmentTrackSubjects])
   ]);
-  const backHref = `/child/map${studentId !== "demo-student" ? `?student=${encodeURIComponent(studentId)}` : ""}`;
+  const backHref = `/child/map`;
 
   return (
     <main className="qm-page">
