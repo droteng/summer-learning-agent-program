@@ -6,6 +6,7 @@ import {
 } from "../../../src/agents/consentAgent.js";
 import { loadConsentRecords } from "../../../src/data/db.js";
 import { ConsentForm } from "./ConsentForm";
+import { requireParent } from "../../lib/auth-server";
 
 export const dynamic = "force-dynamic";
 
@@ -13,10 +14,9 @@ type SearchParams = Promise<{ student?: string; child?: string; card_auth?: stri
 
 export default async function ConsentPage({ searchParams }: { searchParams: SearchParams }) {
   const params = await searchParams;
-  const studentId =
-    typeof params?.student === "string" && params.student.length > 0 ? params.student : "demo-student";
+  const { studentId, studentName } = await requireParent();
   const childFirstName =
-    typeof params?.child === "string" && params.child.length > 0 ? params.child : "Avery";
+    typeof params?.child === "string" && params.child.length > 0 ? params.child : studentName;
   const cardAuthStatus =
     typeof params?.card_auth === "string" ? params.card_auth : null;
 

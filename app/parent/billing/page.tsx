@@ -8,6 +8,7 @@ import {
 } from "../../../src/agents/billingAgent.js";
 import { loadConsentRecords, loadSubscription } from "../../../src/data/db.js";
 import { PlanPicker } from "./PlanPicker";
+import { requireParent } from "../../lib/auth-server";
 
 export const dynamic = "force-dynamic";
 
@@ -15,12 +16,11 @@ type SearchParams = Promise<{ student?: string; status?: string }>;
 
 export default async function BillingPage({ searchParams }: { searchParams: SearchParams }) {
   const params = await searchParams;
-  const studentId =
-    typeof params?.student === "string" && params.student.length > 0 ? params.student : "demo-student";
+  const { studentId, user } = await requireParent();
   const status = typeof params?.status === "string" ? params.status : null;
 
   const consentRecords = await loadConsentRecords(studentId);
-  const parentEmail = pickParentEmailFromConsents(consentRecords);
+  const parentEmail = user.parentEmail ?? pickParentEmailFromConsents(consentRecords);
   const subscription = parentEmail ? await loadSubscription(parentEmail) : null;
   const summary = summarizeBilling(subscription);
   const currentTier = getActivePlan(subscription);

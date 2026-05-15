@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 import "../landing.css";
 import "./parent.css";
 import { loadParentData } from "./_data";
-import { getCurrentUser } from "../lib/auth-server";
+import { requireParent } from "../lib/auth-server";
 import { COOKIE_NAME, signout } from "../../src/agents/authAgent.js";
 
 async function signoutAction() {
@@ -22,26 +22,13 @@ type SearchParams = Promise<{ student?: string; week?: string }>;
 
 export default async function ParentDashboardHub({ searchParams }: { searchParams: SearchParams }) {
   const params = await searchParams;
-  const requestedStudent =
-    typeof params?.student === "string" && params.student.length > 0 ? params.student : null;
   const weekNumber = Number(params?.week ?? 1) || 1;
 
-  const user = await getCurrentUser();
-  // Auth gate: parent-role session, OR ?student= query (for demo / sub-route nav).
-  // Without either, send to sign-in.
-  if (!user && !requestedStudent) {
-    redirect("/parent/signin");
-  }
-  // If a child signs in and lands on /parent, send them to /child/map.
-  if (user?.role === "child") {
-    redirect(`/child/map`);
-  }
-
-  const studentId = user?.childId ?? requestedStudent ?? "demo-student";
+  const { user, studentId } = await requireParent();
   const data = await loadParentData({ studentId, weekNumber });
   const { profile, consent, entitlement, report, completionPct, pendingApprovalCount, progress } = data;
-  const displayName = user?.parentName ?? null;
-  const childDisplayName = user?.childName ?? profile.firstName;
+  const displayName = user.parentName;
+  const childDisplayName = user.childName ?? profile.firstName;
 
   const q = `?student=${encodeURIComponent(studentId)}&week=${weekNumber}`;
 

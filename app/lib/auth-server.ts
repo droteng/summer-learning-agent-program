@@ -7,6 +7,7 @@
 // Returns null if no cookie, expired session, or missing account.
 
 import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 import { COOKIE_NAME, currentUser } from "../../src/agents/authAgent.js";
 
 export type CurrentUser = {
@@ -27,40 +28,41 @@ export async function getCurrentUser(): Promise<CurrentUser | null> {
   return user as CurrentUser | null;
 }
 
-// Identity resolver for the dashboards. Order of preference:
-//   1. Real session cookie (parent or child role)
-//   2. ?student= query param (legacy / demo fallback)
-//   3. "demo-student" hardcoded fallback
+// Require a signed-in parent (or child whose parent has a session).
+// Returns the resolved studentId or redirects to the given sign-in page.
 //
-// `requestedStudent` is what the page parsed out of searchParams.
-export async function resolveStudentIdentity(requestedStudent: string | null) {
+// `signInPath` defaults to /parent/signin. Pass "/child/signin" from
+// kid-facing routes so the redirect lands on the right form.
+export async function requireStudent(
+  signInPath: "/parent/signin" | "/child/signin" = "/parent/signin"
+): Promise<{
+  user: CurrentUser;
+  studentId: string;
+  studentName: string;
+  parentName: string | null;
+}> {
   const user = await getCurrentUser();
-  if (user?.childId) {
-    return {
-      studentId: user.childId,
-      studentName: user.childName ?? "Student",
-      role: user.role,
-      isAuthenticated: true,
-      isDemo: false,
-      parentName: user.parentName
-    };
-  }
-  if (requestedStudent && requestedStudent.length > 0) {
-    return {
-      studentId: requestedStudent,
-      studentName: null,
-      role: null,
-      isAuthenticated: false,
-      isDemo: requestedStudent === "demo-student",
-      parentName: null
-    };
+  if (!user || !user.childId) {
+    redirect(signInPath);
   }
   return {
-    studentId: "demo-student",
-    studentName: null,
-    role: null,
-    isAuthenticated: false,
-    isDemo: true,
-    parentName: null
+    user: user!,
+    studentId: user!.childId!,
+    studentName: user!.childName ?? "Student",
+    parentName: user!.parentName
+  };
+}
+
+// Like requireStudent but parent-only. Child sessions are redirected
+// to /child/map so they can't peek at the parent dashboard.
+export async function requireParent() {
+  const user = await getCurrentUser();
+  if (!user) redirect("/parent/signin");
+  if (user.role === "child") redirect("/child/map");
+  return {
+    user,
+    studentId: user.childId ?? "",
+    studentName: user.childName ?? "Student",
+    parentName: user.parentName
   };
 }

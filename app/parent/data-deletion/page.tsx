@@ -2,6 +2,7 @@ import Link from "next/link";
 import "./data-deletion.css";
 import { loadErasureAudits } from "../../../src/data/db.js";
 import { ErasureForm } from "./ErasureForm";
+import { requireParent } from "../../lib/auth-server";
 
 export const dynamic = "force-dynamic";
 
@@ -9,10 +10,9 @@ type SearchParams = Promise<{ student?: string; child?: string }>;
 
 export default async function DataDeletionPage({ searchParams }: { searchParams: SearchParams }) {
   const params = await searchParams;
-  const studentId =
-    typeof params?.student === "string" && params.student.length > 0 ? params.student : "demo-student";
+  const { studentId, studentName } = await requireParent();
   const childFirstName =
-    typeof params?.child === "string" && params.child.length > 0 ? params.child : "Avery";
+    typeof params?.child === "string" && params.child.length > 0 ? params.child : studentName;
 
   const audits = await loadErasureAudits(studentId);
 

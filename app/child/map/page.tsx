@@ -11,7 +11,7 @@ import { createProgramPlan } from "../../../src/agents/principalAgent.js";
 import { tuneProgramPlan } from "../../../src/agents/adaptiveTuningAgent.js";
 import { masteryToDiagnosticSummary } from "../../../src/agents/masteryAgent.js";
 import { findAuthoredMissionsForDay, findEnrichmentMissions } from "../../../src/content/index.js";
-import { getCurrentUser } from "../../lib/auth-server";
+import { requireStudent } from "../../lib/auth-server";
 import { COOKIE_NAME, signout } from "../../../src/agents/authAgent.js";
 
 async function childSignoutAction() {
@@ -52,17 +52,9 @@ async function loadProgressSafely(studentId: string) {
 
 export default async function ChildHubPage({ searchParams }: { searchParams: SearchParams }) {
   const params = await searchParams;
-  const requestedStudent =
-    typeof params?.student === "string" && params.student.length > 0 ? params.student : null;
   const requestedQuestId = typeof params?.quest === "string" ? params.quest : null;
 
-  const user = await getCurrentUser();
-  // Auth gate: require a session OR a ?student= demo param. Otherwise sign in.
-  if (!user && !requestedStudent) {
-    redirect("/child/signin");
-  }
-
-  const studentId = user?.childId ?? requestedStudent ?? "demo-student";
+  const { user, studentId, studentName } = await requireStudent("/child/signin");
 
   // Deep-link compatibility: ?quest=X URLs route to the voyage view.
   if (requestedQuestId) {
@@ -70,7 +62,7 @@ export default async function ChildHubPage({ searchParams }: { searchParams: Sea
     redirect(target);
   }
 
-  const profile = { ...DEMO_PROFILE, id: studentId, firstName: user?.childName ?? DEMO_PROFILE.firstName };
+  const profile = { ...DEMO_PROFILE, id: studentId, firstName: studentName };
   const progress = await loadProgressSafely(studentId);
   const entitlement = await resolveEntitlement({ studentId });
 
@@ -109,15 +101,11 @@ export default async function ChildHubPage({ searchParams }: { searchParams: Sea
         </Link>
         <nav className="ls-nav-links" aria-label="Primary">
           <Link href={`/parent${q}`}>Parent view</Link>
-          {user ? (
-            <form action={childSignoutAction}>
-              <button type="submit" className="ls-nav-cta" style={{ border: "none", cursor: "pointer", font: "inherit" }}>
-                Sign out
-              </button>
-            </form>
-          ) : (
-            <Link href="/">Home</Link>
-          )}
+          <form action={childSignoutAction}>
+            <button type="submit" className="ls-nav-cta" style={{ border: "none", cursor: "pointer", font: "inherit" }}>
+              Sign out
+            </button>
+          </form>
         </nav>
       </header>
 
