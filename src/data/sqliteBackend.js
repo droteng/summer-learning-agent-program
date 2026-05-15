@@ -104,6 +104,16 @@ export function createSqliteBackend({ dbPath = DEFAULT_DB_PATH } = {}) {
         CREATE INDEX IF NOT EXISTS generated_images_intent_idx
           ON generated_images(intent);
 
+        CREATE TABLE IF NOT EXISTS email_tokens (
+          token_hash TEXT PRIMARY KEY,
+          account_id TEXT NOT NULL,
+          email TEXT NOT NULL,
+          kind TEXT NOT NULL,
+          expires_at TEXT NOT NULL,
+          created_at TEXT NOT NULL
+        );
+        CREATE INDEX IF NOT EXISTS email_tokens_account_idx ON email_tokens(account_id);
+
         CREATE TABLE IF NOT EXISTS image_budget_usage (
           month_key TEXT PRIMARY KEY,
           spent_cents REAL NOT NULL,
@@ -416,6 +426,40 @@ export function createSqliteBackend({ dbPath = DEFAULT_DB_PATH } = {}) {
         )
         .run(lowerEmail, JSON.stringify(merged), merged.stripeCustomerId ?? null, merged.accountId ?? null, updatedAt);
       return { subscription: merged, updatedAt };
+    },
+    saveEmailToken({ tokenHash, accountId, email, kind, ttlMs }) {
+      const createdAt = new Date();
+      const expiresAt = new Date(createdAt.getTime() + ttlMs);
+      getDb()
+        .prepare(
+          `INSERT INTO email_tokens (token_hash, account_id, email, kind, expires_at, created_at)
+           VALUES (?, ?, ?, ?, ?, ?)
+           ON CONFLICT(token_hash)
+           DO UPDATE SET expires_at = excluded.expires_at`
+        )
+        .run(tokenHash, accountId, String(email).toLowerCase(), kind, expiresAt.toISOString(), createdAt.toISOString());
+      return { expiresAt: expiresAt.toISOString() };
+    },
+    loadEmailToken({ tokenHash, kind }) {
+      const row = getDb()
+        .prepare("SELECT account_id, email, kind, expires_at FROM email_tokens WHERE token_hash = ? AND kind = ?")
+        .get(tokenHash, kind);
+      if (!row) return null;
+      if (new Date(row.expires_at).getTime() <= Date.now()) {
+        getDb().prepare("DELETE FROM email_tokens WHERE token_hash = ?").run(tokenHash);
+        return null;
+      }
+      return { accountId: row.account_id, email: row.email, kind: row.kind, expiresAt: row.expires_at };
+    },
+    deleteEmailToken(tokenHash) {
+      getDb().prepare("DELETE FROM email_tokens WHERE token_hash = ?").run(tokenHash);
+    },
+    deleteEmailTokensForAccount({ accountId, kind }) {
+      if (kind) {
+        getDb().prepare("DELETE FROM email_tokens WHERE account_id = ? AND kind = ?").run(accountId, kind);
+      } else {
+        getDb().prepare("DELETE FROM email_tokens WHERE account_id = ?").run(accountId);
+      }
     },
     loadGeneratedImage(cacheKey) {
       const row = getDb()

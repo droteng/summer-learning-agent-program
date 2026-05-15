@@ -1,5 +1,11 @@
 import { NextResponse } from "next/server";
-import { signupParent, COOKIE_NAME } from "../../../../src/agents/authAgent.js";
+import {
+  signupParent,
+  mintEmailToken,
+  COOKIE_NAME,
+  TOKEN_KINDS
+} from "../../../../src/agents/authAgent.js";
+import { createEmailSender } from "../../../../src/integrations/email.js";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -26,6 +32,32 @@ export async function POST(request: Request) {
       { status: result.code === "email_taken" ? 409 : 400 }
     );
   }
+
+  // Fire-and-forget verification email. Don't block signup on email
+  // delivery — the parent can resend later from the dashboard banner.
+  (async () => {
+    try {
+      const token = await mintEmailToken({
+        accountId: result.account.id,
+        email: result.account.parent.email,
+        kind: TOKEN_KINDS.VERIFY_EMAIL
+      });
+      const appUrl = process.env.APP_URL ?? new URL(request.url).origin;
+      const link = `${appUrl}/api/auth/verify-email?token=${encodeURIComponent(token)}`;
+      await createEmailSender().send({
+        to: result.account.parent.email,
+        subject: "Welcome — verify your Dr. Spark Academy email",
+        html: `<p>Welcome to Dr. Spark Academy!</p>
+<p>Verify your email to receive weekly reports and password-reset links:</p>
+<p><a href="${link}" style="display:inline-block;padding:10px 20px;background:#f97316;color:white;border-radius:999px;text-decoration:none;font-weight:700">Verify email</a></p>
+<p>Link expires in 24 hours.</p>`,
+        text: `Verify your Dr. Spark Academy email: ${link}`
+      });
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.error("[signup_verify_email] send failed", err);
+    }
+  })();
 
   const res = NextResponse.json({
     ok: true,

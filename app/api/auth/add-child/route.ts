@@ -23,7 +23,7 @@ export async function POST(request: Request) {
 
   // Cap child count by the parent's plan tier. Look up entitlement
   // using the existing child id so it reads the right subscription.
-  const entitlement = await resolveEntitlement({ studentId: user.childId ?? "" });
+  const entitlement = await resolveEntitlement({ studentId: user.childId ?? "", accountId: user.accountId });
 
   const result = await addChildToAccount({
     accountId: user.accountId,
