@@ -74,6 +74,14 @@ export default async function ParentDashboardHub({ searchParams }: { searchParam
       badge: null
     },
     {
+      key: "children",
+      icon: "👨‍👩‍👧",
+      title: "Children",
+      sub: "Add a sibling, set PINs, manage profiles.",
+      href: `/parent/children`,
+      badge: null
+    },
+    {
       key: "billing",
       icon: "⚙️",
       title: "Plan & billing",
