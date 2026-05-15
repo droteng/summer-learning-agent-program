@@ -1,0 +1,165 @@
+/* Child hub — single-viewport landing for the kid after sign-in.
+   Uses the shared summer theme from app/landing.css but with kid-friendly
+   touches: bigger emojis, brighter accents, more playful copy. */
+
+.child-hub {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.child-hub-hero {
+  max-width: 1100px;
+  margin: 16px auto 28px;
+  padding: 0 clamp(20px, 4vw, 40px);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: end;
+}
+@media (max-width: 760px) {
+  .child-hub-hero { grid-template-columns: 1fr; align-items: start; }
+}
+.child-hub-hero-copy h1 {
+  margin: 6px 0 6px;
+  font-size: clamp(34px, 5vw, 52px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+.child-hub-hero-copy p {
+  margin: 0;
+  font-size: clamp(16px, 1.6vw, 19px);
+  color: var(--ls-muted, #4b5563);
+  line-height: 1.45;
+}
+
+.child-hub-stats {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.child-hub-stat {
+  background: white;
+  border: 1px solid rgba(31, 41, 55, 0.08);
+  border-radius: 14px;
+  padding: 12px 14px;
+  text-align: center;
+  min-width: 86px;
+  box-shadow: 0 8px 18px -16px rgba(31, 41, 55, 0.2);
+}
+.child-hub-stat-icon {
+  display: block;
+  font-size: 22px;
+  margin-bottom: 2px;
+  filter: grayscale(0.4);
+  transition: filter 0.15s;
+}
+.child-hub-stat[data-active="true"] .child-hub-stat-icon {
+  filter: grayscale(0);
+}
+.child-hub-stat-value {
+  display: block;
+  font-size: 22px;
+  font-weight: 900;
+  color: #1f2937;
+  line-height: 1.1;
+}
+.child-hub-stat-label {
+  display: block;
+  font-size: 11px;
+  color: var(--ls-muted, #4b5563);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.child-hub-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 40px) 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  width: 100%;
+}
+.child-hub-card {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  align-items: center;
+  gap: 14px;
+  padding: 22px 24px;
+  background: white;
+  border: 2px solid rgba(31, 41, 55, 0.08);
+  border-radius: 20px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 14px 30px -22px rgba(31, 41, 55, 0.25);
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+.child-hub-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--ls-accent, #f97316);
+  box-shadow: 0 22px 40px -22px rgba(249, 115, 22, 0.45);
+}
+.child-hub-card-icon {
+  font-size: 40px;
+  line-height: 1;
+}
+.child-hub-card h3 {
+  margin: 0 0 4px;
+  font-size: 19px;
+  font-weight: 800;
+  color: #1f2937;
+}
+.child-hub-card p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--ls-muted, #4b5563);
+  line-height: 1.4;
+}
+.child-hub-card-arrow {
+  font-size: 24px;
+  color: var(--ls-accent, #f97316);
+  font-weight: 700;
+}
+
+.child-hub-card-primary {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 70%, #fdba74 100%);
+  border-color: var(--ls-accent, #f97316);
+  box-shadow: 0 18px 40px -22px rgba(249, 115, 22, 0.55);
+}
+.child-hub-card-primary .child-hub-card-icon { font-size: 52px; }
+.child-hub-card-primary h3 { font-size: 24px; }
+.child-hub-card-primary p { font-size: 15px; color: #1f2937; }
+.child-hub-card-primary .child-hub-card-arrow { font-size: 32px; }
+
+@media (max-width: 720px) {
+  .child-hub-card-primary { grid-column: 1; }
+}
+
+.child-hub-upgrade {
+  max-width: 1100px;
+  margin: 0 auto 24px;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  width: calc(100% - 40px);
+  background: linear-gradient(135deg, #1e3a8a, #6d28d9);
+  color: white;
+  border-radius: 14px;
+  box-shadow: 0 14px 32px -20px rgba(99, 30, 152, 0.6);
+  font-weight: 600;
+}
+.child-hub-upgrade a {
+  background: white;
+  color: #1e3a8a;
+  padding: 8px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+}
