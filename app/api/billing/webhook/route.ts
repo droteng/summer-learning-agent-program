@@ -55,12 +55,17 @@ async function dispatch(event: any) {
     const sub = subscriptionFromStripeEvent(event);
     if (!sub) return;
     let parentEmail = sub.parentEmail;
-    if (!parentEmail && sub.stripeCustomerId) {
-      const existing = await loadSubscriptionByCustomerId(sub.stripeCustomerId);
-      parentEmail = existing?.parentEmail ?? null;
+    let existing = null;
+    if (sub.stripeCustomerId) {
+      existing = await loadSubscriptionByCustomerId(sub.stripeCustomerId);
+      if (!parentEmail) parentEmail = existing?.parentEmail ?? null;
     }
     if (!parentEmail) return;
-    await saveSubscription({ parentEmail, subscription: sub });
+    // Preserve the accountId set at checkout — Stripe sub-events don't
+    // carry our client_reference_id, so we read it back from whatever
+    // was stored for this customer.
+    const subWithAccount = { ...sub, accountId: sub.accountId ?? existing?.accountId ?? null };
+    await saveSubscription({ parentEmail, subscription: subWithAccount });
     return;
   }
 
@@ -73,11 +78,18 @@ async function dispatch(event: any) {
       null;
     if (!customerEmail) return;
 
+    // account_id comes from client_reference_id (preferred) or metadata.
+    const accountId =
+      session?.client_reference_id ?? session?.metadata?.account_id ?? null;
+
     // mode=payment → one-time summer pass. Build a synthetic 90-day record.
     if (session?.mode === "payment") {
       const summer = subscriptionFromCheckoutSession({ session });
       if (!summer) return;
-      await saveSubscription({ parentEmail: customerEmail, subscription: summer });
+      await saveSubscription({
+        parentEmail: customerEmail,
+        subscription: { ...summer, accountId }
+      });
       return;
     }
 
@@ -91,6 +103,7 @@ async function dispatch(event: any) {
           stripeSubscriptionId: session.subscription,
           stripeCustomerId: session.customer,
           parentEmail: customerEmail.toLowerCase(),
+          accountId,
           studentId: session?.metadata?.student_id ?? null,
           tier: null,
           status: "active",

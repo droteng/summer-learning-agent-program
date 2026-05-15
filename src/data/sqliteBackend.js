@@ -124,6 +124,16 @@ export function createSqliteBackend({ dbPath = DEFAULT_DB_PATH } = {}) {
       } catch {
         /* index already exists */
       }
+      try {
+        db.exec(`ALTER TABLE subscriptions ADD COLUMN account_id TEXT`);
+      } catch {
+        /* column already exists */
+      }
+      try {
+        db.exec(`CREATE INDEX IF NOT EXISTS subscriptions_account_idx ON subscriptions(account_id)`);
+      } catch {
+        /* index already exists */
+      }
     }
     return db;
   }
@@ -383,20 +393,28 @@ export function createSqliteBackend({ dbPath = DEFAULT_DB_PATH } = {}) {
         .get(stripeCustomerId);
       return row ? JSON.parse(row.subscription_json) : null;
     },
+    loadSubscriptionByAccountId(accountId) {
+      if (!accountId) return null;
+      const row = getDb()
+        .prepare("SELECT subscription_json FROM subscriptions WHERE account_id = ?")
+        .get(accountId);
+      return row ? JSON.parse(row.subscription_json) : null;
+    },
     saveSubscription({ parentEmail, subscription }) {
       const updatedAt = new Date().toISOString();
       const lowerEmail = parentEmail.toLowerCase();
       const merged = { ...subscription, parentEmail: lowerEmail, updatedAt };
       getDb()
         .prepare(
-          `INSERT INTO subscriptions (parent_email, subscription_json, stripe_customer_id, updated_at)
-           VALUES (?, ?, ?, ?)
+          `INSERT INTO subscriptions (parent_email, subscription_json, stripe_customer_id, account_id, updated_at)
+           VALUES (?, ?, ?, ?, ?)
            ON CONFLICT(parent_email)
            DO UPDATE SET subscription_json = excluded.subscription_json,
                          stripe_customer_id = excluded.stripe_customer_id,
+                         account_id = excluded.account_id,
                          updated_at = excluded.updated_at`
         )
-        .run(lowerEmail, JSON.stringify(merged), merged.stripeCustomerId ?? null, updatedAt);
+        .run(lowerEmail, JSON.stringify(merged), merged.stripeCustomerId ?? null, merged.accountId ?? null, updatedAt);
       return { subscription: merged, updatedAt };
     },
     loadGeneratedImage(cacheKey) {

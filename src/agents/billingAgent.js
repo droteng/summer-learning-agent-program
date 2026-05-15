@@ -143,6 +143,7 @@ export function subscriptionFromStripeEvent(event) {
     stripeSubscriptionId: sub.id,
     stripeCustomerId: sub.customer ?? null,
     parentEmail: sub.metadata?.parent_email?.toLowerCase() ?? null,
+    accountId: sub.metadata?.account_id ?? null,
     studentId: sub.metadata?.student_id ?? null,
     tier: tierForPriceId(priceId),
     status: normalizeStripeStatus(sub.status),
