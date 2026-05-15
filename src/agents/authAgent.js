@@ -1,4 +1,4 @@
-import { randomBytes, randomUUID } from "node:crypto";
+import { createHash, randomBytes, randomUUID } from "node:crypto";
 import { getRolePermissions } from "./rolePolicyAgent.js";
 import { hashPassword, verifyPassword } from "./passwordAgent.js";
 import {
@@ -7,7 +7,11 @@ import {
   saveFamilyAccount,
   loadAuthSession,
   saveAuthSession,
-  deleteAuthSession
+  deleteAuthSession,
+  saveEmailToken,
+  loadEmailToken,
+  deleteEmailToken,
+  deleteEmailTokensForAccount
 } from "../data/db.js";
 
 // Legacy demo auth — kept so existing /api/auth + auth-agent.test.js
@@ -244,7 +248,87 @@ export async function currentUser(sessionId) {
     accountId: account.id,
     parentEmail: account.parent?.email ?? null,
     parentName: account.parent?.name ?? null,
+    emailVerified: !!account.parent?.emailVerified,
     childId: child?.id ?? null,
     childName: child?.firstName ?? null
   };
+}
+
+// ─── Email tokens (verification + password reset) ─────────────────
+
+export const TOKEN_KINDS = Object.freeze({
+  VERIFY_EMAIL: "verify_email",
+  RESET_PASSWORD: "reset_password"
+});
+
+const VERIFY_TTL_MS = 24 * 60 * 60 * 1000; // 24h
+const RESET_TTL_MS = 60 * 60 * 1000; // 1h
+
+function hashToken(plain) {
+  return createHash("sha256").update(plain).digest("hex");
+}
+
+// Generates a URL-safe random token, stores its hash + metadata, and
+// returns the plaintext so the caller can put it in a link. We never
+// store the plaintext, so an attacker with DB access cannot use the
+// tokens directly.
+export async function mintEmailToken({ accountId, email, kind }) {
+  const ttlMs = kind === TOKEN_KINDS.RESET_PASSWORD ? RESET_TTL_MS : VERIFY_TTL_MS;
+  // Single-use semantics: invalidate any older tokens of the same
+  // kind for this account before issuing a new one.
+  try {
+    await deleteEmailTokensForAccount({ accountId, kind });
+  } catch {
+    /* table may not exist yet on a fresh DB — saveEmailToken will create */
+  }
+  const token = randomBytes(32).toString("base64url");
+  await saveEmailToken({ tokenHash: hashToken(token), accountId, email, kind, ttlMs });
+  return token;
+}
+
+// Validates a plaintext token and consumes it (single-use). Returns
+// the account record on success, null otherwise.
+export async function consumeEmailToken({ token, kind }) {
+  if (!token) return null;
+  const tokenHash = hashToken(token);
+  const record = await loadEmailToken({ tokenHash, kind });
+  if (!record) return null;
+  await deleteEmailToken(tokenHash);
+  const account = await loadFamilyAccount(record.accountId);
+  if (!account) return null;
+  return { account, email: record.email };
+}
+
+export async function markEmailVerified(accountId) {
+  const account = await loadFamilyAccount(accountId);
+  if (!account) return null;
+  const nextAccount = {
+    ...account,
+    parent: { ...(account.parent ?? {}), emailVerified: true, emailVerifiedAt: new Date().toISOString() },
+    updatedAt: new Date().toISOString()
+  };
+  await saveFamilyAccount({ accountId, account: nextAccount });
+  return nextAccount;
+}
+
+export async function setNewPassword({ accountId, newPassword }) {
+  if (typeof newPassword !== "string" || newPassword.length < 8) {
+    return { status: "error", code: "weak_password", message: "Password must be at least 8 characters." };
+  }
+  const account = await loadFamilyAccount(accountId);
+  if (!account) {
+    return { status: "error", code: "account_not_found", message: "Account not found." };
+  }
+  const passwordHash = await hashPassword(newPassword);
+  const nextAccount = {
+    ...account,
+    credentials: { ...(account.credentials ?? {}), passwordHash },
+    updatedAt: new Date().toISOString()
+  };
+  await saveFamilyAccount({ accountId, account: nextAccount });
+  return { status: "ok", account: nextAccount };
+}
+
+export async function lookupAccountByEmail(email) {
+  return loadFamilyAccountByEmail(email);
 }

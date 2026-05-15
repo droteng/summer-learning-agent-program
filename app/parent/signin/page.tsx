@@ -72,6 +72,9 @@ export default function ParentSigninPage() {
           </form>
 
           <p className="ls-auth-foot">
+            <Link href="/parent/forgot-password">Forgot your password?</Link>
+          </p>
+          <p className="ls-auth-foot">
             New to Dr. Spark Academy? <Link href="/parent/signup">Create an account →</Link>
           </p>
           <p className="ls-auth-foot">

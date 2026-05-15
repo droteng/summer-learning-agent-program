@@ -16,6 +16,7 @@ export type CurrentUser = {
   accountId: string;
   parentEmail: string | null;
   parentName: string | null;
+  emailVerified: boolean;
   childId: string | null;
   childName: string | null;
 };

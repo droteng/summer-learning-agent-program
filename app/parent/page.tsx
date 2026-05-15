@@ -113,6 +113,22 @@ export default async function ParentDashboardHub({ searchParams }: { searchParam
         </nav>
       </header>
 
+      {!user.emailVerified && (
+        <div className="pd-hub-banner" style={{ borderColor: "#fbbf24" }}>
+          <div>
+            <span className="pd-hub-banner-eyebrow">Verify your email</span>
+            <span>
+              We sent a verification link to {user.parentEmail}. Click it to start receiving weekly reports and password-reset emails.
+            </span>
+          </div>
+          <form action="/api/auth/resend-verification" method="POST">
+            <button type="submit" className="ls-cta-secondary" style={{ cursor: "pointer", font: "inherit" }}>
+              Resend link →
+            </button>
+          </form>
+        </div>
+      )}
+
       {consent.status !== "active" && (
         <div className="pd-hub-banner">
           <div>

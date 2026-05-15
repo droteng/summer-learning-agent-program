@@ -102,6 +102,16 @@ const SCHEMA_SQL = `
   CREATE INDEX IF NOT EXISTS generated_images_intent_idx
     ON generated_images(intent);
 
+  CREATE TABLE IF NOT EXISTS email_tokens (
+    token_hash TEXT PRIMARY KEY,
+    account_id TEXT NOT NULL,
+    email TEXT NOT NULL,
+    kind TEXT NOT NULL,
+    expires_at TIMESTAMPTZ NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL
+  );
+  CREATE INDEX IF NOT EXISTS email_tokens_account_idx ON email_tokens(account_id);
+
   CREATE TABLE IF NOT EXISTS image_budget_usage (
     month_key TEXT PRIMARY KEY,
     spent_cents NUMERIC NOT NULL,
@@ -456,6 +466,50 @@ export function createPostgresBackend({
         [lowerEmail, JSON.stringify(merged), merged.stripeCustomerId ?? null, merged.accountId ?? null, updatedAt]
       );
       return { subscription: merged, updatedAt };
+    },
+    async saveEmailToken({ tokenHash, accountId, email, kind, ttlMs }) {
+      await ensureSchema();
+      const createdAt = new Date();
+      const expiresAt = new Date(createdAt.getTime() + ttlMs);
+      await pool.query(
+        `INSERT INTO email_tokens (token_hash, account_id, email, kind, expires_at, created_at)
+         VALUES ($1, $2, $3, $4, $5, $6)
+         ON CONFLICT (token_hash)
+         DO UPDATE SET expires_at = EXCLUDED.expires_at`,
+        [tokenHash, accountId, String(email).toLowerCase(), kind, expiresAt.toISOString(), createdAt.toISOString()]
+      );
+      return { expiresAt: expiresAt.toISOString() };
+    },
+    async loadEmailToken({ tokenHash, kind }) {
+      await ensureSchema();
+      const result = await pool.query(
+        "SELECT account_id, email, kind, expires_at FROM email_tokens WHERE token_hash = $1 AND kind = $2",
+        [tokenHash, kind]
+      );
+      const row = result.rows[0];
+      if (!row) return null;
+      if (new Date(row.expires_at).getTime() <= Date.now()) {
+        await pool.query("DELETE FROM email_tokens WHERE token_hash = $1", [tokenHash]);
+        return null;
+      }
+      return {
+        accountId: row.account_id,
+        email: row.email,
+        kind: row.kind,
+        expiresAt: row.expires_at
+      };
+    },
+    async deleteEmailToken(tokenHash) {
+      await ensureSchema();
+      await pool.query("DELETE FROM email_tokens WHERE token_hash = $1", [tokenHash]);
+    },
+    async deleteEmailTokensForAccount({ accountId, kind }) {
+      await ensureSchema();
+      if (kind) {
+        await pool.query("DELETE FROM email_tokens WHERE account_id = $1 AND kind = $2", [accountId, kind]);
+      } else {
+        await pool.query("DELETE FROM email_tokens WHERE account_id = $1", [accountId]);
+      }
     },
     async loadGeneratedImage(cacheKey) {
       await ensureSchema();

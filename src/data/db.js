@@ -124,6 +124,22 @@ export async function loadSubscriptionByAccountId(accountId) {
   return (await getDb()).loadSubscriptionByAccountId(accountId);
 }
 
+export async function saveEmailToken(args) {
+  return (await getDb()).saveEmailToken(args);
+}
+
+export async function loadEmailToken(args) {
+  return (await getDb()).loadEmailToken(args);
+}
+
+export async function deleteEmailToken(tokenHash) {
+  return (await getDb()).deleteEmailToken(tokenHash);
+}
+
+export async function deleteEmailTokensForAccount(args) {
+  return (await getDb()).deleteEmailTokensForAccount(args);
+}
+
 export async function saveSubscription(args) {
   return (await getDb()).saveSubscription(args);
 }

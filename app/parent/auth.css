@@ -91,6 +91,14 @@
   font-size: 14px;
   font-weight: 600;
 }
+.ls-auth-success {
+  margin: 0;
+  padding: 14px 18px;
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+  border-radius: 12px;
+  color: #065f46;
+}
 .ls-auth-foot {
   margin: 18px 0 0;
   font-size: 13.5px;
