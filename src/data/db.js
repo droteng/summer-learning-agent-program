@@ -64,6 +64,10 @@ export async function loadFamilyAccount(accountId) {
   return (await getDb()).loadFamilyAccount(accountId);
 }
 
+export async function loadFamilyAccountByEmail(email) {
+  return (await getDb()).loadFamilyAccountByEmail(email);
+}
+
 export async function saveFamilyAccount(args) {
   return (await getDb()).saveFamilyAccount(args);
 }

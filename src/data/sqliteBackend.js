@@ -111,6 +111,19 @@ export function createSqliteBackend({ dbPath = DEFAULT_DB_PATH } = {}) {
           updated_at TEXT NOT NULL
         );
       `);
+      // Additive migrations — wrapped in try so re-runs are no-ops.
+      try {
+        db.exec(`ALTER TABLE family_accounts ADD COLUMN parent_email TEXT`);
+      } catch {
+        /* column already exists */
+      }
+      try {
+        db.exec(
+          `CREATE UNIQUE INDEX IF NOT EXISTS family_accounts_parent_email_idx ON family_accounts(parent_email) WHERE parent_email IS NOT NULL`
+        );
+      } catch {
+        /* index already exists */
+      }
     }
     return db;
   }
@@ -161,17 +174,27 @@ export function createSqliteBackend({ dbPath = DEFAULT_DB_PATH } = {}) {
       const row = getDb().prepare("SELECT account_json FROM family_accounts WHERE account_id = ?").get(accountId);
       return row ? JSON.parse(row.account_json) : null;
     },
+    loadFamilyAccountByEmail(email) {
+      if (!email) return null;
+      const row = getDb()
+        .prepare("SELECT account_json FROM family_accounts WHERE parent_email = ?")
+        .get(String(email).toLowerCase());
+      return row ? JSON.parse(row.account_json) : null;
+    },
     saveFamilyAccount({ accountId = "local-family", account }) {
       const updatedAt = new Date().toISOString();
       const nextAccount = { ...account, id: accountId, updatedAt };
+      const parentEmail = nextAccount?.parent?.email
+        ? String(nextAccount.parent.email).toLowerCase()
+        : null;
       getDb()
         .prepare(
-          `INSERT INTO family_accounts (account_id, account_json, updated_at)
-           VALUES (?, ?, ?)
+          `INSERT INTO family_accounts (account_id, account_json, updated_at, parent_email)
+           VALUES (?, ?, ?, ?)
            ON CONFLICT(account_id)
-           DO UPDATE SET account_json = excluded.account_json, updated_at = excluded.updated_at`
+           DO UPDATE SET account_json = excluded.account_json, updated_at = excluded.updated_at, parent_email = excluded.parent_email`
         )
-        .run(accountId, JSON.stringify(nextAccount), updatedAt);
+        .run(accountId, JSON.stringify(nextAccount), updatedAt, parentEmail);
       return { account: nextAccount, updatedAt };
     },
     loadAuthSession(sessionId) {

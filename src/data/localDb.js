@@ -8,6 +8,7 @@ export {
   loadProfileSnapshot,
   saveProfileSnapshot,
   loadFamilyAccount,
+  loadFamilyAccountByEmail,
   saveFamilyAccount,
   loadAuthSession,
   saveAuthSession,

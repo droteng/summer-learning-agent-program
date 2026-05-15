@@ -108,6 +108,10 @@ const SCHEMA_SQL = `
     call_count INTEGER NOT NULL,
     updated_at TIMESTAMPTZ NOT NULL
   );
+
+  ALTER TABLE family_accounts ADD COLUMN IF NOT EXISTS parent_email TEXT;
+  CREATE UNIQUE INDEX IF NOT EXISTS family_accounts_parent_email_idx
+    ON family_accounts(parent_email) WHERE parent_email IS NOT NULL;
 `;
 
 export function createPostgresBackend({
@@ -197,16 +201,28 @@ export function createPostgresBackend({
       );
       return result.rows[0] ? result.rows[0].account_json : null;
     },
+    async loadFamilyAccountByEmail(email) {
+      if (!email) return null;
+      await ensureSchema();
+      const result = await pool.query(
+        "SELECT account_json FROM family_accounts WHERE parent_email = $1",
+        [String(email).toLowerCase()]
+      );
+      return result.rows[0] ? result.rows[0].account_json : null;
+    },
     async saveFamilyAccount({ accountId = "local-family", account }) {
       await ensureSchema();
       const updatedAt = nowIso();
       const nextAccount = { ...account, id: accountId, updatedAt };
+      const parentEmail = nextAccount?.parent?.email
+        ? String(nextAccount.parent.email).toLowerCase()
+        : null;
       await pool.query(
-        `INSERT INTO family_accounts (account_id, account_json, updated_at)
-         VALUES ($1, $2::jsonb, $3)
+        `INSERT INTO family_accounts (account_id, account_json, updated_at, parent_email)
+         VALUES ($1, $2::jsonb, $3, $4)
          ON CONFLICT (account_id)
-         DO UPDATE SET account_json = EXCLUDED.account_json, updated_at = EXCLUDED.updated_at`,
-        [accountId, JSON.stringify(nextAccount), updatedAt]
+         DO UPDATE SET account_json = EXCLUDED.account_json, updated_at = EXCLUDED.updated_at, parent_email = EXCLUDED.parent_email`,
+        [accountId, JSON.stringify(nextAccount), updatedAt, parentEmail]
       );
       return { account: nextAccount, updatedAt };
     },

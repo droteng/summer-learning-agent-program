@@ -1,0 +1,108 @@
+/* Auth pages — sign-up, sign-in, child PIN. Shares the summer-warm
+   landing theme but tightened to a single centered card layout. */
+
+.ls-auth-shell {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  padding: 32px clamp(20px, 4vw, 40px) 64px;
+}
+
+.ls-auth-card {
+  width: 100%;
+  max-width: 480px;
+  background: white;
+  border: 2px solid rgba(31, 41, 55, 0.08);
+  border-radius: 22px;
+  padding: clamp(28px, 4vw, 40px);
+  box-shadow: 0 28px 60px -28px rgba(31, 41, 55, 0.3);
+}
+
+.ls-auth-card h1 {
+  margin: 8px 0 6px;
+  font-size: clamp(26px, 3.6vw, 34px);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+.ls-auth-sub {
+  margin: 0 0 22px;
+  color: var(--ls-muted, #4b5563);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.ls-auth-form {
+  display: grid;
+  gap: 14px;
+}
+.ls-auth-form label {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1f2937;
+}
+.ls-auth-form input {
+  appearance: none;
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 16px;
+  border: 2px solid rgba(31, 41, 55, 0.12);
+  border-radius: 12px;
+  background: #fffaf0;
+  font-family: inherit;
+  transition: border-color 0.15s, background 0.15s;
+}
+.ls-auth-form input:focus {
+  outline: none;
+  border-color: var(--ls-accent, #f97316);
+  background: white;
+}
+.ls-auth-hint {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ls-muted, #4b5563);
+}
+.ls-auth-divider {
+  margin: 10px 0 4px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ls-muted, #4b5563);
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ls-auth-divider::before,
+.ls-auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(31, 41, 55, 0.12);
+}
+.ls-auth-error {
+  margin: 0;
+  padding: 10px 14px;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  color: #991b1b;
+  font-size: 14px;
+  font-weight: 600;
+}
+.ls-auth-foot {
+  margin: 18px 0 0;
+  font-size: 13.5px;
+  color: var(--ls-muted, #4b5563);
+}
+.ls-auth-foot a {
+  color: var(--ls-accent-deep, #ea580c);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+button.ls-cta-primary[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

@@ -69,9 +69,9 @@ export default function LandingPage() {
         </Link>
         <nav className="ls-nav-links" aria-label="Primary">
           <Link href="/product">How it works</Link>
-          <Link href="/parent">Parent sign in</Link>
-          <Link href="/child/map">Child sign in</Link>
-          <Link href="/parent/billing" className="ls-nav-cta">Start free trial →</Link>
+          <Link href="/parent/signin">Parent sign in</Link>
+          <Link href="/child/signin">Child sign in</Link>
+          <Link href="/parent/signup" className="ls-nav-cta">Start free trial →</Link>
         </nav>
       </header>
 
@@ -87,18 +87,18 @@ export default function LandingPage() {
             tutoring, and a Founder's Book that pairs with a 5-day reading club.
           </p>
           <div className="ls-cta-row">
-            <Link href="/parent/billing" className="ls-cta-primary">
+            <Link href="/parent/signup" className="ls-cta-primary">
               Start free trial
               <span aria-hidden="true">→</span>
             </Link>
             <Link href="/product" className="ls-cta-secondary">See how it works</Link>
           </div>
           <div className="ls-signin-row">
-            <Link href="/parent" className="ls-signin-link">
+            <Link href="/parent/signin" className="ls-signin-link">
               <span className="ls-signin-icon" aria-hidden="true">👤</span>
               Parent sign in
             </Link>
-            <Link href="/child/map" className="ls-signin-link">
+            <Link href="/child/signin" className="ls-signin-link">
               <span className="ls-signin-icon" aria-hidden="true">🎮</span>
               Child sign in
             </Link>
