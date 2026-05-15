@@ -39,7 +39,7 @@ function getLlm() {
   return cachedLlm;
 }
 
-export async function loadParentData(args: { studentId?: string; weekNumber?: number } = {}) {
+export async function loadParentData(args: { studentId?: string; weekNumber?: number; accountId?: string } = {}) {
   const studentId = args.studentId && args.studentId.length > 0 ? args.studentId : "demo-student";
   const weekNumber = args.weekNumber && args.weekNumber > 0 ? args.weekNumber : 1;
 
@@ -59,7 +59,7 @@ export async function loadParentData(args: { studentId?: string; weekNumber?: nu
     /* keep empty */
   }
   const consent = consentStatusForParent({ records: consentRecords, studentId });
-  const entitlement = await resolveEntitlement({ studentId });
+  const entitlement = await resolveEntitlement({ studentId, accountId: args.accountId });
 
   const programPlan = createProgramPlan(profile, DEMO_POLICY);
   const skillMastery = progress?.skillMastery ?? {};

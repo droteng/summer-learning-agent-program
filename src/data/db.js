@@ -120,6 +120,10 @@ export async function loadSubscriptionByCustomerId(stripeCustomerId) {
   return (await getDb()).loadSubscriptionByCustomerId(stripeCustomerId);
 }
 
+export async function loadSubscriptionByAccountId(accountId) {
+  return (await getDb()).loadSubscriptionByAccountId(accountId);
+}
+
 export async function saveSubscription(args) {
   return (await getDb()).saveSubscription(args);
 }

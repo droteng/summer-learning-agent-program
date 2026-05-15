@@ -112,6 +112,9 @@ const SCHEMA_SQL = `
   ALTER TABLE family_accounts ADD COLUMN IF NOT EXISTS parent_email TEXT;
   CREATE UNIQUE INDEX IF NOT EXISTS family_accounts_parent_email_idx
     ON family_accounts(parent_email) WHERE parent_email IS NOT NULL;
+
+  ALTER TABLE subscriptions ADD COLUMN IF NOT EXISTS account_id TEXT;
+  CREATE INDEX IF NOT EXISTS subscriptions_account_idx ON subscriptions(account_id);
 `;
 
 export function createPostgresBackend({
@@ -428,19 +431,29 @@ export function createPostgresBackend({
       );
       return result.rows[0] ? result.rows[0].subscription_json : null;
     },
+    async loadSubscriptionByAccountId(accountId) {
+      if (!accountId) return null;
+      await ensureSchema();
+      const result = await pool.query(
+        "SELECT subscription_json FROM subscriptions WHERE account_id = $1",
+        [accountId]
+      );
+      return result.rows[0] ? result.rows[0].subscription_json : null;
+    },
     async saveSubscription({ parentEmail, subscription }) {
       await ensureSchema();
       const updatedAt = new Date().toISOString();
       const lowerEmail = parentEmail.toLowerCase();
       const merged = { ...subscription, parentEmail: lowerEmail, updatedAt };
       await pool.query(
-        `INSERT INTO subscriptions (parent_email, subscription_json, stripe_customer_id, updated_at)
-         VALUES ($1, $2::jsonb, $3, $4)
+        `INSERT INTO subscriptions (parent_email, subscription_json, stripe_customer_id, account_id, updated_at)
+         VALUES ($1, $2::jsonb, $3, $4, $5)
          ON CONFLICT (parent_email)
          DO UPDATE SET subscription_json = EXCLUDED.subscription_json,
                        stripe_customer_id = EXCLUDED.stripe_customer_id,
+                       account_id = EXCLUDED.account_id,
                        updated_at = EXCLUDED.updated_at`,
-        [lowerEmail, JSON.stringify(merged), merged.stripeCustomerId ?? null, updatedAt]
+        [lowerEmail, JSON.stringify(merged), merged.stripeCustomerId ?? null, merged.accountId ?? null, updatedAt]
       );
       return { subscription: merged, updatedAt };
     },

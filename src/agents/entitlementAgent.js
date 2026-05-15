@@ -17,32 +17,46 @@ import {
   PLAN_TIERS,
   summarizeBilling
 } from "./billingAgent.js";
-import { loadConsentRecords, loadSubscription } from "../data/db.js";
+import { loadConsentRecords, loadSubscription, loadSubscriptionByAccountId } from "../data/db.js";
 
 /**
- * @param {{ studentId: string, now?: () => Date }} args
+ * @param {{ studentId: string, accountId?: string, now?: () => Date }} args
  */
 export async function resolveEntitlement(args) {
-  const { studentId, now } = args ?? {};
+  const { studentId, accountId, now } = args ?? {};
   if (!studentId) {
     return defaultEntitlement();
   }
 
-  let parentEmail = null;
-  let consentRecords = [];
-  try {
-    consentRecords = await loadConsentRecords(studentId);
-  } catch {
-    // fall through with no records
-  }
-  parentEmail = pickParentEmail(consentRecords);
-
   let subscription = null;
-  if (parentEmail) {
+
+  // Preferred path: accountId-based lookup. Robust to email changes
+  // and to consent-record gaps. Requires that checkout was completed
+  // after the Stripe-account-link PR landed.
+  if (accountId) {
     try {
-      subscription = await loadSubscription(parentEmail);
+      subscription = await loadSubscriptionByAccountId(accountId);
     } catch {
-      // fall through with no subscription
+      /* fall through to email lookup */
+    }
+  }
+
+  let parentEmail = subscription?.parentEmail ?? null;
+  if (!subscription) {
+    let consentRecords = [];
+    try {
+      consentRecords = await loadConsentRecords(studentId);
+    } catch {
+      // fall through with no records
+    }
+    parentEmail = pickParentEmail(consentRecords);
+
+    if (parentEmail) {
+      try {
+        subscription = await loadSubscription(parentEmail);
+      } catch {
+        // fall through with no subscription
+      }
     }
   }
 

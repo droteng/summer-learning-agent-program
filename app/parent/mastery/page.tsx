@@ -11,9 +11,9 @@ type SearchParams = Promise<{ student?: string; week?: string }>;
 
 export default async function MasteryScreen({ searchParams }: { searchParams: SearchParams }) {
   const params = await searchParams;
-  const { studentId } = await requireParent();
+  const { studentId, user } = await requireParent();
   const weekNumber = Number(params?.week ?? 1) || 1;
-  const { masteryView, profile } = await loadParentData({ studentId, weekNumber });
+  const { masteryView, profile } = await loadParentData({ studentId, weekNumber, accountId: user.accountId });
 
   const q = `?student=${encodeURIComponent(studentId)}&week=${weekNumber}`;
 

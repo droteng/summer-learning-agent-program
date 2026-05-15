@@ -25,7 +25,7 @@ export default async function ParentDashboardHub({ searchParams }: { searchParam
   const weekNumber = Number(params?.week ?? 1) || 1;
 
   const { user, studentId } = await requireParent();
-  const data = await loadParentData({ studentId, weekNumber });
+  const data = await loadParentData({ studentId, weekNumber, accountId: user.accountId });
   const { profile, consent, entitlement, report, completionPct, pendingApprovalCount, progress } = data;
   const displayName = user.parentName;
   const childDisplayName = user.childName ?? profile.firstName;

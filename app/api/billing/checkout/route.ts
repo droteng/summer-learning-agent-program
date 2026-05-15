@@ -1,10 +1,12 @@
 import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
 import {
   CADENCES,
   priceIdForTier,
   stripeCheckoutModeForCadence
 } from "../../../../src/agents/billingAgent.js";
 import { createStripeClient, StripeError } from "../../../../src/integrations/stripe.js";
+import { COOKIE_NAME, currentUser } from "../../../../src/agents/authAgent.js";
 
 export const runtime = "nodejs";
 
@@ -21,17 +23,27 @@ export async function POST(request: Request) {
 
   const tier = payload?.tier;
   const cadence = payload?.cadence ?? CADENCES.SUMMER_PASS;
-  const parentEmail = typeof payload?.parentEmail === "string" ? payload.parentEmail.trim() : null;
-  const studentId = typeof payload?.studentId === "string" ? payload.studentId : null;
   if (!tier || !ALLOWED_TIERS.has(tier)) {
     return NextResponse.json({ error: "invalid_tier" }, { status: 400 });
   }
   if (!ALLOWED_CADENCES.has(cadence)) {
     return NextResponse.json({ error: "invalid_cadence" }, { status: 400 });
   }
-  if (!parentEmail) {
-    return NextResponse.json({ error: "parent_email_required" }, { status: 400 });
+
+  // Identity comes from the session, not the body — prevents charging
+  // a Stripe customer under someone else's email.
+  const store = await cookies();
+  const sessionId = store.get(COOKIE_NAME)?.value;
+  const user = await currentUser(sessionId);
+  if (!user || user.role !== "parent" || !user.parentEmail) {
+    return NextResponse.json(
+      { error: "not_signed_in", message: "Sign in to your parent account before subscribing." },
+      { status: 401 }
+    );
   }
+  const parentEmail = user.parentEmail;
+  const accountId = user.accountId;
+  const studentId = user.childId ?? null;
 
   const apiKey = process.env.STRIPE_SECRET_KEY;
   if (!apiKey) {
@@ -65,7 +77,9 @@ export async function POST(request: Request) {
       customerEmail: parentEmail,
       successUrl,
       cancelUrl,
+      clientReferenceId: accountId,
       metadata: {
+        account_id: accountId,
         parent_email: parentEmail,
         cadence,
         price_id: priceId,

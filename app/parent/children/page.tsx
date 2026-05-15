@@ -12,7 +12,7 @@ export const dynamic = "force-dynamic";
 export default async function ChildrenScreen() {
   const { user } = await requireParent();
   const account = await loadFamilyAccount(user.accountId);
-  const entitlement = await resolveEntitlement({ studentId: user.childId ?? "" });
+  const entitlement = await resolveEntitlement({ studentId: user.childId ?? "", accountId: user.accountId });
 
   const children = Array.isArray(account?.children) ? account.children : [];
   const remaining = Math.max(0, entitlement.maxChildren - children.length);
