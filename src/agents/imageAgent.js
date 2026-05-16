@@ -36,11 +36,18 @@ export const INTENTS = Object.freeze({
 
 // Each intent points to a preferred chain. The agent walks the chain in
 // order until one provider succeeds. Mock is always the final fallback.
+//
+// Flux is primary across the board — best price ($0.003/img Schnell,
+// $0.055/img Pro) and reliable photo-realistic output. Gemini is the
+// fallback for when Replicate is down or rate-limited. Ideogram stays
+// in front for vocab cards + concept diagrams where readable in-image
+// text matters (Flux is weak there). OpenAI gpt-image-1 stays in the
+// chain for variety if a key is ever configured.
 const INTENT_CHAINS = {
-  [INTENTS.MISSION_HERO]: ["google", "openai", "flux", "mock"],
-  [INTENTS.CONCEPT_DIAGRAM]: ["ideogram", "google", "openai", "flux", "mock"],
-  [INTENTS.SUBJECT_HERO]: ["google", "openai", "flux", "mock"],
-  [INTENTS.VOCAB_CARD]: ["ideogram", "google", "openai", "mock"],
+  [INTENTS.MISSION_HERO]: ["flux", "google", "openai", "mock"],
+  [INTENTS.CONCEPT_DIAGRAM]: ["ideogram", "flux", "google", "openai", "mock"],
+  [INTENTS.SUBJECT_HERO]: ["flux", "google", "openai", "mock"],
+  [INTENTS.VOCAB_CARD]: ["ideogram", "flux", "google", "openai", "mock"],
   [INTENTS.DECORATION]: ["flux", "google", "openai", "mock"]
 };
 
