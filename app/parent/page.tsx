@@ -5,7 +5,14 @@ import "../landing.css";
 import "./parent.css";
 import { loadParentData } from "./_data";
 import { requireParent } from "../lib/auth-server";
-import { COOKIE_NAME, signout } from "../../src/agents/authAgent.js";
+import {
+  COOKIE_NAME,
+  signout,
+  currentUser,
+  mintEmailToken,
+  TOKEN_KINDS
+} from "../../src/agents/authAgent.js";
+import { createEmailSender } from "../../src/integrations/email.js";
 
 async function signoutAction() {
   "use server";
@@ -16,13 +23,56 @@ async function signoutAction() {
   redirect("/");
 }
 
+async function resendVerificationAction() {
+  "use server";
+  const store = await cookies();
+  const sessionId = store.get(COOKIE_NAME)?.value;
+  const user = await currentUser(sessionId);
+  if (!user || user.role !== "parent" || !user.parentEmail) {
+    redirect("/parent/signin");
+  }
+  if (user!.emailVerified) {
+    redirect("/parent?verify=already");
+  }
+  let target = "/parent?verify=error";
+  try {
+    const token = await mintEmailToken({
+      accountId: user!.accountId,
+      email: user!.parentEmail!,
+      kind: TOKEN_KINDS.VERIFY_EMAIL
+    });
+    const appUrl = process.env.APP_URL ?? "https://drsparkacademy.com";
+    const link = `${appUrl}/api/auth/verify-email?token=${encodeURIComponent(token)}`;
+    const sender = createEmailSender();
+    const result = await sender.send({
+      to: user!.parentEmail!,
+      subject: "Verify your Dr. Spark Academy email",
+      html: `<p>Hi ${user!.parentName ?? "there"},</p>
+<p>Click the link below to verify your email. It expires in 24 hours.</p>
+<p><a href="${link}" style="display:inline-block;padding:10px 20px;background:#f97316;color:white;border-radius:999px;text-decoration:none;font-weight:700">Verify email</a></p>`,
+      text: `Verify your Dr. Spark Academy email: ${link}`
+    });
+    // If RESEND_API_KEY isn't set, sender.name === "log" and email
+    // went to stderr only. Surface that so the parent isn't stuck
+    // waiting on an inbox that'll never get an email.
+    target = result.provider === "log" ? "/parent?verify=logged" : "/parent?verify=sent";
+  } catch (err) {
+    // eslint-disable-next-line no-console
+    console.error("[resend_verification_action] failed", err);
+  }
+  // redirect() throws NEXT_REDIRECT — do it AFTER try/catch so the
+  // throw isn't caught by the generic handler above.
+  redirect(target);
+}
+
 export const dynamic = "force-dynamic";
 
 type SearchParams = Promise<{ student?: string; week?: string }>;
 
 export default async function ParentDashboardHub({ searchParams }: { searchParams: SearchParams }) {
-  const params = await searchParams;
+  const params = (await searchParams) as { student?: string; week?: string; verify?: string };
   const weekNumber = Number(params?.week ?? 1) || 1;
+  const verifyStatus = typeof params?.verify === "string" ? params.verify : null;
 
   const { user, studentId } = await requireParent();
   const data = await loadParentData({ studentId, weekNumber, accountId: user.accountId });
@@ -113,6 +163,48 @@ export default async function ParentDashboardHub({ searchParams }: { searchParam
         </nav>
       </header>
 
+      {verifyStatus === "sent" && (
+        <div className="pd-hub-banner" style={{ background: "#ecfdf5", borderColor: "#10b981" }}>
+          <div>
+            <span className="pd-hub-banner-eyebrow" style={{ color: "#065f46" }}>Email sent ✓</span>
+            <span style={{ color: "#065f46" }}>
+              A new verification link is on its way to {user.parentEmail}. Check your inbox (and spam).
+            </span>
+          </div>
+        </div>
+      )}
+      {verifyStatus === "logged" && (
+        <div className="pd-hub-banner" style={{ background: "#fef3c7", borderColor: "#f59e0b" }}>
+          <div>
+            <span className="pd-hub-banner-eyebrow" style={{ color: "#92400e" }}>Email not actually sent</span>
+            <span style={{ color: "#78350f" }}>
+              RESEND_API_KEY isn't configured yet — the link only got logged to the server console.
+              An admin needs to wire Resend in Vercel env settings.
+            </span>
+          </div>
+        </div>
+      )}
+      {verifyStatus === "error" && (
+        <div className="pd-hub-banner" style={{ background: "#fee2e2", borderColor: "#ef4444" }}>
+          <div>
+            <span className="pd-hub-banner-eyebrow" style={{ color: "#991b1b" }}>Could not send email</span>
+            <span style={{ color: "#7f1d1d" }}>
+              Something went wrong. Try again, or contact privacy@drsparkacademy.com if it keeps failing.
+            </span>
+          </div>
+        </div>
+      )}
+      {verifyStatus === "already" && (
+        <div className="pd-hub-banner" style={{ background: "#ecfdf5", borderColor: "#10b981" }}>
+          <div>
+            <span className="pd-hub-banner-eyebrow" style={{ color: "#065f46" }}>Already verified</span>
+            <span style={{ color: "#065f46" }}>
+              Your email is already verified — nothing more to do.
+            </span>
+          </div>
+        </div>
+      )}
+
       {!user.emailVerified && (
         <div className="pd-hub-banner" style={{ borderColor: "#fbbf24" }}>
           <div>
@@ -121,7 +213,7 @@ export default async function ParentDashboardHub({ searchParams }: { searchParam
               We sent a verification link to {user.parentEmail}. Click it to start receiving weekly reports and password-reset emails.
             </span>
           </div>
-          <form action="/api/auth/resend-verification" method="POST">
+          <form action={resendVerificationAction}>
             <button type="submit" className="ls-cta-secondary" style={{ cursor: "pointer", font: "inherit" }}>
               Resend link →
             </button>
