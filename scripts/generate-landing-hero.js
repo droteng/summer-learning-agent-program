@@ -18,13 +18,14 @@ import { createGoogleImageProvider } from "../src/integrations/imageProviders/go
 
 const prompt = [
   "Photorealistic editorial photograph for a kids' education website landing page.",
-  "Scene: a smiling parent and two middle-school children (around age 11-12) sitting together at a sunny kitchen table.",
-  "They are leaning over a tablet that displays colorful learning content — a clean chart, a small science diagram.",
-  "On the table: a fresh red apple, a glass of water, and a notebook with a small star sticker.",
-  "The parent is gently pointing at something on the screen; the children look engaged — one laughing, one thinking with a pencil in hand.",
-  "Soft warm morning light streams through a window in the background. A subtle bookshelf with a few colorful book spines is visible behind them.",
-  "Style: photo-realistic, modern editorial photography, warm natural color palette (cream, amber, soft teal), shallow depth of field with the family in focus.",
-  "Diverse family — show warmth and connection. No logos, no readable on-screen text on the tablet.",
+  "Scene: a smiling parent and two middle-school children (around age 11-12) sitting side-by-side at a sunny kitchen table.",
+  "They are leaning over and looking DOWN at a tablet that's flat on the table between them.",
+  "CAMERA: positioned on the OPPOSITE side of the table, at the family's eye-level, photographing their faces from across the table. We see their faces, hair, and the tops of their hands — we do NOT see what's on the tablet screen because the screen is angled toward THEM, away from us. Only the back of the tablet is faintly visible.",
+  "Their expressions show shared focus and warmth — small smiles, eyes down at the screen.",
+  "On the table near the tablet: a fresh red apple, a glass of water with condensation, a small notebook with a star sticker.",
+  "Soft warm morning light from a window behind the family, gently backlighting their hair. A subtle out-of-focus bookshelf in the background.",
+  "Style: photo-realistic, modern editorial photography, warm natural color palette (cream, amber, soft teal), shallow depth of field with the family's faces in focus.",
+  "Diverse family — show warmth and connection. No logos, no visible screen content.",
   "Composition: 16:9 wide landscape, family slightly left of center, plenty of negative space on the right for headline text overlay."
 ].join(" ");
 
