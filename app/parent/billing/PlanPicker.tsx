@@ -30,7 +30,7 @@ const FEATURE_LABELS: Record<string, string> = {
 };
 
 const CADENCE_LABELS: Record<Cadence, { label: string; tagline: string }> = {
-  summer_pass: { label: "Summer pass", tagline: "90 days — best value" },
+  summer_pass: { label: "Season pass", tagline: "90 days — best value" },
   monthly: { label: "Monthly", tagline: "Flexible" },
   yearly: { label: "Yearly", tagline: "Year-round access" }
 };

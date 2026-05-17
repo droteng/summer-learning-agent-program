@@ -36,7 +36,7 @@ const FEATURES = [
   {
     icon: "💸",
     title: "Honest pricing",
-    body: "$99 single-child Summer Pass · $149 family · $29–$49 monthly · yearly plans for continued enrichment. No surprises."
+    body: "$99 single-child Season Pass · $149 family · $29–$49 monthly · yearly plans for continued enrichment. No surprises."
   }
 ];
 
@@ -138,7 +138,7 @@ export default function LandingPage() {
         <div className="ls-pricing-grid">
           <div className="ls-price-card ls-price-card-feature">
             <span className="ls-price-eyebrow">Most popular</span>
-            <h3>Summer Pass</h3>
+            <h3>Season Pass</h3>
             <p className="ls-price-amount">$99 <span>single child</span></p>
             <p className="ls-price-amount-alt">$149 family · up to 4 kids</p>
             <ul>
@@ -147,7 +147,7 @@ export default function LandingPage() {
               <li>Founder's Book download</li>
               <li>Weekly parent reports</li>
             </ul>
-            <Link href="/parent/billing" className="ls-cta-primary ls-cta-block">Choose Summer Pass</Link>
+            <Link href="/parent/billing" className="ls-cta-primary ls-cta-block">Choose Season Pass</Link>
           </div>
           <div className="ls-price-card">
             <h3>Monthly</h3>
@@ -155,7 +155,7 @@ export default function LandingPage() {
             <p className="ls-price-amount-alt">$49 /mo family</p>
             <ul>
               <li>Cancel anytime</li>
-              <li>Same content as Summer Pass</li>
+              <li>Same content as Season Pass</li>
               <li>Built for try-before-you-commit</li>
             </ul>
             <Link href="/parent/billing" className="ls-cta-secondary ls-cta-block">See monthly plans</Link>
