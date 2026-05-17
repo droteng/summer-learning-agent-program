@@ -163,6 +163,8 @@ export default function ProductPage() {
           <nav aria-label="Footer">
             <Link href="/product">How it works</Link>
             <Link href="/parent/billing">Pricing</Link>
+            <Link href="/terms">Terms</Link>
+            <Link href="/refund-policy">Refunds</Link>
             <Link href="/parent/consent">Consent &amp; privacy</Link>
             <Link href="/parent/data-deletion">Data deletion</Link>
           </nav>
