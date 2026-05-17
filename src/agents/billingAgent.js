@@ -87,7 +87,7 @@ export const PLAN_CATALOG = Object.freeze([
     yearlyUSD: 249,
     features: PLAN_FEATURES[PLAN_TIERS.FAMILY],
     description:
-      "All 8 weeks of authored Grade 6 missions, real LLM tutoring, weekly parent narratives, parent-approved teacher share, achievement transcript, and one enrichment track. Summer pass covers 90 days; yearly adds year-round access to new enrichment tracks as they ship.",
+      "All 8 weeks of authored Grade 6 missions, real LLM tutoring, weekly parent narratives, parent-approved teacher share, achievement transcript, and one enrichment track. Season pass covers 90 days; yearly adds year-round access to new enrichment tracks as they ship.",
     recommended: true
   },
   {
