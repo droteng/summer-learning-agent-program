@@ -169,7 +169,7 @@ export default function ProductPage() {
             <Link href="/parent/data-deletion">Data deletion</Link>
           </nav>
           <p className="ls-footer-fine">
-            © 2026 GENAK Publishing · COPPA-compliant ·{" "}
+            © 2026 Dr. Spark Academy · Operated by GENAK Estates LLC · COPPA-compliant ·{" "}
             <a href="mailto:privacy@drsparkacademy.com">privacy@drsparkacademy.com</a>
           </p>
         </div>

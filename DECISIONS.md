@@ -3,7 +3,7 @@
 ## 2026-05-02
 
 - Use a local-first workspace plus GitHub for portability across computers.
-- Use `/Users/leo/Hard Projects/Paperclip Academy` as the local project folder.
+- Use `/Users/asamoahoteng/Soft Projects/summer-learning-agent-program` as the local project folder.
 - Start with U.S. Grade 6.
 - Build a summer learning program, not a full K-12 school at first.
 - Core subjects are automatic.

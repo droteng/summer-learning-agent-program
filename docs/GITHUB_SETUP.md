@@ -7,7 +7,7 @@ The local repo is connected to GitHub, but the first push is pending because thi
 Path:
 
 ```bash
-/Users/leo/Hard Projects/Paperclip Academy
+/Users/asamoahoteng/Soft Projects/summer-learning-agent-program
 ```
 
 Branch:

@@ -4,7 +4,7 @@ This is a planning draft, not final legal text.
 
 ## Product Privacy Position
 
-Paperclip Academy is designed as a parent-supervised learning program for children. The product should collect only the information needed to run lessons, track progress, approve rewards, support parent-controlled collaboration, and share parent-approved reports.
+Dr. Spark Academy is designed as a parent-supervised learning program for children. The product should collect only the information needed to run lessons, track progress, approve rewards, support parent-controlled collaboration, and share parent-approved reports.
 
 ## Parent Control
 

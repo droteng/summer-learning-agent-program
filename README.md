@@ -1,6 +1,6 @@
-# Paperclip Academy
+# Dr. Spark Academy
 
-Paperclip Academy is a parent-supervised, multi-agent summer learning program for U.S. students. The first launch target is Grade 6, with a core academic camp plus optional enrichment tracks chosen by parents.
+Dr. Spark Academy is a parent-supervised, multi-agent summer learning program for U.S. students. The first launch target is Grade 6, with a core academic camp plus optional enrichment tracks chosen by parents.
 
 The product vision is a coordinated agent school:
 

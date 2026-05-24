@@ -2,7 +2,7 @@
 
 ## Working Name
 
-Paperclip Academy
+Dr. Spark Academy
 
 ## One-Line Promise
 
@@ -10,7 +10,7 @@ A personalized summer learning camp that keeps kids academically sharp, builds r
 
 ## Product Shape
 
-Paperclip Academy should feel like a summer camp to the child and a reliable learning operating system to the parent.
+Dr. Spark Academy should feel like a summer camp to the child and a reliable learning operating system to the parent.
 
 The system uses a Principal Agent as the head coordinator. The Principal Agent assigns teacher agents, adjusts pacing, watches motivation, coordinates projects, and asks parents to approve rewards and sharing.
 

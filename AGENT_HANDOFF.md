@@ -4,7 +4,7 @@ This file is the quick memory for Codex, OpenClaw, or another agent entering the
 
 ## Current Mission
 
-Build Paperclip Academy: a multi-agent summer learning program for U.S. Grade 6 students, expandable to other grade levels.
+Build Dr. Spark Academy: a multi-agent summer learning program for U.S. Grade 6 students, expandable to other grade levels.
 
 ## Product Direction
 

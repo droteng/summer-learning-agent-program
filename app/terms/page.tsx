@@ -4,7 +4,7 @@ import "./legal.css";
 
 export const metadata = {
   title: "Terms of Service — Dr. Spark Academy",
-  description: "The agreement between you and Dr. Spark Academy / GENAK Publishing."
+  description: "The agreement between you and Dr. Spark Academy, operated by GENAK Estates LLC."
 };
 
 const LAST_UPDATED = "May 17, 2026";
@@ -30,8 +30,8 @@ export default function TermsPage() {
           <h1>The agreement between you and us.</h1>
           <p className="legal-meta">Last updated: {LAST_UPDATED}</p>
           <p className="legal-meta">
-            Operator: <strong>GENAK Publishing</strong>, doing business as Dr. Spark Academy
-            (drsparkacademy.com).
+            Operator: <strong>GENAK Estates LLC</strong>, a Connecticut limited liability company,
+            doing business as Dr. Spark Academy (drsparkacademy.com). Mailing: Tolland, Connecticut, USA.
           </p>
         </header>
 
@@ -117,7 +117,7 @@ export default function TermsPage() {
           <h2>7. Intellectual property</h2>
           <p>
             All authored mission content, the Founder's Book "Leo and The Game Squad", artwork, and
-            software are copyright © GENAK Publishing. The text your child writes inside the product
+            software are copyright © GENAK Estates LLC. The text your child writes inside the product
             belongs to your family — you can request a copy or deletion at any time from the parent
             dashboard.
           </p>

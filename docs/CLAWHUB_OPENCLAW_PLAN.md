@@ -2,7 +2,7 @@
 
 ## Goal
 
-Package Paperclip Academy so it can be sold both as:
+Package Dr. Spark Academy so it can be sold both as:
 
 - A consumer web app on the project website.
 - An OpenClaw/ClawHub agent program for OpenClaw users.

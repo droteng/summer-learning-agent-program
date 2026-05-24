@@ -179,9 +179,9 @@ export function consentStatusForParent(args) {
 // the disclosure they actually accepted.
 export const PARENT_DISCLOSURE = Object.freeze({
   version: DISCLOSURE_VERSION,
-  operator: "Dr. Spark Academy",
+  operator: "Dr. Spark Academy, operated by GENAK Estates LLC (Connecticut, USA)",
   contactEmail: "privacy@drsparkacademy.com",
-  contactMailing: "[Mailing address goes here before launch]",
+  contactMailing: "GENAK Estates LLC, Tolland, Connecticut, USA",
   summary:
     "We provide a parent-supervised summer learning program for children. We collect only what is needed to teach your child and to send you weekly reports.",
   dataCollected: [
