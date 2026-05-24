@@ -199,8 +199,9 @@ export default function LandingPage() {
             <Link href="/product">How it works</Link>
             <Link href="/parent/billing">Pricing</Link>
             <Link href="/terms">Terms</Link>
+            <Link href="/privacy">Privacy</Link>
             <Link href="/refund-policy">Refunds</Link>
-            <Link href="/parent/consent">Consent &amp; privacy</Link>
+            <Link href="/parent/consent">Consent</Link>
             <Link href="/parent/data-deletion">Data deletion</Link>
           </nav>
           <p className="ls-footer-fine">

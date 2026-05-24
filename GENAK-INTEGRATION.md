@@ -83,7 +83,7 @@ Read those before doing any deployment / DNS / email work.
 ## Open items for whoever picks this up next
 
 - [x] ~~Reconcile naming: "Paperclip Academy" (internal) vs "Dr. Spark Academy" (public).~~ — done 2026-05-24. Product name is now "Dr. Spark Academy" everywhere in code/docs/public surfaces. Repo folder kept as `summer-learning-agent-program/` to avoid churning git remotes and Vercel config.
-- [ ] Confirm Terms / Privacy pages reference GENAK Estates LLC as operator (check via `curl https://drsparkacademy.com/privacy | grep -i operator`).
+- [x] ~~Confirm Terms / Privacy pages reference GENAK Estates LLC as operator~~ — done 2026-05-24. `/terms` updated from "GENAK Publishing" → "GENAK Estates LLC". `/privacy` page newly created (was a 404 before) at `app/privacy/page.tsx`, COPPA-aligned, 17 sections, full GENAK family pattern. Verify post-deploy via `curl -s https://drsparkacademy.com/privacy | grep -i "GENAK Estates"`.
 - [ ] Update Vercel env vars (if used for outbound email) to use `SMTP_FROM=noreply@drsparkacademy.com` now that the alias is live.
 - [ ] Cross-link Dr. Spark Academy ↔ other GENAK products in the footer (already done on genak.ai → links here).
 - [ ] When restyling for GENAK consistency is on the table, pair it with a single content audit so the brand refresh ships in one go.
