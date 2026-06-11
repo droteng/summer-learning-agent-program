@@ -18,6 +18,8 @@ import {
   summarizeBilling
 } from "./billingAgent.js";
 import { loadConsentRecords, loadSubscription, loadSubscriptionByAccountId } from "../data/db.js";
+import { accessibleSeasons } from "../data/programCatalog.js";
+import { SEASONS, currentSeasonForDate } from "../data/seasonTheme.js";
 
 /**
  * @param {{ studentId: string, accountId?: string, now?: () => Date }} args
@@ -62,6 +64,18 @@ export async function resolveEntitlement(args) {
 
   const tier = getActivePlan(subscription, { now });
   const summary = summarizeBilling(subscription, { now });
+
+  // Year-round access (the yearly cadence / Family Plus) unlocks all four
+  // seasons; a season pass unlocks only the current season. This is the
+  // concrete value of the yearly subscription.
+  const yearRoundAccess = isFeatureUnlocked({
+    subscription,
+    feature: FEATURES.YEAR_ROUND_PRACTICE,
+    now
+  });
+  const nowDate = typeof now === "function" ? now() : new Date();
+  const currentSeason = currentSeasonForDate(nowDate);
+
   return Object.freeze({
     studentId,
     parentEmail,
@@ -77,6 +91,9 @@ export async function resolveEntitlement(args) {
       now
     }),
     founderBook: isFeatureUnlocked({ subscription, feature: FEATURES.FOUNDER_BOOK, now }),
+    yearRoundAccess,
+    currentSeason,
+    accessibleSeasons: accessibleSeasons({ yearRoundAccess, currentSeason }),
     cancelAtPeriodEnd: summary.cancelAtPeriodEnd,
     currentPeriodEnd: summary.currentPeriodEnd
   });
@@ -94,6 +111,9 @@ function defaultEntitlement() {
     teacherShare: false,
     achievementExport: false,
     founderBook: false,
+    yearRoundAccess: false,
+    currentSeason: SEASONS.SUMMER,
+    accessibleSeasons: [SEASONS.SUMMER],
     cancelAtPeriodEnd: false,
     currentPeriodEnd: null
   });
