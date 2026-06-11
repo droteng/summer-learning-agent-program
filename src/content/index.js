@@ -69,6 +69,12 @@ import { fallG6ScienceW1D2 } from "./grade6/fall/week1/science-day2.js";
 import { fallG6ElaW1D3 } from "./grade6/fall/week1/ela-day3.js";
 import { fallG6HistoryW1D4 } from "./grade6/fall/week1/history-day4.js";
 import { fallG6CodingW1D5 } from "./grade6/fall/week1/coding-day5.js";
+// === Fall Expedition (Grade 6) — Week 2: Ecosystems & Food Webs ===
+import { fallG6ScienceW2D1 } from "./grade6/fall/week2/science-day1.js";
+import { fallG6MathW2D2 } from "./grade6/fall/week2/math-day2.js";
+import { fallG6CodingW2D3 } from "./grade6/fall/week2/coding-day3.js";
+import { fallG6ElaW2D4 } from "./grade6/fall/week2/ela-day4.js";
+import { fallG6ScienceW2D5 } from "./grade6/fall/week2/science-day5.js";
 
 export const ALL_MISSIONS = [
   grade6MathWeek1Day1,
@@ -137,7 +143,13 @@ export const ALL_MISSIONS = [
   fallG6ScienceW1D2,
   fallG6ElaW1D3,
   fallG6HistoryW1D4,
-  fallG6CodingW1D5
+  fallG6CodingW1D5,
+  // Fall Expedition — Week 2
+  fallG6ScienceW2D1,
+  fallG6MathW2D2,
+  fallG6CodingW2D3,
+  fallG6ElaW2D4,
+  fallG6ScienceW2D5
 ];
 
 export const authoredMissions = Object.freeze(
