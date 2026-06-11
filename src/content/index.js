@@ -63,6 +63,13 @@ import { grade6BookClubDay3 } from "./grade6/enrichment/book-club-day3.js";
 import { grade6BookClubDay4 } from "./grade6/enrichment/book-club-day4.js";
 import { grade6BookClubDay5 } from "./grade6/enrichment/book-club-day5.js";
 
+// === Fall Expedition (Grade 6) — Week 1: Back to Basics ===
+import { fallG6MathW1D1 } from "./grade6/fall/week1/math-day1.js";
+import { fallG6ScienceW1D2 } from "./grade6/fall/week1/science-day2.js";
+import { fallG6ElaW1D3 } from "./grade6/fall/week1/ela-day3.js";
+import { fallG6HistoryW1D4 } from "./grade6/fall/week1/history-day4.js";
+import { fallG6CodingW1D5 } from "./grade6/fall/week1/coding-day5.js";
+
 export const ALL_MISSIONS = [
   grade6MathWeek1Day1,
   grade6ElaWeek1Day1,
@@ -124,35 +131,65 @@ export const ALL_MISSIONS = [
   grade6BookClubDay2,
   grade6BookClubDay3,
   grade6BookClubDay4,
-  grade6BookClubDay5
+  grade6BookClubDay5,
+  // Fall Expedition — Week 1
+  fallG6MathW1D1,
+  fallG6ScienceW1D2,
+  fallG6ElaW1D3,
+  fallG6HistoryW1D4,
+  fallG6CodingW1D5
 ];
 
 export const authoredMissions = Object.freeze(
   Object.fromEntries(ALL_MISSIONS.map((m) => [m.id, m]))
 );
 
-export function findAuthoredMission({ gradeLevel, weekNumber, dayNumber, subject } = {}) {
+// Missions authored before the seasonal split have no `season` field; they
+// are implicitly Summer. New seasons tag missions explicitly. All lookups
+// default to "summer" so every existing caller behaves identically.
+function missionSeason(mission) {
+  return mission.season ?? "summer";
+}
+
+/**
+ * @param {{ gradeLevel?: number, weekNumber?: number, dayNumber?: number, subject?: string, season?: string }} [args]
+ */
+export function findAuthoredMission(args = {}) {
+  const { gradeLevel, weekNumber, dayNumber, subject, season = "summer" } = args;
   return ALL_MISSIONS.find(
     (mission) =>
       mission.gradeLevel === gradeLevel &&
       mission.weekNumber === weekNumber &&
       mission.dayNumber === dayNumber &&
-      mission.subject === subject
+      mission.subject === subject &&
+      missionSeason(mission) === season
   );
 }
 
-export function findAuthoredMissionsForDay({ gradeLevel, weekNumber, dayNumber } = {}) {
+/**
+ * @param {{ gradeLevel?: number, weekNumber?: number, dayNumber?: number, season?: string }} [args]
+ */
+export function findAuthoredMissionsForDay(args = {}) {
+  const { gradeLevel, weekNumber, dayNumber, season = "summer" } = args;
   return ALL_MISSIONS.filter(
     (mission) =>
       mission.gradeLevel === gradeLevel &&
       mission.weekNumber === weekNumber &&
-      mission.dayNumber === dayNumber
+      mission.dayNumber === dayNumber &&
+      missionSeason(mission) === season
   );
 }
 
-export function findAuthoredMissionsForWeek({ gradeLevel, weekNumber } = {}) {
+/**
+ * @param {{ gradeLevel?: number, weekNumber?: number, season?: string }} [args]
+ */
+export function findAuthoredMissionsForWeek(args = {}) {
+  const { gradeLevel, weekNumber, season = "summer" } = args;
   return ALL_MISSIONS.filter(
-    (mission) => mission.gradeLevel === gradeLevel && mission.weekNumber === weekNumber
+    (mission) =>
+      mission.gradeLevel === gradeLevel &&
+      mission.weekNumber === weekNumber &&
+      missionSeason(mission) === season
   );
 }
 

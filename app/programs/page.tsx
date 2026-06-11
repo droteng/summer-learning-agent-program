@@ -89,6 +89,9 @@ export default function ProgramsPage() {
                   <div>
                     <h3 style={{ color: theme.accentDeep }}>{structure.title}</h3>
                     <span className={`pr-status pr-status-${status.kind}`}>{status.label}</span>
+                    {g6.authoredWeekCount > 0 && g6.status !== "live" && (
+                      <span className="pr-weeks-ready">{g6.authoredWeekCount}/{g6.totalWeeks} weeks ready</span>
+                    )}
                   </div>
                 </header>
                 <p className="pr-season-bigidea">{structure.bigIdea}</p>

@@ -97,16 +97,24 @@ export const SEASON_STRUCTURES = Object.freeze({
   }
 });
 
-// Build the full catalog: every (grade × season) program with its status.
-// A program is "live" only when BOTH the grade is live AND the season has
-// authored content. Right now only Grade 6 / Summer is fully authored.
-const AUTHORED_CONTENT = new Set(["6:summer"]);
+// Which weeks of each program have authored, playable mission content.
+// A program is "live" only when all 8 weeks are authored; otherwise it's
+// in development and we honestly report N/8 weeks ready. Keep this in lockstep
+// with the actual mission files registered in src/content/index.js.
+const AUTHORED_WEEKS = {
+  "6:summer": [1, 2, 3, 4, 5, 6, 7, 8],
+  "6:fall": [1] // Week 1 (Back to Basics) authored; weeks 2–8 in progress.
+};
+
+const TOTAL_WEEKS = 8;
+
+function authoredWeeksFor(grade, season) {
+  return AUTHORED_WEEKS[`${grade}:${season}`] ?? [];
+}
 
 function programStatus(grade, season) {
-  const key = `${grade}:${season}`;
-  if (AUTHORED_CONTENT.has(key)) return "live";
-  // Anything structured but not yet authored is in development.
-  return "in_development";
+  const authored = authoredWeeksFor(grade, season);
+  return authored.length >= TOTAL_WEEKS ? "live" : "in_development";
 }
 
 export function programId(grade, season) {
@@ -116,6 +124,7 @@ export function programId(grade, season) {
 export function getProgram(grade, season) {
   const structure = SEASON_STRUCTURES[season];
   if (!structure || !GRADES.includes(Number(grade))) return null;
+  const authoredWeeks = authoredWeeksFor(Number(grade), season);
   return Object.freeze({
     id: programId(grade, season),
     grade: Number(grade),
@@ -124,7 +133,10 @@ export function getProgram(grade, season) {
     bigIdea: structure.bigIdea,
     weeks: structure.weeks,
     status: programStatus(Number(grade), season),
-    gradeStatus: GRADE_STATUS[grade] ?? "in_development"
+    gradeStatus: GRADE_STATUS[grade] ?? "in_development",
+    authoredWeeks,
+    authoredWeekCount: authoredWeeks.length,
+    totalWeeks: TOTAL_WEEKS
   });
 }
 

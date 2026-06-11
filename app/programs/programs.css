@@ -89,6 +89,13 @@
 .pr-status-live { background: #dcfce7; color: #15803d; }
 .pr-status-dev { background: #fef3c7; color: #b45309; }
 .pr-status-planned { background: #e5e7eb; color: #4b5563; }
+.pr-weeks-ready {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #6b7280;
+}
 
 .pr-grade-grid {
   display: grid;

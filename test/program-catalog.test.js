@@ -97,9 +97,38 @@ test("buildProgram resolves season + grade and stays back-compatible", () => {
   assert.equal(g4.weeks.length, 8);
 });
 
+test("authored-week tracking reports honest progress per program", () => {
+  const summer = getProgram(6, SEASONS.SUMMER);
+  assert.equal(summer.status, "live");
+  assert.equal(summer.authoredWeekCount, 8);
+
+  const fall = getProgram(6, SEASONS.FALL);
+  assert.equal(fall.status, "in_development");
+  assert.equal(fall.authoredWeekCount, 1, "Fall Week 1 authored");
+  assert.deepEqual(fall.authoredWeeks, [1]);
+  assert.equal(fall.totalWeeks, 8);
+});
+
 test("getProgram returns null for invalid grade or season", () => {
   assert.equal(getProgram(99, SEASONS.SUMMER), null);
   assert.equal(getProgram(6, "autumn"), null);
+});
+
+test("Fall Week 1 missions are authored and season-isolated from Summer", async () => {
+  const { findAuthoredMissionsForDay } = await import("../src/content/index.js");
+  // Summer (default) Day 1 must NOT include any fall mission.
+  const summerDay1 = findAuthoredMissionsForDay({ gradeLevel: 6, weekNumber: 1, dayNumber: 1 });
+  assert.ok(summerDay1.every((m) => (m.season ?? "summer") === "summer"));
+  // Fall Day 1 returns the authored fall math mission.
+  const fallDay1 = findAuthoredMissionsForDay({ gradeLevel: 6, weekNumber: 1, dayNumber: 1, season: "fall" });
+  assert.equal(fallDay1.length, 1);
+  assert.equal(fallDay1[0].id, "g6.fall.math.w1.d1");
+  assert.equal(fallDay1[0].subject, "Math");
+  // Fall Week 1 has all five weekday missions authored.
+  const days = [1, 2, 3, 4, 5].map(
+    (d) => findAuthoredMissionsForDay({ gradeLevel: 6, weekNumber: 1, dayNumber: d, season: "fall" }).length
+  );
+  assert.deepEqual(days, [1, 1, 1, 1, 1]);
 });
 
 test("season themes expose the four seasons in SEASON_THEMES", () => {
