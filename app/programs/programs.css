@@ -1,0 +1,122 @@
+/* /programs roadmap page — leans on landing.css for shell + buttons. */
+
+.pr-hero {
+  align-items: center;
+}
+.pr-season-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-content: center;
+  justify-content: center;
+}
+.pr-season-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 2px solid;
+  font-weight: 800;
+  font-size: 16px;
+}
+.pr-season-chip-emoji { font-size: 20px; }
+
+.pr-season-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+.pr-season-card {
+  border: 2px solid;
+  border-radius: var(--ls-radius, 18px);
+  padding: 22px 22px 18px;
+  box-shadow: 0 14px 30px -22px rgba(31, 41, 55, 0.25);
+}
+.pr-season-card-head {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.pr-season-card-emoji { font-size: 36px; line-height: 1; }
+.pr-season-card-head h3 {
+  margin: 0 0 4px;
+  font-size: 20px;
+  font-weight: 900;
+}
+.pr-season-bigidea {
+  margin: 0 0 14px;
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: #4b5563;
+}
+.pr-week-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 7px;
+}
+.pr-week-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+.pr-week-num {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  color: white;
+  font-weight: 800;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+.pr-week-theme { color: #1f2937; font-weight: 600; }
+
+.pr-status {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.pr-status-live { background: #dcfce7; color: #15803d; }
+.pr-status-dev { background: #fef3c7; color: #b45309; }
+.pr-status-planned { background: #e5e7eb; color: #4b5563; }
+
+.pr-grade-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+.pr-grade-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: white;
+  border: 2px solid rgba(31, 41, 55, 0.08);
+  border-radius: 16px;
+  padding: 18px 20px;
+}
+.pr-grade-card[data-status="live"] { border-color: #16a34a; }
+.pr-grade-num {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--ls-accent, #f97316), var(--ls-rose, #ec4899));
+  color: white;
+  font-weight: 900;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+.pr-grade-card strong { display: block; font-size: 16px; margin-bottom: 4px; }
+
+.pr-yearly { text-align: center; }

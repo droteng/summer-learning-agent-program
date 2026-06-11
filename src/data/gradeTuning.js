@@ -1,4 +1,14 @@
 export const gradeBands = {
+  4: {
+    label: "Grade 4 preview",
+    status: "preview",
+    tuning: {
+      reading: "Use short, concrete passages with strong picture support and pre-taught vocabulary.",
+      math: "Focus on place value, multi-digit operations, simple fractions, and hands-on models.",
+      writing: "Use sentence starters, single-paragraph structure, and lots of worked examples.",
+      coding: "Use unplugged algorithms, sequencing, and simple block-style logic."
+    }
+  },
   5: {
     label: "Grade 5 preview",
     status: "preview",

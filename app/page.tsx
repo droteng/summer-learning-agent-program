@@ -69,6 +69,7 @@ export default function LandingPage() {
         </Link>
         <nav className="ls-nav-links" aria-label="Primary">
           <Link href="/product">How it works</Link>
+          <Link href="/programs">Programs</Link>
           <Link href="/parent/signin">Parent sign in</Link>
           <Link href="/child/signin">Child sign in</Link>
           <Link href="/parent/signup" className="ls-nav-cta">Start free trial →</Link>
@@ -197,6 +198,7 @@ export default function LandingPage() {
           </div>
           <nav aria-label="Footer">
             <Link href="/product">How it works</Link>
+            <Link href="/programs">Programs</Link>
             <Link href="/parent/billing">Pricing</Link>
             <Link href="/terms">Terms</Link>
             <Link href="/privacy">Privacy</Link>
