@@ -104,8 +104,8 @@ test("authored-week tracking reports honest progress per program", () => {
 
   const fall = getProgram(6, SEASONS.FALL);
   assert.equal(fall.status, "in_development");
-  assert.equal(fall.authoredWeekCount, 5, "Fall Weeks 1–5 authored");
-  assert.deepEqual(fall.authoredWeeks, [1, 2, 3, 4, 5]);
+  assert.equal(fall.authoredWeekCount, 6, "Fall Weeks 1–6 authored");
+  assert.deepEqual(fall.authoredWeeks, [1, 2, 3, 4, 5, 6]);
   assert.equal(fall.totalWeeks, 8);
 });
 
@@ -124,8 +124,8 @@ test("Fall Week 1 missions are authored and season-isolated from Summer", async 
   assert.equal(fallDay1.length, 1);
   assert.equal(fallDay1[0].id, "g6.fall.math.w1.d1");
   assert.equal(fallDay1[0].subject, "Math");
-  // Fall Weeks 1–5 each have all five weekday missions authored.
-  for (const week of [1, 2, 3, 4, 5]) {
+  // Fall Weeks 1–6 each have all five weekday missions authored.
+  for (const week of [1, 2, 3, 4, 5, 6]) {
     const days = [1, 2, 3, 4, 5].map(
       (d) => findAuthoredMissionsForDay({ gradeLevel: 6, weekNumber: week, dayNumber: d, season: "fall" }).length
     );
