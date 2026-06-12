@@ -87,6 +87,12 @@ import { fallG6HistoryW4D2 } from "./grade6/fall/week4/history-day2.js";
 import { fallG6MathW4D3 } from "./grade6/fall/week4/math-day3.js";
 import { fallG6ElaW4D4 } from "./grade6/fall/week4/ela-day4.js";
 import { fallG6CodingW4D5 } from "./grade6/fall/week4/coding-day5.js";
+// === Fall Expedition (Grade 6) — Week 5: Persuasive Voices ===
+import { fallG6ElaW5D1 } from "./grade6/fall/week5/ela-day1.js";
+import { fallG6ElaW5D2 } from "./grade6/fall/week5/ela-day2.js";
+import { fallG6MathW5D3 } from "./grade6/fall/week5/math-day3.js";
+import { fallG6WorldW5D4 } from "./grade6/fall/week5/world-day4.js";
+import { fallG6ElaW5D5 } from "./grade6/fall/week5/ela-day5.js";
 
 export const ALL_MISSIONS = [
   grade6MathWeek1Day1,
@@ -173,7 +179,13 @@ export const ALL_MISSIONS = [
   fallG6HistoryW4D2,
   fallG6MathW4D3,
   fallG6ElaW4D4,
-  fallG6CodingW4D5
+  fallG6CodingW4D5,
+  // Fall Expedition — Week 5
+  fallG6ElaW5D1,
+  fallG6ElaW5D2,
+  fallG6MathW5D3,
+  fallG6WorldW5D4,
+  fallG6ElaW5D5
 ];
 
 export const authoredMissions = Object.freeze(
