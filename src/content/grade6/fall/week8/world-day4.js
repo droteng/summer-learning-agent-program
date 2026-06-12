@@ -10,7 +10,7 @@ export const fallG6WorldW8D4 = {
   subject: "World/Current Affairs",
   topic: "Present with clarity and credibility",
   topicTag: "presenting-credibility",
-  estimatedMinutes: 17,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.SL.6.4", "CCSS.SL.6.3"],
   hook: "A showcase is your moment to inform an audience honestly. Today you sharpen the skills that make a presenter believable: clear claims, real evidence, and honest data.",
   miniLesson: [
@@ -125,5 +125,89 @@ export const fallG6WorldW8D4 = {
       description: "Believes admitting a small sample or limit damages credibility.",
       coachMove: "Show that audiences trust presenters who are upfront; overclaiming backfires when questioned."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "would_you_rather",
+      title: "Which Presenter Do You Trust?",
+      prompt:
+        "Would you rather hear a presenter who says 'Everyone agrees my idea is best!' or one who says 'In my survey of 30 classmates, 22 preferred it — though that's just our class'? Which would you believe, and why?",
+      answer:
+        "The second one. Naming a real number (22 of 30) and honestly admitting the limit ('just our class') makes a presenter far more credible than a vague 'everyone agrees.'",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Credibility Makeover",
+      challenge:
+        "Write three weak, overclaiming 'showcase lines' (like 'Studies prove this is the best!'), then give each a credibility makeover: add real-ish evidence, a source, or an honest limit.",
+      steps: [
+        "Write 3 vague or overclaiming sentences a nervous presenter might say.",
+        "For each, add a specific number, example, or named source.",
+        "Add one honest limit (small sample, just our class, etc.).",
+        "Read the 'after' versions aloud — do they sound more trustworthy?"
+      ],
+      deliverable: "A before/after sheet with 3 overclaims rewritten into credible, honest lines.",
+      choiceBoard: [
+        "Make a before/after 'credibility makeover' sheet.",
+        "Make a 'trust meter' poster ranking 4 statements from vague to credible.",
+        "Write a 60-second mini-speech that models clear, sourced, honest claims."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Credibility Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.world.w8.d4.arena1",
+          type: "multiple_choice",
+          stem: "A presenter wants to be credible AND honest. Which line is best?",
+          choices: [
+            "Everyone knows recycling is the answer.",
+            "Our survey of 30 neighbors found 24 would recycle more with curbside bins — though it's a small local sample.",
+            "Trust me, recycling fixes everything.",
+            "Studies prove it, I'm pretty sure."
+          ],
+          answerIndex: 1,
+          explanation: "It gives a specific number and source AND honestly names the limit, which is exactly what makes a presenter credible.",
+          hintLadder: [
+            "Which line has a real, checkable number?",
+            "Which one also admits a limit honestly?",
+            "The survey-of-30-neighbors line does both."
+          ]
+        },
+        {
+          id: "g6.fall.world.w8.d4.arena2",
+          type: "short_answer",
+          stem: "A classmate's showcase slide says 'Our project proves screen time is bad for everyone.' Rewrite it to be credible and honest.",
+          rubric: {
+            level3: "Scales the claim to what evidence could support AND adds a specific finding or named source plus an honest limit.",
+            level2: "Softens the claim OR adds evidence, but not both.",
+            level1: "Still an unsupported overclaim like the original."
+          },
+          exemplar: "In our class survey of 28 students, those who cut evening screen time reported sleeping better — a small sample, but a sign that less late screen time may help rest.",
+          hintLadder: [
+            "Does 'everyone' match the evidence a class project could gather?",
+            "Add a specific finding and who it came from.",
+            "Admit the limit honestly (small or local sample)."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "wellness",
+      title: "Move & Reset: Presenter's Power Pose",
+      prompt:
+        "Stand tall, roll your shoulders back, and hold a confident 'power pose' for 15 seconds while breathing slowly. Then shake out and smile — this is how you'll stand at your showcase.",
+      scienceTieIn: "Standing tall and breathing slowly can lower stress signals in your body, helping you feel calmer and more confident when you present.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "What's one honest limit of your own showcase work that you'll admit out loud — and why will saying it make your audience trust you more?",
+      badge: { id: "credible-presenter", name: "Credible Presenter", emoji: "🎤" },
+      estimatedMinutes: 7
+    }
+  }
 };

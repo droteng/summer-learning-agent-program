@@ -10,7 +10,7 @@ export const fallG6ElaW7D4 = {
   subject: "ELA/Writing",
   topic: "Write cause-and-effect explanations",
   topicTag: "cause-effect-writing",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.W.6.2", "CCSS.W.6.2.C"],
   hook: "Knowing a cause-and-effect chain is one thing; writing it so a reader follows every link is another. Today you turn a chain into clear, connected sentences.",
   miniLesson: [
@@ -120,5 +120,89 @@ export const fallG6ElaW7D4 = {
       description: "Assumes that because two events occurred near each other, one caused the other.",
       coachMove: "Ask 'what's the mechanism?' — if you can't explain HOW one led to the other, it may just be coincidence."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "curiosity",
+      title: "Because vs. And",
+      prompt:
+        "Read these two: (A) 'The leaves fell and the days got colder.' (B) 'The days got colder, so the trees dropped their leaves.' Only ONE actually explains a cause. Which one, and what word gives it away?",
+      answer:
+        "(B) explains a cause — the word 'so' shows the cold caused the leaves to drop. (A) only lists two things with 'and'; it doesn't say one led to the other.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: The 'Because' Paragraph",
+      challenge:
+        "Turn a real autumn cause-and-effect chain (like harvest surplus → first cities) into a smooth paragraph where every link is connected with a linking word — no link left for the reader to guess.",
+      steps: [
+        "Pick or invent a 3-link cause-and-effect chain.",
+        "Write a sentence for each link, but connect them with linking words (because, so, as a result, therefore).",
+        "Read it aloud and circle every linking word — there should be at least two.",
+        "Fix any spot where the reader would have to guess WHY one event led to the next."
+      ],
+      deliverable: "A 3-4 sentence cause-and-effect paragraph with at least two linking words and every connection made explicit.",
+      choiceBoard: [
+        "Write the paragraph about a historical chain.",
+        "Write it about a chain from your own day.",
+        "Write it as a short news report explaining why something happened."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Linking-Words Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.ela.w7.d4.arena1",
+          type: "multiple_choice",
+          stem: "Which sentence correctly shows cause-and-effect WITHOUT falsely treating 'happening together' as proof?",
+          choices: [
+            "The festival happened the same week the leaves turned red, so the leaves caused the festival.",
+            "Because the harvest was large, the village held a bigger festival than usual.",
+            "It was autumn and there was a festival.",
+            "The festival and the cold weather both happened in October."
+          ],
+          answerIndex: 1,
+          explanation: "Only option B shows a real mechanism (a large harvest leading to a bigger festival). The others either confuse timing with causation or just list events.",
+          hintLadder: [
+            "Avoid sentences that say 'happened together, so one caused the other.'",
+            "Look for a sentence with a real WHY behind the link.",
+            "The large-harvest sentence explains the actual cause."
+          ]
+        },
+        {
+          id: "g6.fall.ela.w7.d4.arena2",
+          type: "short_answer",
+          stem: "Rewrite this weak pair as ONE cause-and-effect sentence with an explicit linking word: 'The first frost came early. Farmers rushed to bring in the pumpkins.'",
+          rubric: {
+            level3: "One sentence with an explicit linking word that clearly shows the early frost CAUSED the rush to harvest.",
+            level2: "Links them but the cause-effect connection is still a little loose.",
+            level1: "Leaves them as two separate statements with no clear link."
+          },
+          exemplar: "Because the first frost came early, farmers rushed to bring in the pumpkins before they could be ruined.",
+          hintLadder: [
+            "Which sentence is the cause? (the early frost)",
+            "Join them with 'because' or 'so.'",
+            "Make the WHY the farmers rushed explicit."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "wellness",
+      title: "Move & Reset: Shake It Out",
+      prompt:
+        "Stand and shake out each body part in a chain: shake your hands (10s) → arms → shoulders → whole body, then take 3 slow breaths. One movement flowing into the next, just like a cause-effect chain.",
+      scienceTieIn: "Shaking out your muscles releases built-up tension and boosts blood flow, helping your brain feel alert and ready to write again.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Write one cause-and-effect sentence about your day using a linking word like 'because' or 'so.' Did making the link explicit make it clearer?",
+      badge: { id: "linking-word-writer", name: "Linking-Word Writer", emoji: "✍️" },
+      estimatedMinutes: 7
+    }
+  }
 };

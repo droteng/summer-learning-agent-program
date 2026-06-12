@@ -9,7 +9,7 @@ export const grade6ElaWeek8Day3 = {
   subject: "ELA/Writing",
   topic: "First draft and prototype",
   topicTag: "capstone-draft",
-  estimatedMinutes: 20,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.6.W.4", "CCSS.6.W.5"],
   hook: "Today you make a rough version. Done beats perfect on Day 3 — perfect comes on Day 4.",
   miniLesson: [
@@ -131,5 +131,88 @@ export const grade6ElaWeek8Day3 = {
       description: "Spends Day 3 perfecting paragraph 1 and never reaches paragraph 5.",
       coachMove: "First draft = the whole shape, rough. Perfectionism is for Day 4."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "curiosity",
+      title: "Why 'Done' Beats 'Perfect' Today",
+      prompt:
+        "Imagine two builders: one finishes a rough whole house, the other perfects one beautiful door and runs out of time. On Day 3 of a 5-day project, which builder is in better shape — and why?",
+      answer: "The rough-whole-house builder. You can only fix and polish something that exists. A perfect door with no house leaves you with nothing to present.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Speed-Draft Storyboard",
+      challenge:
+        "Sketch your whole capstone as a fast storyboard — one box per section. Don't polish; just get every section on the page so you can SEE the shape.",
+      steps: [
+        "Draw one box for each section of your project, in order.",
+        "Write a one-line label inside each box.",
+        "Mark any box that still needs research with a [bracket] note.",
+        "Step back and check: does every part of your project have a box?"
+      ],
+      deliverable: "A storyboard with one labeled box per section, placeholders marked.",
+      choiceBoard: [
+        "Draw a comic-strip style storyboard.",
+        "Make a numbered outline with [brackets] for gaps.",
+        "Record a 60-second 'walk-through' describing each section aloud."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: First-Draft Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.ela.w8.d3.arena1",
+          type: "multiple_choice",
+          stem: "Halfway through your first draft you realize you're missing a key statistic. Best Day-3 move?",
+          choices: [
+            "Stop everything and research until you find the exact number.",
+            "Write [stat needed] and keep drafting the rest of the sections.",
+            "Make up a number so it looks finished.",
+            "Delete the whole section."
+          ],
+          answerIndex: 1,
+          explanation: "A placeholder keeps your momentum so you finish the whole shape today. You fill it with a real, sourced number tomorrow — never invent data.",
+          hintLadder: [
+            "Day 3 is about completing the shape, not perfecting parts.",
+            "What lets you keep moving without losing the fact?",
+            "Use a [placeholder] and come back tomorrow."
+          ]
+        },
+        {
+          id: "g6.ela.w8.d3.arena2",
+          type: "short_answer",
+          stem: "List the sections of your capstone draft IN ORDER, with one line each, and mark at least one [placeholder] where you still need content.",
+          rubric: {
+            level3: "Sections listed in a logical order, each with a one-line description, and at least one placeholder marked for missing content.",
+            level2: "Sections present but order is unclear or no placeholder is marked.",
+            level1: "A single block with no clear sections or order."
+          },
+          exemplar: "1. Intro (15s): why ratios matter in cooking. 2. Pancake example: [need real measurements]. 3. Baking soda surprise: doubling doesn't scale. 4. Quick tip + close (15s).",
+          hintLadder: [
+            "Name your sections in the order the audience meets them.",
+            "Add one line describing each.",
+            "Mark a [placeholder] anywhere you still need a fact or example."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Shake-It-Out Break",
+      prompt:
+        "Stand up and shake out your hands, arms, then legs for 20 seconds, like flicking off water. Roll your shoulders back 5 times. Then sit and take one big breath.",
+      scienceTieIn: "Quick whole-body movement boosts blood flow to your brain, which can clear mental fog after a stretch of focused drafting.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "You got the whole shape down today. Which section are you most excited to polish tomorrow, and what would make it shine?",
+      badge: { id: "rough-draft-rocket", name: "Rough Draft Rocket", emoji: "✏️" },
+      estimatedMinutes: 7
+    }
+  }
 };

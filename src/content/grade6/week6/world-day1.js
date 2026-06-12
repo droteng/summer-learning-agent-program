@@ -9,7 +9,7 @@ export const grade6WorldWeek6Day1 = {
   subject: "World/Current Affairs",
   topic: "Reading a news story",
   topicTag: "news-reading",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["C3.D2.His.10.6-8", "C3.D3.4.6-8"],
   hook: "A good reader pulls the same five things from any news story. Today you practice that move on a kid-safe topic.",
   miniLesson: [
@@ -127,5 +127,88 @@ export const grade6WorldWeek6Day1 = {
       description: "Accepts a claim because one article said it, without cross-checking.",
       coachMove: "If only one source has a claim, label it 'reported, not confirmed' until you find a second independent source."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "riddle",
+      title: "Find the Missing W",
+      prompt:
+        "A headline says: 'New library opens downtown next month.' Four of the five Ws are answerable here. Which W is missing — who, what, where, when, or why?",
+      answer: "WHY is missing — we know who (a library), what (opens), where (downtown), and when (next month), but not WHY it's opening or who decided to build it.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Be the Reporter",
+      challenge:
+        "Invent a kid-safe, good-news headline about your school or town, then write a short news lead (2-3 sentences) that delivers all five Ws clearly and names a source.",
+      steps: [
+        "Write a catchy but honest headline.",
+        "Write a lead paragraph that answers who, what, where, when, why.",
+        "Add one line naming a source ('according to ___').",
+        "Underline or label each of the five Ws in your lead."
+      ],
+      deliverable: "A short news story (headline + lead) with all five Ws labeled and a named source.",
+      choiceBoard: [
+        "Write it as a newspaper article with a byline.",
+        "Script it as a 20-second TV news report.",
+        "Design a front-page layout with headline and lead."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Five Ws Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.world.w6.d1.arena1",
+          type: "multiple_choice",
+          stem: "In 'On Saturday, volunteers in Lagos planted 2,000 trees to fight air pollution,' what is the WHAT?",
+          choices: [
+            "On Saturday",
+            "Volunteers in Lagos",
+            "Planted 2,000 trees",
+            "To fight air pollution"
+          ],
+          answerIndex: 2,
+          explanation: "WHAT is the event or action that happened: planting 2,000 trees. 'On Saturday' is when, 'volunteers in Lagos' is who/where, and the last clause is why.",
+          hintLadder: [
+            "WHAT names the action that happened.",
+            "Skip the when (Saturday), who (volunteers), and why (fight pollution).",
+            "Planted 2,000 trees."
+          ]
+        },
+        {
+          id: "g6.world.w6.d1.arena2",
+          type: "short_answer",
+          stem: "A post claims 'Scientists say chocolate makes you smarter!' but names no scientist, study, or source. What two steps should a careful reader take before sharing it?",
+          rubric: {
+            level3: "Names two solid steps: look for a named source/study, AND cross-check with a second reliable source before sharing or believing.",
+            level2: "Names one good step (e.g., check the source) but the second is vague or missing.",
+            level1: "Says to believe or share it, or gives no real verification step."
+          },
+          exemplar: "First, look for the actual study or scientist named. Second, search a reliable source to see if other outlets report the same finding before sharing it.",
+          hintLadder: [
+            "The claim has no source — what's your first move?",
+            "How do you confirm a claim is real?",
+            "Find the source, then cross-check a second reliable one."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "mindfulness",
+      title: "Move & Reset: Five Senses Check-In",
+      prompt:
+        "Pause and name (silently) 5 things you SEE, 4 you HEAR, 3 you can TOUCH, 2 you SMELL, 1 you can TASTE. Just like a reporter gathers the five Ws, you're gathering five senses to reset your focus.",
+      scienceTieIn: "Naming what your senses notice calms the brain's alarm system, sharpening the focus you need to read carefully and spot missing details.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Think of a story you heard today (from a person, a screen, anywhere). Which of the five Ws was clearest, and which was missing?",
+      badge: { id: "five-ws-reporter", name: "Five Ws Reporter", emoji: "📰" },
+      estimatedMinutes: 7
+    }
+  }
 };

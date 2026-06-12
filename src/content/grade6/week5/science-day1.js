@@ -9,7 +9,7 @@ export const grade6ScienceWeek5Day1 = {
   subject: "Science",
   topic: "Ecosystems and interdependence",
   topicTag: "ecosystems",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["NGSS.MS-LS2-1", "NGSS.MS-LS2-3"],
   hook: "Living things depend on each other in surprising ways. Today you trace energy through a food chain — and predict what happens when a link breaks.",
   miniLesson: [
@@ -117,5 +117,84 @@ export const grade6ScienceWeek5Day1 = {
       description: "Calls mushrooms producers because they grow from the ground.",
       coachMove: "Mushrooms are fungi: they don't photosynthesize. They decompose dead matter instead."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "would_you_rather",
+      title: "Would You Rather?",
+      prompt:
+        "Would you rather be a producer (a plant making its own food from sunlight) or a top predator (eating others but eaten by none)? Think about energy and risk before you pick!",
+      answer:
+        "Producers never have to hunt and feed the whole web, but they can't move and get eaten constantly. Top predators eat well but get the least energy (most is lost up the chain) and crash hard if prey disappear. Either way you're trading energy for safety!",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Design a Food Web",
+      challenge:
+        "Invent a small ecosystem (a pond, a forest floor, a backyard). Draw a food web with at least one producer, two consumers, and one decomposer, using arrows to show who eats whom. Then predict what happens if you remove one species.",
+      steps: [
+        "Choose your ecosystem and list 4-5 living things in it.",
+        "Draw arrows showing the energy flow (arrow points from food to eater).",
+        "Label each one: producer, consumer, or decomposer.",
+        "Circle one species, remove it, and write what cascade follows."
+      ],
+      deliverable: "A food web diagram with labeled roles, arrows, and a short prediction of what happens when one link is removed.",
+      choiceBoard: [
+        "Draw the food web with arrows and labels.",
+        "Write a short story told by one animal whose food source disappears.",
+        "Make a 'cascade comic' showing the chain reaction step by step."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Ecosystem Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.sci.w5.d1.arena1",
+          type: "numeric",
+          stem: "A food chain loses about 90% of its energy at each step. If the producers capture 50,000 units, roughly how many units reach a SECOND-level consumer?",
+          answer: 500,
+          tolerance: 0,
+          hintLadder: [
+            "After the first consumer, only 10% of 50,000 remains.",
+            "50,000 → 5,000 after step one.",
+            "5,000 → 500 after the second step."
+          ],
+          explanation: "50,000 → 5,000 (first-level) → 500 (second-level). Each step keeps just 10%."
+        },
+        {
+          id: "g6.sci.w5.d1.arena2",
+          type: "short_answer",
+          stem: "Sea otters eat sea urchins, and sea urchins eat kelp. If hunters wipe out the sea otters, predict the cascade through the kelp forest. Give at least two linked effects.",
+          rubric: {
+            level3: "Explains that urchins boom without otters, then over-eat the kelp, so the kelp forest shrinks (and names a further effect on fish/animals that live in the kelp).",
+            level2: "Gets the urchin increase and kelp decrease but stops there or is vague on the link.",
+            level1: "Only one effect, or the cause-and-effect direction is wrong."
+          },
+          exemplar: "With no otters, the sea urchin population explodes. The urchins over-graze the kelp, so the kelp forest shrinks. Fish and other animals that shelter in the kelp lose their habitat and decline too.",
+          hintLadder: [
+            "What did the otters keep in check?",
+            "If urchins boom, what happens to the kelp they eat?",
+            "Then what happens to everything that lives in the kelp?"
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Food Web Freeze",
+      prompt:
+        "Pick an animal in your ecosystem and act it out — hop like a rabbit, slither like a snake, soar like a hawk — for 30 seconds, then FREEZE like the food chain just lost a link!",
+      scienceTieIn: "Moving and then resting mirrors how energy flows and slows through a food chain, while the exercise sends fresh oxygen to your brain.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Think of a small change you've seen cause a big effect — at home, in nature, or with friends. How was it like a food-web cascade?",
+      badge: { id: "ecosystem-explorer", name: "Ecosystem Explorer", emoji: "🦦" },
+      estimatedMinutes: 7
+    }
+  }
 };

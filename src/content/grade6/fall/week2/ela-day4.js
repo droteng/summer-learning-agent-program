@@ -10,7 +10,7 @@ export const fallG6ElaW2D4 = {
   subject: "ELA/Writing",
   topic: "Explain it clearly — informational writing",
   topicTag: "informational-writing",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.W.6.2", "CCSS.W.6.2.C"],
   hook: "Knowing how a food web works is one thing — explaining it so a younger kid gets it is another. Today you turn ecosystem science into clear informational writing.",
   miniLesson: [
@@ -120,5 +120,90 @@ export const fallG6ElaW2D4 = {
       description: "Uses words like 'producer' or 'trophic' without defining them.",
       coachMove: "Have them circle every science word and add a quick definition or example right after each one."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "would_you_rather",
+      title: "Clear or Fancy?",
+      prompt:
+        "You're explaining a food chain to a 7-year-old. Would you rather write 'Energy is transferred trophically between organisms' or 'A rabbit eats grass, then a fox eats the rabbit'? Which actually teaches better, and why?",
+      answer:
+        "The second one! Clear, everyday words with a picture-able example teach far better than fancy science vocabulary. Good informational writing meets the reader where they are.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: 'For Younger Kids' Field Guide",
+      challenge:
+        "Write a one-page mini field guide that explains the fall food web to a younger student. Use a clear topic sentence, define every science word right away, and connect ideas with transition words.",
+      materials: ["Paper & markers, OR a writing/drawing app"],
+      steps: [
+        "Start with a topic sentence naming what you'll explain.",
+        "Explain producers, consumers, and decomposers in order, defining each term as you use it.",
+        "Connect your sentences with transitions (first, then, because, as a result).",
+        "Add one simple drawing or example a young reader could picture."
+      ],
+      deliverable: "A one-page field guide explaining the food web clearly, with defined terms and transitions.",
+      choiceBoard: [
+        "Write the one-page field guide.",
+        "Make an illustrated mini-poster with labeled drawings.",
+        "Script a 60-second 'explain it to a kid' video and write it out."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Clear Writing Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.ela.w2.d4.arena1",
+          type: "multiple_choice",
+          stem: "Which sentence best DEFINES a term for a younger reader the moment it's used?",
+          choices: [
+            "Decomposers are essential to nutrient cycling within trophic systems.",
+            "Decomposers, like mushrooms, are living things that break down dead plants and animals.",
+            "Decomposers do their job well.",
+            "You already know what decomposers are."
+          ],
+          answerIndex: 1,
+          explanation: "It defines the term in plain words AND gives a picture-able example (mushrooms), exactly what a young reader needs.",
+          hintLadder: [
+            "Which option explains the word instead of assuming the reader knows it?",
+            "Look for a plain-language definition plus an example.",
+            "The mushrooms sentence both defines and gives an example."
+          ]
+        },
+        {
+          id: "g6.fall.ela.w2.d4.arena2",
+          type: "short_answer",
+          stem: "Rewrite this sentence so a younger reader understands it, keeping the meaning: 'Apex predators regulate prey populations, sustaining ecosystem equilibrium.'",
+          rubric: {
+            level3: "Plain, accurate rewrite that keeps the meaning (top predators keep prey numbers in check, which keeps the ecosystem balanced) using kid-friendly words.",
+            level2: "Simpler but loses or muddles part of the meaning.",
+            level1: "Still confusing or changes the meaning."
+          },
+          exemplar: "Top predators, like wolves, keep the number of animals they hunt from getting too big, which helps the whole ecosystem stay balanced.",
+          hintLadder: [
+            "What is an 'apex predator'? (the top hunter)",
+            "What does 'regulate prey populations' mean? (keep prey numbers in check)",
+            "Say the whole idea the way you'd tell a younger friend."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "wellness",
+      title: "Move & Reset: Read It Aloud",
+      prompt:
+        "Stand up, shake out your arms, and read your favorite sentence from today's writing OUT LOUD in a clear, slow voice — as if a younger kid is listening. Notice any word that trips you up.",
+      scienceTieIn: "Reading aloud uses your hearing and speech together, which helps your brain catch confusing spots your eyes skip over.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Think of a time someone explained something to you clearly. What did they do that made it easy to understand — and how could you use that in your own writing?",
+      badge: { id: "clear-explainer", name: "Clear Explainer", emoji: "📝" },
+      estimatedMinutes: 7
+    }
+  }
 };

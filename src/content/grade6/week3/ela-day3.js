@@ -9,7 +9,7 @@ export const grade6ElaWeek3Day3 = {
   subject: "ELA/Writing",
   topic: "Dialogue and voice",
   topicTag: "dialogue",
-  estimatedMinutes: 16,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.6.W.3.B"],
   hook: "What characters say — and how they say it — gives a story life. Today you punctuate dialogue and make characters sound different.",
   miniLesson: [
@@ -130,5 +130,88 @@ export const grade6ElaWeek3Day3 = {
       description: "Gives a child overly formal or technical lines that don't fit who they are.",
       coachMove: "Read the line out loud. Does it sound like the speaker would actually say it?"
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "riddle",
+      title: "Spot the Speaker",
+      prompt:
+        "Two lines: (A) 'Per my calculations, the velocity is insufficient.' (B) 'Nuh-uh, you went WAY too slow!' Both mean the same thing. Who probably says each — and what gives their voice away?",
+      answer: "(A) sounds like a scientist or grown-up — formal, technical words. (B) sounds like a kid — casual, blunt, lots of energy. Word choice and rhythm reveal the voice.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Two-Voice Scene",
+      challenge:
+        "Write a short scene (4-6 lines of dialogue) between two characters who sound completely different — for example a nervous new kid and a super-chill veteran. Punctuate every line correctly and start a new paragraph for each speaker.",
+      steps: [
+        "Decide your two characters and one thing they disagree about.",
+        "Give each a 'voice rule' (one talks in short bursts, one rambles; one is formal, one is slangy).",
+        "Write 4-6 lines, new paragraph per speaker, punctuation INSIDE the quotes.",
+        "Read it aloud — can you tell who's speaking even without the 'he said' tags?"
+      ],
+      deliverable: "A 4-6 line dialogue scene with two distinct voices and correct quote punctuation.",
+      choiceBoard: [
+        "Write the two-voice dialogue scene.",
+        "Turn it into a mini comic strip with speech bubbles.",
+        "Record both voices out loud, using a different tone for each character."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Dialogue Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.ela.w3.d3.arena1",
+          type: "multiple_choice",
+          stem: "Which line is punctuated CORRECTLY?",
+          choices: [
+            "\"Are you coming with us\"? asked Dev.",
+            "\"Are you coming with us?\" asked Dev.",
+            "\"Are you coming with us?\", asked Dev.",
+            "Are you coming with us? \"asked Dev\"."
+          ],
+          answerIndex: 1,
+          explanation: "The question mark belongs inside the quotes because it's part of what's spoken, and no extra comma is needed after it before the dialogue tag.",
+          hintLadder: [
+            "Terminal punctuation goes inside the quote marks.",
+            "A question mark already ends the spoken part — you don't add a comma after it too.",
+            "It's the option with the '?' inside the quotes and no extra comma."
+          ]
+        },
+        {
+          id: "g6.ela.w3.d3.arena2",
+          type: "short_answer",
+          stem: "Write 3 lines of dialogue among a coach, a tired player, and an eager rookie. Give each a clearly different voice, use correct quote punctuation, and start a new paragraph for each speaker.",
+          rubric: {
+            level3: "Three lines, three speakers in separate paragraphs, three distinct voices, and correct quote punctuation throughout.",
+            level2: "Three speakers present but two voices sound alike OR there are minor punctuation slips.",
+            level1: "Voices blur together, speakers share paragraphs, or punctuation is frequently wrong."
+          },
+          exemplar: "\"Two more laps, then we're done,\" the coach called.\n\"Two? My legs are basically jelly,\" Sam groaned.\n\"I'll race you both — last one buys snacks!\" the rookie shouted.",
+          hintLadder: [
+            "Give each character one voice trait (firm, weary, hyped).",
+            "Put each line in its own paragraph with punctuation inside the quotes.",
+            "Read it aloud to check the three voices really sound different."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Voice Charades",
+      prompt:
+        "Stand up and say 'I can't believe it' four ways with your whole body: excited (jump), bored (slump), scared (freeze), and proud (chest out). Same words, totally different voice!",
+      scienceTieIn: "Your posture actually shapes how your voice sounds and even how you feel — body and emotion talk to each other through your nervous system.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Whose voice from your day was the most distinct? Write one line of dialogue that captures exactly how they talk.",
+      badge: { id: "voice-virtuoso", name: "Voice Virtuoso", emoji: "🎭" },
+      estimatedMinutes: 7
+    }
+  }
 };

@@ -11,7 +11,7 @@ export const fallG6CodingW4D5 = {
   subject: "Coding/Computer Science/AI",
   topic: "Algorithms are ancient recipes",
   topicTag: "algorithms-sequencing",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CSTA.2-AP-10", "CSTA.2-AP-17"],
   hook: "Builders of the pyramids followed step-by-step instructions — an algorithm. Coders do the same. Today you sequence and debug the steps of an ancient process.",
   miniLesson: [
@@ -126,5 +126,88 @@ export const fallG6CodingW4D5 = {
       description: "Believes an algorithm works no matter the sequence.",
       coachMove: "Run a quick out-of-order example (seal jar before filling) so the broken result makes order's importance obvious."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "riddle",
+      title: "The Scrambled Recipe",
+      prompt:
+        "Here's a 'recipe' to plant a seed, but it's scrambled: [water it], [cover with soil], [dig a hole], [drop the seed in]. What's the correct order — and which step would ruin everything if you did it first?",
+      answer: "Correct order: dig a hole → drop the seed in → cover with soil → water it. Doing 'cover with soil' or 'water it' first would ruin it — you'd have no hole and no seed planted yet.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Ancient Algorithm with a Hidden Bug",
+      challenge:
+        "Write a step-by-step algorithm for an ancient task (build a pyramid block, make papyrus, store grain) — then sneak in ONE out-of-order 'bug' for someone to find and fix.",
+      steps: [
+        "Pick an ancient task and list 4–6 steps in the correct order.",
+        "Number the steps like code lines.",
+        "Swap two steps to plant a bug that breaks the result.",
+        "Challenge a friend or grown-up to spot the bug and put it back in order."
+      ],
+      deliverable: "A numbered ancient-task algorithm with one hidden out-of-order bug to find.",
+      choiceBoard: [
+        "Write the numbered algorithm with a hidden bug.",
+        "Draw it as a flowchart with arrows (and one wrong arrow).",
+        "Make a comic where a worker follows the buggy steps literally and chaos results."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Sequencing Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.code.w4.d5.arena1",
+          type: "multiple_choice",
+          stem: "Algorithm to make papyrus: [1 cut reed strips], [2 press and dry into a sheet], [3 lay strips in a crisscross]. Which order actually works?",
+          choices: [
+            "2 → 1 → 3",
+            "1 → 3 → 2",
+            "3 → 1 → 2",
+            "2 → 3 → 1"
+          ],
+          answerIndex: 1,
+          explanation: "You must cut the strips first, then lay them crisscross, then press and dry them into a sheet: 1 → 3 → 2.",
+          hintLadder: [
+            "What has to exist before you can arrange or press anything?",
+            "You need the strips before you can lay them out.",
+            "Cut → lay crisscross → press and dry."
+          ]
+        },
+        {
+          id: "g6.fall.code.w4.d5.arena2",
+          type: "short_answer",
+          stem: "Here's a buggy plan to light an oil lamp: [light the wick], [pour oil in the lamp], [place the wick in the oil]. Reorder it correctly and say what the bug was.",
+          rubric: {
+            level3: "Correct order (pour oil → place wick in oil → light the wick) AND identifies the bug (lighting the wick before it's soaked in oil / before there's any oil).",
+            level2: "Right order but doesn't name the bug, or names the bug but order is off.",
+            level1: "Wrong order and no explanation."
+          },
+          exemplar: "Correct order: pour oil in the lamp, place the wick in the oil, then light the wick. The bug was trying to light the wick first, before it had any oil to soak up and burn.",
+          hintLadder: [
+            "What does the wick need before it can burn steadily?",
+            "Oil has to be in the lamp and soaked into the wick first.",
+            "Pour oil → place wick → light it."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Step-by-Step Build",
+      prompt:
+        "Be a pyramid builder following an algorithm: squat to 'lift a block,' step right to 'carry it,' lower to 'place it,' then stand tall to 'check your work.' Repeat the 4-step sequence 4 times in order!",
+      scienceTieIn: "Doing movements in a set sequence builds the same brain pathways that help you remember ordered steps — useful for both exercise and algorithms.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Ancient builders and modern coders both follow algorithms. What's a step-by-step process you follow every day without even thinking about the order?",
+      badge: { id: "fall-algorithm-architect", name: "Algorithm Architect", emoji: "🏗️" },
+      estimatedMinutes: 7
+    }
+  }
 };

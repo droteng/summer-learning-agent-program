@@ -10,7 +10,7 @@ export const fallG6MathW6D1 = {
   subject: "Math",
   topic: "Fibonacci and patterns in nature",
   topicTag: "sequences-fibonacci",
-  estimatedMinutes: 17,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.6.EE.A.2", "CCSS.6.NS.B.4"],
   hook: "Count the spirals on a pinecone or the petals on a flower and you keep meeting the same numbers: 1, 1, 2, 3, 5, 8... Today you meet the Fibonacci pattern hiding in nature.",
   miniLesson: [
@@ -115,5 +115,87 @@ export const fallG6MathW6D1 = {
       description: "Thinks Fibonacci multiplies by 2 instead of adding the two previous terms.",
       coachMove: "Check 2, 3, 5: doubling 2 gives 4, not the next term. Fibonacci ADDS the two before."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "curiosity",
+      title: "Spirals on a Pinecone",
+      prompt:
+        "Pick up a pinecone, sunflower, or pineapple this fall and count the spiral rows going one way, then the other. The two counts are almost always Fibonacci numbers (like 8 and 13). Why do you think nature keeps landing on the same numbers?",
+      answer:
+        "Those spiral counts are nearly always neighboring Fibonacci numbers (5 & 8, 8 & 13, 13 & 21). Packing seeds at the Fibonacci-related angle fits the most seeds with no gaps — so the pattern is about efficient packing, not coincidence.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Grow a Fibonacci Leaf Pile",
+      challenge:
+        "Build a cozy autumn collage where the count of items in each row follows Fibonacci: 1, then 1, then 2, 3, 5, 8 leaves (or acorns, or drawn shapes). Watch a tiny rule explode into a full pile.",
+      materials: ["Real leaves/acorns OR paper & markers"],
+      steps: [
+        "Write the Fibonacci sequence you'll use: 1, 1, 2, 3, 5, 8.",
+        "Make a row for each number, placing exactly that many leaves or shapes.",
+        "Label each row with how you got it (the sum of the two rows before).",
+        "Step back: notice how fast a simple add-the-last-two rule grows your pile."
+      ],
+      deliverable: "A labeled Fibonacci collage with rows of 1, 1, 2, 3, 5, and 8 items.",
+      choiceBoard: [
+        "Make the leaf/acorn collage with rows.",
+        "Draw a Fibonacci spiral and color each square section.",
+        "Write a 4-line poem where each line has a Fibonacci number of words (1, 1, 2, 3)."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Fibonacci Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.math.w6.d1.arena1",
+          type: "numeric",
+          stem: "Fibonacci: 1, 1, 2, 3, 5, 8, 13, 21, ___. What is the next number?",
+          answer: 34,
+          tolerance: 0,
+          unit: "",
+          hintLadder: [
+            "Add the last two terms shown.",
+            "13 + 21.",
+            "= 34."
+          ],
+          explanation: "Each term is the sum of the two before it: 13 + 21 = 34."
+        },
+        {
+          id: "g6.fall.math.w6.d1.arena2",
+          type: "short_answer",
+          stem: "A pattern goes 1, 3, 9, 27. Describe its rule and give the next term. Then explain how this rule is different from Fibonacci.",
+          rubric: {
+            level3: "Identifies the rule as multiply by 3 (tripling), gives 81, AND explains Fibonacci instead ADDS the two previous terms rather than multiplying.",
+            level2: "Gets 81 and the tripling rule but doesn't clearly contrast with Fibonacci.",
+            level1: "Wrong next term or wrong rule."
+          },
+          exemplar: "Each term is multiplied by 3, so the next is 27 × 3 = 81. This is different from Fibonacci because Fibonacci adds the two numbers before it instead of multiplying by a fixed number.",
+          hintLadder: [
+            "How do you get from 3 to 9, and 9 to 27?",
+            "It multiplies by 3 each time — that's not adding two terms.",
+            "Next term: 27 × 3 = 81; Fibonacci would add, not multiply."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Fibonacci Stretch Sequence",
+      prompt:
+        "Do a stretch sequence using Fibonacci reps: 1 arm circle, 1 toe touch, 2 jumping jacks, 3 shoulder rolls, 5 marches in place. Notice how the counts grow just like the sequence!",
+      scienceTieIn:
+        "Growing the reps step by step gradually raises your heart rate so blood carries more oxygen to your muscles and brain.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Where did you spot a Fibonacci number in nature this fall — petals, spirals, or seed rows? Write what you found and the numbers you counted.",
+      badge: { id: "fibonacci-forager", name: "Fibonacci Forager", emoji: "🌻" },
+      estimatedMinutes: 7
+    }
+  }
 };

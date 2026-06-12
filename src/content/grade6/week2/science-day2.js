@@ -9,7 +9,7 @@ export const grade6ScienceWeek2Day2 = {
   subject: "Science",
   topic: "Measurement and units",
   topicTag: "measurement",
-  estimatedMinutes: 16,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["NGSS.SEP.5", "CCSS.6.RP.A.3.D"],
   hook: "Numbers without units are just digits. Today you match measurements to the right tool and the right unit.",
   miniLesson: [
@@ -110,5 +110,92 @@ export const grade6ScienceWeek2Day2 = {
       description: "Treats 'how big' (volume) and 'how heavy' (mass) as the same thing.",
       coachMove: "Show two same-size boxes — one full of feathers, one full of rocks. Same volume, very different mass."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "riddle",
+      title: "Unit Riddle",
+      prompt:
+        "I am a number nobody can trust on my own. Tell people '100' and they panic or shrug — but add me and they finally know if you mean a sprint, a marathon, or a snail's crawl. What am I?",
+      answer:
+        "A unit! '100' is meaningless until you say 100 millimeters, 100 meters, or 100 kilometers. Units give numbers their meaning.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Measure My Room",
+      challenge:
+        "Become a measurement scientist for your space. Pick 4 objects around you and estimate, then measure, each one — choosing the smartest unit for every measurement (mm, cm, m, g, kg, or seconds).",
+      materials: ["A ruler or measuring tape, a scale if handy, and something to record on"],
+      steps: [
+        "Pick 4 objects of very different sizes (a coin, a book, a table, a doorway).",
+        "First ESTIMATE each measurement with a unit, then measure for real.",
+        "Pick the best unit so each number is easy to read (not 0.002 m or 2000 mm).",
+        "Make a table comparing your estimate to the real value for each object."
+      ],
+      deliverable: "A measurement table with estimate vs. actual and the chosen unit for 4 objects.",
+      choiceBoard: [
+        "Measure 4 objects with a ruler and scale and record a table.",
+        "Do a 'unit scavenger hunt' — find one thing best measured in mm, cm, m, and kg.",
+        "Time 4 activities (tie a shoe, sing a chorus) and pick the best time unit for each."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Measurement Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.sci.w2.d2.arena1",
+          type: "numeric",
+          stem:
+            "A hiking trail is 3 kilometers long. A scientist needs the length in centimeters. How many centimeters is the trail? (1 km = 1,000 m, 1 m = 100 cm)",
+          answer: 300000,
+          tolerance: 0,
+          unit: "cm",
+          hintLadder: [
+            "First turn kilometers into meters: 3 km × 1,000.",
+            "That's 3,000 meters. Now turn meters into centimeters.",
+            "3,000 m × 100 = 300,000 cm."
+          ],
+          explanation: "3 km × 1,000 = 3,000 m, and 3,000 m × 100 = 300,000 cm."
+        },
+        {
+          id: "g6.sci.w2.d2.arena2",
+          type: "multiple_choice",
+          stem:
+            "Three measurements each lost their unit: a cake baked for '40,' a dog's leash is '2,' and a watermelon's mass is '5.' Which set of units fits each measurement sensibly, in order (baking time, leash length, watermelon mass)?",
+          choices: [
+            "minutes, meters, kilograms",
+            "minutes, kilometers, grams",
+            "seconds, meters, kilometers",
+            "hours, millimeters, kilograms"
+          ],
+          answerIndex: 0,
+          explanation:
+            "Baking time is measured in minutes (40 minutes is reasonable; 40 seconds is too short and 40 hours far too long). A leash length fits meters (2 meters; 2 kilometers or 2 millimeters make no sense). A watermelon's mass fits kilograms (5 kg; 5 grams is a feather, not a melon). So: minutes, meters, kilograms.",
+          hintLadder: [
+            "Match each measurement to what it measures: time, length, or mass.",
+            "Then pick a unit that makes the number sensible — not absurdly tiny or huge.",
+            "40 minutes, a 2 meter leash, and a 5 kilogram melon all make sense."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Human Measuring Tape",
+      prompt:
+        "Use your own body as a measuring tool! Pace out how many of your foot-lengths it takes to cross the room, then how many arm-spans tall a door is. Walk it heel-to-toe and count out loud.",
+      scienceTieIn:
+        "Moving and counting at the same time gets your body and brain coordinating, which boosts blood flow and helps you refocus.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Today you saw that a number is useless without its unit. When might using the WRONG unit (or none at all) cause a real problem in everyday life?",
+      badge: { id: "unit-wizard", name: "Unit Wizard", emoji: "📏" },
+      estimatedMinutes: 7
+    }
+  }
 };

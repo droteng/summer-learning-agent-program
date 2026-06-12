@@ -11,7 +11,7 @@ export const fallG6ElaW5D5 = {
   subject: "ELA/Writing",
   topic: "Revise your persuasive letter",
   topicTag: "revision",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.W.6.5", "CCSS.W.6.1.E"],
   hook: "Strong writing isn't written — it's rewritten. Today you revise a persuasive draft: sharpen the claim, strengthen weak support, and add a closing that asks for action.",
   miniLesson: [
@@ -126,5 +126,88 @@ export const fallG6ElaW5D5 = {
       description: "Adds extra sentences for length even when they don't support the claim.",
       coachMove: "Have them mark each sentence 'supports the claim?' — cut every 'no.' Tight and focused persuades more."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "would_you_rather",
+      title: "Would You Rather Revise or Edit?",
+      prompt:
+        "Your fall letter has a fuzzy main argument AND three misspelled words. Would you rather fix the spelling first, or strengthen the argument first? Explain which actually makes the letter more convincing.",
+      answer: "Strengthen the argument first — that's revising, and it changes whether you persuade anyone. Spelling (editing) matters, but a perfectly spelled weak argument still won't convince.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Before-and-After Revision Tree",
+      challenge:
+        "Take one weak sentence from your persuasive letter and grow it like a tree losing summer leaves for stronger fall ones. Show the 'before' (weak) version and the 'after' (revised) version side by side, plus what you changed and why.",
+      steps: [
+        "Pick one weak or vague sentence from your draft.",
+        "Write the 'before' version on the left.",
+        "Revise it: make it specific, add evidence, or cut what's off-topic.",
+        "Write the 'after' version on the right and label what you improved."
+      ],
+      deliverable: "A before-and-after page showing one sentence revised, with a note on what changed and why it's stronger.",
+      choiceBoard: [
+        "Make a two-column before/after revision chart.",
+        "Draw a 'revision tree' dropping weak words and growing strong ones.",
+        "Record a 30-second clip reading the before and after aloud."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Revision Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.ela.w5.d5.arena1",
+          type: "multiple_choice",
+          stem: "A persuasive letter ends: 'Anyway, that's what I think. Bye.' Which revision is the strongest CALL TO ACTION?",
+          choices: [
+            "'Thanks for reading my letter.'",
+            "'I have lots of feelings about this.'",
+            "'Please approve the fall recycling program at next Tuesday's school board meeting.'",
+            "'The end.'"
+          ],
+          answerIndex: 2,
+          explanation: "A strong call to action names a specific action and when to do it. The others just stop without asking for anything.",
+          hintLadder: [
+            "A call to action asks the reader to DO something specific.",
+            "Which option names both an action and a time?",
+            "The 'approve the program next Tuesday' ending."
+          ]
+        },
+        {
+          id: "g6.fall.ela.w5.d5.arena2",
+          type: "short_answer",
+          stem: "Revise this weak supporting sentence to be specific and add evidence: 'A fall festival would be fun.'",
+          rubric: {
+            level3: "Rewrites it specifically AND adds concrete evidence or a concrete benefit.",
+            level2: "More specific OR adds evidence, but not both.",
+            level1: "Still vague with no evidence."
+          },
+          exemplar: "A fall festival would raise money for our library — last year's bake sale alone brought in $400, and a full festival could double that while bringing families together.",
+          hintLadder: [
+            "What exactly would the festival do, and how much?",
+            "Add a concrete benefit or number.",
+            "Make it specific + supported."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "mindfulness",
+      title: "Move & Reset: Falling-Leaf Breath",
+      prompt:
+        "Imagine a leaf drifting slowly down from a tall fall tree. Breathe in for 4 counts as it lifts on the breeze, and out for 6 slow counts as it settles to the ground. Repeat 5 times.",
+      scienceTieIn: "Making your exhale longer than your inhale switches on the body's 'rest' system, calming your mind so you can review your work with fresh eyes.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Read your finished letter aloud one last time. What single revision this week made it the most convincing — and how do you know?",
+      badge: { id: "fall-revision-master", name: "Revision Master", emoji: "✏️" },
+      estimatedMinutes: 7
+    }
+  }
 };

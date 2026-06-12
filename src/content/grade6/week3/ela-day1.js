@@ -9,7 +9,7 @@ export const grade6ElaWeek3Day1 = {
   subject: "ELA/Writing",
   topic: "Narrative structure",
   topicTag: "narrative-structure",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.6.W.3.A", "CCSS.6.RL.3"],
   hook: "Every good story has shape. Today you map a story's beginning, middle, and end — then plan one of your own.",
   miniLesson: [
@@ -123,5 +123,88 @@ export const grade6ElaWeek3Day1 = {
       description: "Names the character's goal as the conflict instead of the obstacle in the way.",
       coachMove: "Ask: what does the character WANT? Then ask: what's STOPPING them? The second answer is the conflict."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "would_you_rather",
+      title: "Pick Your Plot",
+      prompt:
+        "Would you rather read a story where everything goes perfectly and nothing goes wrong, OR a story where the hero faces a huge problem? Why does one of these sound way more boring?",
+      answer: "The problem-free story is boring — with no conflict, nothing has to change, so there's no story. The trouble is what makes us keep reading.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Story Mountain Map",
+      challenge:
+        "Invent a brand-new story and map its three beats. Make the conflict something the character truly can't solve at first, and make sure the resolution is earned by what happens in the middle.",
+      steps: [
+        "Draw a mountain shape: setup at the base, conflict at the peak, resolution coming back down.",
+        "Label the setup: who, where, and when.",
+        "Label the conflict: the obstacle in the way of what they want.",
+        "Label the resolution: what the character does so it feels earned, not lucky."
+      ],
+      deliverable: "A labeled 'story mountain' map showing setup, conflict, and resolution for your invented story.",
+      choiceBoard: [
+        "Draw the story mountain with all three beats labeled.",
+        "Write the story as exactly three sentences (one per beat).",
+        "Record or perform a 60-second out-loud telling of your story."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Story Shape Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.ela.w3.d1.arena1",
+          type: "multiple_choice",
+          stem: "In: 'Priya trained all summer for the race, but on race day her shoe strap snapped at the starting line. She tied it with her hair ribbon and ran anyway, finishing third.' — which sentence describes the RESOLUTION?",
+          choices: [
+            "Priya trained all summer for the race.",
+            "On race day her shoe strap snapped at the starting line.",
+            "She tied it with her hair ribbon and ran anyway, finishing third.",
+            "It was race day."
+          ],
+          answerIndex: 2,
+          explanation: "The resolution shows what the character does about the conflict and how it changes things. Tying the strap and finishing third resolves the snapped-strap problem.",
+          hintLadder: [
+            "The resolution comes after the conflict and shows a change.",
+            "The conflict is the snapped strap — what fixes it?",
+            "It's the sentence where she ties the strap and finishes the race."
+          ]
+        },
+        {
+          id: "g6.ela.w3.d1.arena2",
+          type: "short_answer",
+          stem: "Write a 3-sentence story where the RESOLUTION is NOT happy but still feels earned by the conflict. Clearly include a setup, a conflict, and that earned-but-unhappy resolution.",
+          rubric: {
+            level3: "Three sentences clearly mapping to setup, conflict, and a resolution that is unhappy yet logically follows from the conflict.",
+            level2: "Three parts present but the resolution feels random, or it's actually a happy ending instead of an earned unhappy one.",
+            level1: "Missing a part, or just a string of events with no clear conflict."
+          },
+          exemplar: "Setup: Leo entered the science fair sure his volcano would win. Conflict: A judge pointed out he'd copied the design from a kit. Resolution: He didn't place, but he finally understood why original work matters.",
+          hintLadder: [
+            "Start with a character who wants something (setup).",
+            "Add the obstacle they face (conflict).",
+            "End with a result that isn't a win but clearly grew out of that obstacle."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Beat-by-Beat Freeze",
+      prompt:
+        "Stand up and act out a tiny story with your body: freeze in a calm 'setup' pose, then a tense 'conflict' pose, then a relieved 'resolution' pose. Hold each freeze for three breaths.",
+      scienceTieIn: "Moving your body to match an idea helps your brain store it — motion and memory are wired together, something you'll explore in this program's science.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Think of a moment from your week. What was the setup, the conflict, and how did it resolve — and was the resolution earned?",
+      badge: { id: "story-architect", name: "Story Architect", emoji: "🏗️" },
+      estimatedMinutes: 7
+    }
+  }
 };

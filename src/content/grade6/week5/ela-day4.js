@@ -9,7 +9,7 @@ export const grade6ElaWeek5Day4 = {
   subject: "ELA/Writing",
   topic: "Research writing",
   topicTag: "research-writing",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.6.W.7", "CCSS.6.W.8"],
   hook: "Inventors and writers both have to back up claims with evidence. Today you spot reliable sources and cite them like a researcher.",
   miniLesson: [
@@ -130,5 +130,89 @@ export const grade6ElaWeek5Day4 = {
       description: "Treats the claim they like as the true one without checking source quality.",
       coachMove: "Separate 'do I like this answer?' from 'is this source trustworthy?' Pick by trust, not preference."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "would_you_rather",
+      title: "Would You Rather?",
+      prompt:
+        "Would you rather settle an argument using (A) a random comment you found online, or (B) a fact sheet from a government science agency? Pick one and say what makes it more trustworthy.",
+      answer:
+        "(B) — a government agency fact sheet has a known author, an editorial process, and traceable data. The random comment has no author you can check, so you can't verify it.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Build a Source Detective Card",
+      challenge:
+        "Pick a topic you're curious about (sharks, space, electric cars). Find or imagine THREE sources about it, then rank them from most to least reliable — and write a one-line citation (author, title, date) for your top pick.",
+      steps: [
+        "Choose your topic and list three possible sources.",
+        "Rank them: most reliable to least reliable.",
+        "Explain in one sentence why your #1 beats your #3.",
+        "Write a citation for your #1: author or organization, title, and date."
+      ],
+      deliverable: "A source detective card: three ranked sources plus a proper citation for the most reliable one.",
+      choiceBoard: [
+        "Make a ranked source card (draw or type it).",
+        "Design a 'reliable vs. sketchy' poster with checkmarks and red flags.",
+        "Write a short skit where a detective questions a source to test if it's trustworthy."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Source Sleuth Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.ela.w5.d4.arena1",
+          type: "multiple_choice",
+          stem: "You're writing about how vaccines work. Which is the MOST reliable source to cite?",
+          choices: [
+            "A meme shared by a friend.",
+            "A peer-reviewed medical journal article.",
+            "An anonymous blog with no date.",
+            "A comment under a video."
+          ],
+          answerIndex: 1,
+          explanation: "A peer-reviewed journal article has named authors, independent review, and traceable data — the gold standard for a science claim.",
+          hintLadder: [
+            "Which option was checked by other experts before publishing?",
+            "Look for named authors and a review process.",
+            "The peer-reviewed journal article."
+          ]
+        },
+        {
+          id: "g6.ela.w5.d4.arena2",
+          type: "short_answer",
+          stem: "A classmate cites 'a website' for a fact. List the THREE things a proper citation must include so a reader could find the same source.",
+          rubric: {
+            level3: "Names author (or organization), title, and date — all three clearly.",
+            level2: "Names two of the three required parts.",
+            level1: "Names one or gives vague/irrelevant details."
+          },
+          exemplar: "Author or organization (who made it), the title (what it's called), and the date (when it was made). With those three, a reader can track down the exact source.",
+          hintLadder: [
+            "What does a reader need to locate the same source?",
+            "Think: who, what, and when.",
+            "Author, title, date."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "mindfulness",
+      title: "Move & Reset: Focus Reset",
+      prompt:
+        "Close your eyes and take 5 slow breaths. As you breathe out, picture clearing the clutter of unreliable info from your mind, leaving just the facts you trust.",
+      scienceTieIn: "Slow breathing calms your nervous system so your brain can concentrate — a focus tool you'll meet again in the program's science.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "What's one claim you saw this week (in an ad, a video, or a post)? Did it name a source you could actually check?",
+      badge: { id: "source-sleuth", name: "Source Sleuth", emoji: "🔎" },
+      estimatedMinutes: 7
+    }
+  }
 };

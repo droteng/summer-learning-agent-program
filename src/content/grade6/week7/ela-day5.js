@@ -9,7 +9,7 @@ export const grade6ElaWeek7Day5 = {
   subject: "ELA/Writing",
   topic: "Reading a primary source",
   topicTag: "primary-source",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.6.RI.6", "C3.D3.1.6-8"],
   hook: "Primary sources are time-travel devices — you read words from the people who were there. Today you practice asking the right questions.",
   miniLesson: [
@@ -131,5 +131,88 @@ export const grade6ElaWeek7Day5 = {
       description: "Reads a public speech, a diary, and a hostile observer's account as if they're saying the same kind of thing.",
       coachMove: "Always ask: who, when, why. Different answers mean different weight."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "curiosity",
+      title: "Detective of the Past",
+      prompt:
+        "You find a crumpled note in an old library book: 'Meet me by the oak at noon. Bring the map. — R.' What can you actually KNOW from this, and what are you only guessing?",
+      answer: "You KNOW someone named (or initialed) R wanted to meet at noon by an oak and asked for a map. You're GUESSING who R is, what the map shows, why it mattered, or whether they even showed up — a primary source tells you some things and stays silent on others.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Time-Capsule Artifact",
+      challenge:
+        "Create one primary source that a kid in the year 2075 might find and study. Make it real enough that a future reader could ask 'who, when, why' and get answers.",
+      steps: [
+        "Choose your artifact: a diary entry, a letter, a ticket stub with notes, or a labeled drawing.",
+        "Add the 'who' and 'when' clues a future historian would need (your role, the date, where you are).",
+        "Write the 'why' — what was this for, and who was it meant for?",
+        "Leave one honest gap: note something it does NOT reveal about your life."
+      ],
+      deliverable: "One handmade primary source plus a sticky note naming who/when/why and one thing it leaves out.",
+      choiceBoard: [
+        "Write a dated diary entry about today.",
+        "Draw and label an artifact from your room.",
+        "Write a short letter to a future student."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Primary Source Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.ela.w7.d5.arena1",
+          type: "multiple_choice",
+          stem: "You want to know how soldiers FELT during a 1945 battle. Which source is the strongest primary source for their feelings?",
+          choices: [
+            "A 2010 movie about the battle.",
+            "A letter a soldier wrote home from the front during the battle.",
+            "A textbook chapter summarizing the war.",
+            "A modern blog post ranking famous battles."
+          ],
+          answerIndex: 1,
+          explanation: "A letter written by a soldier during the battle is a first-hand account from someone who was there — the best primary source for their feelings. The others are secondary or far removed.",
+          hintLadder: [
+            "Who was actually present and writing at the time?",
+            "Secondary sources summarize; primary sources are first-hand.",
+            "The soldier's own letter from the front."
+          ]
+        },
+        {
+          id: "g6.ela.w7.d5.arena2",
+          type: "short_answer",
+          stem: "A diary says 'Everyone in town was thrilled about the new factory.' Explain why a careful reader should NOT fully trust the word 'everyone,' using the who/when/why frame.",
+          rubric: {
+            level3: "Notes that one diary writer can only know their own circle (who), may be writing in a hopeful moment (when), and had a personal purpose (why) — so 'everyone' overstates one limited viewpoint.",
+            level2: "Questions 'everyone' and uses at least one of the who/when/why ideas, but reasoning is thin.",
+            level1: "Just says 'it might be wrong' without using the frame."
+          },
+          exemplar: "The writer is one person (who) and can't actually survey the whole town, the entry may be from an excited first day (when), and a private diary often records hopes (why) — so 'everyone' is really 'everyone I saw or talked to.'",
+          hintLadder: [
+            "Could one diary writer really know what everyone in town felt?",
+            "Use who/when/why to test the claim.",
+            "Point out the writer only knows their own corner of the town."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "mindfulness",
+      title: "Move & Reset: Notice & Name",
+      prompt:
+        "Sit still and slowly notice five things around you — one you can see, hear, feel, smell, and remember from today. Say each one quietly. You're being a primary-source observer of your own moment.",
+      scienceTieIn: "Naming what you sense activates the thinking part of your brain and calms the alarm part — a focus tool you'll meet again in science.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "If a historian in 2075 could read just ONE thing you wrote today, what would you want it to say about who you are and the time you live in?",
+      badge: { id: "primary-source-detective", name: "Primary Source Detective", emoji: "🔎" },
+      estimatedMinutes: 7
+    }
+  }
 };

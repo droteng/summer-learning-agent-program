@@ -11,7 +11,7 @@ export const fallG6MathW4D3 = {
   subject: "Math",
   topic: "Ancient number systems and place value",
   topicTag: "number-systems",
-  estimatedMinutes: 17,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.6.NS.B.3", "CCSS.6.NS.C.6"],
   hook: "The ancient Babylonians counted in 60s — which is why we still have 60 minutes in an hour. Today you compare number systems and see why place value is such a powerful invention.",
   miniLesson: [
@@ -114,5 +114,82 @@ export const fallG6MathW4D3 = {
       description: "Reads the 5 in 500 as worth 5 rather than 500.",
       coachMove: "Point to the place: value = digit × place value. The 5 in 500 is 5 × 100."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "curiosity",
+      title: "Why 60 Minutes?",
+      prompt:
+        "A clock has 60 minutes in an hour and a circle has 360 degrees — both come from an ancient people who counted in 60s instead of 10s. Who were they, and can you think of why 60 might be a handy number to count by?",
+      answer:
+        "The Babylonians counted in base-60. 60 is handy because it divides evenly by 2, 3, 4, 5, 6, 10, 12, 15, 20, and 30 — so you can split it lots of ways without fractions.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Invent Your Own Number System",
+      challenge:
+        "Like the Babylonians (base-60) or us (base-10), invent your own number system with its own base and symbols. Then show how you'd write a number in it.",
+      steps: [
+        "Pick a base (how many symbols before you start a new 'place') — try 5, 8, or 12.",
+        "Design a unique symbol for each digit in your base.",
+        "Write out how the place values grow (ones, then your-base, then base × base).",
+        "Show a number from your day (like your age or house number) written in your system."
+      ],
+      deliverable: "A mini chart of your symbols plus one real number written in your invented system.",
+      choiceBoard: [
+        "Draw a symbol chart and write your age in your system.",
+        "Make a 'decoder card' so a friend can translate base-10 into your base.",
+        "Write a short legend explaining why an ancient people might have chosen your base."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Place Value Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.math.w4.d3.arena1",
+          type: "numeric",
+          stem: "In the number 6,240, what is the VALUE (not just the digit) of the 6?",
+          answer: 6000,
+          tolerance: 0,
+          unit: "",
+          hintLadder: [
+            "Which place is the 6 sitting in?",
+            "It's the thousands place.",
+            "6 × 1000 = 6000."
+          ],
+          explanation: "The 6 is in the thousands place: 6 × 1000 = 6000."
+        },
+        {
+          id: "g6.fall.math.w4.d3.arena2",
+          type: "multiple_choice",
+          stem: "The Babylonians used base-60. In a base-60 system, how many times bigger is the second place than the first (ones) place?",
+          choices: ["10 times", "60 times", "100 times", "6 times"],
+          answerIndex: 1,
+          explanation: "In base-60, each place is worth 60 times the place to its right — just like base-10 places are worth 10 times more.",
+          hintLadder: [
+            "In base-10, each place is ×10. What's the pattern?",
+            "The base IS the jump between places.",
+            "Base-60 means ×60 each place."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Count by Tens",
+      prompt:
+        "Stand up and do one arm-raise for each count as you count by 10s up to 100 (10, 20, 30...). Then sit and whisper-count back down by 10s. Feel how fast place value lets you reach 100!",
+      scienceTieIn: "Rhythmic movement paired with counting helps your brain lock in number patterns by linking motion to memory.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Place value lets us write huge numbers with just 10 digits. What's the biggest number you used or saw today, and how many digits did it take?",
+      badge: { id: "fall-place-value-pioneer", name: "Place Value Pioneer", emoji: "🔢" },
+      estimatedMinutes: 7
+    }
+  }
 };

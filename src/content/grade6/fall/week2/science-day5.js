@@ -11,7 +11,7 @@ export const fallG6ScienceW2D5 = {
   subject: "Science",
   topic: "Keystone species and ecosystem balance",
   topicTag: "keystone-balance",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["NGSS.MS-LS2-4", "NGSS.MS-LS2-5"],
   hook: "Some species hold an entire ecosystem together — remove them and the whole web can collapse. Today you meet keystone species and see what happens when balance breaks.",
   miniLesson: [
@@ -126,5 +126,90 @@ export const fallG6ScienceW2D5 = {
       description: "Assumes harm comes from aggression rather than from unchecked population growth.",
       coachMove: "Clarify: the damage usually comes from no predators + fast reproduction, not from the species being 'vicious.'"
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "riddle",
+      title: "The Keystone Riddle",
+      prompt:
+        "I am rarely the biggest or the most common creature in my home. Yet pull me out, and the whole arch of life around me can come tumbling down. What kind of species am I?",
+      answer:
+        "A keystone species! Like the keystone at the very top of a stone arch, I hold the whole structure together even though I'm just one piece — think of the sea otter guarding the kelp forest.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Keystone Collapse Comic",
+      challenge:
+        "Capstone the week: take YOUR ecosystem diagram and tell the story of what happens when its keystone species is removed. Show the chain of effects, step by step, as the web changes.",
+      materials: ["Your week's ecosystem diagram, paper & markers OR a device"],
+      steps: [
+        "Choose the keystone species from your diagram (the one with the most connections).",
+        "Panel 1: show the healthy, balanced ecosystem.",
+        "Panel 2–3: remove the keystone and trace what grows out of control and what declines.",
+        "Final panel: show the new (often damaged) state of the web."
+      ],
+      deliverable: "A 3–4 panel comic or storyboard showing a keystone removal and its ripple effects.",
+      choiceBoard: [
+        "Draw the collapse as a comic strip.",
+        "Write a news report: 'Ecosystem in Crisis After Keystone Vanishes.'",
+        "Make a before/after diagram pair with arrows showing what changed."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Keystone Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.sci.w2.d5.arena1",
+          type: "multiple_choice",
+          stem: "Wolves are removed from a forest. Deer (which wolves hunted) then multiply. What is the MOST likely next effect?",
+          choices: [
+            "The deer eat so many young trees and plants that the forest thins out",
+            "The deer immediately disappear",
+            "The sun gets brighter",
+            "Nothing changes at all"
+          ],
+          answerIndex: 0,
+          explanation: "With no wolves controlling them, deer overgraze the plants, so the producers (and species that depend on them) decline — a classic keystone-removal cascade.",
+          hintLadder: [
+            "What kept the deer numbers down before?",
+            "More deer means more pressure on what the deer eat.",
+            "Follow the effect down to the plants."
+          ]
+        },
+        {
+          id: "g6.fall.sci.w2.d5.arena2",
+          type: "short_answer",
+          stem: "An invasive beetle with no local predators arrives in a maple forest in autumn. Explain why it can spread so fast AND name one ripple effect on the food web.",
+          rubric: {
+            level3: "Explains that no natural predators means unchecked population growth AND names a logical ripple effect (e.g., maples decline, so animals that rely on maples lose food/habitat).",
+            level2: "Explains the fast spread OR gives a ripple effect, but not both clearly.",
+            level1: "No clear reasoning about predators or effects."
+          },
+          exemplar: "With no predators in the new forest, nothing eats the beetles, so their numbers explode. They damage the maples, which means squirrels and birds that depend on the maples lose food and shelter, shaking the whole web.",
+          hintLadder: [
+            "What normally keeps a population in check?",
+            "What's missing for a brand-new invasive species?",
+            "Now follow the damage to one other part of the web."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "mindfulness",
+      title: "Move & Reset: Balance Pose",
+      prompt:
+        "Stand on one foot like a keystone holding everything steady. Breathe slowly and hold for 15 seconds, then switch feet. Notice how much focus 'balance' takes — for you and for an ecosystem.",
+      scienceTieIn: "Holding a balance pose uses tiny constant adjustments from your brain and muscles — just like a healthy ecosystem constantly self-corrects to stay in balance.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Think of a 'keystone' in your own life — a person, habit, or routine that holds a lot together. What would ripple if it disappeared?",
+      badge: { id: "keystone-keeper", name: "Keystone Keeper", emoji: "🏛️" },
+      estimatedMinutes: 7
+    }
+  }
 };

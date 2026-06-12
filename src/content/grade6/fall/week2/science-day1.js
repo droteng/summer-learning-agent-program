@@ -10,7 +10,7 @@ export const fallG6ScienceW2D1 = {
   subject: "Science",
   topic: "Food chains and food webs",
   topicTag: "food-webs",
-  estimatedMinutes: 17,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["NGSS.MS-LS2-3", "NGSS.MS-LS2-1"],
   hook: "Every living thing in a forest is connected by what eats what. Today you map those connections — and find out why removing one link can shake the whole web.",
   miniLesson: [
@@ -115,5 +115,90 @@ export const fallG6ScienceW2D1 = {
       description: "Forgets that many animals are herbivores or omnivores.",
       coachMove: "List a few familiar animals and sort them: cow (herbivore), lion (carnivore), bear (omnivore)."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "curiosity",
+      title: "Trace the Acorn",
+      prompt:
+        "It's autumn and an acorn drops from an oak. A squirrel eats it, then a hawk eats the squirrel. Where did the energy in that acorn ORIGINALLY come from? Follow the chain backward as far as you can.",
+      answer:
+        "All the way back to the SUN! The oak tree (a producer) used sunlight to make the acorn's energy. The squirrel and hawk are just passing that captured sun-energy along the chain.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Map a Backyard Food Web",
+      challenge:
+        "Build a food web for a fall forest or your own backyard. Include at least one producer, two consumers, and one decomposer, and draw arrows showing the direction energy flows (from the eaten TO the eater).",
+      materials: ["Paper & markers, OR a drawing app"],
+      steps: [
+        "List at least one producer, two consumers, and one decomposer.",
+        "Place them on the page and draw arrows from food to feeder.",
+        "Add the sun and show it feeding your producer.",
+        "Circle the decomposer and draw its arrow back to the soil/producers."
+      ],
+      deliverable: "A food-web diagram with labeled roles and energy-flow arrows.",
+      choiceBoard: [
+        "Draw the food-web diagram with arrows.",
+        "Build the web out of leaves, sticks, and labels you collect outside.",
+        "Write a 'who-eats-whom' story that walks through your whole web."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Food Web Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.sci.w2.d1.arena1",
+          type: "multiple_choice",
+          stem: "In the chain acorn → mouse → owl, which organism is the PRODUCER?",
+          choices: [
+            "The mouse",
+            "The owl",
+            "The oak tree that made the acorn",
+            "There is no producer in this chain"
+          ],
+          answerIndex: 2,
+          explanation: "The oak tree makes its own food by photosynthesis, so it (via its acorn) is the producer that starts the chain.",
+          hintLadder: [
+            "A producer makes its own food from sunlight.",
+            "Neither the mouse nor the owl makes its own food.",
+            "Trace the acorn back to the plant that grew it."
+          ]
+        },
+        {
+          id: "g6.fall.sci.w2.d1.arena2",
+          type: "short_answer",
+          stem: "In a forest web, owls eat both mice and snakes, and snakes also eat mice. If a disease wiped out all the mice, predict TWO effects on the rest of the web and explain.",
+          rubric: {
+            level3: "Predicts two logical effects (e.g., snakes lose food and decline; owls shift to eating more snakes / also decline) AND links them to the missing mice.",
+            level2: "Gives one solid effect, or two effects with weak reasoning.",
+            level1: "No clear prediction or reasoning."
+          },
+          exemplar: "Snakes would lose a main food source and their numbers would drop. Owls would have fewer mice AND fewer snakes to eat, so the owls might go hungry or leave the area. One missing link shakes the whole web.",
+          hintLadder: [
+            "Who directly ate the mice? What happens to them?",
+            "Now think about who ate THOSE animals.",
+            "Trace the loss through two steps of the web."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Food-Web Freeze",
+      prompt:
+        "Act out a chain: wave your arms like grass in the wind (5 sec), hop like a rabbit (5 hops), then prowl like a fox (5 steps), then FREEZE like a top predator scanning the field. Shake it out and breathe.",
+      scienceTieIn: "Every move you just made burned energy that traces back to the sun — exactly like the energy flowing through a real food web.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Pick something you ate today and trace it back through its food chain to a producer and the sun. How many links did it take?",
+      badge: { id: "web-weaver", name: "Web Weaver", emoji: "🕸️" },
+      estimatedMinutes: 7
+    }
+  }
 };

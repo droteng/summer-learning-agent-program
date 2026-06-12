@@ -11,7 +11,7 @@ export const fallG6ElaW8D5 = {
   subject: "ELA/Writing",
   topic: "Deliver and reflect — season capstone",
   topicTag: "capstone-reflection",
-  estimatedMinutes: 20,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.SL.6.4", "CCSS.SL.6.6", "CCSS.W.6.10"],
   hook: "This is it — your Fall Expedition showcase. Today you finalize your delivery, present your cross-subject work, and reflect on how far you've come this season.",
   miniLesson: [
@@ -126,5 +126,89 @@ export const fallG6ElaW8D5 = {
       description: "Introduces fresh information at the end instead of landing the message.",
       coachMove: "Closings consolidate; if there's a new point, it belongs in the middle — end by restating the takeaway."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "would_you_rather",
+      title: "Two Ways to End",
+      prompt:
+        "Would you rather end your showcase by quietly saying 'Um, that's it' OR by saying 'Balance keeps a forest — and a community — alive. Thank you for exploring fall with me'? Which leaves the audience with more, and why?",
+      answer:
+        "The second. It restates the big message and thanks the audience, so people leave with one clear takeaway — far stronger than trailing off with 'that's it.'",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Fall Expedition Time Capsule",
+      challenge:
+        "Make a 'time capsule' of your whole Fall Expedition: pick your proudest piece, write a note to your future (next-season) self, and design a one-line motto for everything you learned this fall.",
+      steps: [
+        "Choose the single fall piece you're proudest of and say why in one line.",
+        "Write a short note to your next-season self: one win, one challenge, one goal.",
+        "Invent a one-line fall motto that sums up your season.",
+        "Decorate it with a harvest/autumn touch so it feels like a celebration."
+      ],
+      deliverable: "A time-capsule page: proudest piece, a note to your future self, and a one-line fall motto.",
+      choiceBoard: [
+        "Make a decorated time-capsule page.",
+        "Record or write a 60-second 'letter to next-season me.'",
+        "Design an autumn 'season badge' with your motto on it."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Capstone Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.ela.w8.d5.arena1",
+          type: "multiple_choice",
+          stem: "Which is the BEST way to close a showcase presentation?",
+          choices: [
+            "Introduce a brand-new fact you forgot earlier.",
+            "Restate your main message and thank the audience.",
+            "Apologize for any mistakes you made.",
+            "Just stop talking and sit down."
+          ],
+          answerIndex: 1,
+          explanation: "A strong closing lands the message and leaves a takeaway — it doesn't add new info, apologize, or trail off.",
+          hintLadder: [
+            "What should the audience remember as you finish?",
+            "Closings consolidate; they don't add new material.",
+            "Restate the message and thank the audience."
+          ]
+        },
+        {
+          id: "g6.fall.ela.w8.d5.arena2",
+          type: "short_answer",
+          stem: "Write a full closing for your fall showcase: restate your main message memorably AND thank your audience in one or two sentences.",
+          rubric: {
+            level3: "Restates a clear, memorable main message AND includes a genuine thank-you/takeaway.",
+            level2: "Has a closing but the message or the thank-you is weak or vague.",
+            level1: "Flat, missing the restated message, or adds new information."
+          },
+          exemplar: "From food webs to budgets to a letter for change, this fall taught me that small, balanced choices add up. Thank you for exploring the season with me.",
+          hintLadder: [
+            "What's the one big idea of your whole showcase?",
+            "Say it in a memorable line.",
+            "End with a real thank-you to your audience."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "mindfulness",
+      title: "Move & Reset: Proud Breath",
+      prompt:
+        "Sit or stand tall. Breathe in for 4 counts while thinking of one thing you're proud of this fall, hold for 4, and breathe out for 4 letting any nerves go. Repeat 3 times.",
+      scienceTieIn: "Slow, steady breathing calms your body's stress response, helping you feel grounded and proud as you finish the season.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "The Fall Expedition is complete! Look back at where you started in Week 1 — what's the biggest way you've grown, and what are you most excited to learn next season?",
+      badge: { id: "fall-expedition-graduate", name: "Fall Expedition Graduate", emoji: "🍁" },
+      estimatedMinutes: 7
+    }
+  }
 };

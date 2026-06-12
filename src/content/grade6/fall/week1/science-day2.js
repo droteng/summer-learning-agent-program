@@ -11,7 +11,7 @@ export const fallG6ScienceW1D2 = {
   subject: "Science",
   topic: "Reading the season — observation and evidence",
   topicTag: "observation",
-  estimatedMinutes: 16,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["NGSS.SEP.3", "NGSS.MS-LS1-4"],
   hook: "Leaves turn, days shorten, animals get busy. Today you practice the scientist's first skill: observing carefully and separating what you see from what you guess.",
   miniLesson: [
@@ -119,5 +119,86 @@ export const fallG6ScienceW1D2 = {
       description: "Believes temperature is the only trigger for fall color.",
       coachMove: "Point out leaves start changing before the first frost — daylight length is the steady annual cue the plant senses."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "curiosity",
+      title: "Spot the Observation",
+      prompt:
+        "Two fall statements: (A) 'There are six acorns under the oak.' (B) 'The squirrels must love this oak.' Which one is a pure OBSERVATION you could check just by looking, and which is an inference?",
+      answer: "(A) is an observation — you can count the acorns. (B) is an inference — it's a guess about why, which you'd have to test.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Fall Field Journal",
+      challenge:
+        "Become a field scientist for 15 minutes. Look out a window or step outside and record what fall actually looks like where you are, keeping observations and inferences in separate columns.",
+      steps: [
+        "Draw two columns: 'I observe' and 'I infer (and could test).'",
+        "Write at least four real observations you sense right now.",
+        "For two of them, add an inference that explains it.",
+        "Star the one inference you'd most want to test, and note how."
+      ],
+      deliverable: "A two-column field journal page with 4+ observations and 2 testable inferences.",
+      choiceBoard: [
+        "Sketch a labeled drawing of a fall scene with observation notes.",
+        "Write the journal as a short nature-detective story.",
+        "Record a 4-item observation checklist you could reuse each week."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Observer Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.sci.w1.d2.arena1",
+          type: "multiple_choice",
+          stem: "Which statement is an INFERENCE rather than an observation?",
+          choices: [
+            "The pond has a thin layer of ice this morning.",
+            "I counted eleven geese flying south.",
+            "The birds are leaving because they know a storm is coming.",
+            "Three maple leaves fell while I watched."
+          ],
+          answerIndex: 2,
+          explanation: "Saying the birds 'know a storm is coming' explains WHY — that's an untested inference. The others are things you directly sense.",
+          hintLadder: [
+            "An observation is something your senses detect directly.",
+            "Which option explains a cause or reason?",
+            "The 'because they know...' statement is the inference."
+          ]
+        },
+        {
+          id: "g6.fall.sci.w1.d2.arena2",
+          type: "numeric",
+          stem: "Daylight shrinks by about 2 minutes each day in fall. About how many fewer minutes of daylight are there after 3 weeks (21 days)?",
+          answer: 42,
+          tolerance: 0,
+          unit: "minutes",
+          hintLadder: [
+            "How many days are in 3 weeks?",
+            "Multiply 2 minutes by the number of days.",
+            "2 × 21 = 42 minutes."
+          ],
+          explanation: "2 minutes/day × 21 days = 42 fewer minutes of daylight."
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "mindfulness",
+      title: "Move & Reset: Five-Senses Fall Scan",
+      prompt:
+        "Sit still and slowly name one thing you can see, one you can hear, one you can feel, one you can smell, and one calming breath — like a scientist observing the season around you.",
+      scienceTieIn: "Slowing down to notice each sense lowers your stress response and sharpens your attention — the same careful observation good science depends on.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Write one fall observation from today and one inference you could test about it. Keep them in separate sentences.",
+      badge: { id: "fall-keen-observer", name: "Keen Observer", emoji: "🍁" },
+      estimatedMinutes: 7
+    }
+  }
 };

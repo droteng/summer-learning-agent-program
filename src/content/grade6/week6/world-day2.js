@@ -9,7 +9,7 @@ export const grade6WorldWeek6Day2 = {
   subject: "World/Current Affairs",
   topic: "Geography fundamentals",
   topicTag: "geography",
-  estimatedMinutes: 16,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["C3.D2.Geo.1.6-8", "C3.D2.Geo.2.6-8"],
   hook: "You can't follow world news without a map. Today you lock in continents, oceans, hemispheres, and key locations.",
   miniLesson: [
@@ -112,5 +112,85 @@ export const grade6WorldWeek6Day2 = {
       description: "Says a southern-hemisphere country is in the northern, or east/west.",
       coachMove: "Use the equator and prime meridian as anchors. Anything below equator = southern; anything east of UK = eastern."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "would_you_rather",
+      title: "Pick Your Hemisphere",
+      prompt:
+        "Would you rather live in the Northern or Southern hemisphere? Whichever you pick, name one continent that's mostly in YOUR chosen hemisphere.",
+      answer: "Northern examples: most of Asia, Europe, North America, and northern Africa. Southern examples: most of South America, Australia, Antarctica, and southern Africa.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Design a Memory Map",
+      challenge:
+        "Create a memory tool to lock in the 7 continents and 5 oceans. Sketch a simple world map (it doesn't have to be perfect) and label every continent and ocean — then invent a mnemonic to remember them.",
+      steps: [
+        "Sketch a rough world map with all 7 continents.",
+        "Label each continent and each of the 5 oceans.",
+        "Mark the equator and prime meridian as crossing lines.",
+        "Write a mnemonic sentence for the continents OR the oceans."
+      ],
+      deliverable: "A labeled world map with all 7 continents, 5 oceans, the equator and prime meridian, plus one mnemonic.",
+      choiceBoard: [
+        "Draw and label a full world map.",
+        "Make flashcards with a mnemonic on the back.",
+        "Build the map with cut-paper or salt-dough shapes."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Geography Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.world.w6.d2.arena1",
+          type: "numeric",
+          stem: "How many continents and oceans are there in total? (Add the number of continents to the number of oceans.)",
+          answer: 12,
+          tolerance: 0,
+          explanation: "7 continents + 5 oceans = 12. Continents: Africa, Antarctica, Asia, Australia/Oceania, Europe, North America, South America. Oceans: Arctic, Atlantic, Indian, Pacific, Southern.",
+          hintLadder: [
+            "How many continents are there?",
+            "How many oceans are there?",
+            "Add 7 + 5."
+          ]
+        },
+        {
+          id: "g6.world.w6.d2.arena2",
+          type: "multiple_choice",
+          stem: "Brazil is south of the equator and west of the prime meridian. Which hemispheres is it in?",
+          choices: [
+            "Northern + Eastern",
+            "Northern + Western",
+            "Southern + Eastern",
+            "Southern + Western"
+          ],
+          answerIndex: 3,
+          explanation: "South of the equator means Southern hemisphere; west of the prime meridian means Western hemisphere. So Brazil is Southern + Western.",
+          hintLadder: [
+            "South of the equator → which N/S hemisphere?",
+            "West of the prime meridian → which E/W hemisphere?",
+            "Southern + Western."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Compass Points",
+      prompt:
+        "Stand up and face north (your best guess!). Point and lean toward North, then East, then South, then West, calling each one out. Spin slowly through all four like a human compass.",
+      scienceTieIn: "Moving your body through directions builds spatial memory in your brain, the same skill that helps you picture maps and locations without looking.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "If you could place a pin anywhere on the world map, where would it go? Name the continent, the nearest ocean, and the hemispheres it's in.",
+      badge: { id: "map-master", name: "Map Master", emoji: "🗺️" },
+      estimatedMinutes: 7
+    }
+  }
 };

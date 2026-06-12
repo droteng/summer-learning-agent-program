@@ -9,7 +9,7 @@ export const grade6MathWeek5Day3 = {
   subject: "Math",
   topic: "Measurement and scale",
   topicTag: "scale",
-  estimatedMinutes: 16,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.6.RP.A.3.D", "CCSS.6.G.A.1"],
   hook: "Inventors estimate before they measure. Today you use scale and rough numbers to size up the real world.",
   miniLesson: [
@@ -114,5 +114,83 @@ export const grade6MathWeek5Day3 = {
       description: "Says a door is '20 km' or a person is '5 mm' — units don't match the real scale.",
       coachMove: "Compare to a known: a door is about your height plus a bit. Use that as an anchor."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "riddle",
+      title: "Scale Riddle",
+      prompt:
+        "On a map, 1 cm stands for 100 km. Two cities are drawn 3 cm apart. The real distance is a number you'd recognize. What is it — and would you walk it or fly it?",
+      answer:
+        "3 cm × 100 km/cm = 300 km. That's a long drive or a short flight — definitely not a walk! You just read a scale.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Map Your Room to Scale",
+      challenge:
+        "Draw a scale map of your room or a piece of furniture. Pick a scale (like 1 cm on paper = 20 cm in real life), measure or estimate the real sizes, then draw everything shrunk by that scale.",
+      steps: [
+        "Pick your scale and write it on the page (e.g., 1 cm = 20 cm).",
+        "Measure or estimate the real length and width of your room or object.",
+        "Divide each real measurement by the scale to get your drawing size.",
+        "Draw it, label the real sizes, and sanity-check that the shapes look right."
+      ],
+      deliverable: "A scale drawing with the scale written on it, drawing sizes calculated, and real measurements labeled.",
+      choiceBoard: [
+        "Draw a scale map of your room.",
+        "Make a scale drawing of one big object (bed, car, fridge).",
+        "Build a 'scale ruler' card that converts drawing cm to real meters for your chosen scale."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Scale Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.math.w5.d3.arena1",
+          type: "numeric",
+          stem: "A map uses the scale 1 cm = 8 m. A path on the map measures 6.5 cm. How long is the real path in meters?",
+          answer: 52,
+          tolerance: 0,
+          unit: "m",
+          hintLadder: [
+            "Each cm on the map stands for 8 m.",
+            "Multiply the map length by the scale: 6.5 × 8.",
+            "6.5 × 8 = 52 m."
+          ],
+          explanation: "6.5 cm × 8 m/cm = 52 m."
+        },
+        {
+          id: "g6.math.w5.d3.arena2",
+          type: "numeric",
+          stem: "A model skyscraper is built at 1/48 scale. The real skyscraper is 96 m tall. How tall is the model, in meters?",
+          answer: 2,
+          tolerance: 0,
+          unit: "m",
+          hintLadder: [
+            "1/48 scale means the model is the real size divided by 48.",
+            "96 ÷ 48 = ?",
+            "96 ÷ 48 = 2 m."
+          ],
+          explanation: "96 m ÷ 48 = 2 m for the model."
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Pace It Out",
+      prompt:
+        "Stand up and pace out 10 of your own steps across the room, counting as you go. Then guess how many meters that was. Movement plus estimation!",
+      scienceTieIn: "Walking gets your blood pumping and delivers oxygen to your brain, sharpening the focus you need for careful estimating.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "What's something around your home you estimated or measured today? How close do you think your estimate was to the real size?",
+      badge: { id: "scale-master", name: "Scale Master", emoji: "📐" },
+      estimatedMinutes: 7
+    }
+  }
 };

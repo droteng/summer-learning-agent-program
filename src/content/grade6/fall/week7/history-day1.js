@@ -10,7 +10,7 @@ export const fallG6HistoryW7D1 = {
   subject: "History/Civics",
   topic: "Cause-and-effect chains in history",
   topicTag: "cause-effect-chains",
-  estimatedMinutes: 17,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["C3.D2.His.14", "C3.D2.His.15"],
   hook: "History isn't a list of dates — it's a chain of causes and effects. One event sets off the next. Today you learn to follow the links.",
   miniLesson: [
@@ -115,5 +115,89 @@ export const fallG6HistoryW7D1 = {
       description: "Looks for a single reason when most events have several causes.",
       coachMove: "Ask 'what else contributed?' until at least two causes surface — real history is multi-causal."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "would_you_rather",
+      title: "Would You Rather Start the Chain?",
+      prompt:
+        "Would you rather be the FIRST domino (the cause that starts a whole chain) or the LAST domino (the final effect everyone sees)? Think about which one really makes history happen — then defend your pick.",
+      answer:
+        "There's no wrong choice! The first domino is the cause that sets everything off; the last is the big visible effect. The point: every effect was once started by a cause earlier in the chain.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Harvest Domino Chain",
+      challenge:
+        "Pick a real historical chain (like farming → food surplus → cities → writing) and build a physical or drawn domino chain where each domino is labeled with one event in the chain.",
+      steps: [
+        "Choose a 4-link historical cause-and-effect chain.",
+        "Make 4 'dominoes' (paper, blocks, or drawn boxes) and label each with one event.",
+        "Line them up in order so toppling one knocks the next.",
+        "On each gap, write the 'because' that connects one event to the next."
+      ],
+      deliverable: "A 4-domino chain (built or drawn) with each link labeled by event and a 'because' between links.",
+      choiceBoard: [
+        "Build it with real dominoes, blocks, or folded cards.",
+        "Draw it as a falling-domino comic strip.",
+        "Record a 30-second narration explaining each link as it 'falls.'"
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Cause-Chain Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.hist.w7.d1.arena1",
+          type: "multiple_choice",
+          stem: "In the chain 'A drought killed the crops, so food ran short, which led people to leave the city,' which event is BOTH an effect AND a cause?",
+          choices: [
+            "The drought",
+            "Food running short",
+            "People leaving the city",
+            "The city itself"
+          ],
+          answerIndex: 1,
+          explanation: "Food running short is the EFFECT of the drought and the CAUSE of people leaving — a middle link in the chain.",
+          hintLadder: [
+            "Look for the middle link, not the first or last.",
+            "Which event is caused by something AND causes something else?",
+            "Food running short: caused by drought, causes the move."
+          ]
+        },
+        {
+          id: "g6.fall.hist.w7.d1.arena2",
+          type: "short_answer",
+          stem: "Real history events usually have more than one cause. Pick any event and name TWO different causes for it, then explain why naming only one would give an incomplete picture.",
+          rubric: {
+            level3: "Names a real event AND two distinct causes AND explains that single-cause thinking misses how history is multi-causal.",
+            level2: "Names an event and two causes but the 'why incomplete' reasoning is thin.",
+            level1: "Only one cause, or no real event."
+          },
+          exemplar: "The Dust Bowl had two causes: years of drought AND farming methods that stripped the soil. Naming only the drought would be incomplete, because the soil damage made the drought far more destructive.",
+          hintLadder: [
+            "Choose an event you've studied.",
+            "Name two separate reasons it happened.",
+            "Explain what you'd miss if you named only one."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: The Wave Chain",
+      prompt:
+        "Do a one-person 'wave' chain: raise your right arm, then left, then stand on tiptoes, then sit — each move triggering the next in a smooth flow. Repeat 3 times, faster each round.",
+      scienceTieIn: "Your motor neurons fire in sequence to chain these movements together — a real cause-and-effect chain happening inside your own body.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Trace a chain from your own week: what was the first cause, and how did it lead, link by link, to something that happened today?",
+      badge: { id: "chain-tracker", name: "Chain Tracker", emoji: "⛓️" },
+      estimatedMinutes: 7
+    }
+  }
 };

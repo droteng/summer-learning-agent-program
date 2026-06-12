@@ -10,7 +10,7 @@ export const fallG6ElaW8D1 = {
   subject: "ELA/Writing",
   topic: "Plan your showcase presentation",
   topicTag: "presentation-planning",
-  estimatedMinutes: 17,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.SL.6.4", "CCSS.W.6.4"],
   hook: "It's showcase week! Time to pull your best fall work into one presentation. Today you plan it — because a clear plan is what separates a great showcase from a ramble.",
   miniLesson: [
@@ -125,5 +125,89 @@ export const fallG6ElaW8D1 = {
       description: "Crams in every piece of work instead of featuring the strongest.",
       coachMove: "Have them rank their work and present only the top few — depth and focus win."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "curiosity",
+      title: "What Makes You Lean In?",
+      prompt:
+        "Think of a time a teacher, show, or friend started talking and you instantly wanted to hear more. What did they DO in the first ten seconds to hook you?",
+      answer:
+        "Usually a surprising fact, a question, or a vivid image — not a flat 'Today I will talk about...'. That opening move is exactly the kind of hook you'll plan for your showcase.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Showcase Storyboard",
+      challenge:
+        "Storyboard your fall showcase as three panels: an opening HOOK, a MIDDLE with your 2–3 strongest pieces, and a CLOSING message. Sketch or jot what happens in each.",
+      steps: [
+        "Panel 1: write your opening hook (a question, surprising fact, or image).",
+        "Panel 2: list the 2–3 fall pieces you'll feature and one transition between them.",
+        "Panel 3: write your closing message — the one thing to remember.",
+        "Read it through: does it flow hook → middle → close?"
+      ],
+      deliverable: "A 3-panel storyboard showing your hook, featured pieces with a transition, and closing message.",
+      choiceBoard: [
+        "Draw a 3-panel storyboard.",
+        "Write a one-page outline with hook, middle, and close.",
+        "Make a set of 3 'cue cards' you could actually present from."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Showcase Planner Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.ela.w8.d1.arena1",
+          type: "multiple_choice",
+          stem: "Which is the strongest OPENING HOOK for a showcase?",
+          choices: [
+            "Hi, my project is about the fall season.",
+            "Today I will tell you some things I did.",
+            "Did you know that losing just one animal can topple an entire forest?",
+            "Um, so, this is my presentation."
+          ],
+          answerIndex: 2,
+          explanation: "A surprising question pulls the audience in immediately; the others are flat openings with no hook.",
+          hintLadder: [
+            "Which line makes you curious to hear more?",
+            "Flat openings just announce the topic.",
+            "The surprising 'losing one animal' question is the hook."
+          ]
+        },
+        {
+          id: "g6.fall.ela.w8.d1.arena2",
+          type: "short_answer",
+          stem: "Plan a mini-showcase: write ONE opening hook and ONE closing message for any fall topic you choose.",
+          rubric: {
+            level3: "A genuine attention-grabbing hook AND a clear closing message that lands one takeaway, both on the same topic.",
+            level2: "Both present but one is weak or off-topic.",
+            level1: "Missing the hook or the closing, or both are flat."
+          },
+          exemplar: "Hook: What if one tenth of the sun's energy decides how many foxes a forest can hold? Closing: Energy flow shapes every living thing — including us.",
+          hintLadder: [
+            "Start with a question or surprising fact to hook them.",
+            "End by restating one big idea to remember.",
+            "Keep both on the same topic."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Shake Out the Nerves",
+      prompt:
+        "Stand up and shake out each arm for 5 seconds, then each leg, then roll your neck slowly side to side. Take one big breath in and let it whoosh out — nerves gone for now.",
+      scienceTieIn: "Light movement releases physical tension, which helps quiet the nervous feelings that come before presenting.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Which fall piece are you proudest to show, and what's the ONE message you want your audience to walk away remembering?",
+      badge: { id: "showcase-architect", name: "Showcase Architect", emoji: "📋" },
+      estimatedMinutes: 7
+    }
+  }
 };

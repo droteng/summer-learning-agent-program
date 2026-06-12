@@ -9,7 +9,7 @@ export const grade6CodingWeek4Day1 = {
   subject: "Coding/Computer Science/AI",
   topic: "Functions and parameters",
   topicTag: "functions",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CSTA.2-AP-14", "CSTA.2-AP-17"],
   hook: "A function is a small machine. Today you build one that takes inputs, does a job, and returns an answer.",
   miniLesson: [
@@ -122,5 +122,85 @@ export const grade6CodingWeek4Day1 = {
       description: "Treats function calls like commands (greet Maya 11) instead of expressions (greet('Maya', 11)).",
       coachMove: "Functions are always called with parentheses, even when they take zero arguments: f()."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "riddle",
+      title: "Guess the Machine",
+      prompt:
+        "A function takes an input, does ONE secret job, and returns: machine(2) → 5, machine(4) → 9, machine(10) → 21. What is the secret rule, and what is machine(7)?",
+      answer:
+        "The rule is x × 2 + 1. So machine(7) = 7 × 2 + 1 = 15. (Every input gets doubled, then plus 1.)",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Design Your Own Function Machine",
+      challenge:
+        "Invent a function machine that does a useful job — like 'pizzaSlices(people)' or 'allowance(weeks)'. Name it, list its parameter(s), write the rule it uses, and show what it returns for 3 different inputs.",
+      steps: [
+        "Pick a real job and name your function (a verb or noun, like makeSmoothie or coins).",
+        "List the parameter(s) — the input(s) it expects.",
+        "Write the one rule it uses to compute the answer.",
+        "Test it: feed in 3 different arguments and write what each call returns."
+      ],
+      deliverable: "A labeled function machine: name, parameter(s), rule, and 3 worked input → output examples.",
+      choiceBoard: [
+        "Write the function in pseudo-code with its 3 example calls.",
+        "Draw it as a box-with-a-slot machine: inputs go in the top, the answer drops out the bottom.",
+        "Make a comic where a robot runs your function on three customers in a row."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Function Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.code.w4.d1.arena1",
+          type: "numeric",
+          stem:
+            "Trace this:\n\n  def combo(a, b):\n    return a * b + a\n\n  result = combo(4, 3)\nWhat is result?",
+          answer: 16,
+          tolerance: 0,
+          unit: "",
+          hintLadder: [
+            "Bind the arguments: a = 4, b = 3.",
+            "Compute a * b first, then add a.",
+            "4 × 3 = 12, then 12 + 4 = 16."
+          ],
+          explanation: "combo(4, 3) returns 4 * 3 + 4 = 12 + 4 = 16."
+        },
+        {
+          id: "g6.code.w4.d1.arena2",
+          type: "multiple_choice",
+          stem:
+            "What does this print?\n\n  def shout(word):\n    return word + '!'\n\n  print(shout(shout('hi')))",
+          choices: ["hi!", "hi!!", "hihi!", "hi"],
+          answerIndex: 1,
+          explanation:
+            "Inner shout('hi') returns 'hi!'. That result is passed to shout again, adding another '!', giving 'hi!!'.",
+          hintLadder: [
+            "Work from the inside out.",
+            "shout('hi') returns 'hi!' — now call shout on THAT.",
+            "Adding one more '!' to 'hi!' gives 'hi!!'."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Be the Function",
+      prompt:
+        "You are a function called jumpDouble(n). Have someone call out a small number n — do that many jumps, then double it and do that many arm circles. Run it twice with different inputs!",
+      scienceTieIn: "Quick bursts of jumping raise your heart rate so blood delivers more oxygen to your muscles and brain.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "What's a repeated job in your house that could be wrapped into a function? Write its name, what input it would take, and what it would return.",
+      badge: { id: "function-builder", name: "Function Builder", emoji: "⚙️" },
+      estimatedMinutes: 7
+    }
+  }
 };

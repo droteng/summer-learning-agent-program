@@ -9,7 +9,7 @@ export const grade6ScienceWeek4Day4 = {
   subject: "Science",
   topic: "How AI learns from examples",
   topicTag: "ai-basics",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["AI4K12.5.A", "CSTA.2-AP-19"],
   hook: "An AI doesn't really know things — it learns patterns from examples. Today you see how that works, and where it can go wrong.",
   miniLesson: [
@@ -125,5 +125,94 @@ export const grade6ScienceWeek4Day4 = {
       description: "Treats AI like a knower instead of a pattern-matcher trained on data.",
       coachMove: "Ask: where did the AI's answer come from? Trace it back to training examples."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "curiosity",
+      title: "Train Your Brain Like an AI",
+      prompt:
+        "Imagine I only ever showed you red apples and called them 'apple.' Then I show you a green apple. Why might an AI trained the same way get it WRONG — and what would fix it?",
+      answer:
+        "If every 'apple' example was red, the AI may learn 'apple = red round thing' and miss the green one. The fix is more variety: show it apples of many colors so it learns the real pattern.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Be the Teacher, Train an AI",
+      challenge:
+        "Pick something an AI could learn to recognize (a cat, a happy face, a healthy snack). Make a TRAINING SET: list 5 good, varied examples and 2 non-examples. Then explain one bias that would creep in if your examples were all too similar.",
+      steps: [
+        "Choose what your AI will learn to recognize.",
+        "List 5 varied positive examples (different colors, angles, situations).",
+        "List 2 non-examples (things it should NOT match) and say why.",
+        "Name one bias that would appear if all your examples looked alike."
+      ],
+      deliverable: "A training-set plan: 5 varied examples, 2 non-examples, and one bias you spotted and how to avoid it.",
+      choiceBoard: [
+        "Write the training set as a labeled list with the bias note.",
+        "Draw the example cards with 'YES' and 'NO' stamps and a 'bias alert' callout.",
+        "Make a comic where an AI fails because of biased data, then succeeds after better examples."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: AI Trainer Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.sci.w4.d4.arena1",
+          type: "multiple_choice",
+          stem:
+            "A face-unlock AI was trained only on photos taken indoors with bright light. Outdoors in sunlight, it often fails. Why?",
+          choices: [
+            "AI cameras break in sunlight.",
+            "The training data was biased — it never included bright outdoor lighting.",
+            "Faces change outdoors.",
+            "The AI is tired from working."
+          ],
+          answerIndex: 1,
+          explanation:
+            "The AI only saw indoor, bright-light examples, so outdoor sunlight looks unfamiliar. The data didn't cover that condition.",
+          hintLadder: [
+            "What lighting did the training photos all share?",
+            "What condition is missing from the data?",
+            "Outdoor sunlight was never in the training set — that's the bias."
+          ]
+        },
+        {
+          id: "g6.sci.w4.d4.arena2",
+          type: "short_answer",
+          stem:
+            "A school wants an AI to recommend library books kids will like. It is trained only on what last year's top 10 students borrowed. Name one fairness problem this could cause.",
+          rubric: {
+            level3:
+              "Names a specific bias (it learns only high-achievers' tastes, or only certain genres/reading levels) AND connects it to the narrow training set causing poor or unfair recommendations for other students.",
+            level2: "Names a problem but doesn't tie it to the limited training data.",
+            level1: "Generic 'the AI is unfair' with no specific mechanism."
+          },
+          exemplar:
+            "The AI only learned from 10 strong readers, so it may only recommend hard or one-genre books. A struggling or different-interest student would get recommendations that don't fit them, even though their taste is just as valid.",
+          hintLadder: [
+            "Whose choices were in the training data?",
+            "Who is left out of those examples?",
+            "Connect that data gap to recommendations that don't fit other kids."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "wellness",
+      title: "Move & Reset: Pattern Stretch",
+      prompt:
+        "Make a 3-pose pattern (reach up, twist left, twist right). Repeat the pattern 4 times — you're 'training' your body to remember it, just like an AI learns from repeated examples. Then drink some water.",
+      scienceTieIn: "Repeating a movement strengthens the brain pathways that store it, and staying hydrated helps your blood carry oxygen to those working cells.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "AI is only as good as its examples. What's one decision you would NOT want an AI to make alone, and why does the 'examples' problem matter there?",
+      badge: { id: "ai-trainer", name: "AI Trainer", emoji: "🤖" },
+      estimatedMinutes: 7
+    }
+  }
 };

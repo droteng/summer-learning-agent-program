@@ -11,7 +11,7 @@ export const fallG6CodingW1D5 = {
   subject: "Coding/Computer Science/AI",
   topic: "Patterns, sequences, and rules",
   topicTag: "patterns-sequences",
-  estimatedMinutes: 17,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CSTA.2-AP-10", "CSTA.2-AP-11"],
   hook: "Nature is full of patterns — pinecones, leaf veins, the rows in a cornfield. Coders see patterns as RULES they can write down and repeat. Today you find the rule.",
   miniLesson: [
@@ -115,5 +115,84 @@ export const fallG6CodingW1D5 = {
       description: "Applies an 'add the same number' rule even when the pattern multiplies or grows.",
       coachMove: "Have them check the step between EVERY pair, not just the first — if the gap changes, the rule isn't simple addition."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "riddle",
+      title: "Pinecone Pattern Riddle",
+      prompt:
+        "I start at 1, and each step I add the two numbers before me: 1, 1, 2, 3, 5, 8, ... You can spot me in pinecones and sunflower seeds. What number comes right after 8 in my pattern?",
+      answer: "13 — add the two before it: 5 + 8 = 13. (This is the Fibonacci pattern found in nature.)",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Invent a Nature Pattern Rule",
+      challenge:
+        "Coders turn patterns into rules a loop can repeat. Invent your own fall-inspired sequence, write its rule clearly enough that a friend (or a computer) could continue it.",
+      steps: [
+        "Choose a starting number and a rule (add, multiply, or alternate).",
+        "Write the first five terms of your sequence.",
+        "Write the rule in one plain-English sentence, as if instructing a loop.",
+        "Hand it to someone and check they can find the 6th term using only your rule."
+      ],
+      deliverable: "A sequence card: five terms plus a one-sentence rule a loop could follow.",
+      choiceBoard: [
+        "Write a 'leaf color' repeating pattern and its rule.",
+        "Make a growing number sequence (×2 or square numbers) with its rule.",
+        "Draw a visual pattern (dots, leaves) and write the rule beneath it."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Pattern Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.code.w1.d5.arena1",
+          type: "numeric",
+          stem: "A loop starts at 2 and DOUBLES each step: 2, 4, 8, ... What is the 6th number it prints?",
+          answer: 64,
+          tolerance: 0,
+          unit: "",
+          hintLadder: [
+            "Write out the terms, doubling each time.",
+            "2, 4, 8, 16, 32, ...",
+            "The 6th term is 32 × 2 = 64."
+          ],
+          explanation: "Doubling: 2, 4, 8, 16, 32, 64 — the 6th term is 64."
+        },
+        {
+          id: "g6.fall.code.w1.d5.arena2",
+          type: "short_answer",
+          stem: "Describe the rule for this sequence in your own words, then give the next term: 1, 3, 6, 10, 15, ___",
+          rubric: {
+            level3: "Identifies that the gap grows by 1 each time (add 2, add 3, add 4...) AND gives 21.",
+            level2: "Finds 21 by spotting the growing gaps but doesn't state the rule clearly, or states the rule but slips on the term.",
+            level1: "Wrong rule and wrong term."
+          },
+          exemplar: "You add one more each step: +2, +3, +4, +5, then +6. So 15 + 6 = 21. (These are the triangular numbers.)",
+          hintLadder: [
+            "Look at the gaps: 1→3 is +2, 3→6 is +3, 6→10 is +4.",
+            "Each gap grows by 1, so the next gap is +6.",
+            "15 + 6 = 21."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Pattern Clap-Stomp",
+      prompt:
+        "Make a movement loop: clap, stomp, clap, clap, stomp — then repeat the whole pattern 4 times, a little faster each round. You just ran a loop with your body!",
+      scienceTieIn: "Repeating a rhythmic pattern strengthens the brain's timing and sequencing circuits — the same kind of thinking loops in code rely on.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Find one pattern in nature near you this week. Write its rule in a single sentence, the way you'd tell a loop to repeat it.",
+      badge: { id: "fall-pattern-finder", name: "Pattern Finder", emoji: "🌰" },
+      estimatedMinutes: 7
+    }
+  }
 };

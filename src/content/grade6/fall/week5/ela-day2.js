@@ -10,7 +10,7 @@ export const fallG6ElaW5D2 = {
   subject: "ELA/Writing",
   topic: "Reasons and evidence",
   topicTag: "reasons-evidence",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.W.6.1.B", "CCSS.W.6.1.C"],
   hook: "A claim with no support is just an opinion shouted louder. Today you back your claim with reasons and evidence so it actually convinces people.",
   miniLesson: [
@@ -125,5 +125,88 @@ export const fallG6ElaW5D2 = {
       description: "Supports a claim by just restating it more forcefully instead of giving proof.",
       coachMove: "Ask 'how do you KNOW?' until they reach a fact, example, or number — that's the evidence."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "curiosity",
+      title: "Spot the Real Evidence",
+      prompt:
+        "Claim: 'Our town should plant more trees before winter.' Two supports show up: (A) 'Trees are pretty and everyone loves them.' (B) 'A city study found streets with trees stay up to 10°F cooler in fall heat waves.' Which one is REAL evidence — and why?",
+      answer: "(B) is real evidence: it's specific, measurable, and relevant. (A) is just a vague assertion — 'everyone loves them' proves nothing.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Evidence Harvest Basket",
+      challenge:
+        "Like gathering apples in fall, go 'harvest' evidence for your claim. Collect 3 different pieces of support — a fact, an example, and something you could actually count or observe — and sort them into your basket.",
+      steps: [
+        "Write your claim at the top of the page.",
+        "Harvest evidence #1: a fact or statistic.",
+        "Harvest evidence #2: a real example or story.",
+        "Harvest evidence #3: something you could go count or measure yourself."
+      ],
+      deliverable: "An 'evidence basket' chart with your claim and 3 distinct pieces of support, each labeled fact / example / observation.",
+      choiceBoard: [
+        "Draw a basket and fill it with your 3 evidence cards.",
+        "Make a 'reason → evidence' flowchart for your claim.",
+        "Write a short paragraph in claim → reason → evidence order."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Evidence Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.ela.w5.d2.arena1",
+          type: "multiple_choice",
+          stem: "Claim: 'The town should add a fall farmers' market.' Which is the STRONGEST evidence?",
+          choices: [
+            "Farmers' markets are great.",
+            "A neighboring town's fall market drew 800 shoppers and added $12,000 in sales for local farms last October.",
+            "I love apple cider.",
+            "Everyone knows markets are fun."
+          ],
+          answerIndex: 1,
+          explanation: "It's specific, relevant, and uses real numbers tied directly to the claim. The others are vague assertions or personal taste.",
+          hintLadder: [
+            "Strong evidence is specific and relevant.",
+            "Which option has real numbers connected to the claim?",
+            "The neighboring-town data with shoppers and sales."
+          ]
+        },
+        {
+          id: "g6.fall.ela.w5.d2.arena2",
+          type: "short_answer",
+          stem: "Claim: 'Our class should take a fall nature walk each week.' Give one reason AND one specific piece of evidence that supports it.",
+          rubric: {
+            level3: "Provides a relevant reason AND specific evidence (a fact, example, or plausible data) that supports the claim.",
+            level2: "Gives a reason but evidence is vague, or evidence without a clear reason.",
+            level1: "Restates the claim or gives unrelated support."
+          },
+          exemplar: "Reason: short outdoor breaks help students refocus. Evidence: studies show that even a 15-minute walk in nature improves attention and lowers stress in students.",
+          hintLadder: [
+            "Why would a nature walk help? (reason)",
+            "What proof backs that reason? (evidence)",
+            "Keep both tied to the claim."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Leaf-Rake Stretch",
+      prompt:
+        "Pretend you're raking a big pile of fall leaves: reach down and across, pull back, and twist gently to each side. Do 8 slow 'rakes' per side, breathing out on each pull.",
+      scienceTieIn: "Gentle twisting movement boosts blood flow and oxygen to your brain, which helps you think more clearly when you sit back down.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Which was harder today — finding a reason or finding real evidence? Name one piece of evidence you could actually go collect this week to make your argument stronger.",
+      badge: { id: "fall-evidence-harvester", name: "Evidence Harvester", emoji: "🧺" },
+      estimatedMinutes: 7
+    }
+  }
 };

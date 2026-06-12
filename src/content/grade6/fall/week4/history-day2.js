@@ -10,7 +10,7 @@ export const fallG6HistoryW4D2 = {
   subject: "History/Civics",
   topic: "Writing and records change everything",
   topicTag: "writing-systems",
-  estimatedMinutes: 17,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["C3.D2.His.2", "C3.D2.His.10"],
   hook: "Before writing, every deal and story lived only in memory. The moment people could write things down, history itself began. Today you explore why.",
   miniLesson: [
@@ -120,5 +120,88 @@ export const fallG6HistoryW4D2 = {
       description: "Confuses 'before written records' with 'before anything occurred.'",
       coachMove: "Clarify: lots happened in prehistory — we just learn it from objects and bones, not written accounts."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "riddle",
+      title: "The Memory That Never Forgets",
+      prompt:
+        "I was invented to count sheep and grain, but I ended up holding laws, stories, and secrets across thousands of years. Living people forget; I do not. What am I?",
+      answer: "Writing! It began as simple marks to count goods, then grew into a way to record words and ideas that outlive any single person's memory.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Invent a Picture-Writing System",
+      challenge:
+        "Early writing started as pictures and symbols (like cuneiform and hieroglyphs). Invent 6 of your own symbols that stand for things or ideas, then write a short secret message with them.",
+      steps: [
+        "Pick 6 common things or ideas (sun, food, friend, danger, happy, river...).",
+        "Draw one simple symbol for each — easy to redraw.",
+        "Make a 'key' that shows what each symbol means.",
+        "Write a 1–2 line message using only your symbols and challenge someone to decode it."
+      ],
+      deliverable: "A symbol key of 6 invented symbols plus a short message written in them.",
+      choiceBoard: [
+        "Draw the symbols and a secret message on paper.",
+        "Make a 'clay tablet' look by pressing symbols into playdough or foil.",
+        "Write a real sentence about your day using only symbols, then translate it."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Writing Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.hist.w4.d2.arena1",
+          type: "multiple_choice",
+          stem: "Why do historians call the time BEFORE written records 'prehistory'?",
+          choices: [
+            "Because nothing important happened back then",
+            "Because there are no written accounts, so we learn it from objects and bones instead",
+            "Because people couldn't talk yet",
+            "Because it was before the planet existed"
+          ],
+          answerIndex: 1,
+          explanation: "'Prehistory' means before written records. Plenty happened — we just study it through artifacts rather than writing.",
+          hintLadder: [
+            "'Pre' means before. Before WHAT, exactly?",
+            "It's about written records, not about events.",
+            "No writing yet, so we rely on objects and bones."
+          ]
+        },
+        {
+          id: "g6.fall.hist.w4.d2.arena2",
+          type: "short_answer",
+          stem: "Writing let knowledge outlive a person's memory. Describe one thing we know today ONLY because ancient people wrote it down, and explain why memory alone couldn't have preserved it.",
+          rubric: {
+            level3: "Names a plausible written record (a law, story, trade deal, ruler's name, calendar) AND explains that without writing it would have been forgotten or changed across generations.",
+            level2: "Names something written down but the 'why memory fails' part is thin.",
+            level1: "Vague or unrelated, with no reasoning."
+          },
+          exemplar: "We know ancient laws like Hammurabi's Code only because they were carved in stone. If they'd only lived in people's memories, the exact rules would have been forgotten or changed over hundreds of years.",
+          hintLadder: [
+            "Think of laws, stories, or rulers' names from long ago.",
+            "How do we know the EXACT words?",
+            "Explain why memory passed down for centuries would drift or vanish."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "mindfulness",
+      title: "Move & Reset: Trace and Breathe",
+      prompt:
+        "With your finger, slowly 'write' your name in the air, breathing in as you start each letter and out as you finish it. Notice how slowing down makes each stroke feel calm and deliberate.",
+      scienceTieIn: "Slow, deliberate movement paired with steady breathing calms your nervous system and helps your brain settle and focus.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "You write and read all day — texts, lists, signs. Pick one thing you wrote today that someone in the future might 'record' to understand your life.",
+      badge: { id: "fall-first-scribe", name: "First Scribe", emoji: "📜" },
+      estimatedMinutes: 7
+    }
+  }
 };

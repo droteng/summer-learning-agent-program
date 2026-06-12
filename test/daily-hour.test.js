@@ -11,19 +11,31 @@ test("every dailyHour block that exists passes the schema validator", () => {
   }
 });
 
-test("Summer Week 1 (the pilot) has a full Daily Hour on every mission", () => {
-  const week1Summer = ALL_MISSIONS.filter(
-    (m) => (m.season ?? "summer") === "summer" && m.weekNumber === 1 && !m.enrichment
+test("every Grade 6 Summer & Fall core mission has a full Daily Hour", () => {
+  // The rollout: every non-enrichment Grade 6 Summer/Fall mission is now a
+  // ~60-minute, 6-segment day. (Pilot = Summer Week 1; now all weeks.)
+  const core = ALL_MISSIONS.filter(
+    (m) =>
+      m.gradeLevel === 6 &&
+      ["summer", "fall"].includes(m.season ?? "summer") &&
+      !m.enrichment
   );
-  assert.ok(week1Summer.length >= 6, `expected 6 Summer Week 1 missions, got ${week1Summer.length}`);
-  for (const m of week1Summer) {
+  assert.ok(core.length >= 81, `expected 81+ core missions, got ${core.length}`);
+  for (const m of core) {
     assert.ok(m.dailyHour, `${m.id} is missing a dailyHour`);
-    // Each pilot mission should now be a ~60-minute day.
+    // Each mission should now be a ~60-minute day.
     assert.ok(m.estimatedMinutes >= 55, `${m.id} estimatedMinutes should reflect the full hour`);
     // The computed daily total should land near an hour.
     const mins = dailyHourMinutes(m.dailyHour, 18);
     assert.ok(mins >= 55 && mins <= 70, `${m.id} daily hour total ${mins} should be ~60`);
   }
+});
+
+test("Daily Hour badge ids are unique across the whole program", () => {
+  const withDH = ALL_MISSIONS.filter((m) => m.dailyHour);
+  const ids = withDH.map((m) => m.dailyHour.reflectAndReward.badge.id);
+  const dupes = ids.filter((id, i) => ids.indexOf(id) !== i);
+  assert.equal(dupes.length, 0, `duplicate badge ids: ${[...new Set(dupes)].join(", ")}`);
 });
 
 test("Daily Hour arena items carry gradeable answer fields", () => {

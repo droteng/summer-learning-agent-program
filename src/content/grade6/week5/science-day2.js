@@ -9,7 +9,7 @@ export const grade6ScienceWeek5Day2 = {
   subject: "Science",
   topic: "Engineering design process",
   topicTag: "engineering-design",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["NGSS.MS-ETS1-1", "NGSS.MS-ETS1-2"],
   hook: "Real engineers don't get it right the first time. They follow a loop. Today you walk a tiny invention through that loop.",
   miniLesson: [
@@ -129,5 +129,89 @@ export const grade6ScienceWeek5Day2 = {
       description: "Adjusts five variables between tests, so it's impossible to tell which change helped.",
       coachMove: "Apply the fair-test rule. One change per iteration. Document each change."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "would_you_rather",
+      title: "Would You Rather?",
+      prompt:
+        "Would you rather spend a week building one expensive 'perfect' prototype, or build five cheap rough ones in a day? Think like an engineer — which gets you to a working design faster?",
+      answer:
+        "Five cheap prototypes wins. Cheap, fast builds let you fail early, learn from each, and improve — so you find what works before spending big. That's the whole point of prototyping.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Run the Design Loop",
+      challenge:
+        "Pick a tiny problem (pens fall out of your bag, your earbuds tangle, your door slams). Walk it through the full engineering loop: define the problem with criteria, sketch two ideas, choose one, and describe the cheapest prototype you'd build first.",
+      steps: [
+        "Define the problem and write two measurable criteria for a good fix.",
+        "Brainstorm and sketch at least two different ideas.",
+        "Pick one idea and explain why.",
+        "Describe the cheapest, smallest prototype you could build to test it."
+      ],
+      deliverable: "A design-loop plan: problem + criteria, two sketched ideas, your chosen idea, and a cheap prototype description.",
+      choiceBoard: [
+        "Sketch the ideas and write the plan.",
+        "Build a real cardboard/tape prototype and describe how you'd test it.",
+        "Make a 4-panel comic showing define → prototype → test → iterate."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Design Loop Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.sci.w5.d2.arena1",
+          type: "multiple_choice",
+          stem: "Your prototype paper bridge holds 5 coins but the goal is 20. You add thicker paper, fold the deck, AND add supports all at once — then it holds 20. What's the PROBLEM with how you tested?",
+          choices: [
+            "Nothing — it worked, so it's fine.",
+            "You changed several things at once, so you can't tell which change actually helped.",
+            "You should have given up after 5 coins.",
+            "Paper bridges can't be tested."
+          ],
+          answerIndex: 1,
+          explanation: "Changing several variables at once breaks the fair-test rule — you can't tell which change made the difference, so you can't reliably improve next time.",
+          hintLadder: [
+            "Remember the fair-test rule from earlier weeks.",
+            "How many things did you change between tests?",
+            "Change only one thing at a time so you know what helped."
+          ]
+        },
+        {
+          id: "g6.sci.w5.d2.arena2",
+          type: "short_answer",
+          stem: "An engineer is designing a reusable water bottle. Write TWO specific, testable criteria the finished bottle must meet.",
+          rubric: {
+            level3: "Two specific, measurable criteria (e.g., holds at least 500 mL, doesn't leak when shaken for 10 seconds, costs under $8).",
+            level2: "Two criteria but at least one is vague (e.g., 'works well', 'looks nice').",
+            level1: "One criterion, or vague/non-testable statements."
+          },
+          exemplar: "1) Holds at least 750 mL of water. 2) Does not leak a single drop when held upside down and shaken for 10 seconds.",
+          hintLadder: [
+            "A criterion is a must-pass condition you can measure.",
+            "Add a number — a volume, a time, a cost.",
+            "Write two of them."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Prototype Pose",
+      prompt:
+        "Stand up and 'build' an invention with your body in 4 quick poses: define (think pose), sketch (draw in the air), build (hammer it), test (launch it!). Hold each pose for 5 seconds.",
+      scienceTieIn: "Short bursts of movement increase blood flow and oxygen to your brain, refreshing the focus engineers need for careful iteration.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Think of a time you got something right only after a few tries. What did each failed attempt teach you for the next one?",
+      badge: { id: "design-loop-engineer", name: "Design Loop Engineer", emoji: "🛠️" },
+      estimatedMinutes: 7
+    }
+  }
 };

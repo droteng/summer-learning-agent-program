@@ -11,7 +11,7 @@ export const fallG6CodingW6D4 = {
   subject: "Coding/Computer Science/AI",
   topic: "Build a pattern generator",
   topicTag: "loops-variables",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CSTA.2-AP-13", "CSTA.2-AP-11"],
   hook: "Today you design the brain of a pattern generator: a loop that changes a little each time, so simple rules bloom into a leaf, a spiral, or a starburst.",
   miniLesson: [
@@ -120,5 +120,86 @@ export const fallG6CodingW6D4 = {
       description: "Changes size/count before the draw step, shifting every value by one.",
       coachMove: "Trace the loop line by line in order: draw uses the CURRENT value, then the update changes it for next time."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "riddle",
+      title: "Trace the Growing Leaf",
+      prompt:
+        "start size = 3; repeat 3 times: draw a leaf of 'size', then size = size + 4. What are the three sizes actually DRAWN? Trace it carefully — the draw happens BEFORE the update!",
+      answer: "Drawn 3 (then size→7), drawn 7 (then size→11), drawn 11 (then size→15). The three drawn sizes are 3, 7, and 11.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Plan Your Pattern Generator",
+      challenge:
+        "Design the brain of a pattern generator for an autumn shape (a spiral of leaves, a growing pinecone, a starburst). Spell out the three parts — what repeats, how many times, and what changes each loop — then trace the first 3 repeats by hand.",
+      materials: ["Paper & markers OR a device to type/draw on"],
+      steps: [
+        "Name the action that repeats (draw a leaf, draw a circle).",
+        "Pick the repeat count and any turn angle.",
+        "Choose what changes each loop (size + 2, turn + 5°).",
+        "Hand-trace the first 3 repeats, writing the value drawn each time."
+      ],
+      deliverable: "A generator plan listing the repeated action, count, and per-loop change, plus a 3-row trace table.",
+      choiceBoard: [
+        "Write the plan and trace table.",
+        "Draw the first few shapes your generator would produce.",
+        "Make a comic where a robot runs your generator and the pattern blooms."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Generator Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.code.w6.d4.arena1",
+          type: "numeric",
+          stem: "start size = 1; repeat 5 times: draw size, then size = size × 2. What is the LAST size DRAWN?",
+          answer: 16,
+          tolerance: 0,
+          unit: "",
+          hintLadder: [
+            "Draw first, then double — list the drawn values.",
+            "Drawn: 1, 2, 4, 8, 16 (then size becomes 32).",
+            "The last value DRAWN is 16."
+          ],
+          explanation: "Each repeat draws the current size, then doubles it. Drawn values: 1, 2, 4, 8, 16. The last drawn is 16 (size becomes 32 only after, and is never drawn)."
+        },
+        {
+          id: "g6.fall.code.w6.d4.arena2",
+          type: "short_answer",
+          stem: "A generator should draw petals that get longer each loop AND turn so they fan out in a circle. Describe what repeats, the count, and the TWO things that change each loop.",
+          rubric: {
+            level3: "States the repeated action (draw a petal), a repeat count, AND two per-loop changes — the petal length increases and the turn advances around the circle.",
+            level2: "Has the action and count but names only one changing value, or is vague about the turning.",
+            level1: "Missing the loop structure or no changing values."
+          },
+          exemplar: "Repeat 12 times: draw a petal, make the next petal 3 units longer, and turn 30° (360 ÷ 12) before the next one. The length grows each loop while the turn spreads the petals evenly into a full circle.",
+          hintLadder: [
+            "What action repeats, and how many times?",
+            "One change makes petals longer — what is it?",
+            "The second change is the turn that fans them around the circle."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Grow-the-Reps Loop",
+      prompt:
+        "Run a loop with your body: repeat 4 times, and each loop add one more arm circle (1, then 2, then 3, then 4). Feel the count 'variable' grow each time, just like in your generator!",
+      scienceTieIn:
+        "Slowly increasing the reps warms up your muscles and sends more oxygen-rich blood to your brain for sharper focus.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Your generator turns a short rule into a rich pattern — just like a seed. Write about the pattern you'd most want to generate and what would change each loop.",
+      badge: { id: "generator-architect", name: "Generator Architect", emoji: "🌀" },
+      estimatedMinutes: 7
+    }
+  }
 };
