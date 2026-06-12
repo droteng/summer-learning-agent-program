@@ -9,7 +9,7 @@ export const grade6WorldWeek1Day4 = {
   subject: "World/Current Affairs",
   topic: "Fact, opinion, and where in the world",
   topicTag: "fact-vs-opinion",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["C3.D2.Geo.2.6-8", "C3.D2.His.13.6-8"],
   hook: "A news story has facts you can check and opinions people add. Today you tell them apart and place stories on the map.",
   miniLesson: [
@@ -135,5 +135,88 @@ export const grade6WorldWeek1Day4 = {
       description: "Hears \"X is the best\" said with confidence and accepts it as a fact.",
       coachMove: "Ask: could you find this in a record, dataset, or measurement? If not, it's opinion."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "would_you_rather",
+      title: "Fact or Opinion?",
+      prompt:
+        "Sort these fast: (1) 'The Pacific is the largest ocean.' (2) 'The beach is the best place on Earth.' (3) 'Water covers about 70% of the planet.' Which are facts, which is opinion?",
+      answer: "(1) and (3) are facts you can verify. (2) is an opinion — it's a personal judgment you can't look up.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Fact vs. Opinion Hunt",
+      challenge:
+        "Find 4 statements from around you — a cereal box, a sign, a headline, something a person said. Sort each into FACT (checkable) or OPINION (a judgment), and explain how you know.",
+      steps: [
+        "Collect 4 real statements you see or hear.",
+        "Label each FACT or OPINION.",
+        "For each, write how you can tell.",
+        "Spot any that sneakily mix both!"
+      ],
+      deliverable: "A fact-vs-opinion chart with 4 real statements sorted and explained.",
+      choiceBoard: [
+        "Make a two-column fact/opinion chart.",
+        "Make a 'spot the opinion' poster from a real ad.",
+        "Draw a comic where a character is fooled by an opinion dressed up as a fact."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Fact-Finder Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.world.w1.d4.arena1",
+          type: "multiple_choice",
+          stem: "Which statement is a FACT (checkable)?",
+          choices: [
+            "Mount Everest is the most beautiful mountain.",
+            "Mount Everest is the tallest mountain above sea level.",
+            "Everyone should climb Everest.",
+            "Everest is scary."
+          ],
+          answerIndex: 1,
+          explanation: "Its height can be measured and verified; the others are judgments.",
+          hintLadder: [
+            "Which one could you look up and confirm?",
+            "Facts are measurable; opinions are judgments.",
+            "The 'tallest above sea level' statement."
+          ]
+        },
+        {
+          id: "g6.world.w1.d4.arena2",
+          type: "short_answer",
+          stem: "Write one FACT and one OPINION about your country or town. Label each.",
+          rubric: {
+            level3: "Gives a clearly checkable fact AND a clear personal-judgment opinion, both correctly labeled.",
+            level2: "Both present but one is mislabeled or borderline.",
+            level1: "Two facts, two opinions, or unlabeled."
+          },
+          exemplar: "Fact: my town has one public library. Opinion: my town is the friendliest place to grow up.",
+          hintLadder: [
+            "A fact you could verify in records.",
+            "An opinion is your personal judgment.",
+            "Label each one."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "mindfulness",
+      title: "Move & Reset: Notice 5 Things",
+      prompt:
+        "Look around and silently name 5 things you can SEE, 4 you can HEAR, 3 you can TOUCH. This 'grounding' resets your focus before the next part.",
+      scienceTieIn: "Tuning into your senses calms the brain's alarm system — the same focus tool that helps before a test or presentation.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "What's one place in the world you're curious about? Write one FACT you know and one OPINION you have about it.",
+      badge: { id: "fact-finder", name: "Fact Finder", emoji: "🌍" },
+      estimatedMinutes: 7
+    }
+  }
 };

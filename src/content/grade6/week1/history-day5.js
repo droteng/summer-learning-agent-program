@@ -9,7 +9,7 @@ export const grade6HistoryWeek1Day5 = {
   subject: "History/Civics",
   topic: "Cause and effect",
   topicTag: "cause-effect",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["C3.D2.His.14.6-8", "C3.D2.His.16.6-8"],
   hook: "One thing leads to another. Today you connect a cause to its effect on a timeline and check the order of events.",
   miniLesson: [
@@ -147,5 +147,83 @@ export const grade6HistoryWeek1Day5 = {
       description: "Assumes two simultaneous events must be related when they may not be.",
       coachMove: "Remember: a cause has to come before its effect on the timeline."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "riddle",
+      title: "What Came First?",
+      prompt:
+        "The streets are wet AND people have umbrellas up. Did the wet streets CAUSE the umbrellas, or did something else cause both? Think it through!",
+      answer: "Neither caused the other — RAIN caused both the wet streets and the umbrellas. A shared cause can make two things appear together!",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Cause-and-Effect Comic",
+      challenge:
+        "Draw a 4-panel comic that shows a cause-and-effect chain — one event leads to the next, which leads to the next. It can be about your day, a story, or history.",
+      steps: [
+        "Pick a starting event (the first cause).",
+        "Panel 2: what did it lead to?",
+        "Panel 3: what did THAT lead to?",
+        "Panel 4: the final effect. Add arrows or 'so...' between panels."
+      ],
+      deliverable: "A 4-panel cause-and-effect comic with a clear chain of events.",
+      choiceBoard: [
+        "Draw the 4-panel comic.",
+        "Write the chain as a 'because... so...' paragraph.",
+        "Make a domino diagram with labeled arrows."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Cause & Effect Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.hist.w1.d5.arena1",
+          type: "multiple_choice",
+          stem: "In 'The river flooded, so the farmers lost their crops,' what is the CAUSE?",
+          choices: ["The farmers", "The crops", "The river flooded", "The season"],
+          answerIndex: 2,
+          explanation: "The flooding came first and made the crops fail — it's the cause.",
+          hintLadder: [
+            "The cause comes first and makes the other thing happen.",
+            "What happened before the crops were lost?",
+            "The river flooding."
+          ]
+        },
+        {
+          id: "g6.hist.w1.d5.arena2",
+          type: "short_answer",
+          stem: "Write a 3-link cause-and-effect chain about anything (use arrows or 'led to').",
+          rubric: {
+            level3: "Three links where each effect plausibly causes the next, clearly connected.",
+            level2: "Three links but one connection is weak.",
+            level1: "Only one link or links that don't connect."
+          },
+          exemplar: "I forgot my water bottle → I got thirsty at recess → I couldn't focus in the next class.",
+          hintLadder: [
+            "Start with one cause.",
+            "What did it lead to?",
+            "What did THAT lead to? (three links)"
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Domino Drop",
+      prompt:
+        "Stand up and do a 'domino' wave with your body: wiggle fingers → roll shoulders → sway → wiggle toes, one flowing into the next. Cause and effect, in motion!",
+      scienceTieIn: "Your nervous system sends signals down a chain from brain to muscle — a real-life cause-and-effect chain you'll learn about in science.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Think of something good that happened to you recently. What was the chain of causes that led to it?",
+      badge: { id: "cause-effect-detective", name: "Cause & Effect Detective", emoji: "🕵️" },
+      estimatedMinutes: 7
+    }
+  }
 };

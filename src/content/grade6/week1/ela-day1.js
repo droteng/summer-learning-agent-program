@@ -9,7 +9,7 @@ export const grade6ElaWeek1Day1 = {
   subject: "ELA/Writing",
   topic: "Claim and evidence warm-up",
   topicTag: "claim-evidence",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.6.RL.1", "CCSS.6.W.1"],
   hook: "Strong writing makes a claim and backs it up. Today you spot the claim, the evidence, and what's missing.",
   miniLesson: [
@@ -148,5 +148,88 @@ export const grade6ElaWeek1Day1 = {
       description: "Selects evidence that does not directly support the claim, like \"many students at our school\".",
       coachMove: "Ask: how exactly does this evidence prove the claim? If the answer is fuzzy, find better evidence."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "curiosity",
+      title: "Claim or Just a Fact?",
+      prompt:
+        "Read these two: (A) 'Our school has 600 students.' (B) 'Our school should have a longer lunch.' Which one is a CLAIM you could argue, and which is just a fact?",
+      answer: "(A) is a fact you can look up. (B) is a claim — someone could agree or disagree, so you can argue it with evidence.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Build a Claim Poster",
+      challenge:
+        "Pick something you believe about summer (best activity, best snack, best place to read). Write it as a clear claim, then back it with TWO pieces of real evidence.",
+      steps: [
+        "Write your claim as one clear sentence.",
+        "Add evidence #1 — a fact, example, or experience.",
+        "Add evidence #2 — different from the first.",
+        "Add a one-line 'so what' that ties it together."
+      ],
+      deliverable: "A claim poster (drawn or typed) with your claim + 2 pieces of evidence.",
+      choiceBoard: [
+        "Make a poster with your claim and evidence.",
+        "Write a 30-second speech to convince a friend.",
+        "Draw a 3-panel comic where a character proves a claim."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Evidence Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.ela.w1.d1.arena1",
+          type: "multiple_choice",
+          stem: "Claim: 'Reading every day improves your vocabulary.' Which is the STRONGEST evidence?",
+          choices: [
+            "Reading is fun.",
+            "A study found students who read 20 minutes a day scored higher on vocabulary tests.",
+            "My friend likes books.",
+            "Everyone knows reading is good."
+          ],
+          answerIndex: 1,
+          explanation: "Specific, relevant data from a study directly supports the claim.",
+          hintLadder: [
+            "Strong evidence is specific and relevant.",
+            "Which option has real data tied to the claim?",
+            "The study about reading 20 minutes a day."
+          ]
+        },
+        {
+          id: "g6.ela.w1.d1.arena2",
+          type: "short_answer",
+          stem: "Write a claim about something at your school, then give one piece of real evidence that supports it.",
+          rubric: {
+            level3: "States an arguable claim AND gives specific, relevant evidence that supports it.",
+            level2: "Claim and evidence present but evidence is vague or loosely connected.",
+            level1: "States a fact or preference, or evidence doesn't support the claim."
+          },
+          exemplar: "Claim: our library should add more graphic novels. Evidence: the 3 we have are always checked out, with a waitlist of 12 students.",
+          hintLadder: [
+            "Make an arguable claim (someone could disagree).",
+            "Add a specific fact or example as evidence.",
+            "Check that the evidence really proves the claim."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "mindfulness",
+      title: "Move & Reset: Box Breathing",
+      prompt:
+        "Try box breathing 4 times: breathe in for 4 counts, hold for 4, out for 4, hold for 4. Notice how your mind feels calmer afterward.",
+      scienceTieIn: "Slow breathing tells your body the 'danger alarm' is off, so your brain can focus — a tool you'll see again in this program's science.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "What's one claim you heard today (in an ad, from a friend, or online)? Did it have real evidence behind it?",
+      badge: { id: "evidence-explorer", name: "Evidence Explorer", emoji: "🔍" },
+      estimatedMinutes: 7
+    }
+  }
 };

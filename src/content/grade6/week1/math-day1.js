@@ -16,7 +16,7 @@ export const grade6MathWeek1Day1 = {
   subject: "Math",
   topic: "Ratio reasoning warm-up",
   topicTag: "ratios",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour (core ~18 + warm-up/lab/arena/move/reflect)
   standardsRefs: ["CCSS.6.RP.A.1", "CCSS.6.RP.A.2"],
   hook: "Your summer is full of numbers. How many bike rides equal one movie night? Today you compare amounts using ratios.",
   keyTerms: [
@@ -143,7 +143,89 @@ export const grade6MathWeek1Day1 = {
       description: "Computes minutes per page instead of pages per minute.",
       coachMove: "Ask: which amount do you want as one? That goes on the bottom."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "would_you_rather",
+      title: "Would You Rather?",
+      prompt:
+        "Would you rather get 3 cookies every day, or 10 cookies every 3 days? Think about the ratio of cookies to days before you answer — then explain which is actually more per day!",
+      answer:
+        "3 cookies/day = 3 per day. 10 cookies per 3 days ≈ 3.33 per day, so the 10-per-3-days deal is slightly more. Either way, you just compared two ratios!",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Invent a Squad Snack",
+      challenge:
+        "Invent your own trail-mix or smoothie recipe using a ratio (like 2 scoops oats : 3 scoops fruit). Then scale it up to feed your whole squad of 4 — keep the ratio the same!",
+      materials: ["Paper & markers, OR a device to type/draw on"],
+      steps: [
+        "Pick two ingredients and choose a ratio between them.",
+        "Draw or write your recipe card with the ratio shown.",
+        "Scale every ingredient by the same number to feed 4 people.",
+        "Double-check: does your scaled-up recipe reduce back to your original ratio?"
+      ],
+      deliverable: "A recipe card showing your original ratio and the scaled-up version.",
+      choiceBoard: [
+        "Make a recipe card (draw it or type it).",
+        "Make a 'ratio poster' showing 3 real ratios you find at home.",
+        "Make a 4-panel comic where a character scales a recipe up for a party."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Ratio Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.math.w1.d1.arena1",
+          type: "numeric",
+          stem: "A paint mix is 5 parts blue to 2 parts white. To make 35 parts of blue, how many parts of white do you need?",
+          answer: 14,
+          tolerance: 0,
+          unit: "parts",
+          hintLadder: [
+            "Blue went from 5 to 35 — times what?",
+            "35 ÷ 5 = 7, so scale white by 7.",
+            "2 × 7 = 14 parts white."
+          ],
+          explanation: "Scale by 7: 2 × 7 = 14 parts white."
+        },
+        {
+          id: "g6.math.w1.d1.arena2",
+          type: "short_answer",
+          stem: "A cheetah runs 30 meters in 2 seconds. A horse runs 60 meters in 5 seconds. Use unit rates to say which is faster, and show your work.",
+          rubric: {
+            level3: "Computes both unit rates (cheetah 15 m/s, horse 12 m/s) and concludes the cheetah is faster, with work shown.",
+            level2: "Finds one unit rate or reaches the right answer with weak work.",
+            level1: "Compares totals without unit rates or wrong conclusion."
+          },
+          exemplar: "Cheetah: 30 ÷ 2 = 15 m/s. Horse: 60 ÷ 5 = 12 m/s. 15 > 12, so the cheetah is faster.",
+          hintLadder: [
+            "Find each animal's meters per ONE second.",
+            "Divide distance by time for each.",
+            "Compare the two unit rates."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Ratio Jumping Jacks",
+      prompt:
+        "Do jumping jacks in a 2:1 ratio — 2 fast jacks, then 1 slow jack, and repeat that pattern 5 times. Notice how your heart speeds up!",
+      scienceTieIn:
+        "Your heart is pumping faster to deliver more oxygen to your muscles — you'll explore exactly how in this week's science quest.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Where did you spot a ratio in real life today — in a recipe, a game, a price, or a score? Write one you noticed.",
+      badge: { id: "ratio-ranger", name: "Ratio Ranger", emoji: "🧮" },
+      estimatedMinutes: 7
+    }
+  }
 };
 
 // Registry helpers moved to ../../index.js so adding a new mission is a

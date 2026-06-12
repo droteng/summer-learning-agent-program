@@ -9,7 +9,7 @@ export const grade6ScienceWeek1Day2 = {
   subject: "Science",
   topic: "Testable questions and fair tests",
   topicTag: "experimental-design",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["NGSS.MS-LS1-1", "NGSS.SEP.3"],
   hook: "Scientists ask questions they can actually test. Today you turn a curious thought into a fair experiment.",
   keyTerms: [
@@ -144,5 +144,88 @@ export const grade6ScienceWeek1Day2 = {
       description: "Lets multiple things differ between groups, so it's impossible to tell which caused the result.",
       coachMove: "Ask: if the result is different, which exact thing caused it? If you can't say, the test wasn't fair."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "would_you_rather",
+      title: "Which Question Can You Test?",
+      prompt:
+        "Which question could you actually TEST with an experiment? (A) 'Is summer the best season?' or (B) 'Do plants grow taller in sunlight or shade?' Pick one and say why.",
+      answer: "(B) is testable — you can set up plants in sun vs. shade and measure. (A) is an opinion, so there's no fair way to test it.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Design a Fair Test",
+      challenge:
+        "Pick a question you're curious about (Does music help you focus? Does cold water freeze faster than hot?). Design a fair test: name the ONE thing you change, what you keep the same, and what you measure.",
+      steps: [
+        "Write your testable question.",
+        "Name the one variable you'll change.",
+        "List 2–3 things you'll keep the same.",
+        "Say exactly what you'll measure and how."
+      ],
+      deliverable: "A fair-test plan: question, variable changed, things kept the same, and what you measure.",
+      choiceBoard: [
+        "Write an experiment plan.",
+        "Draw a labeled before/after diagram of your test.",
+        "Make a comic of a scientist running your fair test."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Fair-Test Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.sci.w1.d2.arena1",
+          type: "multiple_choice",
+          stem: "To test if a fertilizer helps tomatoes grow, which makes the test FAIR?",
+          choices: [
+            "Give one plant more water AND fertilizer",
+            "Keep everything the same except the fertilizer",
+            "Use two different plant types",
+            "Put one plant in sun and one in shade"
+          ],
+          answerIndex: 1,
+          explanation: "Only the fertilizer should differ, so any change is caused by the fertilizer alone.",
+          hintLadder: [
+            "A fair test changes only ONE thing.",
+            "Everything else must match.",
+            "Change only the fertilizer."
+          ]
+        },
+        {
+          id: "g6.sci.w1.d2.arena2",
+          type: "short_answer",
+          stem: "A student tests 'Does a paper airplane fly farther with bigger wings?' Name ONE thing they must keep the same for it to be fair.",
+          rubric: {
+            level3: "Names a relevant controlled variable (same paper, same throw force, same height/angle, same room).",
+            level2: "Names something to keep the same but it's vague.",
+            level1: "Names the variable being changed, or nothing relevant."
+          },
+          exemplar: "They must throw each plane with the same force from the same height — otherwise the throw, not the wings, could cause the difference.",
+          hintLadder: [
+            "What besides wing size could change how far it flies?",
+            "Think throw force, height, paper, room.",
+            "Pick one to hold constant."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "wellness",
+      title: "Move & Reset: Stretch & Sip",
+      prompt:
+        "Stand up, reach for the sky for 10 seconds, touch your toes for 10, then drink some water. Your brain works better hydrated and oxygenated!",
+      scienceTieIn: "Water helps your blood carry oxygen and nutrients to your brain — you'll explore how your body's systems team up later in the program.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "What's a question about the world you'd love to test? Write it, and one way you could measure the answer.",
+      badge: { id: "fair-test-scientist", name: "Fair-Test Scientist", emoji: "🔬" },
+      estimatedMinutes: 7
+    }
+  }
 };
