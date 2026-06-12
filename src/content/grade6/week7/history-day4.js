@@ -9,7 +9,7 @@ export const grade6HistoryWeek7Day4 = {
   subject: "History/Civics",
   topic: "Cause-and-effect chains",
   topicTag: "causal-chains",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["C3.D2.His.14.6-8", "C3.D2.His.16.6-8"],
   hook: "History rarely has one cause. Today you trace a chain — each link makes the next more likely.",
   miniLesson: [
@@ -131,5 +131,88 @@ export const grade6HistoryWeek7Day4 = {
       description: "Says a war or change happened because of a single famous moment, ignoring the chain that led up to it.",
       coachMove: "List the contributing causes. If only one feels right, you probably need to read more sources."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "riddle",
+      title: "Knock It Down",
+      prompt:
+        "I stand in a long line. Tip the first of me over, and we ALL fall — each one knocking down the next. What am I, and what does this teach about history?",
+      answer: "Dominoes! Each one knocks over the next, just like a cause-and-effect chain in history where one event makes the next one more likely.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Build a History Domino Chain",
+      challenge:
+        "Pick any real or invented event and build a 4-link cause-and-effect chain that leads up to it — where each link makes the next more likely, with no magical jumps.",
+      steps: [
+        "Write the final event at the bottom (the last domino to fall).",
+        "Work backwards: what event made it likely? That's link 3.",
+        "Keep going back to link 2 and link 1, each one causing the next.",
+        "Draw it as 4 dominoes or boxes with arrows, and label each link."
+      ],
+      deliverable: "A 4-link causal chain diagram with arrows, each link plausibly causing the next.",
+      choiceBoard: [
+        "Draw the 4-domino chain with labels.",
+        "Write the chain as a 'this led to... which led to...' paragraph.",
+        "Make a flowchart with boxes and arrows."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Causal Chain Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.hist.w7.d4.arena1",
+          type: "multiple_choice",
+          stem: "Which chain is the STRONGEST cause-and-effect chain (each link plausibly making the next more likely)?",
+          choices: [
+            "A drought killed crops, so food prices rose, so more families left the countryside for city jobs.",
+            "A king wore a red cloak, so it rained, so a war started.",
+            "People liked music, so the moon got bigger, so trade increased.",
+            "A bell rang, so winter came early, so prices fell."
+          ],
+          answerIndex: 0,
+          explanation: "The drought chain has a real mechanism at every link: less food → higher prices → people move for work. The others connect events that have no plausible cause-and-effect link.",
+          hintLadder: [
+            "Look for the chain where each link actually makes sense.",
+            "Skip the ones with magical or unrelated jumps.",
+            "Drought → high food prices → people move for work."
+          ]
+        },
+        {
+          id: "g6.hist.w7.d4.arena2",
+          type: "short_answer",
+          stem: "A friend says 'World events usually happen because of one big cause.' Explain why historians disagree, and give an example with at least two contributing causes.",
+          rubric: {
+            level3: "Explains that real events usually have several combining causes, not one, with a clear example naming at least two contributing causes.",
+            level2: "Argues for multiple causes but the example has only one cause or is vague.",
+            level1: "Agrees with the friend or gives no example."
+          },
+          exemplar: "Historians say most big events have several causes that combine, not one. For example, air travel became common after 1950 because of both better jet engines from WWII research AND rising middle-class incomes — neither alone would have been enough.",
+          hintLadder: [
+            "How many causes does most real history have?",
+            "Pick an event and list more than one cause.",
+            "Show that no single cause alone would have been enough."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Domino Wave",
+      prompt:
+        "Make your body a falling domino chain: tip your head, then roll your shoulders, then your hips, then bend your knees — one motion triggering the next, top to bottom. Do it 3 times, slow and smooth.",
+      scienceTieIn: "Your brain fires a chain of nerve signals to move each body part in sequence — a real cause-and-effect chain inside you, which you'll study in science.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Think of something good that happened to you recently. Trace back at least two causes that combined to make it happen — not just one.",
+      badge: { id: "chain-tracer", name: "Chain Tracer", emoji: "🔗" },
+      estimatedMinutes: 7
+    }
+  }
 };

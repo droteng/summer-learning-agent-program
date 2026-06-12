@@ -11,7 +11,7 @@ export const fallG6HistoryW1D4 = {
   subject: "History/Civics",
   topic: "The harvest and the rise of communities",
   topicTag: "cause-and-effect-history",
-  estimatedMinutes: 17,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["C3.D2.His.14", "C3.D2.His.1"],
   hook: "Why do so many cultures celebrate a fall harvest? Because for most of human history, the autumn harvest decided whether a community survived the winter.",
   miniLesson: [
@@ -126,5 +126,88 @@ export const fallG6HistoryW1D4 = {
       description: "Thinks 'surplus' means too little food rather than extra.",
       coachMove: "Anchor it: a surplus is the leftover you can store or share — the opposite of a shortage."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "riddle",
+      title: "Harvest Word Riddle",
+      prompt:
+        "I am the extra harvest a community gathers — more than they need to eat right now. I can be stored for winter or traded to neighbors. Farmers who have me can survive when food is scarce. What single word am I?",
+      answer: "Surplus — the extra food beyond what's needed right now, which can be stored or traded.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Found a Harvest Village",
+      challenge:
+        "Imagine you're founding a village after people first learn to farm. Show how a good fall harvest lets your village grow by giving some people jobs beyond gathering food.",
+      steps: [
+        "Name your village and the main crop it stores each fall.",
+        "Explain in one sentence how stored surplus frees people from finding food daily.",
+        "Invent three NON-farmer jobs the surplus makes possible (builder, trader, leader, etc.).",
+        "Draw or describe how your village looks once these jobs exist."
+      ],
+      deliverable: "A village plan showing the cause (stored harvest) and the effect (specialized jobs and growth).",
+      choiceBoard: [
+        "Draw a labeled map of your harvest village.",
+        "Write a short 'day in the life' story of one villager.",
+        "Make a cause-and-effect chart: harvest → surplus → new jobs → growth."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Cause-and-Effect Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.hist.w1.d4.arena1",
+          type: "multiple_choice",
+          stem: "Which is the best example of a CAUSE leading to an EFFECT in early history?",
+          choices: [
+            "Towns existed, so people decided to invent farming.",
+            "People learned to store surplus harvest, so some could specialize in other jobs.",
+            "Festivals were fun, so winters became warmer.",
+            "People moved constantly, so they built permanent towns."
+          ],
+          answerIndex: 1,
+          explanation: "Stored surplus (cause) freed people from gathering food, so they could specialize (effect). The other options reverse or break the cause-effect link.",
+          hintLadder: [
+            "The cause must come first and actually produce the effect.",
+            "Which option has stored food leading to new kinds of work?",
+            "Surplus → specialized jobs is the real cause-and-effect."
+          ]
+        },
+        {
+          id: "g6.fall.hist.w1.d4.arena2",
+          type: "short_answer",
+          stem: "Explain one cause-and-effect chain with TWO links: start with farming and end with the growth of towns. Use 'so' or 'because' for each link.",
+          rubric: {
+            level3: "Gives a clear two-link chain (e.g., farming → surplus storage → specialized jobs/town growth) using so/because accurately.",
+            level2: "Has a cause and an effect but only one link, or a link is vague.",
+            level1: "Lists facts with no real cause-effect chain."
+          },
+          exemplar: "People learned to farm, so they could store a surplus harvest; because food was stored, not everyone had to gather it, so towns with builders and traders grew.",
+          hintLadder: [
+            "Link 1: farming leads to what?",
+            "Link 2: stored surplus leads to what?",
+            "Join both links with 'so' or 'because.'"
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Harvest Gather",
+      prompt:
+        "Stand and mime the harvest: reach up to pick, bend to gather, twist to load a basket, repeat for 30 seconds. Imagine storing enough food to last the whole winter.",
+      scienceTieIn: "Gentle reaching and twisting boosts blood flow and loosens stiff muscles, helping your brain stay alert for the next lesson.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Does your family or culture have a fall or harvest tradition? Write what it is and one guess about its history.",
+      badge: { id: "fall-harvest-historian", name: "Harvest Historian", emoji: "🌾" },
+      estimatedMinutes: 7
+    }
+  }
 };

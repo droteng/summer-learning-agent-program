@@ -10,7 +10,7 @@ export const fallG6ScienceW6D2 = {
   subject: "Science",
   topic: "Symmetry and spirals in living things",
   topicTag: "symmetry-patterns",
-  estimatedMinutes: 17,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["NGSS.MS-LS1-4", "NGSS.SEP.4"],
   hook: "A butterfly's wings match. A snail's shell spirals. A leaf's veins branch the same way every time. Nature loves patterns — and they aren't random. Today you find out why.",
   miniLesson: [
@@ -120,5 +120,91 @@ export const fallG6ScienceW6D2 = {
       description: "Believes symmetry and spirals are random or only for looks.",
       coachMove: "Tie each pattern to a function: symmetry for balance/movement, spirals for efficient packing."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "would_you_rather",
+      title: "Symmetry or Spiral?",
+      prompt:
+        "Would you rather be built with perfect LINE symmetry (like a butterfly, matching halves) or with a growing SPIRAL (like a snail shell)? Pick one and say what real advantage your body would get from that pattern.",
+      answer:
+        "Either works! Line symmetry would give you balanced, steady movement (great for running straight). A spiral would let you keep growing bigger while staying the same compact shape. Both patterns do a real job.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Fall Pattern Hunt Journal",
+      challenge:
+        "Go on an autumn pattern hunt — outside or by a window. Find one thing with symmetry and one thing with a spiral, then record each with a sketch and a note about what its pattern might DO for it.",
+      materials: ["Paper & pencil OR a device to sketch/type on"],
+      steps: [
+        "Find and sketch one symmetric thing (leaf, face, insect, snowflake).",
+        "Find and sketch one spiral thing (shell, pinecone, fern, seed head).",
+        "Under each, write one job that pattern might do (balance, packing, strength).",
+        "Add a fall observation: how does autumn change the patterns you see?"
+      ],
+      deliverable: "A two-entry pattern journal: one symmetry sketch and one spiral sketch, each with a function note.",
+      choiceBoard: [
+        "Make the sketched pattern journal.",
+        "Build a real symmetric AND a spiral shape from leaves or paper.",
+        "Write a short 'nature detective' story explaining why your two patterns exist."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Pattern Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.sci.w6.d2.arena1",
+          type: "multiple_choice",
+          stem: "A snowflake has 6 matching arms around its center. What kind of symmetry is that BEST described as?",
+          choices: [
+            "No symmetry — it's random",
+            "Symmetry around a center point (it matches as you rotate it)",
+            "Only top-to-bottom symmetry",
+            "Spiral growth"
+          ],
+          answerIndex: 1,
+          explanation: "Six identical arms arranged around a center repeat as you rotate the snowflake — that's symmetry around a central point, not a spiral.",
+          hintLadder: [
+            "Picture turning the snowflake a little — does it look the same?",
+            "The arms repeat AROUND a center, not along a single fold line.",
+            "It matches as you rotate it: symmetry around a center point."
+          ]
+        },
+        {
+          id: "g6.fall.sci.w6.d2.arena2",
+          type: "short_answer",
+          stem: "A nautilus shell coils in a spiral that gets wider as the animal grows. Explain ONE advantage this spiral shape gives the animal.",
+          rubric: {
+            level3: "Gives a clear, sensible advantage — the spiral lets it keep growing larger while staying the same strong, compact shape (no need to build a whole new home).",
+            level2: "States a vague benefit related to growth or strength without clear reasoning.",
+            level1: "No real advantage or off-topic answer."
+          },
+          exemplar: "The spiral lets the nautilus add bigger chambers as it grows without changing its overall shape, so it always has a strong, compact home that fits its larger body.",
+          hintLadder: [
+            "Think about what happens as the animal gets bigger.",
+            "How does a spiral let it grow without starting over?",
+            "Connect 'keeps the same shape while growing' to an advantage."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Mirror Symmetry Moves",
+      prompt:
+        "Stand tall and make your body symmetric: raise both arms evenly, then balance on one foot and mirror the pose on the other side. Hold each side for 5 slow breaths and feel both halves working together.",
+      scienceTieIn:
+        "Your body's left-right symmetry helps you balance and move steadily — the same reason symmetric animals move so well.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Symmetry and spirals show up in art and buildings too. Write about one 'natural' pattern you've seen people use — and what job it might do.",
+      badge: { id: "pattern-naturalist", name: "Pattern Naturalist", emoji: "🐚" },
+      estimatedMinutes: 7
+    }
+  }
 };

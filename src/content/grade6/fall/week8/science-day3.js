@@ -10,7 +10,7 @@ export const fallG6ScienceW8D3 = {
   subject: "Science",
   topic: "Fall science synthesis",
   topicTag: "synthesis-review",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["NGSS.MS-LS2-3", "NGSS.SEP.3"],
   hook: "This season you observed change, mapped food webs, and found patterns in nature. Today you connect those ideas — the science story behind your showcase.",
   miniLesson: [
@@ -120,5 +120,87 @@ export const fallG6ScienceW8D3 = {
       description: "Underestimates how connected an ecosystem's members are.",
       coachMove: "Trace one removal through the web (no otters → urchins boom → kelp gone) to show the connections."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "curiosity",
+      title: "Why Do Leaves Turn?",
+      prompt:
+        "In fall, green leaves turn red, orange, and yellow. The colorful pigments were there all along — what do you think the green was hiding them, and why does the green disappear?",
+      answer:
+        "Green chlorophyll usually masks the other pigments. As days shorten, trees stop making chlorophyll, so the hidden yellows and oranges finally show — an observation that leads to an inference about sunlight and seasons.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Backyard Food Web",
+      challenge:
+        "Build a food web from a real outdoor spot you know — a yard, park, or garden. Draw at least one producer, two consumers, and one decomposer, with arrows showing where the energy flows.",
+      steps: [
+        "List the living things you've actually seen in one spot.",
+        "Sort them into producers, consumers, and decomposers.",
+        "Draw arrows from each thing to whatever eats it (energy flow).",
+        "Mark one 'keystone' guess and write what might happen if it vanished."
+      ],
+      deliverable: "A labeled food-web drawing with arrows showing energy flow and one keystone prediction.",
+      choiceBoard: [
+        "Draw a labeled food web on paper.",
+        "Build a 'remove one species' before/after pair of webs.",
+        "Make an energy-pyramid poster showing the ~10% rule."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Ecosystem Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.sci.w8.d3.arena1",
+          type: "multiple_choice",
+          stem: "Which statement is an INFERENCE rather than an observation?",
+          choices: [
+            "The leaves on the maple are orange.",
+            "A squirrel ran up the trunk.",
+            "The tree is getting ready for winter.",
+            "There are acorns on the ground."
+          ],
+          answerIndex: 2,
+          explanation: "'Getting ready for winter' is an explanation you reason out, not something you directly see — that makes it an inference.",
+          hintLadder: [
+            "Which one can't you directly see or count?",
+            "Three describe what's visible; one explains WHY.",
+            "The 'getting ready for winter' statement is the inference."
+          ]
+        },
+        {
+          id: "g6.fall.sci.w8.d3.arena2",
+          type: "numeric",
+          stem: "An energy pyramid starts with 1000 units of energy in the plants. Using the ~10% rule, about how many units reach the second level (the plant-eaters)?",
+          answer: 100,
+          tolerance: 0,
+          unit: "units",
+          hintLadder: [
+            "About 10% passes to the next level.",
+            "10% of 1000 is 1000 × 0.10.",
+            "= 100 units."
+          ],
+          explanation: "About 10% passes up: 1000 × 0.10 = 100 units."
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "mindfulness",
+      title: "Move & Reset: Nature Notice",
+      prompt:
+        "Look out a window or step outside. Silently name 3 signs of fall you can see and 2 sounds you can hear. Take 3 slow breaths as you notice them.",
+      scienceTieIn: "Slowing down to observe is the same skill scientists use to spot patterns and changes in an ecosystem.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Which fall science idea — observation vs. inference, food webs, energy flow, or patterns — will you explain at your showcase? Write one sentence you'd actually say.",
+      badge: { id: "ecosystem-storyteller", name: "Ecosystem Storyteller", emoji: "🍂" },
+      estimatedMinutes: 7
+    }
+  }
 };

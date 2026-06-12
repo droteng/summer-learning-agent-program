@@ -9,7 +9,7 @@ export const grade6ElaWeek8Day1 = {
   subject: "ELA/Writing",
   topic: "Project scope and criteria",
   topicTag: "capstone-scope",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.6.W.4", "CCSS.6.W.5"],
   hook: "This is your week. Today you pick a real project, scope it so it's finishable, and write three criteria you'll be judged on.",
   miniLesson: [
@@ -130,5 +130,88 @@ export const grade6ElaWeek8Day1 = {
       description: "Chooses 'cure cancer' or 'write a novel' for a 5-day project, then never starts.",
       coachMove: "Shrink it 5x. What's a finishable slice of the dream?"
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "would_you_rather",
+      title: "Big Dream or Finished Project?",
+      prompt:
+        "Would you rather START a giant project you never finish, or FINISH a small project you can show off Friday? Tell why — and what 'finishable' means to you this week.",
+      answer: "A finished small project wins every time. You can show it, you grew, and 'done' beats 'someday.' Scope shrinks the dream to a slice you can actually deliver.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Capstone Pitch Card",
+      challenge:
+        "Design a one-page 'pitch card' that announces your capstone like a movie poster: a bold title, the deliverable, the audience, and your three criteria.",
+      steps: [
+        "Give your project a punchy title and write the deliverable in one line.",
+        "Name your Friday audience (who will see it).",
+        "List your three testable criteria as a checklist.",
+        "Add a one-line 'why this matters to me' tagline."
+      ],
+      deliverable: "A pitch card (drawn or typed) with title, deliverable, audience, and 3 criteria.",
+      choiceBoard: [
+        "Make a movie-poster style pitch card.",
+        "Record a 20-second 'coming Friday' trailer pitch.",
+        "Draw a checklist scoreboard with your 3 criteria as boxes to tick."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Scope Master Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.ela.w8.d1.arena1",
+          type: "multiple_choice",
+          stem: "Which capstone scope is BEST sized for a single 5-day camp week?",
+          choices: [
+            "Write and publish a 200-page novel.",
+            "Make a 90-second explainer video on one topic with a chart and 3 sources.",
+            "Interview every scientist in the country.",
+            "Build a working robot from scratch."
+          ],
+          answerIndex: 1,
+          explanation: "A 90-second video with one chart and 3 sources is specific, finishable in 5 days, and still a real stretch. The others can't be finished or scoped in a week.",
+          hintLadder: [
+            "Cross out anything you couldn't finish by Friday.",
+            "Look for the option that's specific AND finishable.",
+            "It's the 90-second explainer with a chart and sources."
+          ]
+        },
+        {
+          id: "g6.ela.w8.d1.arena2",
+          type: "short_answer",
+          stem: "Write the THREE testable criteria a judge could check off for your capstone. Each must be something you can clearly pass or fail.",
+          rubric: {
+            level3: "Three criteria, each specific and testable (a judge could mark pass/fail), all matching the chosen project.",
+            level2: "Three criteria but at least one is feel-based or vague (e.g., 'looks good').",
+            level1: "Fewer than three, or none are actually testable."
+          },
+          exemplar: "1) Names at least 3 reliable sources. 2) Includes one chart that shows the main idea. 3) My family can re-tell the conclusion after one viewing.",
+          hintLadder: [
+            "A testable criterion can be checked yes or no.",
+            "Avoid 'looks good' — swap it for something measurable.",
+            "Make all three tied to YOUR project."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "wellness",
+      title: "Move & Reset: Showcase Power Pose",
+      prompt:
+        "Stand tall, hands on hips, chin up, and hold a confident 'I've got this' pose for 30 seconds. Picture your Friday showcase going great.",
+      scienceTieIn: "Standing in an open, upright posture for half a minute can lower stress signals and help you feel steadier before a big task.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "You just picked your capstone. What's the ONE thing you most want your family to understand by Friday, and why does it matter to you?",
+      badge: { id: "capstone-launchpad", name: "Capstone Launchpad", emoji: "🚀" },
+      estimatedMinutes: 7
+    }
+  }
 };

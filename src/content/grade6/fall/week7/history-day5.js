@@ -10,7 +10,7 @@ export const fallG6HistoryW7D5 = {
   subject: "History/Civics",
   topic: "Build a cause-and-effect map",
   topicTag: "cause-effect-map",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["C3.D2.His.14", "C3.D2.His.16"],
   hook: "This week's project is a cause-and-effect map: pick a historical chain and diagram how each event led to the next. Today you put the skills together.",
   miniLesson: [
@@ -125,5 +125,89 @@ export const fallG6HistoryW7D5 = {
       description: "Draws single in/out arrows, missing that events can have several causes and effects.",
       coachMove: "Encourage multiple arrows: ask 'what else caused this?' and 'what else did this cause?'"
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "riddle",
+      title: "Arrows In, Arrows Out",
+      prompt:
+        "On a cause-effect map, one box has THREE arrows pointing into it and ONE arrow pointing out. In plain words, what does that box represent in the story?",
+      answer:
+        "It's an event with three causes that, together, led to one result. Three arrows in = three causes; one arrow out = one effect it triggered.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Capstone Cause-Effect Map",
+      challenge:
+        "Build your week's capstone map: pick a historical chain and diagram it as labeled boxes and arrows, including at least one event that has two causes OR two effects.",
+      steps: [
+        "Choose your chain and list the events as boxes.",
+        "Connect them with arrows meaning 'led to,' in time order.",
+        "Add at least one branch: a box with two arrows in (two causes) or two arrows out (two effects).",
+        "Label each arrow with a short 'why' so the map explains, not just shows."
+      ],
+      deliverable: "A labeled cause-and-effect map with at least one branching event and 'why' labels on the arrows.",
+      choiceBoard: [
+        "Draw the map by hand with boxes, arrows, and labels.",
+        "Build it digitally as connected shapes.",
+        "Make it a wall display with sticky notes and yarn for the arrows."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Cause-Map Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.hist.w7.d5.arena1",
+          type: "multiple_choice",
+          stem: "On a cause-effect map, an event box has TWO arrows pointing OUT of it. What does that show?",
+          choices: [
+            "The event had two causes",
+            "The event led to two different effects",
+            "The map is drawn incorrectly",
+            "The two boxes happened at the same time"
+          ],
+          answerIndex: 1,
+          explanation: "Arrows OUT point to effects, so two arrows out means the event caused two different results.",
+          hintLadder: [
+            "Arrows OUT lead to effects.",
+            "Two arrows out = how many effects?",
+            "Two effects."
+          ]
+        },
+        {
+          id: "g6.fall.hist.w7.d5.arena2",
+          type: "short_answer",
+          stem: "In a cause-effect map, explain how removing ONE pivotal box could break the whole chain. Use a specific example and describe what downstream events would disappear.",
+          rubric: {
+            level3: "Identifies a pivotal box AND explains, with a specific chain, which downstream events would vanish if it were removed.",
+            level2: "Names a pivotal box but the downstream reasoning is thin.",
+            level1: "No clear pivotal box or no downstream reasoning."
+          },
+          exemplar: "In farming → surplus → cities → writing, removing 'surplus' breaks the chain: without stored extra food, people couldn't settle, so cities never form and writing — which grew from city record-keeping — never develops.",
+          hintLadder: [
+            "Pick the box the most others depend on.",
+            "Imagine erasing it from the map.",
+            "Which later boxes lose their cause and disappear?"
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Connect the Boxes",
+      prompt:
+        "Place 4 spots around the room as 'event boxes.' Walk an arrow-path between them in cause-and-effect order, pausing at each to say its event aloud. Then walk a branching path to a fifth spot.",
+      scienceTieIn: "Moving through space while recalling a sequence uses your brain's spatial memory, making the order of events stick far better than reading alone.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Beyond history, where could a cause-and-effect map help you — planning a project, solving a problem, or understanding a decision? Sketch one box and arrow.",
+      badge: { id: "cause-map-architect", name: "Cause-Map Architect", emoji: "🗺️" },
+      estimatedMinutes: 7
+    }
+  }
 };

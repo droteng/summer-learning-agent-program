@@ -10,7 +10,7 @@ export const fallG6MathW7D3 = {
   subject: "Math",
   topic: "Timelines and elapsed time",
   topicTag: "intervals-timelines",
-  estimatedMinutes: 17,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.6.NS.C.5", "CCSS.6.NS.C.6"],
   hook: "To follow cause and effect across history, you need to measure time between events. Today you do the math of timelines — including the tricky jump across year zero.",
   miniLesson: [
@@ -115,5 +115,85 @@ export const fallG6MathW7D3 = {
       description: "Believes 100 BCE is earlier than 300 BCE.",
       coachMove: "Draw a number line through 0: BCE years descend toward 0 from the left, CE years rise to the right."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "riddle",
+      title: "The Year-Zero Trick",
+      prompt:
+        "A history book says a wall was built in 50 BCE and repaired in 50 CE. A student says that's exactly 100 years apart. Why is the student off by one — and what's the real answer?",
+      answer:
+        "There is no year 0, so you add (50 + 50 = 100) then subtract 1 = 99 years. The student forgot to skip the missing year zero!",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: My Autumn Timeline",
+      challenge:
+        "Build a to-scale timeline of 5 events — mix historical dates with personal ones (when you were born, started this grade) — and measure the gap in years between each pair of neighbors.",
+      steps: [
+        "List 5 events with their years (CE, and at least one BCE if you can).",
+        "Draw a horizontal line and place each event to scale, like leaves dropping along a branch.",
+        "Label the year-gap between each neighboring pair of events.",
+        "Mark the single biggest gap and write how many years it spans."
+      ],
+      deliverable: "A to-scale timeline with the year-gap labeled between each pair of events.",
+      choiceBoard: [
+        "Draw the timeline on paper as an autumn branch with events as leaves.",
+        "Build it digitally with boxes and labeled arrows.",
+        "Make a 'then vs. now' two-event poster showing exactly how many years apart they are."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Timeline Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.math.w7.d3.arena1",
+          type: "numeric",
+          stem: "How many years passed from 480 BCE to 1066 CE? (Add the two numbers, then subtract 1 because there is no year 0.)",
+          answer: 1545,
+          tolerance: 0,
+          unit: "years",
+          hintLadder: [
+            "Crossing the BCE/CE line means add the two numbers.",
+            "480 + 1066 = 1546.",
+            "Subtract 1 for the missing year 0: 1545."
+          ],
+          explanation: "480 + 1066 − 1 = 1,545 years."
+        },
+        {
+          id: "g6.fall.math.w7.d3.arena2",
+          type: "short_answer",
+          stem: "Event A is 1347 CE and Event B is 1351 CE. Find the gap, then explain whether such a SHORT gap makes a direct cause-and-effect link between A and B more or less believable than a 400-year gap would.",
+          rubric: {
+            level3: "Computes 4 years AND reasons that a short gap makes a direct cause MORE believable than a 400-year gap, because less time means fewer in-between events.",
+            level2: "Gets 4 years but reasoning about causation is thin.",
+            level1: "Wrong gap or no reasoning."
+          },
+          exemplar: "1351 − 1347 = 4 years. A 4-year gap makes a direct cause more believable than a 400-year gap, because over just 4 years there's little room for a long chain of other events to be the real cause.",
+          hintLadder: [
+            "Subtract the earlier year from the later one.",
+            "1351 − 1347 = ?",
+            "Does a short gap or a long gap make a direct cause easier to believe?"
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Timeline Walk",
+      prompt:
+        "Pace out a timeline across the room: one big step per century. Walk from 'year 0' to 'today' (about 20 steps), then turn and walk BCE the other way. Feel how far apart history really is!",
+      scienceTieIn: "Walking activates your hippocampus, the brain area that maps both space and time — so pacing a timeline literally helps you remember the order of events.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Pick two events you learned about that are far apart in time. About how many years separate them, and does that gap make you think one caused the other?",
+      badge: { id: "timeline-navigator", name: "Timeline Navigator", emoji: "🍂" },
+      estimatedMinutes: 7
+    }
+  }
 };

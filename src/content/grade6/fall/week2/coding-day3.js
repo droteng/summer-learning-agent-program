@@ -10,7 +10,7 @@ export const fallG6CodingW2D3 = {
   subject: "Coding/Computer Science/AI",
   topic: "Model a predator-prey cycle",
   topicTag: "simulation-rules",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CSTA.2-AP-13", "CSTA.2-AP-10"],
   hook: "Scientists predict ecosystems by writing simple rules and letting a computer run them year after year. Today you trace the rules of a rabbit-and-fox simulation.",
   miniLesson: [
@@ -119,5 +119,88 @@ export const fallG6CodingW2D3 = {
       description: "Ignores whether the IF condition is true before doing the THEN action.",
       coachMove: "Read IF/THEN aloud as a question: 'Is the condition true? Only then do the action.'"
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "riddle",
+      title: "Trace the Seasons",
+      prompt:
+        "A simulation starts with 12 rabbits. Each season runs two rules in order: rabbits double, then foxes eat 15. After ONE season, how many rabbits are left? Trace it before you peek!",
+      answer:
+        "12 × 2 = 24, then 24 − 15 = 9. So 9 rabbits remain. Order matters — double first, then subtract!",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Invent a Simulation Rule",
+      challenge:
+        "Design your own predator-prey simulation on paper. Write two ordered rules (one for prey, one for predators), pick starting numbers, and trace it by hand for 3 seasons to see the cycle appear.",
+      materials: ["Paper & pencil, OR a device to type/draw on"],
+      steps: [
+        "Choose a prey and a predator and pick starting counts.",
+        "Write Rule 1 (how prey change) and Rule 2 (how predators eat), in order.",
+        "Make a table with columns: Season, Prey, Predators.",
+        "Trace your rules for 3 seasons and watch the numbers rise and fall."
+      ],
+      deliverable: "A rules sheet plus a 3-season trace table showing the population cycle.",
+      choiceBoard: [
+        "Write the rules and fill in the trace table.",
+        "Draw a line graph of prey and predators over 3 seasons.",
+        "Write a flowchart with arrows showing the order the rules run each season."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Simulation Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.code.w2.d3.arena1",
+          type: "numeric",
+          stem: "A loop runs TWO seasons. Each season: rabbits double, then foxes eat 6. Start with 10 rabbits. How many rabbits after the SECOND season? Trace each step.",
+          answer: 22,
+          tolerance: 0,
+          unit: "rabbits",
+          hintLadder: [
+            "Season 1: double 10, then subtract 6.",
+            "Season 1 ends at (10 × 2) − 6 = 14.",
+            "Season 2: double 14, then subtract 6."
+          ],
+          explanation: "Season 1: 10 × 2 = 20, then 20 − 6 = 14. Season 2: 14 × 2 = 28, then 28 − 6 = 22 rabbits."
+        },
+        {
+          id: "g6.fall.code.w2.d3.arena2",
+          type: "multiple_choice",
+          stem: "Rule: 'IF rabbits >= 40, THEN foxes increase.' During the simulation the rabbit count is exactly 40. What happens to the foxes?",
+          choices: [
+            "Foxes do NOT increase — 40 is not enough",
+            "Foxes increase — 40 meets the 'greater than or equal to' condition",
+            "The rabbits disappear",
+            "The simulation crashes"
+          ],
+          answerIndex: 1,
+          explanation: "'>=' means greater than OR equal to, so exactly 40 makes the condition true and the THEN action runs.",
+          hintLadder: [
+            "What does the '=' part of '>=' mean?",
+            "Does 40 count as 'at least 40'?",
+            "40 >= 40 is true, so the THEN part runs."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Cycle Sway",
+      prompt:
+        "Act out the predator-prey cycle: grow TALL and multiply your arms wide (rabbits booming), then crouch low as the foxes move in, then rise again as rabbits recover. Repeat the up-down sway 4 times.",
+      scienceTieIn: "Rhythmic movement gets oxygen-rich blood pumping to your brain, helping you think clearly — your body has cycles just like an ecosystem does.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Simulations repeat simple rules to predict the future. What's one everyday situation you could predict by writing down its 'rules'?",
+      badge: { id: "sim-cycle-coder", name: "Sim Cycle Coder", emoji: "🦊" },
+      estimatedMinutes: 7
+    }
+  }
 };

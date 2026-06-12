@@ -9,7 +9,7 @@ export const grade6ElaWeek8Day4 = {
   subject: "ELA/Writing",
   topic: "Revision and feedback",
   topicTag: "capstone-revision",
-  estimatedMinutes: 20,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.6.W.5"],
   hook: "Today you make it better — by cutting what's weak and adding what's missing. Get one piece of real feedback before you wrap.",
   miniLesson: [
@@ -130,5 +130,88 @@ export const grade6ElaWeek8Day4 = {
       description: "Argues with the feedback giver instead of digging for the specific problem.",
       coachMove: "Train yourself to say 'tell me more' before 'but I meant...'. Specific feedback is gold."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "would_you_rather",
+      title: "Hear It Now or at the Showcase?",
+      prompt:
+        "Would you rather a family member tells you 'the middle is confusing' TODAY in private, or notices it for the first time DURING your Friday showcase? Why?",
+      answer: "Today, in private! Early feedback is a gift — you still have time to fix it before the real audience sees it. Feedback at the showcase is too late to use.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Before-and-After Showcase",
+      challenge:
+        "Pick the weakest sentence or section in your draft and revise it. Then display the BEFORE and the AFTER side by side so the upgrade is obvious.",
+      steps: [
+        "Copy your weakest original sentence as the 'before.'",
+        "Rewrite it stronger — add a specific number, example, or source.",
+        "Place before and after side by side.",
+        "Write one line naming exactly what got better."
+      ],
+      deliverable: "A before/after pair with a one-line note on what improved.",
+      choiceBoard: [
+        "Make a two-column before/after poster.",
+        "Record a 30-second 'watch this sentence level up' clip.",
+        "Highlight the change in color and annotate why."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Revision Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.ela.w8.d4.arena1",
+          type: "multiple_choice",
+          stem: "Which is the STRONGEST revision of the vague sentence 'A lot of kids like our library'?",
+          choices: [
+            "Many, many kids really like our library a lot.",
+            "Last month, 312 students checked out books — up 40% from spring (library log).",
+            "Our awesome, amazing library is super popular.",
+            "Kids like the library, probably."
+          ],
+          answerIndex: 1,
+          explanation: "It swaps a vague claim for a specific number and a source. The others just pile on adjectives without adding evidence.",
+          hintLadder: [
+            "Strong revisions add evidence, not adjectives.",
+            "Look for a real number AND a source.",
+            "It's the option with 312 students and the library log."
+          ]
+        },
+        {
+          id: "g6.ela.w8.d4.arena2",
+          type: "short_answer",
+          stem: "Name ONE real weakness in your draft, explain WHY it's weak, and write the exact fix you'll make.",
+          rubric: {
+            level3: "Names a specific sentence or section, gives a clear reason it's weak (vague, no evidence, repeats, off-topic), AND writes a concrete fix.",
+            level2: "Names a weakness but the reason or the fix is vague.",
+            level1: "Generic 'make it better' with no specific weakness or fix."
+          },
+          exemplar: "Weakness: my intro says 'cooking uses lots of math' — too vague. Why: it gives the audience nothing to picture. Fix: 'Every time you double a pancake recipe, you're solving a ratio problem.'",
+          hintLadder: [
+            "Point to one specific sentence or section.",
+            "Say what's wrong with it (vague, repeats, no evidence).",
+            "Write the exact stronger version."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "mindfulness",
+      title: "Move & Reset: Fresh-Eyes Breathing",
+      prompt:
+        "Look away from your work, find something far across the room, and breathe slowly for 4 counts in, 4 counts out, five times. Then look back at your draft with fresh eyes.",
+      scienceTieIn: "Looking at a distant point relaxes the eye muscles strained by close work, and slow breathing calms you so you notice details you skimmed before.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "You got fresh eyes on your work today. What single change improved your project the most, and how did the feedback help?",
+      badge: { id: "revision-virtuoso", name: "Revision Virtuoso", emoji: "🔧" },
+      estimatedMinutes: 7
+    }
+  }
 };

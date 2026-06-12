@@ -9,7 +9,7 @@ export const grade6HistoryWeek5Day5 = {
   subject: "History/Civics",
   topic: "How inventions happen",
   topicTag: "history-of-invention",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["C3.D2.His.14.6-8", "C3.D2.His.16.6-8"],
   hook: "Most famous inventions weren't lone genius moments. Today you trace one through its real history — borrowed parts, failed first tries, and the conditions that made it possible.",
   miniLesson: [
@@ -127,5 +127,89 @@ export const grade6HistoryWeek5Day5 = {
       description: "Treats Edison, Tesla, Bell etc. as solo inventors instead of contributors building on prior work and teams.",
       coachMove: "Look at the patent records and predecessor inventions. Almost every famous invention has a longer family tree than the legend."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "curiosity",
+      title: "The Invention Family Tree",
+      prompt:
+        "The smartphone in someone's pocket is really a mashup of older inventions. Can you name THREE older devices a smartphone replaced or borrowed from? (Hint: think camera, phone, map...)",
+      answer:
+        "A smartphone combines the telephone, the camera, the personal computer, the map/GPS, the music player, the flashlight, and more — proof that big inventions are built by remixing earlier ones.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Invention Family Tree",
+      challenge:
+        "Pick one everyday invention (the bicycle, the lightbulb, the video game console). Build its 'family tree': what earlier inventions it borrowed from, and what conditions had to line up for it to be possible.",
+      steps: [
+        "Choose your invention and write it at the top.",
+        "Below it, draw 2-3 earlier inventions it built on.",
+        "Add the conditions that made it possible (materials, demand, prior knowledge).",
+        "Connect everything with arrows showing what led to what."
+      ],
+      deliverable: "An invention family tree showing predecessors, conditions, and arrows linking them to the final invention.",
+      choiceBoard: [
+        "Draw the family-tree diagram with arrows.",
+        "Write a short 'origin story' paragraph for the invention.",
+        "Make a timeline strip showing the steps from earliest predecessor to the invention."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Invention History Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.hist.w5.d5.arena1",
+          type: "multiple_choice",
+          stem: "Several inventors filed lightbulb patents around the same time in the 1870s. What does this 'race' BEST show?",
+          choices: [
+            "They all copied one person.",
+            "The conditions — materials, demand, and prior science — were ripe, so multiple people converged at once.",
+            "It was just a coincidence.",
+            "Only one person was really trying."
+          ],
+          answerIndex: 1,
+          explanation: "Invention 'races' happen because the conditions are ripe, so several thinkers in different places get close at the same time.",
+          hintLadder: [
+            "Why do similar inventions show up at the same moment?",
+            "Think about what conditions had to be in place.",
+            "Ripe conditions lead to races."
+          ]
+        },
+        {
+          id: "g6.hist.w5.d5.arena2",
+          type: "short_answer",
+          stem: "Pick any invention. Name ONE earlier invention it built on AND ONE condition (material, demand, or knowledge) that made it possible.",
+          rubric: {
+            level3: "Names a specific invention, a specific earlier predecessor it built on, AND a specific enabling condition.",
+            level2: "Names the invention and predecessor but the condition is vague or missing.",
+            level1: "Vague, or only names the invention with no predecessor or condition."
+          },
+          exemplar: "The electric car built on the gasoline car's design and the rechargeable battery. A key condition was the falling cost of high-capacity lithium-ion batteries, which made longer driving ranges affordable.",
+          hintLadder: [
+            "Pick an invention you know something about.",
+            "What existed before it that it borrowed from?",
+            "Add the material, demand, or knowledge that had to be in place."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Build-It Charades",
+      prompt:
+        "Stand up and act out 'inventing' something with your whole body: mime hammering, cranking a wheel, then flipping a switch as your invention comes to life. Big, exaggerated motions!",
+      scienceTieIn: "Moving your body boosts blood flow and oxygen to your brain, which helps you think up creative ideas — useful fuel for any inventor.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Look around your room. Pick one object and imagine its family tree — what older inventions had to exist before it could be made?",
+      badge: { id: "invention-historian", name: "Invention Historian", emoji: "💡" },
+      estimatedMinutes: 7
+    }
+  }
 };

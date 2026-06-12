@@ -9,7 +9,7 @@ export const grade6HistoryWeek3Day4 = {
   subject: "History/Civics",
   topic: "Telling history as a story",
   topicTag: "narrative-history",
-  estimatedMinutes: 16,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["C3.D2.His.5.6-8", "C3.D2.His.16.6-8"],
   hook: "History is a true story made of choices, causes, and changes. Today you turn dates into a story you can tell.",
   miniLesson: [
@@ -127,5 +127,88 @@ export const grade6HistoryWeek3Day4 = {
       description: "Lists events without identifying the irreversible moment that shaped the rest.",
       coachMove: "Ask: which moment, if removed, would change everything that comes after? That's the turning point."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "curiosity",
+      title: "The Domino Moment",
+      prompt:
+        "Imagine a history timeline with 10 events. If you could remove just ONE event and everything after it would change completely, what do we call that one event?",
+      answer: "A turning point! It's the irreversible moment the rest of the story orbits around — pull it out and the whole story changes.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: History as a 3-Act Story",
+      challenge:
+        "Pick a real historical event you know a little about (the moon landing, an invention, a discovery). Tell it as a 3-act story: the setup that built tension, the turning point, and the result that followed.",
+      steps: [
+        "Choose your event and find or recall two or three dates around it.",
+        "Write the setup: what was happening that made this matter?",
+        "Name the turning point: the irreversible moment.",
+        "Write the result: what was different afterward, and how it connects to the turning point."
+      ],
+      deliverable: "A 3-act retelling (setup, turning point, result) of a real historical event.",
+      choiceBoard: [
+        "Write the 3-act history story.",
+        "Draw a 3-panel timeline comic of the event.",
+        "Record a 60-second 'history narrator' telling of your story."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: History Story Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.hist.w3.d4.arena1",
+          type: "multiple_choice",
+          stem: "Timeline: 1879 — Edison perfects a long-lasting light bulb. 1882 — His company wires the first power station in New York. 1900s — Cities glow at night and factories run after dark. Which event is the TURNING POINT?",
+          choices: [
+            "Cities glow at night in the 1900s.",
+            "Edison perfects a long-lasting light bulb in 1879.",
+            "Factories run after dark.",
+            "The 1900s in general."
+          ],
+          answerIndex: 1,
+          explanation: "Perfecting the long-lasting bulb is the irreversible moment that made everything after — power stations, glowing cities, night-shift factories — possible. The rest are results that orbit it.",
+          hintLadder: [
+            "The turning point comes before the results and makes them possible.",
+            "The glowing cities and night factories are results — what change caused them?",
+            "It's the 1879 light bulb breakthrough."
+          ]
+        },
+        {
+          id: "g6.hist.w3.d4.arena2",
+          type: "short_answer",
+          stem: "Take any real historical event you know and write a 3-sentence story: setup, turning point, and result. Make sure the result is clearly caused by the turning point.",
+          rubric: {
+            level3: "Three sentences mapping clearly to setup, turning point, and a result that plausibly follows from that turning point, about a real event.",
+            level2: "Three parts present but one is unclear, or the result isn't clearly tied to the turning point.",
+            level1: "Just listed facts or dates with no setup/turning-point/result shape."
+          },
+          exemplar: "Setup: By the 1950s, polio was paralyzing thousands of children every year. Turning point: In 1955, Jonas Salk's vaccine was proven to work and was released widely. Result: Within years, polio cases in the U.S. plummeted toward zero.",
+          hintLadder: [
+            "Sentence 1: how things were before (the setup).",
+            "Sentence 2: the irreversible moment that changed things (turning point).",
+            "Sentence 3: what was different afterward, clearly caused by sentence 2."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Timeline Walk",
+      prompt:
+        "Mark three spots on the floor: 'setup', 'turning point', 'result'. Walk slowly to the first, take a big decisive step to the second, then stride to the third. Feel the story move through space.",
+      scienceTieIn: "Linking ideas to physical movement helps the brain remember their order — motion and memory work together, something you'll meet in the program's science.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Whose turning-point moment from real history would you most want to read more about, and why does that moment matter?",
+      badge: { id: "history-storyteller", name: "History Storyteller", emoji: "📜" },
+      estimatedMinutes: 7
+    }
+  }
 };

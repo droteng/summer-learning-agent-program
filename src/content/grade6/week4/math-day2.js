@@ -9,7 +9,7 @@ export const grade6MathWeek4Day2 = {
   subject: "Math",
   topic: "Logic and deduction",
   topicTag: "logic",
-  estimatedMinutes: 16,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.6.EE.B.5"],
   hook: "Code follows logic. Today you solve puzzles the way a computer does — one rule at a time.",
   miniLesson: [
@@ -112,5 +112,90 @@ export const grade6MathWeek4Day2 = {
       description: "Reads 'cat OR dog' as 'cat and dog' — assumes OR is restrictive.",
       coachMove: "Use everyday OR: 'pizza or pasta' means at least one is fine."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "riddle",
+      title: "Logic Lock",
+      prompt:
+        "A treasure box opens only if: (the key is gold) AND (NOT raining). The key is gold. It is raining. Does the box open? Why?",
+      answer:
+        "No. The rule needs BOTH sides true. 'NOT raining' is false because it IS raining, so true AND false = false — the box stays locked.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Invent a Logic-Gate Gadget",
+      challenge:
+        "Design an imaginary smart gadget (a treehouse door, a snack vending bot, a homework alarm) that opens or acts only when a logic rule is satisfied. Write the rule using AND, OR, and NOT, then test it on 3 situations.",
+      steps: [
+        "Name your gadget and what it does when its rule is true.",
+        "Write the rule combining at least two conditions with AND, OR, or NOT.",
+        "Make a tiny table: 3 situations and whether the gadget acts (true) or not (false).",
+        "Double-check each row by evaluating the AND/OR/NOT step by step."
+      ],
+      deliverable: "A gadget card: its rule in AND/OR/NOT, plus a 3-row truth table you checked.",
+      choiceBoard: [
+        "Write the rule and the 3-row truth table.",
+        "Draw the gadget with a 'logic panel' showing the conditions lighting up green/red.",
+        "Make a comic where someone tries 3 times to trigger the gadget and only the matching rule works."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Logic Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.math.w4.d2.arena1",
+          type: "multiple_choice",
+          stem:
+            "A gate opens if: (badge scanned) AND (NOT after 9pm). The badge is scanned. The time is 10pm. Does the gate open?",
+          choices: [
+            "Yes — the badge was scanned",
+            "No — it is after 9pm, so NOT after 9pm is false",
+            "Yes — OR makes it true",
+            "Need more information"
+          ],
+          answerIndex: 1,
+          explanation:
+            "The rule uses AND, so both sides must be true. 'NOT after 9pm' is false at 10pm, so true AND false = false. The gate stays shut.",
+          hintLadder: [
+            "AND needs BOTH sides true.",
+            "Is 'NOT after 9pm' true or false at 10pm?",
+            "It's false, so true AND false = false — gate stays closed."
+          ]
+        },
+        {
+          id: "g6.math.w4.d2.arena2",
+          type: "multiple_choice",
+          stem:
+            "Three friends each play one different sport: soccer, tennis, or chess. Ann does NOT play soccer. Ben plays chess. Who plays soccer?",
+          choices: ["Ann", "Ben", "Cara", "Nobody"],
+          answerIndex: 2,
+          explanation:
+            "Ben plays chess, so the third friend Cara is left. Ann doesn't play soccer, so Cara must. (Ann then plays tennis.)",
+          hintLadder: [
+            "Ben is taken by chess — cross him off for soccer.",
+            "Ann does NOT play soccer — cross her off too.",
+            "Only Cara is left for soccer."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: AND/OR Freeze Game",
+      prompt:
+        "Move while a rule is true! Rule: keep dancing if (music is playing) AND (NOT touching the floor with your hands). When the rule turns false, FREEZE. Play 3 rounds with a friend calling out changes.",
+      scienceTieIn: "Fast start-and-stop movement trains your brain and muscles to react quickly together, sharpening coordination.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Where did you meet a real AND, OR, or NOT rule today (a game, a door code, a 'you can go if...')? Write the rule using one of those words.",
+      badge: { id: "logic-detective", name: "Logic Detective", emoji: "🕵️" },
+      estimatedMinutes: 7
+    }
+  }
 };

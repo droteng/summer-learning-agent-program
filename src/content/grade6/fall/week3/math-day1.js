@@ -10,7 +10,7 @@ export const fallG6MathW3D1 = {
   subject: "Math",
   topic: "Ratios in recipes and harvest sharing",
   topicTag: "ratios",
-  estimatedMinutes: 17,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.6.RP.A.1", "CCSS.6.RP.A.3"],
   hook: "A harvest has to be shared, scaled, and turned into recipes. All of that is ratios. Today you scale a pumpkin-bread recipe and split a crop fairly.",
   miniLesson: [
@@ -110,5 +110,84 @@ export const fallG6MathW3D1 = {
       description: "Divides the total by a single part instead of by the SUM of the parts.",
       coachMove: "Add the ratio numbers first to find how many equal shares there are, then divide the total by that sum."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "would_you_rather",
+      title: "Would You Rather?",
+      prompt:
+        "Would you rather share a basket of 12 apples in the ratio 1:1:1 with two friends, or in the ratio 2:1:1 where you're the '2'? Work out how many apples you'd get each way before you choose!",
+      answer:
+        "1:1:1 → 12 ÷ 3 = 4 apples each. 2:1:1 → 4 shares of 3, and you get 2 shares = 6 apples. So the 2:1:1 deal gives YOU more.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Scale a Harvest Recipe",
+      challenge:
+        "Invent a fall recipe (pumpkin bread, apple cider, trail mix) built on a ratio like 3 cups flour : 1 cup pumpkin. Then scale it to feed a harvest crew of 6 — keep the ratio exactly the same!",
+      steps: [
+        "Pick two ingredients and choose a whole-number ratio between them.",
+        "Write a recipe card showing your original ratio.",
+        "Multiply every ingredient by the same number to feed 6 people.",
+        "Check: does your scaled recipe reduce back to the original ratio?"
+      ],
+      deliverable: "A recipe card showing the original ratio and the scaled-up version for 6.",
+      choiceBoard: [
+        "Draw or type a recipe card with both versions.",
+        "Make a 'harvest ratio poster' showing 3 real ratios you find in your kitchen.",
+        "Make a 4-panel comic where a cook scales a recipe up for a big autumn feast."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Ratio Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.math.w3.d1.arena1",
+          type: "numeric",
+          stem: "A cider mix is 4 parts apple to 1 part cinnamon syrup. To use 28 parts of apple, how many parts of cinnamon syrup do you need?",
+          answer: 7,
+          tolerance: 0,
+          unit: "parts",
+          hintLadder: [
+            "Apple went from 4 to 28 — times what?",
+            "28 ÷ 4 = 7, so scale the syrup by 7.",
+            "1 × 7 = 7 parts cinnamon syrup."
+          ],
+          explanation: "Scale by 7: 1 × 7 = 7 parts cinnamon syrup."
+        },
+        {
+          id: "g6.fall.math.w3.d1.arena2",
+          type: "numeric",
+          stem: "A harvest of 50 crates is split between two barns in the ratio 3:2. How many crates does the LARGER share (the 3-part barn) get?",
+          answer: 30,
+          tolerance: 0,
+          unit: "crates",
+          hintLadder: [
+            "Add the ratio parts: 3 + 2 = 5 equal shares.",
+            "Each share = 50 ÷ 5 = 10 crates.",
+            "The 3-part barn gets 3 × 10 = 30 crates."
+          ],
+          explanation: "5 shares of 10; the 3-part barn gets 3 × 10 = 30 crates."
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Harvest Ratio Reach",
+      prompt:
+        "Do a stretch in a 3:1 ratio — reach high for the 'top of the apple tree' 3 times, then crouch low to the 'pumpkin patch' once. Repeat the pattern 4 times.",
+      scienceTieIn:
+        "Stretching and moving sends more oxygen-rich blood to your muscles and brain, which helps you focus on the next mission.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Where did you spot a ratio or a fair split today — in a recipe, a snack shared with friends, or a game score? Write one you noticed.",
+      badge: { id: "harvest-ratio-ranger", name: "Harvest Ratio Ranger", emoji: "🍎" },
+      estimatedMinutes: 7
+    }
+  }
 };

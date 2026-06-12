@@ -9,7 +9,7 @@ export const grade6HistoryWeek6Day5 = {
   subject: "History/Civics",
   topic: "How countries depend on each other",
   topicTag: "interconnection",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["C3.D2.His.16.6-8", "C3.D2.Eco.14.6-8"],
   hook: "No country is an island. Today you trace how one event in one country can ripple out to many others.",
   miniLesson: [
@@ -130,5 +130,88 @@ export const grade6HistoryWeek6Day5 = {
       description: "Assumes a product labeled with one country contains only parts from that country.",
       coachMove: "Look at the actual supply chain. Most modern products have parts from 5-10 countries before final assembly."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "curiosity",
+      title: "How Many Countries in Your Breakfast?",
+      prompt:
+        "Think about what you ate or drank this morning — the cocoa, the banana, the coffee, the cereal grain. Guess how many different countries it took to put that breakfast on your table. More or fewer than 5?",
+      answer: "Usually MORE than 5! A single bowl of cereal with fruit and cocoa can pull from coffee in Brazil, cocoa in Ghana, bananas in Ecuador, wheat in the U.S., and more — all linked by global trade.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Map a Supply Chain",
+      challenge:
+        "Pick one everyday object near you (a phone, a shoe, a snack). Trace where its parts and materials might come from, and draw a map or web showing how it traveled the world to reach you.",
+      steps: [
+        "Choose one object and list 3-4 of its parts or ingredients.",
+        "Guess a country or region each part might come from.",
+        "Draw lines (or a globe sketch) connecting each source to where you are.",
+        "Label one global system — shipping, trade routes, the internet — that helped it arrive."
+      ],
+      deliverable: "A supply-chain map or web for one object, showing at least 3 source regions and one connecting system.",
+      choiceBoard: [
+        "Draw a world map with lines from each source to you.",
+        "Make a flowchart: raw material → factory → store → you.",
+        "Write a short 'travel diary' from the object's point of view."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Interdependence Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.hist.w6.d5.arena1",
+          type: "multiple_choice",
+          stem: "A flood shuts down the world's biggest rubber-producing region. Which ripple is MOST likely?",
+          choices: [
+            "Nothing changes anywhere else.",
+            "Tires and other rubber products get scarcer and pricier in many countries.",
+            "Only that region's weather is affected.",
+            "Rubber stops existing forever."
+          ],
+          answerIndex: 1,
+          explanation: "Because countries trade rubber globally, a big supply drop in one region tightens supply everywhere, raising prices on rubber goods like tires worldwide.",
+          hintLadder: [
+            "Who buys rubber from that region?",
+            "If supply drops but demand stays, what happens to price and availability?",
+            "Scarcer and pricier products in many countries."
+          ]
+        },
+        {
+          id: "g6.hist.w6.d5.arena2",
+          type: "short_answer",
+          stem: "Name one global problem (not a product) that NO single country can solve alone, and explain in one sentence why coordination is needed.",
+          rubric: {
+            level3: "Names a genuinely cross-border problem (climate, ocean plastic, pandemics, internet crime) AND explains why one country acting alone can't fix it.",
+            level2: "Names a valid problem but the explanation of why coordination is needed is vague.",
+            level1: "Names a local problem or gives no reason."
+          },
+          exemplar: "Ocean plastic — currents carry trash across every country's waters, so cleanup and prevention only work if many countries act together.",
+          hintLadder: [
+            "Think of a problem that crosses borders on its own.",
+            "Why couldn't one country fix it by itself?",
+            "Connect the border-crossing to the need for teamwork."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Around the World Stretch",
+      prompt:
+        "Stand and 'travel the globe' with your body: reach east (right), reach west (left), reach to the north pole (up high), then fold down to the south pole (toes). Do the loop twice, slow and smooth.",
+      scienceTieIn: "Big reaching stretches boost blood flow to your brain, which improves focus — the same way good connections (here, between body parts) make the whole system work better.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Pick one thing you used today that almost certainly traveled across several countries. What surprised you about its journey?",
+      badge: { id: "global-connector", name: "Global Connector", emoji: "🌐" },
+      estimatedMinutes: 7
+    }
+  }
 };

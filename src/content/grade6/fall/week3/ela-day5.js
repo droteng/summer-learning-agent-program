@@ -11,7 +11,7 @@ export const fallG6ElaW3D5 = {
   subject: "ELA/Writing",
   topic: "Present your data — writing a data summary",
   topicTag: "data-summary-writing",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.W.6.2", "CCSS.SL.6.4"],
   hook: "Numbers don't speak for themselves — a good writer makes them talk. Today you turn your harvest-budget data into a clear, honest summary.",
   miniLesson: [
@@ -126,5 +126,90 @@ export const fallG6ElaW3D5 = {
       description: "Shares the good figures and hides losses or weak results.",
       coachMove: "Stress that honest data writing builds trust; report the full picture, then explain what you'd improve."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "curiosity",
+      title: "Vague or Specific?",
+      prompt:
+        "Read these two opening lines: (A) 'Our harvest did pretty well this year.' (B) 'Our harvest earned a $120 profit this year.' Which one tells a reader something they can actually use, and why?",
+      answer:
+        "(B) — '$120 profit' is exact and checkable, so the reader knows precisely how the harvest did. (A) 'pretty well' could mean almost anything.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Write a Harvest Report",
+      challenge:
+        "Take your harvest-budget numbers from this week (or invent a set: crates sold, price, costs) and write a short, honest data report a parent or classmate could read in 30 seconds.",
+      steps: [
+        "Compute your income and profit (or loss) from the numbers.",
+        "Write a headline first sentence stating the main finding with a number.",
+        "Add 1–2 sentences of supporting figures — honestly, even a loss.",
+        "End with a 'so what': what the numbers mean or what you'd do next season."
+      ],
+      deliverable: "A 3–4 sentence data report: a headline finding, supporting numbers, and a 'so what.'",
+      choiceBoard: [
+        "Write the report as a short paragraph.",
+        "Design it as a one-page 'harvest scorecard' with the finding in big text.",
+        "Record a 30-second spoken summary as if reporting to the whole farm crew."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Data Summary Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.ela.w3.d5.arena1",
+          type: "multiple_choice",
+          stem: "Data: 40 crates sold at $8 each, with $400 in costs. Which is the most accurate AND honest one-sentence finding?",
+          choices: [
+            "The harvest was a huge success this year.",
+            "Selling 40 crates at $8 brought in $320, which fell $80 short of the $400 in costs — a small loss.",
+            "We made a profit because we sold a lot of crates.",
+            "The numbers were okay overall."
+          ],
+          answerIndex: 1,
+          explanation: "Income was 40 × $8 = $320, against $400 costs, so it's an $80 loss. Only option B reports the real figures honestly.",
+          hintLadder: [
+            "First compute income: 40 × $8.",
+            "Compare $320 income to $400 costs — profit or loss?",
+            "Pick the option that states the real numbers, even though it's a loss."
+          ]
+        },
+        {
+          id: "g6.fall.ela.w3.d5.arena2",
+          type: "short_answer",
+          stem: "Write a 2–3 sentence data summary for: 60 crates sold at $7 each, costs $300. State the finding with numbers and end with a 'so what.'",
+          rubric: {
+            level3: "Computes income ($420) and profit ($120), states it clearly, AND ends with a relevant next step or meaning.",
+            level2: "States the finding but math is slightly off OR no 'so what.'",
+            level1: "Vague, inaccurate, or just restates the prompt."
+          },
+          exemplar: "Selling 60 crates at $7 brought in $420, and after $300 in costs the harvest made a $120 profit. That's a healthy margin, so next season we'll try growing the same crop on a bit more land to earn even more.",
+          hintLadder: [
+            "First find income: 60 × $7.",
+            "Then profit: income − $300.",
+            "State the finding, then add what you'd do next."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "mindfulness",
+      title: "Move & Reset: Box Breathing",
+      prompt:
+        "Try box breathing 4 times: breathe in for 4 counts, hold for 4, out for 4, hold for 4. Picture your busy thoughts settling like leaves drifting to the ground.",
+      scienceTieIn:
+        "Slow breathing tells your body the 'alarm' is off, lowering stress so your brain can focus on clear writing.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Look back at your harvest-budget numbers this week. What's the single most important finding you'd put in the very first sentence, and why that one?",
+      badge: { id: "harvest-data-reporter", name: "Harvest Data Reporter", emoji: "📝" },
+      estimatedMinutes: 7
+    }
+  }
 };

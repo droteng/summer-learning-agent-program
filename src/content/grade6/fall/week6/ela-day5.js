@@ -11,7 +11,7 @@ export const fallG6ElaW6D5 = {
   subject: "ELA/Writing",
   topic: "Describe a pattern — sensory writing",
   topicTag: "descriptive-writing",
-  estimatedMinutes: 17,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.W.6.3.D", "CCSS.L.6.3"],
   hook: "A pattern you can see in your head should come alive on the page. Today you use sensory, specific language to describe a natural pattern so vividly a reader can picture it.",
   miniLesson: [
@@ -126,5 +126,91 @@ export const fallG6ElaW6D5 = {
       description: "Writes 'very pretty, nice, lovely' rather than one precise image.",
       coachMove: "Trade three vague adjectives for one specific, sensory detail or comparison."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "would_you_rather",
+      title: "Show It or Tell It?",
+      prompt:
+        "Would you rather read 'The autumn tree was beautiful' or 'The maple blazed orange, its leaves spinning down like tiny paper flames'? Pick the one you can SEE more clearly and say what makes it stronger.",
+      answer:
+        "The second one — 'blazed orange' and 'like tiny paper flames' give specific color and a comparison, so you can picture it. 'Beautiful' just tells; the details SHOW.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Caption the Pattern",
+      challenge:
+        "Pick a real fall pattern — veins on a leaf, ridges on a pinecone, frost on a window — and write a 3-sentence sensory description so vivid a reader could draw it without seeing it. Use specific color/shape/texture words and at least one simile.",
+      materials: ["Paper & pencil OR a device to type on", "Something with a pattern to observe (optional)"],
+      steps: [
+        "Choose your pattern and study it (or picture it clearly).",
+        "Write sentence 1: the overall shape, using a specific color and a simile.",
+        "Write sentence 2: a close-up detail (texture or how parts connect).",
+        "Order your sentences spatially (whole, then close-up) so the reader can follow."
+      ],
+      deliverable: "A 3-sentence sensory description of one fall pattern, with specific details and at least one simile.",
+      choiceBoard: [
+        "Write the 3-sentence description.",
+        "Pair a sketch with one strong caption sentence.",
+        "Write a riddle that describes the pattern without naming it."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Description Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.ela.w6.d5.arena1",
+          type: "multiple_choice",
+          stem: "Which sentence uses a SIMILE to describe a fall pattern?",
+          choices: [
+            "The pinecone was really, really cool.",
+            "The pinecone's scales spiraled outward like steps on a winding staircase.",
+            "The pinecone had a lot of parts.",
+            "The pinecone existed on the ground."
+          ],
+          answerIndex: 1,
+          explanation: "A simile compares using 'like' or 'as' — here the scales are compared to staircase steps, which the reader can picture.",
+          hintLadder: [
+            "A simile uses the words 'like' or 'as.'",
+            "Find the option that compares the pinecone to something else.",
+            "It's the 'like steps on a winding staircase' sentence."
+          ]
+        },
+        {
+          id: "g6.fall.ela.w6.d5.arena2",
+          type: "short_answer",
+          stem: "Rewrite this dull sentence into ONE vivid, sensory sentence about a fall pattern: 'The leaf was nice.' Include a specific detail (color, shape, or texture) AND a comparison.",
+          rubric: {
+            level3: "One sentence with a specific sensory detail (color/shape/texture) AND a comparison (simile or metaphor), forming a clear, picture-able image.",
+            level2: "Has a detail OR a comparison, but not both, or stays a bit vague.",
+            level1: "Still general ('very nice') with no specific image or comparison."
+          },
+          exemplar: "The maple leaf's five points spread like an open hand, its edges crisping from gold to deep rust.",
+          hintLadder: [
+            "Name a specific color and shape of the leaf.",
+            "Add a 'like' or 'as' comparison to something familiar.",
+            "Combine them into one sentence a reader could draw."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "mindfulness",
+      title: "Move & Reset: Five Senses Pause",
+      prompt:
+        "Sit still and slowly notice: 5 things you can see, 4 you can hear, 3 you can feel, 2 you can smell, 1 you can taste. Breathe slowly through each one.",
+      scienceTieIn:
+        "Tuning into your senses calms your body's stress response, which helps your brain focus and find better words.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Write one sentence describing the most interesting pattern you noticed today so vividly that someone reading it could picture it without seeing it.",
+      badge: { id: "word-painter", name: "Word Painter", emoji: "🍁" },
+      estimatedMinutes: 7
+    }
+  }
 };

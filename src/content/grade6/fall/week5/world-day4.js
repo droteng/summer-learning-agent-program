@@ -10,7 +10,7 @@ export const fallG6WorldW5D4 = {
   subject: "World/Current Affairs",
   topic: "Persuasion in the real world",
   topicTag: "media-persuasion",
-  estimatedMinutes: 17,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["C3.D2.Civ.10", "CCSS.RI.6.8"],
   hook: "Ads, campaigns, and headlines are all trying to persuade you every day. Today you learn to see the techniques — so you decide what to believe.",
   miniLesson: [
@@ -120,5 +120,88 @@ export const fallG6WorldW5D4 = {
       description: "Believes that because an ad made them feel good, the product must be better.",
       coachMove: "Separate the feeling from the facts: 'How did that make me feel?' vs. 'What did it actually prove?'"
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "would_you_rather",
+      title: "Spot the Technique",
+      prompt:
+        "Two fall fair posters: (A) 'Join the thousands who already got their tickets — don't miss out!' (B) 'Last year's fair raised $5,000 for the food bank.' Which one uses BANDWAGON pressure, and which one gives real evidence?",
+      answer: "(A) is bandwagon — it pressures you to follow the crowd. (B) gives a checkable fact (real evidence). Same fair, two very different persuasion moves.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Design Two Fall Fair Ads",
+      challenge:
+        "You're promoting a school fall fair. Make TWO versions of the same ad: one that persuades HONESTLY (with real facts/evidence) and one that uses a technique like bandwagon or pure emotion with no facts. Then label what each one is doing.",
+      steps: [
+        "Pick your fall fair and one true fact about it (date, cause, attractions).",
+        "Make the HONEST ad using that real evidence.",
+        "Make the 'technique' ad using bandwagon or emotion with no facts.",
+        "Label each ad with the technique it uses and note which you'd trust."
+      ],
+      deliverable: "Two labeled ads for the same fall fair — one honest/evidence-based, one technique-based — with a note on the difference.",
+      choiceBoard: [
+        "Draw two side-by-side poster ads.",
+        "Write two short radio scripts (15 seconds each).",
+        "Make a 'decode this ad' worksheet pointing out each technique."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Persuasion Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.world.w5.d4.arena1",
+          type: "multiple_choice",
+          stem: "A cider ad shows a cozy family laughing by a fire but says nothing about the cider itself. Which technique is it MAINLY relying on?",
+          choices: [
+            "Real evidence and data",
+            "An emotional appeal",
+            "A fair side-by-side comparison",
+            "A scientific study"
+          ],
+          answerIndex: 1,
+          explanation: "It sells a warm feeling instead of any facts about the product — that's an emotional appeal.",
+          hintLadder: [
+            "Is there any actual information, or just a mood?",
+            "What feeling is the cozy scene creating?",
+            "That's an emotional appeal."
+          ]
+        },
+        {
+          id: "g6.fall.world.w5.d4.arena2",
+          type: "short_answer",
+          stem: "A flyer reads: 'Everyone's switching to PumpkinPhone — the best phone ever!' Name the TWO persuasion techniques and say whether the flyer gives any real evidence.",
+          rubric: {
+            level3: "Identifies bandwagon ('everyone's switching') AND emotional/unsupported superlative ('best ever'), AND states there is no real evidence.",
+            level2: "Names one technique correctly and addresses the evidence question.",
+            level1: "Vague, names no real technique, or misses the evidence point."
+          },
+          exemplar: "'Everyone's switching' is bandwagon, and 'the best phone ever' is an unsupported emotional claim. The flyer gives no real evidence — no specs, tests, or data at all.",
+          hintLadder: [
+            "What does 'everyone's switching' pressure you to do?",
+            "Can 'best ever' be proven, or is it just a feeling-claim?",
+            "Look for any actual facts — are there any?"
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "wellness",
+      title: "Move & Reset: Shake Off the Hype",
+      prompt:
+        "Stand up and 'shake off' the ad pressure: shake out your hands for 10 seconds, roll your shoulders back 5 times, then take one slow breath and say 'I decide for myself.'",
+      scienceTieIn: "A quick burst of movement releases built-up tension and resets your attention, helping you think clearly instead of reacting on impulse.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "For your own persuasive letter this week, which technique will you use HONESTLY — strong evidence or a fair emotional appeal — and why is that the fair choice?",
+      badge: { id: "fall-persuasion-detector", name: "Persuasion Detector", emoji: "🕵️" },
+      estimatedMinutes: 7
+    }
+  }
 };

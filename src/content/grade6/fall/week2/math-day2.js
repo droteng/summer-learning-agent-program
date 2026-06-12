@@ -11,7 +11,7 @@ export const fallG6MathW2D2 = {
   subject: "Math",
   topic: "The energy pyramid and the 10% rule",
   topicTag: "ratios-energy-pyramid",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.6.RP.A.3", "NGSS.MS-LS2-3"],
   hook: "Why are there always more plants than rabbits, and more rabbits than foxes? Because only about 10% of energy passes from one level of a food chain to the next. Today the math explains the shape of nature.",
   miniLesson: [
@@ -120,5 +120,86 @@ export const fallG6MathW2D2 = {
       description: "Reads a wide pyramid base as 'bigger animals' rather than more energy/organisms.",
       coachMove: "Clarify: width = amount of energy and number of organisms, not the physical size of each animal."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "would_you_rather",
+      title: "Would You Rather?",
+      prompt:
+        "Picture a harvest feast. Would you rather be a producer (a maple tree soaking up autumn sun) or a top predator (a fox)? Think about which one keeps MORE of its energy before you answer.",
+      answer:
+        "The producer keeps the most! Only about 10% of energy passes to each level above, so by the time you're a fox you're living on a tiny slice of the sun's original energy. Producers are at the wide, energy-rich base.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Build an Energy Pyramid",
+      challenge:
+        "Pick a real (or invented) fall ecosystem and build a 3- or 4-level energy pyramid. Start the producers with a big round number of energy units, then apply the 10% rule at every level up, labeling each amount.",
+      materials: ["Paper & markers, OR a device to draw/type on"],
+      steps: [
+        "Choose your ecosystem and name a producer, a herbivore, and a carnivore.",
+        "Give the producers a starting energy amount (like 100,000 units).",
+        "Apply the 10% rule going up each level and write the new amount.",
+        "Draw the pyramid wide at the bottom and narrow at the top to match the shrinking numbers."
+      ],
+      deliverable: "A labeled energy pyramid showing each level's energy after applying the 10% rule.",
+      choiceBoard: [
+        "Draw the energy pyramid with the numbers labeled.",
+        "Make a 'harvest table' chart listing each level and its energy.",
+        "Write a short story following one energy unit as it shrinks up the chain."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Energy Pyramid Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.math.w2.d2.arena1",
+          type: "numeric",
+          stem: "An oak forest's leaves capture 200,000 energy units. Using the 10% rule for THREE levels (producers → herbivores → small carnivores → top predators), how many units reach the top predators?",
+          answer: 200,
+          tolerance: 0,
+          unit: "units",
+          hintLadder: [
+            "Apply ×0.10 once for each step UP the pyramid.",
+            "There are three steps from producers to the top predators.",
+            "200,000 → 20,000 → 2,000 → 200."
+          ],
+          explanation: "200,000 × 0.10 = 20,000 → × 0.10 = 2,000 → × 0.10 = 200 units."
+        },
+        {
+          id: "g6.fall.math.w2.d2.arena2",
+          type: "short_answer",
+          stem: "Eating plants directly gives you about 10% of the sun's captured energy. Eating an animal that ate plants gives you only about 1%. Use the 10% rule to explain why, showing the numbers.",
+          rubric: {
+            level3: "Explains that each level keeps 10%, so plants = 10% of the original and the next level = 10% of that = 1%, with the two steps shown.",
+            level2: "Right idea (energy shrinks each level) but missing or fuzzy numbers.",
+            level1: "No use of the 10% rule or wrong reasoning."
+          },
+          exemplar: "Producers hold 100%. Eating plants gives 10% (100% × 0.10). The animal that ate plants only has 10%, so eating IT gives 10% of 10% = 1%. Each step loses 90% of the energy.",
+          hintLadder: [
+            "Start with the producers at 100%.",
+            "How much passes to the plant-eater? (×0.10)",
+            "Now take 10% of THAT to reach the next level."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Shrinking Pyramid",
+      prompt:
+        "Stand tall and reach wide like a producer soaking up sun (10 big arm circles). Then crouch a little smaller for the herbivore (6 circles), smaller still for the carnivore (3 circles), then tiny for the top predator (1 circle). Feel the energy 'shrink' with each level!",
+      scienceTieIn: "Your muscles burn energy and release heat as you move — the very same energy loss that shrinks each level of the pyramid.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "The 10% rule means most energy is lost going up each level. Where in your own day did energy get 'lost' or used up — and where did you feel most energized?",
+      badge: { id: "energy-pyramid-pro", name: "Energy Pyramid Pro", emoji: "🍂" },
+      estimatedMinutes: 7
+    }
+  }
 };

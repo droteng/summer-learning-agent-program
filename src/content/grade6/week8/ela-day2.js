@@ -9,7 +9,7 @@ export const grade6ElaWeek8Day2 = {
   subject: "ELA/Writing",
   topic: "Gathering research",
   topicTag: "capstone-research",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.6.W.7", "CCSS.6.W.8"],
   hook: "Today you stop and gather sources before you build. Two great sources beat ten weak ones.",
   miniLesson: [
@@ -129,5 +129,88 @@ export const grade6ElaWeek8Day2 = {
       description: "Finds the same paragraph copied across three blogs and counts it as three sources.",
       coachMove: "Trace each source back. If they all cite the same original, you really have ONE source."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "riddle",
+      title: "The Source Detective",
+      prompt:
+        "I appear in three different blogs that all copied the same paragraph word-for-word. The teacher asks how many sources you really have. What's the honest answer?",
+      answer: "Just ONE. Three copies of the same original is one source repeated three times — trace them all back to the same place.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Source Trading Cards",
+      challenge:
+        "Turn your 3 best sources into 'trading cards.' Each card names the source, its type (primary, secondary, or expert), and the single strongest fact you got from it.",
+      steps: [
+        "Make one card per source — give each a title and type.",
+        "Write the strongest fact or number from that source.",
+        "Add a citation line so future-you can find it again.",
+        "Rank your three cards from most to least trustworthy and say why."
+      ],
+      deliverable: "Three source 'trading cards,' each with type, key fact, and citation.",
+      choiceBoard: [
+        "Draw three physical trading cards.",
+        "Build a 3-row table comparing your sources.",
+        "Record a 30-second 'meet my sources' intro."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Reliable Research Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.ela.w8.d2.arena1",
+          type: "multiple_choice",
+          stem: "You need to prove a claim about local traffic. Which is the STRONGEST single source?",
+          choices: [
+            "An anonymous comment on a video.",
+            "A city government transportation report with dated traffic counts.",
+            "A meme about traffic.",
+            "Your friend's guess."
+          ],
+          answerIndex: 1,
+          explanation: "A dated, official government report with real traffic counts is primary and verifiable. The others are unsourced, undated, or just opinions.",
+          hintLadder: [
+            "Strong sources are verifiable and have real data.",
+            "Which one could you actually check and cite?",
+            "It's the dated city government report."
+          ]
+        },
+        {
+          id: "g6.ela.w8.d2.arena2",
+          type: "short_answer",
+          stem: "Write ONE complete research note for your capstone with all three parts: a claim, the evidence, and the citation.",
+          rubric: {
+            level3: "Note has a clear claim, specific evidence (a fact, number, or example), AND a citation naming the source.",
+            level2: "Has two of the three parts, or the citation is vague.",
+            level1: "Just a topic or an opinion with no evidence or citation."
+          },
+          exemplar: "Claim: doubling a cake recipe doesn't double the baking soda. Evidence: too much baking soda makes a cake rise then collapse. Citation: King Arthur Baking, 'How to Scale a Recipe.'",
+          hintLadder: [
+            "Start with the claim your source supports.",
+            "Add the specific evidence — a fact or number.",
+            "End with where it came from (the citation)."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "mindfulness",
+      title: "Move & Reset: Focus Reset",
+      prompt:
+        "Close your eyes and slowly name 3 sounds you can hear right now. Then take 3 slow breaths. Notice how your attention sharpens after a short pause.",
+      scienceTieIn: "Briefly tuning into your senses pulls attention away from racing thoughts, which helps your focus 'reset' before the next task.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "What's the most surprising thing you discovered you DIDN'T know about your topic today? How will you go find the answer?",
+      badge: { id: "research-ranger", name: "Research Ranger", emoji: "🧭" },
+      estimatedMinutes: 7
+    }
+  }
 };

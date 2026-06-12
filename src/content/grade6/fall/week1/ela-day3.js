@@ -11,7 +11,7 @@ export const fallG6ElaW1D3 = {
   subject: "ELA/Writing",
   topic: "Set your fall goals — claims and reasons",
   topicTag: "goal-setting-writing",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.W.6.1", "CCSS.W.6.4"],
   hook: "A goal is just a claim about your future self. Today you write fall goals the way a strong writer makes any claim: clear, specific, and backed by reasons.",
   miniLesson: [
@@ -123,5 +123,88 @@ export const fallG6ElaW1D3 = {
       description: "Writes 'do better' or 'try harder' with nothing to check against.",
       coachMove: "Ask: 'How will you KNOW you did it?' If there's no number or deadline, the goal isn't finished yet."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "would_you_rather",
+      title: "Would You Rather Goal?",
+      prompt:
+        "Would you rather set the goal 'get better at reading' or 'read 3 books before the leaves are gone'? Pick one and explain which goal you could actually check off as done.",
+      answer: "'Read 3 books before the leaves are gone' is the stronger goal — it's specific (3 books) and has a deadline, so you can clearly tell if you did it. 'Get better' has no way to measure it.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Fall Goal Banner",
+      challenge:
+        "Design a back-to-school goal banner. Write three fall goals, each as a claim + a 'because' reason, then make them look like something you'd actually post above your desk.",
+      steps: [
+        "Write three goals, each specific and measurable (number or deadline).",
+        "Add a true 'because' reason to each one.",
+        "Pick your strongest goal and make it the biggest on the banner.",
+        "Add a small fall doodle or symbol next to each goal."
+      ],
+      deliverable: "A goal banner with three specific goals, each backed by a 'because' reason.",
+      choiceBoard: [
+        "Make a drawn or typed banner with three goals.",
+        "Record a 30-second pep talk reading your goals aloud.",
+        "Write a short letter to your November self about these goals."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Goal-Writing Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.ela.w1.d3.arena1",
+          type: "multiple_choice",
+          stem: "Which goal is BOTH measurable AND backed by a reason?",
+          choices: [
+            "I want to do better in science.",
+            "I'll practice multiplication facts so I'm faster.",
+            "I'll read for 15 minutes every school night through October because I want chapter books to feel easy.",
+            "I'll try harder this fall because school matters."
+          ],
+          answerIndex: 2,
+          explanation: "It has a measurable action (15 minutes every school night through October) AND a genuine 'because' reason. The others miss the measure, the deadline, or both.",
+          hintLadder: [
+            "Look for a number or deadline you could check.",
+            "Then check that it also has a real 'because' reason.",
+            "Only one option has both a measure AND a reason."
+          ]
+        },
+        {
+          id: "g6.fall.ela.w1.d3.arena2",
+          type: "short_answer",
+          stem: "Rewrite this weak goal into a strong one: 'Be better at coding.' Include exactly what you'll do, a deadline, and a 'because' reason.",
+          rubric: {
+            level3: "Specific measurable action + a deadline + a genuine 'because' reason, all three clearly present.",
+            level2: "Has two of the three (e.g., action and deadline but no reason).",
+            level1: "Still vague, or missing two of the three parts."
+          },
+          exemplar: "I'll finish one coding mission every weekend through October, because loops still trip me up and I want them to feel easy before the pattern project.",
+          hintLadder: [
+            "Name the exact action and how much.",
+            "Add a deadline — by when?",
+            "Finish with a true 'because' reason."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "wellness",
+      title: "Move & Reset: Stand Tall, Goal Set",
+      prompt:
+        "Stand up, roll your shoulders back, and say your top fall goal out loud while standing tall for 20 seconds. Notice how a confident posture changes how the goal feels.",
+      scienceTieIn: "Standing tall and saying a goal aloud can boost confidence and reduce stress hormones, helping your brain commit to the plan.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Write your single strongest fall goal again, then add the very first small step you'll take this week to start it.",
+      badge: { id: "fall-goal-setter", name: "Goal Setter", emoji: "🎯" },
+      estimatedMinutes: 7
+    }
+  }
 };

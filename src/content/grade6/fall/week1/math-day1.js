@@ -11,7 +11,7 @@ export const fallG6MathW1D1 = {
   subject: "Math",
   topic: "Place value and operations warm-up",
   topicTag: "place-value",
-  estimatedMinutes: 16,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.6.NS.B.2", "CCSS.6.NS.B.3"],
   hook: "Fall is here. Before we budget a harvest and read data, let's re-sharpen the basics: place value and the four operations.",
   miniLesson: [
@@ -110,5 +110,85 @@ export const fallG6MathW1D1 = {
       description: "Stacks numbers by their left edge instead of by place value.",
       coachMove: "Use grid paper or draw columns labeled ones/tens/hundreds so each digit lands in the right column."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "riddle",
+      title: "Harvest Riddle",
+      prompt:
+        "I am a four-digit number. My thousands digit is 3, my hundreds digit is twice my thousands digit, my tens digit is 0, and my ones digit is 1 less than my thousands digit. What number am I?",
+      answer: "3,602 — thousands 3, hundreds 6 (twice 3), tens 0, ones 2 (one less than 3).",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Stock the Harvest Stand",
+      challenge:
+        "Imagine you run a fall farm stand. Invent four products with prices, then use all four operations (add, subtract, multiply, divide) to plan one busy autumn day of sales.",
+      steps: [
+        "List four products and a whole-number price for each.",
+        "Pick how many of each you sold today and MULTIPLY price by quantity.",
+        "ADD your products' totals for the day's sales, then SUBTRACT a supplies cost you choose.",
+        "DIVIDE your final profit equally among 3 helpers and show each share."
+      ],
+      deliverable: "A farm-stand sales sheet showing one example of each of the four operations with correct answers.",
+      choiceBoard: [
+        "Make a colorful price-list poster for your stand.",
+        "Write the day as a story problem for a friend to solve.",
+        "Build a simple table: product, price, quantity, total."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Place-Value Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.math.w1.d1.arena1",
+          type: "numeric",
+          stem: "A barn stored 5,040 bushels of grain. After selling 1,876 bushels, then receiving 950 more, how many bushels are in the barn?",
+          answer: 4114,
+          tolerance: 0,
+          unit: "bushels",
+          hintLadder: [
+            "Do it in two steps: first subtract what was sold.",
+            "5,040 − 1,876 = 3,164.",
+            "Then add 950: 3,164 + 950 = 4,114."
+          ],
+          explanation: "5,040 − 1,876 = 3,164; 3,164 + 950 = 4,114 bushels."
+        },
+        {
+          id: "g6.fall.math.w1.d1.arena2",
+          type: "short_answer",
+          stem: "Estimate 2,889 ÷ 31 by rounding to friendly numbers, then explain how your estimate tells you if an exact answer of 932 would be reasonable.",
+          rubric: {
+            level3: "Rounds to about 3,000 ÷ 30 = 100 AND explains that 932 is far too large, so it must be wrong.",
+            level2: "Gives a reasonable estimate OR reasons about the check, but not both.",
+            level1: "No usable estimate or no reasoning about reasonableness."
+          },
+          exemplar: "Round to 3,000 ÷ 30 = 100. A real answer should be near 100, so 932 is about nine times too big — it can't be right.",
+          hintLadder: [
+            "Round both numbers to easy values first.",
+            "3,000 ÷ 30 is simple to compute.",
+            "Compare your estimate to 932 — is it close?"
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Place-Value Leaf Rake",
+      prompt:
+        "Pretend to rake leaves: 4 big sweeps for thousands, 3 for hundreds, 2 for tens, 1 for ones, then shake it out. Repeat the count-down twice and feel your arms wake up.",
+      scienceTieIn:
+        "Bigger muscle movements pump more oxygen-rich blood to your brain, which helps you focus on the next task — a body-brain link you'll meet again in science.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Where did you see big numbers today — a price, a distance, a score? Write one and name the value of its largest digit.",
+      badge: { id: "fall-place-value-pro", name: "Place-Value Pro", emoji: "🍂" },
+      estimatedMinutes: 7
+    }
+  }
 };

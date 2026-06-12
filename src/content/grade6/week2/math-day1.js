@@ -9,7 +9,7 @@ export const grade6MathWeek2Day1 = {
   subject: "Math",
   topic: "Reading bar and line charts",
   topicTag: "data-charts",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.6.SP.A.2", "CCSS.6.SP.B.5"],
   hook: "Charts pack a lot of information into a small picture. Today you read them carefully — without guessing.",
   miniLesson: [
@@ -124,5 +124,91 @@ export const grade6MathWeek2Day1 = {
       description: "Treats a rising line as positive even when the metric is time (where lower is better).",
       coachMove: "Ask: what does this measure? If it's time, less is faster, so a downward line is improvement."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "curiosity",
+      title: "Spot the Trick",
+      prompt:
+        "Imagine a bar chart where one bar looks twice as tall as another — but the bottom of the chart starts at 90 instead of 0! Why might a chart designer start the axis high up instead of at zero?",
+      answer:
+        "Starting an axis above zero makes small differences look huge. Always read the axis numbers before you trust how 'big' a bar looks — your eyes can be fooled.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Your Week in Bars",
+      challenge:
+        "Track one thing about your day for the next hour (or guess your whole day) — minutes of screen time, glasses of water, steps, songs played — and turn it into your own bar or line chart with clearly labeled axes.",
+      steps: [
+        "Pick something you can count across 5 time slots (days, hours, or activities).",
+        "Draw the axes and LABEL them — what does each number mean?",
+        "Draw a bar or point for each value, to scale.",
+        "Write one sentence describing the pattern your chart reveals."
+      ],
+      deliverable: "A labeled bar or line chart of your own data with a one-sentence pattern description.",
+      choiceBoard: [
+        "Draw it by hand on paper with colored bars.",
+        "Build it in a spreadsheet or drawing app on a device.",
+        "Make it a 'living chart' using LEGO bricks or stacked coins, then snap a photo."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Chart Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.math.w2.d1.arena1",
+          type: "numeric",
+          stem:
+            "A bar chart shows pizza slices eaten at a party: Mon 4, Tue 9, Wed 6, Thu 11, Fri 5. How many MORE slices were eaten on the busiest day than the slowest day?",
+          answer: 7,
+          tolerance: 0,
+          unit: "slices",
+          hintLadder: [
+            "Find the tallest bar and the shortest bar.",
+            "Busiest is Thursday (11), slowest is Monday (4).",
+            "11 - 4 = 7 slices."
+          ],
+          explanation: "Busiest Thursday = 11, slowest Monday = 4. 11 - 4 = 7 more slices."
+        },
+        {
+          id: "g6.math.w2.d1.arena2",
+          type: "multiple_choice",
+          stem:
+            "A line chart shows a plant's height over 4 weeks: 2 cm, 5 cm, 11 cm, 12 cm. Between which two weeks did the plant grow the FASTEST?",
+          choices: [
+            "Week 1 to Week 2",
+            "Week 2 to Week 3",
+            "Week 3 to Week 4",
+            "It grew the same each week"
+          ],
+          answerIndex: 1,
+          explanation:
+            "Growth per gap: 2→5 is +3, 5→11 is +6, 11→12 is +1. The biggest jump (+6) is the steepest part of the line, from Week 2 to Week 3.",
+          hintLadder: [
+            "Fastest growth = the steepest part of the line.",
+            "Find the difference between each pair of weeks.",
+            "+3, then +6, then +1 — the +6 jump is the biggest."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Become the Bar Chart",
+      prompt:
+        "Stand up and 'become' a bar chart! Reach low to the floor for a value of 2, half-way up for 5, and stretch tall on your tiptoes for 10. Call out a number 1-10 to yourself and freeze at that height — do five rounds.",
+      scienceTieIn:
+        "Stretching tall and crouching low gets blood flowing and resets your focus, so the next segment lands on a fresh brain.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Charts can tell the truth or fool you depending on how they're drawn. Where today did you see a number or picture that someone might have made look bigger or smaller than it really is?",
+      badge: { id: "chart-detective", name: "Chart Detective", emoji: "📊" },
+      estimatedMinutes: 7
+    }
+  }
 };

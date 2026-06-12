@@ -10,7 +10,7 @@ export const fallG6MathW8D2 = {
   subject: "Math",
   topic: "Fall math synthesis",
   topicTag: "synthesis-review",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.6.RP.A.3", "CCSS.6.SP.B.5"],
   hook: "All season you used ratios, graphs, rates, and timelines. Today you bring them together in one mixed set — the math behind your showcase.",
   miniLesson: [
@@ -110,5 +110,83 @@ export const fallG6MathW8D2 = {
       description: "Uses 7-of-10 results in a showcase as if they represent everyone.",
       coachMove: "Ask 'out of how many, and were they a fair mix?' before trusting a percentage."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "riddle",
+      title: "Harvest Riddle",
+      prompt:
+        "A farmer fills crates at a steady rate. In 3 hours she fills 18 crates. A wagon holds 30 crates. Working at the same rate, how many MORE hours until she fills a whole wagon?",
+      answer:
+        "Her rate is 18 ÷ 3 = 6 crates/hour. A wagon of 30 takes 30 ÷ 6 = 5 hours total. She's done 3, so 2 more hours.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Showcase Stat Card",
+      challenge:
+        "Turn one true number from your fall — pumpkins counted, pages read, minutes practiced — into a 'stat card' for your harvest showcase. Use a ratio, a percent, OR a rate to make the number tell a story.",
+      steps: [
+        "Pick one real fall number you can stand behind.",
+        "Turn it into a ratio, percent, or per-week rate (show the math).",
+        "Add a one-line caption explaining what it means.",
+        "Double-check your math so the card is honest."
+      ],
+      deliverable: "A stat card showing one number, the math that transforms it, and an honest caption.",
+      choiceBoard: [
+        "Make a single illustrated stat card.",
+        "Make a 3-stat 'harvest dashboard' (one ratio, one percent, one rate).",
+        "Make a bar or line graph of a fall number changing over the 8 weeks."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Synthesis Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.fall.math.w8.d2.arena1",
+          type: "numeric",
+          stem: "A stand sold 480 apples over 6 weeks at a steady rate. At that rate, how many apples would it sell in 10 weeks?",
+          answer: 800,
+          tolerance: 0,
+          unit: "apples",
+          hintLadder: [
+            "Find the weekly rate first.",
+            "480 ÷ 6 = 80 apples/week.",
+            "80 × 10 = 800 apples."
+          ],
+          explanation: "Rate = 480 ÷ 6 = 80/week. Then 80 × 10 = 800 apples."
+        },
+        {
+          id: "g6.fall.math.w8.d2.arena2",
+          type: "numeric",
+          stem: "A survey of 120 students found 90 prefer the fall festival. What percent prefer it?",
+          answer: 75,
+          tolerance: 0,
+          unit: "%",
+          hintLadder: [
+            "Percent = part ÷ whole × 100.",
+            "90 ÷ 120 = 0.75.",
+            "0.75 × 100 = 75%."
+          ],
+          explanation: "90 ÷ 120 = 0.75 = 75%."
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Harvest Count Stretch",
+      prompt:
+        "Pretend you're stacking crates: do 6 slow shoulder rolls (one per 'crate'), then reach high to 'top off the wagon' and hold for 10 seconds. Shake out your hands.",
+      scienceTieIn: "Gentle movement boosts blood flow to your brain, which helps you think clearly for the next problem.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Which fall math tool — ratios, percents, rates, or timelines — made a number feel like a real story today? Write the number and what it showed.",
+      badge: { id: "harvest-math-synthesizer", name: "Harvest Math Synthesizer", emoji: "🌽" },
+      estimatedMinutes: 7
+    }
+  }
 };

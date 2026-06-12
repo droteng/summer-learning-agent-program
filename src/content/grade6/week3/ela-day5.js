@@ -9,7 +9,7 @@ export const grade6ElaWeek3Day5 = {
   subject: "ELA/Writing",
   topic: "Revising for clarity",
   topicTag: "revision",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CCSS.6.W.5"],
   hook: "First drafts are for getting words down. Revision is where writing earns its readers. Today you revise one paragraph three ways.",
   miniLesson: [
@@ -122,5 +122,88 @@ export const grade6ElaWeek3Day5 = {
       description: "Writes 'walked very quickly' instead of 'hurried' or 'sprinted'.",
       coachMove: "Ask: is there one verb that means this whole phrase? Replace if yes."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "would_you_rather",
+      title: "Trim or Keep?",
+      prompt:
+        "Would you rather read 'She quickly and rapidly ran very fast down the street' or 'She sprinted down the street'? Which words in the long version are doing NO real work?",
+      answer: "The second is stronger. 'Quickly', 'rapidly', and 'very fast' all repeat the same idea — one strong verb ('sprinted') replaces all of them.",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Word Diet Challenge",
+      challenge:
+        "Take a chunky 4-sentence paragraph (write a deliberately overstuffed one first, or use an old draft) and revise it three ways: cut every filler word, swap weak verbs for strong ones, and vary your sentence lengths.",
+      steps: [
+        "Write or grab a wordy 4-sentence paragraph and count its words.",
+        "Cross out all filler: really, very, just, so, that, totally.",
+        "Circle weak verbs (walked, went, looked) and replace each with one vivid verb.",
+        "Rearrange so at least one sentence is short and punchy — then count words again."
+      ],
+      deliverable: "A before-and-after paragraph with the word count shrunk and the verbs sharpened.",
+      choiceBoard: [
+        "Show the before/after paragraph with word counts.",
+        "Make a 'most wanted' poster of three filler words you banned.",
+        "Record yourself reading both versions to hear the difference in rhythm."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Revision Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.ela.w3.d5.arena1",
+          type: "multiple_choice",
+          stem: "Which is the tightest, strongest revision of: 'He was really very scared and so he quickly ran in a fast way out of the dark room'?",
+          choices: [
+            "He was very scared and ran quickly out of the dark room.",
+            "Terrified, he bolted from the dark room.",
+            "He was scared and so he ran fast out of the room that was dark.",
+            "In a fast way, he ran scared from the dark room."
+          ],
+          answerIndex: 1,
+          explanation: "'Terrified' replaces 'really very scared' and 'bolted' replaces 'quickly ran in a fast way' — every filler word is gone and the verbs do the work.",
+          hintLadder: [
+            "Find the version with no filler words (really, very, so, in a fast way).",
+            "Look for one strong verb instead of 'ran quickly/fast'.",
+            "It's the shortest one: 'Terrified, he bolted from the dark room.'"
+          ]
+        },
+        {
+          id: "g6.ela.w3.d5.arena2",
+          type: "short_answer",
+          stem: "Revise this bloated sentence to under 10 words while keeping its meaning, using stronger verbs and zero filler: 'I was just really very hungry so I quickly went and ate my lunch in a fast way.'",
+          rubric: {
+            level3: "Under 10 words, all filler removed, at least one strong verb, and the original meaning (being very hungry and eating fast) preserved.",
+            level2: "Shorter and some filler cut, but still over 10 words or still leans on weak verbs.",
+            level1: "Barely changed, still full of filler, or loses the meaning."
+          },
+          exemplar: "Starving, I devoured my lunch.",
+          hintLadder: [
+            "Delete just, really, very, so, and 'in a fast way'.",
+            "Swap 'very hungry' for one word and 'ate fast' for one verb.",
+            "Aim for a sentence you can say in one breath."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "wellness",
+      title: "Move & Reset: Shake Out the Clutter",
+      prompt:
+        "Stand and 'shake off' the filler: shake out your hands for 'really', your arms for 'very', your legs for 'just', then take one slow, clean breath. Out with the clutter!",
+      scienceTieIn: "Brief bursts of movement clear mental fog and reset focus — your brain works better after your body moves, as the program's science explains.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "What's one sentence you wrote recently that could lose half its words and gain half its punch? Rewrite it here.",
+      badge: { id: "word-sculptor", name: "Word Sculptor", emoji: "✂️" },
+      estimatedMinutes: 7
+    }
+  }
 };
