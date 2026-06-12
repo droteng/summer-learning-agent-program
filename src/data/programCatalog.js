@@ -103,7 +103,7 @@ export const SEASON_STRUCTURES = Object.freeze({
 // with the actual mission files registered in src/content/index.js.
 const AUTHORED_WEEKS = {
   "6:summer": [1, 2, 3, 4, 5, 6, 7, 8],
-  "6:fall": [1, 2] // Weeks 1–2 authored; weeks 3–8 in progress.
+  "6:fall": [1, 2, 3] // Weeks 1–3 authored; weeks 4–8 in progress.
 };
 
 const TOTAL_WEEKS = 8;

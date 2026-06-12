@@ -75,6 +75,12 @@ import { fallG6MathW2D2 } from "./grade6/fall/week2/math-day2.js";
 import { fallG6CodingW2D3 } from "./grade6/fall/week2/coding-day3.js";
 import { fallG6ElaW2D4 } from "./grade6/fall/week2/ela-day4.js";
 import { fallG6ScienceW2D5 } from "./grade6/fall/week2/science-day5.js";
+// === Fall Expedition (Grade 6) — Week 3: The Harvest of Numbers ===
+import { fallG6MathW3D1 } from "./grade6/fall/week3/math-day1.js";
+import { fallG6MathW3D2 } from "./grade6/fall/week3/math-day2.js";
+import { fallG6ScienceW3D3 } from "./grade6/fall/week3/science-day3.js";
+import { fallG6CodingW3D4 } from "./grade6/fall/week3/coding-day4.js";
+import { fallG6ElaW3D5 } from "./grade6/fall/week3/ela-day5.js";
 
 export const ALL_MISSIONS = [
   grade6MathWeek1Day1,
@@ -149,7 +155,13 @@ export const ALL_MISSIONS = [
   fallG6MathW2D2,
   fallG6CodingW2D3,
   fallG6ElaW2D4,
-  fallG6ScienceW2D5
+  fallG6ScienceW2D5,
+  // Fall Expedition — Week 3
+  fallG6MathW3D1,
+  fallG6MathW3D2,
+  fallG6ScienceW3D3,
+  fallG6CodingW3D4,
+  fallG6ElaW3D5
 ];
 
 export const authoredMissions = Object.freeze(
