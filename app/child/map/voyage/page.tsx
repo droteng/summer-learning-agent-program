@@ -549,7 +549,43 @@ async function loadProgressSafely(studentId: string) {
   }
 }
 
+// Item shape sent to the client. Server-only answer fields are included so
+// /api/grade-item can grade — acceptable for the MVP since the answer key is
+// already in the server bundle for authored missions.
+function clientItem(item: any) {
+  return {
+    id: item.id,
+    type: item.type,
+    stem: item.stem,
+    choices: item.choices,
+    unit: item.unit,
+    hintLadder: item.hintLadder,
+    answerIndex: item.answerIndex,
+    answer: item.answer,
+    tolerance: item.tolerance,
+    explanation: item.explanation,
+    misconceptionsTargeted: item.misconceptionsTargeted,
+    rubric: item.rubric,
+    exemplar: item.exemplar
+  };
+}
+
 function stripServerOnlyFields(mission: any) {
+  const dh = mission.dailyHour
+    ? {
+        warmUp: mission.dailyHour.warmUp,
+        creativeLab: mission.dailyHour.creativeLab,
+        moveAndReset: mission.dailyHour.moveAndReset,
+        reflectAndReward: mission.dailyHour.reflectAndReward,
+        challengeArena: {
+          title: mission.dailyHour.challengeArena.title,
+          bonusXp: mission.dailyHour.challengeArena.bonusXp,
+          estimatedMinutes: mission.dailyHour.challengeArena.estimatedMinutes,
+          // arena items grade through the same path, so keep their answers.
+          items: (mission.dailyHour.challengeArena.items ?? []).map(clientItem)
+        }
+      }
+    : null;
   return {
     id: mission.id,
     topic: mission.topic,
@@ -559,25 +595,8 @@ function stripServerOnlyFields(mission: any) {
     workedExample: mission.workedExample,
     estimatedMinutes: mission.estimatedMinutes,
     reflectionPrompt: mission.reflectionPrompt,
-    items: mission.items.map((item: any) => ({
-      id: item.id,
-      type: item.type,
-      stem: item.stem,
-      choices: item.choices,
-      unit: item.unit,
-      hintLadder: item.hintLadder,
-      // server fields included so /api/grade-item can grade them. The
-      // server route receives this back over the wire and uses it to
-      // grade. Acceptable for the MVP because the answer key is already
-      // shipped in the server bundle for the authored mission anyway.
-      answerIndex: item.answerIndex,
-      answer: item.answer,
-      tolerance: item.tolerance,
-      explanation: item.explanation,
-      misconceptionsTargeted: item.misconceptionsTargeted,
-      rubric: item.rubric,
-      exemplar: item.exemplar
-    }))
+    items: mission.items.map(clientItem),
+    dailyHour: dh
   };
 }
 

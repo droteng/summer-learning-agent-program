@@ -9,7 +9,7 @@ export const grade6CodingWeek1Day3 = {
   subject: "Coding/Computer Science/AI",
   topic: "Tracing simple code",
   topicTag: "tracing",
-  estimatedMinutes: 18,
+  estimatedMinutes: 60, // full Daily Hour
   standardsRefs: ["CSTA.2-AP-12", "CSTA.2-AP-13"],
   hook: "Code follows steps in order. Today you trace a loop and predict what it does before running it.",
   miniLesson: [
@@ -131,5 +131,81 @@ export const grade6CodingWeek1Day3 = {
       description: "Uses > when the rule says \"or higher\" or uses < when the rule says \"or less\".",
       coachMove: "Ask: does the number itself count? If yes, the operator must include the equal sign."
     }
-  ]
+  ],
+  dailyHour: {
+    warmUp: {
+      type: "riddle",
+      title: "Trace It in Your Head",
+      prompt:
+        "Start with x = 5. Then: x = x + 3. Then: x = x × 2. What is x now? Trace it step by step before you peek!",
+      answer: "x = 5 → x + 3 = 8 → 8 × 2 = 16. So x = 16. (Order matters — add first, then multiply.)",
+      estimatedMinutes: 5
+    },
+    creativeLab: {
+      title: "Creative Lab: Code Your Morning",
+      challenge:
+        "Write your morning routine as a 4–6 step 'algorithm' (numbered steps a robot could follow exactly). Then trace it — and sneak in one BUG (a wrong order) for a grown-up or friend to find!",
+      steps: [
+        "List your morning steps in exact order.",
+        "Number them like code lines.",
+        "Swap two steps to create a 'bug.'",
+        "Challenge someone to spot and fix the bug."
+      ],
+      deliverable: "A numbered morning algorithm with one hidden bug to find.",
+      choiceBoard: [
+        "Write the numbered algorithm.",
+        "Draw it as a flowchart with arrows.",
+        "Make a comic where a robot follows your steps literally (and the bug causes chaos)."
+      ],
+      estimatedMinutes: 15
+    },
+    challengeArena: {
+      title: "Challenge Arena: Trace Boss",
+      bonusXp: 50,
+      estimatedMinutes: 10,
+      items: [
+        {
+          id: "g6.code.w1.d3.arena1",
+          type: "numeric",
+          stem: "Trace: start score = 10. score = score − 4. score = score + 7. What is score?",
+          answer: 13,
+          tolerance: 0,
+          unit: "",
+          hintLadder: [
+            "Do the steps in order.",
+            "10 − 4 = 6, then 6 + 7.",
+            "= 13."
+          ],
+          explanation: "10 − 4 = 6, then 6 + 7 = 13."
+        },
+        {
+          id: "g6.code.w1.d3.arena2",
+          type: "multiple_choice",
+          stem: "Rule: IF coins >= 10 THEN 'win'. You have 9 coins. What happens?",
+          choices: ["You win", "Nothing — 9 is not >= 10", "Coins become 10", "The code crashes"],
+          answerIndex: 1,
+          explanation: "9 is not greater than or equal to 10, so the condition is false and 'win' doesn't run.",
+          hintLadder: [
+            "Check the condition: is 9 >= 10?",
+            "If the condition is false, the THEN part is skipped.",
+            "9 >= 10 is false, so nothing happens."
+          ]
+        }
+      ]
+    },
+    moveAndReset: {
+      type: "movement",
+      title: "Move & Reset: Loop Dance",
+      prompt:
+        "Make up a 3-move dance (clap, spin, jump). Now 'loop' it: repeat the whole sequence 4 times. You just ran a loop with your body!",
+      scienceTieIn: "Repeating movement gets your heart pumping oxygen to your muscles and brain — the same energy system you'll study in science.",
+      estimatedMinutes: 5
+    },
+    reflectAndReward: {
+      journalPrompt:
+        "Where did you follow step-by-step instructions today (a recipe, a game, getting ready)? Could a 'bug' in the order have caused a problem?",
+      badge: { id: "code-tracer", name: "Code Tracer", emoji: "💻" },
+      estimatedMinutes: 7
+    }
+  }
 };
