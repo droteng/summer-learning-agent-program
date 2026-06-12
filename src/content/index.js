@@ -105,6 +105,12 @@ import { fallG6HistoryW7D2 } from "./grade6/fall/week7/history-day2.js";
 import { fallG6MathW7D3 } from "./grade6/fall/week7/math-day3.js";
 import { fallG6ElaW7D4 } from "./grade6/fall/week7/ela-day4.js";
 import { fallG6HistoryW7D5 } from "./grade6/fall/week7/history-day5.js";
+// === Fall Expedition (Grade 6) — Week 8: Harvest Showcase ===
+import { fallG6ElaW8D1 } from "./grade6/fall/week8/ela-day1.js";
+import { fallG6MathW8D2 } from "./grade6/fall/week8/math-day2.js";
+import { fallG6ScienceW8D3 } from "./grade6/fall/week8/science-day3.js";
+import { fallG6WorldW8D4 } from "./grade6/fall/week8/world-day4.js";
+import { fallG6ElaW8D5 } from "./grade6/fall/week8/ela-day5.js";
 
 export const ALL_MISSIONS = [
   grade6MathWeek1Day1,
@@ -209,7 +215,13 @@ export const ALL_MISSIONS = [
   fallG6HistoryW7D2,
   fallG6MathW7D3,
   fallG6ElaW7D4,
-  fallG6HistoryW7D5
+  fallG6HistoryW7D5,
+  // Fall Expedition — Week 8
+  fallG6ElaW8D1,
+  fallG6MathW8D2,
+  fallG6ScienceW8D3,
+  fallG6WorldW8D4,
+  fallG6ElaW8D5
 ];
 
 export const authoredMissions = Object.freeze(

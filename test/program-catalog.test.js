@@ -50,11 +50,11 @@ test("the catalog covers all grades x seasons", () => {
   }
 });
 
-test("only grade 6 summer is live; everything else is in development", () => {
+test("grade 6 Summer and Fall are live; everything else is in development", () => {
   const live = listAllPrograms().filter((p) => p.status === "live");
-  assert.equal(live.length, 1);
-  assert.equal(live[0].grade, 6);
-  assert.equal(live[0].season, SEASONS.SUMMER);
+  const liveKeys = live.map((p) => `${p.grade}:${p.season}`).sort();
+  assert.deepEqual(liveKeys, ["6:fall", "6:summer"]);
+  for (const p of live) assert.equal(p.grade, 6);
 });
 
 test("grade status table includes 4, 5, 6, 7 and only 6 is live", () => {
@@ -86,10 +86,10 @@ test("buildProgram resolves season + grade and stays back-compatible", () => {
   assert.equal(def.weeks.length, 8);
   assert.equal(def.weeks[0].theme, "Explorer Mode");
 
-  // Fall grade 6 → in development, fall themes.
+  // Fall grade 6 → now fully authored (live), fall themes.
   const fall = buildProgram({ gradeLevel: 6, season: SEASONS.FALL, selectedEnrichmentTracks: [] });
   assert.equal(fall.season, SEASONS.FALL);
-  assert.equal(fall.programStatus, "in_development");
+  assert.equal(fall.programStatus, "live");
   assert.equal(fall.weeks[1].theme, "Ecosystems & Food Webs");
 
   // Unknown grade falls back gracefully to a valid structure.
@@ -103,9 +103,9 @@ test("authored-week tracking reports honest progress per program", () => {
   assert.equal(summer.authoredWeekCount, 8);
 
   const fall = getProgram(6, SEASONS.FALL);
-  assert.equal(fall.status, "in_development");
-  assert.equal(fall.authoredWeekCount, 7, "Fall Weeks 1–7 authored");
-  assert.deepEqual(fall.authoredWeeks, [1, 2, 3, 4, 5, 6, 7]);
+  assert.equal(fall.status, "live", "Fall is fully authored (8/8)");
+  assert.equal(fall.authoredWeekCount, 8, "All Fall weeks authored");
+  assert.deepEqual(fall.authoredWeeks, [1, 2, 3, 4, 5, 6, 7, 8]);
   assert.equal(fall.totalWeeks, 8);
 });
 
@@ -124,8 +124,8 @@ test("Fall Week 1 missions are authored and season-isolated from Summer", async 
   assert.equal(fallDay1.length, 1);
   assert.equal(fallDay1[0].id, "g6.fall.math.w1.d1");
   assert.equal(fallDay1[0].subject, "Math");
-  // Fall Weeks 1–7 each have all five weekday missions authored.
-  for (const week of [1, 2, 3, 4, 5, 6, 7]) {
+  // Fall Weeks 1–8 each have all five weekday missions authored.
+  for (const week of [1, 2, 3, 4, 5, 6, 7, 8]) {
     const days = [1, 2, 3, 4, 5].map(
       (d) => findAuthoredMissionsForDay({ gradeLevel: 6, weekNumber: week, dayNumber: d, season: "fall" }).length
     );
