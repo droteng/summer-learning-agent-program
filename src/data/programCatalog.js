@@ -110,7 +110,8 @@ const AUTHORED_WEEKS = {
   // goes live once its 8 weeks are authored; GRADE_STATUS[7] stays
   // "in_development" until every Grade 7 season is authored — honest per-program.
   "7:summer": [1, 2, 3, 4, 5, 6, 7, 8], // Grade 7 Summer is LIVE.
-  "7:fall": [1, 2, 3, 4, 5, 6, 7, 8] // Grade 7 Fall is LIVE.
+  "7:fall": [1, 2, 3, 4, 5, 6, 7, 8], // Grade 7 Fall is LIVE.
+  "7:winter": [1, 2, 3, 4, 5, 6, 7, 8] // Grade 7 Winter is LIVE.
 };
 
 const TOTAL_WEEKS = 8;

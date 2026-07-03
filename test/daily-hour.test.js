@@ -33,7 +33,7 @@ test("every Grade 6 core mission (all four seasons) has a full Daily Hour", () =
 });
 
 test("each live Grade 7 season is a full 40-mission Daily Hour program", () => {
-  for (const season of ["summer", "fall"]) {
+  for (const season of ["summer", "fall", "winter"]) {
     const missions = ALL_MISSIONS.filter(
       (m) => m.gradeLevel === 7 && (m.season ?? "summer") === season && !m.enrichment
     );
