@@ -112,6 +112,62 @@ import { fallG6ScienceW8D3 } from "./grade6/fall/week8/science-day3.js";
 import { fallG6WorldW8D4 } from "./grade6/fall/week8/world-day4.js";
 import { fallG6ElaW8D5 } from "./grade6/fall/week8/ela-day5.js";
 
+// === Winter Expedition (Grade 6) — Week 1: Winter Warm-Up ===
+import { winterG6MathW1D1 } from "./grade6/winter/week1/math-day1.js";
+import { winterG6ScienceW1D2 } from "./grade6/winter/week1/science-day2.js";
+import { winterG6ElaW1D3 } from "./grade6/winter/week1/ela-day3.js";
+import { winterG6HistoryW1D4 } from "./grade6/winter/week1/history-day4.js";
+import { winterG6CodingW1D5 } from "./grade6/winter/week1/coding-day5.js";
+
+// === Winter Expedition (Grade 6) — Week 2: Energy & Matter ===
+import { winterG6ScienceW2D1 } from "./grade6/winter/week2/science-day1.js";
+import { winterG6ScienceW2D2 } from "./grade6/winter/week2/science-day2.js";
+import { winterG6MathW2D3 } from "./grade6/winter/week2/math-day3.js";
+import { winterG6CodingW2D4 } from "./grade6/winter/week2/coding-day4.js";
+import { winterG6ElaW2D5 } from "./grade6/winter/week2/ela-day5.js";
+
+// === Winter Expedition (Grade 6) — Week 3: Forces & Motion ===
+import { winterG6ScienceW3D1 } from "./grade6/winter/week3/science-day1.js";
+import { winterG6MathW3D2 } from "./grade6/winter/week3/math-day2.js";
+import { winterG6ScienceW3D3 } from "./grade6/winter/week3/science-day3.js";
+import { winterG6CodingW3D4 } from "./grade6/winter/week3/coding-day4.js";
+import { winterG6ElaW3D5 } from "./grade6/winter/week3/ela-day5.js";
+
+// === Winter Expedition (Grade 6) — Week 4: Space & the Solar System ===
+import { winterG6ScienceW4D1 } from "./grade6/winter/week4/science-day1.js";
+import { winterG6MathW4D2 } from "./grade6/winter/week4/math-day2.js";
+import { winterG6ScienceW4D3 } from "./grade6/winter/week4/science-day3.js";
+import { winterG6HistoryW4D4 } from "./grade6/winter/week4/history-day4.js";
+import { winterG6ElaW4D5 } from "./grade6/winter/week4/ela-day5.js";
+
+// === Winter Expedition (Grade 6) — Week 5: Data in the Cold ===
+import { winterG6MathW5D1 } from "./grade6/winter/week5/math-day1.js";
+import { winterG6MathW5D2 } from "./grade6/winter/week5/math-day2.js";
+import { winterG6ScienceW5D3 } from "./grade6/winter/week5/science-day3.js";
+import { winterG6CodingW5D4 } from "./grade6/winter/week5/coding-day4.js";
+import { winterG6WorldW5D5 } from "./grade6/winter/week5/world-day5.js";
+
+// === Winter Expedition (Grade 6) — Week 6: Inventors & Engineers ===
+import { winterG6ScienceW6D1 } from "./grade6/winter/week6/science-day1.js";
+import { winterG6CodingW6D2 } from "./grade6/winter/week6/coding-day2.js";
+import { winterG6MathW6D3 } from "./grade6/winter/week6/math-day3.js";
+import { winterG6HistoryW6D4 } from "./grade6/winter/week6/history-day4.js";
+import { winterG6ElaW6D5 } from "./grade6/winter/week6/ela-day5.js";
+
+// === Winter Expedition (Grade 6) — Week 7: Winter Tales ===
+import { winterG6ElaW7D1 } from "./grade6/winter/week7/ela-day1.js";
+import { winterG6ElaW7D2 } from "./grade6/winter/week7/ela-day2.js";
+import { winterG6ElaW7D3 } from "./grade6/winter/week7/ela-day3.js";
+import { winterG6ElaW7D4 } from "./grade6/winter/week7/ela-day4.js";
+import { winterG6WorldW7D5 } from "./grade6/winter/week7/world-day5.js";
+
+// === Winter Expedition (Grade 6) — Week 8: Winter Showcase ===
+import { winterG6ElaW8D1 } from "./grade6/winter/week8/ela-day1.js";
+import { winterG6ScienceW8D2 } from "./grade6/winter/week8/science-day2.js";
+import { winterG6MathW8D3 } from "./grade6/winter/week8/math-day3.js";
+import { winterG6CodingW8D4 } from "./grade6/winter/week8/coding-day4.js";
+import { winterG6ElaW8D5 } from "./grade6/winter/week8/ela-day5.js";
+
 export const ALL_MISSIONS = [
   grade6MathWeek1Day1,
   grade6ElaWeek1Day1,
@@ -221,7 +277,55 @@ export const ALL_MISSIONS = [
   fallG6MathW8D2,
   fallG6ScienceW8D3,
   fallG6WorldW8D4,
-  fallG6ElaW8D5
+  fallG6ElaW8D5,
+  // Winter Expedition — Week 1: Winter Warm-Up
+  winterG6MathW1D1,
+  winterG6ScienceW1D2,
+  winterG6ElaW1D3,
+  winterG6HistoryW1D4,
+  winterG6CodingW1D5,
+  // Winter Expedition — Week 2: Energy & Matter
+  winterG6ScienceW2D1,
+  winterG6ScienceW2D2,
+  winterG6MathW2D3,
+  winterG6CodingW2D4,
+  winterG6ElaW2D5,
+  // Winter Expedition — Week 3: Forces & Motion
+  winterG6ScienceW3D1,
+  winterG6MathW3D2,
+  winterG6ScienceW3D3,
+  winterG6CodingW3D4,
+  winterG6ElaW3D5,
+  // Winter Expedition — Week 4: Space & the Solar System
+  winterG6ScienceW4D1,
+  winterG6MathW4D2,
+  winterG6ScienceW4D3,
+  winterG6HistoryW4D4,
+  winterG6ElaW4D5,
+  // Winter Expedition — Week 5: Data in the Cold
+  winterG6MathW5D1,
+  winterG6MathW5D2,
+  winterG6ScienceW5D3,
+  winterG6CodingW5D4,
+  winterG6WorldW5D5,
+  // Winter Expedition — Week 6: Inventors & Engineers
+  winterG6ScienceW6D1,
+  winterG6CodingW6D2,
+  winterG6MathW6D3,
+  winterG6HistoryW6D4,
+  winterG6ElaW6D5,
+  // Winter Expedition — Week 7: Winter Tales
+  winterG6ElaW7D1,
+  winterG6ElaW7D2,
+  winterG6ElaW7D3,
+  winterG6ElaW7D4,
+  winterG6WorldW7D5,
+  // Winter Expedition — Week 8: Winter Showcase
+  winterG6ElaW8D1,
+  winterG6ScienceW8D2,
+  winterG6MathW8D3,
+  winterG6CodingW8D4,
+  winterG6ElaW8D5
 ];
 
 export const authoredMissions = Object.freeze(
