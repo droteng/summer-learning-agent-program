@@ -104,7 +104,8 @@ export const SEASON_STRUCTURES = Object.freeze({
 const AUTHORED_WEEKS = {
   "6:summer": [1, 2, 3, 4, 5, 6, 7, 8],
   "6:fall": [1, 2, 3, 4, 5, 6, 7, 8], // All 8 weeks authored → Fall is LIVE.
-  "6:winter": [1, 2, 3, 4, 5, 6, 7, 8] // All 8 weeks authored → Winter is LIVE.
+  "6:winter": [1, 2, 3, 4, 5, 6, 7, 8], // All 8 weeks authored → Winter is LIVE.
+  "6:spring": [1, 2, 3, 4, 5, 6, 7, 8] // All 8 weeks authored → Spring is LIVE. Full year complete.
 };
 
 const TOTAL_WEEKS = 8;
