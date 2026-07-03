@@ -392,6 +392,62 @@ import { winterG7MathW8D3 } from "./grade7/winter/week8/math-day3.js";
 import { winterG7CodingW8D4 } from "./grade7/winter/week8/coding-day4.js";
 import { winterG7ElaW8D5 } from "./grade7/winter/week8/ela-day5.js";
 
+// === Grade 7 Spring — Week 1: Spring Awakening ===
+import { springG7ScienceW1D1 } from "./grade7/spring/week1/science-day1.js";
+import { springG7MathW1D2 } from "./grade7/spring/week1/math-day2.js";
+import { springG7ElaW1D3 } from "./grade7/spring/week1/ela-day3.js";
+import { springG7HistoryW1D4 } from "./grade7/spring/week1/history-day4.js";
+import { springG7CodingW1D5 } from "./grade7/spring/week1/coding-day5.js";
+
+// === Grade 7 Spring — Week 2: Plants & Growth ===
+import { springG7ScienceW2D1 } from "./grade7/spring/week2/science-day1.js";
+import { springG7ScienceW2D2 } from "./grade7/spring/week2/science-day2.js";
+import { springG7MathW2D3 } from "./grade7/spring/week2/math-day3.js";
+import { springG7CodingW2D4 } from "./grade7/spring/week2/coding-day4.js";
+import { springG7ElaW2D5 } from "./grade7/spring/week2/ela-day5.js";
+
+// === Grade 7 Spring — Week 3: Life Cycles ===
+import { springG7ScienceW3D1 } from "./grade7/spring/week3/science-day1.js";
+import { springG7ScienceW3D2 } from "./grade7/spring/week3/science-day2.js";
+import { springG7MathW3D3 } from "./grade7/spring/week3/math-day3.js";
+import { springG7ElaW3D4 } from "./grade7/spring/week3/ela-day4.js";
+import { springG7WorldW3D5 } from "./grade7/spring/week3/world-day5.js";
+
+// === Grade 7 Spring — Week 4: Genetics for Kids ===
+import { springG7ScienceW4D1 } from "./grade7/spring/week4/science-day1.js";
+import { springG7ScienceW4D2 } from "./grade7/spring/week4/science-day2.js";
+import { springG7MathW4D3 } from "./grade7/spring/week4/math-day3.js";
+import { springG7HistoryW4D4 } from "./grade7/spring/week4/history-day4.js";
+import { springG7ElaW4D5 } from "./grade7/spring/week4/ela-day5.js";
+
+// === Grade 7 Spring — Week 5: Measuring Change ===
+import { springG7MathW5D1 } from "./grade7/spring/week5/math-day1.js";
+import { springG7MathW5D2 } from "./grade7/spring/week5/math-day2.js";
+import { springG7ScienceW5D3 } from "./grade7/spring/week5/science-day3.js";
+import { springG7CodingW5D4 } from "./grade7/spring/week5/coding-day4.js";
+import { springG7WorldW5D5 } from "./grade7/spring/week5/world-day5.js";
+
+// === Grade 7 Spring — Week 6: Code That Grows ===
+import { springG7CodingW6D1 } from "./grade7/spring/week6/coding-day1.js";
+import { springG7CodingW6D2 } from "./grade7/spring/week6/coding-day2.js";
+import { springG7MathW6D3 } from "./grade7/spring/week6/math-day3.js";
+import { springG7ScienceW6D4 } from "./grade7/spring/week6/science-day4.js";
+import { springG7ElaW6D5 } from "./grade7/spring/week6/ela-day5.js";
+
+// === Grade 7 Spring — Week 7: Voices for the Earth ===
+import { springG7ElaW7D1 } from "./grade7/spring/week7/ela-day1.js";
+import { springG7ElaW7D2 } from "./grade7/spring/week7/ela-day2.js";
+import { springG7ElaW7D3 } from "./grade7/spring/week7/ela-day3.js";
+import { springG7WorldW7D4 } from "./grade7/spring/week7/world-day4.js";
+import { springG7HistoryW7D5 } from "./grade7/spring/week7/history-day5.js";
+
+// === Grade 7 Spring — Week 8: Spring Showcase ===
+import { springG7ElaW8D1 } from "./grade7/spring/week8/ela-day1.js";
+import { springG7ScienceW8D2 } from "./grade7/spring/week8/science-day2.js";
+import { springG7MathW8D3 } from "./grade7/spring/week8/math-day3.js";
+import { springG7CodingW8D4 } from "./grade7/spring/week8/coding-day4.js";
+import { springG7ElaW8D5 } from "./grade7/spring/week8/ela-day5.js";
+
 export const ALL_MISSIONS = [
   grade6MathWeek1Day1,
   grade6ElaWeek1Day1,
@@ -741,7 +797,55 @@ export const ALL_MISSIONS = [
   winterG7ScienceW8D2,
   winterG7MathW8D3,
   winterG7CodingW8D4,
-  winterG7ElaW8D5
+  winterG7ElaW8D5,
+  // Grade 7 Spring — Week 1: Spring Awakening
+  springG7ScienceW1D1,
+  springG7MathW1D2,
+  springG7ElaW1D3,
+  springG7HistoryW1D4,
+  springG7CodingW1D5,
+  // Grade 7 Spring — Week 2: Plants & Growth
+  springG7ScienceW2D1,
+  springG7ScienceW2D2,
+  springG7MathW2D3,
+  springG7CodingW2D4,
+  springG7ElaW2D5,
+  // Grade 7 Spring — Week 3: Life Cycles
+  springG7ScienceW3D1,
+  springG7ScienceW3D2,
+  springG7MathW3D3,
+  springG7ElaW3D4,
+  springG7WorldW3D5,
+  // Grade 7 Spring — Week 4: Genetics for Kids
+  springG7ScienceW4D1,
+  springG7ScienceW4D2,
+  springG7MathW4D3,
+  springG7HistoryW4D4,
+  springG7ElaW4D5,
+  // Grade 7 Spring — Week 5: Measuring Change
+  springG7MathW5D1,
+  springG7MathW5D2,
+  springG7ScienceW5D3,
+  springG7CodingW5D4,
+  springG7WorldW5D5,
+  // Grade 7 Spring — Week 6: Code That Grows
+  springG7CodingW6D1,
+  springG7CodingW6D2,
+  springG7MathW6D3,
+  springG7ScienceW6D4,
+  springG7ElaW6D5,
+  // Grade 7 Spring — Week 7: Voices for the Earth
+  springG7ElaW7D1,
+  springG7ElaW7D2,
+  springG7ElaW7D3,
+  springG7WorldW7D4,
+  springG7HistoryW7D5,
+  // Grade 7 Spring — Week 8: Spring Showcase
+  springG7ElaW8D1,
+  springG7ScienceW8D2,
+  springG7MathW8D3,
+  springG7CodingW8D4,
+  springG7ElaW8D5
 ];
 
 export const authoredMissions = Object.freeze(

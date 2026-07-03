@@ -50,7 +50,7 @@ test("the catalog covers all grades x seasons", () => {
   }
 });
 
-test("live programs = all four Grade 6 seasons + Grade 7 Summer, Fall & Winter", () => {
+test("live programs = all four Grade 6 seasons + all four Grade 7 seasons", () => {
   const live = listAllPrograms().filter((p) => p.status === "live");
   const liveKeys = live.map((p) => `${p.grade}:${p.season}`).sort();
   assert.deepEqual(liveKeys, [
@@ -59,28 +59,26 @@ test("live programs = all four Grade 6 seasons + Grade 7 Summer, Fall & Winter",
     "6:summer",
     "6:winter",
     "7:fall",
+    "7:spring",
     "7:summer",
     "7:winter"
   ]);
 });
 
-test("grade status table includes 4, 5, 6, 7 and only 6 is a fully-live grade", () => {
+test("grade status table includes 4, 5, 6, 7 and both 6 and 7 are fully live", () => {
   assert.deepEqual([...GRADES].sort(), [4, 5, 6, 7]);
   assert.equal(GRADE_STATUS[6], "live");
-  // Grade 7 is rolling out season-by-season: its Summer PROGRAM is live, but
-  // the GRADE as a whole stays in_development until all its seasons ship.
-  for (const g of [4, 5, 7]) assert.equal(GRADE_STATUS[g], "in_development");
+  assert.equal(GRADE_STATUS[7], "live"); // Grade 7's four seasons are all authored.
+  for (const g of [4, 5]) assert.equal(GRADE_STATUS[g], "in_development");
 });
 
-test("Grade 7 Summer is live even though Grade 7 overall is in development", () => {
-  const g7summer = getProgram(7, SEASONS.SUMMER);
-  assert.equal(g7summer.status, "live", "7:summer program is fully authored (8/8)");
-  assert.equal(g7summer.authoredWeekCount, 8);
-  assert.equal(g7summer.gradeStatus, "in_development", "Grade 7 grade-level rollout is ongoing");
-  // Grade 7 Fall and Winter are live now; Spring is not authored yet.
-  assert.equal(getProgram(7, SEASONS.FALL).status, "live");
-  assert.equal(getProgram(7, SEASONS.WINTER).status, "live");
-  assert.equal(getProgram(7, SEASONS.SPRING).status, "in_development");
+test("all four Grade 7 seasons are live and the grade is fully live", () => {
+  for (const season of Object.values(SEASONS)) {
+    const p = getProgram(7, season);
+    assert.equal(p.status, "live", `7:${season} program should be live (8/8)`);
+    assert.equal(p.authoredWeekCount, 8);
+    assert.equal(p.gradeStatus, "live", "Grade 7 grade-level status is live");
+  }
 });
 
 test("yearly access unlocks all seasons; season pass unlocks only current", () => {

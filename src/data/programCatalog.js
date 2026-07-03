@@ -28,7 +28,7 @@ export const GRADE_STATUS = Object.freeze({
   4: "in_development",
   5: "in_development",
   6: "live",
-  7: "in_development"
+  7: "live" // All four Grade 7 seasons authored → Grade 7 is fully LIVE.
 });
 
 // Shared 8-week structures per season. Grades reuse the season structure;
@@ -111,7 +111,8 @@ const AUTHORED_WEEKS = {
   // "in_development" until every Grade 7 season is authored — honest per-program.
   "7:summer": [1, 2, 3, 4, 5, 6, 7, 8], // Grade 7 Summer is LIVE.
   "7:fall": [1, 2, 3, 4, 5, 6, 7, 8], // Grade 7 Fall is LIVE.
-  "7:winter": [1, 2, 3, 4, 5, 6, 7, 8] // Grade 7 Winter is LIVE.
+  "7:winter": [1, 2, 3, 4, 5, 6, 7, 8], // Grade 7 Winter is LIVE.
+  "7:spring": [1, 2, 3, 4, 5, 6, 7, 8] // Grade 7 Spring is LIVE. Grade 7 full year complete.
 };
 
 const TOTAL_WEEKS = 8;
