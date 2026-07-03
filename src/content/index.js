@@ -168,6 +168,62 @@ import { winterG6MathW8D3 } from "./grade6/winter/week8/math-day3.js";
 import { winterG6CodingW8D4 } from "./grade6/winter/week8/coding-day4.js";
 import { winterG6ElaW8D5 } from "./grade6/winter/week8/ela-day5.js";
 
+// === Spring Expedition (Grade 6) — Week 1: Spring Awakening ===
+import { springG6ScienceW1D1 } from "./grade6/spring/week1/science-day1.js";
+import { springG6MathW1D2 } from "./grade6/spring/week1/math-day2.js";
+import { springG6ElaW1D3 } from "./grade6/spring/week1/ela-day3.js";
+import { springG6HistoryW1D4 } from "./grade6/spring/week1/history-day4.js";
+import { springG6CodingW1D5 } from "./grade6/spring/week1/coding-day5.js";
+
+// === Spring Expedition (Grade 6) — Week 2: Plants & Growth ===
+import { springG6ScienceW2D1 } from "./grade6/spring/week2/science-day1.js";
+import { springG6ScienceW2D2 } from "./grade6/spring/week2/science-day2.js";
+import { springG6MathW2D3 } from "./grade6/spring/week2/math-day3.js";
+import { springG6CodingW2D4 } from "./grade6/spring/week2/coding-day4.js";
+import { springG6ElaW2D5 } from "./grade6/spring/week2/ela-day5.js";
+
+// === Spring Expedition (Grade 6) — Week 3: Life Cycles ===
+import { springG6ScienceW3D1 } from "./grade6/spring/week3/science-day1.js";
+import { springG6ScienceW3D2 } from "./grade6/spring/week3/science-day2.js";
+import { springG6MathW3D3 } from "./grade6/spring/week3/math-day3.js";
+import { springG6ElaW3D4 } from "./grade6/spring/week3/ela-day4.js";
+import { springG6WorldW3D5 } from "./grade6/spring/week3/world-day5.js";
+
+// === Spring Expedition (Grade 6) — Week 4: Genetics for Kids ===
+import { springG6ScienceW4D1 } from "./grade6/spring/week4/science-day1.js";
+import { springG6ScienceW4D2 } from "./grade6/spring/week4/science-day2.js";
+import { springG6MathW4D3 } from "./grade6/spring/week4/math-day3.js";
+import { springG6HistoryW4D4 } from "./grade6/spring/week4/history-day4.js";
+import { springG6ElaW4D5 } from "./grade6/spring/week4/ela-day5.js";
+
+// === Spring Expedition (Grade 6) — Week 5: Measuring Change ===
+import { springG6MathW5D1 } from "./grade6/spring/week5/math-day1.js";
+import { springG6MathW5D2 } from "./grade6/spring/week5/math-day2.js";
+import { springG6ScienceW5D3 } from "./grade6/spring/week5/science-day3.js";
+import { springG6CodingW5D4 } from "./grade6/spring/week5/coding-day4.js";
+import { springG6WorldW5D5 } from "./grade6/spring/week5/world-day5.js";
+
+// === Spring Expedition (Grade 6) — Week 6: Code That Grows ===
+import { springG6CodingW6D1 } from "./grade6/spring/week6/coding-day1.js";
+import { springG6CodingW6D2 } from "./grade6/spring/week6/coding-day2.js";
+import { springG6MathW6D3 } from "./grade6/spring/week6/math-day3.js";
+import { springG6ScienceW6D4 } from "./grade6/spring/week6/science-day4.js";
+import { springG6ElaW6D5 } from "./grade6/spring/week6/ela-day5.js";
+
+// === Spring Expedition (Grade 6) — Week 7: Voices for the Earth ===
+import { springG6ElaW7D1 } from "./grade6/spring/week7/ela-day1.js";
+import { springG6ElaW7D2 } from "./grade6/spring/week7/ela-day2.js";
+import { springG6ElaW7D3 } from "./grade6/spring/week7/ela-day3.js";
+import { springG6WorldW7D4 } from "./grade6/spring/week7/world-day4.js";
+import { springG6HistoryW7D5 } from "./grade6/spring/week7/history-day5.js";
+
+// === Spring Expedition (Grade 6) — Week 8: Spring Showcase ===
+import { springG6ElaW8D1 } from "./grade6/spring/week8/ela-day1.js";
+import { springG6ScienceW8D2 } from "./grade6/spring/week8/science-day2.js";
+import { springG6MathW8D3 } from "./grade6/spring/week8/math-day3.js";
+import { springG6CodingW8D4 } from "./grade6/spring/week8/coding-day4.js";
+import { springG6ElaW8D5 } from "./grade6/spring/week8/ela-day5.js";
+
 export const ALL_MISSIONS = [
   grade6MathWeek1Day1,
   grade6ElaWeek1Day1,
@@ -325,7 +381,55 @@ export const ALL_MISSIONS = [
   winterG6ScienceW8D2,
   winterG6MathW8D3,
   winterG6CodingW8D4,
-  winterG6ElaW8D5
+  winterG6ElaW8D5,
+  // Spring Expedition — Week 1: Spring Awakening
+  springG6ScienceW1D1,
+  springG6MathW1D2,
+  springG6ElaW1D3,
+  springG6HistoryW1D4,
+  springG6CodingW1D5,
+  // Spring Expedition — Week 2: Plants & Growth
+  springG6ScienceW2D1,
+  springG6ScienceW2D2,
+  springG6MathW2D3,
+  springG6CodingW2D4,
+  springG6ElaW2D5,
+  // Spring Expedition — Week 3: Life Cycles
+  springG6ScienceW3D1,
+  springG6ScienceW3D2,
+  springG6MathW3D3,
+  springG6ElaW3D4,
+  springG6WorldW3D5,
+  // Spring Expedition — Week 4: Genetics for Kids
+  springG6ScienceW4D1,
+  springG6ScienceW4D2,
+  springG6MathW4D3,
+  springG6HistoryW4D4,
+  springG6ElaW4D5,
+  // Spring Expedition — Week 5: Measuring Change
+  springG6MathW5D1,
+  springG6MathW5D2,
+  springG6ScienceW5D3,
+  springG6CodingW5D4,
+  springG6WorldW5D5,
+  // Spring Expedition — Week 6: Code That Grows
+  springG6CodingW6D1,
+  springG6CodingW6D2,
+  springG6MathW6D3,
+  springG6ScienceW6D4,
+  springG6ElaW6D5,
+  // Spring Expedition — Week 7: Voices for the Earth
+  springG6ElaW7D1,
+  springG6ElaW7D2,
+  springG6ElaW7D3,
+  springG6WorldW7D4,
+  springG6HistoryW7D5,
+  // Spring Expedition — Week 8: Spring Showcase
+  springG6ElaW8D1,
+  springG6ScienceW8D2,
+  springG6MathW8D3,
+  springG6CodingW8D4,
+  springG6ElaW8D5
 ];
 
 export const authoredMissions = Object.freeze(

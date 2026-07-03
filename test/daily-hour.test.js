@@ -11,16 +11,17 @@ test("every dailyHour block that exists passes the schema validator", () => {
   }
 });
 
-test("every Grade 6 Summer, Fall & Winter core mission has a full Daily Hour", () => {
-  // The rollout: every non-enrichment Grade 6 Summer/Fall/Winter mission is
-  // a ~60-minute, 6-segment day. (Pilot = Summer Week 1; now all live seasons.)
+test("every Grade 6 core mission (all four seasons) has a full Daily Hour", () => {
+  // The rollout: every non-enrichment Grade 6 mission across all four live
+  // seasons is a ~60-minute, 6-segment day. (Pilot = Summer Week 1; now the
+  // full year: Summer + Fall + Winter + Spring.)
   const core = ALL_MISSIONS.filter(
     (m) =>
       m.gradeLevel === 6 &&
-      ["summer", "fall", "winter"].includes(m.season ?? "summer") &&
+      ["summer", "fall", "winter", "spring"].includes(m.season ?? "summer") &&
       !m.enrichment
   );
-  assert.ok(core.length >= 121, `expected 121+ core missions, got ${core.length}`);
+  assert.ok(core.length >= 161, `expected 161+ core missions, got ${core.length}`);
   for (const m of core) {
     assert.ok(m.dailyHour, `${m.id} is missing a dailyHour`);
     // Each mission should now be a ~60-minute day.
