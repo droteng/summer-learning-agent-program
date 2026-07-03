@@ -26,7 +26,7 @@ export const GRADES = Object.freeze([4, 5, 6, 7]);
 // their own content is authored.
 export const GRADE_STATUS = Object.freeze({
   4: "in_development",
-  5: "in_development",
+  5: "live", // All four Grade 5 seasons authored → Grade 5 is fully LIVE.
   6: "live",
   7: "live" // All four Grade 7 seasons authored → Grade 7 is fully LIVE.
 });
@@ -117,7 +117,8 @@ const AUTHORED_WEEKS = {
   // "in_development" until every Grade 5 season is authored — honest per-program.
   "5:summer": [1, 2, 3, 4, 5, 6, 7, 8], // Grade 5 Summer is LIVE.
   "5:fall": [1, 2, 3, 4, 5, 6, 7, 8], // Grade 5 Fall is LIVE.
-  "5:winter": [1, 2, 3, 4, 5, 6, 7, 8] // Grade 5 Winter is LIVE.
+  "5:winter": [1, 2, 3, 4, 5, 6, 7, 8], // Grade 5 Winter is LIVE.
+  "5:spring": [1, 2, 3, 4, 5, 6, 7, 8] // Grade 5 Spring is LIVE. Grade 5 full year complete.
 };
 
 const TOTAL_WEEKS = 8;
