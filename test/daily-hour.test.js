@@ -48,7 +48,7 @@ test("each live Grade 7 season is a full 40-mission Daily Hour program", () => {
 });
 
 test("live Grade 5 seasons are full Daily Hour programs (Summer=41, Fall=40)", () => {
-  const expected = { summer: 41, fall: 40, winter: 40 };
+  const expected = { summer: 41, fall: 40, winter: 40, spring: 40 };
   for (const [season, count] of Object.entries(expected)) {
     const missions = ALL_MISSIONS.filter(
       (m) => m.gradeLevel === 5 && (m.season ?? "summer") === season && !m.enrichment
