@@ -280,6 +280,62 @@ import { summerG7MathW8D3 } from "./grade7/summer/week8/math-day3.js";
 import { summerG7CodingW8D4 } from "./grade7/summer/week8/coding-day4.js";
 import { summerG7ElaW8D5 } from "./grade7/summer/week8/ela-day5.js";
 
+// === Grade 7 Fall — Week 1: Back to Basics ===
+import { fallG7MathW1D1 } from "./grade7/fall/week1/math-day1.js";
+import { fallG7ScienceW1D2 } from "./grade7/fall/week1/science-day2.js";
+import { fallG7ElaW1D3 } from "./grade7/fall/week1/ela-day3.js";
+import { fallG7HistoryW1D4 } from "./grade7/fall/week1/history-day4.js";
+import { fallG7CodingW1D5 } from "./grade7/fall/week1/coding-day5.js";
+
+// === Grade 7 Fall — Week 2: Ecosystems & Food Webs ===
+import { fallG7ScienceW2D1 } from "./grade7/fall/week2/science-day1.js";
+import { fallG7MathW2D2 } from "./grade7/fall/week2/math-day2.js";
+import { fallG7CodingW2D3 } from "./grade7/fall/week2/coding-day3.js";
+import { fallG7ElaW2D4 } from "./grade7/fall/week2/ela-day4.js";
+import { fallG7ScienceW2D5 } from "./grade7/fall/week2/science-day5.js";
+
+// === Grade 7 Fall — Week 3: The Harvest of Numbers ===
+import { fallG7MathW3D1 } from "./grade7/fall/week3/math-day1.js";
+import { fallG7MathW3D2 } from "./grade7/fall/week3/math-day2.js";
+import { fallG7ScienceW3D3 } from "./grade7/fall/week3/science-day3.js";
+import { fallG7CodingW3D4 } from "./grade7/fall/week3/coding-day4.js";
+import { fallG7ElaW3D5 } from "./grade7/fall/week3/ela-day5.js";
+
+// === Grade 7 Fall — Week 4: Ancient Civilizations ===
+import { fallG7HistoryW4D1 } from "./grade7/fall/week4/history-day1.js";
+import { fallG7HistoryW4D2 } from "./grade7/fall/week4/history-day2.js";
+import { fallG7MathW4D3 } from "./grade7/fall/week4/math-day3.js";
+import { fallG7ElaW4D4 } from "./grade7/fall/week4/ela-day4.js";
+import { fallG7CodingW4D5 } from "./grade7/fall/week4/coding-day5.js";
+
+// === Grade 7 Fall — Week 5: Persuasive Voices ===
+import { fallG7ElaW5D1 } from "./grade7/fall/week5/ela-day1.js";
+import { fallG7ElaW5D2 } from "./grade7/fall/week5/ela-day2.js";
+import { fallG7MathW5D3 } from "./grade7/fall/week5/math-day3.js";
+import { fallG7WorldW5D4 } from "./grade7/fall/week5/world-day4.js";
+import { fallG7ElaW5D5 } from "./grade7/fall/week5/ela-day5.js";
+
+// === Grade 7 Fall — Week 6: Patterns in Nature ===
+import { fallG7MathW6D1 } from "./grade7/fall/week6/math-day1.js";
+import { fallG7ScienceW6D2 } from "./grade7/fall/week6/science-day2.js";
+import { fallG7CodingW6D3 } from "./grade7/fall/week6/coding-day3.js";
+import { fallG7CodingW6D4 } from "./grade7/fall/week6/coding-day4.js";
+import { fallG7ElaW6D5 } from "./grade7/fall/week6/ela-day5.js";
+
+// === Grade 7 Fall — Week 7: Cause & Effect in History ===
+import { fallG7HistoryW7D1 } from "./grade7/fall/week7/history-day1.js";
+import { fallG7HistoryW7D2 } from "./grade7/fall/week7/history-day2.js";
+import { fallG7MathW7D3 } from "./grade7/fall/week7/math-day3.js";
+import { fallG7ElaW7D4 } from "./grade7/fall/week7/ela-day4.js";
+import { fallG7HistoryW7D5 } from "./grade7/fall/week7/history-day5.js";
+
+// === Grade 7 Fall — Week 8: Harvest Showcase ===
+import { fallG7ElaW8D1 } from "./grade7/fall/week8/ela-day1.js";
+import { fallG7MathW8D2 } from "./grade7/fall/week8/math-day2.js";
+import { fallG7ScienceW8D3 } from "./grade7/fall/week8/science-day3.js";
+import { fallG7WorldW8D4 } from "./grade7/fall/week8/world-day4.js";
+import { fallG7ElaW8D5 } from "./grade7/fall/week8/ela-day5.js";
+
 export const ALL_MISSIONS = [
   grade6MathWeek1Day1,
   grade6ElaWeek1Day1,
@@ -533,7 +589,55 @@ export const ALL_MISSIONS = [
   summerG7ScienceW8D2,
   summerG7MathW8D3,
   summerG7CodingW8D4,
-  summerG7ElaW8D5
+  summerG7ElaW8D5,
+  // Grade 7 Fall — Week 1: Back to Basics
+  fallG7MathW1D1,
+  fallG7ScienceW1D2,
+  fallG7ElaW1D3,
+  fallG7HistoryW1D4,
+  fallG7CodingW1D5,
+  // Grade 7 Fall — Week 2: Ecosystems & Food Webs
+  fallG7ScienceW2D1,
+  fallG7MathW2D2,
+  fallG7CodingW2D3,
+  fallG7ElaW2D4,
+  fallG7ScienceW2D5,
+  // Grade 7 Fall — Week 3: The Harvest of Numbers
+  fallG7MathW3D1,
+  fallG7MathW3D2,
+  fallG7ScienceW3D3,
+  fallG7CodingW3D4,
+  fallG7ElaW3D5,
+  // Grade 7 Fall — Week 4: Ancient Civilizations
+  fallG7HistoryW4D1,
+  fallG7HistoryW4D2,
+  fallG7MathW4D3,
+  fallG7ElaW4D4,
+  fallG7CodingW4D5,
+  // Grade 7 Fall — Week 5: Persuasive Voices
+  fallG7ElaW5D1,
+  fallG7ElaW5D2,
+  fallG7MathW5D3,
+  fallG7WorldW5D4,
+  fallG7ElaW5D5,
+  // Grade 7 Fall — Week 6: Patterns in Nature
+  fallG7MathW6D1,
+  fallG7ScienceW6D2,
+  fallG7CodingW6D3,
+  fallG7CodingW6D4,
+  fallG7ElaW6D5,
+  // Grade 7 Fall — Week 7: Cause & Effect in History
+  fallG7HistoryW7D1,
+  fallG7HistoryW7D2,
+  fallG7MathW7D3,
+  fallG7ElaW7D4,
+  fallG7HistoryW7D5,
+  // Grade 7 Fall — Week 8: Harvest Showcase
+  fallG7ElaW8D1,
+  fallG7MathW8D2,
+  fallG7ScienceW8D3,
+  fallG7WorldW8D4,
+  fallG7ElaW8D5
 ];
 
 export const authoredMissions = Object.freeze(
