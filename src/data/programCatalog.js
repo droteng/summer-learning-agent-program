@@ -105,7 +105,11 @@ const AUTHORED_WEEKS = {
   "6:summer": [1, 2, 3, 4, 5, 6, 7, 8],
   "6:fall": [1, 2, 3, 4, 5, 6, 7, 8], // All 8 weeks authored → Fall is LIVE.
   "6:winter": [1, 2, 3, 4, 5, 6, 7, 8], // All 8 weeks authored → Winter is LIVE.
-  "6:spring": [1, 2, 3, 4, 5, 6, 7, 8] // All 8 weeks authored → Spring is LIVE. Full year complete.
+  "6:spring": [1, 2, 3, 4, 5, 6, 7, 8], // All 8 weeks authored → Spring is LIVE. Grade 6 full year complete.
+  // Grade 7 rollout begins with Summer. The 7:summer PROGRAM is live (all 8
+  // weeks authored) even though GRADE_STATUS[7] stays "in_development" until
+  // Grade 7's other seasons are authored — an honest per-program status.
+  "7:summer": [1, 2, 3, 4, 5, 6, 7, 8] // All 8 weeks authored → Grade 7 Summer is LIVE.
 };
 
 const TOTAL_WEEKS = 8;
