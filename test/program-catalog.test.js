@@ -50,10 +50,17 @@ test("the catalog covers all grades x seasons", () => {
   }
 });
 
-test("live programs = all four Grade 6 seasons + Grade 7 Summer", () => {
+test("live programs = all four Grade 6 seasons + Grade 7 Summer & Fall", () => {
   const live = listAllPrograms().filter((p) => p.status === "live");
   const liveKeys = live.map((p) => `${p.grade}:${p.season}`).sort();
-  assert.deepEqual(liveKeys, ["6:fall", "6:spring", "6:summer", "6:winter", "7:summer"]);
+  assert.deepEqual(liveKeys, [
+    "6:fall",
+    "6:spring",
+    "6:summer",
+    "6:winter",
+    "7:fall",
+    "7:summer"
+  ]);
 });
 
 test("grade status table includes 4, 5, 6, 7 and only 6 is a fully-live grade", () => {
@@ -69,8 +76,9 @@ test("Grade 7 Summer is live even though Grade 7 overall is in development", () 
   assert.equal(g7summer.status, "live", "7:summer program is fully authored (8/8)");
   assert.equal(g7summer.authoredWeekCount, 8);
   assert.equal(g7summer.gradeStatus, "in_development", "Grade 7 grade-level rollout is ongoing");
-  // Grade 7's other seasons are not authored yet → still in development.
-  assert.equal(getProgram(7, SEASONS.FALL).status, "in_development");
+  // Grade 7 Fall is also live now; Winter/Spring are not authored yet.
+  assert.equal(getProgram(7, SEASONS.FALL).status, "live");
+  assert.equal(getProgram(7, SEASONS.WINTER).status, "in_development");
 });
 
 test("yearly access unlocks all seasons; season pass unlocks only current", () => {
