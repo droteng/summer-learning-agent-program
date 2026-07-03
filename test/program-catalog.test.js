@@ -50,10 +50,11 @@ test("the catalog covers all grades x seasons", () => {
   }
 });
 
-test("live programs = all four Grade 6 seasons + all four Grade 7 seasons", () => {
+test("live programs = both full Grade 6 & 7 years + Grade 5 Summer", () => {
   const live = listAllPrograms().filter((p) => p.status === "live");
   const liveKeys = live.map((p) => `${p.grade}:${p.season}`).sort();
   assert.deepEqual(liveKeys, [
+    "5:summer",
     "6:fall",
     "6:spring",
     "6:summer",
@@ -63,6 +64,14 @@ test("live programs = all four Grade 6 seasons + all four Grade 7 seasons", () =
     "7:summer",
     "7:winter"
   ]);
+});
+
+test("Grade 5 Summer is live even though Grade 5 overall is in development", () => {
+  const g5summer = getProgram(5, SEASONS.SUMMER);
+  assert.equal(g5summer.status, "live", "5:summer program is fully authored (8/8)");
+  assert.equal(g5summer.gradeStatus, "in_development", "Grade 5 grade-level rollout is ongoing");
+  assert.equal(GRADE_STATUS[5], "in_development");
+  assert.equal(getProgram(5, SEASONS.FALL).status, "in_development");
 });
 
 test("grade status table includes 4, 5, 6, 7 and both 6 and 7 are fully live", () => {
