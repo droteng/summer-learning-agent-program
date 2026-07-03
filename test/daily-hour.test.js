@@ -32,6 +32,19 @@ test("every Grade 6 core mission (all four seasons) has a full Daily Hour", () =
   }
 });
 
+test("Grade 7 Summer (variant kickoff) is a full 40-mission Daily Hour program", () => {
+  const g7summer = ALL_MISSIONS.filter(
+    (m) => m.gradeLevel === 7 && (m.season ?? "summer") === "summer" && !m.enrichment
+  );
+  assert.equal(g7summer.length, 40, `expected 40 Grade 7 Summer missions, got ${g7summer.length}`);
+  for (const m of g7summer) {
+    assert.ok(m.dailyHour, `${m.id} is missing a dailyHour`);
+    assert.ok(m.estimatedMinutes >= 55, `${m.id} estimatedMinutes should reflect the full hour`);
+    const mins = dailyHourMinutes(m.dailyHour, 18);
+    assert.ok(mins >= 55 && mins <= 70, `${m.id} daily hour total ${mins} should be ~60`);
+  }
+});
+
 test("Daily Hour badge ids are unique across the whole program", () => {
   const withDH = ALL_MISSIONS.filter((m) => m.dailyHour);
   const ids = withDH.map((m) => m.dailyHour.reflectAndReward.badge.id);

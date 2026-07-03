@@ -224,6 +224,62 @@ import { springG6MathW8D3 } from "./grade6/spring/week8/math-day3.js";
 import { springG6CodingW8D4 } from "./grade6/spring/week8/coding-day4.js";
 import { springG6ElaW8D5 } from "./grade6/spring/week8/ela-day5.js";
 
+// === Grade 7 Summer (variant) — Week 1: Explorer Mode ===
+import { summerG7MathW1D1 } from "./grade7/summer/week1/math-day1.js";
+import { summerG7ScienceW1D2 } from "./grade7/summer/week1/science-day2.js";
+import { summerG7ElaW1D3 } from "./grade7/summer/week1/ela-day3.js";
+import { summerG7WorldW1D4 } from "./grade7/summer/week1/world-day4.js";
+import { summerG7CodingW1D5 } from "./grade7/summer/week1/coding-day5.js";
+
+// === Grade 7 Summer — Week 2: Numbers in the Real World ===
+import { summerG7MathW2D1 } from "./grade7/summer/week2/math-day1.js";
+import { summerG7MathW2D2 } from "./grade7/summer/week2/math-day2.js";
+import { summerG7ScienceW2D3 } from "./grade7/summer/week2/science-day3.js";
+import { summerG7CodingW2D4 } from "./grade7/summer/week2/coding-day4.js";
+import { summerG7WorldW2D5 } from "./grade7/summer/week2/world-day5.js";
+
+// === Grade 7 Summer — Week 3: Story Builders ===
+import { summerG7ElaW3D1 } from "./grade7/summer/week3/ela-day1.js";
+import { summerG7ElaW3D2 } from "./grade7/summer/week3/ela-day2.js";
+import { summerG7ElaW3D3 } from "./grade7/summer/week3/ela-day3.js";
+import { summerG7ElaW3D4 } from "./grade7/summer/week3/ela-day4.js";
+import { summerG7HistoryW3D5 } from "./grade7/summer/week3/history-day5.js";
+
+// === Grade 7 Summer — Week 4: Code Your First Tool ===
+import { summerG7CodingW4D1 } from "./grade7/summer/week4/coding-day1.js";
+import { summerG7CodingW4D2 } from "./grade7/summer/week4/coding-day2.js";
+import { summerG7CodingW4D3 } from "./grade7/summer/week4/coding-day3.js";
+import { summerG7MathW4D4 } from "./grade7/summer/week4/math-day4.js";
+import { summerG7ElaW4D5 } from "./grade7/summer/week4/ela-day5.js";
+
+// === Grade 7 Summer — Week 5: Earth and Inventions ===
+import { summerG7ScienceW5D1 } from "./grade7/summer/week5/science-day1.js";
+import { summerG7ScienceW5D2 } from "./grade7/summer/week5/science-day2.js";
+import { summerG7MathW5D3 } from "./grade7/summer/week5/math-day3.js";
+import { summerG7HistoryW5D4 } from "./grade7/summer/week5/history-day4.js";
+import { summerG7ElaW5D5 } from "./grade7/summer/week5/ela-day5.js";
+
+// === Grade 7 Summer — Week 6: World Affairs for Kids ===
+import { summerG7WorldW6D1 } from "./grade7/summer/week6/world-day1.js";
+import { summerG7WorldW6D2 } from "./grade7/summer/week6/world-day2.js";
+import { summerG7ElaW6D3 } from "./grade7/summer/week6/ela-day3.js";
+import { summerG7MathW6D4 } from "./grade7/summer/week6/math-day4.js";
+import { summerG7HistoryW6D5 } from "./grade7/summer/week6/history-day5.js";
+
+// === Grade 7 Summer — Week 7: History Missions ===
+import { summerG7HistoryW7D1 } from "./grade7/summer/week7/history-day1.js";
+import { summerG7HistoryW7D2 } from "./grade7/summer/week7/history-day2.js";
+import { summerG7HistoryW7D3 } from "./grade7/summer/week7/history-day3.js";
+import { summerG7WorldW7D4 } from "./grade7/summer/week7/world-day4.js";
+import { summerG7ElaW7D5 } from "./grade7/summer/week7/ela-day5.js";
+
+// === Grade 7 Summer — Week 8: Capstone Week ===
+import { summerG7ElaW8D1 } from "./grade7/summer/week8/ela-day1.js";
+import { summerG7ScienceW8D2 } from "./grade7/summer/week8/science-day2.js";
+import { summerG7MathW8D3 } from "./grade7/summer/week8/math-day3.js";
+import { summerG7CodingW8D4 } from "./grade7/summer/week8/coding-day4.js";
+import { summerG7ElaW8D5 } from "./grade7/summer/week8/ela-day5.js";
+
 export const ALL_MISSIONS = [
   grade6MathWeek1Day1,
   grade6ElaWeek1Day1,
@@ -429,7 +485,55 @@ export const ALL_MISSIONS = [
   springG6ScienceW8D2,
   springG6MathW8D3,
   springG6CodingW8D4,
-  springG6ElaW8D5
+  springG6ElaW8D5,
+  // Grade 7 Summer (variant) — Week 1: Explorer Mode
+  summerG7MathW1D1,
+  summerG7ScienceW1D2,
+  summerG7ElaW1D3,
+  summerG7WorldW1D4,
+  summerG7CodingW1D5,
+  // Grade 7 Summer — Week 2: Numbers in the Real World
+  summerG7MathW2D1,
+  summerG7MathW2D2,
+  summerG7ScienceW2D3,
+  summerG7CodingW2D4,
+  summerG7WorldW2D5,
+  // Grade 7 Summer — Week 3: Story Builders
+  summerG7ElaW3D1,
+  summerG7ElaW3D2,
+  summerG7ElaW3D3,
+  summerG7ElaW3D4,
+  summerG7HistoryW3D5,
+  // Grade 7 Summer — Week 4: Code Your First Tool
+  summerG7CodingW4D1,
+  summerG7CodingW4D2,
+  summerG7CodingW4D3,
+  summerG7MathW4D4,
+  summerG7ElaW4D5,
+  // Grade 7 Summer — Week 5: Earth and Inventions
+  summerG7ScienceW5D1,
+  summerG7ScienceW5D2,
+  summerG7MathW5D3,
+  summerG7HistoryW5D4,
+  summerG7ElaW5D5,
+  // Grade 7 Summer — Week 6: World Affairs for Kids
+  summerG7WorldW6D1,
+  summerG7WorldW6D2,
+  summerG7ElaW6D3,
+  summerG7MathW6D4,
+  summerG7HistoryW6D5,
+  // Grade 7 Summer — Week 7: History Missions
+  summerG7HistoryW7D1,
+  summerG7HistoryW7D2,
+  summerG7HistoryW7D3,
+  summerG7WorldW7D4,
+  summerG7ElaW7D5,
+  // Grade 7 Summer — Week 8: Capstone Week
+  summerG7ElaW8D1,
+  summerG7ScienceW8D2,
+  summerG7MathW8D3,
+  summerG7CodingW8D4,
+  summerG7ElaW8D5
 ];
 
 export const authoredMissions = Object.freeze(
