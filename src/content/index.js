@@ -336,6 +336,62 @@ import { fallG7ScienceW8D3 } from "./grade7/fall/week8/science-day3.js";
 import { fallG7WorldW8D4 } from "./grade7/fall/week8/world-day4.js";
 import { fallG7ElaW8D5 } from "./grade7/fall/week8/ela-day5.js";
 
+// === Grade 7 Winter — Week 1: Winter Warm-Up ===
+import { winterG7MathW1D1 } from "./grade7/winter/week1/math-day1.js";
+import { winterG7ScienceW1D2 } from "./grade7/winter/week1/science-day2.js";
+import { winterG7ElaW1D3 } from "./grade7/winter/week1/ela-day3.js";
+import { winterG7HistoryW1D4 } from "./grade7/winter/week1/history-day4.js";
+import { winterG7CodingW1D5 } from "./grade7/winter/week1/coding-day5.js";
+
+// === Grade 7 Winter — Week 2: Energy & Matter ===
+import { winterG7ScienceW2D1 } from "./grade7/winter/week2/science-day1.js";
+import { winterG7ScienceW2D2 } from "./grade7/winter/week2/science-day2.js";
+import { winterG7MathW2D3 } from "./grade7/winter/week2/math-day3.js";
+import { winterG7CodingW2D4 } from "./grade7/winter/week2/coding-day4.js";
+import { winterG7ElaW2D5 } from "./grade7/winter/week2/ela-day5.js";
+
+// === Grade 7 Winter — Week 3: Forces & Motion ===
+import { winterG7ScienceW3D1 } from "./grade7/winter/week3/science-day1.js";
+import { winterG7MathW3D2 } from "./grade7/winter/week3/math-day2.js";
+import { winterG7ScienceW3D3 } from "./grade7/winter/week3/science-day3.js";
+import { winterG7CodingW3D4 } from "./grade7/winter/week3/coding-day4.js";
+import { winterG7ElaW3D5 } from "./grade7/winter/week3/ela-day5.js";
+
+// === Grade 7 Winter — Week 4: Space & the Solar System ===
+import { winterG7ScienceW4D1 } from "./grade7/winter/week4/science-day1.js";
+import { winterG7MathW4D2 } from "./grade7/winter/week4/math-day2.js";
+import { winterG7ScienceW4D3 } from "./grade7/winter/week4/science-day3.js";
+import { winterG7HistoryW4D4 } from "./grade7/winter/week4/history-day4.js";
+import { winterG7ElaW4D5 } from "./grade7/winter/week4/ela-day5.js";
+
+// === Grade 7 Winter — Week 5: Data in the Cold ===
+import { winterG7MathW5D1 } from "./grade7/winter/week5/math-day1.js";
+import { winterG7MathW5D2 } from "./grade7/winter/week5/math-day2.js";
+import { winterG7ScienceW5D3 } from "./grade7/winter/week5/science-day3.js";
+import { winterG7CodingW5D4 } from "./grade7/winter/week5/coding-day4.js";
+import { winterG7WorldW5D5 } from "./grade7/winter/week5/world-day5.js";
+
+// === Grade 7 Winter — Week 6: Inventors & Engineers ===
+import { winterG7ScienceW6D1 } from "./grade7/winter/week6/science-day1.js";
+import { winterG7CodingW6D2 } from "./grade7/winter/week6/coding-day2.js";
+import { winterG7MathW6D3 } from "./grade7/winter/week6/math-day3.js";
+import { winterG7HistoryW6D4 } from "./grade7/winter/week6/history-day4.js";
+import { winterG7ElaW6D5 } from "./grade7/winter/week6/ela-day5.js";
+
+// === Grade 7 Winter — Week 7: Winter Tales ===
+import { winterG7ElaW7D1 } from "./grade7/winter/week7/ela-day1.js";
+import { winterG7ElaW7D2 } from "./grade7/winter/week7/ela-day2.js";
+import { winterG7ElaW7D3 } from "./grade7/winter/week7/ela-day3.js";
+import { winterG7ElaW7D4 } from "./grade7/winter/week7/ela-day4.js";
+import { winterG7WorldW7D5 } from "./grade7/winter/week7/world-day5.js";
+
+// === Grade 7 Winter — Week 8: Winter Showcase ===
+import { winterG7ElaW8D1 } from "./grade7/winter/week8/ela-day1.js";
+import { winterG7ScienceW8D2 } from "./grade7/winter/week8/science-day2.js";
+import { winterG7MathW8D3 } from "./grade7/winter/week8/math-day3.js";
+import { winterG7CodingW8D4 } from "./grade7/winter/week8/coding-day4.js";
+import { winterG7ElaW8D5 } from "./grade7/winter/week8/ela-day5.js";
+
 export const ALL_MISSIONS = [
   grade6MathWeek1Day1,
   grade6ElaWeek1Day1,
@@ -637,7 +693,55 @@ export const ALL_MISSIONS = [
   fallG7MathW8D2,
   fallG7ScienceW8D3,
   fallG7WorldW8D4,
-  fallG7ElaW8D5
+  fallG7ElaW8D5,
+  // Grade 7 Winter — Week 1: Winter Warm-Up
+  winterG7MathW1D1,
+  winterG7ScienceW1D2,
+  winterG7ElaW1D3,
+  winterG7HistoryW1D4,
+  winterG7CodingW1D5,
+  // Grade 7 Winter — Week 2: Energy & Matter
+  winterG7ScienceW2D1,
+  winterG7ScienceW2D2,
+  winterG7MathW2D3,
+  winterG7CodingW2D4,
+  winterG7ElaW2D5,
+  // Grade 7 Winter — Week 3: Forces & Motion
+  winterG7ScienceW3D1,
+  winterG7MathW3D2,
+  winterG7ScienceW3D3,
+  winterG7CodingW3D4,
+  winterG7ElaW3D5,
+  // Grade 7 Winter — Week 4: Space & the Solar System
+  winterG7ScienceW4D1,
+  winterG7MathW4D2,
+  winterG7ScienceW4D3,
+  winterG7HistoryW4D4,
+  winterG7ElaW4D5,
+  // Grade 7 Winter — Week 5: Data in the Cold
+  winterG7MathW5D1,
+  winterG7MathW5D2,
+  winterG7ScienceW5D3,
+  winterG7CodingW5D4,
+  winterG7WorldW5D5,
+  // Grade 7 Winter — Week 6: Inventors & Engineers
+  winterG7ScienceW6D1,
+  winterG7CodingW6D2,
+  winterG7MathW6D3,
+  winterG7HistoryW6D4,
+  winterG7ElaW6D5,
+  // Grade 7 Winter — Week 7: Winter Tales
+  winterG7ElaW7D1,
+  winterG7ElaW7D2,
+  winterG7ElaW7D3,
+  winterG7ElaW7D4,
+  winterG7WorldW7D5,
+  // Grade 7 Winter — Week 8: Winter Showcase
+  winterG7ElaW8D1,
+  winterG7ScienceW8D2,
+  winterG7MathW8D3,
+  winterG7CodingW8D4,
+  winterG7ElaW8D5
 ];
 
 export const authoredMissions = Object.freeze(
