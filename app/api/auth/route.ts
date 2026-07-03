@@ -33,7 +33,7 @@ export async function POST(request: Request) {
     response.cookies.set(sessionCookieName, session.id, {
       httpOnly: true,
       sameSite: "lax",
-      secure: process.env.NODE_ENV === "production",
+      secure: process.env.NODE_ENV !== "development",
       path: "/",
       expires: new Date(session.expiresAt)
     });

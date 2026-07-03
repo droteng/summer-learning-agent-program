@@ -10,6 +10,7 @@ import {
   loadConsentRecords,
   replaceConsentRecords
 } from "../../../src/data/db.js";
+import { authorizeStudentAccess } from "../../lib/auth-server";
 
 export const runtime = "nodejs";
 
@@ -18,6 +19,11 @@ export async function GET(request: Request) {
   const studentId = url.searchParams.get("studentId");
   if (!studentId) {
     return NextResponse.json({ error: "missing_student_id" }, { status: 400 });
+  }
+  // Consent records carry the parent's name, email, and IP — parent-only.
+  const access = await authorizeStudentAccess(studentId, { parentOnly: true });
+  if (!access.ok) {
+    return NextResponse.json({ error: access.error }, { status: access.status });
   }
   const records = await loadConsentRecords(studentId);
   const status = consentStatusForParent({ records, studentId });
@@ -35,6 +41,12 @@ export async function POST(request: Request) {
   const studentId = payload?.studentId;
   if (typeof studentId !== "string") {
     return NextResponse.json({ error: "missing_student_id" }, { status: 400 });
+  }
+
+  // Only the signed-in parent of this student may grant consent.
+  const access = await authorizeStudentAccess(studentId, { parentOnly: true });
+  if (!access.ok) {
+    return NextResponse.json({ error: access.error }, { status: access.status });
   }
 
   const forwardedFor =
@@ -77,6 +89,12 @@ export async function DELETE(request: Request) {
   const consentId = payload?.consentId;
   if (typeof studentId !== "string" || typeof consentId !== "string") {
     return NextResponse.json({ error: "missing_ids" }, { status: 400 });
+  }
+
+  // Only the signed-in parent of this student may revoke consent.
+  const access = await authorizeStudentAccess(studentId, { parentOnly: true });
+  if (!access.ok) {
+    return NextResponse.json({ error: access.error }, { status: access.status });
   }
 
   const records = await loadConsentRecords(studentId);

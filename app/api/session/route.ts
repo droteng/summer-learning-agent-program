@@ -38,7 +38,7 @@ export async function DELETE(request: Request) {
   response.cookies.set(sessionCookieName, "", {
     httpOnly: true,
     sameSite: "lax",
-    secure: process.env.NODE_ENV === "production",
+    secure: process.env.NODE_ENV !== "development",
     path: "/",
     expires: new Date(0)
   });

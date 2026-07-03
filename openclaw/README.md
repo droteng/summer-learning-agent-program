@@ -1,6 +1,6 @@
 # OpenClaw / ClawHub Package
 
-This folder packages `learning-squad.ai` as a portable multi-agent summer learning program.
+This folder packages Dr. Spark Academy (`drsparkacademy.com`) as a portable multi-agent summer learning program.
 
 ## Contents
 

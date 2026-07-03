@@ -4,6 +4,7 @@ import {
   createTeacherLessonGuideWithLlm
 } from "../../../src/agents/lessonAgent.js";
 import { createLlm } from "../../../src/agents/llm/index.js";
+import { authorizeStudentAccess, isDemoStudentId, requireApiUser } from "../../lib/auth-server";
 
 let cachedLlm: ReturnType<typeof createLlm> | null = null;
 
@@ -17,6 +18,15 @@ function getLlm() {
 export async function POST(request: Request) {
   const payload = await request.json();
 
+  // A real studentId in the payload must belong to the caller's account.
+  const studentId = payload?.studentProfile?.id;
+  if (typeof studentId === "string" && studentId.length > 0 && !isDemoStudentId(studentId)) {
+    const access = await authorizeStudentAccess(studentId);
+    if (!access.ok) {
+      return NextResponse.json({ error: access.error }, { status: access.status });
+    }
+  }
+
   if (payload?.useLlm === false) {
     const guide = createTeacherLessonGuide({
       mission: payload.mission,
@@ -25,9 +35,10 @@ export async function POST(request: Request) {
     return NextResponse.json(guide);
   }
 
-  let llm: ReturnType<typeof createLlm> | null = getLlm();
-  const studentId = payload?.studentProfile?.id;
-  if (typeof studentId === "string" && studentId.length > 0) {
+  // LLM calls cost money — anonymous callers get the deterministic guide
+  // instead of burning budget.
+  let llm: ReturnType<typeof createLlm> | null = (await requireApiUser()).ok ? getLlm() : null;
+  if (llm && typeof studentId === "string" && studentId.length > 0) {
     const { resolveEntitlement } = await import("../../../src/agents/entitlementAgent.js");
     const entitlement = await resolveEntitlement({ studentId });
     if (!entitlement.llmTutoring) {

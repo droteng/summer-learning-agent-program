@@ -10,7 +10,7 @@
     "dev": "next dev -p 3000",
     "prototype": "node src/server.js",
     "typecheck": "tsc --noEmit",
-    "test": "node --test --test-concurrency=1",
+    "test": "NODE_ENV=test node --test --test-concurrency=1",
     "warm-images": "node scripts/warm-image-cache.js"
   },
   "engines": {
