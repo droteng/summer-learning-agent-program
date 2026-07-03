@@ -113,10 +113,10 @@ const AUTHORED_WEEKS = {
   "7:fall": [1, 2, 3, 4, 5, 6, 7, 8], // Grade 7 Fall is LIVE.
   "7:winter": [1, 2, 3, 4, 5, 6, 7, 8], // Grade 7 Winter is LIVE.
   "7:spring": [1, 2, 3, 4, 5, 6, 7, 8], // Grade 7 Spring is LIVE. Grade 7 full year complete.
-  // Grade 5 rollout begins with Summer (its Grade 5 counterpart of the Grade 6
-  // Summer arc). GRADE_STATUS[5] stays "in_development" until its other seasons
-  // are authored — an honest per-program status.
-  "5:summer": [1, 2, 3, 4, 5, 6, 7, 8] // Grade 5 Summer is LIVE.
+  // Grade 5 rollout is progressing season-by-season. GRADE_STATUS[5] stays
+  // "in_development" until every Grade 5 season is authored — honest per-program.
+  "5:summer": [1, 2, 3, 4, 5, 6, 7, 8], // Grade 5 Summer is LIVE.
+  "5:fall": [1, 2, 3, 4, 5, 6, 7, 8] // Grade 5 Fall is LIVE.
 };
 
 const TOTAL_WEEKS = 8;
