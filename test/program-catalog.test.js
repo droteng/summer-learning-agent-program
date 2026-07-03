@@ -50,10 +50,10 @@ test("the catalog covers all grades x seasons", () => {
   }
 });
 
-test("grade 6 Summer and Fall are live; everything else is in development", () => {
+test("grade 6 Summer, Fall, and Winter are live; everything else is in development", () => {
   const live = listAllPrograms().filter((p) => p.status === "live");
   const liveKeys = live.map((p) => `${p.grade}:${p.season}`).sort();
-  assert.deepEqual(liveKeys, ["6:fall", "6:summer"]);
+  assert.deepEqual(liveKeys, ["6:fall", "6:summer", "6:winter"]);
   for (const p of live) assert.equal(p.grade, 6);
 });
 
@@ -107,6 +107,11 @@ test("authored-week tracking reports honest progress per program", () => {
   assert.equal(fall.authoredWeekCount, 8, "All Fall weeks authored");
   assert.deepEqual(fall.authoredWeeks, [1, 2, 3, 4, 5, 6, 7, 8]);
   assert.equal(fall.totalWeeks, 8);
+
+  const winter = getProgram(6, SEASONS.WINTER);
+  assert.equal(winter.status, "live", "Winter is fully authored (8/8)");
+  assert.equal(winter.authoredWeekCount, 8, "All Winter weeks authored");
+  assert.deepEqual(winter.authoredWeeks, [1, 2, 3, 4, 5, 6, 7, 8]);
 });
 
 test("getProgram returns null for invalid grade or season", () => {
