@@ -1,10 +1,21 @@
 import { NextResponse } from "next/server";
 import { signinParent, COOKIE_NAME } from "../../../../src/agents/authAgent.js";
+import { clientIpFrom, rateLimit, tooManyRequests } from "../../../lib/rate-limit";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
+  const limited = rateLimit({
+    key: `signin:${clientIpFrom(request)}`,
+    limit: 10,
+    windowMs: 15 * 60 * 1000
+  });
+  if (!limited.ok) {
+    const { body: errBody, init } = tooManyRequests(limited.retryAfterSeconds);
+    return NextResponse.json(errBody, init);
+  }
+
   let body: any;
   try {
     body = await request.json();
@@ -30,7 +41,9 @@ export async function POST(request: Request) {
   });
   res.cookies.set(COOKIE_NAME, result.sessionId, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
+    // Secure everywhere except explicit local dev — an unset NODE_ENV on a
+    // staging host must not downgrade the session cookie to plain HTTP.
+    secure: process.env.NODE_ENV !== "development",
     sameSite: "lax",
     path: "/",
     maxAge: 60 * 60 * 24 * 14

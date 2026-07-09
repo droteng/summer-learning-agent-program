@@ -2,7 +2,7 @@
 
 Student: {{student.firstName}}
 Grade: {{student.gradeLevel}}
-Program: learning-squad.ai Summer Learning Squad
+Program: Dr. Spark Academy Summer Learning Squad
 
 ## Parent Approval
 

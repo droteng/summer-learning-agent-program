@@ -10,6 +10,7 @@ import {
   masteryToDiagnosticSummary,
   summarizeMasteryBySubject
 } from "../../../src/agents/masteryAgent.js";
+import { authorizeStudentAccess, isDemoStudentId, requireApiUser } from "../../lib/auth-server";
 
 let cachedLlm: ReturnType<typeof createLlm> | null = null;
 
@@ -32,7 +33,17 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "missing_item" }, { status: 400 });
   }
 
-  let effectiveLlm = useLlm ? getLlm() : null;
+  // Grading against a real studentId (reads entitlement, may write
+  // progress) requires the caller to own that student.
+  if (typeof studentId === "string" && studentId.length > 0 && !isDemoStudentId(studentId)) {
+    const access = await authorizeStudentAccess(studentId);
+    if (!access.ok) {
+      return NextResponse.json({ error: access.error }, { status: access.status });
+    }
+  }
+
+  // LLM grading costs money — anonymous callers get deterministic grading.
+  let effectiveLlm = useLlm && (await requireApiUser()).ok ? getLlm() : null;
   if (effectiveLlm && typeof studentId === "string" && studentId.length > 0) {
     const { resolveEntitlement } = await import("../../../src/agents/entitlementAgent.js");
     const entitlement = await resolveEntitlement({ studentId });

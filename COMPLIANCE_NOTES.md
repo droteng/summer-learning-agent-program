@@ -22,7 +22,7 @@ The branch `feat/coppa-consent` implements the audit-log, disclosure copy, and c
 
 - **Legal review of the disclosure copy.** The `PARENT_DISCLOSURE` strings in `consentAgent.js` were drafted by an engineer and have not been reviewed by counsel.
 - **A verifiable method.** Today only `self_attest` is wired. `card_auth` requires `feat/stripe-subscriptions` to land; `signed_form` requires file upload + a mailer. Use the closed-beta self-attest path only with a known family group.
-- **Deletion endpoint.** `/api/parent-action` can revoke consent. The data-deletion flow (`/api/account?delete=true`) is *not yet implemented*. Parents currently must email `privacy@learning-squad.ai` for deletion — that mailbox needs to exist and be monitored.
+- **Deletion endpoint.** `/api/parent-action` can revoke consent. The data-deletion flow is implemented at `/api/data-erasure` (see `src/agents/dataErasureAgent.js`); it purges student data and writes an erasure audit record. Parents can also email `privacy@drsparkacademy.com` for deletion — that mailbox is routed via Cloudflare Email Routing and must stay monitored.
 - **Mailing address.** `PARENT_DISCLOSURE.contactMailing` is a placeholder.
 - **Production data residency.** Postgres on Supabase or Neon must be on the parent's home region. International expansion requires a separate review.
 

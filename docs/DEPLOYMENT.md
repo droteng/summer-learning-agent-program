@@ -59,7 +59,7 @@ validation as a health check.
    different values per environment (Preview vs Production).
 3. The first deploy will run `npm run build` automatically. Verify it
    succeeds before promoting to production.
-4. Add the production domain (`learning-squad.ai`) and configure DNS.
+4. Add the production domain (`drsparkacademy.com`) and configure DNS.
 5. Hit `https://your-domain/api/health` and confirm `status: "ok"`.
 
 ## Database
@@ -86,7 +86,7 @@ without touching the agent layer.
 ```json
 {
   "status": "ok" | "degraded" | "fail",
-  "service": "learning-squad.ai",
+  "service": "Dr. Spark Academy",
   "version": "0.1.0",
   "uptimeMs": 12345,
   "time": "2026-05-10T12:34:56.000Z",

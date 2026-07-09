@@ -7,6 +7,7 @@
 
 import { NextResponse } from "next/server";
 import { createStripeClient, StripeError } from "../../../../../src/integrations/stripe.js";
+import { authorizeStudentAccess } from "../../../../lib/auth-server";
 
 export const runtime = "nodejs";
 
@@ -24,6 +25,12 @@ export async function POST(request: Request) {
   const childFirstName = typeof payload?.childFirstName === "string" ? payload.childFirstName.trim() : null;
   if (!studentId || !parentName || !parentEmail || !childFirstName) {
     return NextResponse.json({ error: "missing_fields" }, { status: 400 });
+  }
+
+  // Only the signed-in parent of this student may start card-auth consent.
+  const access = await authorizeStudentAccess(studentId, { parentOnly: true });
+  if (!access.ok) {
+    return NextResponse.json({ error: access.error }, { status: access.status });
   }
 
   const apiKey = process.env.STRIPE_SECRET_KEY;

@@ -5,6 +5,7 @@ import {
   createWeeklyParentReportWithLlm
 } from "../../../src/agents/parentLiaisonAgent.js";
 import { createLlm } from "../../../src/agents/llm/index.js";
+import { authorizeStudentAccess, isDemoStudentId, requireApiUser } from "../../lib/auth-server";
 
 let cachedLlm: ReturnType<typeof createLlm> | null = null;
 
@@ -17,6 +18,16 @@ function getLlm() {
 
 export async function POST(request: Request) {
   const payload = await request.json();
+
+  // A real studentId in the payload must belong to the caller's account.
+  const studentId = payload?.studentProfile?.id;
+  if (typeof studentId === "string" && studentId.length > 0 && !isDemoStudentId(studentId)) {
+    const access = await authorizeStudentAccess(studentId);
+    if (!access.ok) {
+      return NextResponse.json({ error: access.error }, { status: access.status });
+    }
+  }
+
   const programPlan = createProgramPlan(payload.studentProfile, payload.parentPolicy);
 
   const args = {
@@ -28,9 +39,9 @@ export async function POST(request: Request) {
 
   let llmForReport: ReturnType<typeof createLlm> | null = null;
   if (payload?.useLlm !== false) {
-    llmForReport = getLlm();
-    const studentId = payload?.studentProfile?.id;
-    if (typeof studentId === "string" && studentId.length > 0) {
+    // LLM calls cost money — anonymous callers get the deterministic report.
+    llmForReport = (await requireApiUser()).ok ? getLlm() : null;
+    if (llmForReport && typeof studentId === "string" && studentId.length > 0) {
       const { resolveEntitlement } = await import("../../../src/agents/entitlementAgent.js");
       const entitlement = await resolveEntitlement({ studentId });
       if (!entitlement.llmReports) {

@@ -4,6 +4,7 @@ import {
   ParentActionError
 } from "../../../src/agents/parentActionAgent.js";
 import { loadProgressSnapshot, saveProgressSnapshot } from "../../../src/data/db.js";
+import { authorizeStudentAccess } from "../../lib/auth-server";
 
 export const runtime = "nodejs";
 
@@ -18,6 +19,12 @@ export async function POST(request: Request) {
   const studentId = payload?.studentId;
   if (typeof studentId !== "string" || studentId.length === 0) {
     return NextResponse.json({ error: "missing_student_id" }, { status: 400 });
+  }
+
+  // Approvals/redemptions are parent decisions — never child or anonymous.
+  const access = await authorizeStudentAccess(studentId, { parentOnly: true });
+  if (!access.ok) {
+    return NextResponse.json({ error: access.error }, { status: access.status });
   }
 
   const existing = await loadProgressSnapshot(studentId);

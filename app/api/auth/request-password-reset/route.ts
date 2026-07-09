@@ -5,11 +5,22 @@ import {
   TOKEN_KINDS
 } from "../../../../src/agents/authAgent.js";
 import { createEmailSender } from "../../../../src/integrations/email.js";
+import { clientIpFrom, rateLimit, tooManyRequests } from "../../../lib/rate-limit";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
+  const limited = rateLimit({
+    key: `pw-reset-request:${clientIpFrom(request)}`,
+    limit: 5,
+    windowMs: 60 * 60 * 1000
+  });
+  if (!limited.ok) {
+    const { body: errBody, init } = tooManyRequests(limited.retryAfterSeconds);
+    return NextResponse.json(errBody, init);
+  }
+
   let body: any;
   try {
     body = await request.json();
