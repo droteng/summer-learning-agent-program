@@ -84,7 +84,7 @@ export default async function ChildHubPage({ searchParams }: { searchParams: Sea
   const xp = progress?.xp ?? 0;
   const stars = progress?.masteryStars ?? 0;
   const coins = progress?.campCoins ?? 0;
-  const enrichmentCount = findEnrichmentMissions().length;
+  const enrichmentCount = findEnrichmentMissions({ gradeLevel: studentGrade }).length;
 
   const q = `?student=${encodeURIComponent(studentId)}`;
 
