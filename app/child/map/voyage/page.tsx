@@ -20,6 +20,10 @@ import {
 import { PageDecorations, ProgressRing, SubjectIcon } from "../decorations";
 import { QuestRunner } from "../QuestRunner";
 import { createImageAgent, INTENTS } from "../../../../src/agents/imageAgent.js";
+import {
+  STATIC_IMAGE_FALLBACKS,
+  staticMissionHeroForId
+} from "../../../../src/data/staticImageCatalog.js";
 
 let cachedImageAgent: ReturnType<typeof createImageAgent> | null = null;
 function imageAgent() {
@@ -29,6 +33,8 @@ function imageAgent() {
 
 async function getMissionIllustration(mission: any): Promise<string | null> {
   if (!mission) return null;
+  const staticHero = staticMissionHeroForId(mission.id);
+  if (staticHero) return staticHero.url;
   try {
     const result = await imageAgent().generate({
       intent: INTENTS.MISSION_HERO,
@@ -39,7 +45,7 @@ async function getMissionIllustration(mission: any): Promise<string | null> {
     });
     return result.url;
   } catch {
-    return null;
+    return STATIC_IMAGE_FALLBACKS.mission_hero.url;
   }
 }
 
@@ -56,7 +62,7 @@ async function getConceptDiagram(mission: any): Promise<string | null> {
     });
     return result.url;
   } catch {
-    return null;
+    return STATIC_IMAGE_FALLBACKS.concept_diagram.url;
   }
 }
 
@@ -72,7 +78,7 @@ async function getVocabCardUrl(mission: any, term: { term: string; definition: s
     });
     return result.url;
   } catch {
-    return null;
+    return STATIC_IMAGE_FALLBACKS.vocab_card.url;
   }
 }
 
@@ -95,7 +101,7 @@ async function getSubjectHero(subject: string, label: string): Promise<string | 
     });
     return result.url;
   } catch {
-    return null;
+    return STATIC_IMAGE_FALLBACKS.subject_hero.url;
   }
 }
 
@@ -106,7 +112,7 @@ async function buildSubjectHeroMap(subjects: { subject: string; label: string }[
 }
 
 async function getIslandIllustration(island: { theme: string; project: string } | undefined | null): Promise<string | null> {
-  if (!island) return null;
+  if (!island) return STATIC_IMAGE_FALLBACKS.decoration.url;
   try {
     const result = await imageAgent().generate({
       intent: INTENTS.DECORATION,
@@ -116,7 +122,7 @@ async function getIslandIllustration(island: { theme: string; project: string } 
     });
     return result.url;
   } catch {
-    return null;
+    return STATIC_IMAGE_FALLBACKS.decoration.url;
   }
 }
 

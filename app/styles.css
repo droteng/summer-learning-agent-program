@@ -1064,7 +1064,7 @@ h3 {
   padding: 48px clamp(20px, 5vw, 72px);
   background:
     linear-gradient(rgba(23, 32, 42, 0.58), rgba(23, 32, 42, 0.42)),
-    url("/product-preview.svg");
+    url("/product-preview.png");
   background-position: center;
   background-size: cover;
   color: white;

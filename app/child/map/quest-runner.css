@@ -435,9 +435,6 @@
   border-radius: calc(var(--qm-radius) - 6px);
   background: color-mix(in srgb, var(--subject) 10%, #ffffff);
 }
-.qr-vocab-image-placeholder {
-  background: color-mix(in srgb, var(--subject) 14%, #ffffff);
-}
 .qr-vocab-card figcaption {
   display: grid;
   gap: 2px;

@@ -51,7 +51,7 @@ test("computeCacheKey is deterministic for the same inputs", () => {
   assert.notEqual(a, c);
 });
 
-test("agent falls back to mock when no real provider is configured", async () => {
+test("agent falls back to permanent generated assets when no real provider is configured", async () => {
   const helpers = memoryCacheAndBudget();
   const agent = createImageAgent({
     env: {},
@@ -67,7 +67,8 @@ test("agent falls back to mock when no real provider is configured", async () =>
   assert.equal(result.provider, "mock");
   assert.equal(result.fallback, true);
   assert.equal(result.estimatedCostCents, 0);
-  assert.match(result.url, /^data:image\/svg/);
+  assert.equal(result.url, "/images/generated/mission-quest-hero.png");
+  assert.equal(result.model, "gpt-image-2:static-fallback");
 });
 
 test("mock results are NOT cached so they can upgrade later", async () => {

@@ -92,6 +92,7 @@ export function createImageAgent({
 
       try {
         const result = await provider.generate({
+          intent,
           prompt: finalPrompt,
           subject: req.subject,
           aspectRatio: req.aspectRatio ?? "1:1",

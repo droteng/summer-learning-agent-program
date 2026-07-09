@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import "./quest-runner.css";
+import { STATIC_IMAGE_FALLBACKS } from "../../../src/data/staticImageCatalog.js";
 
 type ItemType = "multiple_choice" | "numeric" | "short_answer";
 
@@ -611,14 +612,10 @@ function DoneStage({
           <span className="qr-eyebrow">Key terms</span>
           <div className="qr-vocab-grid">
             {terms.map((t) => {
-              const url = vocabCardUrls?.[t.term];
+              const url = vocabCardUrls?.[t.term] ?? STATIC_IMAGE_FALLBACKS.vocab_card.url;
               return (
                 <figure key={t.term} className="qr-vocab-card">
-                  {url ? (
-                    <img className="qr-vocab-image" src={url} alt={`${t.term} illustration`} />
-                  ) : (
-                    <div className="qr-vocab-image qr-vocab-image-placeholder" aria-hidden="true" />
-                  )}
+                  <img className="qr-vocab-image" src={url} alt={`${t.term} illustration`} />
                   <figcaption>
                     <strong>{t.term}</strong>
                     <span>{t.definition}</span>
