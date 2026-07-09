@@ -36,11 +36,11 @@ export const springG5ElaW6D5 = {
       stem: "What is the main GOAL of explanatory writing?",
       choices: [
         "To argue that your opinion is the best",
-        "To clearly inform the reader how something works",
+        "To use as many long words as you can",
         "To tell a spooky made-up story",
-        "To use as many long words as you can"
+        "To clearly inform the reader how something works"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Explanatory (informing) writing exists to teach or inform clearly — not to argue or tell fiction.",
       hintLadder: [
         "Is explaining trying to WIN an argument?",
@@ -54,11 +54,11 @@ export const springG5ElaW6D5 = {
       stem: "Which transition word best shows the ORDER of steps when you explain a loop?",
       choices: [
         "But",
-        "Next",
         "Although",
+        "Next",
         "Instead"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "'Next' shows sequence — it moves the reader from one step to the following step. The others show contrast, not order.",
       hintLadder: [
         "Which word shows one thing happening AFTER another?",

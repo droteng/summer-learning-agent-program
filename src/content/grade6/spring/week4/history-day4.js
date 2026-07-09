@@ -35,12 +35,12 @@ export const springG6HistoryW4D4 = {
       type: "multiple_choice",
       stem: "What organism did Gregor Mendel study to discover the rules of inheritance?",
       choices: [
-        "Fruit flies",
         "Pea plants",
+        "Fruit flies",
         "Mice",
         "Bacteria"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Mendel bred and counted traits in thousands of pea plants over many years.",
       hintLadder: [
         "He worked in a garden.",
@@ -54,11 +54,11 @@ export const springG6HistoryW4D4 = {
       stem: "Why is Gregor Mendel remembered as the 'father of genetics'?",
       choices: [
         "He invented the microscope",
-        "He discovered the basic rules of how traits pass from parents to offspring",
         "He built the first DNA model",
+        "He discovered the basic rules of how traits pass from parents to offspring",
         "He named all the planets"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Mendel's pea experiments uncovered the fundamental laws of inheritance, earning him the title 'father of genetics.'",
       hintLadder: [
         "Think about what he actually discovered.",
@@ -167,11 +167,11 @@ export const springG6HistoryW4D4 = {
           stem: "Which sequence shows the correct historical order?",
           choices: [
             "DNA double helix discovered → Mendel breeds peas → Mendel rediscovered",
-            "Mendel breeds peas (1860s) → Mendel's work rediscovered (~1900) → DNA double helix discovered (1953)",
+            "DNA double helix → Mendel's work rediscovered → Mendel breeds peas",
             "Mendel rediscovered → DNA double helix → Mendel breeds peas",
-            "DNA double helix → Mendel's work rediscovered → Mendel breeds peas"
+            "Mendel breeds peas (1860s) → Mendel's work rediscovered (~1900) → DNA double helix discovered (1953)"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Mendel's pea experiments came first (1860s), his work was rediscovered around 1900, and DNA's double-helix structure was revealed in 1953.",
           hintLadder: [
             "Mendel's peas came before anyone understood DNA.",

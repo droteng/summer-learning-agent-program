@@ -89,10 +89,10 @@ export const springG7MathW4D3 = {
       choices: [
         "1/2",
         "1/4",
-        "1/8",
-        "1/16"
+        "1/16",
+        "1/8"
       ],
-      answerIndex: 3,
+      answerIndex: 2,
       explanation: "For two independent events, multiply the probabilities: 1/4 × 1/4 = 1/16.",
       hintLadder: [
         "The two crosses are independent events.",

@@ -34,8 +34,8 @@ export const summerG5ScienceW2D2 = {
       id: "g5.summer.sci.w2.d2.q1",
       type: "multiple_choice",
       stem: "Which unit is best for measuring the length of your math notebook?",
-      choices: ["Millimeters", "Centimeters", "Meters", "Kilometers"],
-      answerIndex: 1,
+      choices: ["Millimeters", "Kilometers", "Meters", "Centimeters"],
+      answerIndex: 3,
       explanation: "A notebook is about 25–30 cm long. Centimeters give a number that is easy to read.",
       hintLadder: [
         "Pick the unit that won't give a giant or tiny number.",
@@ -168,12 +168,12 @@ export const summerG5ScienceW2D2 = {
           stem:
             "Three measurements lost their units: cookies baked for '15,' a jump rope is '3,' and a backpack's mass is '4.' Which set of units fits each one sensibly, in order (baking time, rope length, backpack mass)?",
           choices: [
-            "minutes, meters, kilograms",
             "minutes, kilometers, grams",
+            "minutes, meters, kilograms",
             "seconds, meters, kilometers",
             "hours, millimeters, kilograms"
           ],
-          answerIndex: 0,
+          answerIndex: 1,
           explanation:
             "Baking time fits minutes (15 minutes is reasonable; 15 seconds is too short). A jump rope fits meters (3 meters; 3 kilometers or 3 millimeters make no sense). A backpack's mass fits kilograms (4 kg; 4 grams is far too light). So: minutes, meters, kilograms.",
           hintLadder: [

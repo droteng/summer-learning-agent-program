@@ -63,12 +63,12 @@ export const fallG7MathW2D2 = {
       type: "multiple_choice",
       stem: "Which expression correctly gives the fraction of producer energy that reaches an organism FOUR trophic levels above the producers?",
       choices: [
-        "0.10 × 4",
         "(0.10)⁴",
+        "0.10 × 4",
         "4 ÷ 0.10",
         "0.10 + 0.10 + 0.10 + 0.10"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Each level multiplies by 0.10, so four levels is 0.10 raised to the 4th power = (0.10)⁴ = 0.0001, or 0.01%. The 10% rule is repeated multiplication, not addition.",
       hintLadder: [
         "Going up a level MULTIPLIES by 0.10 — it doesn't add.",

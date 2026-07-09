@@ -35,8 +35,8 @@ export const fallG5WorldW5D4 = {
       id: "g5.fall.world.w5.d4.q1",
       type: "multiple_choice",
       stem: "'9 out of 10 families choose us — do not be left out!' Which trick is this?",
-      choices: ["Real evidence", "Bandwagon (everyone is doing it)", "A fair comparison", "A science study"],
-      answerIndex: 1,
+      choices: ["Bandwagon (everyone is doing it)", "Real evidence", "A fair comparison", "A science study"],
+      answerIndex: 0,
       explanation: "It pushes you to follow the crowd — that is the bandwagon trick.",
       hintLadder: [
         "What feeling does 'do not be left out' create?",
@@ -50,11 +50,11 @@ export const fallG5WorldW5D4 = {
       stem: "Which sentence is a FACT (you can check it), not an opinion?",
       choices: [
         "This is the most fun park ever.",
-        "The park is 12 acres and opened in 2019.",
+        "This park is the best.",
         "Everyone loves this park.",
-        "This park is the best."
+        "The park is 12 acres and opened in 2019."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "The size and opening year can be looked up and checked; the others are just what people think.",
       hintLadder: [
         "Which one could you look up and confirm?",
@@ -68,11 +68,11 @@ export const fallG5WorldW5D4 = {
       stem: "An ad shows a happy family laughing but tells you nothing about the product. What trick is it using?",
       choices: [
         "Evidence and facts",
-        "Emotion (making you feel something)",
         "A logical reason",
+        "Emotion (making you feel something)",
         "A fact check"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "It sells a happy feeling instead of facts about the product — that is the emotion trick.",
       hintLadder: [
         "Is there any real information, or just a feeling?",

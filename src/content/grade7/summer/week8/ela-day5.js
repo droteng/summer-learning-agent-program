@@ -54,11 +54,11 @@ export const summerG7ElaW8D5 = {
       stem: "During your demo, the room is large. What DELIVERY adjustment helps most?",
       choices: [
         "Speak faster so you finish before anyone loses interest.",
-        "Raise your volume and slow your pace so the back row hears every point, and pause after key ideas.",
         "Look down at your notes the whole time to stay accurate.",
+        "Raise your volume and slow your pace so the back row hears every point, and pause after key ideas.",
         "Whisper so people lean in."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Adjusting volume and pace to the space, plus purposeful pauses, keeps a large audience with you (SL.7.6).",
       hintLadder: [
         "Think about what a big room does to sound and attention.",
@@ -73,11 +73,11 @@ export const summerG7ElaW8D5 = {
       stem: "You feel nervous right before presenting. Which is the BEST plan?",
       choices: [
         "Hope the nerves disappear on their own.",
-        "Take one slow breath, recall your memorized first sentence, and remember a stumble is just a pause.",
+        "Rush through the whole thing to get it over with.",
         "Apologize to the audience for being nervous before you begin.",
-        "Rush through the whole thing to get it over with."
+        "Take one slow breath, recall your memorized first sentence, and remember a stumble is just a pause."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A breath, a rehearsed opening, and reframing stumbles as pauses turn nerves into a manageable, confident start.",
       hintLadder: [
         "Confidence comes from a plan, not from wishing.",
@@ -165,12 +165,12 @@ export const summerG7ElaW8D5 = {
           type: "multiple_choice",
           stem: "Halfway through your demo, you lose your place. What is the MOST confident recovery?",
           choices: [
-            "Apologize repeatedly and offer to start the whole thing over.",
             "Pause, glance at your cue card, take a breath, and continue from your next beat.",
+            "Apologize repeatedly and offer to start the whole thing over.",
             "Rush ahead skipping your evidence so no one notices.",
             "Stop the presentation and sit down."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "A calm pause, a glance at your notes, and continuing from the next beat reads as poised — audiences barely notice a brief, controlled pause.",
           hintLadder: [
             "What does a calm presenter do with a blank moment?",

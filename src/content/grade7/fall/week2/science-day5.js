@@ -36,11 +36,11 @@ export const fallG7ScienceW2D5 = {
       stem: "What makes a species a KEYSTONE species?",
       choices: [
         "It is the largest or most abundant organism in the ecosystem.",
-        "Its effect on the ecosystem is disproportionately large relative to its abundance.",
         "It always sits at the bottom of the food web.",
+        "Its effect on the ecosystem is disproportionately large relative to its abundance.",
         "It lives longer than any other species."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A keystone species shapes the whole community out of proportion to how many there are — remove it and the structure can collapse.",
       hintLadder: [
         "It's not about being biggest or most numerous.",
@@ -53,12 +53,12 @@ export const fallG7ScienceW2D5 = {
       type: "multiple_choice",
       stem: "A study finds that after otters return to a coast, urchin numbers fall and kelp density triples. This is BEST described as a...",
       choices: [
-        "direct effect of otters on kelp",
         "trophic cascade — otters affect kelp INDIRECTLY by controlling urchins",
+        "direct effect of otters on kelp",
         "coincidence with no ecological cause",
         "sign that otters eat kelp"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Otters don't touch the kelp; they eat urchins, which eat kelp. The kelp recovery is an indirect, two-link effect — a trophic cascade.",
       hintLadder: [
         "Do otters eat kelp, or something that eats kelp?",

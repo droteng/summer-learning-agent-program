@@ -54,12 +54,12 @@ export const winterG6ElaW4D5 = {
       type: "multiple_choice",
       stem: "Which sentence belongs in an INFORMATIONAL explainer about the Moon?",
       choices: [
-        "The Moon is definitely the prettiest thing in the sky.",
-        "I think everyone should stare at the Moon more.",
         "The Moon is Earth's only natural satellite and takes about 27 days to orbit Earth.",
+        "I think everyone should stare at the Moon more.",
+        "The Moon is definitely the prettiest thing in the sky.",
         "The Moon makes me feel calm at night."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "It states a checkable fact about the Moon. The others are opinions or personal feelings, which don't belong in a fact-based explainer.",
       hintLadder: [
         "Which sentence gives a fact you could verify?",
@@ -71,8 +71,8 @@ export const winterG6ElaW4D5 = {
       id: "g6.winter.ela.w4.d5.q3",
       type: "multiple_choice",
       stem: "Which word or phrase is a TRANSITION that helps connect ideas in an explainer?",
-      choices: ["Suddenly the dragon roared", "For example", "The End", "Once upon a time"],
-      answerIndex: 1,
+      choices: ["Suddenly the dragon roared", "Once upon a time", "The End", "For example"],
+      answerIndex: 3,
       explanation: "'For example' links a general point to a supporting detail — a common transition in informational writing. The others belong to stories.",
       hintLadder: [
         "A transition links one idea smoothly to the next.",
@@ -161,11 +161,11 @@ export const winterG6ElaW4D5 = {
           stem: "Which sentence would make the BEST concluding sentence for an explainer about Saturn's rings?",
           choices: [
             "And that's why I love Saturn the most.",
-            "Made of countless ice and rock pieces, Saturn's rings make it one of the most recognizable planets in the solar system.",
             "Saturn is a planet.",
+            "Made of countless ice and rock pieces, Saturn's rings make it one of the most recognizable planets in the solar system.",
             "Once, a space wizard flew through the rings."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "It sums up the main idea with a fact and gives the reader a clear takeaway — the job of a concluding sentence. The others are opinion, too thin, or fictional.",
           hintLadder: [
             "A conclusion restates the main idea with a fact.",

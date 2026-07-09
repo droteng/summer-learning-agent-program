@@ -36,11 +36,11 @@ export const springG5ScienceW6D4 = {
       stem: "What is a LIMITING FACTOR for a population?",
       choices: [
         "Anything that makes a population grow faster",
-        "Something (like food or space) that runs low and slows population growth",
         "The number of different kinds of animals in a place",
+        "Something (like food or space) that runs low and slows population growth",
         "The color of an animal"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A limiting factor — food, water, space, predators — is something that runs low and slows how big a population can get.",
       hintLadder: [
         "The word 'limiting' means it puts a LIMIT on something.",
@@ -68,11 +68,11 @@ export const springG5ScienceW6D4 = {
       stem: "A pond can only hold so many frogs before it runs out of food and space. What do we call the biggest number of frogs it can hold for a long time?",
       choices: [
         "The number of babies born in one spring",
-        "The largest population a place can support for a long time with its food, water, and space",
+        "The number of predators in the pond",
         "The speed the population grows at first",
-        "The number of predators in the pond"
+        "The largest population a place can support for a long time with its food, water, and space"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "The largest population a place can support for a long time is set by its food, water, and space — that is its limit.",
       hintLadder: [
         "It is about how MANY the place can hold.",

@@ -35,11 +35,11 @@ export const fallG6HistoryW4D1 = {
       stem: "Why did many early civilizations form near rivers?",
       choices: [
         "Rivers were good for swimming",
-        "Rivers gave water and rich soil for reliable farming",
+        "There was no reason",
         "Rivers blocked enemies completely",
-        "There was no reason"
+        "Rivers gave water and rich soil for reliable farming"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Water for crops and fertile soil from flooding made river valleys ideal for dependable harvests.",
       hintLadder: [
         "Connect it back to farming.",
@@ -65,12 +65,12 @@ export const fallG6HistoryW4D1 = {
       type: "multiple_choice",
       stem: "Why did growing cities need WRITING?",
       choices: [
-        "To write poems only",
         "To keep records of trade, taxes, and stored food",
+        "To write poems only",
         "Because it was fashionable",
         "Writing came before farming"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "With surplus food, trade, and many people, cities needed records — and writing was invented to keep them.",
       hintLadder: [
         "What happens when you have lots of food, goods, and people to track?",
@@ -160,11 +160,11 @@ export const fallG6HistoryW4D1 = {
           stem: "Put these in the correct cause-and-effect order: (1) cities form, (2) river valley gives rich soil, (3) farms produce a food surplus.",
           choices: [
             "1 → 2 → 3",
-            "2 → 3 → 1",
             "3 → 1 → 2",
+            "2 → 3 → 1",
             "2 → 1 → 3"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Rich soil comes first, which leads to a surplus, which lets large populations form cities: 2 → 3 → 1.",
           hintLadder: [
             "What has to come FIRST — before there's any extra food?",

@@ -36,12 +36,12 @@ export const springG5HistoryW1D4 = {
       type: "multiple_choice",
       stem: "Why was SPRING an especially important season for early farming people?",
       choices: [
-        "It was the coldest time to store food",
         "It was planting season, when warmth and rain let crops start growing",
+        "It was the coldest time to store food",
         "It was when all wars traditionally ended",
         "It was the only time people could travel"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Spring's returning warmth and rain made it the time to plant — the start of the whole food year.",
       hintLadder: [
         "Connect spring to farming.",
@@ -55,11 +55,11 @@ export const springG5HistoryW1D4 = {
       stem: "Nowruz is a spring festival that marks the new year in Persia and Central Asia. What big idea do Nowruz, Holi, and May Day all share?",
       choices: [
         "Being sad that the year is ending",
-        "New life, new growth, and the arrival of spring",
+        "Marking the shortest day of the year",
         "Celebrating the winter harvest",
-        "Marking the shortest day of the year"
+        "New life, new growth, and the arrival of spring"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "These spring festivals from different cultures all celebrate new life, new growth, and the start of the growing season.",
       hintLadder: [
         "They all happen in spring.",
@@ -167,11 +167,11 @@ export const springG5HistoryW1D4 = {
           stem: "Put these in the correct cause-and-effect order: (1) people hold a spring festival, (2) warmth and rain come back in spring, (3) farmers plant crops to start the food year.",
           choices: [
             "1 then 2 then 3",
-            "2 then 3 then 1",
             "3 then 1 then 2",
+            "2 then 3 then 1",
             "2 then 1 then 3"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Warmth and rain come first, which lets people plant, which is the hopeful moment they celebrate: 2 then 3 then 1.",
           hintLadder: [
             "What has to happen in nature BEFORE anyone can plant?",

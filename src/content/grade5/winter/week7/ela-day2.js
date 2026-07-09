@@ -36,11 +36,11 @@ export const winterG5ElaW7D2 = {
       stem: "Which sentence uses the strongest SENSORY DETAILS to describe cold?",
       choices: [
         "It was really, really cold outside.",
-        "The cold was very bad that day.",
         "The frost stung my cheeks and each breath came out as a puff of smoke.",
+        "The cold was very bad that day.",
         "Everyone agreed it was a cold morning."
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "It uses touch (stinging frost) and sight (breath like smoke), so the reader can feel and see the cold instead of just being told about it.",
       hintLadder: [
         "Which sentence lets you FEEL or SEE the cold?",
@@ -66,8 +66,8 @@ export const winterG5ElaW7D2 = {
       id: "g5.winter.ela.w7.d2.q3",
       type: "multiple_choice",
       stem: "'The frozen lake was a giant mirror.' What kind of figurative language is this?",
-      choices: ["Simile", "Metaphor", "Rhyme", "Alliteration"],
-      answerIndex: 1,
+      choices: ["Simile", "Alliteration", "Rhyme", "Metaphor"],
+      answerIndex: 3,
       explanation: "It says the lake IS a mirror (no 'like' or 'as'), calling one thing another directly, which is a metaphor.",
       hintLadder: [
         "Does it use 'like' or 'as'? If not, it is not a simile.",

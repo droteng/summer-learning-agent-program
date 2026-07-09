@@ -35,11 +35,11 @@ export const grade6HistoryWeek7Day1 = {
       stem: "Which river is paired with the WRONG civilization?",
       choices: [
         "Mesopotamia — Tigris and Euphrates",
-        "Egypt — Nile",
+        "Ancient China — Amazon",
         "Indus Valley — Indus",
-        "Ancient China — Amazon"
+        "Egypt — Nile"
       ],
-      answerIndex: 3,
+      answerIndex: 1,
       explanation: "The Amazon is in South America. Ancient China's river civilization rose along the Yellow River (Huang He).",
       hintLadder: [
         "Three are right; one swaps continents.",
@@ -51,8 +51,8 @@ export const grade6HistoryWeek7Day1 = {
       id: "g6.hist.w7.d1.q2",
       type: "multiple_choice",
       stem: "Which ancient writing system was Egypt's?",
-      choices: ["Cuneiform", "Hieroglyphs", "Oracle bone characters", "Indus script"],
-      answerIndex: 1,
+      choices: ["Cuneiform", "Indus script", "Oracle bone characters", "Hieroglyphs"],
+      answerIndex: 3,
       explanation: "Hieroglyphs are the picture-based Egyptian writing system found on temple walls and papyrus.",
       hintLadder: [
         "Picture-writing.",
@@ -66,12 +66,12 @@ export const grade6HistoryWeek7Day1 = {
       stem:
         "Why was surplus food so important for the rise of cities?",
       choices: [
-        "Surplus food makes people taller.",
         "It let some people stop farming and specialize in other work.",
+        "Surplus food makes people taller.",
         "It tastes better.",
         "It made farmers richer than everyone else."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "When everyone has to farm, no one can be a full-time priest, builder, or scribe. Surplus frees up labor for specialization.",
       hintLadder: [
         "If everyone farms, who builds?",
@@ -163,12 +163,12 @@ export const grade6HistoryWeek7Day1 = {
           type: "multiple_choice",
           stem: "Ancient China's river-valley civilization rose along which river?",
           choices: [
-            "The Nile",
             "The Yellow River (Huang He)",
+            "The Nile",
             "The Tigris",
             "The Indus"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Ancient Chinese civilization grew along the Yellow River (Huang He). The Nile is Egypt's, the Tigris is Mesopotamia's, and the Indus belongs to the Indus Valley.",
           hintLadder: [
             "It's named for a color.",

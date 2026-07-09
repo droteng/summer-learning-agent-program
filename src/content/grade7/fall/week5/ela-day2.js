@@ -35,12 +35,12 @@ export const fallG7ElaW5D2 = {
       type: "multiple_choice",
       stem: "Which is the BEST evidence for the claim 'our library should stay open until 6 p.m.'?",
       choices: [
-        "Libraries are important places.",
         "A survey of 200 students found 82 need quiet study space after 4 p.m., when the library currently closes.",
+        "Libraries are important places.",
         "I really think it should stay open later.",
         "Everybody knows libraries are useful."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "It's specific, relevant, and uses real numbers (82 of 200) tied directly to the claim. The others are vague assertions.",
       hintLadder: [
         "Strong evidence is specific and relevant.",
@@ -73,11 +73,11 @@ export const fallG7ElaW5D2 = {
       stem: "In a full Grade 7 argument, what comes right after you state the COUNTERARGUMENT?",
       choices: [
         "The conclusion, with no response to it",
-        "A rebuttal that concedes what's fair and explains why your claim still holds",
+        "A restatement of the counterargument, louder",
         "An unrelated personal story",
-        "A restatement of the counterargument, louder"
+        "A rebuttal that concedes what's fair and explains why your claim still holds"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A counterargument without a rebuttal just helps the other side. The rebuttal answers it: concede what's fair, then show why your claim survives.",
       hintLadder: [
         "If you name the opposing point, you have to DO something with it.",
@@ -171,11 +171,11 @@ export const fallG7ElaW5D2 = {
           stem: "Claim: 'The town should add a fall farmers' market.' Which sentence is a proper REBUTTAL to the objection 'it will just lose money'?",
           choices: [
             "Farmers' markets are great, everyone loves them.",
-            "That's a fair worry, but a neighboring town's fall market drew 800 shoppers and added $12,000 for local farms last October, so it more than covered its costs.",
             "I love apple cider, so it will work.",
+            "That's a fair worry, but a neighboring town's fall market drew 800 shoppers and added $12,000 for local farms last October, so it more than covered its costs.",
             "The objection is wrong and that's final."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "A rebuttal concedes the fair concern ('that's a fair worry') then answers it with specific evidence ($12,000, 800 shoppers). The others dismiss or ignore the objection.",
           hintLadder: [
             "A rebuttal first admits what's fair, THEN answers with evidence.",

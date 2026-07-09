@@ -42,11 +42,11 @@ export const summerG5HistoryW7D4 = {
       stem: "A cause-and-effect chain has at least:",
       choices: [
         "One event.",
-        "Two events, where the first makes the second more likely.",
+        "Five wars.",
         "Three events that have nothing to do with each other.",
-        "Five wars."
+        "Two events, where the first makes the second more likely."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A chain needs at least two events, where the first one makes the second more likely to happen.",
       hintLadder: [
         "The word 'chain' means links joined together.",
@@ -77,12 +77,12 @@ export const summerG5HistoryW7D4 = {
       type: "multiple_choice",
       stem: "If one link in a history chain turns out to be false, what happens?",
       choices: [
-        "Nothing, because chains do not need to be true.",
         "The links after it become weaker, and you may need a different chain.",
+        "Nothing, because chains do not need to be true.",
         "The chain gets stronger.",
         "The chain fixes itself."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Each link holds up the next one. If a link is false, everything after it loses support.",
       hintLadder: [
         "Does a chain need every link to hold?",
@@ -174,12 +174,12 @@ export const summerG5HistoryW7D4 = {
           type: "multiple_choice",
           stem: "Which chain is the STRONGEST (each link really makes the next one more likely)?",
           choices: [
-            "A dry season killed the crops, so food cost more, so more families moved to the city for jobs.",
-            "A king wore a red cloak, so it rained, so a war started.",
             "People liked music, so the moon got bigger, so trade grew.",
+            "A king wore a red cloak, so it rained, so a war started.",
+            "A dry season killed the crops, so food cost more, so more families moved to the city for jobs.",
             "A bell rang, so winter came early, so prices dropped."
           ],
-          answerIndex: 0,
+          answerIndex: 2,
           explanation: "The dry-season chain makes sense at every step: less food, so higher prices, so people move for work. The others link things that have nothing to do with each other.",
           hintLadder: [
             "Find the chain where each link really makes sense.",

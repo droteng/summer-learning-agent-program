@@ -82,8 +82,8 @@ export const fallG5CodingW6D3 = {
       id: "g5.fall.code.w6.d3.q4",
       type: "multiple_choice",
       stem: "A loop draws a square: 'repeat 4 times: draw a side, then turn.' How many sides does it draw?",
-      choices: ["2", "3", "4", "8"],
-      answerIndex: 2,
+      choices: ["4", "3", "2", "8"],
+      answerIndex: 0,
       explanation: "The loop runs 4 times and draws 1 side each time, so it draws 4 sides — a square.",
       hintLadder: [
         "How many times does the loop repeat?",
@@ -168,8 +168,8 @@ export const fallG5CodingW6D3 = {
           id: "g5.fall.code.w6.d3.arena2",
           type: "multiple_choice",
           stem: "A loop says 'repeat 3 times: draw a side, then turn.' It draws a triangle. How many sides does it draw?",
-          choices: ["2", "3", "4", "6"],
-          answerIndex: 1,
+          choices: ["2", "4", "3", "6"],
+          answerIndex: 2,
           explanation: "The loop runs 3 times and draws 1 side each time, so it draws 3 sides — a triangle.",
           hintLadder: [
             "How many times does the loop repeat?",

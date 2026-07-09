@@ -36,11 +36,11 @@ export const fallG6ElaW5D5 = {
       stem: "What's the difference between REVISING and EDITING?",
       choices: [
         "They're the same thing",
-        "Revising improves ideas and support; editing fixes spelling and grammar",
+        "Neither matters",
         "Editing improves ideas; revising fixes commas",
-        "Neither matters"
+        "Revising improves ideas and support; editing fixes spelling and grammar"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Revising reworks content and clarity; editing cleans up mechanics.",
       hintLadder: [
         "One is about ideas, the other about mechanics.",
@@ -72,12 +72,12 @@ export const fallG6ElaW5D5 = {
       type: "multiple_choice",
       stem: "Which is the strongest CALL TO ACTION to end a persuasive letter?",
       choices: [
-        "Thanks for reading.",
-        "That is all.",
         "Please vote yes on the recycling program at next week's meeting.",
+        "That is all.",
+        "Thanks for reading.",
         "I have many opinions."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "It tells the reader exactly what to do and when — a clear call to action.",
       hintLadder: [
         "A call to action asks for something specific.",

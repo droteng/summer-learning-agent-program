@@ -34,8 +34,8 @@ export const springG6MathW1D2 = {
       id: "g6.spring.math.w1.d2.q1",
       type: "multiple_choice",
       stem: "A gardener plants 20 seeds evenly across 5 rows. What is the unit rate of seeds per row?",
-      choices: ["2 seeds per row", "4 seeds per row", "5 seeds per row", "25 seeds per row"],
-      answerIndex: 1,
+      choices: ["2 seeds per row", "25 seeds per row", "5 seeds per row", "4 seeds per row"],
+      answerIndex: 3,
       explanation: "A unit rate for one row: 20 seeds ÷ 5 rows = 4 seeds per row.",
       hintLadder: [
         "Unit rate means the amount for ONE row.",

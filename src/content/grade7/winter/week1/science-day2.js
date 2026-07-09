@@ -37,11 +37,11 @@ export const winterG7ScienceW1D2 = {
       stem: "What does the TEMPERATURE of a sample of snow actually measure?",
       choices: [
         "The total number of particles in the snow",
-        "The average motion (kinetic energy) of the snow's particles",
+        "The color of the snow",
         "How much 'cold' the snow is giving off",
-        "The color of the snow"
+        "The average motion (kinetic energy) of the snow's particles"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Temperature is a measure of the AVERAGE kinetic energy (motion) of the particles. Colder means the particles move more slowly, on average.",
       hintLadder: [
         "Temperature is tied to how fast the particles are moving.",
@@ -55,11 +55,11 @@ export const winterG7ScienceW1D2 = {
       stem: "A warm hand melts a snowball. In which direction does thermal energy flow, and why?",
       choices: [
         "From the snowball to the hand, because cold moves toward heat",
-        "From the hand to the snowball, because energy flows from warmer to colder",
         "In both directions equally, so nothing really melts",
+        "From the hand to the snowball, because energy flows from warmer to colder",
         "There is no energy flow; the snow just decides to melt"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Thermal energy always flows from the warmer object (the hand) to the colder object (the snowball). The snow doesn't emit cold — it absorbs heat, which speeds up its particles until they melt.",
       hintLadder: [
         "Heat always moves from hot to cold, never the reverse on its own.",
@@ -173,12 +173,12 @@ export const winterG7ScienceW1D2 = {
           type: "multiple_choice",
           stem: "Frost forms on a window overnight when water vapor becomes ice crystals WITHOUT passing through liquid. In terms of energy, what must happen for this to occur?",
           choices: [
-            "The vapor must absorb energy to speed its particles up",
             "The vapor must release thermal energy so its particles slow enough to lock directly into a solid",
+            "The vapor must absorb energy to speed its particles up",
             "No energy change is needed for deposition",
             "The window must give off cold into the vapor"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Deposition (gas → solid) requires the vapor to RELEASE thermal energy. As the particles lose energy to the cold window, they slow down and lock directly into the rigid pattern of ice — no liquid stage needed.",
           hintLadder: [
             "Going from a fast-moving gas to a locked solid means the particles must slow down.",

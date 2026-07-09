@@ -74,10 +74,10 @@ export const winterG7ElaW6D5 = {
       choices: [
         "Claim",
         "Counterargument",
-        "Rebuttal",
-        "Piece of evidence with no purpose"
+        "Piece of evidence with no purpose",
+        "Rebuttal"
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "The first sentence raises the objection (counterargument); the second answers it — that's a rebuttal.",
       hintLadder: [
         "Which sentence RAISES a worry and which ANSWERS it?",
@@ -170,12 +170,12 @@ export const winterG7ElaW6D5 = {
           type: "multiple_choice",
           stem: "Which sentence is the BEST rebuttal to 'Heated gloves are too expensive for schools'?",
           choices: [
-            "Heated gloves are really warm and nice.",
             "A single classroom set can be shared and reused for years, spreading the cost thin while cutting cold-day absences.",
+            "Heated gloves are really warm and nice.",
             "Everyone should just wear two pairs of gloves.",
             "Expensive things are always worth it."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "A rebuttal answers the specific objection (cost) with a concrete reason (shared, reused, reduces absences) that keeps the claim standing.",
           hintLadder: [
             "The objection is about cost — answer THAT.",

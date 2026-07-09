@@ -55,11 +55,11 @@ export const fallG5ScienceW2D5 = {
       stem: "Why can an INVASIVE species cause so much damage in a new place?",
       choices: [
         "It is always poisonous",
-        "It often has no predators there, so its numbers can explode",
         "It refuses to eat",
+        "It often has no predators there, so its numbers can explode",
         "It makes the sun brighter"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "With no predators to stop it, an invasive species can multiply out of control and crowd out the animals that already live there.",
       hintLadder: [
         "What usually keeps a group's numbers in check?",
@@ -73,12 +73,12 @@ export const fallG5ScienceW2D5 = {
       type: "multiple_choice",
       stem: "Which action would most likely HELP fix a damaged kelp forest?",
       choices: [
-        "Remove all the kelp",
         "Bring back the sea otters that control the urchins",
+        "Remove all the kelp",
         "Add more urchins",
         "Pour in more salt water"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Bringing back the keystone predator (otters) lowers the urchin numbers so the kelp can grow again.",
       hintLadder: [
         "What controlled the urchins before?",
@@ -167,12 +167,12 @@ export const fallG5ScienceW2D5 = {
           type: "multiple_choice",
           stem: "Wolves are removed from a forest. The deer (which wolves hunted) then grow in number. What is the MOST likely next effect?",
           choices: [
-            "The deer eat so many young trees and plants that the forest thins out",
+            "Nothing changes at all",
             "The deer suddenly disappear",
             "The sun gets brighter",
-            "Nothing changes at all"
+            "The deer eat so many young trees and plants that the forest thins out"
           ],
-          answerIndex: 0,
+          answerIndex: 3,
           explanation: "With no wolves keeping them in check, the deer eat too many plants, so the plants (and animals that need them) decline — a classic keystone-removal ripple.",
           hintLadder: [
             "What kept the deer numbers down before?",

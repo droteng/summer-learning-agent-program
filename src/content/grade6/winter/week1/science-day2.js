@@ -33,8 +33,8 @@ export const winterG6ScienceW1D2 = {
       id: "g6.winter.sci.w1.d2.q1",
       type: "multiple_choice",
       stem: "Which state of matter keeps its OWN shape without a container?",
-      choices: ["A gas like water vapor", "A liquid like water", "A solid like ice", "None of them keep a shape"],
-      answerIndex: 2,
+      choices: ["A gas like water vapor", "A solid like ice", "A liquid like water", "None of them keep a shape"],
+      answerIndex: 1,
       explanation: "A solid such as ice holds its own shape because its particles are locked tightly in place.",
       hintLadder: [
         "Think about which one you can pick up and it stays the same shape.",
@@ -47,12 +47,12 @@ export const winterG6ScienceW1D2 = {
       type: "multiple_choice",
       stem: "On a cold morning your warm breath turns into a little cloud in the air. What change of state makes the cloud appear?",
       choices: [
-        "Melting: solid to liquid",
         "Condensation: water vapor cooling into tiny liquid droplets",
+        "Melting: solid to liquid",
         "Freezing: liquid to solid",
         "Evaporation: liquid to gas"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Warm water vapor in your breath hits cold air, cools, and CONDENSES into tiny visible liquid droplets — the little cloud.",
       hintLadder: [
         "Your breath carries invisible water vapor (a gas).",
@@ -67,11 +67,11 @@ export const winterG6ScienceW1D2 = {
       stem: "When liquid water FREEZES into ice, what is happening to the water's particles?",
       choices: [
         "They gain energy and spread far apart",
-        "They lose energy and lock into a fixed arrangement",
+        "They disappear",
         "They turn into a different substance",
-        "They disappear"
+        "They lose energy and lock into a fixed arrangement"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Freezing removes heat, so the particles lose energy, slow down, and lock into the rigid arrangement of a solid — but it's still water.",
       hintLadder: [
         "Freezing means the water is getting colder, not warmer.",

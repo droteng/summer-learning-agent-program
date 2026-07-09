@@ -61,12 +61,12 @@ export const fallG6ScienceW2D1 = {
       type: "multiple_choice",
       stem: "Why are decomposers important to a food web?",
       choices: [
-        "They scare away predators.",
         "They return nutrients from dead things back to the soil.",
+        "They scare away predators.",
         "They make sunlight.",
         "They only eat producers."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Decomposers recycle nutrients so producers can grow again, keeping the whole web running.",
       hintLadder: [
         "Think about what happens to a fallen log over time.",
@@ -157,10 +157,10 @@ export const fallG6ScienceW2D1 = {
           choices: [
             "The mouse",
             "The owl",
-            "The oak tree that made the acorn",
-            "There is no producer in this chain"
+            "There is no producer in this chain",
+            "The oak tree that made the acorn"
           ],
-          answerIndex: 2,
+          answerIndex: 3,
           explanation: "The oak tree makes its own food by photosynthesis, so it (via its acorn) is the producer that starts the chain.",
           hintLadder: [
             "A producer makes its own food from sunlight.",

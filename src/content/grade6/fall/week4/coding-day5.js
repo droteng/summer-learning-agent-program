@@ -36,11 +36,11 @@ export const fallG6CodingW4D5 = {
       stem: "An algorithm is best described as...",
       choices: [
         "a random pile of steps",
-        "a clear, ordered list of steps to complete a task",
         "a type of ancient city",
+        "a clear, ordered list of steps to complete a task",
         "a single instruction only"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "An algorithm is an ordered set of steps — like a recipe — to accomplish something.",
       hintLadder: [
         "Think 'recipe.'",
@@ -54,11 +54,11 @@ export const fallG6CodingW4D5 = {
       stem: "Steps to send a message by ancient runner: [1 write the message], [2 hand it to the runner], [3 runner delivers it]. What breaks if you do step 2 before step 1?",
       choices: [
         "Nothing",
-        "The runner carries a blank message — there's nothing written yet",
+        "The message arrives early",
         "The runner gets faster",
-        "The message arrives early"
+        "The runner carries a blank message — there's nothing written yet"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Out of order, the runner leaves before the message exists. Sequence matters.",
       hintLadder: [
         "What hasn't happened yet if you skip step 1?",
@@ -72,12 +72,12 @@ export const fallG6CodingW4D5 = {
       type: "multiple_choice",
       stem: "A 'bug' in an algorithm is...",
       choices: [
-        "an insect in the computer",
         "a step that's wrong or out of order, causing a bad result",
+        "an insect in the computer",
         "the fastest step",
         "the last step always"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A bug is a mistake in the steps; debugging is finding and fixing it.",
       hintLadder: [
         "It's a mistake, not an insect.",

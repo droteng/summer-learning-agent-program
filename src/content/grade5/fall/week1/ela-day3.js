@@ -37,11 +37,11 @@ export const fallG5ElaW1D3 = {
       stem: "Which is the STRONGEST goal?",
       choices: [
         "Be better at writing.",
-        "Write more this fall.",
         "Write one short story and check it over twice by the end of the season.",
+        "Write more this fall.",
         "Try to write sometimes."
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "It says exactly what (one story, checked twice) and when (by the end of the season), so you can tell if you did it.",
       hintLadder: [
         "Which one could you clearly mark as done or not done?",
@@ -54,12 +54,12 @@ export const fallG5ElaW1D3 = {
       type: "multiple_choice",
       stem: "In the goal 'I will read 3 books by November BECAUSE I want a bigger vocabulary,' which part is the reason?",
       choices: [
-        "I will read 3 books",
-        "by November",
         "because I want a bigger vocabulary",
+        "by November",
+        "I will read 3 books",
         "3 books"
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "The reason is the 'because' part — it tells why the goal matters.",
       hintLadder: [
         "The reason answers WHY, not what or when.",

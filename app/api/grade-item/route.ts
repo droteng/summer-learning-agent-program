@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { gradeItem } from "../../../src/agents/assessmentAgent.js";
+import { getAuthoredItemById } from "../../../src/content/index.js";
 import { createLlm } from "../../../src/agents/llm/index.js";
 import { recordGradedItem } from "../../../src/agents/progressAgent.js";
 import {
@@ -23,7 +24,11 @@ function getLlm() {
 
 export async function POST(request: Request) {
   const payload = await request.json();
-  const item = payload?.item;
+  // Grade against the canonical authored item whenever the id is in the
+  // catalog. Clients receive answer-stripped items, and a tampered payload
+  // must not be able to redefine what counts as correct.
+  const canonical = typeof payload?.item?.id === "string" ? getAuthoredItemById(payload.item.id) : null;
+  const item = canonical ?? payload?.item;
   const response = payload?.response ?? {};
   const studentId = payload?.studentId ?? null;
   const useLlm = payload?.useLlm !== false;

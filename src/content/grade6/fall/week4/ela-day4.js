@@ -36,11 +36,11 @@ export const fallG6ElaW4D4 = {
       stem: "Which is a proper SUMMARY of: 'Mesopotamian cities built walls for protection from raiders and floods'?",
       choices: [
         "Mesopotamian cities built walls for protection from raiders and floods. (copied exactly)",
-        "Cities in Mesopotamia used walls to guard against attackers and flooding.",
         "Walls are tall.",
+        "Cities in Mesopotamia used walls to guard against attackers and flooding.",
         "Mesopotamia is a place."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "It captures the key idea in different words, shorter than the original — and isn't copied.",
       hintLadder: [
         "A summary is in YOUR words, not copied.",
@@ -54,11 +54,11 @@ export const fallG6ElaW4D4 = {
       stem: "Why should you cite where a fact came from?",
       choices: [
         "To make the page longer",
-        "So readers can trust and check your information",
+        "To hide your sources",
         "Citing is optional and pointless",
-        "To hide your sources"
+        "So readers can trust and check your information"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Citing builds trust and lets readers verify the fact — it's honest and credible.",
       hintLadder: [
         "What makes research trustworthy?",
@@ -165,12 +165,12 @@ export const fallG6ElaW4D4 = {
           type: "multiple_choice",
           stem: "Source: 'Mesopotamians invented the wheel, which made carrying goods and traveling far easier.' Which is the BEST summary?",
           choices: [
-            "Mesopotamians invented the wheel, which made carrying goods and traveling far easier. (copied)",
             "The Mesopotamians invented the wheel, making travel and moving goods much easier.",
+            "Mesopotamians invented the wheel, which made carrying goods and traveling far easier. (copied)",
             "Wheels are round.",
             "Mesopotamia had goods."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "It keeps the key idea but rephrases it in different, shorter wording — and it isn't copied exactly.",
           hintLadder: [
             "A summary is rephrased, not copied word-for-word.",

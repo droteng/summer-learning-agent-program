@@ -36,12 +36,12 @@ export const summerG5CodingW4D3 = {
       type: "multiple_choice",
       stem: "What is the FIRST thing to do when the computer shows you an error message?",
       choices: [
-        "Delete everything and start over.",
         "Read the message and the line it points to.",
+        "Delete everything and start over.",
         "Turn the computer off and on.",
         "Give up right away."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "The message usually names the exact line and the problem. Reading it first saves you time.",
       hintLadder: [
         "The computer is trying to help you find the bug.",
@@ -56,11 +56,11 @@ export const summerG5CodingW4D3 = {
         "This should give the average of two scores but always gives the first one:\n\n  total = score1 + score2\n  average = total\n\nWhat's the bug?",
       choices: [
         "The scores are spelled wrong.",
-        "It forgot to DIVIDE the total by 2.",
         "You can't add two scores.",
+        "It forgot to DIVIDE the total by 2.",
         "There is no bug."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "To average two numbers you add them, THEN divide by 2. The code adds but never divides.",
       hintLadder: [
         "How do you find the average of TWO numbers?",
@@ -168,11 +168,11 @@ export const summerG5CodingW4D3 = {
             "This should stop at 3 but never stops:\n\n  count = 0\n  REPEAT while count < 3:\n    SHOW count\n\nWhat is the bug?",
           choices: [
             "SHOW cannot go inside a loop",
-            "count never gets bigger, so 'count < 3' is always true",
+            "There is no bug",
             "The loop needs a name",
-            "There is no bug"
+            "count never gets bigger, so 'count < 3' is always true"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation:
             "The loop never changes count, so 'count < 3' stays true forever. Adding 'count = count + 1' inside the loop fixes it.",
           hintLadder: [

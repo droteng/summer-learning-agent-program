@@ -38,11 +38,11 @@ export const winterG5ElaW4D5 = {
       stem: "What is the main JOB of informational (explanatory) writing?",
       choices: [
         "To make the reader agree with your opinion.",
-        "To inform and explain a topic clearly using facts.",
         "To tell an exciting made-up story.",
+        "To inform and explain a topic clearly using facts.",
         "To share only your personal feelings."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Informational writing teaches the reader about a topic using facts and details. Its goal is to inform, not to argue or tell a made-up story.",
       hintLadder: [
         "Is the goal to argue, or to teach?",
@@ -56,12 +56,12 @@ export const winterG5ElaW4D5 = {
       type: "multiple_choice",
       stem: "Which sentence belongs in an INFORMATIONAL explainer about the Moon?",
       choices: [
-        "The Moon is definitely the prettiest thing in the sky.",
-        "I think everyone should look at the Moon more.",
         "The Moon is Earth's only natural moon and takes about 27 days to go around Earth.",
+        "I think everyone should look at the Moon more.",
+        "The Moon is definitely the prettiest thing in the sky.",
         "The Moon makes me feel calm at night."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "It gives a fact you can check about the Moon. The others are opinions or feelings, which don't belong in a fact-based explainer.",
       hintLadder: [
         "Which sentence gives a fact you could check?",
@@ -73,8 +73,8 @@ export const winterG5ElaW4D5 = {
       id: "g5.winter.ela.w4.d5.q3",
       type: "multiple_choice",
       stem: "Which word or phrase is a TRANSITION that helps connect ideas in an explainer?",
-      choices: ["Suddenly the dragon roared", "For example", "The End", "Once upon a time"],
-      answerIndex: 1,
+      choices: ["Suddenly the dragon roared", "Once upon a time", "The End", "For example"],
+      answerIndex: 3,
       explanation: "'For example' links a big idea to a supporting detail — a common transition in informational writing. The others belong in stories.",
       hintLadder: [
         "A transition connects one idea to the next.",

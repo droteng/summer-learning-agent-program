@@ -55,11 +55,11 @@ export const grade6MediaDay2 = {
       stem: "Which sentence sounds MORE like AI-generated text?",
       choices: [
         "Dr. Maria Chen, an immunologist at Stanford, said the new vaccine showed an 87% efficacy in trials.",
-        "Some experts have suggested that vaccines, in general, may have varied effects on different populations.",
         "I tried the new vaccine — it gave me a sore arm for one day.",
+        "Some experts have suggested that vaccines, in general, may have varied effects on different populations.",
         "The clinic at 5th Street offers free vaccines every Tuesday."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Hedging ('some experts have suggested', 'in general', 'may have') with no named source is a classic AI text pattern.",
       hintLadder: [
         "Look for hedging without specifics.",
@@ -74,12 +74,12 @@ export const grade6MediaDay2 = {
       stem:
         "You see a photo of a politician saying something shocking. What's the BEST first step?",
       choices: [
-        "Share it everywhere.",
         "Reverse image search and look for the same scene on a reliable news site.",
+        "Share it everywhere.",
         "Trust it because the politician is unpopular.",
         "Delete the photo."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Reverse search finds the original. If no reliable source has it, treat as possibly fake.",
       hintLadder: [
         "How do you check if a photo is real?",

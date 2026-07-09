@@ -34,12 +34,12 @@ export const winterG6ElaW2D5 = {
       type: "multiple_choice",
       stem: "What is the main GOAL of informational writing about an experiment?",
       choices: [
-        "To convince the reader your opinion is right",
         "To help the reader clearly understand what you did and what happened",
+        "To convince the reader your opinion is right",
         "To entertain with a made-up story",
         "To hide your results so no one can copy them"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Informational writing explains clearly so a reader understands and could even repeat your experiment — it is not about persuading or entertaining.",
       hintLadder: [
         "Is the writer trying to argue a side, or to explain?",
@@ -172,11 +172,11 @@ export const winterG6ElaW2D5 = {
           stem: "A report says: 'We did some things and the ice was gone.' What is the BIGGEST problem for a reader trying to repeat it?",
           choices: [
             "It is too long",
-            "It gives no specific steps, materials, or measurements, so it cannot be repeated",
+            "It is written in the past tense",
             "It uses too many numbers",
-            "It is written in the past tense"
+            "It gives no specific steps, materials, or measurements, so it cannot be repeated"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Good informational writing must be specific and ordered. 'Some things' and 'was gone' give no steps, materials, or measurements, so no one could follow it.",
           hintLadder: [
             "Could you actually redo the experiment from this sentence?",

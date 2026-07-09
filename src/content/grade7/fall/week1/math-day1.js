@@ -78,12 +78,12 @@ export const fallG7MathW1D1 = {
       type: "multiple_choice",
       stem: "Which expression correctly evaluates 20 − 4 × (−2) + 6 ÷ (−3)?",
       choices: [
-        "20 − (−8) + (−2) = 26",
+        "20 − 4 × (−8) = 52",
         "20 − 8 + 6 = 18",
         "16 × (−2) + 6 ÷ (−3) = −34",
-        "20 − 4 × (−8) = 52"
+        "20 − (−8) + (−2) = 26"
       ],
-      answerIndex: 0,
+      answerIndex: 3,
       explanation: "Do ×/÷ first: 4 × (−2) = −8 and 6 ÷ (−3) = −2. Then 20 − (−8) + (−2) = 20 + 8 − 2 = 26.",
       hintLadder: [
         "Handle both the multiplication and the division before any subtraction or addition.",

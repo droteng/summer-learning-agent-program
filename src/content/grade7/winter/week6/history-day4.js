@@ -37,11 +37,11 @@ export const winterG7HistoryW6D4 = {
       stem: "A historian says knowledge of electric current was a NECESSARY condition for the light bulb. What does that claim mean?",
       choices: [
         "It was a nice bonus but the bulb could have worked without it",
-        "Without it, an electric bulb could not have been created at all",
+        "It happened after the bulb was invented",
         "It was the only cause of the bulb",
-        "It happened after the bulb was invented"
+        "Without it, an electric bulb could not have been created at all"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A necessary condition is one the outcome cannot occur without — remove it and the invention is impossible.",
       hintLadder: [
         "Necessary = the invention can't happen without it.",
@@ -73,12 +73,12 @@ export const winterG7HistoryW6D4 = {
       type: "multiple_choice",
       stem: "Which best explains WHY the Franklin stove succeeded when it did?",
       choices: [
-        "A single genius invented it from nothing",
         "A real problem (wasted heat/fuel) met available materials (cast iron) and earlier fireplace design",
+        "A single genius invented it from nothing",
         "It produced electricity for homes",
         "It replaced the light bulb"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Inventions take off when a genuine problem, the right materials, and prior designs line up — necessary and contributing conditions together.",
       hintLadder: [
         "Think about what conditions had to line up.",
@@ -173,11 +173,11 @@ export const winterG7HistoryW6D4 = {
           stem: "A source claims one inventor 'single-handedly' created central heating. Before repeating it, you should first...",
           choices: [
             "Share it immediately because it's a strong story",
-            "Corroborate the claim against other independent sources and look for earlier contributors",
             "Assume it's false and ignore it",
+            "Corroborate the claim against other independent sources and look for earlier contributors",
             "Rewrite it to name a different single person"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Single-inventor claims are red flags; corroborating across sources usually reveals a chain of contributors and prior conditions.",
           hintLadder: [
             "'Single-handedly' is a warning sign.",

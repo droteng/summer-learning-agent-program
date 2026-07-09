@@ -35,12 +35,12 @@ export const summerG7ScienceW1D2 = {
       type: "multiple_choice",
       stem: "In an experiment testing whether more fertilizer grows taller tomato plants, what is the INDEPENDENT variable?",
       choices: [
-        "The height of the plants",
         "The amount of fertilizer given",
+        "The height of the plants",
         "The type of soil (kept the same)",
         "The number of leaves"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "The independent variable is the one thing deliberately changed — here, the amount of fertilizer.",
       hintLadder: [
         "Which variable does the scientist deliberately CHANGE?",
@@ -54,11 +54,11 @@ export const summerG7ScienceW1D2 = {
       stem: "Why must an experiment keep controlled variables the SAME across every trial?",
       choices: [
         "To make the experiment take longer",
-        "So you can be sure the independent variable caused the change, not something else",
+        "To use up fewer materials",
         "Because scientists must always use the same equipment",
-        "To use up fewer materials"
+        "So you can be sure the independent variable caused the change, not something else"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "If other factors changed too, you couldn't tell which one caused the result. Holding them constant isolates the independent variable's effect.",
       hintLadder: [
         "What goes wrong if two things change at once?",

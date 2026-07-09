@@ -36,12 +36,12 @@ export const fallG5ElaW7D4 = {
       type: "multiple_choice",
       stem: "Which sentence clearly shows CAUSE and EFFECT?",
       choices: [
-        "The market grew. It was Tuesday.",
         "Because more farmers came to sell, the market grew bigger.",
+        "The market grew. It was Tuesday.",
         "The market is big and old.",
         "Markets sell food."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "'Because more farmers came' gives the cause; 'the market grew bigger' is the effect — clearly linked.",
       hintLadder: [
         "Which sentence connects a cause to a result?",
@@ -55,11 +55,11 @@ export const fallG5ElaW7D4 = {
       stem: "If two things happen at the same TIME, does that prove one caused the other?",
       choices: [
         "Yes — same time is enough",
-        "No — you must show WHY one led to the other",
+        "No, only in math",
         "Yes, if they are famous",
-        "No, only in math"
+        "No — you must show WHY one led to the other"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Happening together does not prove cause and effect. You must show the reason one led to the other.",
       hintLadder: [
         "Does same time always mean one caused the other?",
@@ -162,11 +162,11 @@ export const fallG5ElaW7D4 = {
           stem: "Which sentence shows real cause-and-effect WITHOUT pretending 'same time' proves it?",
           choices: [
             "The festival was the same week the leaves turned red, so the leaves caused the festival.",
-            "Because the harvest was large, the village held a bigger festival than usual.",
             "It was autumn and there was a festival.",
+            "Because the harvest was large, the village held a bigger festival than usual.",
             "The festival and the cold weather both happened in October."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Only option B shows a real reason (a large harvest led to a bigger festival). The others confuse timing with cause, or just list events.",
           hintLadder: [
             "Avoid sentences that say 'happened together, so one caused the other.'",

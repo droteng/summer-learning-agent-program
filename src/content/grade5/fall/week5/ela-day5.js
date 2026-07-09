@@ -55,11 +55,11 @@ export const fallG5ElaW5D5 = {
       stem: "Your letter has a sentence about your weekend that does not fit the claim. When you revise, you should...",
       choices: [
         "Keep it to make the letter longer",
-        "Cut it — off-topic sentences make the argument weaker",
         "Make it longer",
+        "Cut it — off-topic sentences make the argument weaker",
         "Move it to the beginning"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "An off-topic sentence pulls attention away from your argument; cutting it makes the letter stronger.",
       hintLadder: [
         "Does that sentence support the claim?",
@@ -73,12 +73,12 @@ export const fallG5ElaW5D5 = {
       type: "multiple_choice",
       stem: "Which is the strongest CALL TO ACTION to end a persuasive letter?",
       choices: [
-        "Thanks for reading.",
-        "That is all.",
         "Please say yes to the recycling program at next week's meeting.",
+        "That is all.",
+        "Thanks for reading.",
         "I have many opinions."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "It tells the reader exactly what to do and when — a clear call to action.",
       hintLadder: [
         "A call to action asks for something exact.",
@@ -167,10 +167,10 @@ export const fallG5ElaW5D5 = {
           choices: [
             "'Thanks for reading my letter.'",
             "'I have lots of feelings about this.'",
-            "'Please say yes to the fall recycling program at next Tuesday's school meeting.'",
-            "'The end.'"
+            "'The end.'",
+            "'Please say yes to the fall recycling program at next Tuesday's school meeting.'"
           ],
-          answerIndex: 2,
+          answerIndex: 3,
           explanation: "A strong call to action names an exact action and when to do it. The others just stop without asking for anything.",
           hintLadder: [
             "A call to action asks the reader to DO something exact.",

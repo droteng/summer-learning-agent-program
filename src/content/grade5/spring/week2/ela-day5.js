@@ -37,12 +37,12 @@ export const springG5ElaW2D5 = {
       type: "multiple_choice",
       stem: "Which sentence belongs in the METHOD part of a seed-growth report?",
       choices: [
-        "The plant looked really pretty.",
         "I put one seed 2 cm deep in each of three cups and watered them every day.",
+        "The plant looked really pretty.",
         "Plants are amazing living things.",
         "I think sunlight is the best."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "The method lists the exact steps someone could copy — like how deep the seed went and how often you watered.",
       hintLadder: [
         "Method = the steps someone could copy.",
@@ -75,11 +75,11 @@ export const springG5ElaW2D5 = {
       stem: "Why is it important to write the METHOD as clear steps in order?",
       choices: [
         "To make the report longer",
-        "So another person could copy your experiment the same way",
         "Because opinions belong in the method",
+        "So another person could copy your experiment the same way",
         "To hide what you did"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Clear steps in order make the experiment easy to copy — an important part of good science writing.",
       hintLadder: [
         "Good science can be copied by others.",
@@ -169,11 +169,11 @@ export const springG5ElaW2D5 = {
           stem: "A report says: 'Day 1: 0 cm. Day 3: 4 cm. Day 5: 8 cm.' Which part of a science report is this, and what text feature would organize it best?",
           choices: [
             "The Results — best shown as an opinion paragraph",
-            "The Observations — best shown as a data table",
+            "The title — best shown in a big font",
             "The Method — best shown as a poem",
-            "The title — best shown in a big font"
+            "The Observations — best shown as a data table"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "These are measured facts on different days (observations), and a data table is the clearest way to organize them.",
           hintLadder: [
             "Are these measured facts, steps, or a conclusion?",

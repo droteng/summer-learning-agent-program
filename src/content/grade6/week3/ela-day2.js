@@ -50,8 +50,8 @@ export const grade6ElaWeek3Day2 = {
       id: "g6.ela.w3.d2.q2",
       type: "multiple_choice",
       stem: "Which sense is being used? 'The bread crackled when I tore off a piece.'",
-      choices: ["Sight", "Sound", "Smell", "Taste"],
-      answerIndex: 1,
+      choices: ["Sound", "Sight", "Smell", "Taste"],
+      answerIndex: 0,
       explanation: "'Crackled' is a sound. Even a written description of sound counts as appealing to the sense of hearing.",
       hintLadder: [
         "What does 'crackled' describe?",
@@ -66,10 +66,10 @@ export const grade6ElaWeek3Day2 = {
       choices: [
         "It was very hot.",
         "The sun was bright.",
-        "Sweat slid down my neck and the sidewalk shimmered.",
-        "Summer was warm that year."
+        "Summer was warm that year.",
+        "Sweat slid down my neck and the sidewalk shimmered."
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "Specific physical detail (sweat, shimmering sidewalk) lets the reader feel the heat.",
       hintLadder: [
         "Look for body sensations or vivid sights.",
@@ -159,12 +159,12 @@ export const grade6ElaWeek3Day2 = {
           type: "multiple_choice",
           stem: "Which sentence BEST shows (not tells) that a character is exhausted after a long hike?",
           choices: [
-            "She was really, really tired after the hike.",
-            "She felt exhausted and worn out and drained.",
             "Her legs wobbled on the last step, and she dropped onto the grass without taking off her boots.",
+            "She felt exhausted and worn out and drained.",
+            "She was really, really tired after the hike.",
             "The hike made her very tired."
           ],
-          answerIndex: 2,
+          answerIndex: 0,
           explanation: "Wobbling legs and collapsing onto the grass with boots still on are concrete actions that let the reader feel the exhaustion without the word 'tired'.",
           hintLadder: [
             "Skip any option that uses a 'telling' word like 'tired' or 'exhausted'.",

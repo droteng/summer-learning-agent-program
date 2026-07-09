@@ -44,8 +44,8 @@ export const grade6MathWeek1Day1 = {
       id: "g6.math.w1.d1.q1",
       type: "multiple_choice",
       stem: "Which ratio is equivalent to 4:6?",
-      choices: ["1:2", "2:3", "3:4", "6:8"],
-      answerIndex: 1,
+      choices: ["1:2", "6:8", "3:4", "2:3"],
+      answerIndex: 3,
       explanation: "Divide both 4 and 6 by their common factor 2 to get 2:3.",
       hintLadder: [
         "What number divides both 4 and 6 evenly?",
@@ -73,12 +73,12 @@ export const grade6MathWeek1Day1 = {
       type: "multiple_choice",
       stem: "A reader finishes 30 pages in 10 minutes. Which is the unit rate?",
       choices: [
-        "10 pages per minute",
-        "30 pages per minute",
         "3 pages per minute",
+        "30 pages per minute",
+        "10 pages per minute",
         "300 pages per minute"
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "Divide pages by minutes: 30 ÷ 10 = 3 pages per minute.",
       hintLadder: [
         "A unit rate is how much you get for one of the other amount.",

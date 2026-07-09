@@ -36,11 +36,11 @@ export const fallG7HistoryW7D5 = {
       stem: "On a weighted cause-and-effect map, a THICKER arrow between two boxes is used to show that the link is...",
       choices: [
         "prettier than the others",
-        "a necessary cause the effect could not happen without",
+        "unimportant",
         "the newest event",
-        "unimportant"
+        "a necessary cause the effect could not happen without"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Weighting arrows by thickness marks necessary (strong) links versus merely contributing (thin) ones.",
       hintLadder: [
         "Thickness stands for strength of the link.",
@@ -54,11 +54,11 @@ export const fallG7HistoryW7D5 = {
       stem: "What turns a cause-and-effect map from an ASSERTION into an evidence-based analysis?",
       choices: [
         "Using more colors",
-        "Labeling key arrows with a corroborating source or reason",
         "Drawing bigger boxes",
+        "Labeling key arrows with a corroborating source or reason",
         "Adding more arrows regardless of evidence"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Labeling links with corroborating evidence means each claimed cause rests on a source or reason, not mere assertion.",
       hintLadder: [
         "An assertion just states; an analysis backs it up.",
@@ -72,12 +72,12 @@ export const fallG7HistoryW7D5 = {
       type: "multiple_choice",
       stem: "An event box has THREE arrows pointing IN and TWO pointing OUT. The best reading is that the event...",
       choices: [
-        "is drawn incorrectly",
         "had three contributing causes and led to two different effects",
+        "is drawn incorrectly",
         "happened three times",
         "had no real impact"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Arrows in are causes and arrows out are effects, so three in and two out means three causes fed the event and it produced two effects.",
       hintLadder: [
         "Arrows IN = causes; arrows OUT = effects.",

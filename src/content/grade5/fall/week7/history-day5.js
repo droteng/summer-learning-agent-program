@@ -36,12 +36,12 @@ export const fallG5HistoryW7D5 = {
       type: "multiple_choice",
       stem: "On a cause-and-effect map, an arrow between two boxes means...",
       choices: [
-        "they happened on the same day",
         "the first event led to (caused) the second",
+        "they happened on the same day",
         "they are not related",
         "the second one is older"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Arrows show direction: the first event led to the second.",
       hintLadder: [
         "Arrows point in a direction.",
@@ -54,12 +54,12 @@ export const fallG5HistoryW7D5 = {
       type: "multiple_choice",
       stem: "If a box has TWO arrows pointing INTO it, that shows the event had...",
       choices: [
-        "two causes",
-        "two effects",
         "no cause at all",
+        "two effects",
+        "two causes",
         "a mistake in the map"
       ],
-      answerIndex: 0,
+      answerIndex: 2,
       explanation: "Arrows pointing IN come from causes. Two arrows in means two causes led to that event.",
       hintLadder: [
         "Arrows pointing IN come from causes.",
@@ -167,11 +167,11 @@ export const fallG5HistoryW7D5 = {
           stem: "On a cause-effect map, a box has TWO arrows pointing OUT of it. What does that show?",
           choices: [
             "The event had two causes",
-            "The event led to two different effects",
+            "The two boxes happened at the same time",
             "The map is drawn wrong",
-            "The two boxes happened at the same time"
+            "The event led to two different effects"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Arrows OUT point to effects, so two arrows out means the event led to two different results.",
           hintLadder: [
             "Arrows OUT point to effects.",

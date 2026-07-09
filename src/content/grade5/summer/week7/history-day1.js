@@ -42,11 +42,11 @@ export const summerG5HistoryW7D1 = {
       stem: "Which river is matched with the WRONG civilization?",
       choices: [
         "Egypt — the Nile River",
-        "Mesopotamia — the Tigris River",
+        "Ancient China — the Amazon River",
         "Indus Valley — the Indus River",
-        "Ancient China — the Amazon River"
+        "Mesopotamia — the Tigris River"
       ],
-      answerIndex: 3,
+      answerIndex: 1,
       explanation: "The Amazon River is in South America, not China. Ancient China grew along the Yellow River in Asia.",
       hintLadder: [
         "Three are correct. One is on the wrong continent.",
@@ -58,8 +58,8 @@ export const summerG5HistoryW7D1 = {
       id: "g5.summer.hist.w7.d1.q2",
       type: "multiple_choice",
       stem: "Which ancient writing system belonged to Egypt?",
-      choices: ["Cuneiform", "Hieroglyphs", "The alphabet you use today", "Indus script"],
-      answerIndex: 1,
+      choices: ["Cuneiform", "Indus script", "The alphabet you use today", "Hieroglyphs"],
+      answerIndex: 3,
       explanation: "Hieroglyphs are Egypt's picture-writing, found on temple walls and on paper made from papyrus.",
       hintLadder: [
         "It uses little pictures.",
@@ -73,11 +73,11 @@ export const summerG5HistoryW7D1 = {
       stem: "Why was extra (surplus) food so important for building cities?",
       choices: [
         "Extra food makes people grow taller.",
-        "It meant not everyone had to farm, so some people could do other jobs.",
         "It tastes much better than normal food.",
+        "It meant not everyone had to farm, so some people could do other jobs.",
         "It made all the farmers rich."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "If everyone must farm, no one is free to build, write, or lead. Surplus food frees people to do new jobs, and cities can grow.",
       hintLadder: [
         "If everyone has to farm, who can build things?",
@@ -169,12 +169,12 @@ export const summerG5HistoryW7D1 = {
           type: "multiple_choice",
           stem: "Ancient China's first big civilization grew along which river?",
           choices: [
-            "The Nile River",
             "The Yellow River",
+            "The Nile River",
             "The Tigris River",
             "The Indus River"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Ancient China grew along the Yellow River. The Nile is Egypt's, the Tigris is Mesopotamia's, and the Indus belongs to the Indus Valley.",
           hintLadder: [
             "This river is named after a color.",

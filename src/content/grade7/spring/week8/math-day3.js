@@ -65,12 +65,12 @@ export const springG7MathW8D3 = {
       type: "multiple_choice",
       stem: "Two garden beds both average 10 sprouts per day. Bed X's daily counts are 9, 10, 11, 10, 10; Bed Y's are 2, 18, 5, 15, 10. What does comparing their SPREAD tell you?",
       choices: [
-        "They are identical because the means match.",
         "Bed X is far more consistent (small spread); Bed Y is highly variable (large spread), so the same average hides very different day-to-day behavior.",
+        "They are identical because the means match.",
         "Bed Y is better because it has the biggest single day.",
         "Spread tells you nothing once you know the mean."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Equal means can mask very different distributions. Bed X's values hug the mean (low MAD/IQR); Bed Y's swing widely (high spread), so honest reporting must include the spread, not just the average.",
       hintLadder: [
         "The averages are equal, so look at how the values SCATTER.",

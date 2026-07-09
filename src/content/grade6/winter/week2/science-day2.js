@@ -35,11 +35,11 @@ export const winterG6ScienceW2D2 = {
       stem: "An ice cube left on the counter slowly turns into a puddle of water. What phase change is this, and what is happening to energy?",
       choices: [
         "Freezing; energy is removed",
-        "Melting; energy (heat) is added",
+        "Evaporation; energy is added",
         "Condensation; energy is removed",
-        "Evaporation; energy is added"
+        "Melting; energy (heat) is added"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Solid ice becoming liquid water is melting, which happens when heat energy is ADDED to the ice.",
       hintLadder: [
         "Ice is a solid; a puddle is a liquid.",
@@ -52,12 +52,12 @@ export const winterG6ScienceW2D2 = {
       type: "multiple_choice",
       stem: "On a cold morning, tiny water droplets appear on the OUTSIDE of a cold window. Where did that water come from?",
       choices: [
-        "The glass leaked water",
         "Water vapor in the air cooled and condensed into liquid on the cold glass",
+        "The glass leaked water",
         "The window melted",
         "The water froze out of nowhere"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Invisible water vapor in the air touches the cold glass, loses heat, and condenses into visible liquid droplets — that is condensation.",
       hintLadder: [
         "Air always holds some invisible water vapor.",
@@ -72,11 +72,11 @@ export const winterG6ScienceW2D2 = {
       stem: "During melting and freezing, what happens to the actual water molecules?",
       choices: [
         "They turn into a different substance",
-        "They stay the same molecules but move faster or slower and pack differently",
         "They disappear and new ones appear",
+        "They stay the same molecules but move faster or slower and pack differently",
         "They split into hydrogen and oxygen"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Phase changes are physical changes: the water molecules are unchanged. Only their speed and spacing change, not their identity.",
       hintLadder: [
         "Is ice still made of water?",

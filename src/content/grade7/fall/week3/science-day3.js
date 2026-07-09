@@ -49,8 +49,8 @@ export const fallG7ScienceW3D3 = {
       id: "g7.fall.sci.w3.d3.q2",
       type: "multiple_choice",
       stem: "Plant A grows 3.5 cm/week. Plant B grows 13 cm/month. Which grows FASTER? (Use 4 weeks = 1 month.)",
-      choices: ["Plant A", "Plant B", "They grow the same", "You can't compare them"],
-      answerIndex: 0,
+      choices: ["Plant B", "Plant A", "They grow the same", "You can't compare them"],
+      answerIndex: 1,
       explanation: "Plant A: 3.5 cm/week × 4 = 14 cm/month, which beats Plant B's 13 cm/month.",
       hintLadder: [
         "Convert both to the same time unit (per month).",

@@ -41,12 +41,12 @@ export const summerG5WorldW6D4 = {
       type: "multiple_choice",
       stem: "What does 'perspective' mean in a news story?",
       choices: [
-        "An opinion that is always wrong.",
         "The way one person sees things — what they notice and care about.",
+        "An opinion that is always wrong.",
         "A kind of camera.",
         "A made-up story."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A perspective is the way one person sees things. It is not the same as 'wrong' — it is just partial.",
       hintLadder: [
         "Think about where a person is standing.",
@@ -60,11 +60,11 @@ export const summerG5WorldW6D4 = {
       stem: "A story about a factory near a river only quotes the factory owner. What is MISSING?",
       choices: [
         "Nothing — one voice is enough.",
-        "The view of people who live near or use the river.",
+        "Bigger letters.",
         "The factory's logo.",
-        "Bigger letters."
+        "The view of people who live near or use the river."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "One voice is partial. The people who live near or use the river should be heard too.",
       hintLadder: [
         "Who else does the river affect?",
@@ -79,11 +79,11 @@ export const summerG5WorldW6D4 = {
       stem: "Bias is BEST described as:",
       choices: [
         "A plain fact with no feeling.",
-        "A lean toward one side that shapes what gets told and what gets left out.",
         "A kind of error message.",
+        "A lean toward one side that shapes what gets told and what gets left out.",
         "Always telling lies on purpose."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Bias is a lean toward one side. It shapes which facts get in and which get left out — and it is not always on purpose.",
       hintLadder: [
         "Bias shapes which facts make it into a story.",
@@ -175,11 +175,11 @@ export const summerG5WorldW6D4 = {
           stem: "A story about a new skatepark only quotes the mayor, who loves it. What is the BEST way to describe this story?",
           choices: [
             "Complete and fair — one official voice is enough.",
-            "It is lying about the skatepark.",
             "Partial — it is missing views like neighbors, skaters, and nearby stores.",
+            "It is lying about the skatepark.",
             "Useless — ignore it all."
           ],
-          answerIndex: 2,
+          answerIndex: 1,
           explanation: "One voice is not always lying, but the story is partial: it leaves out other views like neighbors, skaters, and local stores.",
           hintLadder: [
             "Is one voice the whole picture?",

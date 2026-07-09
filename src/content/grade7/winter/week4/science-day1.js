@@ -34,8 +34,8 @@ export const winterG7ScienceW4D1 = {
       id: "g7.winter.sci.w4.d1.q1",
       type: "multiple_choice",
       stem: "Roughly what fraction of the solar system's total MASS is held by the Sun?",
-      choices: ["About 10%", "About 50%", "About 99.8%", "About 25%"],
-      answerIndex: 2,
+      choices: ["About 99.8%", "About 50%", "About 10%", "About 25%"],
+      answerIndex: 0,
       explanation: "The Sun holds about 99.8% of the solar system's mass, which is why its gravity dominates every orbit.",
       hintLadder: [
         "The Sun vastly outweighs everything else combined.",
@@ -50,11 +50,11 @@ export const winterG7ScienceW4D1 = {
       stem: "Which statement best describes how planet DISTANCES from the Sun change as you move outward?",
       choices: [
         "Each planet is the same fixed distance farther than the last.",
-        "The distances grow non-linearly — each outer planet is roughly twice as far out as the one before it.",
         "The outer planets are actually closer together than the inner ones.",
+        "The distances grow non-linearly — each outer planet is roughly twice as far out as the one before it.",
         "All eight planets are spaced evenly like rungs on a ladder."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Spacing is non-linear: gaps widen dramatically outward, with each outer planet roughly doubling the previous distance from the Sun.",
       hintLadder: [
         "Are Neptune and Uranus as close together as Mercury and Venus?",
@@ -68,11 +68,11 @@ export const winterG7ScienceW4D1 = {
       stem: "What best explains the difference between the four INNER and four OUTER planets?",
       choices: [
         "The inner planets are large gas giants; the outer ones are small and rocky.",
-        "The inner planets are small, dense, rocky worlds; the outer ones are large gas and ice giants.",
+        "The inner planets have rings; the outer ones do not.",
         "All eight planets are the same size and made of rock.",
-        "The inner planets have rings; the outer ones do not."
+        "The inner planets are small, dense, rocky worlds; the outer ones are large gas and ice giants."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Mercury–Mars are small dense rocky worlds; Jupiter–Neptune are large low-density gas and ice giants separated from the inner worlds by the asteroid belt.",
       hintLadder: [
         "Think about Earth and Mars — rocky or gassy?",

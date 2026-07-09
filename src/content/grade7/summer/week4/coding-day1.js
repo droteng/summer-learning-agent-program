@@ -64,11 +64,11 @@ export const summerG7CodingW4D1 = {
       stem: "For function greet(name) { return \"Hi \" + name }, what is the difference between name and the value \"Leo\" in the call greet(\"Leo\")?",
       choices: [
         "They are the same thing",
-        "name is the PARAMETER in the definition; \"Leo\" is the ARGUMENT passed in the call",
         "\"Leo\" is the parameter and name is the return value",
+        "name is the PARAMETER in the definition; \"Leo\" is the ARGUMENT passed in the call",
         "Both are return values"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A parameter is the named placeholder in the definition; the argument is the actual value supplied when you call the function.",
       hintLadder: [
         "Which word appears inside the function DEFINITION?",

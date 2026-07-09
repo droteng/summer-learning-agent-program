@@ -51,11 +51,11 @@ export const winterG7CodingW8D4 = {
       stem: "You WANT double(n) to return double its input, but you wrote: function double(n) { return n + 2 }. You call double(6). What does it return, and is that the bug?",
       choices: [
         "12 (correctly doubled) — no bug.",
-        "8, because it ADDS 2 instead of multiplying by 2 — that IS the bug; it should be return n * 2.",
         "3, because it divides.",
+        "8, because it ADDS 2 instead of multiplying by 2 — that IS the bug; it should be return n * 2.",
         "It returns nothing / crashes."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "double(6) computes 6 + 2 = 8, not 12. Doubling needs return n * 2 (or n + n). Adding 2 instead of multiplying is the bug.",
       hintLadder: [
         "Substitute n = 6 into n + 2.",

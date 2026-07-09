@@ -35,11 +35,11 @@ export const summerG7ElaW3D3 = {
       stem: "Which sentence contains a METAPHOR (not a simile)?",
       choices: [
         "Her temper was as short as a matchstick.",
-        "The stadium roared like an ocean.",
         "The city was a furnace that August afternoon.",
+        "The stadium roared like an ocean.",
         "He ran as fast as a cheetah."
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "A metaphor states one thing IS another without 'like' or 'as': the city IS a furnace. The other three use 'like' or 'as,' making them similes.",
       hintLadder: [
         "A metaphor does NOT use 'like' or 'as.'",
@@ -53,11 +53,11 @@ export const summerG7ElaW3D3 = {
       stem: "The MOOD of a passage is best defined as:",
       choices: [
         "The number of characters in the scene",
-        "The feeling the writing creates in the reader",
+        "The length of the sentences",
         "The correct spelling of each word",
-        "The length of the sentences"
+        "The feeling the writing creates in the reader"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Mood is the emotional atmosphere the reader feels; tone (the writer's attitude) and imagery are the tools that create it.",
       hintLadder: [
         "Mood is about feeling, not facts.",
@@ -165,11 +165,11 @@ export const summerG7ElaW3D3 = {
           stem: "Which revision best transforms 'It was quiet in the woods' into vivid imagery with figurative language?",
           choices: [
             "The woods were very, very quiet and had no sound at all.",
-            "The woods held their breath; not even a leaf dared to rustle, and the hush pressed against my ears like cotton.",
             "There was quietness in the woods that day.",
+            "The woods held their breath; not even a leaf dared to rustle, and the hush pressed against my ears like cotton.",
             "The woods were quiet, which was nice."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "It personifies the woods, adds a simile ('like cotton'), and uses sensory imagery to build mood; the others merely restate 'quiet.'",
           hintLadder: [
             "Look for a comparison AND a sensory detail.",

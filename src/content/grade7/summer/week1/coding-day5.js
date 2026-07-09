@@ -82,11 +82,11 @@ export const summerG7CodingW1D5 = {
       stem: "In the function define greetExplorer(name): print('Hello, ' + name), what is 'name'?",
       choices: [
         "The function's name",
-        "A parameter — an input the function uses",
         "The output the function returns",
+        "A parameter — an input the function uses",
         "A step that never runs"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "'name' is a parameter: a named input you pass in, which the function then uses inside its steps.",
       hintLadder: [
         "The function is CALLED greetExplorer; 'name' is inside the parentheses.",

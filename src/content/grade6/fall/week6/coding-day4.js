@@ -65,11 +65,11 @@ export const fallG6CodingW6D4 = {
       stem: "To make a spiral that grows, what should change each time through the loop?",
       choices: [
         "Nothing",
-        "A size or distance variable should increase each repeat",
+        "The colors only",
         "The loop should stop after one step",
-        "The colors only"
+        "A size or distance variable should increase each repeat"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Increasing a size/distance variable each loop makes the pattern grow outward.",
       hintLadder: [
         "A spiral gets bigger as it goes.",

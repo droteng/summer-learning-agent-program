@@ -35,12 +35,12 @@ export const winterG6MathW5D1 = {
       type: "multiple_choice",
       stem: "You want to show how the temperature CHANGED hour by hour through one snowy afternoon. Which graph is the best choice?",
       choices: [
-        "A bar graph of unrelated cities",
         "A line graph, because it shows change over time",
+        "A bar graph of unrelated cities",
         "A pie chart of favorite seasons",
         "A single number"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A line graph is built to show how one value changes over time, so hour-by-hour temperature fits it perfectly.",
       hintLadder: [
         "The key word is 'changed... hour by hour' — that means over time.",
@@ -169,12 +169,12 @@ export const winterG6MathW5D1 = {
           type: "multiple_choice",
           stem: "A line graph shows the temperature at -1°C, then 2°C, then 2°C, then -3°C on four days. Which describes the trend?",
           choices: [
-            "It rises, stays flat, then falls",
+            "It stays exactly the same every day",
             "It only rises the whole time",
             "It only falls the whole time",
-            "It stays exactly the same every day"
+            "It rises, stays flat, then falls"
           ],
-          answerIndex: 0,
+          answerIndex: 3,
           explanation: "From −1 to 2 it rises, from 2 to 2 it stays flat, and from 2 to −3 it falls — a rise, then a flat stretch, then a drop.",
           hintLadder: [
             "Compare each value to the one before it.",

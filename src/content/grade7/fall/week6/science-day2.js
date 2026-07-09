@@ -37,11 +37,11 @@ export const fallG7ScienceW6D2 = {
       stem: "A butterfly can be divided by ONE plane into mirror-image halves. This is BEST classified as:",
       choices: [
         "Radial symmetry",
-        "Bilateral (line) symmetry",
         "Rotational symmetry of order 6",
+        "Bilateral (line) symmetry",
         "No symmetry"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A single mirror plane producing two matching halves is bilateral (line) symmetry — the hallmark of directional movers.",
       hintLadder: [
         "How many mirror planes give matching halves — one or many?",

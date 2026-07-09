@@ -55,10 +55,10 @@ export const summerG7ElaW6D3 = {
       choices: [
         "In addition, the city planted more trees.",
         "For example, one park added a garden.",
-        "However, some families worried about the cost.",
-        "First, the council held a meeting."
+        "First, the council held a meeting.",
+        "However, some families worried about the cost."
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "'However' signals a contrast — a shift to a different or opposing point. The others add, illustrate, or sequence.",
       hintLadder: [
         "Which word warns the reader a DIFFERENT view is coming?",
@@ -71,12 +71,12 @@ export const summerG7ElaW6D3 = {
       type: "multiple_choice",
       stem: "You're explaining a world issue to a younger reader. Which introduction is BEST?",
       choices: [
-        "A sentence full of technical jargon with no explanation",
         "A clear sentence naming the issue and why it matters, in simple words",
+        "A sentence full of technical jargon with no explanation",
         "Your personal opinion stated as the only truth",
         "A dramatic headline in all capital letters with no details"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A strong explanatory introduction names the issue and why it matters in language a younger reader can follow — without jargon, bias, or hype.",
       hintLadder: [
         "Remember the reader is younger and new to the topic.",
@@ -165,11 +165,11 @@ export const summerG7ElaW6D3 = {
           stem: "Which transition would BEST connect these two sentences? 'The new law protects wildlife. ___ it also makes some jobs harder to keep.'",
           choices: [
             "For example,",
-            "However,",
             "In the same way,",
+            "However,",
             "Finally,"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "The second sentence introduces an opposing effect, so a contrast transition — 'However,' — fits best.",
           hintLadder: [
             "The second sentence shows a DOWNSIDE, opposite to the first.",

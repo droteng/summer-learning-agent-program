@@ -34,11 +34,11 @@ export const grade6HistoryWeek3Day4 = {
       stem: "What's the role of a 'turning point' in a history story?",
       choices: [
         "It marks the beginning of the story.",
-        "It's an irreversible moment that shapes everything after.",
         "It's the most boring part.",
+        "It's an irreversible moment that shapes everything after.",
         "It always happens first."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Turning points are moments after which the rest of the story can't go back. They reshape what comes next.",
       hintLadder: [
         "What does 'turning point' mean in everyday language?",
@@ -52,11 +52,11 @@ export const grade6HistoryWeek3Day4 = {
       stem: "Which of these is most clearly a TURNING POINT in a story?",
       choices: [
         "A leader is born.",
-        "A treaty is signed that ends a long war.",
+        "A meeting is scheduled.",
         "A document is filed in an archive.",
-        "A meeting is scheduled."
+        "A treaty is signed that ends a long war."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Signing a treaty that ends a war is irreversible and reshapes everything that follows.",
       hintLadder: [
         "Which option causes a major, lasting change?",
@@ -87,12 +87,12 @@ export const grade6HistoryWeek3Day4 = {
       type: "multiple_choice",
       stem: "Which is the BEST opening for a history story about the moon landing?",
       choices: [
-        "On July 20, 1969, two astronauts stepped onto the moon.",
         "By the late 1960s, the U.S. and Soviet Union had been racing to space for over a decade.",
+        "On July 20, 1969, two astronauts stepped onto the moon.",
         "Things happened in 1969.",
         "The moon is a satellite of Earth."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Good openings establish setup. Naming the rivalry that led up to the landing makes the moment feel earned.",
       hintLadder: [
         "Which option gives context that makes the event matter?",
@@ -166,11 +166,11 @@ export const grade6HistoryWeek3Day4 = {
           stem: "Timeline: 1879 — Edison perfects a long-lasting light bulb. 1882 — His company wires the first power station in New York. 1900s — Cities glow at night and factories run after dark. Which event is the TURNING POINT?",
           choices: [
             "Cities glow at night in the 1900s.",
-            "Edison perfects a long-lasting light bulb in 1879.",
             "Factories run after dark.",
+            "Edison perfects a long-lasting light bulb in 1879.",
             "The 1900s in general."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Perfecting the long-lasting bulb is the irreversible moment that made everything after — power stations, glowing cities, night-shift factories — possible. The rest are results that orbit it.",
           hintLadder: [
             "The turning point comes before the results and makes them possible.",

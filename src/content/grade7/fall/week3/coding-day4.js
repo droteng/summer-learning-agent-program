@@ -79,11 +79,11 @@ export const fallG7CodingW3D4 = {
       stem: "A function status(profit) runs: IF profit >= 0 return 'Profit' ELSE return 'Loss'. What does status(-25) return?",
       choices: [
         "'Profit' — because -25 is a number",
-        "'Loss' — because -25 is less than 0",
         "'Profit' — because the ELSE never runs",
+        "'Loss' — because -25 is less than 0",
         "It returns nothing"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "The test profit >= 0 is false for -25, so the ELSE branch runs and returns 'Loss'.",
       hintLadder: [
         "Check the condition: is -25 >= 0?",

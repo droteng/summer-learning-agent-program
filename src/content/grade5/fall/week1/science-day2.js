@@ -72,8 +72,8 @@ export const fallG5ScienceW1D2 = {
       id: "g5.fall.sci.w1.d2.q3",
       type: "multiple_choice",
       stem: "A friend says, 'The geese are flying south because they hate the cold.' What kind of statement is the 'because' part?",
-      choices: ["An observation", "An inference (a guess)", "A measurement", "A unit"],
-      answerIndex: 1,
+      choices: ["An observation", "A measurement", "An inference (a guess)", "A unit"],
+      answerIndex: 2,
       explanation: "Seeing geese fly south is the observation; 'because they hate the cold' is an inference — a guess that explains why.",
       hintLadder: [
         "Which part can you see, and which part is a guess about why?",
@@ -160,10 +160,10 @@ export const fallG5ScienceW1D2 = {
           choices: [
             "The pond has a thin layer of ice this morning.",
             "I counted eleven geese flying south.",
-            "The birds are leaving because they know a storm is coming.",
-            "Three maple leaves fell while I watched."
+            "Three maple leaves fell while I watched.",
+            "The birds are leaving because they know a storm is coming."
           ],
-          answerIndex: 2,
+          answerIndex: 3,
           explanation: "Saying the birds 'know a storm is coming' explains WHY — that is a guess you have not tested. The others are things you directly notice.",
           hintLadder: [
             "An observation is something your senses notice directly.",

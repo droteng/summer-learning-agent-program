@@ -55,11 +55,11 @@ export const winterG7HistoryW4D4 = {
       stem: "Which of these would a historian classify as a PRIMARY SOURCE about the shift to heliocentrism?",
       choices: [
         "A 2020 documentary summarizing the Scientific Revolution.",
-        "Copernicus's own 1543 book On the Revolutions of the Celestial Spheres.",
+        "A recent blog post ranking history's greatest scientists.",
         "A modern encyclopedia entry titled 'Copernicus.'",
-        "A recent blog post ranking history's greatest scientists."
+        "Copernicus's own 1543 book On the Revolutions of the Celestial Spheres."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Copernicus's 1543 book is a firsthand document created by the participant at the time — a primary source. The others interpret events long afterward, making them secondary.",
       hintLadder: [
         "Primary = firsthand, made at the time by a participant.",
@@ -72,12 +72,12 @@ export const winterG7HistoryW4D4 = {
       type: "multiple_choice",
       stem: "Galileo's observation of the FULL set of Venus's phases was powerful evidence because:",
       choices: [
-        "It proved the Moon makes its own light.",
         "The complete cycle of phases fit a Sun-centered model but could not be produced by Ptolemy's geocentric arrangement.",
+        "It proved the Moon makes its own light.",
         "It showed Venus is larger than the Sun.",
         "It had nothing to do with the debate."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Venus showing a full range of phases (including 'full') requires Venus to orbit the Sun — the geocentric model could not produce that pattern, so it was strong evidence for heliocentrism.",
       hintLadder: [
         "Think about what geometry lets us see Venus go through ALL its phases.",
@@ -172,11 +172,11 @@ export const winterG7HistoryW4D4 = {
           stem: "Put these in correct chronological order: (1) Galileo's telescope observations (1609–1610), (2) Ptolemy's Almagest and geocentric model (~150 CE), (3) Copernicus's On the Revolutions (1543), (4) Newton's law of gravity (1687).",
           choices: [
             "1 → 2 → 3 → 4",
-            "2 → 3 → 1 → 4",
             "3 → 2 → 1 → 4",
+            "2 → 3 → 1 → 4",
             "2 → 1 → 3 → 4"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Ptolemy (~150 CE) → Copernicus (1543) → Galileo (1609–1610) → Newton (1687): order 2 → 3 → 1 → 4.",
           hintLadder: [
             "Which is ancient (~150 CE)? That's first.",

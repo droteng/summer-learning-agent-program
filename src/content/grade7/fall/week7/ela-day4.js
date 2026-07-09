@@ -36,11 +36,11 @@ export const fallG7ElaW7D4 = {
       stem: "Which sentence is the STRONGEST evidence-based cause-and-effect claim?",
       choices: [
         "The market grew, and it was autumn.",
-        "Because trade records show shipments tripled, the market grew — more goods meant more sellers and buyers.",
         "The market is large and important.",
+        "Because trade records show shipments tripled, the market grew — more goods meant more sellers and buyers.",
         "Markets and festivals both happen in fall."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Only this option pairs a claim with specific evidence (records showing tripled shipments) AND reasoning (the mechanism linking goods to growth).",
       hintLadder: [
         "Look for claim + evidence + reasoning together.",
@@ -53,12 +53,12 @@ export const fallG7ElaW7D4 = {
       type: "multiple_choice",
       stem: "'Ice cream sales and drowning both rise in summer, so ice cream causes drowning.' What is the flaw?",
       choices: [
-        "The sentence is too short",
         "It treats correlation as causation, ignoring a shared cause (hot weather)",
+        "The sentence is too short",
         "It uses the wrong linking word",
         "There is no flaw"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Both rise because of a third factor — hot weather — so the correlation doesn't prove ice cream causes drowning. That's correlation mistaken for causation.",
       hintLadder: [
         "Do both really cause each other, or share a cause?",
@@ -172,11 +172,11 @@ export const fallG7ElaW7D4 = {
           stem: "Which sentence gives a REAL cause-and-effect explanation instead of mistaking coincidence for cause?",
           choices: [
             "The festival and the first frost both happened in October, so the frost caused the festival.",
-            "Because the harvest came in early, records show the village moved the festival up two weeks — the surplus was ready sooner.",
+            "Cocoa sales and scarf-wearing both rose, so cocoa caused the scarves.",
             "It was autumn, and there was a festival.",
-            "Cocoa sales and scarf-wearing both rose, so cocoa caused the scarves."
+            "Because the harvest came in early, records show the village moved the festival up two weeks — the surplus was ready sooner."
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Only this option pairs a claim with evidence (records) and a mechanism (early harvest ready sooner). The others confuse shared timing or a third cause with real causation.",
           hintLadder: [
             "Rule out any sentence that says 'happened together, so one caused the other.'",

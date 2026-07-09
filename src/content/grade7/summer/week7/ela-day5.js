@@ -35,12 +35,12 @@ export const summerG7ElaW7D5 = {
       type: "multiple_choice",
       stem: "In a claim-evidence-reasoning argument, what is the job of the REASONING?",
       choices: [
-        "To state your position in one sentence",
-        "To list a fact or quote from a source",
         "To explain HOW the evidence supports the claim",
+        "To list a fact or quote from a source",
+        "To state your position in one sentence",
         "To introduce the topic"
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "Reasoning is the bridge that explains why the evidence proves the claim. The claim states the position and the evidence provides the facts; reasoning connects them.",
       hintLadder: [
         "Which part connects the fact to your position?",
@@ -73,11 +73,11 @@ export const summerG7ElaW7D5 = {
       stem: "Why does a strong Grade 7 argument include a COUNTERCLAIM and then answer it?",
       choices: [
         "To confuse the reader",
-        "To show the writer considered other views and to strengthen the argument by responding to them",
         "Because arguments must be as long as possible",
+        "To show the writer considered other views and to strengthen the argument by responding to them",
         "To hide the writer's real opinion"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Acknowledging and answering a counterclaim shows fairness and makes the argument sturdier, because it addresses the strongest objection instead of ignoring it.",
       hintLadder: [
         "What impression does ignoring other views give?",
@@ -172,11 +172,11 @@ export const summerG7ElaW7D5 = {
           stem: "A paragraph reads: 'Vaccines are a major turning point. Records show they wiped out smallpox worldwide. This matters because a disease that once killed millions no longer exists, changing life for whole generations.' Which structure does this paragraph follow?",
           choices: [
             "Evidence, then claim, then counterclaim",
-            "Claim, then evidence, then reasoning",
+            "Claim, then counterclaim, then claim again",
             "Reasoning, then claim, then evidence",
-            "Claim, then counterclaim, then claim again"
+            "Claim, then evidence, then reasoning"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "It opens with the claim (vaccines were a turning point), gives evidence (they wiped out smallpox), then reasoning (why that fact proves the claim). Claim → evidence → reasoning.",
           hintLadder: [
             "Which sentence states the position?",

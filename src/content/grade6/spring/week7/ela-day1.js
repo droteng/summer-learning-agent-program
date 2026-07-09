@@ -36,11 +36,11 @@ export const springG6ElaW7D1 = {
       stem: "Which sentence is a CLAIM about an environmental issue (an arguable position)?",
       choices: [
         "Trees are living things.",
-        "Our city should plant 500 trees downtown to clean the air.",
+        "Rivers contain water.",
         "It rained yesterday.",
-        "Rivers contain water."
+        "Our city should plant 500 trees downtown to clean the air."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "It takes a position about an environmental action that someone could agree or disagree with — that's a claim. The others are facts.",
       hintLadder: [
         "A claim is something you could argue for or against.",
@@ -54,11 +54,11 @@ export const springG6ElaW7D1 = {
       stem: "Why is 'The environment is important' a weak claim for a persuasive essay?",
       choices: [
         "It is too long.",
-        "Almost everyone already agrees with it, so there is nothing to argue and no action to take.",
         "It is a made-up fact.",
+        "Almost everyone already agrees with it, so there is nothing to argue and no action to take.",
         "It has no verb."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A claim needs to be arguable and point to a specific change. A statement everyone already agrees with gives you nothing to persuade about.",
       hintLadder: [
         "Would anyone actually disagree with this sentence?",
@@ -73,11 +73,11 @@ export const springG6ElaW7D1 = {
       stem: "Which is the STRONGEST environmental claim?",
       choices: [
         "Things should get better outside.",
-        "Water is wet.",
         "Our town should protect the wetland near the river instead of building a parking lot there.",
+        "Water is wet.",
         "I like nature."
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "It is specific, takes a clear position, names a real environmental issue (habitat), and can be supported with reasons.",
       hintLadder: [
         "Look for specific + arguable + names a real action.",
@@ -164,12 +164,12 @@ export const springG6ElaW7D1 = {
           type: "multiple_choice",
           stem: "Which sentence is the STRONGEST persuasive claim about the environment?",
           choices: [
-            "The ocean is big.",
-            "I think oceans are cool.",
             "Our town should ban plastic bags at grocery stores to keep them out of the ocean.",
+            "I think oceans are cool.",
+            "The ocean is big.",
             "Fish swim."
           ],
-          answerIndex: 2,
+          answerIndex: 0,
           explanation: "It is specific, takes a clear position, names a real issue (plastic pollution), and can be supported with reasons — the marks of a strong claim. The others are facts or vague preferences.",
           hintLadder: [
             "A strong claim is specific AND arguable.",

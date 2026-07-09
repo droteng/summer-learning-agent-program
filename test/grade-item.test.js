@@ -16,7 +16,11 @@ test("multiple-choice grades correctly and gives the explanation", async () => {
   });
   assert.equal(grade.correct, true);
   assert.equal(grade.score, 1);
-  assert.ok(grade.feedback.startsWith("Correct"));
+  // Praise openers vary by item; the explanation must always be included.
+  assert.ok(
+    mcqItem.explanation ? grade.feedback.includes(mcqItem.explanation.slice(0, 40)) : grade.feedback.length > 0,
+    `feedback should carry the explanation, got: ${grade.feedback}`
+  );
   assert.equal(grade.misconceptionId, null);
   assert.equal(grade.nextHintIndex, -1);
 });

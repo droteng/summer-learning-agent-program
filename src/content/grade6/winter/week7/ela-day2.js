@@ -37,10 +37,10 @@ export const winterG6ElaW7D2 = {
       choices: [
         "It was really, really cold outside.",
         "The cold was very bad that day.",
-        "The frost stung my cheeks and each breath came out as a puff of smoke.",
-        "Everyone agreed it was a cold morning."
+        "Everyone agreed it was a cold morning.",
+        "The frost stung my cheeks and each breath came out as a puff of smoke."
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "It appeals to touch (stinging frost) and sight (breath like smoke), so the reader can feel and see the cold instead of just being told about it.",
       hintLadder: [
         "Which sentence makes you feel or see the cold, not just hear that it was cold?",
@@ -66,8 +66,8 @@ export const winterG6ElaW7D2 = {
       id: "g6.winter.ela.w7.d2.q3",
       type: "multiple_choice",
       stem: "'The wind howled and clawed at the shutters all night.' Which technique gives the wind human-like actions?",
-      choices: ["Simile", "Metaphor", "Personification", "Alliteration"],
-      answerIndex: 2,
+      choices: ["Personification", "Metaphor", "Simile", "Alliteration"],
+      answerIndex: 0,
       explanation: "Howling and clawing are human/animal actions given to the wind — that is personification.",
       hintLadder: [
         "The wind is doing things a living creature would do.",

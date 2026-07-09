@@ -34,8 +34,8 @@ export const fallG5ScienceW2D1 = {
       id: "g5.fall.sci.w2.d1.q1",
       type: "multiple_choice",
       stem: "What do PRODUCERS use to make their own food?",
-      choices: ["Other animals", "Sunlight, water, and air", "Decomposers", "Rocks"],
-      answerIndex: 1,
+      choices: ["Other animals", "Rocks", "Decomposers", "Sunlight, water, and air"],
+      answerIndex: 3,
       explanation: "Producers like plants make their own food using sunlight, water, and air. That is why they start every food chain.",
       hintLadder: [
         "Producers don't eat other living things.",
@@ -156,12 +156,12 @@ export const fallG5ScienceW2D1 = {
           type: "multiple_choice",
           stem: "In the chain acorn → mouse → owl, which one is the PRODUCER?",
           choices: [
-            "The mouse",
-            "The owl",
             "The oak tree that made the acorn",
+            "The owl",
+            "The mouse",
             "There is no producer in this chain"
           ],
-          answerIndex: 2,
+          answerIndex: 0,
           explanation: "The oak tree makes its own food using sunlight, so it (through its acorn) is the producer that starts the chain.",
           hintLadder: [
             "A producer makes its own food from sunlight.",

@@ -49,11 +49,11 @@ export const springG6CodingW2D4 = {
       stem: "In the code 'height = height + rate', what does this single line DO each time it runs?",
       choices: [
         "Sets height back to zero",
-        "Adds the growth rate to the current height and stores the new value",
+        "Doubles the height",
         "Prints the word 'height'",
-        "Doubles the height"
+        "Adds the growth rate to the current height and stores the new value"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "It takes the current height, adds the rate, and saves the result back into height — one day of growth.",
       hintLadder: [
         "Read the right side first: height + rate.",
@@ -82,11 +82,11 @@ export const springG6CodingW2D4 = {
       stem: "Why do programmers use a LOOP to model 20 days of plant growth instead of writing the growth step 20 times?",
       choices: [
         "Loops make the plant grow faster",
-        "A loop repeats one instruction many times, so the code is shorter and easy to change",
         "Loops are the only way to add numbers",
+        "A loop repeats one instruction many times, so the code is shorter and easy to change",
         "There is no reason — writing it 20 times is better"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A loop lets you repeat the same step any number of times with one short block, and you can change the day count easily.",
       hintLadder: [
         "What does a loop let you avoid copying?",
@@ -173,12 +173,12 @@ export const springG6CodingW2D4 = {
           type: "multiple_choice",
           stem: "Two loops model the same plant. Loop A: height = height + 2, run 10 times. Loop B: height = height + 5, run 4 times. Both start at 0. Which plant is taller after the loops finish?",
           choices: [
-            "Loop A's plant (it grew to 20)",
-            "Loop B's plant (it grew to 20)",
             "They tie at 20 cm each",
+            "Loop B's plant (it grew to 20)",
+            "Loop A's plant (it grew to 20)",
             "Loop A's plant, at 25 cm"
           ],
-          answerIndex: 2,
+          answerIndex: 0,
           explanation: "Loop A: 2 × 10 = 20. Loop B: 5 × 4 = 20. Both reach 20 cm, so they tie.",
           hintLadder: [
             "For each loop, multiply the rate by the number of runs.",

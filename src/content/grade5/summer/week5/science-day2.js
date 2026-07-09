@@ -43,12 +43,12 @@ export const summerG5ScienceW5D2 = {
       type: "multiple_choice",
       stem: "What is the FIRST step when you use the design loop?",
       choices: [
-        "Buy the most expensive materials.",
         "Name the problem you want to fix.",
+        "Buy the most expensive materials.",
         "Build the final version right away.",
         "Give up if it is hard."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "If you do not know the problem, building is just guessing. Name the problem first, then work on a fix.",
       hintLadder: [
         "Before you build, you need to know what you are fixing.",
@@ -62,11 +62,11 @@ export const summerG5ScienceW5D2 = {
       stem: "Why do inventors build a cheap prototype before making the real thing?",
       choices: [
         "To make it look fancy.",
-        "To test the idea cheaply before spending a lot.",
         "Because a teacher told them to.",
+        "To test the idea cheaply before spending a lot.",
         "To slow the work down."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A prototype is a cheap, simple test model. If it fails, you did not waste much, and you learned something to make it better.",
       hintLadder: [
         "A prototype is a quick, cheap test model.",
@@ -99,11 +99,11 @@ export const summerG5ScienceW5D2 = {
       stem: "What are \"criteria\" in the design loop?",
       choices: [
         "Random guesses.",
-        "The rules your finished fix must meet.",
+        "A kind of tool.",
         "The name of the inventor.",
-        "A kind of tool."
+        "The rules your finished fix must meet."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Criteria are the must-meet rules, like \"costs less than $5\" or \"holds 10 coins.\" They tell you when your fix is good enough.",
       hintLadder: [
         "How do you know when your fix is good enough?",
@@ -183,11 +183,11 @@ export const summerG5ScienceW5D2 = {
           stem: "Your paper tower falls over at 4 blocks. You want it to hold 8 blocks. You make the base wider AND add tape AND use thicker paper all at once, and now it holds 8. What is the PROBLEM with how you tested?",
           choices: [
             "Nothing -- it worked, so it is fine.",
-            "You changed several things at once, so you cannot tell which change helped.",
+            "Paper towers can never be tested.",
             "You should have stopped at 4 blocks.",
-            "Paper towers can never be tested."
+            "You changed several things at once, so you cannot tell which change helped."
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Changing several things at once breaks the fair-test rule. You cannot tell which change helped, so you cannot repeat it on purpose next time.",
           hintLadder: [
             "Remember the fair-test rule.",

@@ -36,11 +36,11 @@ export const winterG7ElaW7D4 = {
       stem: "A writer wants to spike TENSION at the peak of a scene. Which SENTENCE-VARIETY move does this best?",
       choices: [
         "Writing one very long, flowing sentence packed with clauses",
-        "Following a longer build-up sentence with a short, punchy one ('The ice held. Then it didn't.')",
+        "Removing all punctuation so it runs together",
         "Using the exact same medium sentence length for every line",
-        "Removing all punctuation so it runs together"
+        "Following a longer build-up sentence with a short, punchy one ('The ice held. Then it didn't.')"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A short sentence right after a longer one lands hard and quickens the pace — an intentional variety move that spikes tension.",
       hintLadder: [
         "Tension often comes from a sudden SHORT sentence.",
@@ -73,11 +73,11 @@ export const winterG7ElaW7D4 = {
       stem: "What does it mean to revise a passage 'FOR EFFECT'?",
       choices: [
         "To fix every spelling and punctuation error first",
-        "To decide what feeling you want the reader to have, then change verbs, sentence length, and detail to create it",
         "To make the passage as long as possible",
+        "To decide what feeling you want the reader to have, then change verbs, sentence length, and detail to create it",
         "To replace every word with a fancier synonym"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Revising for effect starts with a target feeling for the reader and shapes the writing choices to produce it — a purposeful, top-level revision strategy.",
       hintLadder: [
         "This kind of revision starts with a GOAL for the reader.",
@@ -170,12 +170,12 @@ export const winterG7ElaW7D4 = {
           type: "multiple_choice",
           stem: "Which passage has been revised BEST for a stronger verb, cut filler, AND sentence variety that spikes tension?",
           choices: [
-            "The wind was very strong and he was really quite cold and he could not feel his fingers anymore at all.",
-            "The wind blew hard and he felt really cold and his fingers were becoming somewhat numb.",
             "The wind clawed at his coat. His fingers went numb. He couldn't stop.",
+            "The wind blew hard and he felt really cold and his fingers were becoming somewhat numb.",
+            "The wind was very strong and he was really quite cold and he could not feel his fingers anymore at all.",
             "The wind was strong, so he was very, very cold, and it was a really bad situation to be in."
           ],
-          answerIndex: 2,
+          answerIndex: 0,
           explanation: "It uses a vivid verb ('clawed'), cuts all filler, SHOWS the cold (numb fingers), and varies with short sentences to spike tension.",
           hintLadder: [
             "Look for vivid verbs and NO filler like 'very' or 'really.'",

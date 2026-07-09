@@ -50,11 +50,11 @@ export const springG5CodingW6D2 = {
       stem: "Rule: IF water is at least 3, THEN the plant grows; ELSE it stays the same. A plant has water = 1. What happens?",
       choices: [
         "It grows, because every plant grows",
-        "It stays the same, because 1 is not at least 3, so the ELSE part runs",
+        "The program stops",
         "It grows twice",
-        "The program stops"
+        "It stays the same, because 1 is not at least 3, so the ELSE part runs"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "1 is not at least 3, so the IF is skipped and the ELSE part (stay the same) runs.",
       hintLadder: [
         "Check the condition: is 1 at least 3?",
@@ -83,11 +83,11 @@ export const springG5CodingW6D2 = {
       stem: "In a SPREAD simulation, the rule is 'IF a square touches a growing square, THEN it starts growing next step.' A square touches NO growing squares. What happens to it?",
       choices: [
         "It starts growing anyway",
-        "It stays the same, because the condition is false",
         "It disappears",
+        "It stays the same, because the condition is false",
         "Every square starts growing at once"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "With no growing square next to it, the condition is false, so the THEN action does not run and the square stays the same.",
       hintLadder: [
         "Check the condition: does it touch a growing square?",
@@ -174,12 +174,12 @@ export const springG5CodingW6D2 = {
           type: "multiple_choice",
           stem: "Rule: 'IF water is at least 5, THEN grow.' A plant has water = exactly 5. What happens?",
           choices: [
-            "It does NOT grow — 5 is not enough",
             "It grows — 'at least 5' means 5 or more, so exactly 5 makes it true",
+            "It does NOT grow — 5 is not enough",
             "It grows twice as much",
             "The rule is broken"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "'At least 5' means 5 or more, so water = 5 makes the condition true and the plant grows.",
           hintLadder: [
             "What does 'at least 5' mean?",

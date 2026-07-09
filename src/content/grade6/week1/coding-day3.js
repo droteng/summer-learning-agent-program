@@ -32,8 +32,8 @@ export const grade6CodingWeek1Day3 = {
       id: "g6.code.w1.d3.q1",
       type: "multiple_choice",
       stem: "What does this code print?\n\nfor i in [1, 2, 3]:\n    print(i * 2)",
-      choices: ["1 2 3", "2 4 6", "1 4 9", "0 2 4"],
-      answerIndex: 1,
+      choices: ["1 2 3", "1 4 9", "2 4 6", "0 2 4"],
+      answerIndex: 2,
       explanation: "The loop runs three times, printing i * 2 each time: 2, 4, 6.",
       hintLadder: [
         "What's the first value of i?",
@@ -62,12 +62,12 @@ export const grade6CodingWeek1Day3 = {
       stem:
         "Which condition matches this rule: \"If a student's score is 80 or higher, they pass.\"",
       choices: [
-        "if score < 80:",
-        "if score == 80:",
         "if score >= 80:",
+        "if score == 80:",
+        "if score < 80:",
         "if score > 80:"
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "\"80 or higher\" includes 80 itself, so use >= (greater than or equal to).",
       hintLadder: [
         "Does 80 itself count as passing?",
@@ -80,8 +80,8 @@ export const grade6CodingWeek1Day3 = {
       id: "g6.code.w1.d3.q4",
       type: "multiple_choice",
       stem: "Find the bug:\n\nfor i in [1, 2, 3]:\n    print(i)\n    i = i + 10\n\nWhat does the code actually print?",
-      choices: ["1 2 3", "11 12 13", "1 11 21", "10 20 30"],
-      answerIndex: 0,
+      choices: ["10 20 30", "11 12 13", "1 11 21", "1 2 3"],
+      answerIndex: 3,
       explanation:
         "The loop reassigns i at the start of each pass, so changing i inside the loop has no lasting effect. The code still prints 1, 2, 3.",
       hintLadder: [

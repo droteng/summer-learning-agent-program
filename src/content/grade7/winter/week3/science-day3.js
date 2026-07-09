@@ -52,12 +52,12 @@ export const winterG7ScienceW3D3 = {
       type: "multiple_choice",
       stem: "A machine has a mechanical advantage of 5. Compared with lifting the load straight up, what happens to your EFFORT force and the DISTANCE you must move it?",
       choices: [
-        "Both the force and the distance are cut to 1/5",
         "The force is cut to 1/5, but you must move it over 5 times the distance",
+        "Both the force and the distance are cut to 1/5",
         "The force is multiplied by 5 and the distance stays the same",
         "The machine removes the work entirely"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Mechanical advantage 5 means 1/5 the force. Because work (force × distance) is conserved, the smaller force must act over 5 times the distance.",
       hintLadder: [
         "Mechanical advantage tells you how much SMALLER the force is.",
@@ -86,11 +86,11 @@ export const winterG7ScienceW3D3 = {
       stem: "You do 300 joules of work pushing a sled up a ramp, but only 240 joules of useful work ends up lifting the sled. Where did the missing 60 joules go?",
       choices: [
         "It was destroyed — energy can just disappear",
-        "It was lost to friction (turned into heat), which is why real machines aren't 100% efficient",
         "The ramp created extra work out of nothing",
+        "It was lost to friction (turned into heat), which is why real machines aren't 100% efficient",
         "It turned into extra mechanical advantage"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Real machines lose some input work to friction, which becomes heat. So the useful work out (240 J) is less than the effort work in (300 J) — the machine is less than 100% efficient.",
       hintLadder: [
         "Energy is never destroyed — so where does 'lost' work go?",

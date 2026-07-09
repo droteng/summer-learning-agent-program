@@ -37,11 +37,11 @@ export const springG7ScienceW4D1 = {
       stem: "What is the difference between GENOTYPE and PHENOTYPE?",
       choices: [
         "Genotype is the observable trait; phenotype is the allele pair",
-        "Genotype is the pair of alleles an organism carries; phenotype is the observable trait",
+        "Genotype only exists in plants; phenotype only in animals",
         "They mean exactly the same thing",
-        "Genotype only exists in plants; phenotype only in animals"
+        "Genotype is the pair of alleles an organism carries; phenotype is the observable trait"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Genotype is the underlying allele pair (like Bb); phenotype is the trait you can observe (like brown eyes). Different genotypes can share a phenotype.",
       hintLadder: [
         "One term is about the hidden alleles, the other about what you can see.",
@@ -55,11 +55,11 @@ export const springG7ScienceW4D1 = {
       stem: "Why does SEXUAL reproduction produce offspring with more genetic variation than ASEXUAL reproduction?",
       choices: [
         "Sexual reproduction copies one parent's genes exactly",
-        "Sexual reproduction combines alleles from two parents, creating new combinations",
         "Asexual reproduction uses two parents",
+        "Sexual reproduction combines alleles from two parents, creating new combinations",
         "Asexual reproduction shuffles alleles more"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Sexual reproduction mixes alleles from two parents, so each offspring inherits a fresh combination. Asexual reproduction copies a single parent, producing near-identical clones.",
       hintLadder: [
         "How many parents contribute alleles in each type?",
@@ -173,12 +173,12 @@ export const springG7ScienceW4D1 = {
           type: "multiple_choice",
           stem: "A gardener clones a prize tomato plant using cuttings (asexual). She also saves its seeds, which formed after cross-pollination with a neighboring plant (sexual). Which prediction is correct?",
           choices: [
-            "Both the cuttings and the seeds will grow into genetically identical copies",
             "The cuttings will be clones of the parent, while the seed-grown plants will vary genetically",
+            "Both the cuttings and the seeds will grow into genetically identical copies",
             "The seeds will be clones, and the cuttings will vary",
             "Neither will resemble the parent at all"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Cuttings are asexual clones, so they are genetically identical to the parent. Seeds come from sexual reproduction (two parents), so those plants inherit a new mix of alleles and vary.",
           hintLadder: [
             "Which method uses one parent, and which uses two?",

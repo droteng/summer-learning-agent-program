@@ -37,10 +37,10 @@ export const winterG7ElaW8D5 = {
       choices: [
         "Today I will tell you about winter.",
         "My project is about heat.",
-        "My tests show that darker surfaces melted snow up to three times faster than lighter ones.",
-        "I did a lot of work this winter."
+        "I did a lot of work this winter.",
+        "My tests show that darker surfaces melted snow up to three times faster than lighter ones."
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "A thesis states a specific, provable point; the others name a topic or effort but make no claim.",
       hintLadder: [
         "A thesis makes a claim, not a topic announcement.",
@@ -54,11 +54,11 @@ export const winterG7ElaW8D5 = {
       stem: "During your talk you use a phrase like 'This result matters because...'. What is that phrase doing?",
       choices: [
         "Filling time",
-        "Acting as a transition that connects evidence back to your thesis",
         "Starting a brand-new unrelated topic",
+        "Acting as a transition that connects evidence back to your thesis",
         "Ending the presentation"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Transitions like 'this matters because' link a piece of evidence back to the main claim so the audience follows your logic.",
       hintLadder: [
         "It connects two ideas — which two?",
@@ -71,12 +71,12 @@ export const winterG7ElaW8D5 = {
       type: "multiple_choice",
       stem: "Mid-presentation you notice your audience looks confused at a technical term. The best move is to...",
       choices: [
-        "Keep going exactly as planned",
         "Pause and briefly define the term in plain language, then continue",
+        "Keep going exactly as planned",
         "Stop the presentation entirely",
         "Talk faster to finish sooner"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Adapting to your audience — defining a term when they look lost — is part of strong delivery and keeps your evidence landing.",
       hintLadder: [
         "Delivery means responding to your audience.",

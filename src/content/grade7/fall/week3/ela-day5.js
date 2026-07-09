@@ -37,12 +37,12 @@ export const fallG7ElaW3D5 = {
       type: "multiple_choice",
       stem: "Which opening states a CLAIM backed by specific EVIDENCE, as a data summary should?",
       choices: [
-        "There were some numbers this season.",
         "Our harvest was profitable, earning a $100 profit on $300 of income against $200 in costs.",
+        "There were some numbers this season.",
         "Math can be tricky sometimes.",
         "I really hope you enjoy this report."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "It makes a clear claim (profitable) and cites the specific figures that support it.",
       hintLadder: [
         "A data summary leads with a claim AND the numbers behind it.",
@@ -75,11 +75,11 @@ export const fallG7ElaW3D5 = {
       stem: "A Grade 7 data summary should acknowledge a COUNTERPOINT or limit. Which sentence does that best?",
       choices: [
         "This proves our farm is the best, period.",
-        "The $120 profit is encouraging, though one good season isn't proof the trend will hold next year.",
+        "We made money, so nothing could go wrong.",
         "Numbers are just numbers.",
-        "We made money, so nothing could go wrong."
+        "The $120 profit is encouraging, though one good season isn't proof the trend will hold next year."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "It states the finding but honestly limits the claim, showing the reader you're not overclaiming from one season.",
       hintLadder: [
         "A counterpoint admits what the data does NOT prove.",

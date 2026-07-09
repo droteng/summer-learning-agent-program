@@ -60,8 +60,8 @@ export const summerG5HistoryW5D5 = {
       id: "g5.summer.hist.w5.d5.q2",
       type: "multiple_choice",
       stem: "The telephone was built most directly on which older invention?",
-      choices: ["The wheel.", "The telegraph.", "The printing press.", "The compass."],
-      answerIndex: 1,
+      choices: ["The wheel.", "The printing press.", "The telegraph.", "The compass."],
+      answerIndex: 2,
       explanation: "The telegraph already sent signals over wires using dots and dashes. The telephone built on that by sending a person's voice over the wires.",
       hintLadder: [
         "Which older invention already sent signals over wires?",
@@ -74,12 +74,12 @@ export const summerG5HistoryW5D5 = {
       type: "multiple_choice",
       stem: "Why did several inventors work on the lightbulb around the SAME time?",
       choices: [
-        "It was just luck.",
         "The materials, the need, and the ideas were finally ready, so many people got close at once.",
+        "It was just luck.",
         "They were all in the same family.",
         "Only one of them was really trying."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "When the conditions are ready, many people in different places can get close to the same invention at the same time.",
       hintLadder: [
         "Why do similar inventions show up at the same time?",
@@ -93,11 +93,11 @@ export const summerG5HistoryW5D5 = {
       stem: "What is the BEST sign that an invention \"changed the world\"?",
       choices: [
         "It was famous.",
-        "It changed how everyday people lived, worked, or talked to each other.",
+        "It looked shiny and cool.",
         "It cost a lot of money.",
-        "It looked shiny and cool."
+        "It changed how everyday people lived, worked, or talked to each other."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A world-changing invention changes daily life for lots of people. Being famous, costly, or shiny does not decide how much it matters.",
       hintLadder: [
         "What does \"changed the world\" mean for regular people?",
@@ -176,12 +176,12 @@ export const summerG5HistoryW5D5 = {
           type: "multiple_choice",
           stem: "Several inventors worked on the lightbulb around the same time in the 1870s. What does this BEST show?",
           choices: [
-            "They all copied one person.",
             "The materials, the need, and the ideas were ready, so many people got close at once.",
+            "They all copied one person.",
             "It was just a coincidence.",
             "Only one person was really trying."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Many inventors got close at the same time because the conditions were finally ready. That is why we see invention races.",
           hintLadder: [
             "Why do similar inventions show up at the same moment?",

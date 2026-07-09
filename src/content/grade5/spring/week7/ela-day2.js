@@ -56,11 +56,11 @@ export const springG5ElaW7D2 = {
       stem: "What is the difference between a REASON and EVIDENCE?",
       choices: [
         "They are exactly the same thing.",
-        "A reason answers 'why?' about your claim; evidence is the fact or example that proves the reason.",
+        "Evidence comes first, then the claim, then the reason.",
         "A reason is always a number; evidence is always a feeling.",
-        "Evidence comes first, then the claim, then the reason."
+        "A reason answers 'why?' about your claim; evidence is the fact or example that proves the reason."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A reason explains why your claim is true. Evidence is the proof (a fact or example) that backs up the reason.",
       hintLadder: [
         "One answers 'why?' and one is the proof.",
@@ -75,11 +75,11 @@ export const springG5ElaW7D2 = {
       stem: "A student's claim is 'Our class should recycle its paper.' Which reason is backed by EVIDENCE?",
       choices: [
         "Recycling is more fun than throwing things away.",
-        "Recycling saves trees — making new paper from old paper uses far fewer trees.",
         "I think everyone should recycle.",
+        "Recycling saves trees — making new paper from old paper uses far fewer trees.",
         "Recycling bins come in cool colors."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "This reason is tied to a real fact about trees. The others are feelings with no proof behind them.",
       hintLadder: [
         "Which reason could you back with a fact?",
@@ -172,12 +172,12 @@ export const springG5ElaW7D2 = {
           type: "multiple_choice",
           stem: "Claim: 'Our town should reduce plastic waste.' Which sentence is the strongest EVIDENCE, not just a reason or a feeling?",
           choices: [
-            "Plastic waste is a big problem for everyone.",
-            "We should really care about this issue.",
             "A lot of plastic trash ends up in the ocean each year, where sea animals can eat it.",
+            "We should really care about this issue.",
+            "Plastic waste is a big problem for everyone.",
             "Plastic is bad and we all know it."
           ],
-          answerIndex: 2,
+          answerIndex: 0,
           explanation: "It is a specific, checkable fact that shows the problem is real. The others are general statements or feelings with no proof.",
           hintLadder: [
             "Evidence is checkable proof.",

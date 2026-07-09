@@ -81,11 +81,11 @@ export const grade6BookClubDay4 = {
       stem: "When the squad has to push the FERMENTED FOODS crate to the probiotics through a swarm of Toxina's army, Leo says 'We don't carry it — we become the path.' What does he mean?",
       choices: [
         "Each kid carries the crate alone in turn.",
-        "They line up shoulder to shoulder, link arms, and shove the crate forward together — the enemies can't stop all of them at once.",
+        "They build a literal bridge out of bones.",
         "They abandon the crate and run away.",
-        "They build a literal bridge out of bones."
+        "They line up shoulder to shoulder, link arms, and shove the crate forward together — the enemies can't stop all of them at once."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Nia calls it 'either brilliant or really stupid.' Leo says 'probably both.' They link arms — Flo too — and charge as one body. It's the book's most direct picture of teamwork.",
       hintLadder: [
         "Re-read the moment Leo proposes the plan.",
@@ -116,11 +116,11 @@ export const grade6BookClubDay4 = {
       stem: "The 'climax' of a story is BEST described as:",
       choices: [
         "The first chapter.",
-        "The story's peak moment of tension where the main conflict comes to a head.",
         "Any happy moment.",
+        "The story's peak moment of tension where the main conflict comes to a head.",
         "The author's introduction."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "The climax is the highest-stakes moment where everything that's been building has to be resolved. For this book, Toxina's temptation in Level 10 is the climax.",
       hintLadder: [
         "Check today's key terms.",

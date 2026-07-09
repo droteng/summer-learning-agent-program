@@ -53,12 +53,12 @@ export const springG7ElaW2D5 = {
       type: "multiple_choice",
       stem: "Which revision best replaces the vague sentence 'The plant grew a lot' with precise, evidence-based language for a report?",
       choices: [
-        "The plant grew a whole bunch, honestly.",
         "The plant increased from 2 cm on Day 1 to 11 cm on Day 6, a gain of 9 cm.",
+        "The plant grew a whole bunch, honestly.",
         "The plant was the best grower of all time.",
         "The plant grew and it was cool to watch."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Precise informational writing uses specific measurements and a clear comparison instead of vague or opinion-based words.",
       hintLadder: [
         "Which choice gives exact numbers instead of vague words?",
@@ -173,11 +173,11 @@ export const springG7ElaW2D5 = {
           stem: "A writer has this sentence: 'Day 1: 0 cm. Day 3: 4 cm. Day 5: 10 cm. Therefore, the seed grew faster in the second half of the week.' Why is this a strong Results/Analysis sentence?",
           choices: [
             "It only lists data with no conclusion",
-            "It cites the specific data AND draws a reasoned conclusion (faster growth later) connected with a transition",
+            "It belongs in the Method because it lists steps",
             "It is an opinion about how pretty the plant is",
-            "It belongs in the Method because it lists steps"
+            "It cites the specific data AND draws a reasoned conclusion (faster growth later) connected with a transition"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "It combines evidence (the measured heights) with an interpretation (growth accelerated) and links them with the transition 'therefore' — exactly what analysis should do.",
           hintLadder: [
             "Does the sentence just list data, or explain what it means?",

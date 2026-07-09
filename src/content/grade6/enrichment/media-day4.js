@@ -38,11 +38,11 @@ export const grade6MediaDay4 = {
       stem: "Which headline shows the OUTRAGE HOOK pattern?",
       choices: [
         "City updates park hours starting Monday.",
-        "OUTRAGEOUS! Parents FURIOUS over new park hours!",
         "Park hours change — see new schedule.",
+        "OUTRAGEOUS! Parents FURIOUS over new park hours!",
         "New park hours posted on city website."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "OUTRAGEOUS + ALL CAPS + 'FURIOUS' is engineered to spike feelings. The other three are neutral.",
       hintLadder: [
         "Which option uses strong feeling words and all caps?",
@@ -57,11 +57,11 @@ export const grade6MediaDay4 = {
         "A claim: 'Crime up 300% in our town!' What's the missing context that could change everything?",
       choices: [
         "The color of the town flag.",
-        "The starting number of incidents.",
+        "What month it is.",
         "How tall the mayor is.",
-        "What month it is."
+        "The starting number of incidents."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "300% of 1 incident is 4. 300% of 1,000 is 4,000. Same multiplier, very different stories.",
       hintLadder: [
         "What does a percentage need to be useful?",
@@ -75,12 +75,12 @@ export const grade6MediaDay4 = {
       type: "multiple_choice",
       stem: "A photo of a crowded protest is shared as 'today's protest.' How do you check the date?",
       choices: [
-        "Trust it.",
         "Reverse image search — see if the photo appears in older articles.",
+        "Trust it.",
         "Look at the photo's color.",
         "Ask the photographer."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Reverse search finds older uses. If the photo appears in 2017 articles, it's not from today.",
       hintLadder: [
         "How do you check a photo's history?",

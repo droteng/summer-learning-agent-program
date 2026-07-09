@@ -13,7 +13,7 @@ import {
 } from "../../src/agents/masteryAgent.js";
 import { createWeeklyParentReportWithLlm } from "../../src/agents/parentLiaisonAgent.js";
 import { createLlm } from "../../src/agents/llm/index.js";
-import { loadConsentRecords, loadProgressSnapshot } from "../../src/data/db.js";
+import { loadConsentRecords, loadFamilyAccount, loadProgressSnapshot } from "../../src/data/db.js";
 import { consentStatusForParent } from "../../src/agents/consentAgent.js";
 import { resolveEntitlement } from "../../src/agents/entitlementAgent.js";
 import { SUBJECT_THEMES, themeForSubject } from "../../src/data/subjectTheme.js";
@@ -43,7 +43,25 @@ export async function loadParentData(args: { studentId?: string; weekNumber?: nu
   const studentId = args.studentId && args.studentId.length > 0 ? args.studentId : "demo-student";
   const weekNumber = args.weekNumber && args.weekNumber > 0 ? args.weekNumber : 1;
 
-  const profile = { ...DEMO_PROFILE, id: studentId };
+  // Resolve the real child (name + grade) from the family account so the
+  // dashboard, weekly report, and program plan match THIS child — not the
+  // hardcoded "Avery / Grade 6" demo profile.
+  let child: any = null;
+  if (args.accountId) {
+    try {
+      const account = await loadFamilyAccount(args.accountId);
+      const children = Array.isArray(account?.children) ? account.children : [];
+      child = children.find((c: any) => c?.id === studentId) ?? null;
+    } catch {
+      /* fall back to demo profile */
+    }
+  }
+  const profile = {
+    ...DEMO_PROFILE,
+    id: studentId,
+    firstName: child?.firstName ?? DEMO_PROFILE.firstName,
+    gradeLevel: Number.isFinite(Number(child?.gradeLevel)) ? Number(child.gradeLevel) : DEMO_PROFILE.gradeLevel
+  };
 
   let progress: any = null;
   try {
@@ -111,19 +129,23 @@ interface MasteryRow {
 }
 
 function buildMasteryView(skillMastery: Record<string, any>): MasteryRow[] {
+  // summarizeMasteryBySubject returns an ARRAY of per-subject rows, so index
+  // it by subject via a Map — `summary[subject]` on an array is always
+  // undefined, which previously made this whole panel read 0/not_started.
   const summary = summarizeMasteryBySubject(skillMastery);
+  const bySubject = new Map(summary.map((row: any) => [row.subject, row]));
   const subjects = Object.keys(SUBJECT_THEMES) as Array<keyof typeof SUBJECT_THEMES>;
   return subjects.map((subject) => {
     const theme = SUBJECT_THEMES[subject];
-    const row = summary[subject] ?? { level: 0, attempts: 0, readiness: "not_started" };
+    const row = bySubject.get(subject);
     return {
       subject,
       label: theme.label,
       monogram: theme.monogram,
       token: theme.token,
-      level: row.level ?? 0,
-      attempts: row.attempts ?? 0,
-      readiness: row.readiness ?? "not_started",
+      level: row?.meanLevel ?? 0,
+      attempts: row?.attempts ?? 0,
+      readiness: row?.readiness ?? "not_started",
       iconSvg: theme.iconSvg,
       patternSvg: theme.patternSvg,
       color: theme.color

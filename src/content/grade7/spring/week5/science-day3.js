@@ -79,12 +79,12 @@ export const springG7ScienceW5D3 = {
       type: "multiple_choice",
       stem: "Five plants measure 10, 11, 10, 12, and 47 cm. One reading was a mismeasurement. Which statement is TRUE about the mean versus the median here?",
       choices: [
-        "The mean (18 cm) is a better 'typical' value than the median",
         "The median (11 cm) better represents a typical plant, because the 47 cm outlier pulls the mean way up",
+        "The mean (18 cm) is a better 'typical' value than the median",
         "The mean and median are equal",
         "The outlier has no effect on either measure"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Mean = (10+11+10+12+47) ÷ 5 = 90 ÷ 5 = 18 cm, dragged up by the 47 cm outlier. Ordered (10, 10, 11, 12, 47), the median is 11 cm, which better matches the typical plant. Outliers move the mean much more than the median.",
       hintLadder: [
         "Compute the mean, then the median of the ordered list.",

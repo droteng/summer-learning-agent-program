@@ -53,12 +53,12 @@ export const fallG6ElaW1D3 = {
       type: "multiple_choice",
       stem: "In the goal 'I'll read 4 books by November BECAUSE I want a bigger vocabulary,' which part is the reason?",
       choices: [
-        "I'll read 4 books",
-        "by November",
         "because I want a bigger vocabulary",
+        "by November",
+        "I'll read 4 books",
         "4 books"
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "The reason is the 'because' clause — it explains why the goal matters.",
       hintLadder: [
         "The reason answers WHY, not what or when.",
@@ -162,11 +162,11 @@ export const fallG6ElaW1D3 = {
           stem: "Which goal is BOTH measurable AND backed by a reason?",
           choices: [
             "I want to do better in science.",
-            "I'll practice multiplication facts so I'm faster.",
             "I'll read for 15 minutes every school night through October because I want chapter books to feel easy.",
+            "I'll practice multiplication facts so I'm faster.",
             "I'll try harder this fall because school matters."
           ],
-          answerIndex: 2,
+          answerIndex: 1,
           explanation: "It has a measurable action (15 minutes every school night through October) AND a genuine 'because' reason. The others miss the measure, the deadline, or both.",
           hintLadder: [
             "Look for a number or deadline you could check.",

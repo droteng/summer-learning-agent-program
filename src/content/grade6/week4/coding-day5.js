@@ -36,11 +36,11 @@ export const grade6CodingWeek4Day5 = {
       stem: "What's the FIRST step when designing a small tool?",
       choices: [
         "Write the code immediately.",
-        "List the inputs and outputs.",
+        "Open the editor.",
         "Pick a programming language.",
-        "Open the editor."
+        "List the inputs and outputs."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Knowing what goes in and what comes out anchors the design. Without inputs/outputs, you don't know what the tool is for.",
       hintLadder: [
         "Before code, what shape does the tool have?",
@@ -54,11 +54,11 @@ export const grade6CodingWeek4Day5 = {
       stem: "You want a tool that takes a list of test scores and gives back the average. What are the inputs?",
       choices: [
         "Just the average.",
-        "A list of scores.",
         "A teacher's name.",
+        "A list of scores.",
         "Nothing."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Inputs are what the user provides. The user provides scores; the tool returns the average.",
       hintLadder: [
         "What does the user give?",
@@ -87,11 +87,11 @@ export const grade6CodingWeek4Day5 = {
       stem: "Which step is best to split further?",
       choices: [
         "Get the user's name.",
-        "Compute the average.",
         "Send a personalized birthday email with the user's photo and recent activity summary.",
+        "Compute the average.",
         "Print the result."
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "The email step is doing several jobs at once: pick template, attach photo, summarize activity, send. Each is its own step.",
       hintLadder: [
         "Which option does multiple jobs in one sentence?",
@@ -181,12 +181,12 @@ export const grade6CodingWeek4Day5 = {
           stem:
             "You're decomposing a 'weather outfit picker' tool. Which step is doing TOO MANY jobs and should be split?",
           choices: [
-            "Ask the user for today's temperature.",
-            "Check if it is below 50 degrees.",
             "Look up the forecast, decide jacket vs t-shirt, pick shoes, and text Mom the plan.",
+            "Check if it is below 50 degrees.",
+            "Ask the user for today's temperature.",
             "Show the chosen outfit."
           ],
-          answerIndex: 2,
+          answerIndex: 0,
           explanation:
             "That option bundles four separate jobs (look up forecast, choose top, choose shoes, send a text). Each should be its own decomposed step.",
           hintLadder: [

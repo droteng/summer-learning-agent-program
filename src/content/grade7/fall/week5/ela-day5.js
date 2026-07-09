@@ -55,11 +55,11 @@ export const fallG7ElaW5D5 = {
       stem: "While revising, you notice your draft NAMES the opposing view but never answers it. What's the best fix?",
       choices: [
         "Delete the opposing view so no one notices it",
-        "Add a rebuttal that concedes what's fair and explains why your claim still holds",
+        "Leave it — naming the other side is enough",
         "Make the opposing view longer and end there",
-        "Leave it — naming the other side is enough"
+        "Add a rebuttal that concedes what's fair and explains why your claim still holds"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A counterargument left unanswered helps the other side. Revising means adding a rebuttal that responds to it, so your claim survives.",
       hintLadder: [
         "A named counterargument needs a response.",
@@ -171,12 +171,12 @@ export const fallG7ElaW5D5 = {
           type: "multiple_choice",
           stem: "A persuasive letter ends: 'Anyway, that's what I think. Bye.' Which revision is the strongest Grade 7 CONCLUSION?",
           choices: [
-            "'Thanks for reading my letter.'",
-            "'I have lots of feelings about this.'",
             "'A fall recycling program would cut our school's waste — the pilot bins already diverted 200 pounds in one week — so please approve it at next Tuesday's school board meeting.'",
+            "'I have lots of feelings about this.'",
+            "'Thanks for reading my letter.'",
             "'The end.'"
           ],
-          answerIndex: 2,
+          answerIndex: 0,
           explanation: "It restates the claim, references the strongest evidence (200 pounds diverted), and ends with a specific, timed call to action — everything a conclusion should do. The others just stop.",
           hintLadder: [
             "A strong conclusion ties back to evidence AND asks for a specific action.",

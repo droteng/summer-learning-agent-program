@@ -55,11 +55,11 @@ export const fallG7HistoryW1D4 = {
       stem: "A historian compares two sources about grain storage: (A) a clay tablet tallying a temple's grain from 3000 BCE, and (B) a modern textbook paragraph. Which statement is most accurate?",
       choices: [
         "The textbook is always more reliable because it is newer.",
-        "The tablet is a primary source created at the time; the textbook is a secondary source that interprets many primary sources.",
         "Both are primary sources.",
+        "The tablet is a primary source created at the time; the textbook is a secondary source that interprets many primary sources.",
         "Neither can tell us anything about the past."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "The tablet was made at the time by people involved (primary source); the textbook was written later and synthesizes evidence (secondary source). Each has different strengths.",
       hintLadder: [
         "A primary source is created during the time being studied.",
@@ -75,10 +75,10 @@ export const fallG7HistoryW1D4 = {
       choices: [
         "Everyone was forced to hunt every day.",
         "Farming was forgotten within a generation.",
-        "Larger settlements with specialized jobs and early governments could develop.",
-        "People immediately abandoned their villages."
+        "People immediately abandoned their villages.",
+        "Larger settlements with specialized jobs and early governments could develop."
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "Stored surplus freed people from daily food-getting, which over several links allowed specialization, denser settlements, and organized governance — the strongest downstream effect.",
       hintLadder: [
         "An effect at the end of the chain should follow from every link before it.",
@@ -171,12 +171,12 @@ export const fallG7HistoryW1D4 = {
           type: "multiple_choice",
           stem: "Which option is the strongest THREE-link cause-and-effect chain in early history?",
           choices: [
-            "Festivals were fun, so people farmed, so winters warmed.",
             "People stored surplus harvest, so some specialized in trade and leadership, so communities developed records and early governments.",
+            "Festivals were fun, so people farmed, so winters warmed.",
             "Towns existed, so farming began, so surplus appeared.",
             "People moved constantly, so they built permanent towns, so they forgot farming."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Option 2 links surplus → specialization → records/governance in the correct forward order, each link actually causing the next. The others reverse or break the chain.",
           hintLadder: [
             "Each link must cause the next, in order.",

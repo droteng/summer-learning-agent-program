@@ -42,12 +42,12 @@ export const summerG5ElaW8D1 = {
       type: "multiple_choice",
       stem: "Which project is the BEST size for a five-day week?",
       choices: [
-        "Write the whole history of all sports.",
         "Make a one-page poster comparing 3 sports and their rules.",
+        "Write the whole history of all sports.",
         "Make every kid in school love your sport.",
         "Become a pro athlete."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A one-page poster on 3 sports is small enough to finish and clear enough to show. The others are too big or aren't really projects.",
       hintLadder: [
         "Cross out anything you could never finish by Friday.",
@@ -62,11 +62,11 @@ export const summerG5ElaW8D1 = {
       stem: "Which check is the WEAKEST (hardest to test)?",
       choices: [
         "Shows at least 2 facts.",
-        "Has one drawing or chart.",
         "Looks really good.",
+        "Has one drawing or chart.",
         "My family can tell me the main idea after one look."
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "'Looks really good' is a feeling — you can't check it yes or no. The others each have a clear test.",
       hintLadder: [
         "Which one can't you check yes or no?",
@@ -80,11 +80,11 @@ export const summerG5ElaW8D1 = {
       stem: "Why do projects need criteria instead of just 'do your best'?",
       choices: [
         "Because it's tradition.",
-        "So you know when you are done and what 'done' means.",
+        "Because criteria make projects harder.",
         "Because teachers like long lists.",
-        "Because criteria make projects harder."
+        "So you know when you are done and what 'done' means."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Criteria turn a fuzzy 'done' into a clear 'done' you can check. Without them, a project either drags on or stops too soon.",
       hintLadder: [
         "How do you know when to stop?",
@@ -176,11 +176,11 @@ export const summerG5ElaW8D1 = {
           stem: "Which capstone is the BEST size for one five-day camp week?",
           choices: [
             "Write and print a 200-page book.",
-            "Make a one-page poster on one topic with 3 facts and a drawing.",
             "Talk to every scientist in the country.",
+            "Make a one-page poster on one topic with 3 facts and a drawing.",
             "Build a real robot from nothing."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "A one-page poster with 3 facts and a drawing is small, finishable in five days, and still a real stretch. The others can't be finished in a week.",
           hintLadder: [
             "Cross out anything you couldn't finish by Friday.",

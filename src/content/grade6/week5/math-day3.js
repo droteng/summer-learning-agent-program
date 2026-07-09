@@ -62,8 +62,8 @@ export const grade6MathWeek5Day3 = {
       type: "multiple_choice",
       stem:
         "Which estimate is reasonable for the height of a typical school door?",
-      choices: ["20 cm", "2 m", "20 m", "200 m"],
-      answerIndex: 1,
+      choices: ["20 cm", "20 m", "2 m", "200 m"],
+      answerIndex: 2,
       explanation: "A door is about 2 m tall. 20 cm is short, 20 m is taller than a building.",
       hintLadder: [
         "How tall are you compared to a door?",

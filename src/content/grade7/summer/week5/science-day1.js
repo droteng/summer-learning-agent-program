@@ -37,11 +37,11 @@ export const summerG7ScienceW5D1 = {
       stem: "A wind turbine produces electricity. Which energy transformation does it MAINLY perform?",
       choices: [
         "Electrical energy into motion energy",
-        "Motion (kinetic) energy into electrical energy",
         "Light energy into chemical energy",
+        "Motion (kinetic) energy into electrical energy",
         "Heat energy into sound energy"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Moving air spins the blades (kinetic energy), and the generator converts that motion into electrical energy. Energy changes form but is not created.",
       hintLadder: [
         "What is the wind physically doing to the blades?",
@@ -74,11 +74,11 @@ export const summerG7ScienceW5D1 = {
       stem: "A solar oven heats food using sunlight. Trace the energy transfer in the correct order.",
       choices: [
         "Electrical → light → sound",
-        "Light (radiant) energy → heat (thermal) energy in the food",
+        "Heat → electrical → motion",
         "Chemical → kinetic → light",
-        "Heat → electrical → motion"
+        "Light (radiant) energy → heat (thermal) energy in the food"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Sunlight is radiant (light) energy; the oven absorbs it and transfers it as thermal (heat) energy that cooks the food.",
       hintLadder: [
         "What kind of energy comes from the sun?",
@@ -173,12 +173,12 @@ export const summerG7ScienceW5D1 = {
           type: "multiple_choice",
           stem: "An e-bike battery gives 100 units of energy, but only 80 units move the bike forward. Where did the other 20 units MOST likely go?",
           choices: [
-            "They were destroyed and no longer exist",
             "They became heat in the motor, wires, and friction",
+            "They were destroyed and no longer exist",
             "They turned back into battery charge",
             "They became extra distance for free"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Energy is conserved. The 'missing' 20 units were transferred to heat (in the motor, wires, and moving parts) — not destroyed.",
           hintLadder: [
             "Energy is never destroyed — it only changes form.",

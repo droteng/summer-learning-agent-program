@@ -37,11 +37,11 @@ export const springG5ScienceW2D1 = {
       stem: "Which THREE things does a plant use to make food by photosynthesis?",
       choices: [
         "Soil, wind, and moonlight",
-        "Sunlight, water, and carbon dioxide",
+        "Sunlight, oxygen, and rocks",
         "Oxygen, sugar, and salt",
-        "Sunlight, oxygen, and rocks"
+        "Sunlight, water, and carbon dioxide"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Photosynthesis uses sunlight for energy, water from the roots, and carbon dioxide from the air.",
       hintLadder: [
         "One thing comes from the sky and gives energy.",
@@ -53,8 +53,8 @@ export const springG5ScienceW2D1 = {
       id: "g5.spring.sci.w2.d1.q2",
       type: "multiple_choice",
       stem: "What gas does a plant let OUT when it makes food?",
-      choices: ["Carbon dioxide", "Nitrogen", "Oxygen", "Smoke"],
-      answerIndex: 2,
+      choices: ["Oxygen", "Nitrogen", "Carbon dioxide", "Smoke"],
+      answerIndex: 0,
       explanation: "Plants take in carbon dioxide and give out oxygen — the gas that animals and people breathe.",
       hintLadder: [
         "It's the gas YOU need to breathe.",

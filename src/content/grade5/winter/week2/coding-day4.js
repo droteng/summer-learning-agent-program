@@ -51,11 +51,11 @@ export const winterG5CodingW2D4 = {
       stem: "In the rule 'temp = temp − 3', what does the variable 'temp' do as the loop repeats?",
       choices: [
         "It stays exactly the same every time",
-        "It gets 3 smaller each time the loop runs",
+        "It resets to zero every loop",
         "It gets 3 bigger each time the loop runs",
-        "It resets to zero every loop"
+        "It gets 3 smaller each time the loop runs"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "The rule takes the current temp and subtracts 3, then stores the smaller number back in temp — so temp drops by 3 each loop.",
       hintLadder: [
         "Read the rule: temp becomes temp MINUS 3.",
@@ -175,12 +175,12 @@ export const winterG5CodingW2D4 = {
           type: "multiple_choice",
           stem: "A loop uses the rule 'IF temp is more than 40, keep subtracting 10; otherwise stop.' Starting at temp = 60, after how many minutes does the loop STOP?",
           choices: [
-            "After 1 minute (temp 50)",
             "After 2 minutes (temp 40), because 40 is not more than 40",
+            "After 1 minute (temp 50)",
             "It never stops",
             "After 6 minutes"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Minute 1: 60 → 50 (50 is more than 40, keep going). Minute 2: 50 → 40. Now 40 is not more than 40, so the loop stops after 2 minutes.",
           hintLadder: [
             "Trace it: 60 → 50 → 40.",

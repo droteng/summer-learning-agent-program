@@ -83,11 +83,11 @@ export const summerG7MathW8D3 = {
       stem: "You measured plant growth for only 4 days on 3 plants. Which claim is DEFENSIBLE from that data?",
       choices: [
         "This fertilizer makes all plants grow faster forever.",
-        "In my small 4-day sample of 3 plants, the fertilized plants grew more, but I'd need more plants and time to be sure.",
         "Fertilizer is proven to be the best product on the market.",
+        "In my small 4-day sample of 3 plants, the fertilized plants grew more, but I'd need more plants and time to be sure.",
         "No plant will ever grow without this fertilizer."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A defensible claim states what the limited data shows AND names its limits (small sample, short time) instead of overreaching.",
       hintLadder: [
         "Which claim matches the SIZE of the data collected?",

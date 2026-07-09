@@ -37,11 +37,11 @@ export const winterG7ScienceW6D1 = {
       stem: "Why do engineers use a WEIGHTED decision matrix instead of just picking the design that wins the most categories?",
       choices: [
         "Because more categories always means a better design",
-        "Because some criteria matter more than others, so they should count for more in the total",
         "Because weighting makes the math take longer",
+        "Because some criteria matter more than others, so they should count for more in the total",
         "Because the first design listed should always win"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Weighting lets the most important criteria influence the final score more, so a design can win overall even if it loses a less important category.",
       hintLadder: [
         "Do all criteria matter equally in a real design?",
@@ -75,10 +75,10 @@ export const winterG7ScienceW6D1 = {
       choices: [
         "The prototype must cost under $20",
         "The prototype must be finished by Friday",
-        "The prototype must keep a cup of water above 0°C for at least 15 minutes",
-        "The prototype may use only cardboard and tape"
+        "The prototype may use only cardboard and tape",
+        "The prototype must keep a cup of water above 0°C for at least 15 minutes"
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "A criterion is a measurable performance goal the solution should achieve; the others are limits (cost, time, materials) — those are constraints.",
       hintLadder: [
         "A criterion describes how WELL it must perform; a constraint is a LIMIT.",

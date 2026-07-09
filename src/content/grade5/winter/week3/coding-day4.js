@@ -66,12 +66,12 @@ export const winterG5CodingW3D4 = {
       type: "multiple_choice",
       stem: "In the loop 'repeat 5 times: position = position + speed', what does the loop do each time it repeats?",
       choices: [
-        "It sets position back to 0",
         "It adds one more 'speed' of distance to the sled's position",
+        "It sets position back to 0",
         "It doubles the position",
         "It stops the sled"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Each repeat adds the sled's speed to its position, moving it forward by one second of distance.",
       hintLadder: [
         "Read the line: position = position + speed.",
@@ -85,11 +85,11 @@ export const winterG5CodingW3D4 = {
       stem: "Two sleds run the SAME number of loop steps. Sled A adds 2 each step. Sled B adds 6 each step. After the loop finishes, what is true?",
       choices: [
         "Both sleds are at the same position",
-        "Sled B is farther ahead because it adds more distance each second (higher speed)",
+        "Neither sled moved",
         "Sled A is farther ahead",
-        "Neither sled moved"
+        "Sled B is farther ahead because it adds more distance each second (higher speed)"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Adding more each step means a higher speed, so over the same number of seconds Sled B goes farther.",
       hintLadder: [
         "The amount added each step is the sled's speed.",
@@ -177,11 +177,11 @@ export const winterG5CodingW3D4 = {
           stem: "You want a sled to speed UP as it goes downhill. Which change to the loop best shows it getting faster each second?",
           choices: [
             "Keep adding the same speed every loop",
-            "Make the speed a little bigger each loop before adding it (like: speed = speed + 1, then position = position + speed)",
             "Set position back to 0 each loop",
+            "Make the speed a little bigger each loop before adding it (like: speed = speed + 1, then position = position + speed)",
             "Stop the loop after one step"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Speeding up means the SPEED itself grows over time. Bumping the speed up each loop before moving shows a sled getting faster downhill.",
           hintLadder: [
             "Speeding up means the SPEED number must change, not just the position.",

@@ -34,12 +34,12 @@ export const grade6ScienceWeek5Day2 = {
       type: "multiple_choice",
       stem: "What's the FIRST step in the engineering design process?",
       choices: [
-        "Build something.",
-        "Buy materials.",
         "Define the problem.",
+        "Buy materials.",
+        "Build something.",
         "Test."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "Without a clear problem definition, building is guessing. Define first.",
       hintLadder: [
         "Before building, you need to know what for.",
@@ -53,11 +53,11 @@ export const grade6ScienceWeek5Day2 = {
       stem: "Why prototype before final build?",
       choices: [
         "To make it look fancy.",
-        "To test ideas cheaply before committing to expensive materials.",
+        "To slow the project down.",
         "Because the rules say so.",
-        "To slow the project down."
+        "To test ideas cheaply before committing to expensive materials."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Prototypes are deliberately cheap and ugly so failure is cheap too. Real builds come after you know what works.",
       hintLadder: [
         "Why test in cheap form first?",
@@ -90,11 +90,11 @@ export const grade6ScienceWeek5Day2 = {
       stem: "What are 'criteria' in engineering design?",
       choices: [
         "Random opinions.",
-        "Conditions the finished design must meet.",
         "Bad weather.",
+        "Conditions the finished design must meet.",
         "Names of the engineers."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Criteria are the must-pass conditions: cost ≤ $5, weight ≤ 100g, launches 5m, etc. They make 'done' concrete.",
       hintLadder: [
         "How do you know when you're done?",
@@ -169,11 +169,11 @@ export const grade6ScienceWeek5Day2 = {
           stem: "Your prototype paper bridge holds 5 coins but the goal is 20. You add thicker paper, fold the deck, AND add supports all at once — then it holds 20. What's the PROBLEM with how you tested?",
           choices: [
             "Nothing — it worked, so it's fine.",
-            "You changed several things at once, so you can't tell which change actually helped.",
+            "Paper bridges can't be tested.",
             "You should have given up after 5 coins.",
-            "Paper bridges can't be tested."
+            "You changed several things at once, so you can't tell which change actually helped."
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Changing several variables at once breaks the fair-test rule — you can't tell which change made the difference, so you can't reliably improve next time.",
           hintLadder: [
             "Remember the fair-test rule from earlier weeks.",

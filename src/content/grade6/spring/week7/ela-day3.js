@@ -36,11 +36,11 @@ export const springG6ElaW7D3 = {
       stem: "Which revision uses the STRONGEST, most precise word choice?",
       choices: [
         "Pollution is bad for the water.",
-        "Oil spills poison rivers and suffocate the fish that live in them.",
         "The water gets kind of messed up sometimes.",
+        "Oil spills poison rivers and suffocate the fish that live in them.",
         "Water stuff is not great."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Precise, powerful verbs ('poison,' 'suffocate') and specific nouns make the writing vivid and convincing. The others are vague.",
       hintLadder: [
         "Look for precise, powerful verbs and specific nouns.",
@@ -72,12 +72,12 @@ export const springG6ElaW7D3 = {
       type: "multiple_choice",
       stem: "Which sentence is the strongest CALL TO ACTION to end an environmental piece?",
       choices: [
-        "In conclusion, the environment is important to think about.",
-        "Thank you for reading my essay.",
         "Bring a reusable bag to the store this week and ask your family to do the same.",
+        "Thank you for reading my essay.",
+        "In conclusion, the environment is important to think about.",
         "There are many issues in the world today."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "A call to action tells the reader a specific, doable next step. The others just summarize or thank the reader.",
       hintLadder: [
         "A call to action tells the reader what to DO.",
@@ -165,11 +165,11 @@ export const springG6ElaW7D3 = {
           stem: "Which sentence BEST combines a counterargument with an answer to it?",
           choices: [
             "Recycling is good and everyone should do it.",
-            "Some say recycling takes too much effort, but sorting a few bins for five minutes a week keeps tons of waste out of landfills.",
+            "Landfills are getting very full these days.",
             "I think recycling is really important.",
-            "Landfills are getting very full these days."
+            "Some say recycling takes too much effort, but sorting a few bins for five minutes a week keeps tons of waste out of landfills."
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "It names the objection ('takes too much effort') and answers it with a benefit, which is exactly how a counterargument works.",
           hintLadder: [
             "Look for the sentence that names the OTHER side, then replies.",

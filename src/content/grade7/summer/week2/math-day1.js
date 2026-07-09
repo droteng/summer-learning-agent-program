@@ -78,11 +78,11 @@ export const summerG7MathW2D1 = {
       stem: "Which table shows a proportional relationship (constant y ÷ x)?",
       choices: [
         "x: 1, 2, 3 → y: 4, 9, 12",
-        "x: 2, 4, 6 → y: 5, 10, 15",
         "x: 1, 2, 3 → y: 3, 5, 7",
+        "x: 2, 4, 6 → y: 5, 10, 15",
         "x: 2, 3, 5 → y: 6, 8, 11"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "For x: 2,4,6 → y: 5,10,15, each ratio y ÷ x = 2.5, so it is proportional. The others have ratios that change from row to row.",
       hintLadder: [
         "Proportional means y ÷ x is the SAME in every row.",
@@ -169,12 +169,12 @@ export const summerG7MathW2D1 = {
           type: "multiple_choice",
           stem: "A proportional relationship has k = 2.5. Which equation and value pair is correct?",
           choices: [
-            "y = 2.5x, and when x = 8, y = 20",
+            "y = 2.5 + x, and when x = 8, y = 10.5",
             "y = 2.5x, and when x = 8, y = 10.5",
             "y = x + 2.5, and when x = 8, y = 20",
-            "y = 2.5 + x, and when x = 8, y = 10.5"
+            "y = 2.5x, and when x = 8, y = 20"
           ],
-          answerIndex: 0,
+          answerIndex: 3,
           explanation: "A proportional relationship is y = k·x, so y = 2.5x. When x = 8: 2.5 × 8 = 20.",
           hintLadder: [
             "Proportional means MULTIPLY by k, not add k.",

@@ -113,11 +113,11 @@ export const grade6BookClubDay5 = {
       stem: "What does 'character arc' BEST describe?",
       choices: [
         "The shape of a character's body.",
-        "How a character changes from the beginning of the story to the end (Leo: foggy and reactive → awake and present).",
+        "The way the book is physically printed.",
         "A bow a character carries.",
-        "The way the book is physically printed."
+        "How a character changes from the beginning of the story to the end (Leo: foggy and reactive → awake and present)."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A character arc is the journey of change — internal growth or decline — across a story.",
       hintLadder: [
         "Look at today's key terms.",

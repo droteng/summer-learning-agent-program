@@ -34,12 +34,12 @@ export const winterG6ScienceW5D3 = {
       type: "multiple_choice",
       stem: "Which statement describes CLIMATE rather than weather?",
       choices: [
-        "A blizzard is dumping snow this afternoon.",
-        "The wind is gusting to 40 km/h right now.",
         "Winters here average about 60 cm of snow over the last 30 years.",
+        "The wind is gusting to 40 km/h right now.",
+        "A blizzard is dumping snow this afternoon.",
         "It dropped to -8°C last night."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "A 30-year average of winter snowfall is a long-term pattern — that's climate. The others are single, short-term events (weather).",
       hintLadder: [
         "Climate is a pattern over many years, not one event.",
@@ -71,11 +71,11 @@ export const winterG6ScienceW5D3 = {
       stem: "A friend says: 'It's freezing today, so climate change can't be real.' What is the mistake in this reasoning?",
       choices: [
         "There is no mistake — one cold day disproves it.",
-        "They are using a single day of WEATHER to judge a long-term CLIMATE trend.",
         "Thermometers are never accurate.",
+        "They are using a single day of WEATHER to judge a long-term CLIMATE trend.",
         "Climate only means summer weather."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "One cold day is weather. Climate trends are measured over decades of averages, so a single day can't prove or disprove them.",
       hintLadder: [
         "Is one day weather or climate?",
@@ -165,11 +165,11 @@ export const winterG6ScienceW5D3 = {
           stem: "Which of these measurements is part of studying CLIMATE, not just today's weather?",
           choices: [
             "Reading the current temperature off a thermometer",
-            "Averaging 30 years of winter temperature records for a region",
+            "Measuring today's wind speed with an anemometer",
             "Checking if it's raining right now",
-            "Measuring today's wind speed with an anemometer"
+            "Averaging 30 years of winter temperature records for a region"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Averaging decades of records reveals the long-term pattern — that's climate. The others are single, in-the-moment weather readings.",
           hintLadder: [
             "Climate needs data over many years.",

@@ -38,11 +38,11 @@ export const winterG5CodingW6D2 = {
       stem: "Rule: IF the temperature is at most 0°C (0 or colder), say 'Freezing — wear a coat.' The temperature is exactly 0°C. What does it say?",
       choices: [
         "Nothing — the rule only works below 0",
-        "'Freezing — wear a coat.' because 0 counts as 'at most 0'",
+        "'It's warm.'",
         "An error message",
-        "'It's warm.'"
+        "'Freezing — wear a coat.' because 0 counts as 'at most 0'"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "'At most 0' means 0 or colder, so exactly 0 makes the rule true and the message shows.",
       hintLadder: [
         "Does 'at most 0' include the number 0 itself?",
@@ -56,12 +56,12 @@ export const winterG5CodingW6D2 = {
       type: "multiple_choice",
       stem: "You want a helper that says 'Coat' when it is cold and 'No coat' when it is not. Which structure fits BEST?",
       choices: [
-        "A single IF with no ELSE",
         "An IF/ELSE with two possible answers",
+        "A single IF with no ELSE",
         "A rule with no condition at all",
         "Two separate programs"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Two answers (coat or no coat) fit an IF/ELSE: the IF handles cold, the ELSE handles not cold.",
       hintLadder: [
         "You have TWO possible answers, coat or no coat.",
@@ -75,11 +75,11 @@ export const winterG5CodingW6D2 = {
       stem: "Rule: IF the temperature is less than 5°C, say 'Coat,' ELSE say 'No coat.' What does it say for 8°C?",
       choices: [
         "'Coat'",
-        "'No coat'",
         "Both 'Coat' and 'No coat'",
+        "'No coat'",
         "Nothing"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Is 8 less than 5? No. So the IF is false and the ELSE runs, giving 'No coat.'",
       hintLadder: [
         "Check the IF: is 8 less than 5?",
@@ -167,12 +167,12 @@ export const winterG5CodingW6D2 = {
           type: "multiple_choice",
           stem: "Rule: IF the temperature is less than 5°C, say 'Warm coat,' ELSE say 'Light jacket.' The temperature is 2°C. What does the helper say?",
           choices: [
-            "'Warm coat'",
             "'Light jacket'",
+            "'Warm coat'",
             "Both messages",
             "Nothing shows"
           ],
-          answerIndex: 0,
+          answerIndex: 1,
           explanation: "Is 2 less than 5? Yes. So the IF is true and it says 'Warm coat.'",
           hintLadder: [
             "Check the IF: is 2 less than 5?",

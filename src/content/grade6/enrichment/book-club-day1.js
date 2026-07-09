@@ -88,12 +88,12 @@ export const grade6BookClubDay1 = {
       type: "multiple_choice",
       stem: "What do Leo, Jamal, and Nia have in common in their real lives BEFORE they enter Leo's body?",
       choices: [
-        "They are all in the same grade.",
-        "They are all only children.",
         "Their parents are all deployed in the military together.",
+        "They are all only children.",
+        "They are all in the same grade.",
         "They have never met before this night."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "All three are military kids whose parents deployed together; Leo's mom is watching all four kids on her own.",
       hintLadder: [
         "Look at the description of the families on the block.",
@@ -124,11 +124,11 @@ export const grade6BookClubDay1 = {
       stem: "Which of the following is the BEST definition of a 'protagonist'?",
       choices: [
         "Any character mentioned in the first chapter.",
-        "The main character whose journey the story follows.",
         "The villain or person causing trouble.",
+        "The main character whose journey the story follows.",
         "A narrator who isn't in the story."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Protagonist = main character driving the story forward. In this book, Leo is the protagonist.",
       hintLadder: [
         "Check today's key terms.",

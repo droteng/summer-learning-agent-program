@@ -53,11 +53,11 @@ export const winterG6HistoryW1D4 = {
       stem: "Before printed calendars, how did many ancient people track the seasons?",
       choices: [
         "They guessed randomly",
-        "By watching the Sun, Moon, and stars in the sky",
+        "They didn't track seasons at all",
         "They used clocks with batteries",
-        "They didn't track seasons at all"
+        "By watching the Sun, Moon, and stars in the sky"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Ancient people observed where the Sun rose, how shadows fell, and which stars appeared to keep track of the seasons and time.",
       hintLadder: [
         "There were no printed calendars or electronic clocks yet.",
@@ -171,11 +171,11 @@ export const winterG6HistoryW1D4 = {
           stem: "Put these in the correct time order as an ancient sky-watcher would experience them across the year: (1) days start getting LONGER again, (2) the winter solstice — shortest day, (3) days get SHORTER heading into winter.",
           choices: [
             "1 → 2 → 3",
-            "3 → 2 → 1",
             "2 → 1 → 3",
+            "3 → 2 → 1",
             "3 → 1 → 2"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "First the days shorten heading into winter (3), then the solstice is the shortest day (2), then the days lengthen again afterward (1): 3 → 2 → 1.",
           hintLadder: [
             "Which comes first — shortening days or the shortest day itself?",

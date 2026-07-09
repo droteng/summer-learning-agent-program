@@ -86,12 +86,12 @@ export const winterG7CodingW3D4 = {
       type: "multiple_choice",
       stem: "You wrote simulate(start, speed, seconds) as a FUNCTION. Why is that better than copying the loop each time you add a new sled?",
       choices: [
-        "Functions delete your other code",
         "You can call the same function with different inputs to simulate any sled, so you write and fix the logic once",
+        "Functions delete your other code",
         "Functions make the numbers random",
         "It forces every sled to have the same speed"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A function packages the loop once. Calling simulate with different start, speed, and seconds reuses that logic for any sled, and a fix in one place fixes them all.",
       hintLadder: [
         "What is the point of writing code once and reusing it?",
@@ -185,11 +185,11 @@ export const winterG7CodingW3D4 = {
           stem: "You want the simulate() function to also DETECT when the sled passes position 100 and stop early. What programming tool best adds that behavior inside the loop?",
           choices: [
             "Nothing — a loop can never stop early",
-            "An IF condition that checks 'if position >= 100' and breaks/returns out of the loop",
             "Deleting the positions list",
+            "An IF condition that checks 'if position >= 100' and breaks/returns out of the loop",
             "Making the speed negative"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "An IF condition tests the position each loop; when 'position >= 100' becomes true, you break or return to stop early — that's conditional logic controlling the loop.",
           hintLadder: [
             "You need the loop to make a DECISION each second.",

@@ -56,8 +56,8 @@ export const summerG5ScienceW5D1 = {
       id: "g5.summer.sci.w5.d1.q2",
       type: "multiple_choice",
       stem: "In the food chain Grass then Grasshopper then Frog, what does the frog eat?",
-      choices: ["Grass", "The grasshopper", "The sun", "Nothing"],
-      answerIndex: 1,
+      choices: ["Grass", "The sun", "The grasshopper", "Nothing"],
+      answerIndex: 2,
       explanation: "The arrows show who eats whom. The frog comes right after the grasshopper, so the frog eats the grasshopper.",
       hintLadder: [
         "Follow the arrows from left to right.",
@@ -70,12 +70,12 @@ export const summerG5ScienceW5D1 = {
       type: "multiple_choice",
       stem: "A pond has fish that eat the mosquitoes. If all the fish disappear, what will most likely happen next?",
       choices: [
-        "There will be fewer mosquitoes.",
         "There will be more mosquitoes because nothing eats them.",
+        "There will be fewer mosquitoes.",
         "The mosquitoes will leave the pond.",
         "Nothing will change at all."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "The fish were eating the mosquitoes and keeping their number down. With no fish, more mosquitoes survive, so there will be more of them.",
       hintLadder: [
         "What did the fish do to the mosquitoes?",

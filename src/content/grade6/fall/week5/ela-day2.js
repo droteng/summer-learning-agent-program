@@ -35,11 +35,11 @@ export const fallG6ElaW5D2 = {
       stem: "Which is the BEST evidence for the claim 'our library should stay open later'?",
       choices: [
         "Libraries are nice.",
-        "A survey showed 40 students need quiet study space after 4 p.m. when the library closes.",
+        "Everybody knows libraries are good.",
         "I think it should.",
-        "Everybody knows libraries are good."
+        "A survey showed 40 students need quiet study space after 4 p.m. when the library closes."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "It's specific and relevant — real data tied directly to the claim.",
       hintLadder: [
         "Strong evidence is specific and relevant.",
@@ -72,11 +72,11 @@ export const fallG6ElaW5D2 = {
       stem: "In persuasive order, what comes right after you state your CLAIM?",
       choices: [
         "The conclusion",
-        "A reason that supports it",
         "An unrelated story",
+        "A reason that supports it",
         "Nothing"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Claim → reason → evidence. The reason explains why the claim is true.",
       hintLadder: [
         "What answers 'why believe this'?",
@@ -163,12 +163,12 @@ export const fallG6ElaW5D2 = {
           type: "multiple_choice",
           stem: "Claim: 'The town should add a fall farmers' market.' Which is the STRONGEST evidence?",
           choices: [
-            "Farmers' markets are great.",
             "A neighboring town's fall market drew 800 shoppers and added $12,000 in sales for local farms last October.",
+            "Farmers' markets are great.",
             "I love apple cider.",
             "Everyone knows markets are fun."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "It's specific, relevant, and uses real numbers tied directly to the claim. The others are vague assertions or personal taste.",
           hintLadder: [
             "Strong evidence is specific and relevant.",

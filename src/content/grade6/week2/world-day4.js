@@ -35,11 +35,11 @@ export const grade6WorldWeek2Day4 = {
       stem: "Country X reports 500 new schools built. To know if that's a lot, you should also ask:",
       choices: [
         "What color the schools are",
-        "How many people live in Country X",
+        "How tall the schools are",
         "What the prime minister's name is",
-        "How tall the schools are"
+        "How many people live in Country X"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Population gives you context. 500 schools in a country of 100,000 vs. 1 billion are very different stories.",
       hintLadder: [
         "What context turns a number from 'a lot' to 'a little'?",
@@ -81,12 +81,12 @@ export const grade6WorldWeek2Day4 = {
       stem:
         "Headline: 'Cyber attacks doubled this year!' What's the most important follow-up question?",
       choices: [
-        "How tall is the building?",
         "What was the starting number — 2 or 2 million?",
+        "How tall is the building?",
         "Who designed the website?",
         "What time was the article written?"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "'Doubled' from 2 is 4 — barely news. 'Doubled' from 2 million is 4 million — a real story. Always ask the baseline.",
       hintLadder: [
         "What does 'doubled' depend on?",

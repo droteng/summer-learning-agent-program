@@ -58,8 +58,8 @@ export const grade6FinanceDay1 = {
       id: "g6.fin.e.d1.q2",
       type: "multiple_choice",
       stem: "True or false: a want is bad, only needs are okay to buy.",
-      choices: ["True", "False"],
-      answerIndex: 1,
+      choices: ["False", "True"],
+      answerIndex: 0,
       explanation: "Wants aren't bad. The skill is choosing them on purpose — after needs are covered.",
       hintLadder: [
         "Are there parts of life that are okay to enjoy?",
@@ -74,12 +74,12 @@ export const grade6FinanceDay1 = {
       stem:
         "Liam has $15. Lunch tomorrow is $5 and he wants $10 for a movie. He spent $12 on the movie. What happened?",
       choices: [
-        "Good plan — fun first.",
         "He covered a want before a need, so he's short for lunch.",
+        "Good plan — fun first.",
         "Nothing — both are wants.",
         "He needs more allowance."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Spending want-first leaves the need unfunded. Need-first protects essentials.",
       hintLadder: [
         "Was lunch a need or want?",

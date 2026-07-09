@@ -36,12 +36,12 @@ export const springG5MathW4D3 = {
       type: "multiple_choice",
       stem: "A Punnett square shows 3 brown-eyed boxes and 1 blue-eyed box. What is the chance of a brown-eyed offspring?",
       choices: [
-        "3 out of 4, or 3/4",
-        "1 out of 4, or 1/4",
         "3 out of 3, or 3/3",
+        "1 out of 4, or 1/4",
+        "3 out of 4, or 3/4",
         "1 out of 3, or 1/3"
       ],
-      answerIndex: 0,
+      answerIndex: 2,
       explanation: "3 of the 4 boxes are brown, so the chance is 3 out of 4, which is the fraction 3/4.",
       hintLadder: [
         "How many boxes are brown, out of how many total?",
@@ -55,11 +55,11 @@ export const springG5MathW4D3 = {
       stem: "In the same square (3 brown, 1 blue), what is the chance of a BLUE-eyed offspring?",
       choices: [
         "3 out of 4, or 3/4",
-        "1 out of 4, or 1/4",
+        "0 out of 4, or 0/4",
         "1 out of 2, or 1/2",
-        "0 out of 4, or 0/4"
+        "1 out of 4, or 1/4"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Only 1 of the 4 boxes is blue, so the chance is 1 out of 4, which is the fraction 1/4.",
       hintLadder: [
         "How many boxes are blue, out of 4?",
@@ -91,12 +91,12 @@ export const springG5MathW4D3 = {
       type: "multiple_choice",
       stem: "A Punnett square shows all 4 boxes with the dominant tall trait. What is the chance that an offspring is tall?",
       choices: [
-        "1 out of 4, or 1/4",
+        "4 out of 4, or a whole (1)",
         "2 out of 4, or 1/2",
         "3 out of 4, or 3/4",
-        "4 out of 4, or a whole (1)"
+        "1 out of 4, or 1/4"
       ],
-      answerIndex: 3,
+      answerIndex: 0,
       explanation: "All 4 boxes are tall, so the chance is 4 out of 4. The fraction 4/4 equals one whole — the offspring is certain to be tall.",
       hintLadder: [
         "How many boxes are tall, out of 4?",

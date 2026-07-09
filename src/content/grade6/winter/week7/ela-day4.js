@@ -34,12 +34,12 @@ export const winterG6ElaW7D4 = {
       type: "multiple_choice",
       stem: "Which revision replaces a weak verb-plus-adverb pair with ONE strong verb?",
       choices: [
-        "'walked very quickly' → 'walked really fast'",
         "'walked quickly' → 'sprinted'",
+        "'walked very quickly' → 'walked really fast'",
         "'sprinted' → 'ran quickly'",
         "'ran' → 'went running'"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "'Sprinted' is a single vivid verb that captures 'walked quickly' more powerfully — that is the goal of strong-verb revision.",
       hintLadder: [
         "Look for the option that gets SHORTER and stronger, not longer.",
@@ -53,11 +53,11 @@ export const winterG6ElaW7D4 = {
       stem: "What is the main difference between REVISING and EDITING?",
       choices: [
         "Revising fixes spelling; editing changes the ideas.",
-        "Revising changes ideas, word choice, and clarity; editing fixes surface errors like spelling and punctuation.",
         "They are exactly the same thing.",
+        "Revising changes ideas, word choice, and clarity; editing fixes surface errors like spelling and punctuation.",
         "Revising is only for poems; editing is only for stories."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Revising improves the writing itself (ideas, wording, clarity); editing cleans up surface mechanics like spelling and punctuation.",
       hintLadder: [
         "One of these is about big changes to the writing; the other about small fixes.",
@@ -73,10 +73,10 @@ export const winterG6ElaW7D4 = {
       choices: [
         "He was freezing cold.",
         "He felt very, very cold.",
-        "He hugged himself and his teeth chattered as he stamped his numb feet.",
-        "He was so cold that it was really bad."
+        "He was so cold that it was really bad.",
+        "He hugged himself and his teeth chattered as he stamped his numb feet."
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "It shows the cold through actions and physical details (chattering teeth, stamping numb feet) instead of just telling us he was cold.",
       hintLadder: [
         "Which one makes you SEE the cold through actions?",
@@ -164,11 +164,11 @@ export const winterG6ElaW7D4 = {
           stem: "Which sentence has been revised BEST for a stronger verb AND show-don't-tell?",
           choices: [
             "The wind was very strong and he was cold.",
-            "The wind blew hard and he felt really cold.",
             "The wind clawed at his coat until he could no longer feel his fingers.",
+            "The wind blew hard and he felt really cold.",
             "The wind was strong, so he was very, very cold."
           ],
-          answerIndex: 2,
+          answerIndex: 1,
           explanation: "It uses a strong, vivid verb ('clawed') and shows the cold through a physical detail (numb fingers) rather than telling us he was cold.",
           hintLadder: [
             "Look for a vivid verb instead of 'was' or 'blew.'",

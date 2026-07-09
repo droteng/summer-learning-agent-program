@@ -41,11 +41,11 @@ export const summerG5HistoryW1D5 = {
       stem: "Which event came first?",
       choices: [
         "The Declaration of Independence (1776)",
-        "The American Revolution begins (1775)",
+        "The U.S. Civil War (1861)",
         "The U.S. Constitution is signed (1787)",
-        "The U.S. Civil War (1861)"
+        "The American Revolution begins (1775)"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "1775 is the earliest year listed. Order: 1775, 1776, 1787, 1861.",
       hintLadder: [
         "Compare the years next to each event.",
@@ -58,12 +58,12 @@ export const summerG5HistoryW1D5 = {
       type: "multiple_choice",
       stem: "A village built a new well in 1820. By 1830, more children went to school. What is the most likely cause?",
       choices: [
-        "Children liked school more in 1830.",
         "The new well meant children spent less time carrying water, so they had more time for school.",
+        "Children liked school more in 1830.",
         "The school was painted a new color.",
         "1830 just happened to be a good year."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "The well took time off a daily chore, which freed up time for school. The other choices do not explain the cause.",
       hintLadder: [
         "Which choice connects the well to going to school?",
@@ -96,11 +96,11 @@ export const summerG5HistoryW1D5 = {
       stem: "Two events happened at the exact same time in two different places. Which is true?",
       choices: [
         "One must have caused the other.",
-        "Neither one caused the other, because they happened at the same time.",
         "They must both come from the same cause.",
+        "Neither one caused the other, because they happened at the same time.",
         "The time does not matter."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "An effect must come AFTER its cause. If two things happened at the same time, one could not have caused the other.",
       hintLadder: [
         "On a timeline, where does the effect always go?",
@@ -182,8 +182,8 @@ export const summerG5HistoryW1D5 = {
           id: "g5.summer.hist.w1.d5.arena1",
           type: "multiple_choice",
           stem: "In The river flooded, so the farmers lost their crops, what is the CAUSE?",
-          choices: ["The farmers", "The crops", "The river flooded", "The season"],
-          answerIndex: 2,
+          choices: ["The river flooded", "The crops", "The farmers", "The season"],
+          answerIndex: 0,
           explanation: "The flood came first and made the crops fail, so it is the cause.",
           hintLadder: [
             "The cause comes first and makes the other thing happen.",

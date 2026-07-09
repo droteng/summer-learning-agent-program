@@ -37,11 +37,11 @@ export const winterG5ElaW3D5 = {
       stem: "What is the goal of PROCEDURAL (how-it-works) writing?",
       choices: [
         "To talk the reader into agreeing with an opinion",
-        "To explain a process in clear, ordered steps a reader can follow or understand",
         "To tell an exciting made-up story",
+        "To explain a process in clear, ordered steps a reader can follow or understand",
         "To describe a character's feelings"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Procedural writing walks a reader through a process step by step so they can follow it or understand how it works.",
       hintLadder: [
         "Think about a recipe or an instruction sheet.",
@@ -54,12 +54,12 @@ export const winterG5ElaW3D5 = {
       type: "multiple_choice",
       stem: "Which sentence uses the CLEAREST, most exact how-it-works language?",
       choices: [
-        "Do the stuff with the ramp thing.",
-        "Put it up somehow.",
         "Next, slide the crate slowly up the ramp until it reaches the top of the platform.",
+        "Put it up somehow.",
+        "Do the stuff with the ramp thing.",
         "Get the crate up there."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "It uses a sequence word ('Next'), an exact verb ('slide'), and clear details a reader can actually follow.",
       hintLadder: [
         "Which one tells you exactly what to do and in what order?",
@@ -168,11 +168,11 @@ export const winterG5ElaW3D5 = {
           stem: "A student's how-it-works paragraph lists the steps in the WRONG order. What is the best fix?",
           choices: [
             "Add more describing words about the machine",
-            "Reorder the steps into the true order and add sequence words (first, next, then, finally)",
+            "Change it into a persuasive essay",
             "Make the paragraph shorter by deleting steps",
-            "Change it into a persuasive essay"
+            "Reorder the steps into the true order and add sequence words (first, next, then, finally)"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "How-it-works writing must follow the real order of the process, and sequence words help the reader keep track of that order.",
           hintLadder: [
             "The main problem is the ORDER of the steps.",

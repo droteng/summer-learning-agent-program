@@ -36,11 +36,11 @@ export const fallG7ElaW8D5 = {
       stem: "In a thesis-driven capstone, what should you do after presenting each featured piece?",
       choices: [
         "Move on silently to the next piece",
-        "Say one sentence tying that piece back to your controlling idea",
         "Introduce a brand-new unrelated topic",
+        "Say one sentence tying that piece back to your controlling idea",
         "Apologize for the piece"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Linking each piece back to the thesis keeps the argument visible so the showcase reads as one unified case, not a list.",
       hintLadder: [
         "How does the audience keep track of your big idea?",
@@ -53,12 +53,12 @@ export const fallG7ElaW8D5 = {
       type: "multiple_choice",
       stem: "Mid-presentation, you notice several audience members look confused. The best ADAPTIVE move is to...",
       choices: [
-        "Speed up to finish sooner",
         "Slow down and re-explain the term or point in simpler words",
+        "Speed up to finish sooner",
         "Ignore them and keep reading",
         "Skip to the closing"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Reading the room and adjusting live — slowing down, re-explaining — is a hallmark of skilled delivery.",
       hintLadder: [
         "What do confused faces tell you?",
@@ -172,11 +172,11 @@ export const fallG7ElaW8D5 = {
           stem: "Which is the BEST way to close a thesis-driven capstone showcase?",
           choices: [
             "Introduce a brand-new fact you forgot earlier.",
-            "Restate your thesis as proven, synthesize how your subjects supported it, and thank the audience.",
+            "Just stop talking and sit down.",
             "Apologize for any mistakes you made.",
-            "Just stop talking and sit down."
+            "Restate your thesis as proven, synthesize how your subjects supported it, and thank the audience."
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "A capstone closing lands the thesis and shows how the pieces proved it — it doesn't add new info, apologize, or trail off.",
           hintLadder: [
             "What should the audience remember as you finish?",

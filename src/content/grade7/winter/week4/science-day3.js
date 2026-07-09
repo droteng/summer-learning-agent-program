@@ -36,11 +36,11 @@ export const winterG7ScienceW4D3 = {
       stem: "Why does the Moon shine in the night sky?",
       choices: [
         "It makes its own light like a small star.",
-        "It reflects light from the Sun.",
         "It glows from heat inside it.",
+        "It reflects light from the Sun.",
         "City lights bounce off it."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "The Moon produces no light of its own; we see the fraction of its surface that is reflecting sunlight toward us.",
       hintLadder: [
         "Is the Moon a star? No.",
@@ -54,12 +54,12 @@ export const winterG7ScienceW4D3 = {
       type: "multiple_choice",
       stem: "Northern winter happens when Earth is actually CLOSEST to the Sun. What does this fact prove about the cause of seasons?",
       choices: [
-        "Seasons must be caused by Earth's changing distance from the Sun.",
         "Seasons cannot be caused by distance — they are caused by Earth's axial tilt and the resulting sunlight angle.",
+        "Seasons must be caused by Earth's changing distance from the Sun.",
         "The Moon must be blocking the Sun in winter.",
         "The Sun must be cooling down in winter."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "If distance caused seasons, being closest to the Sun would make it warmest — but it's winter in the north then. So tilt and sunlight angle, not distance, drive the seasons.",
       hintLadder: [
         "If closer meant warmer, what season should the whole Earth have in January?",
@@ -172,11 +172,11 @@ export const winterG7ScienceW4D3 = {
           stem: "It's June and the Northern Hemisphere has summer. Why does the Southern Hemisphere have winter at the exact same time?",
           choices: [
             "Summer too — the whole Earth shares one season.",
-            "Winter — Earth's fixed tilt means when the north leans toward the Sun, the south leans away, getting low-angle sunlight.",
+            "It depends on how close Earth is to the Sun that month.",
             "Fall — because the Moon blocks the Sun.",
-            "It depends on how close Earth is to the Sun that month."
+            "Winter — Earth's fixed tilt means when the north leans toward the Sun, the south leans away, getting low-angle sunlight."
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "The tilt is fixed, so the hemispheres always lean opposite ways: north toward the Sun (summer) means south away (winter), with weaker, low-angle sunlight.",
           hintLadder: [
             "The two hemispheres always lean opposite ways.",

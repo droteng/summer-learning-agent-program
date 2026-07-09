@@ -54,12 +54,12 @@ export const springG6ScienceW8D2 = {
       type: "multiple_choice",
       stem: "Which correctly orders a flowering plant's LIFE CYCLE?",
       choices: [
-        "Adult plant → seed → sprout → flower",
         "Seed → sprout → adult plant → flower/reproduce → new seeds",
+        "Adult plant → seed → sprout → flower",
         "Flower → seed → death → sprout",
         "Sprout → seed → adult → sprout"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A seed sprouts, grows into an adult, flowers to reproduce, and makes new seeds — the cycle repeats.",
       hintLadder: [
         "Where does a plant's life begin?",
@@ -74,11 +74,11 @@ export const springG6ScienceW8D2 = {
       stem: "A caterpillar in a meadow eats leaves, then becomes a butterfly that pollinates flowers. Which idea BEST captures why the meadow needs it?",
       choices: [
         "Genetics alone",
-        "Its ECOSYSTEM role — it's a consumer AND a pollinator that other organisms depend on",
         "Only its life cycle",
+        "Its ECOSYSTEM role — it's a consumer AND a pollinator that other organisms depend on",
         "Nothing — one insect doesn't matter"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "The organism's role in the ecosystem (consumer and pollinator) links it to the whole web of living things around it.",
       hintLadder: [
         "Think about how it connects to OTHER organisms.",
@@ -173,11 +173,11 @@ export const springG6ScienceW8D2 = {
           stem: "A robin inherits its red breast, builds a nest, lays eggs, eats worms, and is hunted by hawks. Which statement uses ALL FOUR big ideas correctly?",
           choices: [
             "The robin's red breast (genetics) is the only thing that matters.",
-            "The robin inherits traits (genetics), grows and lays eggs (growth + life cycle), and eats worms while feeding hawks (ecosystem).",
+            "The robin's life cycle never repeats.",
             "The robin has no ecosystem role.",
-            "The robin's life cycle never repeats."
+            "The robin inherits traits (genetics), grows and lays eggs (growth + life cycle), and eats worms while feeding hawks (ecosystem)."
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "It links inherited traits, growth, the life cycle (eggs → new robins), and the ecosystem role (eats worms, feeds hawks) — all four ideas together.",
           hintLadder: [
             "Look for the answer that mentions traits, growth, cycle, AND food web.",

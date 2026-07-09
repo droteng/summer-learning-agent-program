@@ -35,8 +35,8 @@ export const grade6MediaDay3 = {
       id: "g6.media.e.d3.q1",
       type: "multiple_choice",
       stem: "Which is a SPONSORSHIP disclosure tag?",
-      choices: ["#happy", "#sponsored", "#school", "#summer"],
-      answerIndex: 1,
+      choices: ["#happy", "#school", "#sponsored", "#summer"],
+      answerIndex: 2,
       explanation: "#sponsored explicitly tells you the post was paid for. The others are not disclosures.",
       hintLadder: [
         "Which tag means 'someone paid for this'?",
@@ -51,11 +51,11 @@ export const grade6MediaDay3 = {
         "A news website shows an article styled exactly like the others, but the byline says 'BrandX Partnership.' What is it?",
       choices: [
         "Regular news.",
-        "Native advertising — paid content made to look like editorial.",
+        "Breaking news.",
         "A typo.",
-        "Breaking news."
+        "Native advertising — paid content made to look like editorial."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Native ads borrow the surrounding format. The byline gives them away.",
       hintLadder: [
         "Brand name in the byline = paid content.",
@@ -70,12 +70,12 @@ export const grade6MediaDay3 = {
       stem:
         "An influencer posts: 'This shampoo changed my hair! No filter!' with no disclosure. Are they required to disclose if they were paid?",
       choices: [
-        "No — they're not on TV.",
         "Yes — FTC rules require disclosing paid endorsements, even on social media.",
+        "No — they're not on TV.",
         "Only if the brand asks.",
         "Only on Sundays."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "The FTC requires clear disclosure of any material connection (payment, free product, family relationship) when endorsing on social media.",
       hintLadder: [
         "Who regulates ads in the US?",
@@ -88,12 +88,12 @@ export const grade6MediaDay3 = {
       type: "multiple_choice",
       stem: "Which is NOT a reason to treat ads with extra care?",
       choices: [
-        "Ads pay for the platform to exist.",
         "Ads are shaped to persuade, not just inform.",
+        "Ads pay for the platform to exist.",
         "Ads may stretch what evidence supports.",
         "All of the above are reasons."
       ],
-      answerIndex: 0,
+      answerIndex: 1,
       explanation:
         "That ads pay for the platform is true but not a reason for extra care. The other reasons ARE. The trick: this question asks for the option that is NOT a caution reason.",
       hintLadder: [

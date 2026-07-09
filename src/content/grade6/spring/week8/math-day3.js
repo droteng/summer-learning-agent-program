@@ -64,11 +64,11 @@ export const springG6MathW8D3 = {
       stem: "Your daily sprout counts were 10, 11, 12, 11, 90. Which statistic gives the most HONEST 'typical day,' and why?",
       choices: [
         "The mean, because it uses every number",
-        "The median, because the 90 is an outlier that pulls the mean too high",
+        "The 90, because it's the most exciting",
         "The range, because it's the biggest number",
-        "The 90, because it's the most exciting"
+        "The median, because the 90 is an outlier that pulls the mean too high"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "The 90 is an outlier. The mean would be dragged up by it (about 26.8), but the median (11) reflects a typical day honestly.",
       hintLadder: [
         "One value (90) is very different from the rest.",

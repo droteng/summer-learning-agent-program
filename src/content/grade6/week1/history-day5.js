@@ -33,12 +33,12 @@ export const grade6HistoryWeek1Day5 = {
       type: "multiple_choice",
       stem: "Which event came first?",
       choices: [
-        "U.S. Civil War (1861)",
         "American Revolution begins (1775)",
+        "U.S. Civil War (1861)",
         "U.S. Constitution signed (1787)",
         "Declaration of Independence (1776)"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "1775 is the earliest of the listed years. Order: 1775, 1776, 1787, 1861.",
       hintLadder: [
         "Compare the years next to each event.",
@@ -74,11 +74,11 @@ export const grade6HistoryWeek1Day5 = {
         "Which is an example of a long-term cause (a slow build-up rather than a sudden event)?",
       choices: [
         "A volcano erupting on a Tuesday",
-        "Years of drought slowly drying up a river",
+        "A bell ringing at the end of class",
         "A short rainstorm",
-        "A bell ringing at the end of class"
+        "Years of drought slowly drying up a river"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Drought over many years is a slow, building cause. The others happen suddenly.",
       hintLadder: [
         "Long-term means it built up over time.",
@@ -93,11 +93,11 @@ export const grade6HistoryWeek1Day5 = {
         "Two events happened on the same day in different countries. Which is true?",
       choices: [
         "One must have caused the other.",
-        "Neither directly caused the other if they happened at the same time.",
         "Both effects must come from the same cause.",
+        "Neither directly caused the other if they happened at the same time.",
         "It doesn't matter when they happened."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation:
         "An effect must come after its cause. If two things happened simultaneously, one cannot have directly caused the other.",
       hintLadder: [
@@ -184,8 +184,8 @@ export const grade6HistoryWeek1Day5 = {
           id: "g6.hist.w1.d5.arena1",
           type: "multiple_choice",
           stem: "In 'The river flooded, so the farmers lost their crops,' what is the CAUSE?",
-          choices: ["The farmers", "The crops", "The river flooded", "The season"],
-          answerIndex: 2,
+          choices: ["The river flooded", "The crops", "The farmers", "The season"],
+          answerIndex: 0,
           explanation: "The flooding came first and made the crops fail — it's the cause.",
           hintLadder: [
             "The cause comes first and makes the other thing happen.",

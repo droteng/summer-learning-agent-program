@@ -37,11 +37,11 @@ export const springG5HistoryW4D4 = {
       stem: "What did Gregor Mendel grow and study to learn about traits?",
       choices: [
         "Fruit flies",
-        "Pea plants",
+        "Fish",
         "Mice",
-        "Fish"
+        "Pea plants"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Mendel grew and counted the traits of thousands of pea plants over many years.",
       hintLadder: [
         "He worked in a garden.",
@@ -54,12 +54,12 @@ export const springG5HistoryW4D4 = {
       type: "multiple_choice",
       stem: "Why is Gregor Mendel remembered as the 'father of genetics'?",
       choices: [
-        "He invented the telescope",
         "He discovered the first rules for how traits pass from parents to offspring",
+        "He invented the telescope",
         "He built the first DNA model",
         "He named all the planets"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Mendel's pea experiments showed the first rules of how traits are passed down, so he is called the father of genetics.",
       hintLadder: [
         "Think about what he actually discovered.",
@@ -73,11 +73,11 @@ export const springG5HistoryW4D4 = {
       stem: "What happened to Mendel's discovery while he was still alive?",
       choices: [
         "It made him famous right away",
-        "Almost no one paid attention to it, and it was found again years later",
         "It was used to build the first car",
+        "Almost no one paid attention to it, and it was found again years later",
         "It was proven totally wrong"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "People overlooked Mendel's work while he lived. About 30 years later, other scientists found it again and saw how important it was.",
       hintLadder: [
         "Was he famous right away?",

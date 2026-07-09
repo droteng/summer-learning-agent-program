@@ -35,12 +35,12 @@ export const springG6HistoryW7D5 = {
       type: "multiple_choice",
       stem: "What does CONSERVATION mean?",
       choices: [
-        "Using up natural resources as fast as possible",
         "Protecting nature and using resources wisely so they last for the future",
+        "Using up natural resources as fast as possible",
         "Building as many factories as you can",
         "Ignoring the environment completely"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Conservation is about protecting nature and using resources carefully so they are still there for future generations.",
       hintLadder: [
         "The word is about 'conserving' — saving something.",
@@ -54,11 +54,11 @@ export const springG6HistoryW7D5 = {
       stem: "Which was the world's FIRST national park, created in 1872?",
       choices: [
         "The Grand Canyon",
-        "Yellowstone",
+        "The Amazon Rainforest",
         "Central Park",
-        "The Amazon Rainforest"
+        "Yellowstone"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Yellowstone, established in 1872, was the world's first national park — wild land set aside to be protected forever.",
       hintLadder: [
         "It is a famous park known for geysers like Old Faithful.",
@@ -165,11 +165,11 @@ export const springG6HistoryW7D5 = {
           stem: "Put these conservation milestones in the correct time order (earliest first): (1) the first Earth Day in 1970, (2) Yellowstone becomes the first national park in 1872, (3) Rachel Carson publishes 'Silent Spring' in 1962.",
           choices: [
             "1 → 2 → 3",
-            "2 → 3 → 1",
             "3 → 1 → 2",
+            "2 → 3 → 1",
             "2 → 1 → 3"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Yellowstone (1872) came first, then 'Silent Spring' (1962), then the first Earth Day (1970): 2 → 3 → 1.",
           hintLadder: [
             "Which year is the earliest — 1872, 1962, or 1970?",

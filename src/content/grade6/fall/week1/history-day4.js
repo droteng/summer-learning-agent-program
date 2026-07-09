@@ -55,10 +55,10 @@ export const fallG6HistoryW1D4 = {
       choices: [
         "not enough food",
         "exactly enough food",
-        "more food than needed right now",
-        "spoiled food"
+        "spoiled food",
+        "more food than needed right now"
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "A surplus is extra — more than is needed immediately — which can be stored or traded.",
       hintLadder: [
         "Break the word: 'sur-plus' hints at 'extra.'",
@@ -73,11 +73,11 @@ export const fallG6HistoryW1D4 = {
       stem: "Which is an EFFECT of having stored surplus food?",
       choices: [
         "People had to hunt every single day.",
-        "Some people could become builders, traders, or leaders.",
         "Everyone moved away.",
+        "Some people could become builders, traders, or leaders.",
         "Farming was forgotten."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "With food stored, not everyone needed to gather it, so people could specialize in other jobs.",
       hintLadder: [
         "An effect is what HAPPENS BECAUSE of the cause.",
@@ -164,12 +164,12 @@ export const fallG6HistoryW1D4 = {
           type: "multiple_choice",
           stem: "Which is the best example of a CAUSE leading to an EFFECT in early history?",
           choices: [
-            "Towns existed, so people decided to invent farming.",
             "People learned to store surplus harvest, so some could specialize in other jobs.",
+            "Towns existed, so people decided to invent farming.",
             "Festivals were fun, so winters became warmer.",
             "People moved constantly, so they built permanent towns."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Stored surplus (cause) freed people from gathering food, so they could specialize (effect). The other options reverse or break the cause-effect link.",
           hintLadder: [
             "The cause must come first and actually produce the effect.",

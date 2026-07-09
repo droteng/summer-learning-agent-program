@@ -37,11 +37,11 @@ export const springG6ElaW8D1 = {
       stem: "Which capstone SCOPE is best focused for a one-week project?",
       choices: [
         "Explain every living thing on Earth.",
-        "Show how one caterpillar becomes a butterfly and why each stage matters.",
+        "Describe the entire history of biology.",
         "Cover all of science.",
-        "Describe the entire history of biology."
+        "Show how one caterpillar becomes a butterfly and why each stage matters."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A single, well-chosen example (one caterpillar's life cycle) is deep enough to be rich and narrow enough to finish well.",
       hintLadder: [
         "A good scope is focused, not endless.",
@@ -73,12 +73,12 @@ export const springG6ElaW8D1 = {
       type: "multiple_choice",
       stem: "Which is a good SUCCESS CRITERION for a renewal-themed capstone?",
       choices: [
-        "Try my best.",
-        "Make it nice.",
         "Shows a complete life cycle with every stage clearly labeled.",
+        "Make it nice.",
+        "Try my best.",
         "Finish someday."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "A success criterion is specific and checkable — you can look and see whether every stage is labeled. 'Try my best' can't be checked.",
       hintLadder: [
         "A criterion has to be something you can CHECK.",
@@ -173,11 +173,11 @@ export const springG6ElaW8D1 = {
           stem: "A student writes this capstone plan: 'I'll explain nature.' What is the BIGGEST problem?",
           choices: [
             "It's too specific.",
-            "The scope is far too broad — 'nature' can't be covered in one project.",
             "It names too many success criteria.",
+            "The scope is far too broad — 'nature' can't be covered in one project.",
             "It picks the wrong audience."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "The scope is the problem: 'nature' is limitless. A strong capstone narrows to one focused system or story.",
           hintLadder: [
             "Could anyone finish a project about all of 'nature'?",

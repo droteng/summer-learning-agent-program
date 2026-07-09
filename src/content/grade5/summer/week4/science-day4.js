@@ -35,8 +35,8 @@ export const summerG5ScienceW4D4 = {
       id: "g5.summer.sci.w4.d4.q1",
       type: "multiple_choice",
       stem: "What does an AI learn from?",
-      choices: ["Magic", "Its programmer's feelings", "Lots of examples (its training data)", "Random lucky guesses"],
-      answerIndex: 2,
+      choices: ["Magic", "Its programmer's feelings", "Random lucky guesses", "Lots of examples (its training data)"],
+      answerIndex: 3,
       explanation: "AI learns patterns from many examples. Not magic, not feelings, not luck.",
       hintLadder: [
         "What does the AI look at while it is training?",
@@ -50,11 +50,11 @@ export const summerG5ScienceW4D4 = {
       stem: "An AI that spots weeds was trained only on photos taken on SUNNY days. On a cloudy day it misses most weeds. Why?",
       choices: [
         "AIs only work when it's sunny.",
-        "Its examples were all sunny, so cloudy photos look new and strange to it.",
         "Weeds hide when it's cloudy.",
+        "Its examples were all sunny, so cloudy photos look new and strange to it.",
         "The AI got tired."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "The AI never saw cloudy examples, so cloudy photos don't match what it learned.",
       hintLadder: [
         "What did ALL the training photos have in common?",
@@ -68,12 +68,12 @@ export const summerG5ScienceW4D4 = {
       type: "multiple_choice",
       stem: "Which would most help the weed-spotting AI get better?",
       choices: [
-        "More photos of the same weed on sunny days.",
         "Photos in many kinds of weather and from different angles.",
+        "More photos of the same weed on sunny days.",
         "A faster computer.",
         "Asking the AI politely."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Variety in the examples helps the AI handle new situations. The same photo again and again adds nothing new.",
       hintLadder: [
         "The AI is missing certain kinds of days.",

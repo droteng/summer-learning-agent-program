@@ -69,8 +69,8 @@ export const summerG5WorldW2D4 = {
       type: "multiple_choice",
       stem:
         "Two headlines:\n A: '100 new trees planted this month'\n B: '100 new trees planted today'\nWhich shows faster planting?",
-      choices: ["A is faster", "B is faster", "They are the same", "Cannot tell"],
-      answerIndex: 1,
+      choices: ["A is faster", "They are the same", "B is faster", "Cannot tell"],
+      answerIndex: 2,
       explanation: "100 trees in one day is faster than 100 trees spread across a whole month.",
       hintLadder: [
         "How long did each one take?",
@@ -85,12 +85,12 @@ export const summerG5WorldW2D4 = {
       stem:
         "Headline: 'Lost pets found doubled this year!' What is the most important follow-up question?",
       choices: [
-        "How tall is the animal shelter?",
         "What was the starting number — 3 or 3,000?",
+        "How tall is the animal shelter?",
         "Who painted the shelter?",
         "What time was the story written?"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "'Doubled' from 3 is only 6 — barely news. 'Doubled' from 3,000 is 6,000 — a big story. Always ask the starting number.",
       hintLadder: [
         "What does the word 'doubled' depend on?",

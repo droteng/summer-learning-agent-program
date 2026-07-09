@@ -36,11 +36,11 @@ export const springG5ScienceW4D2 = {
       stem: "Which version of a trait will SHOW UP even if there is only ONE copy of it?",
       choices: [
         "The recessive (hidden) version",
-        "The dominant (stronger) version",
+        "Both show equally",
         "Neither one",
-        "Both show equally"
+        "The dominant (stronger) version"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "The dominant (stronger) version shows up with just one copy. The recessive (hidden) trait only shows when both copies are hidden.",
       hintLadder: [
         "One version is 'stronger' and shows up with a single copy.",
@@ -54,11 +54,11 @@ export const springG5ScienceW4D2 = {
       stem: "For the hidden (recessive) trait, like blue eyes (bb), to SHOW, the child must get...",
       choices: [
         "a hidden version from just one parent",
-        "a hidden version from BOTH parents",
         "one stronger version",
+        "a hidden version from BOTH parents",
         "no versions at all"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A hidden trait only shows when BOTH copies are hidden (bb), so the child must get a hidden version from each parent.",
       hintLadder: [
         "A hidden trait stays hidden if there is a stronger version around.",

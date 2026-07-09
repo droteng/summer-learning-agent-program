@@ -49,11 +49,11 @@ export const springG6CodingW6D2 = {
       stem: "Rule: IF water >= 3, THEN the plant grows; ELSE it stays the same. A plant has water = 1. What happens?",
       choices: [
         "It grows, because every plant grows",
-        "It stays the same, because 1 >= 3 is false so the ELSE runs",
         "It grows twice",
+        "It stays the same, because 1 >= 3 is false so the ELSE runs",
         "The simulation stops"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "1 >= 3 is false, so the IF is skipped and the ELSE branch (stay the same) runs.",
       hintLadder: [
         "Check the condition: is 1 >= 3?",
@@ -82,11 +82,11 @@ export const springG6CodingW6D2 = {
       stem: "In a SPREAD simulation, the rule is 'IF a square has an infected neighbor, THEN it becomes infected next step.' A healthy square has zero infected neighbors. What happens to it?",
       choices: [
         "It becomes infected anyway",
-        "It stays healthy, because the condition is false",
+        "All squares become infected at once",
         "It disappears",
-        "All squares become infected at once"
+        "It stays healthy, because the condition is false"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "With no infected neighbor the condition is false, so the THEN action doesn't run and the square stays healthy.",
       hintLadder: [
         "Check the condition: does it have an infected neighbor?",
@@ -173,12 +173,12 @@ export const springG6CodingW6D2 = {
           type: "multiple_choice",
           stem: "Rule: 'IF water >= 5, THEN grow.' A plant has water exactly = 5. What happens?",
           choices: [
-            "It does NOT grow — 5 is not enough",
             "It grows — '>=' means 'greater than or equal to', so exactly 5 makes the condition true",
+            "It does NOT grow — 5 is not enough",
             "It grows twice as much",
             "The rule is invalid"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "'>=' means greater than OR equal to, so water = 5 satisfies 'water >= 5' and the plant grows.",
           hintLadder: [
             "What does the '=' in '>=' mean?",

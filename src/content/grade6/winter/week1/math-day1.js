@@ -33,8 +33,8 @@ export const winterG6MathW1D1 = {
       id: "g6.winter.math.w1.d1.q1",
       type: "multiple_choice",
       stem: "In the snowfall total 6,529 cm, what is the value of the digit 5?",
-      choices: ["5 tens", "5 hundreds", "5 thousands", "5 ones"],
-      answerIndex: 1,
+      choices: ["5 tens", "5 thousands", "5 hundreds", "5 ones"],
+      answerIndex: 2,
       explanation: "In 6,529 the 5 sits in the hundreds place, so its value is 5 hundreds (500).",
       hintLadder: [
         "Name each place from the right: ones, tens, hundreds, thousands.",
@@ -74,8 +74,8 @@ export const winterG6MathW1D1 = {
       id: "g6.winter.math.w1.d1.q4",
       type: "multiple_choice",
       stem: "Four towns reported snowfall: Frostville 2,910 cm, Icehaven 2,901 cm, Snowridge 2,199 cm, Glacier Bay 2,091 cm. Which town had the MOST snow?",
-      choices: ["Frostville", "Icehaven", "Snowridge", "Glacier Bay"],
-      answerIndex: 0,
+      choices: ["Glacier Bay", "Icehaven", "Snowridge", "Frostville"],
+      answerIndex: 3,
       explanation: "Compare place by place. All start with 2 thousands. In the hundreds place Frostville and Icehaven have 9; then in the tens Frostville has 1 and Icehaven has 0, so Frostville (2,910) is greatest.",
       hintLadder: [
         "Compare the thousands digit first — they're all 2.",

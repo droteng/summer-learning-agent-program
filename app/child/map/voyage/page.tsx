@@ -549,9 +549,10 @@ async function loadProgressSafely(studentId: string) {
   }
 }
 
-// Item shape sent to the client. Server-only answer fields are included so
-// /api/grade-item can grade — acceptable for the MVP since the answer key is
-// already in the server bundle for authored missions.
+// Item shape sent to the client. Answer fields (answerIndex, answer,
+// explanation, exemplar, rubric) stay on the server — /api/grade-item
+// resolves the canonical item by id, so a kid reading the page source or
+// network tab can't find the answer key.
 function clientItem(item: any) {
   return {
     id: item.id,
@@ -559,14 +560,7 @@ function clientItem(item: any) {
     stem: item.stem,
     choices: item.choices,
     unit: item.unit,
-    hintLadder: item.hintLadder,
-    answerIndex: item.answerIndex,
-    answer: item.answer,
-    tolerance: item.tolerance,
-    explanation: item.explanation,
-    misconceptionsTargeted: item.misconceptionsTargeted,
-    rubric: item.rubric,
-    exemplar: item.exemplar
+    hintLadder: item.hintLadder
   };
 }
 

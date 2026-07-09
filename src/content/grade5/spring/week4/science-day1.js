@@ -73,10 +73,10 @@ export const springG5ScienceW4D1 = {
       choices: [
         "A scar from a scratch",
         "A dog trick learned in training",
-        "The natural color of a flower's petals",
-        "A haircut"
+        "A haircut",
+        "The natural color of a flower's petals"
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "Petal color is inherited from the parent plant, so the plant is born with it. Scars, tricks, and haircuts happen during life — they are not inherited.",
       hintLadder: [
         "Inherited traits come from the parents, not from things that happen later.",
@@ -167,11 +167,11 @@ export const springG5ScienceW4D1 = {
           stem: "A gardener bends a young tree's trunk into a curve as it grows. The tree makes seeds. Will the baby trees be born curved?",
           choices: [
             "Yes, because the parent tree was curved",
-            "No, because the curve happened during the tree's life — it is not an inherited trait",
             "Yes, because all traits are inherited",
+            "No, because the curve happened during the tree's life — it is not an inherited trait",
             "Only if the gardener bends them too"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Bending the trunk happened during the tree's life, so it is NOT inherited. The baby trees grow straight because they only inherit the traits the parent was born with.",
           hintLadder: [
             "Was the curve something the tree was born with, or made during its life?",

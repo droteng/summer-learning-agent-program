@@ -37,11 +37,11 @@ export const fallG7WorldW8D4 = {
       stem: "Two claims cite evidence. Which SOURCE is more credible for a showcase?",
       choices: [
         "A post from an account selling the product, with no data",
-        "A recent study of 2,000 randomly chosen students by an independent researcher",
         "'A lot of people online say so'",
+        "A recent study of 2,000 randomly chosen students by an independent researcher",
         "One friend's strong opinion"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Credibility rises with a large, random sample, independence (no conflict of interest), and recency — the independent 2,000-student study wins.",
       hintLadder: [
         "Who has a reason to slant the evidence?",
@@ -55,11 +55,11 @@ export const fallG7WorldW8D4 = {
       stem: "'Ice cream sales and pool drownings both rise in the same months, so ice cream causes drownings.' What's the flaw?",
       choices: [
         "The numbers are made up",
-        "It confuses correlation with causation — a hidden cause (hot weather) drives both",
+        "There is no flaw",
         "Ice cream is unhealthy",
-        "There is no flaw"
+        "It confuses correlation with causation — a hidden cause (hot weather) drives both"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Both rise because of a third variable, summer heat. Moving together (correlation) is not the same as one causing the other.",
       hintLadder: [
         "Does one really cause the other?",
@@ -172,12 +172,12 @@ export const fallG7WorldW8D4 = {
           type: "multiple_choice",
           stem: "A presenter wants to be credible AND causation-honest. Which line is best?",
           choices: [
-            "Our data proves music lessons make kids smarter.",
             "In our study of 300 students, those taking music lessons scored higher — though families who afford lessons may also afford tutoring, so it's a link, not proof of cause.",
+            "Our data proves music lessons make kids smarter.",
             "Everyone knows music makes you smarter.",
             "Studies prove it, I'm pretty sure."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "It gives a real sample, says 'link, not proof,' names a hidden variable (family resources), and pre-answers the objection — the full credibility package.",
           hintLadder: [
             "Which line avoids claiming cause without proof?",

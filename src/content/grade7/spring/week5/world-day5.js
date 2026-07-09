@@ -56,11 +56,11 @@ export const springG7WorldW5D5 = {
       stem: "Source A cites a named climate agency and shows 30 years of data. Source B is an anonymous post showing 5 days and no data source. Both claim a spring temperature 'trend.' Which is more credible, and why?",
       choices: [
         "Source B, because 5 days is more recent",
-        "Source A, because it names a data source and shows a long enough span to reveal a trend",
+        "Source B, because anonymous posts are more honest",
         "They're equally credible since both mention a trend",
-        "Source B, because anonymous posts are more honest"
+        "Source A, because it names a data source and shows a long enough span to reveal a trend"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Source A is more credible: it cites a primary data source and uses 30 years, long enough to show a real trend. Source B is anonymous and 5 days is weather, not a trend.",
       hintLadder: [
         "Which source can you actually check the data for?",
@@ -89,11 +89,11 @@ export const springG7WorldW5D5 = {
       stem: "A news graph shows that as spring temperatures rose, ice-cream sales AND drowning rates both went up, and claims 'ice cream causes drowning.' What's the flaw in this reasoning?",
       choices: [
         "Nothing — if two things rise together, one causes the other",
-        "This confuses correlation with causation; a third factor (warm weather → more swimming) likely drives both",
         "The graph should use circles instead of lines",
+        "This confuses correlation with causation; a third factor (warm weather → more swimming) likely drives both",
         "Ice cream and drowning can't be measured"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Two things rising together (correlation) doesn't prove one causes the other. Warm weather is a lurking third factor that raises both ice-cream sales and swimming (hence drownings). Correlation is not causation.",
       hintLadder: [
         "Does two things moving together prove one caused the other?",
@@ -172,12 +172,12 @@ export const springG7WorldW5D5 = {
           type: "multiple_choice",
           stem: "A viral post reads: 'Bee sightings AND flower blooms both rose this spring — so more bees CAUSED more flowers.' Which response is the sharpest?",
           choices: [
-            "Agree — two rising numbers prove cause and effect",
             "Point out this is correlation, not causation: warmer spring weather likely boosted both bees and blooms",
+            "Agree — two rising numbers prove cause and effect",
             "Reject it because bees and flowers are unrelated",
             "Say graphs can't show bees"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "The two rising together is a correlation; warm spring weather is a likely third factor driving both bees and blooms. You'd need evidence of a real mechanism before claiming one caused the other.",
           hintLadder: [
             "Does rising together prove one caused the other?",

@@ -37,11 +37,11 @@ export const fallG5HistoryW4D1 = {
       stem: "Why did many early cities grow near rivers?",
       choices: [
         "Rivers were fun to swim in",
-        "Rivers gave water and rich soil for good farming",
         "Rivers were always cold",
+        "Rivers gave water and rich soil for good farming",
         "There was no reason at all"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Water for crops and rich soil made river land great for growing extra food.",
       hintLadder: [
         "Think about what farms need.",
@@ -55,11 +55,11 @@ export const fallG5HistoryW4D1 = {
       stem: "The first cities grew in the land between two famous rivers. Those rivers were the...",
       choices: [
         "Amazon and Nile",
-        "Tigris and Euphrates",
+        "Thames and Rhine",
         "Mississippi and Ohio",
-        "Thames and Rhine"
+        "Tigris and Euphrates"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "The first cities grew between the Tigris and Euphrates rivers.",
       hintLadder: [
         "The mini-lesson names these two rivers.",
@@ -72,12 +72,12 @@ export const fallG5HistoryW4D1 = {
       type: "multiple_choice",
       stem: "What does the word 'surplus' mean?",
       choices: [
-        "Not enough food",
         "Extra food, more than people need right now",
+        "Not enough food",
         "A kind of river",
         "A big city wall"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A surplus is EXTRA food — more than a family needs at that moment.",
       hintLadder: [
         "Look back at the mini-lesson vocabulary word.",

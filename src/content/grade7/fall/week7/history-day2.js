@@ -36,11 +36,11 @@ export const fallG7HistoryW7D2 = {
       stem: "In history, 'corroboration' means...",
       choices: [
         "trusting the most famous source",
-        "checking whether more than one independent source supports a claim",
         "picking the oldest document",
+        "checking whether more than one independent source supports a claim",
         "counting how many pages a source has"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Corroboration is confirming a claim across multiple independent sources so it doesn't rest on one account.",
       hintLadder: [
         "The root is 'co-' — together.",
@@ -54,11 +54,11 @@ export const fallG7HistoryW7D2 = {
       stem: "Which set of factors BEST measures a historical event's significance?",
       choices: [
         "How famous, how old, how well-written",
-        "Scope (how many affected), depth (how deeply life changed), durability (how long it lasted)",
+        "Whether it appears in a textbook",
         "How many people can name it today",
-        "Whether it appears in a textbook"
+        "Scope (how many affected), depth (how deeply life changed), durability (how long it lasted)"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Significance is weighed by scope, depth, and durability — not by fame, age, or coverage.",
       hintLadder: [
         "Fame alone isn't significance.",
@@ -72,12 +72,12 @@ export const fallG7HistoryW7D2 = {
       type: "multiple_choice",
       stem: "A student claims an event was a turning point but cites only ONE source. What is the strongest reason a historian would want more?",
       choices: [
-        "One source is always fake",
         "A single source might be biased or mistaken; corroboration tests whether the claim holds up",
+        "One source is always fake",
         "Longer claims need more paper",
         "Historians dislike short essays"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "One source can be biased, incomplete, or wrong; independent corroboration makes the turning-point claim far more reliable.",
       hintLadder: [
         "What could be wrong with relying on just one account?",

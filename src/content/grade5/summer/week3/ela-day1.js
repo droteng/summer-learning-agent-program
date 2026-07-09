@@ -61,10 +61,10 @@ export const summerG5ElaW3D1 = {
       choices: [
         "Then the storm hit and the lights went out.",
         "Liam smiled -- finally, the bike was fixed.",
-        "It was a quiet Saturday morning in the park.",
-        "Suddenly, a dog ran across the field."
+        "Suddenly, a dog ran across the field.",
+        "It was a quiet Saturday morning in the park."
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "The setup tells who, where, and when. A quiet Saturday morning in the park does that.",
       hintLadder: [
         "The setup tells you who, where, and when.",
@@ -92,8 +92,8 @@ export const summerG5ElaW3D1 = {
       id: "g5.summer.ela.w3.d1.q4",
       type: "multiple_choice",
       stem: "A story with no conflict usually feels:",
-      choices: ["Exciting", "Boring or flat", "Mysterious", "Long"],
-      answerIndex: 1,
+      choices: ["Boring or flat", "Exciting", "Mysterious", "Long"],
+      answerIndex: 0,
       explanation: "Conflict is what makes a story move. With no problem, nothing changes and the reader loses interest.",
       hintLadder: [
         "What does conflict do for a story?",

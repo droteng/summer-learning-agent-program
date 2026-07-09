@@ -35,11 +35,11 @@ export const grade6HistoryWeek5Day5 = {
       stem: "Which is closest to TRUE about most famous inventions?",
       choices: [
         "One genius working alone made each one.",
-        "Each one builds on earlier inventions and ideas.",
+        "Each one came out perfect on the first try.",
         "Each one was invented in secret with no help.",
-        "Each one came out perfect on the first try."
+        "Each one builds on earlier inventions and ideas."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Inventions almost always borrow parts and ideas from earlier work. The 'lone genius' story is mostly a myth.",
       hintLadder: [
         "Where do new ideas usually come from?",
@@ -53,8 +53,8 @@ export const grade6HistoryWeek5Day5 = {
       type: "multiple_choice",
       stem:
         "The telephone (1876) borrowed most directly from which earlier invention?",
-      choices: ["The wheel.", "The telegraph.", "The printing press.", "The compass."],
-      answerIndex: 1,
+      choices: ["The wheel.", "The printing press.", "The telegraph.", "The compass."],
+      answerIndex: 2,
       explanation: "The telegraph already moved signals over wires. The telephone added a way to encode voice into those signals.",
       hintLadder: [
         "What earlier technology already moved signals over wires?",
@@ -68,12 +68,12 @@ export const grade6HistoryWeek5Day5 = {
       stem:
         "Why did the telephone, lightbulb, and steam engine all see 'races' with multiple inventors filing patents around the same time?",
       choices: [
-        "Coincidence.",
         "The conditions — materials, demand, prior tech — were ripe, so several people got close at once.",
+        "Coincidence.",
         "They all knew each other.",
         "It was easier to copy than to invent."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "When conditions are ripe, multiple thinkers in different places converge on similar ideas. The race isn't just about who got there first; it's about why the time was right.",
       hintLadder: [
         "Why do similar inventions appear at the same time?",
@@ -167,11 +167,11 @@ export const grade6HistoryWeek5Day5 = {
           stem: "Several inventors filed lightbulb patents around the same time in the 1870s. What does this 'race' BEST show?",
           choices: [
             "They all copied one person.",
-            "The conditions — materials, demand, and prior science — were ripe, so multiple people converged at once.",
+            "Only one person was really trying.",
             "It was just a coincidence.",
-            "Only one person was really trying."
+            "The conditions — materials, demand, and prior science — were ripe, so multiple people converged at once."
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Invention 'races' happen because the conditions are ripe, so several thinkers in different places get close at the same time.",
           hintLadder: [
             "Why do similar inventions show up at the same moment?",

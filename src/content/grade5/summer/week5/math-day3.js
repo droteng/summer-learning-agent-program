@@ -69,8 +69,8 @@ export const summerG5MathW5D3 = {
       id: "g5.summer.math.w5.d3.q3",
       type: "multiple_choice",
       stem: "Which is the best estimate for the height of a normal room door?",
-      choices: ["20 cm", "2 m", "20 m", "200 m"],
-      answerIndex: 1,
+      choices: ["20 cm", "200 m", "20 m", "2 m"],
+      answerIndex: 3,
       explanation: "A door is about 2 meters tall, a little taller than a grown-up. 20 cm is too short, and 20 m would be taller than a house.",
       hintLadder: [
         "How tall are you next to a door?",

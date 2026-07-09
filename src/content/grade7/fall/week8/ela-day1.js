@@ -35,12 +35,12 @@ export const fallG7ElaW8D1 = {
       type: "multiple_choice",
       stem: "What makes a Grade 7 capstone showcase different from simply showing your best pieces?",
       choices: [
-        "It uses more slides",
         "It is organized around a thesis — one arguable idea the featured work proves",
+        "It uses more slides",
         "It avoids evidence to save time",
         "It shows every piece you made this season"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A capstone is thesis-driven: a controlling idea unifies the pieces, so the showcase argues rather than merely reports.",
       hintLadder: [
         "A tour lists work; a capstone makes a point.",
@@ -54,11 +54,11 @@ export const fallG7ElaW8D1 = {
       stem: "Why analyze your AUDIENCE before choosing which evidence to lead with?",
       choices: [
         "So you can use longer words",
-        "Because what convinces a particular audience shapes which evidence lands first and hardest",
         "Audiences do not affect a presentation",
+        "Because what convinces a particular audience shapes which evidence lands first and hardest",
         "To make the talk longer"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Audience analysis (what they know and value) determines which evidence is most persuasive to them, so you sequence for impact.",
       hintLadder: [
         "Would you convince a scientist and a friend the same way?",
@@ -173,10 +173,10 @@ export const fallG7ElaW8D1 = {
           choices: [
             "Today I will talk about the fall season.",
             "My project covers a few subjects.",
-            "The evidence I gathered this fall shows that access, not attitude, is what really changes people's habits.",
-            "Um, so, here is my presentation."
+            "Um, so, here is my presentation.",
+            "The evidence I gathered this fall shows that access, not attitude, is what really changes people's habits."
           ],
-          answerIndex: 2,
+          answerIndex: 3,
           explanation: "'Access, not attitude, changes habits' is arguable and directional — a thesis. The others announce a topic or stall, with nothing to prove.",
           hintLadder: [
             "Which one could a reasonable person disagree with?",

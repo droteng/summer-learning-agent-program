@@ -37,12 +37,12 @@ export const springG5MathW5D1 = {
       type: "multiple_choice",
       stem: "On a line graph of a plant's height over time, what usually goes on the bottom (across) axis?",
       choices: [
-        "The height of the plant",
         "The time (the day the measurement was taken)",
+        "The height of the plant",
         "The color of the plant",
         "The number of leaves"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "On a change-over-time graph, the bottom axis shows time (the day) and the side axis shows the amount you measured (height).",
       hintLadder: [
         "One axis is 'when' and the other is 'how much.'",

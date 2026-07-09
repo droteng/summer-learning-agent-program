@@ -83,11 +83,11 @@ export const springG5CodingW6D1 = {
       stem: "Why do coders use a LOOP to grow a number instead of writing the rule out 50 times?",
       choices: [
         "Loops make the number grow faster",
-        "A loop repeats one rule for you, so you write it once and run it many times",
+        "You cannot grow a number without copying the rule 50 times",
         "Loops erase the value",
-        "You cannot grow a number without copying the rule 50 times"
+        "A loop repeats one rule for you, so you write it once and run it many times"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A loop lets you write the rule ONCE and repeat it as many steps as you want — that is the whole point of a loop.",
       hintLadder: [
         "What is the job of a loop?",

@@ -35,8 +35,8 @@ export const fallG7MathW3D2 = {
       id: "g7.fall.math.w3.d2.q1",
       type: "multiple_choice",
       stem: "Corn yield was tracked each month for a whole season. Which display BEST reveals the month-to-month trend so you can infer when growth sped up?",
-      choices: ["Pie chart", "Bar graph of two categories", "Line graph over time", "Single tally mark"],
-      answerIndex: 2,
+      choices: ["Line graph over time", "Bar graph of two categories", "Pie chart", "Single tally mark"],
+      answerIndex: 0,
       explanation: "A line graph connects points in time order, making rises, dips, and turning points easy to infer.",
       hintLadder: [
         "The key idea is 'month-to-month trend' — change over time.",
@@ -77,8 +77,8 @@ export const fallG7MathW3D2 = {
       id: "g7.fall.math.w3.d2.q4",
       type: "multiple_choice",
       stem: "A line graph's y-axis counts by 20s. A plotted point sits exactly halfway between the 60 and 80 gridlines. What value is it?",
-      choices: ["65", "68", "70", "75"],
-      answerIndex: 2,
+      choices: ["65", "70", "68", "75"],
+      answerIndex: 1,
       explanation: "Halfway between 60 and 80 is (60 + 80) ÷ 2 = 70 — you must read the scale, not assume gridlines count by 1.",
       hintLadder: [
         "Check the scale: gridlines are 20 apart.",
@@ -170,8 +170,8 @@ export const fallG7MathW3D2 = {
           id: "g7.fall.math.w3.d2.arena2",
           type: "multiple_choice",
           stem: "A line graph's y-axis counts by 25s. A point sits exactly one-quarter of the way UP from the 50 gridline toward the 75 gridline. What value is it?",
-          choices: ["56.25", "62.5", "68.75", "58"],
-          answerIndex: 0,
+          choices: ["68.75", "62.5", "56.25", "58"],
+          answerIndex: 2,
           explanation: "The gap from 50 to 75 is 25. One-quarter of 25 is 6.25, so the value is 50 + 6.25 = 56.25.",
           hintLadder: [
             "The gap between 50 and 75 is 25 units.",

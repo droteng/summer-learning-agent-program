@@ -80,11 +80,11 @@ export const fallG7CodingW6D4 = {
       stem: "You want your generator to REMEMBER every leaf size it drew, in order. Which tool fits best?",
       choices: [
         "A single number variable that gets overwritten each loop",
-        "A list that you append each new size to",
+        "Nothing — you can't store more than one value",
         "The turn angle",
-        "Nothing — you can't store more than one value"
+        "A list that you append each new size to"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A list is an ordered data structure; appending each value preserves every size in the order produced.",
       hintLadder: [
         "A plain variable holds only the latest value.",

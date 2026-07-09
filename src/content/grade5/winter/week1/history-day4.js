@@ -37,11 +37,11 @@ export const winterG5HistoryW1D4 = {
       stem: "What makes the winter solstice special?",
       choices: [
         "It is the hottest day of the year",
-        "It is the day with the FEWEST hours of daylight",
         "It has exactly equal day and night",
+        "It is the day with the FEWEST hours of daylight",
         "It is the day the Moon disappears"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "The winter solstice is the shortest day — the fewest hours of daylight. After it, the days get longer again.",
       hintLadder: [
         "'Winter' and 'shortest day' go together.",
@@ -55,11 +55,11 @@ export const winterG5HistoryW1D4 = {
       stem: "Before printed calendars, how did many ancient people track the seasons?",
       choices: [
         "They guessed randomly",
-        "By watching the Sun, Moon, and stars in the sky",
+        "They did not track seasons at all",
         "They used clocks with batteries",
-        "They did not track seasons at all"
+        "By watching the Sun, Moon, and stars in the sky"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Ancient people watched where the Sun rose, how shadows fell, and which stars appeared to keep track of the seasons and time.",
       hintLadder: [
         "There were no printed calendars or electronic clocks yet.",
@@ -73,12 +73,12 @@ export const winterG5HistoryW1D4 = {
       type: "multiple_choice",
       stem: "Stonehenge in Britain is famous partly because its giant stones line up with what event?",
       choices: [
-        "The sunrise or sunset at the solstices",
         "The landing of airplanes",
+        "The sunrise or sunset at the solstices",
         "The ocean tides only",
         "Nothing in the sky"
       ],
-      answerIndex: 0,
+      answerIndex: 1,
       explanation: "Stonehenge's stones line up with the Sun at the solstices, which shows its builders carefully watched the Sun's yearly cycle.",
       hintLadder: [
         "Stonehenge is lined up with something in the sky.",
@@ -172,12 +172,12 @@ export const winterG5HistoryW1D4 = {
           type: "multiple_choice",
           stem: "Put these in the correct order as an ancient sky-watcher would experience them across the year: (1) days start getting LONGER again, (2) the winter solstice — the shortest day, (3) days get SHORTER heading into winter.",
           choices: [
-            "1 → 2 → 3",
             "3 → 2 → 1",
+            "1 → 2 → 3",
             "2 → 1 → 3",
             "3 → 1 → 2"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "First the days get shorter heading into winter (3), then the solstice is the shortest day (2), then the days get longer again afterward (1): 3 → 2 → 1.",
           hintLadder: [
             "Which comes first — days getting shorter or the shortest day itself?",

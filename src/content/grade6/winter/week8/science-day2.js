@@ -36,11 +36,11 @@ export const winterG6ScienceW8D2 = {
       stem: "When a puddle FREEZES into ice, what is happening to the energy and matter?",
       choices: [
         "Heat energy is added, and the water turns to gas.",
-        "Heat energy leaves the water, and the liquid changes state into a solid.",
+        "Nothing changes; ice and water are the same state.",
         "The water gains energy and stays liquid.",
-        "Nothing changes; ice and water are the same state."
+        "Heat energy leaves the water, and the liquid changes state into a solid."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Freezing means heat energy leaves the water; as molecules slow, the liquid changes state to a solid (ice).",
       hintLadder: [
         "Does freezing add heat or remove it?",
@@ -53,12 +53,12 @@ export const winterG6ScienceW8D2 = {
       type: "multiple_choice",
       stem: "In which direction does heat ENERGY naturally flow?",
       choices: [
-        "From colder objects to warmer objects.",
         "From warmer objects to colder objects.",
+        "From colder objects to warmer objects.",
         "Heat never moves.",
         "Only upward, never sideways."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Thermal energy always flows from warmer to colder — that's why your warm hand loses heat to a cold snowball.",
       hintLadder: [
         "Think about holding a snowball in a warm hand.",
@@ -173,11 +173,11 @@ export const winterG6ScienceW8D2 = {
           stem: "A warm cup of cocoa left outside on a cold winter day slowly gets cold. Which explanation uses the science correctly?",
           choices: [
             "Cold energy flows from the air into the cocoa.",
-            "Heat energy flows out of the warm cocoa into the colder air until they are closer in temperature.",
             "The cocoa gains heat from the cold air.",
+            "Heat energy flows out of the warm cocoa into the colder air until they are closer in temperature.",
             "Nothing happens; temperature never changes."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Heat always flows from warmer to colder, so thermal energy leaves the cocoa and warms the surrounding air until they even out. There is no 'cold energy.'",
           hintLadder: [
             "Which is warmer, the cocoa or the winter air?",

@@ -36,12 +36,12 @@ export const fallG7ScienceW8D3 = {
       type: "multiple_choice",
       stem: "Which statement is a scientific INFERENCE (a reasoned explanation) rather than a direct observation?",
       choices: [
-        "The maple's leaves are orange and falling.",
-        "A squirrel carried an acorn up the trunk.",
         "Shorter daylight is triggering the tree to shut down chlorophyll for winter.",
+        "A squirrel carried an acorn up the trunk.",
+        "The maple's leaves are orange and falling.",
         "There are acorns scattered on the ground."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "The daylight-trigger statement explains a mechanism you reason out; the others report what is directly seen.",
       hintLadder: [
         "Which one explains a WHY you can't directly see?",
@@ -55,11 +55,11 @@ export const fallG7ScienceW8D3 = {
       stem: "In an ecosystem, energy and matter behave differently. Which statement is correct?",
       choices: [
         "Both energy and matter cycle endlessly with no loss.",
-        "Energy flows one way and shrinks each level, while matter cycles and is reused.",
         "Matter is lost as heat; energy is recycled by decomposers.",
+        "Energy flows one way and shrinks each level, while matter cycles and is reused.",
         "Neither energy nor matter moves between organisms."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Energy flows one direction and dissipates (~10% passes up each level); matter cycles as decomposers return nutrients for reuse.",
       hintLadder: [
         "Think about what decomposers return to the soil.",
@@ -74,11 +74,11 @@ export const fallG7ScienceW8D3 = {
       stem: "Removing a keystone species can trigger a REINFORCING FEEDBACK LOOP. What does that mean here?",
       choices: [
         "The system quickly returns to normal on its own.",
-        "One change amplifies itself, so the disruption keeps accelerating.",
+        "The lost species instantly comes back.",
         "Nothing else in the web is affected.",
-        "The lost species instantly comes back."
+        "One change amplifies itself, so the disruption keeps accelerating."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A reinforcing loop feeds on itself (more urchins → less kelp → conditions favor even more urchins), accelerating the change rather than settling it.",
       hintLadder: [
         "Reinforcing means the change feeds itself.",
@@ -172,12 +172,12 @@ export const fallG7ScienceW8D3 = {
           type: "multiple_choice",
           stem: "Which correctly describes a BALANCING (stabilizing) feedback loop in an ecosystem?",
           choices: [
-            "More rabbits → more foxes → fewer rabbits, which brings the population back toward balance.",
             "More urchins → less kelp → conditions favor even more urchins.",
+            "More rabbits → more foxes → fewer rabbits, which brings the population back toward balance.",
             "Removing a species has no effect on any other.",
             "Energy is recycled endlessly with no loss."
           ],
-          answerIndex: 0,
+          answerIndex: 1,
           explanation: "A balancing loop pushes back toward equilibrium (more rabbits feed more foxes, which then reduce rabbits). The urchin example is reinforcing, not balancing.",
           hintLadder: [
             "Balancing means the loop pushes back toward normal.",

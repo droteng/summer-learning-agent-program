@@ -37,12 +37,12 @@ export const summerG5CodingW4D5 = {
       type: "multiple_choice",
       stem: "What is the FIRST thing to do when planning a small tool?",
       choices: [
-        "Start typing code right away.",
         "Name the inputs and the output.",
+        "Start typing code right away.",
         "Pick a fancy programming language.",
         "Open the code editor."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Knowing what goes IN and what comes OUT tells you what the tool is even for. That comes before any code.",
       hintLadder: [
         "Before writing code, what shape does the tool have?",
@@ -56,11 +56,11 @@ export const summerG5CodingW4D5 = {
       stem: "You want a tool that takes a list of quiz scores and gives back the highest one. What is the INPUT?",
       choices: [
         "Just the highest score.",
-        "A list of scores.",
+        "Nothing.",
         "The teacher's name.",
-        "Nothing."
+        "A list of scores."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "The input is what the user gives the tool. Here the user gives a list of scores; the tool gives back the highest.",
       hintLadder: [
         "What does the user hand to the tool?",
@@ -184,11 +184,11 @@ export const summerG5CodingW4D5 = {
             "You're breaking down a 'beach-day packer' tool. Which step is doing TOO MANY jobs and should be split?",
           choices: [
             "Ask the user how many people are going.",
-            "Check if the weather is sunny.",
             "Look up the forecast, pick swimsuits, count towels, and text Grandma the plan.",
+            "Check if the weather is sunny.",
             "Show the final packing list."
           ],
-          answerIndex: 2,
+          answerIndex: 1,
           explanation:
             "That option bundles four separate jobs (look up forecast, pick swimsuits, count towels, send a text). Each should be its own step.",
           hintLadder: [

@@ -53,12 +53,12 @@ export const springG7ScienceW2D1 = {
       type: "multiple_choice",
       stem: "During photosynthesis, what happens to the light energy captured by chlorophyll?",
       choices: [
-        "It is destroyed and disappears",
         "It is transformed into chemical energy stored in glucose bonds",
+        "It is destroyed and disappears",
         "It turns directly into oxygen gas",
         "It is stored as heat in the soil"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Energy is not created or destroyed — the light energy is transformed into chemical energy stored in the bonds of glucose.",
       hintLadder: [
         "Energy cannot be destroyed, only changed in form.",
@@ -74,10 +74,10 @@ export const springG7ScienceW2D1 = {
       choices: [
         "The water absorbed by the roots",
         "The minerals in the soil",
-        "The carbon dioxide gas taken from the air",
-        "The oxygen released by the leaves"
+        "The oxygen released by the leaves",
+        "The carbon dioxide gas taken from the air"
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "The carbon atoms in glucose (and therefore in wood) come from carbon dioxide pulled out of the air, not from the soil.",
       hintLadder: [
         "Which reactant actually contains carbon atoms?",
@@ -167,11 +167,11 @@ export const springG7ScienceW2D1 = {
           stem: "A sealed clear jar holds a healthy plant with light and water. Over the day the oxygen rises AND the carbon dioxide falls. Which statement best explains BOTH changes with one reaction?",
           choices: [
             "The plant is only breathing, using oxygen and making CO2",
-            "Photosynthesis consumes CO2 (a reactant) and releases oxygen (a product), so CO2 falls and O2 rises together",
             "The two gases changed by pure chance and are unrelated",
+            "Photosynthesis consumes CO2 (a reactant) and releases oxygen (a product), so CO2 falls and O2 rises together",
             "The plant absorbed both gases into its roots"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "One reaction explains both: photosynthesis uses CO2 as a reactant (so it falls) and produces O2 as a product (so it rises).",
           hintLadder: [
             "One reaction should explain both the fall and the rise.",

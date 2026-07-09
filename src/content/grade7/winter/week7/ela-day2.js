@@ -36,11 +36,11 @@ export const winterG7ElaW7D2 = {
       stem: "Two sentences describe the same snowfall. Which one uses DICTION to create a MENACING mood?",
       choices: [
         "Snow drifted down and settled gently over the quiet town.",
-        "Snow smothered the town, burying the streets until nothing could move.",
         "Snow fell softly, dusting the rooftops in white.",
+        "Snow smothered the town, burying the streets until nothing could move.",
         "Snow floated down like feathers onto the calm square."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "'Smothered' and 'burying... nothing could move' carry threatening connotations, creating a menacing mood, while the others use soft, calming diction.",
       hintLadder: [
         "Which verbs sound harsh or threatening?",
@@ -72,12 +72,12 @@ export const winterG7ElaW7D2 = {
       type: "multiple_choice",
       stem: "A writer wants a frozen cabin scene to feel SAFE and cozy. Which detail best fits that mood through its CONNOTATION?",
       choices: [
-        "The wind screamed through a crack in the warped door.",
         "A kettle hissed on the stove and woodsmoke curled warm against the frosted glass.",
+        "The wind screamed through a crack in the warped door.",
         "The floorboards groaned like something waking beneath them.",
         "Frost crept across the window like grasping fingers."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "The kettle and warm woodsmoke carry cozy, comforting connotations, matching a safe mood; the other details connote threat.",
       hintLadder: [
         "Which detail FEELS warm and comforting?",
@@ -171,11 +171,11 @@ export const winterG7ElaW7D2 = {
           stem: "'The frost crept across the window like a thief, testing each corner, until it had stolen the last of the light.' Which BEST describes this?",
           choices: [
             "A single simile only, with no other technique",
-            "An extended metaphor comparing frost to a thief, developed across the sentence with personification",
+            "Hyperbole with no comparison at all",
             "Onomatopoeia imitating the sound of frost",
-            "Hyperbole with no comparison at all"
+            "An extended metaphor comparing frost to a thief, developed across the sentence with personification"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "The frost is compared to a thief and that comparison is developed (testing corners, stealing light) with human-like actions — an extended metaphor blended with personification.",
           hintLadder: [
             "Is one comparison carried across several actions?",

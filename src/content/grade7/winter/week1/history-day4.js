@@ -37,11 +37,11 @@ export const winterG7HistoryW1D4 = {
       stem: "What makes the winter solstice a useful marker for ANY ancient culture to track, regardless of where they lived?",
       choices: [
         "It is the hottest day of the year everywhere",
-        "It is a reliable, repeating sky event — the fewest daylight hours — visible from anywhere on Earth",
         "It only happens in Britain",
+        "It is a reliable, repeating sky event — the fewest daylight hours — visible from anywhere on Earth",
         "It requires a written calendar to notice"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "The solstice is a predictable, repeating astronomical event visible worldwide, which is exactly why cultures with no contact could each track it.",
       hintLadder: [
         "Think about why cultures on different continents could BOTH notice it.",
@@ -54,12 +54,12 @@ export const winterG7HistoryW1D4 = {
       type: "multiple_choice",
       stem: "A historian has two sources on solstice-tracking: (S1) the physical alignment of Stonehenge's stones to the solstice sun, and (S2) a Maya written calendar recording solar cycles. Which claim about the sources is MOST accurate?",
       choices: [
-        "S1 is worthless because it has no writing",
         "S2 is more direct evidence of deliberately PREDICTING the solstice, while S1 strongly shows the day was marked",
+        "S1 is worthless because it has no writing",
         "The two sources cannot be compared at all",
         "S1 and S2 prove exactly the same thing in exactly the same way"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Both are evidence, but they differ in what they show most directly: the written calendar records prediction of cycles, while the monument shows the solstice was physically marked. A historian weighs that difference rather than treating them as identical or dismissing one.",
       hintLadder: [
         "Both count as evidence — don't throw either out.",
@@ -75,10 +75,10 @@ export const winterG7HistoryW1D4 = {
       choices: [
         "They must have secretly traded ideas across the ocean",
         "It was pure coincidence with no cause",
-        "Both were farming societies that needed to time the seasons, and the same sky was observable to each — so similar needs plus a shared sky led to similar solutions",
-        "Only Europeans could track the sky, so the Maya copied them"
+        "Only Europeans could track the sky, so the Maya copied them",
+        "Both were farming societies that needed to time the seasons, and the same sky was observable to each — so similar needs plus a shared sky led to similar solutions"
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "Historians explain independent parallels through common causes: shared reliance on farming (which depends on seasons) plus a sky visible to everyone drove separate cultures to the same solution — no contact required.",
       hintLadder: [
         "They never met, so 'copying' or 'trading ideas' doesn't fit.",

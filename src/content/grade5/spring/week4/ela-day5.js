@@ -37,11 +37,11 @@ export const springG5ElaW4D5 = {
       stem: "What is the main job of INFORMATIONAL writing?",
       choices: [
         "To tell an exciting made-up story",
-        "To teach or explain something clearly with facts",
+        "To sell someone a toy",
         "To argue that your opinion is best",
-        "To sell someone a toy"
+        "To teach or explain something clearly with facts"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Informational writing explains or teaches using facts, not stories or opinions.",
       hintLadder: [
         "It's not a story and not an opinion.",
@@ -73,11 +73,11 @@ export const springG5ElaW4D5 = {
       stem: "Which sentence uses EXACT science words to explain how a trait is passed down?",
       choices: [
         "The baby got its looks from some stuff inside it.",
-        "The offspring inherited the floppy-ear trait from its parent, so it has floppy ears too.",
         "The puppy just looks like its mom somehow.",
+        "The offspring inherited the floppy-ear trait from its parent, so it has floppy ears too.",
         "It happened for no reason at all."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "It uses exact words — offspring, inherited, trait — and a cause/effect word ('so'), so the explanation is clear.",
       hintLadder: [
         "Which sentence uses exact words like 'trait' and 'inherited'?",
@@ -167,12 +167,12 @@ export const springG5ElaW4D5 = {
           type: "multiple_choice",
           stem: "Which sentence is the STRONGEST informational cause/effect explanation?",
           choices: [
-            "The rabbit's fur is just white, that's all.",
-            "White fur looks pretty on a rabbit.",
             "Because the parent rabbits had white fur, the offspring inherited the white-fur trait.",
+            "White fur looks pretty on a rabbit.",
+            "The rabbit's fur is just white, that's all.",
             "The rabbit's fur is a mystery nobody can explain."
           ],
-          answerIndex: 2,
+          answerIndex: 0,
           explanation: "It uses a cause/effect word ('because'), exact words (parent, offspring, inherited, trait), and clearly explains how the trait was passed down.",
           hintLadder: [
             "Which one actually explains HOW and WHY?",

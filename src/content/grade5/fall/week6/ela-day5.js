@@ -55,11 +55,11 @@ export const fallG5ElaW6D5 = {
       stem: "A simile describes something by...",
       choices: [
         "listing facts",
-        "comparing two things using 'like' or 'as'",
+        "repeating the same word",
         "using only numbers",
-        "repeating the same word"
+        "comparing two things using 'like' or 'as'"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A simile compares two things using 'like' or 'as' (spiraled like a staircase).",
       hintLadder: [
         "It is a kind of comparison.",
@@ -72,12 +72,12 @@ export const fallG5ElaW6D5 = {
       type: "multiple_choice",
       stem: "Why should you describe something in order (like top to bottom)?",
       choices: [
-        "To make it longer",
         "So the reader can follow along and build the picture in order",
+        "To make it longer",
         "Because it is a rule with no reason",
         "To hide details"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A clear order helps the reader put the picture together step by step.",
       hintLadder: [
         "Imagine describing a face in a mixed-up order.",
@@ -168,11 +168,11 @@ export const fallG5ElaW6D5 = {
           stem: "Which sentence uses a SIMILE to describe a fall pattern?",
           choices: [
             "The pinecone was really, really cool.",
-            "The pinecone's scales spiraled out like steps on a winding staircase.",
             "The pinecone had a lot of parts.",
+            "The pinecone's scales spiraled out like steps on a winding staircase.",
             "The pinecone was on the ground."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "A simile compares using 'like' or 'as' — here the scales are compared to staircase steps, which the reader can picture.",
           hintLadder: [
             "A simile uses the words 'like' or 'as.'",

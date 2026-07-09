@@ -37,11 +37,11 @@ export const fallG5ScienceW8D3 = {
       stem: "Which one is an OBSERVATION (something you can directly see)?",
       choices: [
         "The squirrel is getting ready for a hard winter.",
-        "The squirrel is burying an acorn.",
         "The squirrel feels worried.",
+        "The squirrel is burying an acorn.",
         "Winter will be very cold."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "You can directly see the squirrel bury an acorn. The others are guesses about feelings or the future.",
       hintLadder: [
         "What can you actually see with your eyes?",
@@ -55,11 +55,11 @@ export const fallG5ScienceW8D3 = {
       stem: "In a food web, where does the energy START?",
       choices: [
         "With the foxes",
-        "With the plants (producers)",
+        "With the decomposers",
         "With the rain",
-        "With the decomposers"
+        "With the plants (producers)"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Plants make their own food using sunlight, so energy in a food web starts with the plants.",
       hintLadder: [
         "Which living thing uses sunlight to make food?",
@@ -72,12 +72,12 @@ export const fallG5ScienceW8D3 = {
       type: "multiple_choice",
       stem: "If one important animal is removed from an ecosystem, what most likely happens?",
       choices: [
-        "Nothing changes at all",
         "It can cause big ripples that upset the whole web",
+        "Nothing changes at all",
         "Every other animal gets stronger",
         "The sun shines brighter"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Living things are connected, so removing one can ripple through the whole food web.",
       hintLadder: [
         "Remember the sea otters and the kelp.",
@@ -167,11 +167,11 @@ export const fallG5ScienceW8D3 = {
           stem: "Which sentence is an INFERENCE (a smart guess), not an observation?",
           choices: [
             "The leaves on the maple are orange.",
-            "A squirrel ran up the trunk.",
             "The tree is getting ready for winter.",
+            "A squirrel ran up the trunk.",
             "There are acorns on the ground."
           ],
-          answerIndex: 2,
+          answerIndex: 1,
           explanation: "'Getting ready for winter' is a guess you reason out, not something you can directly see, so it's an inference.",
           hintLadder: [
             "Which one can't you see or count directly?",

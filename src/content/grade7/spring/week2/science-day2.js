@@ -49,11 +49,11 @@ export const springG7ScienceW2D2 = {
       stem: "Leaves are broad and flat. How does this STRUCTURE fit their FUNCTION?",
       choices: [
         "It helps them absorb water from the soil",
-        "It maximizes the surface area for capturing sunlight for photosynthesis",
+        "It stores seeds for reproduction",
         "It makes the plant heavier so it doesn't blow away",
-        "It stores seeds for reproduction"
+        "It maximizes the surface area for capturing sunlight for photosynthesis"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A broad, flat shape gives leaves a large surface area to capture as much light as possible for photosynthesis — structure fitting function.",
       hintLadder: [
         "What is a leaf's main job?",
@@ -68,11 +68,11 @@ export const springG7ScienceW2D2 = {
       stem: "A scientist ties a tight band around a young tree's trunk, cutting only the phloem (leaving xylem intact). Which prediction fits how the system works?",
       choices: [
         "The leaves die immediately from lack of water",
-        "Sugar can't reach the roots below the band, so the roots eventually starve",
         "Nothing changes because phloem is unimportant",
+        "Sugar can't reach the roots below the band, so the roots eventually starve",
         "The tree grows twice as fast"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Phloem carries sugar from leaves down to the roots. Cutting it blocks that food supply below the band, so the roots slowly starve even though water still rises in the xylem.",
       hintLadder: [
         "Which tissue was cut, and what does it carry?",
@@ -161,12 +161,12 @@ export const springG7ScienceW2D2 = {
           type: "multiple_choice",
           stem: "A celery stalk is split at the bottom and each half placed in a different color of dyed water. Days later the leaves show BOTH colors in separate regions. What does this reveal about the stem's structure and function?",
           choices: [
-            "The stem randomly mixes all water together",
             "The stem contains many separate xylem tubes, each carrying water straight up to a specific region",
+            "The stem randomly mixes all water together",
             "The colors prove the stem makes sugar",
             "The stem absorbs water like a root does"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "The two colors staying separate shows the stem is made of many individual xylem tubes that carry water upward along distinct paths — structure (bundled tubes) fits function (efficient upward transport).",
           hintLadder: [
             "Why did the two colors NOT blend into one?",

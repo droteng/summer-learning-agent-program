@@ -37,12 +37,12 @@ export const winterG5ScienceW4D3 = {
       type: "multiple_choice",
       stem: "Why do we see the Moon shining in the night sky?",
       choices: [
-        "It makes its own light like a little star.",
         "It reflects light from the Sun.",
+        "It makes its own light like a little star.",
         "It glows from heat inside it.",
         "City lights bounce off it."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "The Moon makes no light of its own. We see it because it reflects sunlight, like a mirror.",
       hintLadder: [
         "Is the Moon a star? No.",
@@ -57,11 +57,11 @@ export const winterG5ScienceW4D3 = {
       stem: "What really causes Earth's seasons?",
       choices: [
         "Earth getting closer to and farther from the Sun.",
-        "The tilt of Earth as it travels around the Sun.",
+        "The Sun getting hotter and cooler.",
         "The Moon blocking sunlight.",
-        "The Sun getting hotter and cooler."
+        "The tilt of Earth as it travels around the Sun."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Seasons come from Earth's tilt of about 23 degrees, which changes how much and how directly sunlight hits your part of Earth.",
       hintLadder: [
         "If distance caused seasons, both halves of Earth would have winter at the same time.",
@@ -76,11 +76,11 @@ export const winterG5ScienceW4D3 = {
       stem: "During a FULL moon, where is the Moon compared to Earth and the Sun?",
       choices: [
         "Between Earth and the Sun, so we see its dark side.",
-        "On the opposite side of Earth from the Sun, so we see its fully lit side.",
         "Directly behind the Sun.",
+        "On the opposite side of Earth from the Sun, so we see its fully lit side.",
         "Below Earth where sunlight can't reach it."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "At a full moon the Moon is on the far side of Earth from the Sun, so the whole lit half faces us.",
       hintLadder: [
         "A full moon means we see the WHOLE lit half.",

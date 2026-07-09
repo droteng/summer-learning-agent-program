@@ -75,10 +75,10 @@ export const grade6MathWeek2Day5 = {
       choices: [
         "Always",
         "Never",
-        "When the data is symmetric",
-        "Only when all values are zero"
+        "Only when all values are zero",
+        "When the data is symmetric"
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "If the data is symmetric (like 4, 6, 8, 10, 12) the mean and median match. Skewed data shifts the mean away from the median.",
       hintLadder: [
         "Try a balanced dataset like 1, 2, 3, 4, 5.",

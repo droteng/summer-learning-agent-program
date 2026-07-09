@@ -37,11 +37,11 @@ export const springG7HistoryW4D4 = {
       stem: "What made Gregor Mendel's conclusions about inheritance CONVINCING to later scientists?",
       choices: [
         "He was a famous public figure in his lifetime",
-        "He collected consistent numerical evidence by counting traits across thousands of plants",
         "He used a powerful microscope to see genes directly",
+        "He collected consistent numerical evidence by counting traits across thousands of plants",
         "He guessed the rules without doing experiments"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Mendel's strength was reproducible evidence: the same trait ratios appeared over thousands of pea plants, which is what made his conclusions trustworthy.",
       hintLadder: [
         "Was it his fame, or something about his data?",
@@ -54,12 +54,12 @@ export const springG7HistoryW4D4 = {
       type: "multiple_choice",
       stem: "Which of these would a historian classify as a PRIMARY source about Mendel's experiments?",
       choices: [
-        "A 2020 textbook chapter summarizing Mendel's laws",
         "Mendel's own 1866 paper reporting his pea-plant data",
+        "A 2020 textbook chapter summarizing Mendel's laws",
         "A modern documentary about the history of genetics",
         "A blog post explaining Punnett squares"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Mendel's own 1866 paper is a primary source — a firsthand record from the person and time involved. Textbooks, documentaries, and blogs are secondary sources that interpret it later.",
       hintLadder: [
         "A primary source comes straight from the person and time involved.",
@@ -74,11 +74,11 @@ export const springG7HistoryW4D4 = {
       stem: "Rosalind Franklin's X-ray image ('Photo 51') was crucial evidence for the structure of DNA, yet she was long under-credited. What does this best illustrate about the history of science?",
       choices: [
         "Scientific discoveries always credit everyone equally",
-        "The historical record can overlook real contributors, so we should examine who did the work",
+        "Evidence does not matter in science",
         "Only monks make important discoveries",
-        "Evidence does not matter in science"
+        "The historical record can overlook real contributors, so we should examine who did the work"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Franklin's under-crediting shows that the historical record is shaped by people and can leave out real contributors, so historians re-examine who actually did the work.",
       hintLadder: [
         "Was Franklin credited fairly at the time?",

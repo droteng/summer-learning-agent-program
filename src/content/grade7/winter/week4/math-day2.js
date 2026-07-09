@@ -64,12 +64,12 @@ export const winterG7MathW4D2 = {
       type: "multiple_choice",
       stem: "The distance from the Sun to Neptune is about 4,500,000,000 km. Written in words, this number is:",
       choices: [
-        "Four hundred fifty million",
         "Four and a half billion",
+        "Four hundred fifty million",
         "Forty-five million",
         "Four and a half trillion"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "4,500,000,000 has the digits 45 followed by eight zeros (4.5 with nine zeros total from the 4), which is four and a half billion.",
       hintLadder: [
         "Count the zeros: there are nine digits after the leading 4.",

@@ -38,12 +38,12 @@ export const winterG5ScienceW6D1 = {
       type: "multiple_choice",
       stem: "What is the FIRST step of the engineering design process?",
       choices: [
-        "Build the final product",
         "Define the problem you are trying to solve",
+        "Build the final product",
         "Sell the invention",
         "Throw away a test that did not work"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Before building anything, inventors define exactly what problem they are solving and what rules they must follow.",
       hintLadder: [
         "You cannot solve a problem you have not described yet.",
@@ -57,11 +57,11 @@ export const winterG5ScienceW6D1 = {
       stem: "When you BRAINSTORM, what should you do?",
       choices: [
         "Pick the very first idea and stop",
-        "Come up with lots of different ideas",
         "Skip straight to testing",
+        "Come up with lots of different ideas",
         "Copy someone else's finished design exactly"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Brainstorming means making lots of ideas so you have real choices before you build.",
       hintLadder: [
         "Brainstorming is about getting MANY ideas, not judging them yet.",
@@ -76,11 +76,11 @@ export const winterG5ScienceW6D1 = {
       stem: "A team's model snow shovel bends on the first push. In the design process, this test that did not work is BEST described as...",
       choices: [
         "A reason to give up",
-        "A helpful clue that shows what to fix",
+        "Something to hide from the team",
         "Proof the shovel can never work",
-        "Something to hide from the team"
+        "A helpful clue that shows what to fix"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A test that does not go well is a clue — it shows exactly which part to make stronger in the next version.",
       hintLadder: [
         "What does a test that did not work teach you?",

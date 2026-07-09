@@ -63,11 +63,11 @@ export const fallG6MathW7D3 = {
       stem: "On a historical timeline, BCE years...",
       choices: [
         "count UP like CE years",
-        "count DOWN toward zero (300 BCE is before 100 BCE)",
         "don't exist",
+        "count DOWN toward zero (300 BCE is before 100 BCE)",
         "are always larger than CE years"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "BCE years get smaller as time moves forward: 300 BCE comes before 100 BCE.",
       hintLadder: [
         "BCE means 'Before Common Era.'",

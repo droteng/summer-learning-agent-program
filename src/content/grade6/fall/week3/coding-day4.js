@@ -62,12 +62,12 @@ export const fallG6CodingW3D4 = {
       type: "multiple_choice",
       stem: "If you change pricePerCrate from 12 to 15 in the formula income = cratesSold × pricePerCrate (cratesSold = 25), what happens?",
       choices: [
-        "Nothing changes",
         "income recalculates to 375",
+        "Nothing changes",
         "cratesSold becomes 15",
         "the formula breaks"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Changing an input variable makes the formula recompute: 25 × 15 = 375.",
       hintLadder: [
         "The formula re-runs with the new value.",
@@ -173,11 +173,11 @@ export const fallG6CodingW3D4 = {
           stem: "A budget app runs: IF profit < 0 THEN show 'Loss!'. With income = 120 and costs = 145, what does the app show?",
           choices: [
             "Nothing — profit is positive",
-            "'Loss!' — profit is −25, which is below 0",
+            "The app crashes",
             "'Loss!' — but only because income is low",
-            "The app crashes"
+            "'Loss!' — profit is −25, which is below 0"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "profit = 120 − 145 = −25, which is less than 0, so the condition is true and 'Loss!' shows.",
           hintLadder: [
             "Compute profit = income − costs.",

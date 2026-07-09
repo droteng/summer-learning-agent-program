@@ -36,11 +36,11 @@ export const springG6HistoryW1D4 = {
       stem: "Why was SPRING an especially important season for early farming civilizations?",
       choices: [
         "It was the coldest time to store food",
-        "It was planting season, when warmth and rain let crops start growing",
         "It was when all wars traditionally ended",
+        "It was planting season, when warmth and rain let crops start growing",
         "It was the only time people could travel"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Spring's returning warmth and rain made it the time to plant — the beginning of the whole food year.",
       hintLadder: [
         "Connect spring to farming.",
@@ -73,11 +73,11 @@ export const springG6HistoryW1D4 = {
       stem: "How does modern Earth Day (first held in 1970) connect to ancient spring festivals?",
       choices: [
         "It has nothing in common with them",
-        "It is a spring event tied to the land, focused on protecting the environment that farming depends on",
+        "It was the very first spring festival ever held",
         "It celebrates the winter solstice",
-        "It was the very first spring festival ever held"
+        "It is a spring event tied to the land, focused on protecting the environment that farming depends on"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Earth Day continues the long tradition of a spring event connected to the land — now centered on protecting the environment.",
       hintLadder: [
         "Earth Day happens in spring, like the ancient festivals.",
@@ -165,12 +165,12 @@ export const springG6HistoryW1D4 = {
           type: "multiple_choice",
           stem: "Put these in the correct cause-and-effect order: (1) communities hold a spring festival, (2) warmth and rain return in spring, (3) farmers plant crops to start the food year.",
           choices: [
-            "1 → 2 → 3",
             "2 → 3 → 1",
+            "1 → 2 → 3",
             "3 → 1 → 2",
             "2 → 1 → 3"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Warmth and rain come first, which allows planting, which is the hopeful moment communities celebrate: 2 → 3 → 1.",
           hintLadder: [
             "What has to happen in nature BEFORE anyone can plant?",

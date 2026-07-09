@@ -54,11 +54,11 @@ export const fallG6ElaW8D5 = {
       stem: "A strong CLOSING to a presentation should...",
       choices: [
         "introduce brand-new information",
-        "restate the main message and leave one clear takeaway",
+        "apologize for the talk",
         "just say 'the end'",
-        "apologize for the talk"
+        "restate the main message and leave one clear takeaway"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Closings land the message and give the audience a takeaway — not new material.",
       hintLadder: [
         "What should the audience remember?",
@@ -73,11 +73,11 @@ export const fallG6ElaW8D5 = {
       stem: "Why is REFLECTING on your project valuable?",
       choices: [
         "It wastes time",
-        "It turns the experience into lasting learning by naming what worked and what to improve",
         "It only matters for grades",
+        "It turns the experience into lasting learning by naming what worked and what to improve",
         "It makes the project longer"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Reflection cements learning and guides how you'll do better next time.",
       hintLadder: [
         "What do you gain by thinking back?",
@@ -165,12 +165,12 @@ export const fallG6ElaW8D5 = {
           type: "multiple_choice",
           stem: "Which is the BEST way to close a showcase presentation?",
           choices: [
-            "Introduce a brand-new fact you forgot earlier.",
             "Restate your main message and thank the audience.",
+            "Introduce a brand-new fact you forgot earlier.",
             "Apologize for any mistakes you made.",
             "Just stop talking and sit down."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "A strong closing lands the message and leaves a takeaway — it doesn't add new info, apologize, or trail off.",
           hintLadder: [
             "What should the audience remember as you finish?",

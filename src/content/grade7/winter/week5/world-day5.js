@@ -37,12 +37,12 @@ export const winterG7WorldW5D5 = {
       type: "multiple_choice",
       stem: "Two news sites report the same cold snap. One shows a chart with the y-axis starting at zero; the other's chart starts at 40 cm. Which is more likely to give you an HONEST sense of the change, and why?",
       choices: [
-        "The one starting at 40 cm, because it fills the chart",
         "The one starting at zero, because a full baseline shows the true relative size of the change",
+        "The one starting at 40 cm, because it fills the chart",
         "They are equally honest — the axis never matters",
         "Neither, because charts are always misleading"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "An axis that starts at zero keeps the shared base of the bars, so their heights reflect the real relative sizes. A cut-off axis (starting at 40) stretches small differences into dramatic-looking gaps.",
       hintLadder: [
         "Where does each y-axis begin?",
@@ -57,11 +57,11 @@ export const winterG7WorldW5D5 = {
       stem: "Source A says 'Cold days TRIPLED this winter!' Source B says 'Cold days went from 4 to 12.' A reader wants to know if the sources CONTRADICT each other. What's the best conclusion?",
       choices: [
         "They contradict — one says tripled, the other gives numbers",
-        "They agree: 4 to 12 IS tripling, but B gives the raw numbers so you can judge the real size",
         "Source B must be wrong because it has no percentage",
+        "They agree: 4 to 12 IS tripling, but B gives the raw numbers so you can judge the real size",
         "You can't compare them at all"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Going from 4 to 12 is exactly tripling, so both sources describe the same change. B is just more transparent, giving the actual counts instead of only the dramatic multiplier.",
       hintLadder: [
         "Does 4 to 12 match the word 'tripled'?",

@@ -1,12 +1,12 @@
 export function createDiagnosticQuest(studentProfile) {
   const firstName = studentProfile.firstName || "Student";
+  const gradeLevel = studentProfile.gradeLevel ?? 6;
 
   return {
     title: "Explorer Check-In",
-    gradeLevel: studentProfile.gradeLevel,
+    gradeLevel,
     studentName: firstName,
-    purpose:
-      "A low-pressure Grade 6 readiness check that helps the Principal Agent tune mission difficulty and parent support.",
+    purpose: `A low-pressure Grade ${gradeLevel} readiness check that helps the Principal Agent tune mission difficulty and parent support.`,
     parentNote:
       "Review effort, confidence, and explanation quality. This is not a school grade and should stay encouraging.",
     questions: [

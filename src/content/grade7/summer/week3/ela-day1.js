@@ -54,12 +54,12 @@ export const summerG7ElaW3D1 = {
       type: "multiple_choice",
       stem: "A writer mentions early in the story that the boat's radio 'crackled and went dead sometimes.' Later, the characters are stranded because the radio fails. This technique is called:",
       choices: [
-        "Resolution",
-        "Exposition",
         "Foreshadowing",
+        "Exposition",
+        "Resolution",
         "Falling action"
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "Planting an early detail that pays off later is foreshadowing — it makes the crisis feel prepared for rather than random.",
       hintLadder: [
         "The early detail hints at a later event.",
@@ -74,11 +74,11 @@ export const summerG7ElaW3D1 = {
       stem: "What is the main job of a SUBPLOT in a Grade 7 adventure story?",
       choices: [
         "To replace the main conflict entirely",
-        "To add a second thread of conflict that deepens or complicates the main story",
+        "To end the story quickly",
         "To list facts about the setting",
-        "To end the story quickly"
+        "To add a second thread of conflict that deepens or complicates the main story"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A subplot is a secondary conflict woven beside the main plot; at its best it collides with the main line and raises the stakes.",
       hintLadder: [
         "'Sub' means beneath or secondary.",
@@ -166,12 +166,12 @@ export const summerG7ElaW3D1 = {
           type: "multiple_choice",
           stem: "Put these plot beats in correct arc order: (1) the storm finally breaks and the crew limps to shore, (2) the crew sets sail on a calm morning, (3) the mast cracks in the worst of the storm, (4) safe on the beach, they vow never to ignore a warning again.",
           choices: [
-            "2 → 3 → 1 → 4",
-            "1 → 2 → 3 → 4",
             "2 → 1 → 3 → 4",
+            "1 → 2 → 3 → 4",
+            "2 → 3 → 1 → 4",
             "3 → 2 → 1 → 4"
           ],
-          answerIndex: 0,
+          answerIndex: 2,
           explanation: "Exposition (2, calm launch) → climax (3, the mast cracks at peak danger) → falling action (1, they limp to shore) → resolution (4, the vow). Order: 2 → 3 → 1 → 4.",
           hintLadder: [
             "Which beat sets the scene before any trouble?",

@@ -79,12 +79,12 @@ export const springG7MathW5D2 = {
       type: "multiple_choice",
       stem: "Plant A grew 45 cm in 9 days. Plant B grew 32 cm in 8 days. Which plant had the greater AVERAGE rate of change, and by how much?",
       choices: [
-        "Plant B, because 8 days is a longer, steadier stretch",
         "Plant A, whose average is 5 cm/day versus Plant B's 4 cm/day — 1 cm/day greater",
+        "Plant B, because 8 days is a longer, steadier stretch",
         "They tie, because both grew a lot",
         "Plant A, because 45 cm is a bigger total"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Plant A: 45 ÷ 9 = 5 cm/day. Plant B: 32 ÷ 8 = 4 cm/day. Plant A's average rate is greater by 5 − 4 = 1 cm/day. Compare rates, not totals.",
       hintLadder: [
         "Compute each plant's average rate: total ÷ days.",

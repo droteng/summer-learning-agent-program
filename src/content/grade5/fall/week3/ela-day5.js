@@ -37,11 +37,11 @@ export const fallG5ElaW3D5 = {
       stem: "Which is the strongest OPENING for a data summary?",
       choices: [
         "There were some numbers.",
-        "Our harvest earned a $10 profit this season.",
+        "I hope you like graphs.",
         "Math is hard.",
-        "I hope you like graphs."
+        "Our harvest earned a $10 profit this season."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "It leads with the main finding and an exact number.",
       hintLadder: [
         "A summary should start with the key result.",
@@ -54,12 +54,12 @@ export const fallG5ElaW3D5 = {
       type: "multiple_choice",
       stem: "Your data shows a small LOSS. What's the honest thing to do in your summary?",
       choices: [
-        "Say it was a profit anyway",
-        "Hide the numbers",
         "Clearly state the loss and the numbers behind it",
+        "Hide the numbers",
+        "Say it was a profit anyway",
         "Only mention the income"
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "Honest data writing reports what the numbers really show, including a loss.",
       hintLadder: [
         "Good data writing tells the truth.",
@@ -74,11 +74,11 @@ export const fallG5ElaW3D5 = {
       stem: "A good data summary ends with a 'so what.' Which is a strong 'so what'?",
       choices: [
         "The end.",
-        "Because costs were high, next time we'll buy seeds in a big bag to spend less.",
         "Numbers are numbers.",
+        "Because costs were high, next time we'll buy seeds in a big bag to spend less.",
         "I'm tired of this project."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "It draws a conclusion and gives a next step based on the data.",
       hintLadder: [
         "'So what' means what the data makes you want to do or think.",

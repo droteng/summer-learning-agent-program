@@ -36,11 +36,11 @@ export const winterG6CodingW6D2 = {
       stem: "Rule: IF temperature <= 0, THEN output 'Freezing — wear a coat.' The temperature is exactly 0°C. What is the output?",
       choices: [
         "Nothing — the rule only fires below 0",
-        "'Freezing — wear a coat.' because 0 <= 0 is true",
+        "'It's warm.'",
         "An error",
-        "'It's warm.'"
+        "'Freezing — wear a coat.' because 0 <= 0 is true"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "'<=' means less than OR equal to, so exactly 0 makes the condition true and the THEN branch runs.",
       hintLadder: [
         "What does the '=' in '<=' allow?",
@@ -55,11 +55,11 @@ export const winterG6CodingW6D2 = {
       stem: "You want a helper that says 'Coat' for very cold, 'Jacket' for chilly, and 'No coat' for mild. Which code structure fits BEST?",
       choices: [
         "A single IF with no ELSE",
-        "IF / ELSE IF / ELSE to cover three ranges",
         "A rule with no conditions at all",
+        "IF / ELSE IF / ELSE to cover three ranges",
         "Three separate programs"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Three outcomes based on ranges are handled cleanly by IF / ELSE IF / ELSE, which checks conditions in order.",
       hintLadder: [
         "You have THREE possible answers, not two.",
@@ -72,12 +72,12 @@ export const winterG6CodingW6D2 = {
       type: "multiple_choice",
       stem: "In this logic — IF temp < 0 THEN 'Coat' ELSE IF temp < 10 THEN 'Jacket' ELSE 'No coat' — what does it output for 4°C?",
       choices: [
-        "'Coat'",
         "'Jacket'",
+        "'Coat'",
         "'No coat'",
         "Both 'Jacket' and 'No coat'"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "4 < 0 is false, so it checks the next: 4 < 10 is true, so it outputs 'Jacket' and stops.",
       hintLadder: [
         "Check the first condition: is 4 < 0?",

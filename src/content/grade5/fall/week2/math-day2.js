@@ -64,12 +64,12 @@ export const fallG5MathW2D2 = {
       type: "multiple_choice",
       stem: "Why does a food chain usually have only 4 or 5 levels at most?",
       choices: [
-        "Animals get bored.",
         "After a few 10% steps, the energy is too small to feed another level.",
+        "Animals get bored.",
         "There aren't enough names for the levels.",
         "Producers stop growing."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Each level keeps only a tenth of the energy. After a few steps, so little is left that it can't support a higher level of predators.",
       hintLadder: [
         "Each level keeps only a tenth of the energy.",
@@ -83,11 +83,11 @@ export const fallG5MathW2D2 = {
       stem: "An energy pyramid is widest at the bottom. What does the WIDTH of each level show?",
       choices: [
         "How tall the animals are",
-        "How much energy (and usually how many living things) that level has",
+        "The temperature",
         "How fast the animals run",
-        "The temperature"
+        "How much energy (and usually how many living things) that level has"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Wider levels have more energy and more living things. That is why the producers make the wide base.",
       hintLadder: [
         "The bottom has the most of something.",

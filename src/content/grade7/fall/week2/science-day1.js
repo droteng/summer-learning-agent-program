@@ -36,11 +36,11 @@ export const fallG7ScienceW2D1 = {
       stem: "In an ecosystem, which statement about energy and matter is correct?",
       choices: [
         "Both energy and matter are recycled endlessly.",
-        "Energy flows one way and is lost as heat, while matter cycles and is reused.",
+        "Neither energy nor matter moves between organisms.",
         "Matter is lost as heat while energy is recycled by decomposers.",
-        "Neither energy nor matter moves between organisms."
+        "Energy flows one way and is lost as heat, while matter cycles and is reused."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Energy enters as sunlight and is lost as heat at each transfer (one-way), but decomposers return matter (carbon, nitrogen, minerals) to the soil for producers to reuse.",
       hintLadder: [
         "One of these two things gets recycled and the other doesn't.",

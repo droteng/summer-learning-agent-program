@@ -36,12 +36,12 @@ export const springG7ElaW4D5 = {
       type: "multiple_choice",
       stem: "What best DEVELOPS an idea in informational writing?",
       choices: [
-        "Repeating the same sentence in different words",
         "Supporting a fact with concrete evidence or a specific example",
+        "Repeating the same sentence in different words",
         "Adding your personal opinion about the topic",
         "Making the sentence as long as possible"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Developing an idea means supporting it with evidence or an example, so the reader understands and trusts the explanation — not restating it or adding opinion.",
       hintLadder: [
         "Developing is more than restating a fact.",
@@ -55,11 +55,11 @@ export const springG7ElaW4D5 = {
       stem: "Which transition best links a CAUSE to its EFFECT across two sentences?",
       choices: [
         "For example",
-        "As a result",
         "On the other hand",
+        "As a result",
         "In the meantime"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "'As a result' signals that what follows is the effect of the previous cause. The others signal examples, contrast, or time.",
       hintLadder: [
         "You want a transition that means 'this leads to that.'",
@@ -174,11 +174,11 @@ export const springG7ElaW4D5 = {
           stem: "Which revision turns a LIST of facts into a LINKED cause/effect explanation?",
           choices: [
             "The rabbit has two recessive alleles. The fur is white. The parents were carriers.",
-            "Because the rabbit inherited two recessive alleles, one from each carrier parent, no dominant allele is present; as a result, it shows the white-fur phenotype.",
+            "White fur looks nice, and the rabbit is cute.",
             "The rabbit is white. White is a color. Rabbits can be white.",
-            "White fur looks nice, and the rabbit is cute."
+            "Because the rabbit inherited two recessive alleles, one from each carrier parent, no dominant allele is present; as a result, it shows the white-fur phenotype."
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "The second option uses cause/effect transitions ('because,' 'as a result') and precise terms to LINK the facts into a chain of reasoning, instead of listing them separately.",
           hintLadder: [
             "Which option connects the facts instead of listing them?",

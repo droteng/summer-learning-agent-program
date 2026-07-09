@@ -38,11 +38,11 @@ export const grade6StudyDay3 = {
       stem: "Which is ACTIVE RECALL?",
       choices: [
         "Re-reading the textbook out loud.",
-        "Closing the book and trying to write what you remember.",
         "Highlighting the important parts.",
+        "Closing the book and trying to write what you remember.",
         "Watching a video of someone explaining."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Active recall = retrieve from memory. The book stays closed.",
       hintLadder: [
         "Active means you do the work.",
@@ -76,11 +76,11 @@ export const grade6StudyDay3 = {
         "Phone number 555-867-5309 is easier to remember than 5558675309. Why?",
       choices: [
         "Hyphens look nicer.",
-        "Chunking groups digits into 3-3-4, which fits how short-term memory works.",
+        "Bigger numbers are scary.",
         "Phone numbers are magic.",
-        "Bigger numbers are scary."
+        "Chunking groups digits into 3-3-4, which fits how short-term memory works."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Short-term memory holds about 7 items. Chunking shrinks the items down — 3 groups instead of 10 digits.",
       hintLadder: [
         "What does the spacing do?",
@@ -93,12 +93,12 @@ export const grade6StudyDay3 = {
       type: "multiple_choice",
       stem: "A 'failed' active-recall attempt is:",
       choices: [
-        "Wasted time.",
         "A signal of what to study next + actually helps long-term memory.",
+        "Wasted time.",
         "Embarrassing.",
         "A reason to give up."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Trying and failing is informative AND strengthens the eventual correct answer when you check.",
       hintLadder: [
         "Is failure here useful?",

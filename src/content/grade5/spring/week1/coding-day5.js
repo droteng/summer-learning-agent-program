@@ -37,12 +37,12 @@ export const springG5CodingW1D5 = {
       type: "multiple_choice",
       stem: "What is an ALGORITHM?",
       choices: [
-        "A pile of steps in any order at all",
         "A list of steps to finish a job, in the right order",
+        "A pile of steps in any order at all",
         "One single word",
         "A picture of a flower"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "An algorithm is a clear list of steps, in order, that finishes a job.",
       hintLadder: [
         "Think about a recipe or the directions to a friend's house.",

@@ -37,11 +37,11 @@ export const winterG5ScienceW2D2 = {
       stem: "An ice cube left on the counter slowly turns into a puddle of water. What phase change is this, and what is happening to heat?",
       choices: [
         "Freezing; heat is taken away",
-        "Melting; heat is added",
+        "Evaporation; heat is added",
         "Condensation; heat is taken away",
-        "Evaporation; heat is added"
+        "Melting; heat is added"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Solid ice turning into liquid water is melting, which happens when heat is ADDED to the ice.",
       hintLadder: [
         "Ice is a solid; a puddle is a liquid.",
@@ -54,12 +54,12 @@ export const winterG5ScienceW2D2 = {
       type: "multiple_choice",
       stem: "On a cold morning, tiny water drops appear on the OUTSIDE of a cold window. Where did that water come from?",
       choices: [
-        "The glass leaked water",
         "Water vapor in the air cooled and condensed into liquid on the cold glass",
+        "The glass leaked water",
         "The window melted",
         "The water froze out of nowhere"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Invisible water vapor in the air touches the cold glass, cools down, and condenses into little liquid drops — that is condensation.",
       hintLadder: [
         "The air around us always holds some invisible water vapor.",
@@ -173,11 +173,11 @@ export const winterG5ScienceW2D2 = {
           stem: "Which pair of phase changes BOTH need heat to be ADDED?",
           choices: [
             "Freezing and condensation",
-            "Melting and evaporation",
             "Freezing and melting",
+            "Melting and evaporation",
             "Condensation and evaporation"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Melting (solid to liquid) and evaporation (liquid to gas) both need heat added. Freezing and condensation both take heat away.",
           hintLadder: [
             "Which changes make the particles move faster?",

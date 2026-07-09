@@ -65,11 +65,11 @@ export const fallG5CodingW3D4 = {
       stem: "You change pricePerCrate from 5 to 8 in income = cratesSold × pricePerCrate (cratesSold = 6). What happens?",
       choices: [
         "Nothing changes",
-        "income recalculates to 48",
+        "the formula breaks",
         "cratesSold becomes 8",
-        "the formula breaks"
+        "income recalculates to 48"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Changing a box makes the formula run again: 6 × 8 = 48.",
       hintLadder: [
         "The formula runs again with the new number in the box.",
@@ -175,11 +175,11 @@ export const fallG5CodingW3D4 = {
           stem: "A budget app runs: IF leftover is less than 0 THEN show 'Loss!'. With income = 12 and costs = 20, what does the app show?",
           choices: [
             "Nothing — leftover is positive",
-            "'Loss!' — leftover is −8, which is below 0",
             "'Loss!' — but only because income is low",
+            "'Loss!' — leftover is −8, which is below 0",
             "The app crashes"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "leftover = 12 − 20 = −8, which is less than 0, so the warning shows 'Loss!'.",
           hintLadder: [
             "Compute leftover = income − costs.",

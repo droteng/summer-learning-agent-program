@@ -37,11 +37,11 @@ export const fallG7CodingW4D5 = {
       stem: "What is a FUNCTION in programming?",
       choices: [
         "A single line that never repeats",
-        "A named, reusable set of steps you can call again and again",
         "A type of ancient city",
+        "A named, reusable set of steps you can call again and again",
         "A random pile of data"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A function packages steps under a name so you can reuse them without rewriting — like a reusable recipe.",
       hintLadder: [
         "Think 'reusable recipe with a name.'",
@@ -55,11 +55,11 @@ export const fallG7CodingW4D5 = {
       stem: "A function makePapyrus(reedCount) takes reedCount as an INPUT. Why is the input useful?",
       choices: [
         "It makes the function longer for no reason",
-        "It lets the SAME function work for different amounts of reed without rewriting it",
+        "The function ignores the input",
         "Inputs slow the function down",
-        "The function ignores the input"
+        "It lets the SAME function work for different amounts of reed without rewriting it"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A parameter (input) lets one function handle many cases — makePapyrus(10) and makePapyrus(50) reuse the same steps with different data.",
       hintLadder: [
         "Why pass a number INTO a function?",
@@ -73,12 +73,12 @@ export const fallG7CodingW4D5 = {
       type: "multiple_choice",
       stem: "You want to store the ordered steps for making bread. Which data structure fits BEST?",
       choices: [
-        "A single number",
         "A LIST, because it holds items in order",
+        "A single number",
         "A blank page",
         "A function name only"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A list holds an ordered sequence of items — perfect for ordered steps like a recipe.",
       hintLadder: [
         "The steps have an ORDER that matters.",

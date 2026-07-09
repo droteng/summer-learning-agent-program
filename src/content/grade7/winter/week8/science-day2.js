@@ -37,11 +37,11 @@ export const winterG7ScienceW8D2 = {
       stem: "Two identical amounts of water sit outside on a freezing night: one spread in a wide shallow tray, one in a tall narrow jar. Which freezes first, and WHY (as a mechanism)?",
       choices: [
         "The jar, because tall water is colder.",
-        "The tray, because its larger surface area relative to volume lets heat energy leave faster, so its molecules reach freezing sooner.",
         "They freeze at exactly the same time — shape doesn't matter.",
+        "The tray, because its larger surface area relative to volume lets heat energy leave faster, so its molecules reach freezing sooner.",
         "Neither freezes, because water can't lose heat at night."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Same volume, but the shallow tray exposes much more surface to the cold air, so heat energy transfers out faster. Losing energy faster means its molecules slow and lock into ice sooner.",
       hintLadder: [
         "Which shape touches the cold air over a bigger surface?",
@@ -74,11 +74,11 @@ export const winterG7ScienceW8D2 = {
       stem: "Why is winter colder than summer in Connecticut — and why does the same tilt make the SOUTHERN Hemisphere warm at that time?",
       choices: [
         "Earth is much farther from the Sun during northern winter.",
-        "Earth's axial tilt means the northern half receives low-angle sunlight for fewer hours (less energy per area), while the tilted-toward southern half gets high-angle sunlight (more energy per area).",
+        "Snow reflects the Sun and cools the whole planet at once.",
         "The Sun cools down for half the year.",
-        "Snow reflects the Sun and cools the whole planet at once."
+        "Earth's axial tilt means the northern half receives low-angle sunlight for fewer hours (less energy per area), while the tilted-toward southern half gets high-angle sunlight (more energy per area)."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "The fixed axial tilt points one hemisphere toward the Sun and the other away as Earth orbits. The hemisphere tilted away gets low-angle, short-day sunlight (less energy per area) = winter; the other gets high-angle sun = summer. Distance can't explain opposite seasons at once.",
       hintLadder: [
         "If distance caused seasons, both hemispheres would be cold together — they aren't.",
@@ -177,12 +177,12 @@ export const winterG7ScienceW8D2 = {
           type: "multiple_choice",
           stem: "A warm metal spoon and a warm wooden spoon are left in the snow. The metal one feels colder much faster. Which mechanism explains this?",
           choices: [
-            "Cold energy flows into the metal faster than into the wood.",
             "Metal conducts heat far better than wood, so heat energy transfers OUT of the metal into the snow at a much higher rate.",
+            "Cold energy flows into the metal faster than into the wood.",
             "Metal contains cold that the wood lacks.",
             "Nothing happens; both stay the same temperature."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Conduction rate differs by material: metal is a good conductor, so heat energy leaves it into the cold snow quickly, while wood insulates and loses heat slowly. There is no 'cold energy' — only heat transferring out.",
           hintLadder: [
             "Which material is a better heat conductor, metal or wood?",

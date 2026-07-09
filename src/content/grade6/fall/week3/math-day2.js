@@ -33,8 +33,8 @@ export const fallG6MathW3D2 = {
       id: "g6.fall.math.w3.d2.q1",
       type: "multiple_choice",
       stem: "Which graph type is BEST for showing how corn yield changed each month over a season?",
-      choices: ["Pie chart", "Bar graph", "Line graph", "Tally chart"],
-      answerIndex: 2,
+      choices: ["Pie chart", "Bar graph", "Tally chart", "Line graph"],
+      answerIndex: 3,
       explanation: "Line graphs are designed to show change over time.",
       hintLadder: [
         "The key phrase is 'changed each month' — over time.",
@@ -77,11 +77,11 @@ export const fallG6MathW3D2 = {
       stem: "Before reading any value off a graph, what should you check FIRST?",
       choices: [
         "The color of the bars",
-        "The axis labels and scale",
         "Who made the graph",
+        "The axis labels and scale",
         "The title font"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Axis labels tell you what's measured; the scale tells you how much each gridline is worth.",
       hintLadder: [
         "What lets you know what the numbers mean?",
@@ -166,8 +166,8 @@ export const fallG6MathW3D2 = {
           id: "g6.fall.math.w3.d2.arena2",
           type: "multiple_choice",
           stem: "A line graph's y-axis counts by 25s. A point sits exactly halfway between the 50 and 75 gridlines. What value is it?",
-          choices: ["60", "62.5", "65", "100"],
-          answerIndex: 1,
+          choices: ["62.5", "60", "65", "100"],
+          answerIndex: 0,
           explanation: "Halfway between 50 and 75 is (50 + 75) ÷ 2 = 62.5.",
           hintLadder: [
             "You need the midpoint of 50 and 75.",

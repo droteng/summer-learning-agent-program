@@ -83,11 +83,11 @@ export const winterG7MathW5D2 = {
       stem: "A dataset of winter lows has mean -2°C and median -6°C, with one unusually warm day of +15°C. Why is the mean so much higher than the median here?",
       choices: [
         "The median was calculated wrong",
-        "The single warm +15°C day is an outlier that pulls the MEAN up, while the median resists it",
         "Mean and median are always different",
+        "The single warm +15°C day is an outlier that pulls the MEAN up, while the median resists it",
         "The dataset has no mode, so the mean is unreliable"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "The +15°C outlier is added into the total, dragging the mean upward. The median only depends on the middle position, so the outlier barely moves it — leaving mean well above median.",
       hintLadder: [
         "Which measure uses the actual SIZE of every value?",

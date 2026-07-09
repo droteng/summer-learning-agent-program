@@ -29,6 +29,40 @@ export function summarizeWeeklyProgress({ week, missions }) {
   };
 }
 
+// Feedback voice. One fixed "Correct!"/"Not quite." for every answer reads
+// robotic after a week of daily missions — kids tune it out. Openers are
+// picked deterministically from a pool seeded by item id + attempt, so the
+// same moment always gets the same words (stable for tests and replays) but
+// consecutive questions and retries sound like a person, not a template.
+const PRAISE_OPENERS = [
+  "Nailed it!",
+  "Yes — that's the one.",
+  "You got it.",
+  "Exactly right.",
+  "That's it!",
+  "Sharp thinking.",
+  "Right on.",
+  "Well spotted."
+];
+
+const RETRY_OPENERS = [
+  "Not this one — take another look.",
+  "Close, but not quite.",
+  "Hmm — check that again.",
+  "Not yet, but you're circling it.",
+  "Almost. Look once more.",
+  "Good try — not quite it."
+];
+
+function pickOpener(pool, itemId, attempts) {
+  let hash = 0;
+  const key = `${itemId}:${attempts}`;
+  for (let i = 0; i < key.length; i++) {
+    hash = (hash * 31 + key.charCodeAt(i)) >>> 0;
+  }
+  return pool[hash % pool.length];
+}
+
 // Grade a single authored item. MCQ and numeric items are graded
 // deterministically. Short-answer items are graded via the LLM rubric path
 // when an llm provider is supplied; otherwise a length+evidence heuristic is
@@ -68,8 +102,8 @@ function gradeMultipleChoice({ item, response, baseResult }) {
     score: correct ? 1 : 0,
     rubricLevel: null,
     feedback: correct
-      ? truncate(`Correct! ${item.explanation ?? ""}`.trim(), 220)
-      : `Not quite. ${chooseHint(item, baseResult.attempts)}`,
+      ? truncate(`${pickOpener(PRAISE_OPENERS, item.id, baseResult.attempts)} ${item.explanation ?? ""}`.trim(), 220)
+      : `${pickOpener(RETRY_OPENERS, item.id, baseResult.attempts)} ${chooseHint(item, baseResult.attempts)}`,
     misconceptionId: correct ? null : pickMisconception(item),
     nextHintIndex: nextHintIndex({ correct, item, attempts: baseResult.attempts }),
     model: null
@@ -88,8 +122,11 @@ function gradeNumeric({ item, response, baseResult }) {
     score: correct ? 1 : 0,
     rubricLevel: null,
     feedback: correct
-      ? truncate(`Right — ${target}${unitSuffix}. ${item.explanation ?? ""}`.trim(), 220)
-      : `Try again. ${chooseHint(item, baseResult.attempts)}`,
+      ? truncate(
+          `${pickOpener(PRAISE_OPENERS, item.id, baseResult.attempts)} ${target}${unitSuffix} is right. ${item.explanation ?? ""}`.trim(),
+          220
+        )
+      : `${pickOpener(RETRY_OPENERS, item.id, baseResult.attempts)} ${chooseHint(item, baseResult.attempts)}`,
     misconceptionId: correct ? null : pickMisconception(item),
     nextHintIndex: nextHintIndex({ correct, item, attempts: baseResult.attempts }),
     model: null

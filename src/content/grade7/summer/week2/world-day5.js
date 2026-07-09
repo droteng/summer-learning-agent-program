@@ -36,11 +36,11 @@ export const summerG7WorldW2D5 = {
       stem: "A bar graph's y-axis starts at 90 instead of 0, so a bar of 92 looks tiny next to a bar of 98. Why is this misleading?",
       choices: [
         "Bar graphs can never show percentages.",
-        "Cutting off the bottom of the axis exaggerates a small difference, making it look huge.",
         "The colors of the bars are wrong.",
+        "Cutting off the bottom of the axis exaggerates a small difference, making it look huge.",
         "Graphs should never use a y-axis at all."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Starting the y-axis at 90 instead of 0 stretches a 6-point gap so it looks like a massive difference, even though 92 and 98 are close.",
       hintLadder: [
         "Look at where the y-axis begins.",
@@ -55,11 +55,11 @@ export const summerG7WorldW2D5 = {
       stem: "A website claims '9 out of 10 users prefer our app!' but only surveyed 10 of its own paying members. What is the main problem?",
       choices: [
         "The math (9/10 = 90%) is wrong.",
-        "The sample is biased and too small to represent all users.",
+        "There is no problem — 90% is a fact.",
         "Percentages can't come from surveys.",
-        "There is no problem — 90% is a fact."
+        "The sample is biased and too small to represent all users."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Asking only 10 of your own paying members isn't a fair, representative sample of all users, so the 90% can't be generalized — the sample is biased and tiny.",
       hintLadder: [
         "Who exactly was asked, and how many?",
@@ -168,12 +168,12 @@ export const summerG7WorldW2D5 = {
           type: "multiple_choice",
           stem: "A poll on a gaming website finds '95% of people play video games daily.' Why can't this be used to claim '95% of ALL teens game daily'?",
           choices: [
-            "95% is not a real percentage.",
             "The sample only includes people already visiting a gaming site, so it's biased and not representative of all teens.",
+            "95% is not a real percentage.",
             "Polls are never allowed to use percentages.",
             "The website should have asked 100 people to make it 100%."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "People on a gaming website are far more likely to game than average, so the sample is biased and can't represent all teens — the conclusion doesn't generalize.",
           hintLadder: [
             "Who visits a gaming website in the first place?",

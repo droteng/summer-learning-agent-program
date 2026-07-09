@@ -36,12 +36,12 @@ export const winterG7ElaW1D3 = {
       type: "multiple_choice",
       stem: "Which statement is a full GOAL PLAN — specific, measurable, AND reasoned — rather than just a measurable goal?",
       choices: [
-        "I will read one book each week until winter break.",
         "I will read one book each week until winter break so I can raise my reading level, and I'll track it with a reading log.",
+        "I will read one book each week until winter break.",
         "I want to become a better reader this winter.",
         "Reading is important, so everyone should read more."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "It is specific and measurable ('one book each week until winter break'), gives a REASON ('to raise my reading level'), AND names evidence ('a reading log'). The first is only measurable; the others are vague or generic.",
       hintLadder: [
         "A goal PLAN adds a reason and a way to prove it, not just an amount.",
@@ -75,10 +75,10 @@ export const winterG7ElaW1D3 = {
       choices: [
         "A measurable amount",
         "A time frame",
-        "A reason it matters",
-        "The evidence of success AND the likely obstacle with a response"
+        "The evidence of success AND the likely obstacle with a response",
+        "A reason it matters"
       ],
-      answerIndex: 3,
+      answerIndex: 2,
       explanation: "It already has the amount (20 min/day), the time frame (until February), and a reason (to play the recital piece). What's missing at Grade 7 is the EVIDENCE of success and a named obstacle with a response.",
       hintLadder: [
         "Check off what's there: amount, deadline, reason — all present.",
@@ -174,10 +174,10 @@ export const winterG7ElaW1D3 = {
           choices: [
             "I'll try to do better in science this winter.",
             "I'll study science sometimes so I can pass.",
-            "I'll review my science notes 15 minutes a day, four days a week, until winter break to raise my quiz scores; when practices run late I'll review on the bus instead.",
-            "Science is important, so I should study it more."
+            "Science is important, so I should study it more.",
+            "I'll review my science notes 15 minutes a day, four days a week, until winter break to raise my quiz scores; when practices run late I'll review on the bus instead."
           ],
-          answerIndex: 2,
+          answerIndex: 3,
           explanation: "Only the third has all four marks: the exact action and amount (15 min, four days a week), a deadline (winter break), a reason (raise quiz scores), AND an obstacle with a response (late practices → review on the bus).",
           hintLadder: [
             "Look for amount + deadline + reason + a handled obstacle.",

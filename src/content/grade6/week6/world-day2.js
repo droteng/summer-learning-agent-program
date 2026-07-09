@@ -32,8 +32,8 @@ export const grade6WorldWeek6Day2 = {
       id: "g6.world.w6.d2.q1",
       type: "multiple_choice",
       stem: "How many continents are there?",
-      choices: ["5", "6", "7", "8"],
-      answerIndex: 2,
+      choices: ["7", "6", "5", "8"],
+      answerIndex: 0,
       explanation: "Seven: Africa, Antarctica, Asia, Australia/Oceania, Europe, North America, South America.",
       hintLadder: [
         "Count: Africa, Antarctica, Asia, Australia, Europe, N. America, S. America.",
@@ -45,8 +45,8 @@ export const grade6WorldWeek6Day2 = {
       id: "g6.world.w6.d2.q2",
       type: "multiple_choice",
       stem: "Which is the largest ocean by area?",
-      choices: ["Atlantic", "Indian", "Pacific", "Arctic"],
-      answerIndex: 2,
+      choices: ["Atlantic", "Pacific", "Indian", "Arctic"],
+      answerIndex: 1,
       explanation: "The Pacific covers about a third of Earth's surface — larger than all the continents combined.",
       hintLadder: [
         "Picture a globe.",
@@ -61,10 +61,10 @@ export const grade6WorldWeek6Day2 = {
       choices: [
         "Northern + Western",
         "Northern + Eastern",
-        "Southern + Western",
-        "Southern + Eastern"
+        "Southern + Eastern",
+        "Southern + Western"
       ],
-      answerIndex: 3,
+      answerIndex: 2,
       explanation: "Australia is below the equator (Southern) and east of the prime meridian (Eastern).",
       hintLadder: [
         "Is Australia above or below the equator?",
@@ -77,8 +77,8 @@ export const grade6WorldWeek6Day2 = {
       id: "g6.world.w6.d2.q4",
       type: "multiple_choice",
       stem: "The Sahara desert is on which continent?",
-      choices: ["Asia", "Africa", "Australia", "South America"],
-      answerIndex: 1,
+      choices: ["Asia", "South America", "Australia", "Africa"],
+      answerIndex: 3,
       explanation: "The Sahara is the world's largest hot desert, stretching across northern Africa.",
       hintLadder: [
         "The Sahara is in the north of one continent.",
@@ -163,12 +163,12 @@ export const grade6WorldWeek6Day2 = {
           type: "multiple_choice",
           stem: "Brazil is south of the equator and west of the prime meridian. Which hemispheres is it in?",
           choices: [
-            "Northern + Eastern",
+            "Southern + Western",
             "Northern + Western",
             "Southern + Eastern",
-            "Southern + Western"
+            "Northern + Eastern"
           ],
-          answerIndex: 3,
+          answerIndex: 0,
           explanation: "South of the equator means Southern hemisphere; west of the prime meridian means Western hemisphere. So Brazil is Southern + Western.",
           hintLadder: [
             "South of the equator → which N/S hemisphere?",

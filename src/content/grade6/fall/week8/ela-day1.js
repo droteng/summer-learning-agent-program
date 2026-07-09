@@ -34,12 +34,12 @@ export const fallG6ElaW8D1 = {
       type: "multiple_choice",
       stem: "What are the three main parts of a strong presentation?",
       choices: [
-        "Title, author, date",
         "Opening hook, middle with main points, closing message",
+        "Title, author, date",
         "Introduction, introduction, introduction",
         "Beginning, snack, end"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Hook → main points with evidence → closing message is the classic structure.",
       hintLadder: [
         "Think beginning, middle, end with a purpose.",
@@ -72,11 +72,11 @@ export const fallG6ElaW8D1 = {
       stem: "What's the job of a TRANSITION in a presentation?",
       choices: [
         "To end the talk",
-        "To smoothly connect one part to the next so the audience can follow",
         "To add random facts",
+        "To smoothly connect one part to the next so the audience can follow",
         "To repeat the title"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Transitions bridge sections so the audience follows your flow across topics.",
       hintLadder: [
         "What helps an audience move from idea to idea?",
@@ -166,10 +166,10 @@ export const fallG6ElaW8D1 = {
           choices: [
             "Hi, my project is about the fall season.",
             "Today I will tell you some things I did.",
-            "Did you know that losing just one animal can topple an entire forest?",
-            "Um, so, this is my presentation."
+            "Um, so, this is my presentation.",
+            "Did you know that losing just one animal can topple an entire forest?"
           ],
-          answerIndex: 2,
+          answerIndex: 3,
           explanation: "A surprising question pulls the audience in immediately; the others are flat openings with no hook.",
           hintLadder: [
             "Which line makes you curious to hear more?",

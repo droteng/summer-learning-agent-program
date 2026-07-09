@@ -49,11 +49,11 @@ export const fallG6CodingW6D3 = {
       stem: "Why use a loop instead of writing 'stamp a leaf' 50 times?",
       choices: [
         "Loops are slower",
-        "A loop is shorter, easier to change, and less error-prone",
+        "There's no difference",
         "Loops only work for 2 steps",
-        "There's no difference"
+        "A loop is shorter, easier to change, and less error-prone"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Loops avoid repetition: fewer lines, easy to adjust, fewer mistakes.",
       hintLadder: [
         "Imagine changing 50 to 100 by hand.",
@@ -80,8 +80,8 @@ export const fallG6CodingW6D3 = {
       id: "g6.fall.code.w6.d3.q4",
       type: "multiple_choice",
       stem: "A flower pattern repeats 'draw petal, turn 72°.' How many petals before it returns to start? (360 ÷ 72)",
-      choices: ["3", "4", "5", "6"],
-      answerIndex: 2,
+      choices: ["5", "4", "3", "6"],
+      answerIndex: 0,
       explanation: "360 ÷ 72 = 5 petals to complete the circle.",
       hintLadder: [
         "Full circle is 360°.",
@@ -166,8 +166,8 @@ export const fallG6CodingW6D3 = {
           id: "g6.fall.code.w6.d3.arena2",
           type: "multiple_choice",
           stem: "A loop says 'repeat 5 times: stamp a leaf, then stamp an acorn.' How many stamps happen in total?",
-          choices: ["5", "7", "10", "25"],
-          answerIndex: 2,
+          choices: ["5", "10", "7", "25"],
+          answerIndex: 1,
           explanation: "Each repeat does 2 stamps (a leaf and an acorn), and the loop runs 5 times: 2 × 5 = 10 stamps.",
           hintLadder: [
             "How many stamps happen in ONE repeat?",

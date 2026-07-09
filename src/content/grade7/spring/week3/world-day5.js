@@ -54,11 +54,11 @@ export const springG7WorldW3D5 = {
       stem: "Why does higher biodiversity usually make an ecosystem MORE resilient?",
       choices: [
         "Because more species means more things can go wrong",
-        "Because if one species is lost, others can fill a similar role, so the system recovers instead of collapsing",
+        "Because fewer species are easier to manage",
         "Because it stops the ecosystem from ever changing",
-        "Because fewer species are easier to manage"
+        "Because if one species is lost, others can fill a similar role, so the system recovers instead of collapsing"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "With more species, there is functional redundancy — others can take over a lost species' role — so a diverse ecosystem absorbs disturbances and recovers more readily.",
       hintLadder: [
         "Think of a team with many players who can cover for an injury.",
@@ -73,11 +73,11 @@ export const springG7WorldW3D5 = {
       stem: "You read two claims about a decline in local bees. Claim A: a peer-reviewed study by ecologists with 10 years of data. Claim B: a blog post from a pesticide company saying bees are 'totally fine.' How should you weigh them?",
       choices: [
         "Trust Claim B, because companies know their products best",
-        "Trust Claim A more, because it is peer-reviewed, evidence-based, and less likely to be biased",
         "Trust whichever is shorter and easier to read",
+        "Trust Claim A more, because it is peer-reviewed, evidence-based, and less likely to be biased",
         "Trust both equally, since all claims are equal"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Claim A is peer-reviewed and evidence-based, while Claim B has a clear conflict of interest (a pesticide company downplaying harm). Evidence, expertise, and possible bias all favor Claim A.",
       hintLadder: [
         "Who benefits if people believe each claim?",
@@ -173,12 +173,12 @@ export const springG7WorldW3D5 = {
           type: "multiple_choice",
           stem: "In a kelp forest, sea otters eat urchins, and urchins eat kelp. Otters are removed. Which chain of events is MOST likely, and what does it reveal?",
           choices: [
-            "Urchins decline, kelp declines, and nothing else changes",
             "Urchins explode, overgraze and destroy the kelp, and species that rely on kelp collapse — revealing the otter as a keystone species",
+            "Urchins decline, kelp declines, and nothing else changes",
             "Kelp grows faster because there are fewer otters to eat it",
             "The ecosystem instantly gains new species to replace the otters"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Removing otters releases the urchins, which overgraze the kelp; the loss of kelp then collapses the community that depends on it. Such an outsized cascade from one species is the signature of a keystone species.",
           hintLadder: [
             "Otters were controlling the urchins — what happens to urchins now?",

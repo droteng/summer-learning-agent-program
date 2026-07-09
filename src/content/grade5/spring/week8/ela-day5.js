@@ -38,11 +38,11 @@ export const springG5ElaW8D5 = {
       stem: "Which is the STRONGEST opening hook for a showcase presentation?",
       choices: [
         "Um, so, this is my project, I guess.",
-        "One tiny seed became a whole plant in three weeks — here is the science behind it!",
         "I did not have much time, sorry.",
+        "One tiny seed became a whole plant in three weeks — here is the science behind it!",
         "My project is about a plant."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "It is vivid, ties to the spring theme, and makes the audience curious — a real hook, not an apology or a flat label.",
       hintLadder: [
         "A hook should grab attention right away.",
@@ -74,12 +74,12 @@ export const springG5ElaW8D5 = {
       type: "multiple_choice",
       stem: "A strong CLOSING for your showcase should...",
       choices: [
-        "add a brand-new fact you forgot to say",
         "say your renewal idea again and thank the audience",
+        "add a brand-new fact you forgot to say",
         "apologize for any mistakes",
         "just trail off and sit down"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A closing lands your big idea and gives a takeaway — it does not add new facts, apologize, or fade out.",
       hintLadder: [
         "What should the audience remember as you finish?",
@@ -174,11 +174,11 @@ export const springG5ElaW8D5 = {
           stem: "Which presentation follows the strongest THREE-part structure?",
           choices: [
             "Only a middle full of facts, with no opening or closing.",
-            "A vivid hook, a clear middle walking through the work, and a closing that says the idea again and thanks the audience.",
+            "A closing packed with brand-new information.",
             "A long apology, then some facts.",
-            "A closing packed with brand-new information."
+            "A vivid hook, a clear middle walking through the work, and a closing that says the idea again and thanks the audience."
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Hook + clear middle + landing closing is the complete structure; the others are missing a part or misuse the closing.",
           hintLadder: [
             "A full talk has an opening, a middle, AND a closing.",

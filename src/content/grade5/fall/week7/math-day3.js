@@ -65,11 +65,11 @@ export const fallG5MathW7D3 = {
       stem: "On a timeline, which year comes EARLIER (further to the left)?",
       choices: [
         "1850, because bigger numbers come first",
-        "1700, because earlier years are smaller",
         "They are the same",
+        "1700, because earlier years are smaller",
         "You cannot tell from the numbers"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Earlier years are smaller and sit further left. 1700 comes before 1850.",
       hintLadder: [
         "Earlier years are smaller numbers.",

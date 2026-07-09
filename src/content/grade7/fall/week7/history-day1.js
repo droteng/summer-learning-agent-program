@@ -35,12 +35,12 @@ export const fallG7HistoryW7D1 = {
       type: "multiple_choice",
       stem: "A 'necessary cause' of an event is one that...",
       choices: [
-        "made the event slightly more likely",
         "the event could not have happened without",
+        "made the event slightly more likely",
         "happened at the same time as the event",
         "was written about most often"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A necessary cause is required: remove it and the event does not happen at all.",
       hintLadder: [
         "Try the removal test.",
@@ -54,11 +54,11 @@ export const fallG7HistoryW7D1 = {
       stem: "In the chain 'Poor harvests + rising taxes → widespread hunger → protests → the government fell,' the event with MULTIPLE causes feeding into it is...",
       choices: [
         "the government falling",
-        "widespread hunger",
         "the protests",
+        "widespread hunger",
         "rising taxes"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "'Widespread hunger' has two arrows into it — poor harvests AND rising taxes — so it is the multi-causal node.",
       hintLadder: [
         "Look for the event with two different causes named before it.",
@@ -72,11 +72,11 @@ export const fallG7HistoryW7D1 = {
       stem: "Why is 'single-cause thinking' a weakness when analyzing a historical event?",
       choices: [
         "It takes too long to explain one cause",
-        "It ignores how several causes usually combine, so it distorts why the event happened",
+        "Because every event has exactly one cause",
         "Because historians never agree on any cause",
-        "Because every event has exactly one cause"
+        "It ignores how several causes usually combine, so it distorts why the event happened"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Most events are multi-causal; naming one cause hides how several factors combined, giving an incomplete and often misleading picture.",
       hintLadder: [
         "Think about the Dust Bowl example.",

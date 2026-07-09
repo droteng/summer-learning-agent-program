@@ -52,12 +52,12 @@ export const winterG6ElaW1D3 = {
       type: "multiple_choice",
       stem: "Why is 'I want to get better at basketball this winter' a WEAK goal?",
       choices: [
-        "It's too long a sentence",
         "It has no measurable amount or time frame, so you can't tell if you reached it",
+        "It's too long a sentence",
         "Basketball is not a winter sport",
         "It uses the word 'want'"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "'Get better' has no number or deadline, so there's no way to measure success. Adding an amount and a time frame fixes it.",
       hintLadder: [
         "Ask: how would you PROVE you reached this goal?",
@@ -172,10 +172,10 @@ export const winterG6ElaW1D3 = {
           choices: [
             "Do better in science this winter.",
             "Study science sometimes.",
-            "Review my science notes for 15 minutes after school, four days a week, until winter break.",
-            "Try to like science more."
+            "Try to like science more.",
+            "Review my science notes for 15 minutes after school, four days a week, until winter break."
           ],
-          answerIndex: 2,
+          answerIndex: 3,
           explanation: "It names the exact action (review notes), a measurable amount (15 minutes, four days a week), and a time frame (until winter break) — all three marks of a strong goal.",
           hintLadder: [
             "A strong goal is specific, measurable, AND timed.",

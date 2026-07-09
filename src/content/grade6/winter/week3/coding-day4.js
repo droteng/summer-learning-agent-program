@@ -64,12 +64,12 @@ export const winterG6CodingW3D4 = {
       type: "multiple_choice",
       stem: "In the loop 'repeat 5 times: position = position + speed', what does the loop do each time it repeats?",
       choices: [
-        "It resets position back to 0",
         "It adds one more 'speed' of distance to the sled's position",
+        "It resets position back to 0",
         "It doubles the position",
         "It stops the sled"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Each repeat adds the sled's speed to its position, moving it forward by one second's worth of distance.",
       hintLadder: [
         "Read the line: position = position + speed.",
@@ -83,11 +83,11 @@ export const winterG6CodingW3D4 = {
       stem: "Two sleds run the SAME number of loop steps. Sled A adds 2 each step; Sled B adds 6 each step. After the loop finishes, what is true?",
       choices: [
         "Both sleds are at the same position",
-        "Sled B is farther ahead because it adds more distance each second (higher speed)",
         "Sled A is farther ahead",
+        "Sled B is farther ahead because it adds more distance each second (higher speed)",
         "Neither sled moved"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Adding more per step means a higher speed, so over the same number of seconds Sled B travels farther.",
       hintLadder: [
         "The amount added each step is the sled's speed.",

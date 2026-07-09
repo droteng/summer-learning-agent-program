@@ -36,12 +36,12 @@ export const fallG7ScienceW1D2 = {
       type: "multiple_choice",
       stem: "Two sources describe why a pond froze early. Which is the STRONGER piece of evidence for a scientific claim?",
       choices: [
-        "A neighbor says 'ponds always freeze early when geese leave.'",
         "A logger's 14-day table of measured water temperatures showing a steady drop below freezing.",
+        "A neighbor says 'ponds always freeze early when geese leave.'",
         "A social-media post predicting a harsh winter.",
         "A story about one very cold morning last year."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "The 14-day temperature table is measured, repeated data over time — stronger than a saying, a prediction, or a single memory.",
       hintLadder: [
         "Stronger evidence is measurable and repeated, not a one-time story.",
@@ -75,10 +75,10 @@ export const fallG7ScienceW1D2 = {
       choices: [
         "That the geese flew south",
         "That three loggers observed it",
-        "That the geese 'sensed an incoming storm'",
-        "That it happened on Oct 3"
+        "That it happened on Oct 3",
+        "That the geese 'sensed an incoming storm'"
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "The sighting is a well-witnessed observation, but 'sensed an incoming storm' is an untested inference about WHY — the weakest, unsupported link.",
       hintLadder: [
         "Which part is directly observed, and which part is a guess about cause?",
@@ -170,11 +170,11 @@ export const fallG7ScienceW1D2 = {
           stem: "Two claims are made about early bird migration. Which is best supported by an evidence CHAIN rather than a single observation?",
           choices: [
             "I saw one flock leave, so all birds must be gone.",
-            "Daylight shortened steadily (logged), insects declined (counted), and banded birds departed each of the last 3 years on similar dates — so shrinking daylight and food drive the timing.",
             "The birds left because they didn't like our yard.",
+            "Daylight shortened steadily (logged), insects declined (counted), and banded birds departed each of the last 3 years on similar dates — so shrinking daylight and food drive the timing.",
             "A blog said birds always leave in October."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Option 2 links measured daylight, counted food supply, and multi-year banding data into a connected chain — far stronger than one sighting, a guess, or an unsourced blog.",
           hintLadder: [
             "Look for the option with several connected, measured links.",

@@ -54,11 +54,11 @@ export const grade6HistoryWeek7Day4 = {
         "Which is a strong cause-and-effect statement?",
       choices: [
         "Cars exist because the sky is blue.",
-        "Cheaper electricity led to wider TV adoption, which led to more home-based entertainment.",
+        "Schools start in fall because cats like grass.",
         "It rained yesterday because someone sneezed.",
-        "Schools start in fall because cats like grass."
+        "Cheaper electricity led to wider TV adoption, which led to more home-based entertainment."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Each link names a plausible mechanism. The others are coincidences or nonsense.",
       hintLadder: [
         "Which option's links each make sense?",
@@ -72,11 +72,11 @@ export const grade6HistoryWeek7Day4 = {
       stem: "If a historical chain has one link that turns out to be false, what happens?",
       choices: [
         "Nothing — chains don't need to be true.",
-        "The links after that link become less supported; you may need a different chain.",
         "The chain becomes stronger.",
+        "The links after that link become less supported; you may need a different chain.",
         "Time travel resets it."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Each link supports the next. Break a link and the support downstream weakens.",
       hintLadder: [
         "Does a chain need every link?",
@@ -91,12 +91,12 @@ export const grade6HistoryWeek7Day4 = {
       stem:
         "Most real historical events have:",
       choices: [
-        "Exactly one cause.",
         "Several contributing causes that combine.",
+        "Exactly one cause.",
         "No causes — just luck.",
         "Causes that only experts can see."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "History almost always has multiple causes. The 'one big cause' is usually a simplification.",
       hintLadder: [
         "Think of a famous event you know.",
@@ -169,12 +169,12 @@ export const grade6HistoryWeek7Day4 = {
           type: "multiple_choice",
           stem: "Which chain is the STRONGEST cause-and-effect chain (each link plausibly making the next more likely)?",
           choices: [
-            "A drought killed crops, so food prices rose, so more families left the countryside for city jobs.",
-            "A king wore a red cloak, so it rained, so a war started.",
             "People liked music, so the moon got bigger, so trade increased.",
+            "A king wore a red cloak, so it rained, so a war started.",
+            "A drought killed crops, so food prices rose, so more families left the countryside for city jobs.",
             "A bell rang, so winter came early, so prices fell."
           ],
-          answerIndex: 0,
+          answerIndex: 2,
           explanation: "The drought chain has a real mechanism at every link: less food → higher prices → people move for work. The others connect events that have no plausible cause-and-effect link.",
           hintLadder: [
             "Look for the chain where each link actually makes sense.",

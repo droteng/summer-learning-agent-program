@@ -55,12 +55,12 @@ export const springG7CodingW1D5 = {
       type: "multiple_choice",
       stem: "In predictHeight(start, rate, days), which are the PARAMETERS?",
       choices: [
-        "predictHeight only",
         "start, rate, and days",
+        "predictHeight only",
         "The word 'return'",
         "The number 13"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Parameters are the named inputs a function receives: start, rate, and days. 'predictHeight' is the function's name, not a parameter.",
       hintLadder: [
         "Parameters are the inputs listed inside the parentheses.",

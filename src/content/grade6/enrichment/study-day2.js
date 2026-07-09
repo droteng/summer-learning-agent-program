@@ -55,12 +55,12 @@ export const grade6StudyDay2 = {
       stem:
         "In Cornell-style notes, what goes in the LEFT (cue) column?",
       choices: [
-        "All your notes.",
         "Questions, keywords, or cues that point to what's on the right.",
+        "All your notes.",
         "The teacher's name.",
         "The date only."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Cues let you self-quiz later — cover the right side and try to answer using just the left.",
       hintLadder: [
         "What goes on the left column?",
@@ -74,11 +74,11 @@ export const grade6StudyDay2 = {
       stem: "Why are ARROWS often better than lists?",
       choices: [
         "Arrows are easier to draw.",
-        "Arrows show relationships (cause/effect, before/after) that lists hide.",
         "Lists are illegal.",
+        "Arrows show relationships (cause/effect, before/after) that lists hide.",
         "Arrows save paper."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A list of 5 items doesn't say which causes which. Arrows make the relationship visible.",
       hintLadder: [
         "What do lists hide?",
@@ -93,11 +93,11 @@ export const grade6StudyDay2 = {
       stem: "Which is a SIGN your notes are working?",
       choices: [
         "You can recite the whole textbook word-for-word.",
-        "You can explain the main idea out loud without looking at your notes.",
+        "You wrote a lot of words.",
         "Your notes are color-coded perfectly.",
-        "You wrote a lot of words."
+        "You can explain the main idea out loud without looking at your notes."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "If you can explain it out loud, you understood it. Volume of notes is no signal.",
       hintLadder: [
         "Pretty notes don't equal understanding.",

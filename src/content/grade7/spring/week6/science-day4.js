@@ -68,12 +68,12 @@ export const springG7ScienceW6D4 = {
       type: "multiple_choice",
       stem: "A population grows along an S-shaped (logistic) curve. What is happening at the TOP of the S, where the curve flattens?",
       choices: [
-        "The population has reached its carrying capacity, so growth slows to near zero as births roughly balance deaths",
+        "The environment gained unlimited resources",
         "The population suddenly goes extinct",
         "Growth becomes exponential and rockets upward again",
-        "The environment gained unlimited resources"
+        "The population has reached its carrying capacity, so growth slows to near zero as births roughly balance deaths"
       ],
-      answerIndex: 0,
+      answerIndex: 3,
       explanation: "The flat top of the S is the carrying capacity: limiting factors have brought births and deaths into rough balance, so the population holds roughly steady.",
       hintLadder: [
         "What does the flat top mean about the growth RATE?",
@@ -87,12 +87,12 @@ export const springG7ScienceW6D4 = {
       type: "multiple_choice",
       stem: "A deer herd booms, then a harsh drought (not related to how crowded they are) kills many. What kind of limiting factor is the drought?",
       choices: [
-        "Density-dependent, because more deer means more drought",
         "Density-independent, because the drought strikes regardless of how many deer there are",
+        "Density-dependent, because more deer means more drought",
         "Not a limiting factor at all",
         "It raises the carrying capacity"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A drought's impact does not depend on population density — it strikes whether there are 10 deer or 1,000 — so it is density-independent.",
       hintLadder: [
         "Does the drought depend on how crowded the herd is?",

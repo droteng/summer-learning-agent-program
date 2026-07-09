@@ -55,12 +55,12 @@ export const springG5WorldW3D5 = {
       type: "multiple_choice",
       stem: "Why is HIGH biodiversity good for an ecosystem?",
       choices: [
-        "It makes the ecosystem more fragile",
         "It makes the ecosystem stronger, so it can bounce back from problems",
+        "It makes the ecosystem more fragile",
         "It means fewer living things to worry about",
         "It stops the ecosystem from ever changing"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "With more kinds of living things, if one is lost others can help fill its job, so the ecosystem can recover more easily from a problem.",
       hintLadder: [
         "Think about a team with many players versus a team with only one.",
@@ -75,11 +75,11 @@ export const springG5WorldW3D5 = {
       stem: "Which of these BEST shows living things depending on each other?",
       choices: [
         "A rock sitting in the sun",
-        "A bee pollinating a flower that then feeds a bird its seeds",
+        "A puddle drying up",
         "Wind blowing across an empty field",
-        "A puddle drying up"
+        "A bee pollinating a flower that then feeds a bird its seeds"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "The bee, the flower, and the bird all rely on one another — the bee helps the flower make seeds, and the seeds feed the bird. That is depending on each other.",
       hintLadder: [
         "Which choice has living things helping or feeding each other?",
@@ -169,11 +169,11 @@ export const springG5WorldW3D5 = {
           stem: "A pond has just ONE kind of fish and no other living things. A disease strikes that fish. Compared to a pond with many kinds of living things, this pond is likely to...",
           choices: [
             "Recover more easily because it is simpler",
-            "Fall apart more easily because it has no backup living things",
             "Be completely unaffected",
+            "Fall apart more easily because it has no backup living things",
             "Gain more living things all by itself"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Low biodiversity means there are no other living things to fill the gap, so one disease can hurt the whole pond. A pond with many kinds would have backup and bounce back better.",
           hintLadder: [
             "Is there any other living thing to take over if the fish is lost?",

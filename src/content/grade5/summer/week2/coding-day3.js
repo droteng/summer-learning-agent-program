@@ -61,8 +61,8 @@ export const summerG5CodingW2D3 = {
       id: "g5.summer.code.w2.d3.q3",
       type: "multiple_choice",
       stem: "Which line correctly finds the average of three numbers a, b, and c?",
-      choices: ["a + b + c / 3", "(a + b + c) / 3", "a / 3 + b + c", "3 / (a + b + c)"],
-      answerIndex: 1,
+      choices: ["a + b + c / 3", "a / 3 + b + c", "(a + b + c) / 3", "3 / (a + b + c)"],
+      answerIndex: 2,
       explanation: "Without parentheses, only c gets divided by 3. Parentheses make the whole sum divide by 3.",
       hintLadder: [
         "To find an average, you add first, THEN divide.",
@@ -165,12 +165,12 @@ export const summerG5CodingW2D3 = {
           stem:
             "You want to swap two variables so x ends up with y's value and y ends up with x's value. Starting from x = 1, y = 2, which set of steps works?",
           choices: [
-            "x = y\ny = x",
             "temp = x\nx = y\ny = temp",
+            "x = y\ny = x",
             "x = y\ny = temp",
             "x = x + y\ny = x + y"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation:
             "The first option fails: after x = y, x is 2 and the old 1 is gone, so y = x just makes y equal 2 again. You need a temp variable to remember the old value: temp = x, x = y, y = temp.",
           hintLadder: [

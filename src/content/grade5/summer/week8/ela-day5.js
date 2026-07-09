@@ -61,11 +61,11 @@ export const summerG5ElaW8D5 = {
       stem: "Why read your first line ALOUD before the showcase?",
       choices: [
         "To memorize it.",
-        "To catch awkward or unclear parts your eyes missed.",
+        "Because a rule says so.",
         "To make it louder.",
-        "Because a rule says so."
+        "To catch awkward or unclear parts your eyes missed."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Reading aloud shows you awkward, clunky parts that your eyes skip when you read silently.",
       hintLadder: [
         "What do your ears notice that your eyes miss?",
@@ -79,11 +79,11 @@ export const summerG5ElaW8D5 = {
       stem: "Which is the STRONGEST opener for a short family presentation?",
       choices: [
         "Um, so, I don't know if this is any good, but...",
-        "Today I'll show you one surprising helper in your garden — the bee — and what to look for next time you're outside.",
         "Hi.",
+        "Today I'll show you one surprising helper in your garden — the bee — and what to look for next time you're outside.",
         "Just look."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "It tells the audience what they'll learn AND why it matters to them. That makes them lean in.",
       hintLadder: [
         "What does a good opener do?",
@@ -176,12 +176,12 @@ export const summerG5ElaW8D5 = {
           type: "multiple_choice",
           stem: "A family member asks a question you don't know the answer to. What's the BEST response?",
           choices: [
-            "Make up an answer that sounds confident.",
             "Take a breath and say 'Great question — I'm not sure, but here's what I'd check next.'",
+            "Make up an answer that sounds confident.",
             "Pretend you didn't hear it.",
             "Say 'that's not important' and move on."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Saying 'great question' gives you a beat to think, and being honest about not knowing is stronger than guessing. Naming what you'd check shows real thinking.",
           hintLadder: [
             "Guessing or dodging both backfire.",

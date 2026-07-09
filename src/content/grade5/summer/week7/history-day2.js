@@ -40,8 +40,8 @@ export const summerG5HistoryW7D2 = {
       id: "g5.summer.hist.w7.d2.q1",
       type: "multiple_choice",
       stem: "Which branch WRITES the laws?",
-      choices: ["Executive (the President)", "Legislative (Congress)", "Judicial (the courts)", "All three at once"],
-      answerIndex: 1,
+      choices: ["Executive (the President)", "All three at once", "Judicial (the courts)", "Legislative (Congress)"],
+      answerIndex: 3,
       explanation: "Congress, the Legislative branch, writes the laws. The President carries them out, and the courts decide what they mean.",
       hintLadder: [
         "The branch whose name sounds like 'legislate' writes laws.",
@@ -53,8 +53,8 @@ export const summerG5HistoryW7D2 = {
       id: "g5.summer.hist.w7.d2.q2",
       type: "multiple_choice",
       stem: "How many senators does each U.S. state get?",
-      choices: ["1", "2", "One for every million people", "The governor decides"],
-      answerIndex: 1,
+      choices: ["2", "1", "One for every million people", "The governor decides"],
+      answerIndex: 0,
       explanation: "Every state, big or small, gets exactly 2 senators. The House is the part that changes with population.",
       hintLadder: [
         "In the Senate, every state is equal.",
@@ -68,11 +68,11 @@ export const summerG5HistoryW7D2 = {
       stem: "What does it mean when the President 'vetoes' a bill?",
       choices: [
         "The President writes a brand-new law.",
-        "The President says no and refuses to sign the bill.",
         "The President becomes a judge.",
+        "The President says no and refuses to sign the bill.",
         "The President holds an election."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A veto is the President saying no to a bill. Congress can still try to override it with a big enough vote.",
       hintLadder: [
         "A veto is a way of saying no.",

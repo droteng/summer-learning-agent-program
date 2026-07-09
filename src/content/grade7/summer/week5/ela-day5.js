@@ -37,11 +37,11 @@ export const summerG7ElaW5D5 = {
       stem: "In a persuasive pitch, what is the job of a COUNTERARGUMENT?",
       choices: [
         "To restate your claim in different words",
-        "To fairly present the strongest objection to your claim",
+        "To end the pitch with a request",
         "To list only the facts that support you",
-        "To end the pitch with a request"
+        "To fairly present the strongest objection to your claim"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A counterargument names the best objection the other side might raise. Facing it (then rebutting it) makes your argument stronger and more credible.",
       hintLadder: [
         "The prefix 'counter-' means against.",
@@ -54,12 +54,12 @@ export const summerG7ElaW5D5 = {
       type: "multiple_choice",
       stem: "Which sentence is a REBUTTAL to the objection 'Solar chargers cost too much'?",
       choices: [
-        "Solar chargers are shiny and new.",
         "It's true they cost more up front, but they run on free sunlight and pay for themselves within a few years.",
+        "Solar chargers are shiny and new.",
         "Everyone should like solar chargers.",
         "Solar chargers charge phones."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A rebuttal acknowledges the objection ('true they cost more up front') and then answers it with evidence ('run on free sunlight, pay for themselves').",
       hintLadder: [
         "A rebuttal answers the objection — it doesn't ignore it.",

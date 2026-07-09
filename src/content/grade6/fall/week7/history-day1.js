@@ -33,8 +33,8 @@ export const fallG6HistoryW7D1 = {
       id: "g6.fall.hist.w7.d1.q1",
       type: "multiple_choice",
       stem: "Which word signals an EFFECT?",
-      choices: ["because", "as a result", "since", "due to"],
-      answerIndex: 1,
+      choices: ["as a result", "because", "since", "due to"],
+      answerIndex: 0,
       explanation: "'As a result' introduces the effect; the others usually introduce causes.",
       hintLadder: [
         "Which phrase points FORWARD to a result?",
@@ -46,8 +46,8 @@ export const fallG6HistoryW7D1 = {
       id: "g6.fall.hist.w7.d1.q2",
       type: "multiple_choice",
       stem: "In 'Heavy rains flooded the fields, so the harvest failed,' what is the EFFECT?",
-      choices: ["Heavy rains", "The fields", "The harvest failed", "The season"],
-      answerIndex: 2,
+      choices: ["Heavy rains", "The fields", "The season", "The harvest failed"],
+      answerIndex: 3,
       explanation: "The flooding caused it; the failed harvest is the result (effect).",
       hintLadder: [
         "What happened BECAUSE of the rains?",
@@ -155,11 +155,11 @@ export const fallG6HistoryW7D1 = {
           stem: "In the chain 'A drought killed the crops, so food ran short, which led people to leave the city,' which event is BOTH an effect AND a cause?",
           choices: [
             "The drought",
-            "Food running short",
             "People leaving the city",
+            "Food running short",
             "The city itself"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Food running short is the EFFECT of the drought and the CAUSE of people leaving — a middle link in the chain.",
           hintLadder: [
             "Look for the middle link, not the first or last.",

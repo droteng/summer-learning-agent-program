@@ -37,11 +37,11 @@ export const winterG7ElaW7D1 = {
       stem: "A writer wants a scene to feel slow and full of dread as a character waits alone in a frozen cabin. Which PACING choice best creates that effect?",
       choices: [
         "A rapid list of short, clipped actions with little description",
-        "Lingering, detailed sentences that stretch out a small span of time",
         "Skipping the scene entirely with a time jump",
+        "Lingering, detailed sentences that stretch out a small span of time",
         "Summarizing the whole night in a single sentence"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Lingering, detailed sentences slow the reader's sense of time, which builds dread; clipped or summarized prose speeds time up instead.",
       hintLadder: [
         "Dread comes from time feeling STRETCHED, not rushed.",
@@ -55,11 +55,11 @@ export const winterG7ElaW7D1 = {
       stem: "What is the difference between a story's PLOT CLIMAX and its EMOTIONAL TURNING POINT?",
       choices: [
         "They are two names for the exact same moment.",
-        "The plot climax is the peak of external tension (an event or choice); the emotional turning point is where the character changes on the inside.",
+        "The emotional turning point is only found in poems, not stories.",
         "The plot climax always comes at the very end; the emotional turning point always comes first.",
-        "The emotional turning point is only found in poems, not stories."
+        "The plot climax is the peak of external tension (an event or choice); the emotional turning point is where the character changes on the inside."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "The plot climax is the high point of outward action or conflict; the emotional turning point is the inner shift in the character. Skilled writers place them close together but distinguish them.",
       hintLadder: [
         "One is about OUTSIDE events; the other about INSIDE change.",
@@ -74,11 +74,11 @@ export const winterG7ElaW7D1 = {
       stem: "In a frozen-world story about two siblings crossing a glacier, which element best functions as a SUBPLOT?",
       choices: [
         "A detailed description of the glacier's blue ice",
-        "The main danger of the glacier cracking beneath them",
         "An old argument between the siblings that slowly resurfaces and must be mended by the end",
+        "The main danger of the glacier cracking beneath them",
         "The single sentence that ends the story"
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "A subplot is a second, smaller line of tension (the unresolved argument) woven beside the main conflict, resolving near the climax to enrich the ending.",
       hintLadder: [
         "A subplot is a SECOND thread of tension, not the main danger or mere description.",
@@ -171,12 +171,12 @@ export const winterG7ElaW7D1 = {
           type: "multiple_choice",
           stem: "A story reads: 'The ice bridge holds. Mara reaches the far shore, lights the beacon, and — for the first time since her brother's death — lets herself cry.' This passage does what at once?",
           choices: [
-            "It is pure exposition, introducing the setting.",
             "It combines the falling action/resolution (danger past, beacon lit) with the emotional turning point (finally grieving).",
+            "It is pure exposition, introducing the setting.",
             "It is only rising action, building tension.",
             "It is the plot climax, the peak of external danger."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "The external danger is over (falling action/resolution) while the character's held-back grief finally releases (emotional turning point) — two layers working together.",
           hintLadder: [
             "Is the outer danger still building or winding down?",

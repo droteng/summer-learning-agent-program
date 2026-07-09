@@ -50,12 +50,12 @@ export const summerG5CodingW4D1 = {
       type: "multiple_choice",
       stem: "Which line correctly CALLS this function with a name and a number of scoops?\n\n  FUNCTION cone(flavor, scoops):\n    give back flavor + ' x ' + scoops",
       choices: [
-        "cone vanilla 2",
         "cone('vanilla', 2)",
+        "cone vanilla 2",
         "cone[vanilla, 2]",
         "cone: vanilla, 2"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "You call a function with parentheses, and put the inputs inside, separated by commas.",
       hintLadder: [
         "A function call needs parentheses ( ).",
@@ -70,11 +70,11 @@ export const summerG5CodingW4D1 = {
       stem: "What is the JOB of a parameter in a function?",
       choices: [
         "It is the name of the whole program.",
-        "It is an INPUT the function expects.",
         "It makes the function run faster.",
+        "It is an INPUT the function expects.",
         "It is the color of the code."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A parameter is an input the function expects — like the flavor you tell a smoothie machine to use.",
       hintLadder: [
         "Think about the smoothie machine — what do you punch in?",

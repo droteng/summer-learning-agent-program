@@ -65,11 +65,11 @@ export const springG7MathW5D1 = {
       stem: "On one growth graph, segment A runs from (0, 2) to (3, 8) and segment B runs from (3, 8) to (7, 12). Which segment shows FASTER growth, and why?",
       choices: [
         "Segment B, because it covers more days",
-        "Segment A, because its slope is 2 cm/day while segment B's is 1 cm/day",
+        "Segment B, because it ends at a taller height",
         "They grow at the same rate because both lines go up",
-        "Segment B, because it ends at a taller height"
+        "Segment A, because its slope is 2 cm/day while segment B's is 1 cm/day"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Segment A slope = (8 − 2) ÷ (3 − 0) = 6 ÷ 3 = 2 cm/day. Segment B slope = (12 − 8) ÷ (7 − 3) = 4 ÷ 4 = 1 cm/day. A steeper slope (2 > 1) means faster growth.",
       hintLadder: [
         "Compute each segment's slope: rise ÷ run.",
@@ -173,11 +173,11 @@ export const springG7MathW5D1 = {
           stem: "A proportional growth line passes through the origin and has a slope of 2.5 cm/day. Which point must ALSO lie on this line?",
           choices: [
             "(4, 8)",
-            "(4, 10)",
             "(10, 4)",
+            "(4, 10)",
             "(2, 2.5)"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "On a proportional line through (0,0), height = slope × day. For day 4: 2.5 × 4 = 10, so (4, 10) is on the line.",
           hintLadder: [
             "On a line through the origin, height = slope × day.",

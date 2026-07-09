@@ -36,12 +36,12 @@ export const springG7ScienceW4D2 = {
       type: "multiple_choice",
       stem: "An organism with the genotype Bb is best described as...",
       choices: [
-        "Homozygous dominant",
         "Heterozygous",
+        "Homozygous dominant",
         "Homozygous recessive",
         "Purebred"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Bb has two DIFFERENT alleles, which makes it heterozygous. Matching pairs (BB or bb) are homozygous.",
       hintLadder: [
         "Are the two alleles the same or different?",
@@ -55,11 +55,11 @@ export const springG7ScienceW4D2 = {
       stem: "In a Bb × Bb cross, why is the GENOTYPIC ratio (1:2:1) different from the PHENOTYPIC ratio (3:1)?",
       choices: [
         "The genotypic ratio is always wrong",
-        "The two heterozygous (Bb) boxes look the same as the BB box, so three genotypes collapse into two phenotypes",
         "Phenotype counts alleles; genotype counts looks",
+        "The two heterozygous (Bb) boxes look the same as the BB box, so three genotypes collapse into two phenotypes",
         "There is no difference between the two ratios"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "BB and both Bb boxes all show the dominant phenotype, so the 1:2:1 genotypes collapse into a 3:1 phenotype ratio.",
       hintLadder: [
         "Which boxes look the SAME even though their alleles differ?",
@@ -89,10 +89,10 @@ export const springG7ScienceW4D2 = {
       choices: [
         "All tall",
         "3 tall : 1 short",
-        "1 tall : 1 short",
-        "All short"
+        "All short",
+        "1 tall : 1 short"
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "Tt × tt gives boxes Tt, Tt, tt, tt. Tt is tall, tt is short, so the phenotypic ratio is 2 tall : 2 short = 1 tall : 1 short.",
       hintLadder: [
         "One parent passes T or t; the other passes only t.",

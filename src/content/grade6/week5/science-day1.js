@@ -33,8 +33,8 @@ export const grade6ScienceWeek5Day1 = {
       id: "g6.sci.w5.d1.q1",
       type: "multiple_choice",
       stem: "Which organism is a PRODUCER?",
-      choices: ["Fox", "Mushroom", "Sunflower", "Rabbit"],
-      answerIndex: 2,
+      choices: ["Sunflower", "Mushroom", "Fox", "Rabbit"],
+      answerIndex: 0,
       explanation: "Producers make their own food from sunlight. Sunflowers (plants) are producers; foxes and rabbits consume; mushrooms decompose.",
       hintLadder: [
         "Producers make their own food.",

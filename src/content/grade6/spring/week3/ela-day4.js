@@ -34,8 +34,8 @@ export const springG6ElaW3D4 = {
       id: "g6.spring.ela.w3.d4.q1",
       type: "multiple_choice",
       stem: "Which word is a TRANSITION that signals sequence (order of steps)?",
-      choices: ["Because", "Next", "Loud", "However"],
-      answerIndex: 1,
+      choices: ["Next", "Because", "Loud", "However"],
+      answerIndex: 0,
       explanation: "'Next' tells the reader which step comes after another — it's a sequence transition. 'Because' shows cause, 'however' shows contrast, and 'loud' is just a describing word.",
       hintLadder: [
         "Which word tells you what happens AFTER something else?",
@@ -49,11 +49,11 @@ export const springG6ElaW3D4 = {
       stem: "A student writes: 'The butterfly flies away. The egg hatches. The caterpillar eats leaves.' What is the main problem?",
       choices: [
         "The sentences are too long",
-        "The steps are out of order",
+        "It uses too many transitions",
         "There are no describing words",
-        "It uses too many transitions"
+        "The steps are out of order"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "The stages are written out of sequence — the egg hatching should come first, not the adult flying away. Explanatory process writing must follow the correct order.",
       hintLadder: [
         "Does a butterfly fly away BEFORE the egg hatches?",
@@ -162,11 +162,11 @@ export const springG6ElaW3D4 = {
           stem: "Which revision BEST fixes this sentence so the steps flow in order? 'The plant makes seeds. The seed germinates. The plant grows and flowers.'",
           choices: [
             "The plant makes seeds, and germinates, and grows.",
-            "First the seed germinates, then the plant grows and flowers, and finally it makes new seeds.",
             "The plant flowers because it makes seeds first.",
+            "First the seed germinates, then the plant grows and flowers, and finally it makes new seeds.",
             "Seeds, plant, flower, germinate."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "This version puts the stages in the correct order (germinate → grow/flower → make seeds) and uses transitions (first, then, finally) to guide the reader.",
           hintLadder: [
             "Which real step comes first — germinating or making seeds?",

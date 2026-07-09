@@ -59,8 +59,8 @@ export const grade6CodingWeek2Day3 = {
       id: "g6.code.w2.d3.q3",
       type: "multiple_choice",
       stem: "Which expression computes the average of three values a, b, c correctly?",
-      choices: ["a + b + c / 3", "(a + b + c) / 3", "a / 3 + b + c", "3 / (a + b + c)"],
-      answerIndex: 1,
+      choices: ["a + b + c / 3", "a / 3 + b + c", "(a + b + c) / 3", "3 / (a + b + c)"],
+      answerIndex: 2,
       explanation: "Without parentheses, only c is divided by 3. Parentheses make the whole sum divide.",
       hintLadder: [
         "Order of operations: division happens before addition unless parentheses change it.",
@@ -163,12 +163,12 @@ export const grade6CodingWeek2Day3 = {
           stem:
             "You want to swap two variables so x ends up with y's value and y ends up with x's value. Starting from x = 1, y = 2, which sequence works?",
           choices: [
-            "x = y\ny = x",
             "temp = x\nx = y\ny = temp",
+            "x = y\ny = x",
             "x = y\ny = temp",
             "x = x + y\ny = x + y"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation:
             "Option A fails: after x = y, x is 2 and the original 1 is lost, so y = x just sets y back to 2. You need a temp variable to remember the old value: temp = x, x = y, y = temp.",
           hintLadder: [

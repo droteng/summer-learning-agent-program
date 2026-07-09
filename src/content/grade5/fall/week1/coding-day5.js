@@ -50,12 +50,12 @@ export const fallG5CodingW1D5 = {
       type: "multiple_choice",
       stem: "What is the rule for this sequence: 3, 6, 9, 12, 15?",
       choices: [
-        "Add 3 each time",
-        "Multiply by 3 each time",
         "Add the position number",
+        "Multiply by 3 each time",
+        "Add 3 each time",
         "Subtract 3 each time"
       ],
-      answerIndex: 0,
+      answerIndex: 2,
       explanation: "Each number is 3 more than the one before it: +3 each step.",
       hintLadder: [
         "Check the gap between each pair of numbers.",
@@ -68,8 +68,8 @@ export const fallG5CodingW1D5 = {
       id: "g5.fall.code.w1.d5.q3",
       type: "multiple_choice",
       stem: "A leaf pattern repeats: red, orange, red, orange, red, ... What color is the 8th leaf?",
-      choices: ["Red", "Orange", "Yellow", "Green"],
-      answerIndex: 1,
+      choices: ["Orange", "Red", "Yellow", "Green"],
+      answerIndex: 0,
       explanation: "Odd positions (1, 3, 5, 7) are red; even positions (2, 4, 6, 8) are orange. The 8th is even, so orange.",
       hintLadder: [
         "Notice the odd spots versus the even spots.",

@@ -34,8 +34,8 @@ export const winterG6HistoryW4D4 = {
       id: "g6.winter.hist.w4.d4.q1",
       type: "multiple_choice",
       stem: "What did the GEOCENTRIC model claim was at the center of everything?",
-      choices: ["The Sun", "Earth", "The Moon", "Jupiter"],
-      answerIndex: 1,
+      choices: ["Earth", "The Sun", "The Moon", "Jupiter"],
+      answerIndex: 0,
       explanation: "'Geo' means Earth. The geocentric model put a motionless Earth at the center with everything orbiting it.",
       hintLadder: [
         "The prefix 'geo-' means Earth (as in geography).",
@@ -48,8 +48,8 @@ export const winterG6HistoryW4D4 = {
       id: "g6.winter.hist.w4.d4.q2",
       type: "multiple_choice",
       stem: "Who proposed the HELIOCENTRIC (Sun-centered) model in 1543?",
-      choices: ["Ptolemy", "Copernicus", "Isaac Newton", "Neil Armstrong"],
-      answerIndex: 1,
+      choices: ["Ptolemy", "Neil Armstrong", "Isaac Newton", "Copernicus"],
+      answerIndex: 3,
       explanation: "Copernicus published the Sun-centered model in 1543, challenging over a thousand years of Earth-centered belief.",
       hintLadder: [
         "'Helio' means Sun.",
@@ -63,11 +63,11 @@ export const winterG6HistoryW4D4 = {
       stem: "What NEW TOOL did Galileo use in 1609 to gather evidence about the solar system?",
       choices: [
         "A spacecraft",
-        "A telescope",
         "A computer",
+        "A telescope",
         "A radio dish"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Galileo used the newly improved telescope to see Jupiter's moons and the phases of Venus, supporting the Sun-centered model.",
       hintLadder: [
         "It was an instrument for seeing far-off things more clearly.",

@@ -79,12 +79,12 @@ export const summerG5WorldW6D1 = {
       type: "multiple_choice",
       stem: "A story makes a big claim but names no source. What is the best thing to do?",
       choices: [
-        "Believe it because it was printed.",
         "Look for the same fact in another trusted place before you believe it.",
+        "Believe it because it was printed.",
         "Share it right away.",
         "Say it must be false."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Check it twice. One claim with no source is a rumor until you find it in another trusted place.",
       hintLadder: [
         "Can you prove the claim is true?",

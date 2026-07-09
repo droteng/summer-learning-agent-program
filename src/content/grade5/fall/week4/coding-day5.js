@@ -55,11 +55,11 @@ export const fallG5CodingW4D5 = {
       stem: "Steps to send a message with a runner: [1 write the message], [2 give it to the runner], [3 runner delivers it]. What breaks if you do step 2 before step 1?",
       choices: [
         "Nothing breaks",
-        "The runner carries a blank message — nothing is written yet",
         "The runner gets faster",
+        "The runner carries a blank message — nothing is written yet",
         "The message arrives early"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Out of order, the runner leaves before the message even exists. Order matters!",
       hintLadder: [
         "What has NOT happened yet if you skip step 1?",
@@ -73,12 +73,12 @@ export const fallG5CodingW4D5 = {
       type: "multiple_choice",
       stem: "In coding, a 'bug' is...",
       choices: [
-        "an insect inside the computer",
         "a step that is wrong or out of order, causing a bad result",
+        "an insect inside the computer",
         "the fastest step",
         "always the last step"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A bug is a mistake in the steps. Debugging means finding and fixing it.",
       hintLadder: [
         "It is a mistake, not a real insect.",
@@ -166,11 +166,11 @@ export const fallG5CodingW4D5 = {
           stem: "Steps to make bricks: [1 dig up the clay], [2 dry the bricks in the sun], [3 press the clay into brick shapes]. Which order actually works?",
           choices: [
             "2 → 1 → 3",
-            "1 → 3 → 2",
+            "2 → 3 → 1",
             "3 → 1 → 2",
-            "2 → 3 → 1"
+            "1 → 3 → 2"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "You must dig up the clay first, then press it into brick shapes, then dry the bricks: 1 → 3 → 2.",
           hintLadder: [
             "What has to happen before you can shape anything?",

@@ -179,12 +179,12 @@ export const winterG6CodingW1D5 = {
           type: "multiple_choice",
           stem: "You want cocoa. Steps: (1) drink it, (2) pour hot water in the mug, (3) add cocoa powder to the mug, (4) stir. Which ordering is a CORRECT algorithm?",
           choices: [
-            "1 → 2 → 3 → 4",
             "3 → 2 → 4 → 1",
+            "1 → 2 → 3 → 4",
             "4 → 3 → 2 → 1",
             "2 → 1 → 3 → 4"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "You must add cocoa powder (3) and pour water (2) before you can stir (4), and you can only drink (1) at the very end: 3 → 2 → 4 → 1.",
           hintLadder: [
             "What has to be IN the mug before you can stir?",

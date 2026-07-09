@@ -36,12 +36,12 @@ export const springG7HistoryW7D5 = {
       type: "multiple_choice",
       stem: "How does an INDIVIDUAL voice like John Muir's most often lead to LASTING conservation change?",
       choices: [
-        "By personally guarding the land alone forever.",
         "By persuading the public and leaders, so the idea grows into institutions and laws — like national parks and the National Park Service — that outlast the individual.",
+        "By personally guarding the land alone forever.",
         "By keeping the idea secret so no one can argue with it.",
         "By waiting for nature to protect itself."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A single voice becomes lasting change when it persuades others and gets built into durable institutions and laws — Muir's writing helped seed the national parks and the Park Service that manage them.",
       hintLadder: [
         "Can one person protect land forever on their own?",
@@ -55,11 +55,11 @@ export const springG7HistoryW7D5 = {
       stem: "Rachel Carson's 'Silent Spring' (1962), the first Earth Day (1970), the EPA (1970), and the DDT ban (1972) are best understood as:",
       choices: [
         "Four unrelated events that happened to occur near each other.",
-        "A chain of cause and effect: evidence raised public awareness, which built a movement, which produced new agencies and laws.",
+        "A list of national parks.",
         "Events that all happened in the same single year.",
-        "A list of national parks."
+        "A chain of cause and effect: evidence raised public awareness, which built a movement, which produced new agencies and laws."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "These events form a causal chain — Carson's evidence sparked awareness, awareness built the Earth Day movement, and the pressure produced the EPA and the DDT ban. Analyzing the links is the Grade 7 task.",
       hintLadder: [
         "Are these events random, or does one lead to the next?",
@@ -74,11 +74,11 @@ export const springG7HistoryW7D5 = {
       stem: "The first Earth Day mobilized about 20 million people. What best explains why it produced LASTING change rather than fading after one day?",
       choices: [
         "It was simply the most fun holiday.",
-        "It converted a burst of public emotion into sustained, organized pressure that helped produce durable laws like the Clean Air and Clean Water Acts.",
         "It banned all factories immediately and forever.",
+        "It converted a burst of public emotion into sustained, organized pressure that helped produce durable laws like the Clean Air and Clean Water Acts.",
         "It was run by a single powerful senator with no public involvement."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Earth Day lasted because the one-day energy was turned into ongoing, organized pressure that produced enduring laws — the mark of a movement that changes history rather than a moment that fades.",
       hintLadder: [
         "Why do some big events fade while others change laws?",
@@ -171,12 +171,12 @@ export const springG7HistoryW7D5 = {
           type: "multiple_choice",
           stem: "Put these milestones in correct time order (earliest first): (1) the EPA is created in 1970, (2) Yellowstone becomes the first national park in 1872, (3) the National Park Service is founded in 1916, (4) the U.S. bans DDT in 1972.",
           choices: [
-            "2 → 3 → 1 → 4",
             "1 → 2 → 3 → 4",
+            "2 → 3 → 1 → 4",
             "2 → 1 → 3 → 4",
             "3 → 2 → 4 → 1"
           ],
-          answerIndex: 0,
+          answerIndex: 1,
           explanation: "Order by year: Yellowstone (1872) → National Park Service (1916) → EPA (1970) → DDT ban (1972), which is 2 → 3 → 1 → 4.",
           hintLadder: [
             "List the years: 1872, 1916, 1970, 1972.",

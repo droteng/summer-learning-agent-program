@@ -42,11 +42,11 @@ export const summerG5ElaW7D5 = {
       stem: "What is the FIRST question to ask about any primary source?",
       choices: [
         "Was it expensive?",
-        "Who wrote it, and what was their job?",
+        "Was it printed?",
         "Is it in color?",
-        "Was it printed?"
+        "Who wrote it, and what was their job?"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "You must know who wrote it first. Their job and place shape everything else in the source.",
       hintLadder: [
         "Without knowing the writer, you cannot judge their point of view.",
@@ -60,11 +60,11 @@ export const summerG5ElaW7D5 = {
       stem: "Which is MOST likely a primary source about the 1969 moon landing?",
       choices: [
         "A 2020 documentary movie.",
-        "An astronaut's own notes written during the trip.",
         "A new history textbook.",
+        "An astronaut's own notes written during the trip.",
         "A friend telling you what they heard."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Notes written by someone who was really there, during the event, are a primary source. The others were made later or are second-hand.",
       hintLadder: [
         "Who was actually there?",
@@ -77,12 +77,12 @@ export const summerG5ElaW7D5 = {
       type: "multiple_choice",
       stem: "A speech given to a big crowd is likely to be:",
       choices: [
-        "The speaker's secret private thoughts.",
         "Shaped for the audience and the moment.",
+        "The speaker's secret private thoughts.",
         "Exactly the same as a private diary.",
         "Written with no point of view at all."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A public speech is planned for the crowd. It shows what the speaker wanted to say out loud, which may not be their private thoughts.",
       hintLadder: [
         "Who is listening to a speech?",

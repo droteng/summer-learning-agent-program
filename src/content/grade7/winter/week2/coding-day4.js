@@ -70,12 +70,12 @@ export const winterG7CodingW2D4 = {
       type: "multiple_choice",
       stem: "A loop appends each minute's temperature to a list called readings. After running coolDown(100, 10, 3), which list correctly shows the readings appended after each minute?",
       choices: [
-        "[100, 90, 80]",
         "[90, 80, 70]",
+        "[100, 90, 80]",
         "[100, 90, 80, 70]",
         "[70]"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "The starting 100 is not appended (nothing has cooled yet). Minute 1: 90, minute 2: 80, minute 3: 70. So readings = [90, 80, 70].",
       hintLadder: [
         "Does the list store the start value or only values AFTER cooling each minute?",
@@ -184,11 +184,11 @@ export const winterG7CodingW2D4 = {
           stem: "A loop uses 'WHILE temp > 40: temp = temp − 10, append temp to readings.' Starting at temp = 70, what is the final readings list when the loop stops?",
           choices: [
             "[70, 60, 50, 40]",
-            "[60, 50, 40]",
+            "[70, 60, 50]",
             "[60, 50, 40, 30]",
-            "[70, 60, 50]"
+            "[60, 50, 40]"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Check the condition BEFORE each pass. 70>40: append 60. 60>40: append 50. 50>40: append 40. Now 40>40 is false, so the loop stops. readings = [60, 50, 40]. The start (70) is never appended.",
           hintLadder: [
             "Trace: 70 → 60 (append) → 50 (append) → 40 (append).",

@@ -77,12 +77,12 @@ export const summerG7CodingW4D3 = {
       type: "multiple_choice",
       stem: "You want the running total of a list to be correct. Where should you set total = 0?",
       choices: [
-        "Inside the loop, at the top of each pass",
         "Once, BEFORE the loop starts",
+        "Inside the loop, at the top of each pass",
         "After the loop ends",
         "It doesn't matter where"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Setting total = 0 before the loop initializes it once. Putting it inside the loop would reset it to 0 every pass, wiping out the accumulation.",
       hintLadder: [
         "What happens to the total if you reset it every pass of the loop?",

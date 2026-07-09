@@ -37,11 +37,11 @@ export const summerG7HistoryW5D4 = {
       stem: "Which statement best explains WHY most inventions get created?",
       choices: [
         "Inventions appear randomly with no reason",
-        "Inventions usually answer a real human need or solve a problem",
+        "Inventions never build on earlier ideas",
         "Inventions only come from kings and rulers",
-        "Inventions never build on earlier ideas"
+        "Inventions usually answer a real human need or solve a problem"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Necessity drives invention: people create tools and machines to meet needs and solve problems they face.",
       hintLadder: [
         "Think about WHY someone bothers to invent something.",
@@ -55,11 +55,11 @@ export const summerG7HistoryW5D4 = {
       stem: "The printing press made books cheap and common. This is an example of how an invention can...",
       choices: [
         "Have no effect on society",
-        "Trigger a chain of further changes, like more people learning to read",
         "Only matter to the inventor",
+        "Trigger a chain of further changes, like more people learning to read",
         "Stop all future inventions"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "One invention often sets off a chain — cheaper books led to more readers, more shared ideas, and later innovations.",
       hintLadder: [
         "Did the printing press only affect one person?",
@@ -173,12 +173,12 @@ export const summerG7HistoryW5D4 = {
           type: "multiple_choice",
           stem: "Put these information technologies in the order they built on one another, earliest first: (1) internet, (2) printing press, (3) handwritten manuscripts, (4) telegraph.",
           choices: [
-            "1 → 2 → 3 → 4",
             "3 → 2 → 4 → 1",
+            "1 → 2 → 3 → 4",
             "2 → 3 → 1 → 4",
             "4 → 1 → 2 → 3"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Handwritten manuscripts came first, then the printing press, then the telegraph, then the internet — each sped up sharing information more than the last.",
           hintLadder: [
             "Which was the SLOWEST, oldest way to share information?",

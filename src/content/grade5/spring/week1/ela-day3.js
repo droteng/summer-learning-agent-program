@@ -38,11 +38,11 @@ export const springG5ElaW1D3 = {
       stem: "Which one is a TESTABLE question for a growth experiment?",
       choices: [
         "Are flowers the best part of spring?",
-        "Does the type of soil change how tall a bean plant grows in three weeks?",
+        "Do you like sunflowers?",
         "Why is gardening fun?",
-        "Do you like sunflowers?"
+        "Does the type of soil change how tall a bean plant grows in three weeks?"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "It names one thing to change (type of soil) and one thing to measure (plant height over three weeks), so you can test it by looking and measuring.",
       hintLadder: [
         "A testable question can be answered by measuring, not by an opinion.",
@@ -167,12 +167,12 @@ export const springG5ElaW1D3 = {
           type: "multiple_choice",
           stem: "Which question would need to be REWRITTEN before you could test it?",
           choices: [
-            "Does adding compost make tomato plants grow more fruit?",
-            "Do seeds sprout faster in warm soil than in cold soil?",
             "Which spring flower is the most beautiful?",
+            "Do seeds sprout faster in warm soil than in cold soil?",
+            "Does adding compost make tomato plants grow more fruit?",
             "Does music played near a plant change how many leaves it grows in a month?"
           ],
-          answerIndex: 2,
+          answerIndex: 0,
           explanation: "'Most beautiful' depends on personal opinion and cannot be measured, so it is not testable as written. The others each name something to change and something to measure.",
           hintLadder: [
             "Which question depends on personal taste?",

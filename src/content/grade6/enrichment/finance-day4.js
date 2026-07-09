@@ -68,11 +68,11 @@ export const grade6FinanceDay4 = {
         "An ad promises '20% guaranteed return per year, no risk!' What's the BEST reaction?",
       choices: [
         "Invest everything immediately.",
-        "Skeptical — higher returns almost always come with higher risk, and 'guaranteed' is suspicious.",
+        "Forward it to friends.",
         "Trust the ad — they wouldn't lie.",
-        "Forward it to friends."
+        "Skeptical — higher returns almost always come with higher risk, and 'guaranteed' is suspicious."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Guaranteed huge returns are almost always a scam. Real returns scale with real risk.",
       hintLadder: [
         "Real bank rates are small.",
@@ -86,12 +86,12 @@ export const grade6FinanceDay4 = {
       type: "multiple_choice",
       stem: "Why do banks pay interest at all?",
       choices: [
-        "They feel sorry for savers.",
         "To use your money for loans they make to others; they share some of the profit with you.",
+        "They feel sorry for savers.",
         "It's a legal requirement.",
         "They lose money on every account."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Your deposit funds loans the bank makes. They charge borrowers more than they pay you — that's their profit margin.",
       hintLadder: [
         "What does the bank do with your money?",

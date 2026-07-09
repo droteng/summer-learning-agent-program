@@ -37,11 +37,11 @@ export const grade6MediaDay1 = {
       stem: "What's the FIRST question to ask of any online claim?",
       choices: [
         "Is the post pretty?",
-        "Who wrote it and what's their role?",
         "How many likes does it have?",
+        "Who wrote it and what's their role?",
         "Does it confirm what I already think?"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Author + role anchor everything else. Without them, you can't weigh the claim.",
       hintLadder: [
         "Who is the source?",
@@ -55,11 +55,11 @@ export const grade6MediaDay1 = {
       stem: "Which is MOST trustworthy for a health claim?",
       choices: [
         "An anonymous Twitter thread.",
-        "A page on the CDC website citing a peer-reviewed study.",
+        "A friend's group chat message.",
         "A YouTube video by an unknown user.",
-        "A friend's group chat message."
+        "A page on the CDC website citing a peer-reviewed study."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Government health agency + cited study = traceable to evidence. The others can't be verified.",
       hintLadder: [
         "Which option can you trace to evidence?",
@@ -72,12 +72,12 @@ export const grade6MediaDay1 = {
       type: "multiple_choice",
       stem: "A claim is from a website ending in .gov. Does that GUARANTEE it's true?",
       choices: [
-        "Yes, .gov sites are always right.",
         "No — .gov sites are accountable, but you still check the date and the specific claim against the source they cite.",
+        "Yes, .gov sites are always right.",
         "Only if the page is pink.",
         "Only on Tuesdays."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: ".gov is accountable — there's a named agency. But always check the specific claim and date.",
       hintLadder: [
         "Accountable ≠ always right.",

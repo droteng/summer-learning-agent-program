@@ -83,12 +83,12 @@ export const springG5CodingW2D4 = {
       type: "multiple_choice",
       stem: "Why do programmers use a LOOP to grow a plant for 20 days instead of writing the grow step 20 times?",
       choices: [
-        "Loops make the plant grow faster",
         "A loop repeats one step many times, so the code is shorter and easy to change",
+        "Loops make the plant grow faster",
         "Loops are the only way to add numbers",
         "There is no reason — writing it 20 times is better"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A loop lets you repeat the same step as many times as you want with one short block, and you can change the number of days easily.",
       hintLadder: [
         "What does a loop let you avoid copying?",

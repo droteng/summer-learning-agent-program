@@ -33,8 +33,8 @@ export const grade6MathWeek4Day2 = {
       id: "g6.math.w4.d2.q1",
       type: "multiple_choice",
       stem: "true AND false evaluates to:",
-      choices: ["true", "false", "either", "error"],
-      answerIndex: 1,
+      choices: ["false", "true", "either", "error"],
+      answerIndex: 0,
       explanation: "AND requires both sides true. Any false on either side makes the whole expression false.",
       hintLadder: [
         "What does AND require?",
@@ -46,8 +46,8 @@ export const grade6MathWeek4Day2 = {
       id: "g6.math.w4.d2.q2",
       type: "multiple_choice",
       stem: "true OR false evaluates to:",
-      choices: ["true", "false", "either", "error"],
-      answerIndex: 0,
+      choices: ["either", "false", "true", "error"],
+      answerIndex: 2,
       explanation: "OR is true when at least one side is true. true here is enough.",
       hintLadder: [
         "OR is true when at least one side is true.",
@@ -60,8 +60,8 @@ export const grade6MathWeek4Day2 = {
       type: "multiple_choice",
       stem:
         "A rule says: a pet is allowed in the park if (it is a dog) OR (it is on a leash). My cat is on a leash. Allowed?",
-      choices: ["Allowed", "Not allowed", "Need more info", "Only if it's also a dog"],
-      answerIndex: 0,
+      choices: ["Not allowed", "Allowed", "Need more info", "Only if it's also a dog"],
+      answerIndex: 1,
       explanation: "OR is satisfied if either side is true. The cat is on a leash, so the rule allows it.",
       hintLadder: [
         "Is OR satisfied if just one side is true?",

@@ -75,12 +75,12 @@ export const summerG5MathW2D5 = {
       type: "multiple_choice",
       stem: "You have the numbers 2, 4, 6, 8, 10. Which is true?",
       choices: [
-        "The mean and median are both 6.",
-        "The mean is bigger than the median.",
         "The median is bigger than the mean.",
+        "The mean is bigger than the median.",
+        "The mean and median are both 6.",
         "The range is 6."
       ],
-      answerIndex: 0,
+      answerIndex: 2,
       explanation:
         "The mean is (2+4+6+8+10)÷5 = 30÷5 = 6, and the middle number is also 6. In an evenly spaced list like this, the mean and median match.",
       hintLadder: [

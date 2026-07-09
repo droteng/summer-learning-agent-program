@@ -79,11 +79,11 @@ export const grade6BookClubDay2 = {
       stem: "When Lock Jammer DOES show up at hour thirty-six, even though Leo's been eating well, what explains it?",
       choices: [
         "Leo lied about eating well.",
-        "The HDL knights got tired.",
         "Old sludge from BEFORE the trial finally caught up — past choices take time to clear.",
+        "The HDL knights got tired.",
         "It was just a regular drill."
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "Flo's line is exactly this: 'Old sludge just caught up. Choices from before.' The book's quiet lesson is that bodies don't reset instantly — habits compound in BOTH directions.",
       hintLadder: [
         "What does Flo say at the moment Lock Jammer appears?",
@@ -113,11 +113,11 @@ export const grade6BookClubDay2 = {
       stem: "Which BEST captures what 'mitochondria' do in the body (and in the book)?",
       choices: [
         "Send text messages between cells.",
-        "Act as tiny power plants that turn food into ATP energy for muscles.",
         "Carry oxygen through the bloodstream (Hemo's job).",
+        "Act as tiny power plants that turn food into ATP energy for muscles.",
         "Fight viruses and bacteria."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Mitochondria are the energy factories of cells. The book shows them as oval workers with hard hats chanting 'ATP! ATP! Energy for you and me!'",
       hintLadder: [
         "Check today's key terms.",

@@ -67,11 +67,11 @@ export const grade6ScienceWeek4Day4 = {
       stem: "Which would most improve the spotting-weeds AI?",
       choices: [
         "More photos of the same weed in sunshine.",
-        "More photos in varied weather and angles.",
+        "Asking the AI nicely.",
         "Faster computers.",
-        "Asking the AI nicely."
+        "More photos in varied weather and angles."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Variety in training data helps the AI generalize. Same examples ten times over don't add new information.",
       hintLadder: [
         "The AI is missing certain conditions.",
@@ -84,12 +84,12 @@ export const grade6ScienceWeek4Day4 = {
       type: "multiple_choice",
       stem: "Which is a responsible thing to do when using AI for schoolwork?",
       choices: [
-        "Paste AI output and submit as your own.",
         "Use AI to brainstorm, then write the final work yourself with your own thinking.",
+        "Paste AI output and submit as your own.",
         "Never use AI ever.",
         "Use AI to take a test for you."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "AI is a brainstorm partner. You're still the author and the thinker.",
       hintLadder: [
         "Who's supposed to learn from the assignment — you or the AI?",
@@ -165,12 +165,12 @@ export const grade6ScienceWeek4Day4 = {
           stem:
             "A face-unlock AI was trained only on photos taken indoors with bright light. Outdoors in sunlight, it often fails. Why?",
           choices: [
-            "AI cameras break in sunlight.",
             "The training data was biased — it never included bright outdoor lighting.",
+            "AI cameras break in sunlight.",
             "Faces change outdoors.",
             "The AI is tired from working."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation:
             "The AI only saw indoor, bright-light examples, so outdoor sunlight looks unfamiliar. The data didn't cover that condition.",
           hintLadder: [

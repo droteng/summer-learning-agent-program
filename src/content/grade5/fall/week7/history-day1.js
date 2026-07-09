@@ -48,8 +48,8 @@ export const fallG5HistoryW7D1 = {
       id: "g5.fall.hist.w7.d1.q2",
       type: "multiple_choice",
       stem: "In 'The frost came, so the farmers picked the pumpkins early,' what is the EFFECT?",
-      choices: ["The frost came", "The farmers picked the pumpkins early", "The pumpkins", "The morning"],
-      answerIndex: 1,
+      choices: ["The farmers picked the pumpkins early", "The frost came", "The pumpkins", "The morning"],
+      answerIndex: 0,
       explanation: "The frost is the cause. Picking the pumpkins early is what happened because of it — the effect.",
       hintLadder: [
         "What happened BECAUSE of the frost?",
@@ -63,11 +63,11 @@ export const fallG5HistoryW7D1 = {
       stem: "How can one effect become the next CAUSE?",
       choices: [
         "Effects never matter",
-        "A result can make the NEXT thing happen, like dominoes",
+        "History always repeats",
         "Causes and effects are the same thing",
-        "History always repeats"
+        "A result can make the NEXT thing happen, like dominoes"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Just like dominoes, one result can knock over the next event, forming a chain.",
       hintLadder: [
         "Think about a row of dominoes.",
@@ -157,11 +157,11 @@ export const fallG5HistoryW7D1 = {
           stem: "In the chain 'The pond froze, so the ducks flew away, which made the pond quiet,' which event is BOTH an effect AND a cause?",
           choices: [
             "The pond froze",
-            "The ducks flew away",
             "The pond became quiet",
+            "The ducks flew away",
             "The winter"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "The ducks flying away is the EFFECT of the freeze and the CAUSE of the quiet pond — it's the middle link.",
           hintLadder: [
             "Look for the middle link, not the first or last.",

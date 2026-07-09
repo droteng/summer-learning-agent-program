@@ -38,12 +38,12 @@ export const springG7ElaW8D5 = {
       type: "multiple_choice",
       stem: "Which opening is the STRONGEST for a THESIS-DRIVEN showcase?",
       choices: [
-        "Um, so, this is my project about a plant, I guess.",
         "One seed became a whole plant in three weeks — and I'll prove that steady daily changes, not luck or weather, made it happen.",
+        "Um, so, this is my project about a plant, I guess.",
         "I didn't have much time, so sorry if it's rough.",
         "My project has some data and pictures in it."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "It's vivid AND states an arguable thesis the audience can follow, previewing that evidence will defend the claim — a real thesis-driven hook, not a label or an apology.",
       hintLadder: [
         "A thesis-driven opening states a CLAIM you'll defend.",
@@ -57,11 +57,11 @@ export const springG7ElaW8D5 = {
       stem: "Why does ANTICIPATING a counter-argument make your showcase more convincing?",
       choices: [
         "It fills extra time so the talk is longer.",
-        "It shows you considered the strongest objection and can answer it with evidence, which builds your credibility.",
         "It confuses the audience so they stop doubting.",
+        "It shows you considered the strongest objection and can answer it with evidence, which builds your credibility.",
         "It only matters if someone actually interrupts you."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Naming and answering the best objection before the audience raises it signals you've reasoned thoroughly and strengthens your argument, rather than dodging the weak spot.",
       hintLadder: [
         "Think about what happens when you face a doubt head-on.",
@@ -175,11 +175,11 @@ export const springG7ElaW8D5 = {
           stem: "Which presentation follows the strongest THESIS-DRIVEN structure?",
           choices: [
             "A pile of facts with no claim tying them together.",
-            "A hook that states a claim, a middle of evidence supporting it, an answered counter-argument, and a closing that lands the proven thesis.",
+            "A closing that introduces brand-new evidence for the first time.",
             "A long apology followed by unconnected facts.",
-            "A closing that introduces brand-new evidence for the first time."
+            "A hook that states a claim, a middle of evidence supporting it, an answered counter-argument, and a closing that lands the proven thesis."
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Claim + supporting evidence + answered objection + landing closing is the complete argument structure; the others lack a claim, misuse the closing, or never build an argument.",
           hintLadder: [
             "A thesis-driven talk makes a CLAIM and defends it.",

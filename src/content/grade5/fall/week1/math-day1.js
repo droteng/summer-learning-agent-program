@@ -35,8 +35,8 @@ export const fallG5MathW1D1 = {
       id: "g5.fall.math.w1.d1.q1",
       type: "multiple_choice",
       stem: "In the number 734, what is the value of the digit 3?",
-      choices: ["3", "30", "300", "3,000"],
-      answerIndex: 1,
+      choices: ["3", "3,000", "300", "30"],
+      answerIndex: 3,
       explanation: "The 3 is in the tens place, so its value is 30.",
       hintLadder: [
         "Name the place each digit sits in: ones, tens, hundreds.",

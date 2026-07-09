@@ -42,11 +42,11 @@ export const summerG5HistoryW6D5 = {
       stem: "What does 'interdependence' mean?",
       choices: [
         "Each country doing everything alone.",
-        "Countries (or people) depending on each other.",
+        "Trading only with next-door neighbors.",
         "Being independent with a twist.",
-        "Trading only with next-door neighbors."
+        "Countries (or people) depending on each other."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "'Inter-' means 'between'. Interdependence means depending on each other.",
       hintLadder: [
         "'Inter-' means 'between'.",
@@ -61,11 +61,11 @@ export const summerG5HistoryW6D5 = {
         "A dry year in one country means less wheat grows. Bread prices go up even in other countries. Why?",
       choices: [
         "Bread magic.",
-        "Countries buy wheat from each other, so less wheat means higher prices everywhere.",
         "Dry weather spreads through wifi.",
+        "Countries buy wheat from each other, so less wheat means higher prices everywhere.",
         "It never really happens."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Countries trade wheat across borders. When there is less wheat to share, prices go up in many places.",
       hintLadder: [
         "How does wheat travel between countries?",
@@ -78,12 +78,12 @@ export const summerG5HistoryW6D5 = {
       type: "multiple_choice",
       stem: "Which is the BEST example of a problem that needs many countries to work together?",
       choices: [
-        "Painting one country's flag.",
         "Cleaning up plastic in the world's oceans.",
+        "Painting one country's flag.",
         "Renaming one street.",
         "Picking a school mascot."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Ocean currents carry plastic across borders, so no single country can clean it up alone.",
       hintLadder: [
         "Which problem crosses borders?",

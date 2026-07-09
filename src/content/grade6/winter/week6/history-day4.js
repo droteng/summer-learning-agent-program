@@ -35,12 +35,12 @@ export const winterG6HistoryW6D4 = {
       type: "multiple_choice",
       stem: "What does it mean to say inventions 'build on' one another?",
       choices: [
-        "Every invention is completely new with no past ideas",
         "Each new invention improves on or solves a problem left by earlier ones",
+        "Every invention is completely new with no past ideas",
         "Only one person ever invents anything important",
         "Old inventions are always useless"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Inventions form chains — each new one usually improves on, or fixes a weakness of, the inventions before it.",
       hintLadder: [
         "Think about candles, then light bulbs.",
@@ -73,11 +73,11 @@ export const winterG6HistoryW6D4 = {
       stem: "Which sequence shows lighting inventions in the order they generally IMPROVED over time?",
       choices: [
         "Electric bulb → gas lamp → candle → firelight",
-        "Firelight → candle → oil/gas lamp → electric bulb",
+        "Gas lamp → firelight → candle → electric bulb",
         "Candle → firelight → electric bulb → gas lamp",
-        "Gas lamp → firelight → candle → electric bulb"
+        "Firelight → candle → oil/gas lamp → electric bulb"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Lighting advanced from firelight to candles to oil and gas lamps and finally to the electric bulb, each step brighter and safer.",
       hintLadder: [
         "Which came first — fire or the electric bulb?",
@@ -167,11 +167,11 @@ export const winterG6HistoryW6D4 = {
           stem: "Which statement BEST captures how invention usually works over history?",
           choices: [
             "One genius invents everything perfectly the first time",
-            "Each inventor improves on the ideas and problems of earlier inventors",
             "Inventions never change once they are made",
+            "Each inventor improves on the ideas and problems of earlier inventors",
             "New inventions ignore everything that came before"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Progress is a chain: inventors build on and improve the work of those before them, solving leftover problems.",
           hintLadder: [
             "Think about candles leading to bulbs.",

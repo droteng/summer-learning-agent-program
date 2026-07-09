@@ -66,12 +66,12 @@ export const winterG7MathW3D2 = {
       type: "multiple_choice",
       stem: "Sled A goes 45 meters in 6 seconds. Sled B travels at 27 km/h. Which sled is FASTER? (Hint: convert Sled A's speed to km/h using ×3.6.)",
       choices: [
-        "Sled A — it is 27 km/h, tied, so neither",
         "Sled A — 45 ÷ 6 = 7.5 m/s = 27 km/h, so they are actually the SAME speed",
+        "Sled A — it is 27 km/h, tied, so neither",
         "Sled B — it is much faster than Sled A",
         "You cannot compare speeds in different units"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Sled A: 45 ÷ 6 = 7.5 m/s. Convert: 7.5 × 3.6 = 27 km/h. Sled B is also 27 km/h, so the two sleds are moving at exactly the same speed.",
       hintLadder: [
         "First find Sled A's speed in m/s: 45 ÷ 6.",
