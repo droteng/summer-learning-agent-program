@@ -34,12 +34,12 @@ export const fallG6ElaW2D4 = {
       type: "multiple_choice",
       stem: "Which is the BEST topic sentence for a paragraph about decomposers?",
       choices: [
-        "Decomposers are cool.",
-        "There are many things in nature.",
         "Decomposers are living things that break down dead material and return nutrients to the soil.",
+        "There are many things in nature.",
+        "Decomposers are cool.",
         "I like mushrooms."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "It names the subject and clearly states what the paragraph will explain.",
       hintLadder: [
         "A topic sentence names the subject AND previews the point.",
@@ -66,11 +66,11 @@ export const fallG6ElaW2D4 = {
       stem: "You use the word 'producer' in your explanation. What should you do for a younger reader?",
       choices: [
         "Use it and move on",
-        "Define it right away and give an example, like 'a producer is a plant that makes its own food, such as grass'",
         "Replace it with a harder word",
+        "Define it right away and give an example, like 'a producer is a plant that makes its own food, such as grass'",
         "Skip explaining anything"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Defining the term immediately with an example keeps the explanation clear.",
       hintLadder: [
         "A younger reader may not know 'producer.'",
@@ -161,11 +161,11 @@ export const fallG6ElaW2D4 = {
           stem: "Which sentence best DEFINES a term for a younger reader the moment it's used?",
           choices: [
             "Decomposers are essential to nutrient cycling within trophic systems.",
-            "Decomposers, like mushrooms, are living things that break down dead plants and animals.",
+            "You already know what decomposers are.",
             "Decomposers do their job well.",
-            "You already know what decomposers are."
+            "Decomposers, like mushrooms, are living things that break down dead plants and animals."
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "It defines the term in plain words AND gives a picture-able example (mushrooms), exactly what a young reader needs.",
           hintLadder: [
             "Which option explains the word instead of assuming the reader knows it?",

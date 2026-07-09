@@ -38,11 +38,11 @@ export const winterG5HistoryW6D4 = {
       stem: "What does it mean to say inventions 'build on' one another?",
       choices: [
         "Every invention is brand new with no past ideas",
-        "Each new invention improves on, or fixes a problem left by, an earlier one",
+        "Old inventions are always useless",
         "Only one person ever invents anything important",
-        "Old inventions are always useless"
+        "Each new invention improves on, or fixes a problem left by, an earlier one"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Inventions form chains — each new one usually improves on, or fixes a weak spot of, the inventions before it.",
       hintLadder: [
         "Think about candles, and then light bulbs.",
@@ -55,12 +55,12 @@ export const winterG5HistoryW6D4 = {
       type: "multiple_choice",
       stem: "Benjamin Franklin's iron stove (the 1740s 'Franklin stove') was made mainly to...",
       choices: [
-        "Make food taste better",
         "Send more heat into a room while burning less wood than an open fireplace",
+        "Make food taste better",
         "Make electricity",
         "Replace candles for lighting"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "The Franklin stove was built to keep more heat in the room instead of losing it up the chimney, using less wood.",
       hintLadder: [
         "It was about HEATING a home better.",
@@ -169,11 +169,11 @@ export const winterG5HistoryW6D4 = {
           stem: "Which sentence BEST tells how invention usually works over history?",
           choices: [
             "One genius invents everything perfectly the first time",
-            "Each inventor improves on the ideas and problems of earlier inventors",
             "Inventions never change once they are made",
+            "Each inventor improves on the ideas and problems of earlier inventors",
             "New inventions ignore everything that came before"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Progress is a chain: inventors build on and improve the work of those before them, fixing leftover problems.",
           hintLadder: [
             "Think about candles leading to bulbs.",

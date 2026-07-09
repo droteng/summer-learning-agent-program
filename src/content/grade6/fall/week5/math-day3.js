@@ -35,11 +35,11 @@ export const fallG6MathW5D3 = {
       stem: "A bar graph makes a small difference look gigantic. What's the most common trick?",
       choices: [
         "Using colors",
-        "A y-axis that doesn't start at zero",
         "Too many labels",
+        "A y-axis that doesn't start at zero",
         "Bars that are too thin"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Starting the axis above zero stretches small differences to look dramatic.",
       hintLadder: [
         "It's about the scale, not the colors.",
@@ -66,12 +66,12 @@ export const fallG6MathW5D3 = {
       type: "multiple_choice",
       stem: "'9 out of 10 kids prefer our snack!' — but they only asked 10 kids total. Why might this be misleading?",
       choices: [
-        "10 is plenty of people",
         "A sample of only 10 is too small to represent all kids",
+        "10 is plenty of people",
         "The snack is healthy",
         "Percentages are always wrong"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A tiny sample can't fairly stand in for everyone — the result might not hold for a bigger group.",
       hintLadder: [
         "How many kids did they actually ask?",

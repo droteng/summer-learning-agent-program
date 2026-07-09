@@ -37,11 +37,11 @@ export const springG7ElaW6D5 = {
       stem: "Beyond stating WHAT happens, what does strong Grade 7 explanatory writing about a simulation also make clear?",
       choices: [
         "Why the reader should prefer this simulation over all others",
-        "WHY the numbers behave that way — the cause-and-effect behind the pattern",
         "A dramatic fictional story about the cells",
+        "WHY the numbers behave that way — the cause-and-effect behind the pattern",
         "As many advanced vocabulary words as possible, whether or not they fit"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Grade 7 explanatory writing explains cause and effect — WHY the pattern happens — not just what happens, and without arguing an opinion.",
       hintLadder: [
         "Explanatory writing informs; does it just list what happens?",
@@ -55,11 +55,11 @@ export const springG7ElaW6D5 = {
       stem: "Which transition best signals a CAUSE-AND-EFFECT link when explaining why a simulation's numbers accelerate?",
       choices: [
         "On the other hand,",
-        "As a result,",
+        "In the meantime,",
         "For instance,",
-        "In the meantime,"
+        "As a result,"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "'As a result' signals that one thing CAUSES another — perfect for linking the repeated rule to the accelerating data. The others signal contrast, example, or time.",
       hintLadder: [
         "Which phrase shows one thing causing another?",
@@ -73,12 +73,12 @@ export const springG7ElaW6D5 = {
       type: "multiple_choice",
       stem: "Which sentence best EXPLAINS a growth simulation with precise vocabulary and evidence (rather than arguing about it)?",
       choices: [
-        "Everyone should build an exponential simulation because they are clearly the coolest.",
         "Because my loop multiplies the algae by a growth factor of 2 each hour, the data climbs from 3 to 6 to 12, which shows the exponential curve accelerating.",
+        "Everyone should build an exponential simulation because they are clearly the coolest.",
         "Honestly, I find algae kind of gross, so I picked it.",
         "Doubling simulations are way more fun than adding ones, no question."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "It uses precise terms (loop, growth factor, exponential), cites the data, and uses cause-and-effect ('because... which shows') — that is Grade 7 explanatory writing. The others argue or give opinions.",
       hintLadder: [
         "Which sentence explains the cause AND cites the data?",
@@ -173,12 +173,12 @@ export const springG7ElaW6D5 = {
           type: "multiple_choice",
           stem: "You are explaining WHY a simulation's growth speeds up and want a transition that signals the CAUSE of that acceleration. Which fits best?",
           choices: [
-            "Because each jump is a percentage of a growing number,",
             "On the other hand,",
+            "Because each jump is a percentage of a growing number,",
             "For example,",
             "Meanwhile,"
           ],
-          answerIndex: 0,
+          answerIndex: 1,
           explanation: "'Because...' directly names the cause of the acceleration — exactly the cause-and-effect move Grade 7 explanatory writing needs. The others signal contrast, example, or time.",
           hintLadder: [
             "Which phrase introduces a CAUSE?",

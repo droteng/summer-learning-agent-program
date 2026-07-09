@@ -63,11 +63,11 @@ export const summerG5ElaW8D3 = {
       stem: "Why use placeholders like [picture needed]?",
       choices: [
         "To make the draft look messy.",
-        "So you can keep going without stopping to fix each piece.",
+        "Because computers like brackets.",
         "To fill up the page.",
-        "Because computers like brackets."
+        "So you can keep going without stopping to fix each piece."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Stopping to perfect each missing piece breaks your flow. Placeholders let you finish the whole shape first.",
       hintLadder: [
         "What breaks your writing flow?",
@@ -81,11 +81,11 @@ export const summerG5ElaW8D3 = {
       stem: "Your poster is missing one fact. It's still Day 3. Best move:",
       choices: [
         "Stop everything and search until you find it.",
-        "Write [fact needed] and keep working — fix it tomorrow.",
         "Make up a fact so it looks finished.",
+        "Write [fact needed] and keep working — fix it tomorrow.",
         "Give up on the poster."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A placeholder keeps you moving so you finish the whole shape today. Tomorrow you fill it with a real, true fact — never make one up.",
       hintLadder: [
         "Day 3 is about finishing the shape.",
@@ -176,12 +176,12 @@ export const summerG5ElaW8D3 = {
           type: "multiple_choice",
           stem: "Halfway through your draft you notice you're missing a key fact. Best Day-3 move?",
           choices: [
-            "Stop everything and search until you find the exact fact.",
             "Write [fact needed] and keep drafting the other sections.",
+            "Stop everything and search until you find the exact fact.",
             "Make up a fact so it looks done.",
             "Delete the whole section."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "A placeholder keeps you moving so you finish the whole shape today. You fill it with a real, true fact tomorrow — never invent one.",
           hintLadder: [
             "Day 3 is about finishing the shape, not perfecting parts.",

@@ -49,12 +49,12 @@ export const fallG5ScienceW3D3 = {
       type: "multiple_choice",
       stem: "Plant A grows 3 cm each week. Plant B grows 8 cm each month. Which grows FASTER? (Use 4 weeks = 1 month.)",
       choices: [
-        "Plant A",
-        "Plant B",
         "They grow the same",
+        "Plant B",
+        "Plant A",
         "You can't compare them"
       ],
-      answerIndex: 0,
+      answerIndex: 2,
       explanation: "Plant A: 3 cm/week × 4 = 12 cm/month, which beats Plant B's 8 cm/month.",
       hintLadder: [
         "Put both on the same time unit (per month).",

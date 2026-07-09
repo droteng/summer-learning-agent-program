@@ -58,11 +58,11 @@ export const springG7ScienceW8D2 = {
       stem: "Two bean seeds are genetically identical. One grows twice as tall as the other. Which statement BEST explains this using gene–environment reasoning?",
       choices: [
         "Their genes must actually be different after all.",
-        "Genes set the range of possible heights, and different environments (light, water, nutrients) produced different outcomes within that range.",
+        "One seed simply chose to grow taller.",
         "Height is controlled only by the environment; genes play no role.",
-        "One seed simply chose to grow taller."
+        "Genes set the range of possible heights, and different environments (light, water, nutrients) produced different outcomes within that range."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Identical genes set the same POTENTIAL range, but the realized phenotype (actual height) depends on environmental conditions — the trait emerges from both.",
       hintLadder: [
         "Identical genes rule out a genetic difference.",
@@ -76,11 +76,11 @@ export const springG7ScienceW8D2 = {
       stem: "A pond has plenty of sunlight, warmth, and space, but its algae stop growing because nitrogen runs out. Which concept does this BEST illustrate?",
       choices: [
         "A predator–prey feedback loop",
-        "A limiting factor — the scarcest needed resource caps growth even when others are abundant",
         "Inherited traits determining growth",
+        "A limiting factor — the scarcest needed resource caps growth even when others are abundant",
         "The pond has no ecosystem role"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A limiting factor is the resource in shortest supply relative to need; here nitrogen caps algae growth regardless of how much light, warmth, or space is available.",
       hintLadder: [
         "Everything is plentiful EXCEPT one thing.",
@@ -174,12 +174,12 @@ export const springG7ScienceW8D2 = {
           type: "multiple_choice",
           stem: "A meadow's rabbit population booms, foxes multiply, rabbits crash, then foxes decline and rabbits recover. Which statement models this MOST completely?",
           choices: [
-            "Rabbit genetics alone explain the whole pattern.",
             "A predator–prey feedback loop: rising rabbits feed rising foxes, which drive rabbits down, which then drives foxes down — the loop self-regulates the populations.",
+            "Rabbit genetics alone explain the whole pattern.",
             "The meadow has no limiting factors or feedback.",
             "The rabbits chose to reduce their own numbers."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "The oscillation is a classic predator–prey feedback loop: each population regulates the other over time, keeping the system in balance rather than either growing forever.",
           hintLadder: [
             "The numbers rise and fall in a repeating pattern — what drives that?",

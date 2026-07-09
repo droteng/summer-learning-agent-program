@@ -82,11 +82,11 @@ export const fallG6CodingW2D3 = {
       stem: "Why do predator and prey populations rise and fall in a repeating CYCLE?",
       choices: [
         "Random luck each year",
-        "More prey feeds more predators, which then reduce the prey, which then reduces predators, and prey recover",
         "The seasons change colors",
+        "More prey feeds more predators, which then reduce the prey, which then reduces predators, and prey recover",
         "Predators and prey never affect each other"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Each population's change feeds back on the other, producing a repeating up-and-down cycle.",
       hintLadder: [
         "What happens to foxes when rabbits are plentiful?",
@@ -174,11 +174,11 @@ export const fallG6CodingW2D3 = {
           stem: "Rule: 'IF rabbits >= 40, THEN foxes increase.' During the simulation the rabbit count is exactly 40. What happens to the foxes?",
           choices: [
             "Foxes do NOT increase — 40 is not enough",
-            "Foxes increase — 40 meets the 'greater than or equal to' condition",
+            "The simulation crashes",
             "The rabbits disappear",
-            "The simulation crashes"
+            "Foxes increase — 40 meets the 'greater than or equal to' condition"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "'>=' means greater than OR equal to, so exactly 40 makes the condition true and the THEN action runs.",
           hintLadder: [
             "What does the '=' part of '>=' mean?",

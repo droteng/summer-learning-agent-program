@@ -35,11 +35,11 @@ export const grade6CodingWeek4Day3 = {
       stem: "What's the first thing to do when you see an error message?",
       choices: [
         "Delete the file and start over.",
-        "Read the error message and the line number.",
+        "Ask someone else immediately.",
         "Restart the computer.",
-        "Ask someone else immediately."
+        "Read the error message and the line number."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Error messages name the exact line and usually the exact problem. Reading them first saves time.",
       hintLadder: [
         "The computer is telling you where the bug is.",
@@ -72,11 +72,11 @@ export const grade6CodingWeek4Day3 = {
       stem: "Your 80-line program crashes somewhere in the middle. Best next step?",
       choices: [
         "Print everything from line 1.",
-        "Comment out half the code, run it, see if it still crashes.",
         "Rewrite the entire program.",
+        "Comment out half the code, run it, see if it still crashes.",
         "Just try random fixes."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Bisection: cut the suspected region in half each time. Two or three passes narrow the bug down fast.",
       hintLadder: [
         "Think binary search.",
@@ -165,12 +165,12 @@ export const grade6CodingWeek4Day3 = {
           stem:
             "This should count to 3 but loops forever:\n\n  i = 0\n  while i < 3:\n    print(i)\n\nWhat is the bug?",
           choices: [
-            "range should be used instead of while",
             "i is never increased, so i < 3 stays true forever",
+            "range should be used instead of while",
             "print can't go inside a while loop",
             "There is no bug"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation:
             "The loop never changes i, so the condition i < 3 is always true. Adding i = i + 1 inside the loop fixes it.",
           hintLadder: [

@@ -35,11 +35,11 @@ export const fallG6HistoryW4D2 = {
       stem: "What did the very earliest writing mostly record?",
       choices: [
         "Poems and songs",
-        "Counts of goods like grain and animals",
         "Weather forecasts",
+        "Counts of goods like grain and animals",
         "Sports scores"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Writing began as practical record-keeping — counting goods — before it recorded stories.",
       hintLadder: [
         "Think about what a busy trading city most needed to track.",
@@ -65,12 +65,12 @@ export const fallG6HistoryW4D2 = {
       type: "multiple_choice",
       stem: "Historians call the time before written records 'prehistory.' Why does writing mark the start of 'history'?",
       choices: [
-        "Nothing happened before writing",
         "Written records let us know what people did, said, and agreed to",
+        "Nothing happened before writing",
         "People couldn't think before writing",
         "History is just a name"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Writing gives direct records, so we can know events and ideas instead of only guessing from objects.",
       hintLadder: [
         "How do we KNOW about a time period?",
@@ -159,11 +159,11 @@ export const fallG6HistoryW4D2 = {
           stem: "Why do historians call the time BEFORE written records 'prehistory'?",
           choices: [
             "Because nothing important happened back then",
-            "Because there are no written accounts, so we learn it from objects and bones instead",
+            "Because it was before the planet existed",
             "Because people couldn't talk yet",
-            "Because it was before the planet existed"
+            "Because there are no written accounts, so we learn it from objects and bones instead"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "'Prehistory' means before written records. Plenty happened — we just study it through artifacts rather than writing.",
           hintLadder: [
             "'Pre' means before. Before WHAT, exactly?",

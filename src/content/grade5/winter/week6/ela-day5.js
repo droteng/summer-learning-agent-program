@@ -38,11 +38,11 @@ export const winterG5ElaW6D5 = {
       stem: "Which sentence is the best CLAIM to OPEN an invention pitch?",
       choices: [
         "I like winter a lot.",
-        "My self-heating water bottle keeps drinks warm for hours so hikers stay warm in the cold.",
         "Water bottles exist.",
+        "My self-heating water bottle keeps drinks warm for hours so hikers stay warm in the cold.",
         "Um, here is a thing I made."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A strong claim clearly says what the invention does and why it matters — it is specific.",
       hintLadder: [
         "A claim says what your invention does AND why it matters.",
@@ -56,11 +56,11 @@ export const winterG5ElaW6D5 = {
       stem: "In a persuasive pitch, what is the job of EVIDENCE?",
       choices: [
         "To say the claim again in different words",
-        "To back up a reason with something real, like a test result or measurement",
+        "To list the writer's feelings",
         "To make the pitch longer",
-        "To list the writer's feelings"
+        "To back up a reason with something real, like a test result or measurement"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Evidence backs up a reason with real facts — a test, a number, or an example — so the audience believes you.",
       hintLadder: [
         "Evidence answers 'how do you know?'",
@@ -74,12 +74,12 @@ export const winterG5ElaW6D5 = {
       type: "multiple_choice",
       stem: "Which sentence is a strong CALL TO ACTION to END a pitch?",
       choices: [
-        "That's all I have.",
-        "Anyway, thanks.",
         "Vote for my heated-glove design so we can build it this winter.",
+        "Anyway, thanks.",
+        "That's all I have.",
         "I think it's pretty good maybe."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "A call to action tells the audience exactly what to do next — here, to vote so the invention gets built.",
       hintLadder: [
         "A call to action asks the audience to DO something specific.",

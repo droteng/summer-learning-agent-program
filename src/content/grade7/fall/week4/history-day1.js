@@ -35,12 +35,12 @@ export const fallG7HistoryW4D1 = {
       type: "multiple_choice",
       stem: "Historians say a food surplus was a 'necessary but not sufficient' cause of the first cities. What does that mean?",
       choices: [
-        "Surplus food alone guaranteed a city would form",
         "Cities couldn't form without surplus, but surplus by itself didn't build them — other causes were also needed",
+        "Surplus food alone guaranteed a city would form",
         "Surplus food had nothing to do with cities",
         "Cities formed before any surplus existed"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "'Necessary but not sufficient' means you can't have the result without it, yet it alone doesn't produce the result — other causes (organization, irrigation, leadership) were also required.",
       hintLadder: [
         "Break the phrase in two: 'necessary' AND 'not sufficient.'",
@@ -54,11 +54,11 @@ export const fallG7HistoryW4D1 = {
       stem: "Two ancient sources both mention the Tigris and Euphrates supporting large settlements. A historian trusts this claim MORE because...",
       choices: [
         "It sounds interesting",
-        "Two independent sources corroborate each other, making the claim more reliable",
+        "One source is enough on its own",
         "Older writing is always true",
-        "One source is enough on its own"
+        "Two independent sources corroborate each other, making the claim more reliable"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "When independent sources corroborate the same claim, it becomes more trustworthy than a single unverified account.",
       hintLadder: [
         "Why is agreement between sources useful?",
@@ -73,11 +73,11 @@ export const fallG7HistoryW4D1 = {
       stem: "Which was a CONTRIBUTING cause of Mesopotamian cities, rather than the core necessary cause of surplus food?",
       choices: [
         "Rich river-valley soil",
-        "A dependable food surplus",
         "Location on trade routes that brought goods and ideas",
+        "A dependable food surplus",
         "Water for irrigating crops"
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "Trade-route location contributed to a city's growth and wealth, but it wasn't the necessary food-producing condition — that role belongs to soil, water, and surplus.",
       hintLadder: [
         "Which option is NOT about producing food?",
@@ -166,11 +166,11 @@ export const fallG7HistoryW4D1 = {
           stem: "A historian finds one source claiming a city was founded purely by a great king. Why should they be cautious about this single-cause claim?",
           choices: [
             "Single sources are always false",
-            "One source with a single cause may be biased or incomplete; other causes (surplus, irrigation) likely also mattered and should be corroborated",
             "Kings never founded cities",
+            "One source with a single cause may be biased or incomplete; other causes (surplus, irrigation) likely also mattered and should be corroborated",
             "The claim is fine as-is with no checking"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "A lone source pushing one cause may reflect bias (glorifying a ruler). Good historians corroborate and look for multiple causes before accepting it.",
           hintLadder: [
             "What's risky about trusting ONE source AND ONE cause?",

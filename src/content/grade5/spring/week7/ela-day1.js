@@ -37,11 +37,11 @@ export const springG5ElaW7D1 = {
       stem: "Which sentence is a CLAIM about the environment (a side you could argue)?",
       choices: [
         "Trees are living things.",
-        "Our town should plant more trees to clean the air.",
+        "Rivers have water in them.",
         "It rained yesterday.",
-        "Rivers have water in them."
+        "Our town should plant more trees to clean the air."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "It takes a side about an action that someone could agree or disagree with — that is a claim. The others are facts nobody argues about.",
       hintLadder: [
         "A claim is something you could argue for or against.",
@@ -54,12 +54,12 @@ export const springG5ElaW7D1 = {
       type: "multiple_choice",
       stem: "Why is 'The environment is important' a weak claim?",
       choices: [
-        "It is too long.",
         "Almost everyone already agrees with it, so there is nothing to argue and no action to take.",
+        "It is too long.",
         "It is a made-up fact.",
         "It has no verb."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A claim needs to be arguable and point to a real change. If everyone already agrees, you have nothing to persuade about.",
       hintLadder: [
         "Would anyone actually disagree with this sentence?",
@@ -74,11 +74,11 @@ export const springG5ElaW7D1 = {
       stem: "Which is the STRONGEST claim about the environment?",
       choices: [
         "Things should be better outside.",
-        "Water is wet.",
         "Our town should protect the wetland by the river instead of building a parking lot.",
+        "Water is wet.",
         "I like nature."
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "It is specific, takes a clear side, names a real issue (animal habitat), and you could back it up with reasons.",
       hintLadder: [
         "Look for specific + a side + a real action.",

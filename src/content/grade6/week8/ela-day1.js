@@ -35,11 +35,11 @@ export const grade6ElaWeek8Day1 = {
       stem: "Which project scope is BEST for a 5-day week?",
       choices: [
         "Write the complete history of all sports.",
-        "Build a 1-page chart comparing 3 sports and their rules.",
         "Make every kid in the school love your sport.",
+        "Build a 1-page chart comparing 3 sports and their rules.",
         "Train to become a professional athlete."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Finishable + specific + comparable. The others are too big or not really projects.",
       hintLadder: [
         "Skip the impossible-to-finish options.",
@@ -54,11 +54,11 @@ export const grade6ElaWeek8Day1 = {
       stem: "Which is the WEAKEST criterion?",
       choices: [
         "Includes at least 3 reliable sources.",
-        "Explains cause and effect in 1-2 paragraphs.",
         "Looks really good.",
+        "Explains cause and effect in 1-2 paragraphs.",
         "Family understands the conclusion after one read-through."
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "'Looks really good' isn't testable. The others all have a specific test.",
       hintLadder: [
         "Which criterion can't you check?",
@@ -72,11 +72,11 @@ export const grade6ElaWeek8Day1 = {
       stem: "Why do projects need 'criteria' instead of just 'do your best'?",
       choices: [
         "Tradition.",
-        "So you can tell when you're done and what 'done' means.",
+        "Criteria make projects harder.",
         "Teachers like long lists.",
-        "Criteria make projects harder."
+        "So you can tell when you're done and what 'done' means."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Criteria turn fuzzy 'done' into testable 'done'. Without them, projects either drag or end too soon.",
       hintLadder: [
         "How do you know when to stop?",
@@ -90,12 +90,12 @@ export const grade6ElaWeek8Day1 = {
       stem:
         "Maya picks a coding project: 'a quiz game that asks 5 questions and shows the score.' This is:",
       choices: [
-        "Too small — should be a 50-question game.",
         "About right for a 5-day week — specific, finishable, growth-friendly.",
+        "Too small — should be a 50-question game.",
         "Too big — should be a calculator instead.",
         "Wrong subject."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "5 questions + score is enough to practice variables, loops, conditionals, and string handling. Finishable but real.",
       hintLadder: [
         "Can she finish it in 5 days?",
@@ -169,11 +169,11 @@ export const grade6ElaWeek8Day1 = {
           stem: "Which capstone scope is BEST sized for a single 5-day camp week?",
           choices: [
             "Write and publish a 200-page novel.",
-            "Make a 90-second explainer video on one topic with a chart and 3 sources.",
             "Interview every scientist in the country.",
+            "Make a 90-second explainer video on one topic with a chart and 3 sources.",
             "Build a working robot from scratch."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "A 90-second video with one chart and 3 sources is specific, finishable in 5 days, and still a real stretch. The others can't be finished or scoped in a week.",
           hintLadder: [
             "Cross out anything you couldn't finish by Friday.",

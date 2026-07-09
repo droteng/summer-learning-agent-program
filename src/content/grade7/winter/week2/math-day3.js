@@ -36,12 +36,12 @@ export const winterG7MathW2D3 = {
       type: "multiple_choice",
       stem: "Order these four temperatures from COLDEST to warmest: −4.5, −4, −12.5, 0.5 (degrees C).",
       choices: [
-        "−4, −4.5, −12.5, 0.5",
         "−12.5, −4.5, −4, 0.5",
+        "−4, −4.5, −12.5, 0.5",
         "0.5, −4, −4.5, −12.5",
         "−12.5, −4, −4.5, 0.5"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Coldest is farthest left on the number line. −12.5 < −4.5 < −4 < 0.5. Note −4.5 is colder than −4 because it lies farther left.",
       hintLadder: [
         "Coldest = smallest = farthest left on the number line.",

@@ -78,11 +78,11 @@ export const winterG6MathW8D3 = {
       stem: "Which graph type is BEST for comparing the total snowfall in four different winter cities?",
       choices: [
         "A single number",
-        "A bar graph, with one bar per city",
         "No graph — just say 'a lot'",
+        "A bar graph, with one bar per city",
         "A line graph of one city's temperature every second"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A bar graph compares separate categories (cities) side by side, making the differences easy to see.",
       hintLadder: [
         "You're comparing separate groups (cities), not change over time.",

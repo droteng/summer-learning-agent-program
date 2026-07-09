@@ -37,11 +37,11 @@ export const springG5WorldW5D5 = {
       stem: "You see a line graph titled 'Sea Ice Over Time' in the news. What should you check FIRST to understand it?",
       choices: [
         "The color of the line",
-        "The title, both axis labels, and the units",
+        "Whether it looks nice",
         "How many people shared it",
-        "Whether it looks nice"
+        "The title, both axis labels, and the units"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "The title, axis labels, and units tell you what is actually being measured and over what time — without them you can't tell what the line means.",
       hintLadder: [
         "What tells you WHAT the graph is measuring?",
@@ -88,11 +88,11 @@ export const springG5WorldW5D5 = {
       stem: "A headline says 'Bird Numbers Crash!' but the graph only shows data from one unusually cold week. What is the smartest response?",
       choices: [
         "Believe the headline — graphs never lie",
-        "Ask whether one short, unusual week can really show a long-term change",
         "Ignore all graphs about birds",
+        "Ask whether one short, unusual week can really show a long-term change",
         "Assume the birds are fine no matter what"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "One unusual week is too short to show a real, lasting change; you'd want a longer, clearly labeled time before trusting a dramatic claim.",
       hintLadder: [
         "Is one week enough to show a lasting change?",
@@ -165,12 +165,12 @@ export const springG5WorldW5D5 = {
           type: "multiple_choice",
           stem: "A graph claims pollen levels 'skyrocketed.' The side axis starts at 95 and the two bars read 96 and 100. What is really going on?",
           choices: [
-            "Pollen truly skyrocketed — the bars prove it",
             "The real change is only 4, but the side axis starting at 95 makes it look enormous",
+            "Pollen truly skyrocketed — the bars prove it",
             "The graph has no problem",
             "Pollen can't be measured"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "The actual change is 100 − 96 = 4. Because the side axis starts at 95 (not 0), that small change is stretched to look like a huge spike.",
           hintLadder: [
             "Use the real numbers: 96 and 100.",

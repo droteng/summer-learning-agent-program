@@ -56,11 +56,11 @@ export const springG7ScienceW1D1 = {
       stem: "A seedling has plenty of light, warm soil, and rich nutrients, but its pot's soil has completely dried out. What is the LIMITING FACTOR for its growth right now?",
       choices: [
         "Light — it always limits growth first",
-        "Water — the one need currently in shortest supply",
+        "Nothing is limiting; it will grow at full speed",
         "Nutrients — because there can never be enough",
-        "Nothing is limiting; it will grow at full speed"
+        "Water — the one need currently in shortest supply"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "The limiting factor is whichever need is in shortest supply. Here everything is plentiful except water, so water caps the growth.",
       hintLadder: [
         "A limiting factor is the resource that runs short first.",
@@ -75,11 +75,11 @@ export const springG7ScienceW1D1 = {
       stem: "A student claims: 'Adding more fertilizer will ALWAYS make any plant grow faster.' Why is this reasoning flawed?",
       choices: [
         "Fertilizer is never used by plants",
-        "Growth is capped by whichever need is scarcest, so extra nutrients don't help if light or water is what's limiting",
         "Plants only grow at night, so daytime fertilizer is wasted",
+        "Growth is capped by whichever need is scarcest, so extra nutrients don't help if light or water is what's limiting",
         "Fertilizer replaces a plant's need for light"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Because of limiting factors, adding more of a need that is already plentiful does nothing; only relieving the scarcest need increases growth.",
       hintLadder: [
         "Think about what happens if the plant already has enough nutrients.",

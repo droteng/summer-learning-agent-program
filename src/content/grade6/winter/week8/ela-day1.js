@@ -36,11 +36,11 @@ export const winterG6ElaW8D1 = {
       stem: "Which is the BEST-scoped capstone topic for a one-week project?",
       choices: [
         "Explain absolutely everything about winter, space, and energy.",
-        "Explain why a frozen lake stays liquid at the bottom.",
         "Winter is cold.",
+        "Explain why a frozen lake stays liquid at the bottom.",
         "Do a project."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "It focuses on ONE specific, explainable phenomenon — tight enough to finish and present well. The others are too broad, a bare fact, or not a topic at all.",
       hintLadder: [
         "A good scope is specific enough to finish in a week.",
@@ -54,11 +54,11 @@ export const winterG6ElaW8D1 = {
       stem: "Why does knowing your AUDIENCE change how you plan your presentation?",
       choices: [
         "It doesn't — you present the same way to everyone.",
-        "It tells you how much to explain and which terms to define.",
+        "It only matters for the teacher's grade.",
         "It decides what color your slides are, and nothing else.",
-        "It only matters for the teacher's grade."
+        "It tells you how much to explain and which terms to define."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Audience shapes your word choices and how much background you give — families and classmates may need key terms defined.",
       hintLadder: [
         "Think about who is listening.",
@@ -73,11 +73,11 @@ export const winterG6ElaW8D1 = {
       stem: "Which of these is a real SUCCESS CRITERION (a checkable standard for a finished project)?",
       choices: [
         "Make it good.",
-        "Try hard.",
         "Include at least one labeled graph and explain the energy idea in under 4 minutes.",
+        "Try hard.",
         "Winter."
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "A success criterion is specific and checkable — you can look at the finished project and say yes or no. 'Make it good' and 'try hard' can't be checked.",
       hintLadder: [
         "A success criterion is something you can check off yes or no.",
@@ -171,12 +171,12 @@ export const winterG6ElaW8D1 = {
           type: "multiple_choice",
           stem: "A student writes their plan: 'Topic: winter. Audience: people. Goal: be good.' What is the BIGGEST problem with this plan?",
           choices: [
-            "It is far too long.",
             "The topic, audience, and goal are all too vague to guide the work or be checked.",
+            "It is far too long.",
             "It has no title.",
             "Nothing — it is a strong plan."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Every part is fuzzy: 'winter' is too broad, 'people' isn't a specific audience, and 'be good' can't be checked. A strong plan is specific and checkable.",
           hintLadder: [
             "Check each part: is it specific enough to act on?",

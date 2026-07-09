@@ -37,11 +37,11 @@ export const fallG5HistoryW7D2 = {
       stem: "A 'turning point' in history is a moment that...",
       choices: [
         "no one remembers",
-        "changes things so the future is different",
+        "has no effect on anyone",
         "happens every day",
-        "has no effect on anyone"
+        "changes things so the future is different"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A turning point changes the direction of the story — there is a clear 'before' and 'after.'",
       hintLadder: [
         "Think 'before and after.'",
@@ -72,12 +72,12 @@ export const fallG5HistoryW7D2 = {
       type: "multiple_choice",
       stem: "Which one is most clearly a turning point?",
       choices: [
-        "A store changed its open hours for one day",
         "The invention of the light bulb, which let people work and read after dark",
+        "A store changed its open hours for one day",
         "Someone bought a new pencil",
         "A cartoon episode ended"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "The light bulb changed daily life for huge numbers of people — a clear before/after shift.",
       hintLadder: [
         "Which one changed life for LOTS of people?",
@@ -167,11 +167,11 @@ export const fallG5HistoryW7D2 = {
           stem: "Which is the BEST clue that an event was a real turning point?",
           choices: [
             "Lots of people talked about it that week",
-            "Many things stayed different afterward that were not possible before",
             "It happened very long ago",
+            "Many things stayed different afterward that were not possible before",
             "It was in a famous book"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "A turning point is judged by lasting before/after change — not by how famous or old it is.",
           hintLadder: [
             "Remember the test for a turning point.",

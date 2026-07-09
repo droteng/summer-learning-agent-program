@@ -141,10 +141,10 @@ type SearchParams = Promise<{ student?: string; quest?: string }>;
 
 export default async function QuestMapPage({ searchParams }: { searchParams: SearchParams }) {
   const params = await searchParams;
-  const { studentId, studentName } = await requireStudent("/child/signin");
+  const { studentId, studentName, studentGrade } = await requireStudent("/child/signin");
   const requestedQuestId = typeof params?.quest === "string" ? params.quest : null;
 
-  const profile = { ...DEMO_PROFILE, id: studentId, firstName: studentName };
+  const profile = { ...DEMO_PROFILE, id: studentId, firstName: studentName, gradeLevel: studentGrade };
   const progress = await loadProgressSafely(studentId);
   const programPlan = createProgramPlan(profile, DEMO_PARENT_POLICY);
 
@@ -159,7 +159,8 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
   const islands = buildIslandStates(
     tuned.weeklyMissionPlans,
     completedMissionIds,
-    entitlement.weeksUnlocked
+    entitlement.weeksUnlocked,
+    studentGrade
   );
   const currentIslandIndex = islands.findIndex((island) => island.state !== "complete");
   const currentIsland = islands[currentIslandIndex === -1 ? islands.length - 1 : currentIslandIndex];
@@ -549,9 +550,10 @@ async function loadProgressSafely(studentId: string) {
   }
 }
 
-// Item shape sent to the client. Server-only answer fields are included so
-// /api/grade-item can grade — acceptable for the MVP since the answer key is
-// already in the server bundle for authored missions.
+// Item shape sent to the client. Answer fields (answerIndex, answer,
+// explanation, exemplar, rubric) stay on the server — /api/grade-item
+// resolves the canonical item by id, so a kid reading the page source or
+// network tab can't find the answer key.
 function clientItem(item: any) {
   return {
     id: item.id,
@@ -559,14 +561,7 @@ function clientItem(item: any) {
     stem: item.stem,
     choices: item.choices,
     unit: item.unit,
-    hintLadder: item.hintLadder,
-    answerIndex: item.answerIndex,
-    answer: item.answer,
-    tolerance: item.tolerance,
-    explanation: item.explanation,
-    misconceptionsTargeted: item.misconceptionsTargeted,
-    rubric: item.rubric,
-    exemplar: item.exemplar
+    hintLadder: item.hintLadder
   };
 }
 
@@ -632,7 +627,8 @@ interface IslandRow {
 function buildIslandStates(
   weeklyMissionPlans: any[],
   completedMissionIds: string[],
-  weeksUnlocked: number = 1
+  weeksUnlocked: number = 1,
+  gradeLevel: number = 6
 ): IslandRow[] {
   const completedSet = new Set(completedMissionIds);
   let unlocked = true;
@@ -644,7 +640,7 @@ function buildIslandStates(
       const subjects = mission.lessons.map((l: any) => l.subject);
       const primary = themeForSubject(subjects[0]);
       const authoredForDay = findAuthoredMissionsForDay({
-        gradeLevel: 6,
+        gradeLevel,
         weekNumber: week.weekNumber,
         dayNumber: mission.dayNumber
       });

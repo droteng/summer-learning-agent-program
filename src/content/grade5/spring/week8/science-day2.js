@@ -39,11 +39,11 @@ export const springG5ScienceW8D2 = {
       stem: "Why does a bean seed grow into a bean plant and not a sunflower?",
       choices: [
         "Because of the weather that week",
-        "Because of the TRAITS it inherited from its parent plant",
+        "Because seeds choose what to become",
         "Because of the color of the pot",
-        "Because seeds choose what to become"
+        "Because of the TRAITS it inherited from its parent plant"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Inherited traits carry the instructions that decide what a living thing becomes, so a bean's traits build a bean plant.",
       hintLadder: [
         "What does a living thing get from its parents?",
@@ -76,11 +76,11 @@ export const springG5ScienceW8D2 = {
       stem: "A caterpillar in a meadow eats leaves, then becomes a butterfly that helps flowers make seeds. Which idea BEST captures why the meadow needs it?",
       choices: [
         "Only its inherited traits",
-        "Its ECOSYSTEM job — it is a consumer AND a pollinator that other living things depend on",
         "Only its life cycle",
+        "Its ECOSYSTEM job — it is a consumer AND a pollinator that other living things depend on",
         "Nothing — one insect does not matter"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "The living thing's job in the ecosystem (consumer and pollinator) links it to the whole web of living things around it.",
       hintLadder: [
         "Think about how it connects to OTHER living things.",
@@ -174,12 +174,12 @@ export const springG5ScienceW8D2 = {
           type: "multiple_choice",
           stem: "A robin inherits its red chest, builds a nest, lays eggs, eats worms, and is hunted by hawks. Which statement uses ALL FOUR big ideas correctly?",
           choices: [
-            "The robin's red chest (inherited trait) is the only thing that matters.",
             "The robin inherits traits, grows and lays eggs (growth + life cycle), and eats worms while feeding hawks (ecosystem).",
+            "The robin's red chest (inherited trait) is the only thing that matters.",
             "The robin has no job in its ecosystem.",
             "The robin's life cycle never repeats."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "It links inherited traits, growth, the life cycle (eggs → new robins), and the ecosystem job (eats worms, feeds hawks) — all four ideas together.",
           hintLadder: [
             "Look for the answer that mentions traits, growth, cycle, AND food web.",

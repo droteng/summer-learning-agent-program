@@ -53,12 +53,12 @@ export const summerG7ElaW1D3 = {
       type: "multiple_choice",
       stem: "Passage: 'Fireflies flash to communicate. Each species has its own blink pattern, like a secret code, so males and females of the same kind can find each other in the dark.' What is the CENTRAL idea?",
       choices: [
-        "Fireflies come out at night.",
         "Fireflies use their flashing light to communicate and find mates.",
+        "Fireflies come out at night.",
         "Males are hard to see in the dark.",
         "Fireflies have wings."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "The whole passage is about WHY fireflies flash — to communicate and find mates. The other options are minor or not stated.",
       hintLadder: [
         "What is the passage MOSTLY about, start to finish?",
@@ -162,10 +162,10 @@ export const summerG7ElaW1D3 = {
           choices: [
             "The Sahara has a lot of sand.",
             "Hippos used to live in the Sahara.",
-            "The Sahara was once green and gradually turned into a desert as the climate changed.",
-            "Earth's climate is always the same."
+            "Earth's climate is always the same.",
+            "The Sahara was once green and gradually turned into a desert as the climate changed."
           ],
-          answerIndex: 2,
+          answerIndex: 3,
           explanation: "The whole passage is about the Sahara changing from green to desert over time. The other options are single details or contradicted by the text.",
           hintLadder: [
             "What change does the WHOLE passage describe?",

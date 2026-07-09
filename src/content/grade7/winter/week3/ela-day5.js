@@ -39,11 +39,11 @@ export const winterG7ElaW3D5 = {
       stem: "What makes writing TECHNICAL procedural writing, beyond just listing steps in order?",
       choices: [
         "It uses as many big words as possible",
-        "It pairs each step with the cause-and-effect reasoning that explains WHY the step works",
+        "It leaves out the science so it stays short",
         "It tells an exciting fictional story about the machine",
-        "It leaves out the science so it stays short"
+        "It pairs each step with the cause-and-effect reasoning that explains WHY the step works"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Technical procedural writing explains the mechanism — each step is tied to the cause-and-effect that makes it work, so the reader understands, not just copies.",
       hintLadder: [
         "What does a reader gain if you explain WHY, not just WHAT?",
@@ -57,11 +57,11 @@ export const winterG7ElaW3D5 = {
       stem: "Which sentence best uses a CAUSE-AND-EFFECT transition to explain a ramp, not just sequence the steps?",
       choices: [
         "Next, push the crate up the ramp. After that, you are done.",
-        "First push the crate. Then it is on the truck.",
         "Push the crate up the long ramp; because the slope spreads the lift over a greater distance, you need less force than lifting it straight up.",
+        "First push the crate. Then it is on the truck.",
         "Put the crate somewhere up high using the ramp thing."
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "It uses 'because' to link the action to its scientific cause (distance spread → less force), explaining the mechanism rather than only ordering steps.",
       hintLadder: [
         "Which sentence explains WHY the ramp helps, not just WHAT to do?",
@@ -75,12 +75,12 @@ export const winterG7ElaW3D5 = {
       type: "multiple_choice",
       stem: "You are writing pulley instructions for a 7-year-old reader. Which is the BEST audience-tuned choice?",
       choices: [
-        "Use 'mechanical advantage' and 'tension vector' with no explanation",
-        "Say 'do the pulley stuff' to keep it simple",
         "Use a simple term and briefly define it: 'the pulley is a wheel with a groove that the rope rides in, so pulling down lifts the box up'",
+        "Say 'do the pulley stuff' to keep it simple",
+        "Use 'mechanical advantage' and 'tension vector' with no explanation",
         "Leave out how it works entirely so the reader isn't confused"
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "For a young reader, keep terms simple and define them in plain words while still explaining the mechanism — clear AND accurate, tuned to the audience.",
       hintLadder: [
         "Who is the reader, and what words will they know?",
@@ -176,11 +176,11 @@ export const winterG7ElaW3D5 = {
           stem: "A student's how-it-works paragraph has the steps in the right order and clear verbs, but a reader still doesn't understand WHY the machine helps. What is the best revision?",
           choices: [
             "Add more adjectives describing how the machine looks",
-            "Add cause-and-effect explanations (because, as a result, which means) that link each key step to the science of the mechanism",
             "Delete steps to make it shorter",
+            "Add cause-and-effect explanations (because, as a result, which means) that link each key step to the science of the mechanism",
             "Rewrite it as a persuasive essay"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "The steps are ordered but the mechanism is unexplained. Adding cause-and-effect reasoning tells the reader WHY each step works, turning a step list into true technical writing.",
           hintLadder: [
             "The order is fine — what's missing is the WHY.",

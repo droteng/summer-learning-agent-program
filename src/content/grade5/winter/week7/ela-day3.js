@@ -72,12 +72,12 @@ export const winterG5ElaW7D3 = {
       type: "multiple_choice",
       stem: "When should you start a NEW paragraph in a scene with dialogue?",
       choices: [
-        "Every time the same person keeps talking",
         "Each time a DIFFERENT person begins to speak",
+        "Every time the same person keeps talking",
         "Only at the very end of the conversation",
         "Never. Dialogue always stays in one paragraph."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Starting a new paragraph each time the speaker changes helps readers keep track of who is talking.",
       hintLadder: [
         "The rule helps readers know who is speaking.",
@@ -171,11 +171,11 @@ export const winterG5ElaW7D3 = {
           stem: "Which sentence punctuates dialogue correctly when it comes AFTER the tag?",
           choices: [
             "She turned and said \"the ice won't hold.\"",
-            "She turned and said, \"The ice won't hold.\"",
+            "She turned and said \"The ice won't hold\".",
             "She turned and said, \"the ice won't hold\".",
-            "She turned and said \"The ice won't hold\"."
+            "She turned and said, \"The ice won't hold.\""
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "A comma follows the tag, the first spoken word is capitalized, and the period sits inside the closing quotation mark.",
           hintLadder: [
             "There should be a comma after 'said' before the quote.",

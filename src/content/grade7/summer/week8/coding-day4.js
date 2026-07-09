@@ -77,12 +77,12 @@ export const summerG7CodingW8D4 = {
       type: "multiple_choice",
       stem: "A function should return the LARGER of two numbers, but max2(3, 9) returns 3. The code is: 'if (a > b) return b; else return a;'. What is the bug?",
       choices: [
-        "The function has no parameters.",
         "The return values are swapped — it returns the SMALLER value; it should return a when a > b, else b.",
+        "The function has no parameters.",
         "The if condition should never be used.",
         "There is no bug; 3 is correct."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "When a > b the code returns b (the smaller). The returns are swapped: it should return a when a > b, otherwise b — a classic wrong-return bug.",
       hintLadder: [
         "Trace max2(3, 9): is 3 > 9 true or false?",

@@ -50,11 +50,11 @@ export const fallG7CodingW2D3 = {
       stem: "A loop runs the rule 'foxes = foxes × 2' but ONLY inside 'IF rabbits >= 50'. During a season the state is rabbits = 45, foxes = 6. After this rule, foxes = ?",
       choices: [
         "12, because the rule always runs",
-        "6, because 45 >= 50 is false so the foxes are unchanged",
+        "The loop crashes",
         "0, because there aren't enough rabbits",
-        "The loop crashes"
+        "6, because 45 >= 50 is false so the foxes are unchanged"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "45 >= 50 is false, so the conditional block is skipped and foxes keep their current value of 6.",
       hintLadder: [
         "First evaluate the condition: is 45 >= 50?",
@@ -82,12 +82,12 @@ export const fallG7CodingW2D3 = {
       type: "multiple_choice",
       stem: "A student wants foxes to eat rabbits BEFORE the rabbits reproduce, but their loop reproduces first. What KIND of bug is this?",
       choices: [
-        "A syntax error — the code won't run at all",
         "A logic/ordering error — the code runs but the rules happen in the wrong order, giving wrong results",
+        "A syntax error — the code won't run at all",
         "A hardware failure",
         "There is no bug; order never matters in a loop"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "The code runs fine but produces the wrong answer because the statements execute in the wrong order — a logic (ordering) bug, not a syntax error.",
       hintLadder: [
         "Does the code fail to run, or run but give a wrong result?",

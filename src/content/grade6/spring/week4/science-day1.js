@@ -35,11 +35,11 @@ export const springG6ScienceW4D1 = {
       stem: "What is a TRAIT?",
       choices: [
         "A tiny instruction inside a cell",
-        "A feature of a living thing, like eye color or seed shape",
+        "A plant that makes its own food",
         "The passing of features from parent to child",
-        "A plant that makes its own food"
+        "A feature of a living thing, like eye color or seed shape"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A trait is an observable feature of a living thing, such as eye color, height, or seed shape.",
       hintLadder: [
         "Think about what you can observe about a plant or animal.",
@@ -70,12 +70,12 @@ export const springG6ScienceW4D1 = {
       type: "multiple_choice",
       stem: "Which of these is an INHERITED trait that a plant or animal is born with?",
       choices: [
-        "A scar from a scratch",
-        "A dog trick learned in training",
         "The natural color of a flower's petals",
+        "A dog trick learned in training",
+        "A scar from a scratch",
         "A haircut"
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "Petal color is coded by genes and passed from parents, so it is inherited. Scars, tricks, and haircuts are acquired during life.",
       hintLadder: [
         "Inherited traits come from genes, not from things that happen during life.",
@@ -166,11 +166,11 @@ export const springG6ScienceW4D1 = {
           stem: "A gardener trains a tree by bending its trunk into a curve. The tree grows seeds. Will the baby trees be born curved?",
           choices: [
             "Yes, because the parent tree was curved",
-            "No, because the curve was acquired during life and is not in the tree's genes",
             "Yes, because all traits are inherited",
+            "No, because the curve was acquired during life and is not in the tree's genes",
             "Only if the gardener bends them too"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Bending the trunk is an acquired change, not coded in the tree's genes, so it is NOT passed to the seeds. Baby trees grow straight unless something in the genes says otherwise.",
           hintLadder: [
             "Was the curve in the tree's genes, or made during its life?",

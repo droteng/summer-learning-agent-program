@@ -91,8 +91,8 @@ export const summerG5ScienceW1D2 = {
       id: "g5.summer.sci.w1.d2.q4",
       type: "multiple_choice",
       stem: "Three tries of a paper airplane went 4 m, 5 m, and 6 m. What is the average distance?",
-      choices: ["4 m", "5 m", "6 m", "15 m"],
-      answerIndex: 1,
+      choices: ["5 m", "4 m", "6 m", "15 m"],
+      answerIndex: 0,
       explanation: "Add the distances and divide by how many tries: (4 + 5 + 6) divided by 3 = 15 divided by 3 = 5 m.",
       hintLadder: [
         "Add up the three distances first.",
@@ -175,11 +175,11 @@ export const summerG5ScienceW1D2 = {
           stem: "To test if a plant food helps tomatoes grow, which choice makes the test FAIR?",
           choices: [
             "Give one plant more water AND plant food.",
-            "Keep everything the same except the plant food.",
             "Use two different kinds of plants.",
+            "Keep everything the same except the plant food.",
             "Put one plant in sun and one in shade."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Only the plant food should be different, so any change is because of the plant food.",
           hintLadder: [
             "A fair test changes only ONE thing.",

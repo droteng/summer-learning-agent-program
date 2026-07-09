@@ -37,11 +37,11 @@ export const winterG7WorldW7D5 = {
       stem: "Why do so many winter traditions center on light (lamps, candles, fires)?",
       choices: [
         "Light is the only thing people had",
-        "Around the solstice the nights are longest, so light became a shared symbol of hope and the sun's return",
         "All winter traditions were invented in one place",
+        "Around the solstice the nights are longest, so light became a shared symbol of hope and the sun's return",
         "People disliked the dark for no reason"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "The solstice brings the longest nights everywhere in cold climates, so light naturally became a shared symbol of the returning sun and hope.",
       hintLadder: [
         "What happens to daylight around the solstice?",
@@ -55,11 +55,11 @@ export const winterG7WorldW7D5 = {
       stem: "Two cultures with no known contact both feast at midwinter. What is the MOST careful conclusion?",
       choices: [
         "One definitely copied the other",
-        "They may have independently answered the same need — sharing food when supplies and daylight were scarce",
+        "Feasting proves they secretly traded",
         "It must be a coincidence with no reason",
-        "Feasting proves they secretly traded"
+        "They may have independently answered the same need — sharing food when supplies and daylight were scarce"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Without contact evidence, the careful conclusion is independent origin from a shared human need, not proof of copying.",
       hintLadder: [
         "Is there evidence they were in contact?",
@@ -171,12 +171,12 @@ export const winterG7WorldW7D5 = {
           type: "multiple_choice",
           stem: "Which finding would be the STRONGEST evidence that one culture borrowed a winter custom from another (contact, not independent origin)?",
           choices: [
-            "Both cultures live in cold climates",
             "They share a very specific, unusual detail AND had documented trade between them",
+            "Both cultures live in cold climates",
             "Both hold their festival in winter",
             "Both use some kind of light"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "A specific, unusual shared detail plus documented contact points to borrowing; broad similarities (cold, winter, light) could arise independently.",
           hintLadder: [
             "General similarities can arise independently.",

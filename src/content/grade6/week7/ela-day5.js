@@ -35,11 +35,11 @@ export const grade6ElaWeek7Day5 = {
       stem: "What's the FIRST question to ask of any primary source?",
       choices: [
         "Was it expensive?",
-        "Who wrote it and what was their role?",
         "Is it in color?",
+        "Who wrote it and what was their role?",
         "Was it printed?"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Identity and role shape everything else. Without knowing the author, you can't weigh the source.",
       hintLadder: [
         "Without knowing the author, you can't judge their angle.",
@@ -54,11 +54,11 @@ export const grade6ElaWeek7Day5 = {
         "Which is MOST likely a primary source about a 1969 moon landing?",
       choices: [
         "A 2020 documentary.",
-        "Buzz Aldrin's personal mission log from the trip.",
+        "A friend retelling what they heard.",
         "A modern history textbook.",
-        "A friend retelling what they heard."
+        "Buzz Aldrin's personal mission log from the trip."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Personal log from someone who was there is the canonical primary source.",
       hintLadder: [
         "Who was actually present?",
@@ -72,12 +72,12 @@ export const grade6ElaWeek7Day5 = {
       stem:
         "A speech given in public is likely to:",
       choices: [
-        "Show the speaker's private thoughts unfiltered.",
         "Be shaped for the audience and the occasion.",
+        "Show the speaker's private thoughts unfiltered.",
         "Be just like a diary entry.",
         "Have no perspective."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Public speeches are crafted for effect. They reveal what the speaker wanted to say publicly — not always what they thought privately.",
       hintLadder: [
         "Who's listening to a speech?",
@@ -92,11 +92,11 @@ export const grade6ElaWeek7Day5 = {
       stem: "Who is MOST LIKELY missing from the primary-source record of a 1860 town meeting?",
       choices: [
         "The mayor.",
-        "Wealthy landowners.",
         "Children, women, and enslaved people — often without rights to speak or write.",
+        "Wealthy landowners.",
         "The newspaper editor."
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "The historical record privileges those who had the right and means to write. Many voices were excluded.",
       hintLadder: [
         "Who was allowed to speak or write?",
@@ -170,11 +170,11 @@ export const grade6ElaWeek7Day5 = {
           stem: "You want to know how soldiers FELT during a 1945 battle. Which source is the strongest primary source for their feelings?",
           choices: [
             "A 2010 movie about the battle.",
-            "A letter a soldier wrote home from the front during the battle.",
             "A textbook chapter summarizing the war.",
+            "A letter a soldier wrote home from the front during the battle.",
             "A modern blog post ranking famous battles."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "A letter written by a soldier during the battle is a first-hand account from someone who was there — the best primary source for their feelings. The others are secondary or far removed.",
           hintLadder: [
             "Who was actually present and writing at the time?",

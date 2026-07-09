@@ -36,11 +36,11 @@ export const summerG7ElaW4D5 = {
       stem: "Which sentence is the BEST technical instruction for a user?",
       choices: [
         "Just mess around with the buttons until it works.",
-        "Enter a number from 1 to 10 in the 'guesses' box, then press Start.",
+        "You'll figure out the inputs eventually.",
         "The tool is really cool and does a lot of stuff.",
-        "You'll figure out the inputs eventually."
+        "Enter a number from 1 to 10 in the 'guesses' box, then press Start."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "It is precise (a number 1-10), names the exact part (the 'guesses' box), and gives one clear action, then the next.",
       hintLadder: [
         "Technical writing is precise and specific.",
@@ -53,12 +53,12 @@ export const summerG7ElaW4D5 = {
       type: "multiple_choice",
       stem: "Why should instructional steps usually be NUMBERED and contain one action each?",
       choices: [
-        "Numbers make the page look longer",
         "So the reader can follow them in the correct order without missing or merging steps",
+        "Numbers make the page look longer",
         "Because paragraphs are not allowed in writing",
         "To use up more space"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Numbered, single-action steps show the exact order and keep the reader from skipping or blending two actions together.",
       hintLadder: [
         "Think about following a recipe with steps jumbled together.",
@@ -73,11 +73,11 @@ export const summerG7ElaW4D5 = {
       stem: "A user doc for your tool should assume the reader...",
       choices: [
         "Already knows exactly how you built it",
-        "Knows nothing about your tool and needs each input and step spelled out",
         "Will only read the title",
+        "Knows nothing about your tool and needs each input and step spelled out",
         "Is another programmer who wrote the same tool"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Technical writing is written for a reader who does not share your inside knowledge, so every input and step must be explained clearly.",
       hintLadder: [
         "Who is the doc actually FOR?",

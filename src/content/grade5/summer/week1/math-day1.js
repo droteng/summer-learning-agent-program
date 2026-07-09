@@ -69,11 +69,11 @@ export const summerG5MathW1D1 = {
       stem: "A reader finishes 20 pages in 5 minutes. How many pages is that PER minute?",
       choices: [
         "5 pages per minute",
-        "4 pages per minute",
+        "20 pages per minute",
         "10 pages per minute",
-        "20 pages per minute"
+        "4 pages per minute"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Divide pages by minutes: 20 divided by 5 = 4 pages per minute.",
       hintLadder: [
         "Per minute means how many pages in ONE minute.",

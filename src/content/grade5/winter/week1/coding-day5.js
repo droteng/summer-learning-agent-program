@@ -37,11 +37,11 @@ export const winterG5CodingW1D5 = {
       stem: "What is an ALGORITHM?",
       choices: [
         "A random pile of steps in any order",
-        "A set of steps in a certain order to finish a task",
         "A type of winter coat",
+        "A set of steps in a certain order to finish a task",
         "A single step that never repeats"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "An algorithm is an ordered set of steps that gets a job done — the order is part of what makes it work.",
       hintLadder: [
         "Think of a recipe or a get-ready routine.",
@@ -56,10 +56,10 @@ export const winterG5CodingW1D5 = {
       choices: [
         "Put on socks, then put on boots",
         "Put on a sweater, then put on a coat",
-        "Put on boots, then put on socks",
-        "Grab a hat, then step outside"
+        "Grab a hat, then step outside",
+        "Put on boots, then put on socks"
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "Boots go OVER socks, so socks must come first. 'Boots then socks' is out of order.",
       hintLadder: [
         "Think about what goes on your foot first.",

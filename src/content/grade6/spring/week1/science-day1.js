@@ -35,12 +35,12 @@ export const springG6ScienceW1D1 = {
       type: "multiple_choice",
       stem: "Which set lists things a green plant needs to GROW?",
       choices: [
-        "Sunlight, water, air, and soil nutrients",
-        "Meat, water, and darkness",
         "Only water",
+        "Meat, water, and darkness",
+        "Sunlight, water, air, and soil nutrients",
         "Sunlight and nothing else"
       ],
-      answerIndex: 0,
+      answerIndex: 2,
       explanation: "Plants make their own food using sunlight, water, and air (carbon dioxide), and they take nutrients from soil.",
       hintLadder: [
         "Think about what you'd give a houseplant to keep it alive.",
@@ -54,11 +54,11 @@ export const springG6ScienceW1D1 = {
       stem: "In early spring, why do many seeds begin to sprout?",
       choices: [
         "The days get shorter and colder",
-        "Longer daylight and warmer soil signal that it's a good time to grow",
+        "Seeds grow best in frozen ground",
         "Animals plant them on purpose every year",
-        "Seeds grow best in frozen ground"
+        "Longer daylight and warmer soil signal that it's a good time to grow"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "More daylight and warmer soil in spring are the conditions seeds need to sprout and grow successfully.",
       hintLadder: [
         "Compare winter and spring — what changes about light and temperature?",
@@ -72,12 +72,12 @@ export const springG6ScienceW1D1 = {
       type: "multiple_choice",
       stem: "A bear wakes from hibernation in spring. Which need is now much EASIER to meet than in deep winter?",
       choices: [
-        "Oxygen to breathe",
         "Finding food, as plants and insects become available again",
+        "Oxygen to breathe",
         "Gravity",
         "Sunlight to make its own food"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Spring brings back food sources — new plants and insects — so finding food becomes much easier. (Bears are animals and cannot make their own food.)",
       hintLadder: [
         "What is scarce for a bear in deep winter?",

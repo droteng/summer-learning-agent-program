@@ -63,12 +63,12 @@ export const grade6MathWeek2Day1 = {
       stem:
         "A line chart shows a runner's finish time across 4 races: 25 min, 23 min, 22 min, 20 min. What does the line tell you?",
       choices: [
-        "The runner is getting slower.",
-        "The runner stayed the same.",
         "The runner is getting faster.",
+        "The runner stayed the same.",
+        "The runner is getting slower.",
         "There isn't enough data."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "Each finish time is shorter — that means faster.",
       hintLadder: [
         "Are the numbers going up or down?",
@@ -180,11 +180,11 @@ export const grade6MathWeek2Day1 = {
             "A line chart shows a plant's height over 4 weeks: 2 cm, 5 cm, 11 cm, 12 cm. Between which two weeks did the plant grow the FASTEST?",
           choices: [
             "Week 1 to Week 2",
-            "Week 2 to Week 3",
+            "It grew the same each week",
             "Week 3 to Week 4",
-            "It grew the same each week"
+            "Week 2 to Week 3"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation:
             "Growth per gap: 2→5 is +3, 5→11 is +6, 11→12 is +1. The biggest jump (+6) is the steepest part of the line, from Week 2 to Week 3.",
           hintLadder: [

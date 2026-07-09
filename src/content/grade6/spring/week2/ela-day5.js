@@ -54,11 +54,11 @@ export const springG6ElaW2D5 = {
       stem: "Which of these is an OBSERVATION rather than an opinion?",
       choices: [
         "The sprout was the coolest one.",
-        "On Day 4, the sprout measured 3 cm tall.",
         "I loved watching it grow.",
+        "On Day 4, the sprout measured 3 cm tall.",
         "This is the best experiment ever."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "An observation is a measurable fact you can record; the others are feelings or opinions.",
       hintLadder: [
         "An observation can be measured or checked.",
@@ -72,12 +72,12 @@ export const springG6ElaW2D5 = {
       type: "multiple_choice",
       stem: "Why is it important to write the METHOD as clear, ordered steps?",
       choices: [
-        "To make the report longer",
         "So another person could repeat your experiment the same way",
+        "To make the report longer",
         "Because opinions belong in the method",
         "To hide what you did"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A clear, ordered method makes the experiment repeatable — a key part of good science writing.",
       hintLadder: [
         "Science should be repeatable by others.",
@@ -167,11 +167,11 @@ export const springG6ElaW2D5 = {
           stem: "A report says: 'Day 1: 0 cm. Day 3: 4 cm. Day 5: 8 cm.' Which section of a science report is this, and what text feature would organize it best?",
           choices: [
             "The Results — best shown as an opinion paragraph",
-            "The Observations — best shown as a data table",
+            "The title — best shown as a big font",
             "The Method — best shown as a poem",
-            "The title — best shown as a big font"
+            "The Observations — best shown as a data table"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "These are measured facts over time (observations), and a data table is the clearest text feature to organize them.",
           hintLadder: [
             "Are these measured facts, steps, or conclusions?",

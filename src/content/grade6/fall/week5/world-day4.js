@@ -33,8 +33,8 @@ export const fallG6WorldW5D4 = {
       id: "g6.fall.world.w5.d4.q1",
       type: "multiple_choice",
       stem: "'9 out of 10 families choose us — don't be left out!' Which technique is this?",
-      choices: ["Pure evidence", "Bandwagon (everyone's doing it)", "A fair comparison", "A scientific study"],
-      answerIndex: 1,
+      choices: ["Pure evidence", "A fair comparison", "Bandwagon (everyone's doing it)", "A scientific study"],
+      answerIndex: 2,
       explanation: "It pressures you to follow the crowd — the bandwagon technique.",
       hintLadder: [
         "What feeling is 'don't be left out' creating?",
@@ -48,11 +48,11 @@ export const fallG6WorldW5D4 = {
       stem: "Which statement is a FACT (checkable), not an opinion?",
       choices: [
         "This is the most fun park ever.",
-        "The park covers 12 acres and opened in 2019.",
+        "This park is the best.",
         "Everyone loves this park.",
-        "This park is the best."
+        "The park covers 12 acres and opened in 2019."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Acreage and an opening year can be verified; the others are judgments.",
       hintLadder: [
         "Which one could you look up and confirm?",
@@ -158,12 +158,12 @@ export const fallG6WorldW5D4 = {
           type: "multiple_choice",
           stem: "A cider ad shows a cozy family laughing by a fire but says nothing about the cider itself. Which technique is it MAINLY relying on?",
           choices: [
-            "Real evidence and data",
             "An emotional appeal",
+            "Real evidence and data",
             "A fair side-by-side comparison",
             "A scientific study"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "It sells a warm feeling instead of any facts about the product — that's an emotional appeal.",
           hintLadder: [
             "Is there any actual information, or just a mood?",

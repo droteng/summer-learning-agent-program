@@ -36,11 +36,11 @@ export const summerG7WorldW6D2 = {
       stem: "What does 'lateral reading' mean?",
       choices: [
         "Reading a webpage from top to bottom very carefully",
-        "Opening and comparing several sources about the same claim to judge its trustworthiness",
+        "Reading a book sideways to save time",
         "Reading only the headline and moving on",
-        "Reading a book sideways to save time"
+        "Opening and comparing several sources about the same claim to judge its trustworthiness"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Lateral reading means leaving one page to check what OTHER credible sources say about the same claim.",
       hintLadder: [
         "It is about what you do ACROSS sources, not within one page.",
@@ -54,11 +54,11 @@ export const summerG7WorldW6D2 = {
       stem: "A source is clearly biased toward one side of an issue but its facts check out. For a fair explainer, what is the BEST move?",
       choices: [
         "Throw the source out completely because it is biased",
-        "Use it as your only source since its facts are correct",
         "Use its accurate facts but balance it with sources that lean the other way",
+        "Use it as your only source since its facts are correct",
         "Copy it word for word without checking anything else"
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "A biased source can still hold true facts; the fix is to compare it with sources that lean differently, not to trust it alone or discard it entirely.",
       hintLadder: [
         "Does 'biased' automatically mean 'false'?",
@@ -72,12 +72,12 @@ export const summerG7WorldW6D2 = {
       type: "multiple_choice",
       stem: "Which detail gives you the MOST reason to trust a source about a world issue?",
       choices: [
-        "The website has bright colors and lots of ads",
         "The article names its data and links to expert organizations you can check",
+        "The website has bright colors and lots of ads",
         "The headline is written in all capital letters",
         "It was shared by a lot of anonymous accounts"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Naming evidence and linking to checkable expert sources shows credibility; design, capital letters, and share counts do not.",
       hintLadder: [
         "Design and popularity do not prove accuracy.",
@@ -171,11 +171,11 @@ export const summerG7WorldW6D2 = {
           stem: "A post claims a huge world statistic but cites no source, and no other outlet reports it. Using lateral reading, what should you conclude?",
           choices: [
             "It must be true because it sounds dramatic",
-            "Treat the claim as unverified and don't use it until credible sources confirm it",
             "Share it right away so others can decide",
+            "Treat the claim as unverified and don't use it until credible sources confirm it",
             "Trust it because it was posted recently"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "A big claim with no source and no independent confirmation fails lateral reading, so it stays out of your explainer until credible sources back it up.",
           hintLadder: [
             "Does a dramatic claim prove itself?",

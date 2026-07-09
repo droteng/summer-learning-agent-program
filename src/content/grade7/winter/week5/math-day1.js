@@ -38,11 +38,11 @@ export const winterG7MathW5D1 = {
       stem: "On a scatter plot, each point is one day: x = wind speed (km/h), y = wind chill (°C). As wind speed goes up, the points trend DOWN. What kind of association is this?",
       choices: [
         "Positive association — higher wind speed goes with higher wind chill",
-        "Negative association — higher wind speed goes with lower (colder) wind chill",
         "No association — the points are a random cloud",
+        "Negative association — higher wind speed goes with lower (colder) wind chill",
         "It is impossible to tell from a scatter plot"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "When one variable rises while the other falls, that is a negative association: faster wind goes with a colder wind chill.",
       hintLadder: [
         "Do the two variables move the same way or opposite ways?",

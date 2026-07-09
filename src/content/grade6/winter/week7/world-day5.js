@@ -52,8 +52,8 @@ export const winterG6WorldW7D5 = {
       id: "g6.winter.world.w7.d5.q2",
       type: "multiple_choice",
       stem: "Many winter festivals around the world — Diwali, Hanukkah, St. Lucia's Day — share a common symbol. What is it?",
-      choices: ["Rain", "Light (candles, lamps, or fire)", "Sand", "Thunder"],
-      answerIndex: 1,
+      choices: ["Rain", "Thunder", "Sand", "Light (candles, lamps, or fire)"],
+      answerIndex: 3,
       explanation: "These festivals all use light to push back against the darkness of the long winter nights.",
       hintLadder: [
         "Think about what winter has the most of — darkness.",
@@ -67,11 +67,11 @@ export const winterG6WorldW7D5 = {
       stem: "Why do cultures in far-northern regions (like the Sami of northern Scandinavia) often have especially rich winter stories?",
       choices: [
         "They have no summer at all",
-        "Their long, dark winters dominate life there, so winter naturally fills their tales and traditions",
         "They were told to by other countries",
+        "Their long, dark winters dominate life there, so winter naturally fills their tales and traditions",
         "Winter is exactly the same everywhere on Earth"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Geography shapes stories: where winters are long and dark, winter looms large in a culture's imagination, myths, and celebrations.",
       hintLadder: [
         "Think about how much of the year is winter in the far north.",
@@ -159,12 +159,12 @@ export const winterG6WorldW7D5 = {
           type: "multiple_choice",
           stem: "A folktale explains WHY the days slowly grow longer after midwinter by telling of a sun that is 'reborn' each winter. What is this kind of story mainly doing?",
           choices: [
-            "Reporting the exact scientific cause of the seasons",
             "Using a story to explain a natural event and give people hope",
+            "Reporting the exact scientific cause of the seasons",
             "Advertising a product",
             "Recording last week's weather"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Folktales often explain natural events (like lengthening days) through story, offering meaning and hope rather than a scientific report.",
           hintLadder: [
             "Is this a science report or a traditional story?",

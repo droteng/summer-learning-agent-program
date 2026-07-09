@@ -78,12 +78,12 @@ export const summerG7MathW2D2 = {
       type: "multiple_choice",
       stem: "Which expression equals a POSITIVE result?",
       choices: [
-        "(−7) + (−2)",
-        "3 − 10",
         "−5 − (−9)",
+        "3 − 10",
+        "(−7) + (−2)",
         "−4 + 1"
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "−5 − (−9) = −5 + 9 = 4, which is positive. The others give −9, −7, and −3.",
       hintLadder: [
         "Rewrite any 'minus a negative' as 'plus a positive'.",
@@ -176,11 +176,11 @@ export const summerG7MathW2D2 = {
           stem: "The overnight low was −4°C and the daytime high was 11°C. What was the temperature RANGE (high minus low)?",
           choices: [
             "7°C",
-            "15°C",
+            "−7°C",
             "−15°C",
-            "−7°C"
+            "15°C"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Range = high − low = 11 − (−4) = 11 + 4 = 15°C.",
           hintLadder: [
             "Range = high minus low.",

@@ -77,8 +77,8 @@ export const springG7MathW3D3 = {
       id: "g7.spring.math.w3.d3.q4",
       type: "multiple_choice",
       stem: "A moth's caterpillar stage is 20 days and its pupa stage is 8 days. What PERCENT LONGER is the caterpillar stage than the pupa stage?",
-      choices: ["40%", "150%", "60%", "250%"],
-      answerIndex: 1,
+      choices: ["40%", "250%", "60%", "150%"],
+      answerIndex: 3,
       explanation: "Percent longer = ((20 − 8) ÷ 8) × 100 = (12 ÷ 8) × 100 = 1.5 × 100 = 150%. The base is the pupa (8), not the total.",
       hintLadder: [
         "Percent longer uses the SMALLER stage as the base.",

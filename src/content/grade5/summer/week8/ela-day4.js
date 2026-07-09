@@ -43,11 +43,11 @@ export const summerG5ElaW8D4 = {
       stem: "What does the word 'revise' really mean?",
       choices: [
         "Reading it out loud.",
-        "Re-seeing — looking at it again with fresh eyes.",
         "Making it longer.",
+        "Re-seeing — looking at it again with fresh eyes.",
         "Adding pictures."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Re + vise = see again. The point is fresh eyes, not just tiny edits.",
       hintLadder: [
         "Break the word apart: re + vise.",
@@ -60,12 +60,12 @@ export const summerG5ElaW8D4 = {
       type: "multiple_choice",
       stem: "Which change makes your writing STRONGEST?",
       choices: [
-        "Change 'good' to 'great.'",
         "Change 'a lot of people' to 'over 5,000 people' and add where you found it.",
+        "Change 'good' to 'great.'",
         "Add more describing words.",
         "Make everything bold."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A specific number plus a source turns a plain claim into real evidence.",
       hintLadder: [
         "Which change adds a real fact?",
@@ -79,11 +79,11 @@ export const summerG5ElaW8D4 = {
       stem: "Your sibling says: 'The middle was confusing.' Your BEST response is:",
       choices: [
         "'You just don't get it.'",
-        "'Thanks — can you show me which part got confusing?'",
+        "Say it again the same way, but louder.",
         "Ignore them.",
-        "Say it again the same way, but louder."
+        "'Thanks — can you show me which part got confusing?'"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Asking a follow-up turns vague feedback into helpful, specific feedback. Arguing shuts the door.",
       hintLadder: [
         "Don't argue — dig for more.",

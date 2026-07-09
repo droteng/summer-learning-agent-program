@@ -50,12 +50,12 @@ export const fallG5CodingW2D3 = {
       type: "multiple_choice",
       stem: "In the rule 'IF rabbits > 20, THEN foxes grow,' what happens when there are 15 rabbits?",
       choices: [
-        "Foxes grow",
         "Foxes do NOT grow (the IF is false)",
+        "Foxes grow",
         "Rabbits disappear",
         "The simulation stops"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "15 is not greater than 20, so the IF is false and the THEN part does not run.",
       hintLadder: [
         "Check the condition: is 15 > 20?",
@@ -84,11 +84,11 @@ export const fallG5CodingW2D3 = {
       stem: "Why do predator and prey numbers go up and down in a repeating CYCLE?",
       choices: [
         "Random luck each year",
-        "More prey feeds more predators, then the predators lower the prey, then there are fewer predators, and the prey come back",
+        "Predators and prey never affect each other",
         "The leaves change colors",
-        "Predators and prey never affect each other"
+        "More prey feeds more predators, then the predators lower the prey, then there are fewer predators, and the prey come back"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Each group's change affects the other, which makes a repeating up-and-down cycle.",
       hintLadder: [
         "What happens to foxes when there are lots of rabbits?",

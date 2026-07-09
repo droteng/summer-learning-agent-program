@@ -36,12 +36,12 @@ export const fallG5ElaW5D2 = {
       type: "multiple_choice",
       stem: "Which is the BEST evidence for the claim 'our library should stay open later'?",
       choices: [
-        "Libraries are nice.",
         "A survey showed 40 students need a quiet place to study after 4 p.m. when the library closes.",
+        "Libraries are nice.",
         "I think it should.",
         "Everybody knows libraries are good."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "It is exact and fits the claim — real numbers tied right to the idea.",
       hintLadder: [
         "Strong evidence is exact and fits the claim.",
@@ -55,11 +55,11 @@ export const fallG5ElaW5D2 = {
       stem: "What is wrong with using 'everybody knows that' as evidence?",
       choices: [
         "Nothing, it is great",
-        "It is vague and cannot be proven — it is not real evidence",
+        "It uses too many numbers",
         "It is too exact",
-        "It uses too many numbers"
+        "It is vague and cannot be proven — it is not real evidence"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "'Everybody knows' gives no real proof and often is not even true.",
       hintLadder: [
         "Can you check 'everybody knows'?",
@@ -74,11 +74,11 @@ export const fallG5ElaW5D2 = {
       stem: "In persuasive order, what comes right after you state your CLAIM?",
       choices: [
         "The ending",
-        "A reason that supports it",
         "An unrelated story",
+        "A reason that supports it",
         "Nothing"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Claim, then reason, then evidence. The reason tells why the claim is true.",
       hintLadder: [
         "What answers 'why believe this'?",

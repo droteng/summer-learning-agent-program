@@ -33,8 +33,8 @@ export const fallG6MathW3D1 = {
       id: "g6.fall.math.w3.d1.q1",
       type: "multiple_choice",
       stem: "Which ratio is equivalent to 4:2?",
-      choices: ["1:2", "2:1", "4:4", "3:2"],
-      answerIndex: 1,
+      choices: ["1:2", "4:4", "2:1", "3:2"],
+      answerIndex: 2,
       explanation: "4:2 divides by 2 to give 2:1 — the same relationship.",
       hintLadder: [
         "Simplify 4:2 by dividing both numbers by the same value.",

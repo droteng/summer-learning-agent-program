@@ -37,10 +37,10 @@ export const summerG7ElaW3D4 = {
       choices: [
         "Lena was really, really tired.",
         "Lena felt very exhausted after the long day.",
-        "Lena's legs turned to lead, and it took three tries to lift her arm from the desk.",
-        "Lena was tired, which was not good."
+        "Lena was tired, which was not good.",
+        "Lena's legs turned to lead, and it took three tries to lift her arm from the desk."
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "It shows exhaustion through vivid physical evidence rather than naming the feeling; the others simply tell the reader 'tired.'",
       hintLadder: [
         "Which one lets you SEE the exhaustion?",
@@ -165,12 +165,12 @@ export const summerG7ElaW3D4 = {
           type: "multiple_choice",
           stem: "Which transition best connects these two sentences? 'The map showed the bridge was out. ___ they had already crossed the river hours ago.'",
           choices: [
-            "For example,",
             "Fortunately,",
+            "For example,",
             "In conclusion,",
             "Similarly,"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "'Fortunately' signals the lucky relief that they'd already crossed — it fits the cause-and-effect relief. The others signal example, conclusion, or comparison, which don't fit.",
           hintLadder: [
             "What is the RELATIONSHIP between the two facts?",

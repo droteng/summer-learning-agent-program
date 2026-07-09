@@ -37,11 +37,11 @@ export const winterG5ElaW2D5 = {
       stem: "What is the main GOAL of informational writing about an experiment?",
       choices: [
         "To convince the reader your opinion is right",
-        "To help the reader clearly understand what you did and what happened",
         "To entertain with a made-up story",
+        "To help the reader clearly understand what you did and what happened",
         "To hide your results so no one can copy them"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Informational writing explains clearly so a reader understands and could even do your experiment again — it is not about persuading or entertaining.",
       hintLadder: [
         "Is the writer trying to argue a side, or to explain?",
@@ -56,11 +56,11 @@ export const winterG5ElaW2D5 = {
       stem: "Which sentence uses transition words to make the ORDER of steps clear?",
       choices: [
         "Stuff happened with the water and ice.",
-        "First I poured the water, then I added ice, and finally I measured the temperature.",
+        "I like doing experiments in winter.",
         "The water was in a cup somewhere.",
-        "I like doing experiments in winter."
+        "First I poured the water, then I added ice, and finally I measured the temperature."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "'First,' 'then,' and 'finally' are transition words that show the order of the steps clearly.",
       hintLadder: [
         "Look for words that show order.",
@@ -73,12 +73,12 @@ export const winterG5ElaW2D5 = {
       type: "multiple_choice",
       stem: "Which RESULT sentence is the clearest for an informational report?",
       choices: [
-        "The temperature changed a bunch.",
-        "It was kind of different at the end.",
         "The water dropped from 20 degrees C to 4 degrees C in 15 minutes.",
+        "It was kind of different at the end.",
+        "The temperature changed a bunch.",
         "Something cold happened."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "Exact numbers (temperatures and time) make the result clear and easy to repeat; the others are too fuzzy.",
       hintLadder: [
         "Which one gives exact numbers?",

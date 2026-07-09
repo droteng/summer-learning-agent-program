@@ -34,12 +34,12 @@ export const grade6ElaWeek8Day2 = {
       type: "multiple_choice",
       stem: "Why list what you already know BEFORE researching?",
       choices: [
-        "To skip research.",
         "To find your gaps and aim research at them.",
+        "To skip research.",
         "To impress the teacher.",
         "To pad the project."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Research is most efficient when targeted. The gap list is the target.",
       hintLadder: [
         "What's research for?",
@@ -72,11 +72,11 @@ export const grade6ElaWeek8Day2 = {
       stem: "Which is a complete research note?",
       choices: [
         "Sources matter.",
-        "Tokyo: switched 5,000 streetlights to LEDs in 2020, cut city power use by 8%. (Tokyo Metro Energy Report, 2021)",
         "Read it on a website somewhere.",
+        "Tokyo: switched 5,000 streetlights to LEDs in 2020, cut city power use by 8%. (Tokyo Metro Energy Report, 2021)",
         "Tokyo is cool."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Includes claim + evidence + citation. The others are incomplete.",
       hintLadder: [
         "What three parts should a note have?",
@@ -90,11 +90,11 @@ export const grade6ElaWeek8Day2 = {
       stem: "If your three sources disagree, what's the BEST next step?",
       choices: [
         "Pick the one you like.",
-        "Look at WHEN each was published and HOW each gathered evidence.",
+        "Skip the topic entirely.",
         "Average them.",
-        "Skip the topic entirely."
+        "Look at WHEN each was published and HOW each gathered evidence."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Disagreement is signal. Date and method often explain the difference.",
       hintLadder: [
         "Why might good sources disagree?",

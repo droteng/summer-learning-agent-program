@@ -34,8 +34,8 @@ export const summerG7MathW1D1 = {
       id: "g7.summer.math.w1.d1.q1",
       type: "multiple_choice",
       stem: "A canoe rental costs $30 for 4 hours. Which is the correct UNIT rate?",
-      choices: ["$4.00 per hour", "$7.50 per hour", "$8.00 per hour", "$120 per hour"],
-      answerIndex: 1,
+      choices: ["$4.00 per hour", "$8.00 per hour", "$7.50 per hour", "$120 per hour"],
+      answerIndex: 2,
       explanation: "A unit rate is cost per 1 hour: 30 ÷ 4 = $7.50 per hour.",
       hintLadder: [
         "A unit rate is 'per 1 hour' — divide the cost by the hours.",
@@ -47,8 +47,8 @@ export const summerG7MathW1D1 = {
       id: "g7.summer.math.w1.d1.q2",
       type: "multiple_choice",
       stem: "Which ratio is NOT proportional to the others (does not reduce to the same unit rate)?",
-      choices: ["6:9", "8:12", "10:14", "4:6"],
-      answerIndex: 2,
+      choices: ["6:9", "10:14", "8:12", "4:6"],
+      answerIndex: 1,
       explanation: "6:9, 8:12, and 4:6 all reduce to 2:3. But 10:14 reduces to 5:7, a different rate — so it is not proportional.",
       hintLadder: [
         "Simplify each ratio to lowest terms.",

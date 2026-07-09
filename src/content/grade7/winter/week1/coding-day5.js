@@ -55,11 +55,11 @@ export const winterG7CodingW1D5 = {
       stem: "A routine says: IF temperature < 0 { add a scarf }. The temperature variable is 3. What happens when this step runs?",
       choices: [
         "A scarf is added, because the step is written down",
-        "No scarf is added, because 3 < 0 is false so the IF body is skipped",
         "The program crashes",
+        "No scarf is added, because 3 < 0 is false so the IF body is skipped",
         "The temperature changes to 0"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "The condition 3 < 0 is FALSE, so the conditional's body ('add a scarf') is skipped. A conditional only runs its body when the condition is true.",
       hintLadder: [
         "Check the condition first: is 3 less than 0?",

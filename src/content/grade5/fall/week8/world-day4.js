@@ -37,11 +37,11 @@ export const fallG5WorldW8D4 = {
       stem: "Which sentence is the most BELIEVABLE in a presentation?",
       choices: [
         "Everybody knows this is true.",
-        "I asked 20 kids, and 15 picked the fall snack.",
         "Trust me, it's the best.",
+        "I asked 20 kids, and 15 picked the fall snack.",
         "Studies say so, probably."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A real number and a real group make a claim easy to trust and check.",
       hintLadder: [
         "Which one gives real proof you could check?",
@@ -54,12 +54,12 @@ export const fallG5WorldW8D4 = {
       type: "multiple_choice",
       stem: "Why should you explain a hard word during your presentation?",
       choices: [
-        "To use up time",
         "So everyone in the audience can follow, not just experts",
+        "To use up time",
         "To sound smart",
         "You shouldn't — keep it confusing"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Explaining hard words keeps everyone included and able to understand your point.",
       hintLadder: [
         "Who might not know the word?",
@@ -73,11 +73,11 @@ export const fallG5WorldW8D4 = {
       stem: "Being HONEST about the limits of your proof (like only asking a few people) makes you...",
       choices: [
         "look weak, so you should hide it",
-        "more believable to the audience",
+        "unable to present",
         "wrong about everything",
-        "unable to present"
+        "more believable to the audience"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Being honest about limits builds trust — people believe you more when you don't overclaim.",
       hintLadder: [
         "How do you feel about someone who is honest about their limits?",

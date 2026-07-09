@@ -39,8 +39,8 @@ export const summerG5ElaW3D5 = {
       id: "g5.summer.ela.w3.d5.q1",
       type: "multiple_choice",
       stem: "Which word is filler that you should usually cut?",
-      choices: ["because", "really", "however", "therefore"],
-      answerIndex: 1,
+      choices: ["really", "because", "however", "therefore"],
+      answerIndex: 0,
       explanation: "Really rarely adds meaning. The other three connect or explain ideas.",
       hintLadder: [
         "Which option does not connect or explain anything?",
@@ -89,11 +89,11 @@ export const summerG5ElaW3D5 = {
       stem: "Which sentence has the strongest verb?",
       choices: [
         "He went down the stairs quickly.",
-        "He made his way down the stairs in a fast way.",
         "He bolted down the stairs.",
+        "He made his way down the stairs in a fast way.",
         "He used the stairs to get downstairs."
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "Bolted is one clear, vivid verb. The others use weak verbs propped up by extra words.",
       hintLadder: [
         "Find the version with no extra -ly word.",
@@ -163,11 +163,11 @@ export const summerG5ElaW3D5 = {
           stem: "Which is the tightest, strongest revision of: He was really very scared and so he quickly ran in a fast way out of the dark room?",
           choices: [
             "He was very scared and ran quickly out of the dark room.",
-            "Terrified, he bolted from the dark room.",
+            "In a fast way, he ran scared from the dark room.",
             "He was scared and so he ran fast out of the room that was dark.",
-            "In a fast way, he ran scared from the dark room."
+            "Terrified, he bolted from the dark room."
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Terrified replaces really very scared and bolted replaces quickly ran in a fast way. Every filler word is gone and the verbs do the work.",
           hintLadder: [
             "Find the version with no filler words (really, very, so, in a fast way).",

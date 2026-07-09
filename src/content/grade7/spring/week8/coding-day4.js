@@ -85,11 +85,11 @@ export const springG7CodingW8D4 = {
       stem: "Why is organizing your growth tool into FUNCTIONS an upgrade over repeating the same rule line by line?",
       choices: [
         "It makes the program run at a higher voltage.",
-        "It lets you write the rule ONCE, reuse it by calling it, and fix a bug in a single place instead of many.",
         "Functions always make programs longer and slower.",
+        "It lets you write the rule ONCE, reuse it by calling it, and fix a bug in a single place instead of many.",
         "It only helps if the program never changes."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A function captures the rule once; calling it reuses that logic, so the code is shorter, clearer, and a fix in the function propagates everywhere it's called.",
       hintLadder: [
         "What happens to the rule if you write it as a function instead of repeating it?",

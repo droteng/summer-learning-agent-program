@@ -34,8 +34,8 @@ export const fallG5MathW3D1 = {
       id: "g5.fall.math.w3.d1.q1",
       type: "multiple_choice",
       stem: "A recipe uses 2 cups flour to 1 cup sugar. If you double the recipe, how much flour and sugar do you use?",
-      choices: ["3 cups flour, 2 cups sugar", "4 cups flour, 2 cups sugar", "2 cups flour, 2 cups sugar", "4 cups flour, 1 cup sugar"],
-      answerIndex: 1,
+      choices: ["4 cups flour, 2 cups sugar", "3 cups flour, 2 cups sugar", "2 cups flour, 2 cups sugar", "4 cups flour, 1 cup sugar"],
+      answerIndex: 0,
       explanation: "Double means × 2 for each: flour 2 × 2 = 4, sugar 1 × 2 = 2.",
       hintLadder: [
         "Doubling means multiply BOTH amounts by 2.",

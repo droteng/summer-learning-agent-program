@@ -36,12 +36,12 @@ export const winterG7CodingW6D2 = {
       type: "multiple_choice",
       stem: "A function: coatAdvice(temp) RETURNS 'Coat' IF temp <= 0, ELSE RETURNS 'No coat'. You call coatAdvice(0). What value comes back?",
       choices: [
-        "Nothing — functions can't return at exactly 0",
         "'Coat', because 0 <= 0 is true so the IF branch returns",
+        "Nothing — functions can't return at exactly 0",
         "'No coat', because 0 is not cold",
         "An error, because 0 is a boundary"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "'<=' includes the boundary, so 0 <= 0 is true; the IF branch runs and the function returns 'Coat.'",
       hintLadder: [
         "What does the '=' in '<=' allow at the boundary?",
@@ -56,11 +56,11 @@ export const winterG7CodingW6D2 = {
       stem: "You want a 'slippery' warning that fires when there is snow OR ice (either one is enough). Which condition is correct?",
       choices: [
         "IF snow AND ice THEN 'slippery'",
-        "IF snow OR ice THEN 'slippery'",
         "IF NOT snow THEN 'slippery'",
+        "IF snow OR ice THEN 'slippery'",
         "IF snow THEN 'slippery' (ignore ice entirely)"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "OR is true when EITHER condition is true, so 'snow OR ice' fires the warning if there is snow, ice, or both — matching 'either one is enough.'",
       hintLadder: [
         "You want the warning if just ONE of the two is present.",

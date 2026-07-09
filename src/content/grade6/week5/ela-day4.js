@@ -35,11 +35,11 @@ export const grade6ElaWeek5Day4 = {
       stem: "Which is a PRIMARY source about the moon landing?",
       choices: [
         "A history textbook chapter about the 1960s.",
-        "Buzz Aldrin's personal mission log from 1969.",
+        "A blog post summarizing the textbook.",
         "A YouTube documentary made in 2020.",
-        "A blog post summarizing the textbook."
+        "Buzz Aldrin's personal mission log from 1969."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A personal log written by someone who was there is primary — original, first-hand.",
       hintLadder: [
         "Primary = original, first-hand.",
@@ -52,12 +52,12 @@ export const grade6ElaWeek5Day4 = {
       type: "multiple_choice",
       stem: "Which source is LEAST reliable for a science claim?",
       choices: [
-        "A peer-reviewed journal article.",
         "An anonymous comment on a video.",
+        "A peer-reviewed journal article.",
         "A NASA fact sheet.",
         "A textbook from your school."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Anonymous comments can't be checked. The others have known authors and editorial processes.",
       hintLadder: [
         "Which option has no author?",
@@ -71,11 +71,11 @@ export const grade6ElaWeek5Day4 = {
       stem: "A citation should include at least:",
       choices: [
         "The color of the website.",
-        "Author (or organization), title, and date.",
         "Whether you liked the source.",
+        "Author (or organization), title, and date.",
         "Your favorite quote from the source."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Author + title + date is the minimum. With those three, a reader can find the same source.",
       hintLadder: [
         "What does a reader need to find the same source?",

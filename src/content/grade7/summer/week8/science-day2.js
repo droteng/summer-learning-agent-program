@@ -36,11 +36,11 @@ export const summerG7ScienceW8D2 = {
       stem: "In systems thinking, what are the three parts you must name to explain a phenomenon end-to-end?",
       choices: [
         "Beginning, middle, and end.",
-        "Inputs, processes, and outputs.",
+        "Producers, consumers, and decomposers.",
         "Hypothesis, data, and conclusion.",
-        "Producers, consumers, and decomposers."
+        "Inputs, processes, and outputs."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A system is defined by its inputs (what enters), processes (what transforms them), and outputs (what leaves) — the backbone of an end-to-end explanation.",
       hintLadder: [
         "Think about what enters, what changes, and what leaves.",
@@ -54,11 +54,11 @@ export const summerG7ScienceW8D2 = {
       stem: "Melting Arctic ice exposes darker ocean, which absorbs more heat, which melts even more ice. This is an example of a...",
       choices: [
         "Balancing (stabilizing) feedback loop.",
-        "Reinforcing (amplifying) feedback loop.",
         "System with no feedback.",
+        "Reinforcing (amplifying) feedback loop.",
         "One-time event with no loop."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Each step makes the next stronger (more melt → more absorption → more melt), which is the signature of a reinforcing loop.",
       hintLadder: [
         "Does each step make the effect bigger or smaller?",
@@ -72,12 +72,12 @@ export const summerG7ScienceW8D2 = {
       type: "multiple_choice",
       stem: "A student explains a campfire only by saying 'the wood disappears.' What is missing from an end-to-end SYSTEMS explanation?",
       choices: [
-        "Nothing — that's a complete explanation.",
         "The inputs (oxygen, heat) and outputs (CO2, water vapor, ash, light/heat energy) that the wood's matter and energy transform into.",
+        "Nothing — that's a complete explanation.",
         "Only the color of the flame.",
         "The brand of the matches."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Matter and energy aren't destroyed — a systems explanation tracks the inputs and where the matter/energy GO, not just that the wood is gone.",
       hintLadder: [
         "Matter and energy are conserved — nothing truly 'disappears.'",

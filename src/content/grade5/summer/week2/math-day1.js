@@ -36,8 +36,8 @@ export const summerG5MathW2D1 = {
       type: "multiple_choice",
       stem:
         "A bar chart shows books read each day: Mon 3, Tue 5, Wed 2, Thu 6, Fri 4. Which day had the most books read?",
-      choices: ["Monday", "Tuesday", "Thursday", "Friday"],
-      answerIndex: 2,
+      choices: ["Monday", "Thursday", "Tuesday", "Friday"],
+      answerIndex: 1,
       explanation: "Thursday's bar at 6 is the tallest, so Thursday had the most books.",
       hintLadder: [
         "Compare the numbers: which is biggest?",
@@ -66,12 +66,12 @@ export const summerG5MathW2D1 = {
       stem:
         "A line chart shows a plant's height over 4 weeks: 2 cm, 4 cm, 7 cm, 10 cm. What does the line tell you?",
       choices: [
-        "The plant is shrinking.",
-        "The plant stayed the same.",
         "The plant is growing taller.",
+        "The plant stayed the same.",
+        "The plant is shrinking.",
         "There isn't enough data."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "Each week the height is bigger, so the line goes up — the plant is growing taller.",
       hintLadder: [
         "Are the numbers going up or down?",
@@ -184,11 +184,11 @@ export const summerG5MathW2D1 = {
             "A line chart shows a puppy's weight over 4 weeks: 2 kg, 3 kg, 6 kg, 7 kg. Between which two weeks did the puppy gain the MOST weight?",
           choices: [
             "Week 1 to Week 2",
-            "Week 2 to Week 3",
             "Week 3 to Week 4",
+            "Week 2 to Week 3",
             "It gained the same each week"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation:
             "Gain each week: 2→3 is +1, 3→6 is +3, 6→7 is +1. The biggest jump (+3) is from Week 2 to Week 3, the steepest part of the line.",
           hintLadder: [

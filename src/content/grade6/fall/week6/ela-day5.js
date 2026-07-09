@@ -36,11 +36,11 @@ export const fallG6ElaW6D5 = {
       stem: "Which sentence uses the STRONGEST sensory detail?",
       choices: [
         "The leaf was nice.",
-        "The leaf had veins branching like thin red rivers across its yellow surface.",
+        "Leaves exist in fall.",
         "There was a leaf.",
-        "Leaves exist in fall."
+        "The leaf had veins branching like thin red rivers across its yellow surface."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "It uses specific colors and a vivid comparison the reader can picture.",
       hintLadder: [
         "Which one lets you SEE it?",
@@ -71,12 +71,12 @@ export const fallG6ElaW6D5 = {
       type: "multiple_choice",
       stem: "Why organize a description spatially (e.g., top to bottom)?",
       choices: [
-        "To make it longer",
         "So the reader can follow and build the picture in order",
+        "To make it longer",
         "Because it's a rule with no reason",
         "To hide details"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A clear spatial order helps the reader assemble the image step by step.",
       hintLadder: [
         "Imagine describing a face in random order.",
@@ -167,11 +167,11 @@ export const fallG6ElaW6D5 = {
           stem: "Which sentence uses a SIMILE to describe a fall pattern?",
           choices: [
             "The pinecone was really, really cool.",
-            "The pinecone's scales spiraled outward like steps on a winding staircase.",
             "The pinecone had a lot of parts.",
+            "The pinecone's scales spiraled outward like steps on a winding staircase.",
             "The pinecone existed on the ground."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "A simile compares using 'like' or 'as' — here the scales are compared to staircase steps, which the reader can picture.",
           hintLadder: [
             "A simile uses the words 'like' or 'as.'",

@@ -54,12 +54,12 @@ export const winterG7ElaW7D3 = {
       type: "multiple_choice",
       stem: "Which sentence correctly punctuates an INTERRUPTED dialogue tag that splits ONE sentence?",
       choices: [
-        "\"We should turn back,\" she said, \"before the light goes.\"",
-        "\"We should turn back,\" she said, \"Before the light goes.\"",
         "\"We should turn back\" she said \"before the light goes.\"",
+        "\"We should turn back,\" she said, \"Before the light goes.\"",
+        "\"We should turn back,\" she said, \"before the light goes.\"",
         "\"We should turn back,\" she said. \"before the light goes.\""
       ],
-      answerIndex: 0,
+      answerIndex: 2,
       explanation: "The tag splits a single sentence, so a comma follows 'said' and the continuation ('before') stays lowercase, with commas inside the quotes.",
       hintLadder: [
         "The sentence is one thought split by the tag.",
@@ -73,11 +73,11 @@ export const winterG7ElaW7D3 = {
       stem: "How do ACTION BEATS most effectively create subtext in dialogue?",
       choices: [
         "By repeating exactly what the words already say",
-        "By contradicting or complicating the spoken words, hinting at the true feeling",
+        "By adding as many adverbs to the dialogue tags as possible",
         "By replacing all dialogue with narration",
-        "By adding as many adverbs to the dialogue tags as possible"
+        "By contradicting or complicating the spoken words, hinting at the true feeling"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "When the action contradicts or complicates the words ('I'm fine,' + trembling hands), the reader senses the true, unspoken feeling — that is subtext at work.",
       hintLadder: [
         "Subtext lives in the GAP between words and truth.",
@@ -170,12 +170,12 @@ export const winterG7ElaW7D3 = {
           type: "multiple_choice",
           stem: "Which sentence correctly punctuates an interrupted tag that splits TWO separate sentences?",
           choices: [
-            "\"We're almost there,\" he said, \"just keep moving.\"",
             "\"We're almost there,\" he said. \"Just keep moving.\"",
+            "\"We're almost there,\" he said, \"just keep moving.\"",
             "\"We're almost there\" he said \"Just keep moving.\"",
             "\"We're almost there,\" he said, \"Just keep moving.\""
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Because these are two complete sentences, the tag ends with a period and the second sentence starts with a capital ('Just'), each with marks inside the quotes.",
           hintLadder: [
             "Are 'We're almost there' and 'Just keep moving' one sentence or two?",

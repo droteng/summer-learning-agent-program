@@ -50,12 +50,12 @@ export const springG7CodingW6D2 = {
       type: "multiple_choice",
       stem: "Rule: IF water >= 3 OR light >= 5, THEN the plant grows; ELSE it stays. A plant has water = 1 and light = 6. What happens?",
       choices: [
-        "It stays the same, because water is below 3",
         "It grows, because OR only needs ONE test true — light = 6 passes 'light >= 5'",
+        "It stays the same, because water is below 3",
         "It grows twice because two tests exist",
         "The rule errors because water failed"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "OR is true if EITHER test passes. Water fails (1 < 3) but light passes (6 >= 5), so the condition is true and the plant grows.",
       hintLadder: [
         "OR needs only one test to be true.",
@@ -182,11 +182,11 @@ export const springG7CodingW6D2 = {
           stem: "Rule: 'IF water >= 5 OR fertilizer >= 3, THEN grow.' A plant has water = 4 and fertilizer = 3. Does it grow?",
           choices: [
             "No — water is below 5 so it cannot grow",
-            "Yes — OR needs only one test true, and fertilizer 3 >= 3 passes",
             "It grows twice because two tests are listed",
+            "Yes — OR needs only one test true, and fertilizer 3 >= 3 passes",
             "Only if BOTH tests pass"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "OR is true if EITHER test passes. Water fails (4 < 5) but fertilizer passes (3 >= 3), so the OR condition is true and the plant grows.",
           hintLadder: [
             "OR needs only ONE test true.",

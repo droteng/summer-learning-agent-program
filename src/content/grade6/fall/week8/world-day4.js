@@ -35,11 +35,11 @@ export const fallG6WorldW8D4 = {
       stem: "Which statement is most CREDIBLE in a presentation?",
       choices: [
         "Everyone knows this is true.",
-        "In our survey of 40 students, 30 chose the fall menu.",
+        "Studies prove it, probably.",
         "Trust me, it's the best.",
-        "Studies prove it, probably."
+        "In our survey of 40 students, 30 chose the fall menu."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Specific numbers and a named group make a claim trustworthy and checkable.",
       hintLadder: [
         "Which has real, checkable evidence?",
@@ -52,12 +52,12 @@ export const fallG6WorldW8D4 = {
       type: "multiple_choice",
       stem: "Why should you define a tricky term during a presentation?",
       choices: [
-        "To use up time",
         "So the whole audience can follow, not just experts",
+        "To use up time",
         "To sound smart",
         "You shouldn't — keep it confusing"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Defining terms keeps everyone included and able to follow your point.",
       hintLadder: [
         "Who might not know the word?",
@@ -71,11 +71,11 @@ export const fallG6WorldW8D4 = {
       stem: "Being HONEST about the limits of your data (like a small sample) makes you...",
       choices: [
         "look weak and should be hidden",
-        "more trustworthy to the audience",
         "wrong about everything",
+        "more trustworthy to the audience",
         "unable to present"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Acknowledging limits builds trust — audiences respect honesty over overclaiming.",
       hintLadder: [
         "How do you feel about someone who admits limits?",

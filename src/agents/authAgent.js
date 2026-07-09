@@ -55,7 +55,17 @@ function newSessionId() {
   return randomBytes(32).toString("hex");
 }
 
-export async function signupParent({ email, password, parentName, childName, childPin }) {
+// Grades the program currently supports. Signup and add-child both clamp to
+// this range so a bad payload can't create a child with no curriculum.
+export const SUPPORTED_GRADES = Object.freeze([5, 6, 7]);
+const DEFAULT_GRADE = 6;
+
+function normalizeGrade(value, fallback = DEFAULT_GRADE) {
+  const grade = Number(value);
+  return SUPPORTED_GRADES.includes(grade) ? grade : fallback;
+}
+
+export async function signupParent({ email, password, parentName, childName, childPin, gradeLevel }) {
   const normEmail = normalizeEmail(email);
   if (!normEmail || !normEmail.includes("@")) {
     return { status: "error", code: "invalid_email", message: "Enter a valid email address." };
@@ -86,7 +96,7 @@ export async function signupParent({ email, password, parentName, childName, chi
       {
         id: childId,
         firstName: childName?.trim() || "Student",
-        gradeLevel: 6,
+        gradeLevel: normalizeGrade(gradeLevel),
         role: "child",
         pinHash: childPinHash
       }
@@ -178,7 +188,7 @@ export async function addChildToAccount({ accountId, firstName, gradeLevel, pin,
   const newChild = {
     id: `child_${randomUUID()}`,
     firstName: trimmed,
-    gradeLevel: Number.isFinite(Number(gradeLevel)) ? Number(gradeLevel) : 6,
+    gradeLevel: normalizeGrade(gradeLevel),
     role: "child",
     pinHash: await hashPassword(String(pin).padStart(8, "0"))
   };
@@ -250,7 +260,8 @@ export async function currentUser(sessionId) {
     parentName: account.parent?.name ?? null,
     emailVerified: !!account.parent?.emailVerified,
     childId: child?.id ?? null,
-    childName: child?.firstName ?? null
+    childName: child?.firstName ?? null,
+    childGradeLevel: normalizeGrade(child?.gradeLevel)
   };
 }
 

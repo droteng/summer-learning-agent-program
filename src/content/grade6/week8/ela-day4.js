@@ -34,12 +34,12 @@ export const grade6ElaWeek8Day4 = {
       type: "multiple_choice",
       stem: "What does revision MEAN, literally?",
       choices: [
-        "Reading aloud.",
         "Re-seeing — looking again from a fresh angle.",
+        "Reading aloud.",
         "Making longer.",
         "Adding pictures."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Re-vision = see again. The point is fresh eyes, not just edits.",
       hintLadder: [
         "Break it down: re + vision.",
@@ -53,11 +53,11 @@ export const grade6ElaWeek8Day4 = {
       stem: "Which revision is STRONGEST?",
       choices: [
         "Change 'good' to 'great'.",
-        "Replace 'a lot of people' with 'over 5,000 people' and add a source.",
         "Add more adjectives.",
+        "Replace 'a lot of people' with 'over 5,000 people' and add a source.",
         "Make everything bold."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Specific number + source moves the writing from claim to evidence.",
       hintLadder: [
         "Which revision adds evidence?",
@@ -91,11 +91,11 @@ export const grade6ElaWeek8Day4 = {
       stem: "Which is GOOD to CUT during revision?",
       choices: [
         "The strongest specific example.",
-        "A sentence that repeats what the previous sentence said.",
+        "The opening hook.",
         "The clearest evidence.",
-        "The opening hook."
+        "A sentence that repeats what the previous sentence said."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Cut repeats and filler. Keep the things that earn their place.",
       hintLadder: [
         "Cut what adds nothing.",

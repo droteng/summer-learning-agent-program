@@ -33,8 +33,8 @@ export const winterG6ScienceW4D1 = {
       id: "g6.winter.sci.w4.d1.q1",
       type: "multiple_choice",
       stem: "What is at the CENTER of our solar system?",
-      choices: ["Earth", "The Moon", "The Sun", "Jupiter"],
-      answerIndex: 2,
+      choices: ["Earth", "The Moon", "Jupiter", "The Sun"],
+      answerIndex: 3,
       explanation: "The Sun is a star at the center; its gravity keeps all eight planets in orbit around it.",
       hintLadder: [
         "The center object is a star, not a planet.",
@@ -66,12 +66,12 @@ export const winterG6ScienceW4D1 = {
       type: "multiple_choice",
       stem: "What best describes the four INNER planets compared with the four OUTER planets?",
       choices: [
-        "The inner planets are large gas giants; the outer ones are small and rocky.",
         "The inner planets are small and rocky; the outer ones are large gas and ice giants.",
+        "The inner planets are large gas giants; the outer ones are small and rocky.",
         "All eight planets are the same size and made of rock.",
         "The inner planets have rings; the outer ones do not."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Mercury, Venus, Earth, and Mars are small rocky worlds; Jupiter, Saturn, Uranus, and Neptune are large gas and ice giants.",
       hintLadder: [
         "Think about Earth and Mars — are they rocky or gassy?",
@@ -163,8 +163,8 @@ export const winterG6ScienceW4D1 = {
           id: "g6.winter.sci.w4.d1.arena1",
           type: "multiple_choice",
           stem: "Which planet lies directly BETWEEN Earth and Jupiter in order from the Sun?",
-          choices: ["Venus", "Mars", "Saturn", "Mercury"],
-          answerIndex: 1,
+          choices: ["Venus", "Saturn", "Mars", "Mercury"],
+          answerIndex: 2,
           explanation: "Order is ...Earth, Mars, [asteroid belt], Jupiter... so Mars sits between Earth and Jupiter.",
           hintLadder: [
             "List the order: Earth, then ?, then Jupiter.",

@@ -35,11 +35,11 @@ export const grade6HistoryWeek6Day5 = {
       stem: "What does 'interdependence' mean?",
       choices: [
         "Each country acting alone.",
-        "Countries (or people) relying on each other.",
         "Independence with a twist.",
+        "Countries (or people) relying on each other.",
         "Trade only with neighbors."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Inter- means 'between'. Interdependence = depending on each other.",
       hintLadder: [
         "Inter- = between.",
@@ -71,12 +71,12 @@ export const grade6HistoryWeek6Day5 = {
       type: "multiple_choice",
       stem: "Which is the BEST example of a problem requiring multiple countries to coordinate?",
       choices: [
-        "Painting one country's flag.",
         "Cleaning up plastic in the world's oceans.",
+        "Painting one country's flag.",
         "Renaming a single street.",
         "Picking a school mascot."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Ocean plastic crosses borders — current carries it. No single country can fix it alone.",
       hintLadder: [
         "Which problem crosses borders?",
@@ -91,11 +91,11 @@ export const grade6HistoryWeek6Day5 = {
         "The Silk Road (~100 BCE - 1450 CE) is an early example of:",
       choices: [
         "A single road in one country.",
-        "A trade network connecting Asia, the Middle East, Africa, and Europe.",
+        "A type of food.",
         "An invention of the internet.",
-        "A type of food."
+        "A trade network connecting Asia, the Middle East, Africa, and Europe."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "The Silk Road was a network of routes carrying goods, ideas, and diseases across multiple continents for over a thousand years.",
       hintLadder: [
         "Was it one road or many?",

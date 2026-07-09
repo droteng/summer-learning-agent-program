@@ -53,12 +53,12 @@ export const winterG6ScienceW6D1 = {
       type: "multiple_choice",
       stem: "During BRAINSTORMING, what should an engineer do?",
       choices: [
-        "Pick the very first idea and stop",
         "Come up with many different possible solutions",
+        "Pick the very first idea and stop",
         "Skip straight to testing",
         "Only copy someone else's finished design"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Brainstorming is about generating lots of ideas so you have real choices before committing to a build.",
       hintLadder: [
         "Brainstorming is about quantity of ideas, not judging them yet.",
@@ -73,11 +73,11 @@ export const winterG6ScienceW6D1 = {
       stem: "A team's prototype snow shovel bends on the first push. In the design process, this failed test is BEST described as...",
       choices: [
         "A reason to give up",
-        "Useful data that tells them what to improve",
         "Proof the shovel can never work",
+        "Useful data that tells them what to improve",
         "Something to hide from the team"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "In engineering, a failed test is information — it shows exactly which part to strengthen in the next version.",
       hintLadder: [
         "What does a failed test teach you?",
@@ -167,11 +167,11 @@ export const winterG6ScienceW6D1 = {
           stem: "An inventor tests an ice-scraper prototype, learns the blade is too dull, changes the blade, and tests AGAIN. Which two design-process steps is she repeating?",
           choices: [
             "Define and brainstorm",
-            "Test and improve",
+            "Brainstorm and build only",
             "Sell and ship",
-            "Brainstorm and build only"
+            "Test and improve"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Learning from a test and then changing the design is the TEST → IMPROVE part of the loop, repeated.",
           hintLadder: [
             "She tried it out, then made it better.",

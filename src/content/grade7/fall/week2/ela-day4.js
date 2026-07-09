@@ -35,12 +35,12 @@ export const fallG7ElaW2D4 = {
       type: "multiple_choice",
       stem: "Which sentence works BEST as a THESIS for a multi-paragraph explanation of decomposers' role in an ecosystem?",
       choices: [
-        "Decomposers are really important and cool.",
-        "This essay is about decomposers.",
         "Decomposers keep ecosystems running by breaking down dead matter, recycling nutrients into the soil, and enabling producers to grow again.",
+        "This essay is about decomposers.",
+        "Decomposers are really important and cool.",
         "There are many organisms in nature, including some decomposers."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "It states a controlling claim AND previews the subtopics (breaking down matter, recycling nutrients, enabling producers) that the body paragraphs can each develop.",
       hintLadder: [
         "A thesis makes a claim AND hints at the paragraphs to come.",
@@ -54,11 +54,11 @@ export const fallG7ElaW2D4 = {
       stem: "You have two sources: one says otters mainly control urchins; another emphasizes that otters also shelter fish in kelp. To SYNTHESIZE them in one sentence, you should...",
       choices: [
         "Quote only the first source and ignore the second.",
-        "Combine both points and show their relationship: otters both control urchins AND, in addition, shelter fish, so their loss harms the kelp system in more than one way.",
+        "Pick whichever source is shorter.",
         "List each source's fact in a separate paragraph with no connection.",
-        "Pick whichever source is shorter."
+        "Combine both points and show their relationship: otters both control urchins AND, in addition, shelter fish, so their loss harms the kelp system in more than one way."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Synthesis combines evidence from multiple sources and uses a transition ('in addition') to show how the points relate, rather than listing them separately.",
       hintLadder: [
         "Synthesizing means combining and relating, not choosing one.",
@@ -162,11 +162,11 @@ export const fallG7ElaW2D4 = {
           stem: "Which sentence best SYNTHESIZES these two facts: (1) wolves reduce deer numbers; (2) fewer deer means more young trees survive?",
           choices: [
             "Wolves reduce deer numbers. Young trees survive.",
-            "Because wolves reduce deer numbers, fewer deer graze on saplings, so more young trees survive — a cascade from predator to plant.",
             "Wolves are apex predators found in many ecosystems.",
+            "Because wolves reduce deer numbers, fewer deer graze on saplings, so more young trees survive — a cascade from predator to plant.",
             "Deer eat trees, and that is a fact about deer."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "It combines both facts into one connected cause-and-effect statement with transitions ('because', 'so'), showing the relationship rather than listing them separately.",
           hintLadder: [
             "Synthesis links facts with cause-effect language.",

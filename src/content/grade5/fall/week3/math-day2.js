@@ -34,8 +34,8 @@ export const fallG5MathW3D2 = {
       id: "g5.fall.math.w3.d2.q1",
       type: "multiple_choice",
       stem: "Which graph is BEST for showing how corn yield changed each month over a season?",
-      choices: ["Pie chart", "Bar graph", "Line graph", "Tally chart"],
-      answerIndex: 2,
+      choices: ["Line graph", "Bar graph", "Pie chart", "Tally chart"],
+      answerIndex: 0,
       explanation: "Line graphs are made to show change over time.",
       hintLadder: [
         "The key words are 'changed each month' — that means over time.",
@@ -78,11 +78,11 @@ export const fallG5MathW3D2 = {
       stem: "Before you read any value off a graph, what should you check FIRST?",
       choices: [
         "The color of the bars",
-        "The labels and the scale",
+        "The title font",
         "Who made the graph",
-        "The title font"
+        "The labels and the scale"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Labels tell you what's being measured; the scale tells you how much each gridline is worth.",
       hintLadder: [
         "What helps you know what the numbers mean?",
@@ -167,8 +167,8 @@ export const fallG5MathW3D2 = {
           id: "g5.fall.math.w3.d2.arena2",
           type: "multiple_choice",
           stem: "A line graph's y-axis counts by 20s. A point sits exactly halfway between the 20 and 40 gridlines. What value is it?",
-          choices: ["25", "30", "35", "50"],
-          answerIndex: 1,
+          choices: ["25", "35", "30", "50"],
+          answerIndex: 2,
           explanation: "Halfway between 20 and 40 is (20 + 40) ÷ 2 = 30.",
           hintLadder: [
             "You need the midpoint of 20 and 40.",

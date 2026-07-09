@@ -77,12 +77,12 @@ export const summerG7MathW4D4 = {
       type: "multiple_choice",
       stem: "Which expression means 'four less than twice a number n'?",
       choices: [
-        "4 - 2n",
         "2n - 4",
+        "4 - 2n",
         "2(n - 4)",
         "4n - 2"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "'Twice a number' is 2n, and 'four less than' that means subtract 4 from it: 2n - 4. Order matters — 4 - 2n would be 'four minus twice the number.'",
       hintLadder: [
         "'Twice a number n' translates to 2n.",

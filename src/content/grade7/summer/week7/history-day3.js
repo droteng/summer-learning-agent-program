@@ -35,12 +35,12 @@ export const summerG7HistoryW7D3 = {
       type: "multiple_choice",
       stem: "Which question BEST tests whether an event is a historical turning point?",
       choices: [
-        "Was the event exciting to watch?",
         "Would life be clearly different today if the event had never happened?",
+        "Was the event exciting to watch?",
         "Did a famous person attend?",
         "Was the event reported in the news?"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "The clearest turning-point test asks whether the event redirected history — whether removing it would change how things turned out. Excitement, fame, and news coverage don't measure significance.",
       hintLadder: [
         "Significance is about lasting change, not entertainment.",
@@ -54,11 +54,11 @@ export const summerG7HistoryW7D3 = {
       stem: "Historians often measure significance by depth, breadth, and duration. What does 'breadth' mean here?",
       choices: [
         "How exciting or dramatic the event was",
-        "How many people and places the event affected",
         "How long ago the event happened",
+        "How many people and places the event affected",
         "How famous the event became"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Breadth measures the reach of an event — how many people and places it touched. Depth is how fundamentally it changed things; duration is how long the effects lasted.",
       hintLadder: [
         "Breadth is about reach, not time or drama.",
@@ -172,11 +172,11 @@ export const summerG7HistoryW7D3 = {
           stem: "Which event is MOST likely to be judged a historical turning point by the depth-breadth-duration tests?",
           choices: [
             "A local bakery briefly trended online one weekend",
-            "The development of vaccines that wiped out a deadly disease worldwide",
+            "A single sports game that fans still argue about",
             "A celebrity wore an unusual outfit to an awards show",
-            "A single sports game that fans still argue about"
+            "The development of vaccines that wiped out a deadly disease worldwide"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Disease-eradicating vaccines changed something deep (survival), across the whole world (breadth), for generations (duration). The others are famous or memorable but shallow, local, or short-lived.",
           hintLadder: [
             "Score each on depth, breadth, and duration.",

@@ -55,11 +55,11 @@ export const fallG5ElaW5D1 = {
       stem: "Why is 'Apples are the best fruit' a weak claim for a persuasive paragraph?",
       choices: [
         "It is too long",
-        "It is only about taste, so you cannot really back it up with reasons",
         "It is a fact",
+        "It is only about taste, so you cannot really back it up with reasons",
         "It has no capital letter"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A taste opinion cannot be proven with reasons the way a real claim can.",
       hintLadder: [
         "Can you give PROOF that one fruit is 'best'?",
@@ -75,10 +75,10 @@ export const fallG5ElaW5D1 = {
       choices: [
         "Things should be better.",
         "Schools have rooms.",
-        "Our school should add a 15-minute reading time after lunch.",
-        "I like quiet time."
+        "I like quiet time.",
+        "Our school should add a 15-minute reading time after lunch."
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "It is exact, takes a clear side, and you could back it up with reasons.",
       hintLadder: [
         "Look for exact + arguable + something you can support.",
@@ -165,12 +165,12 @@ export const fallG5ElaW5D1 = {
           type: "multiple_choice",
           stem: "Which sentence is the STRONGEST persuasive claim?",
           choices: [
-            "Autumn has leaves.",
-            "I think fall is nice.",
             "Our school should plant trees on the front lawn for shade and clean air.",
+            "I think fall is nice.",
+            "Autumn has leaves.",
             "Trees are real."
           ],
-          answerIndex: 2,
+          answerIndex: 0,
           explanation: "It is specific, takes a clear side, and you can back it up with reasons. The others are facts or vague favorites.",
           hintLadder: [
             "A strong claim is specific AND arguable.",

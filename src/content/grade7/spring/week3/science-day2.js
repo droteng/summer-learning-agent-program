@@ -36,12 +36,12 @@ export const springG7ScienceW3D2 = {
       type: "multiple_choice",
       stem: "What is the key difference between POLLINATION and FERTILIZATION in a flowering plant?",
       choices: [
-        "They are two names for the same event",
         "Pollination transfers pollen to the stigma; fertilization is when sperm and egg cells actually unite",
+        "They are two names for the same event",
         "Fertilization happens first, then pollination",
         "Pollination forms the seed; fertilization waters the plant"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Pollination is the delivery of pollen to the stigma; fertilization is the later union of a sperm cell (from the pollen) with the egg cell in the ovule, which is what forms the seed.",
       hintLadder: [
         "One is about MOVING pollen; the other is about cells JOINING.",
@@ -56,11 +56,11 @@ export const springG7ScienceW3D2 = {
       stem: "A flower is dull green, has no scent, produces no nectar, and releases huge clouds of very light pollen. What pollination strategy is it MOST adapted for, and why?",
       choices: [
         "Bird pollination, because birds like green",
-        "Wind pollination, because light pollen and no need to attract animals fit wind dispersal",
+        "Self-pollination only, because it has no flower",
         "Water pollination, because it has no scent",
-        "Self-pollination only, because it has no flower"
+        "Wind pollination, because light pollen and no need to attract animals fit wind dispersal"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Dull, scentless, nectarless flowers with abundant light pollen are classic wind-pollination adaptations — they invest in producing lots of easily carried pollen rather than in attracting animals.",
       hintLadder: [
         "It spends no energy attracting animals — so what carries the pollen?",
@@ -168,11 +168,11 @@ export const springG7ScienceW3D2 = {
           stem: "A gardener's squash plants flower and are visited by bees, but she sprays an insecticide that also kills bees, and afterward the flowers still fail to form squash. Which step of the life cycle is now most likely failing, and why?",
           choices: [
             "Germination, because the seeds never sprouted",
-            "Pollination, because without bees pollen isn't carried between flowers, so fertilization can't occur and no fruit forms",
             "Leaf growth, because insecticide stops photosynthesis",
+            "Pollination, because without bees pollen isn't carried between flowers, so fertilization can't occur and no fruit forms",
             "Seed dormancy, because the seeds are asleep"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "The plants germinated and flowered, but killing the bees removed the pollinator. Without pollination, fertilization can't happen, so no seeds or fruit (squash) form.",
           hintLadder: [
             "The plants grew and flowered — so those steps worked.",

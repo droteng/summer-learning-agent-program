@@ -33,8 +33,8 @@ export const summerG7WorldW1D4 = {
       id: "g7.summer.world.w1.d4.q1",
       type: "multiple_choice",
       stem: "On a map, which tool tells you what the symbols and colors mean?",
-      choices: ["The compass rose", "The legend (key)", "The scale bar", "The latitude lines"],
-      answerIndex: 1,
+      choices: ["The compass rose", "The scale bar", "The legend (key)", "The latitude lines"],
+      answerIndex: 2,
       explanation: "The legend, or key, explains what each symbol and color on the map represents.",
       hintLadder: [
         "One tool is a little box that 'decodes' the map's symbols.",
@@ -46,8 +46,8 @@ export const summerG7WorldW1D4 = {
       id: "g7.summer.world.w1.d4.q2",
       type: "multiple_choice",
       stem: "Lines that run east-west and measure how far NORTH or SOUTH of the equator a place is are called...",
-      choices: ["Longitude lines", "Latitude lines", "Scale bars", "Compass roses"],
-      answerIndex: 1,
+      choices: ["Latitude lines", "Longitude lines", "Scale bars", "Compass roses"],
+      answerIndex: 0,
       explanation: "Latitude lines run east-west and measure distance north or south of the equator (which is 0° latitude).",
       hintLadder: [
         "One set measures north-south position; the other measures east-west position.",

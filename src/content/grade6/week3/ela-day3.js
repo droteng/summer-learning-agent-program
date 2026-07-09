@@ -53,11 +53,11 @@ export const grade6ElaWeek3Day3 = {
       stem: "When two characters talk, what happens at each switch of speaker?",
       choices: [
         "Nothing — same paragraph.",
-        "A new paragraph starts.",
         "The story restarts.",
+        "A new paragraph starts.",
         "The chapter ends."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "New speaker = new paragraph. Even one-word lines start fresh paragraphs.",
       hintLadder: [
         "What helps the reader keep track of who's talking?",
@@ -71,11 +71,11 @@ export const grade6ElaWeek3Day3 = {
       stem: "Which character voice fits a six-year-old talking about a thunderstorm?",
       choices: [
         '"The atmospheric pressure dropped considerably this evening."',
-        '"It was thundery and the rain was a lot."',
+        '"The storm was meteorologically intense."',
         '"Local meteorological data suggests an anomaly."',
-        '"The storm was meteorologically intense."'
+        '"It was thundery and the rain was a lot."'
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Voice should match the speaker. A six-year-old uses simple words and direct observations.",
       hintLadder: [
         "Skip the technical, adult-sounding options.",
@@ -88,8 +88,8 @@ export const grade6ElaWeek3Day3 = {
       id: "g6.ela.w3.d3.q4",
       type: "multiple_choice",
       stem: 'In: "Hold on," she whispered, "did you hear that?" — how many sentences are inside the dialogue?',
-      choices: ["One", "Two", "Three", "None"],
-      answerIndex: 1,
+      choices: ["Two", "One", "Three", "None"],
+      answerIndex: 0,
       explanation: "'Hold on' and 'did you hear that?' are two separate sentences split by 'she whispered'.",
       hintLadder: [
         "Look at where periods and question marks could go.",
@@ -169,11 +169,11 @@ export const grade6ElaWeek3Day3 = {
           stem: "Which line is punctuated CORRECTLY?",
           choices: [
             "\"Are you coming with us\"? asked Dev.",
-            "\"Are you coming with us?\" asked Dev.",
+            "Are you coming with us? \"asked Dev\".",
             "\"Are you coming with us?\", asked Dev.",
-            "Are you coming with us? \"asked Dev\"."
+            "\"Are you coming with us?\" asked Dev."
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "The question mark belongs inside the quotes because it's part of what's spoken, and no extra comma is needed after it before the dialogue tag.",
           hintLadder: [
             "Terminal punctuation goes inside the quote marks.",

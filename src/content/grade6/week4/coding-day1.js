@@ -49,11 +49,11 @@ export const grade6CodingWeek4Day1 = {
       stem: "Which line correctly calls this function with a name and age?\n\n  def greet(name, age):\n    return name + ', age ' + str(age)",
       choices: [
         "greet 'Maya' 11",
-        "greet('Maya', 11)",
+        "greet: Maya, 11",
         "greet[Maya, 11]",
-        "greet: Maya, 11"
+        "greet('Maya', 11)"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Functions are called with parentheses, with arguments separated by commas.",
       hintLadder: [
         "Skip the options without parentheses.",
@@ -68,11 +68,11 @@ export const grade6CodingWeek4Day1 = {
       stem: "What happens if a function has no `return` statement?",
       choices: [
         "It returns the last value computed.",
-        "It returns None (no useful value).",
         "It throws an error.",
+        "It returns None (no useful value).",
         "It returns the first argument."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Without an explicit `return`, the function ends and gives back None — useful for side-effect functions (printing, saving) but not for math.",
       hintLadder: [
         "Think about what `return` does.",
@@ -176,8 +176,8 @@ export const grade6CodingWeek4Day1 = {
           type: "multiple_choice",
           stem:
             "What does this print?\n\n  def shout(word):\n    return word + '!'\n\n  print(shout(shout('hi')))",
-          choices: ["hi!", "hi!!", "hihi!", "hi"],
-          answerIndex: 1,
+          choices: ["hi!!", "hi!", "hihi!", "hi"],
+          answerIndex: 0,
           explanation:
             "Inner shout('hi') returns 'hi!'. That result is passed to shout again, adding another '!', giving 'hi!!'.",
           hintLadder: [

@@ -81,11 +81,11 @@ export const springG7CodingW5D4 = {
       stem: "Why write the growth analysis as a FUNCTION growthRate(heights) instead of copying the same loop for each plant?",
       choices: [
         "Functions make the numbers bigger",
-        "You write the logic once and reuse it by calling growthRate on any list, so it's shorter and less error-prone",
         "Functions can only run one time",
+        "You write the logic once and reuse it by calling growthRate on any list, so it's shorter and less error-prone",
         "A dictionary can't be used with a loop"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A function packages the logic once; calling it with different arguments (growthRate(plantA), growthRate(plantB)) reuses that code, avoiding copy-paste bugs and keeping the program short.",
       hintLadder: [
         "What problem does copy-pasting the same loop cause?",

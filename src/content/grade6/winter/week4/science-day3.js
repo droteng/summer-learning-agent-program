@@ -36,11 +36,11 @@ export const winterG6ScienceW4D3 = {
       stem: "Why does the Moon shine in the night sky?",
       choices: [
         "It makes its own light like a small star.",
-        "It reflects light from the Sun.",
+        "City lights bounce off it.",
         "It glows from heat inside it.",
-        "City lights bounce off it."
+        "It reflects light from the Sun."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "The Moon produces no light of its own; we see it because it reflects sunlight.",
       hintLadder: [
         "Is the Moon a star? No.",
@@ -74,11 +74,11 @@ export const winterG6ScienceW4D3 = {
       stem: "During a FULL moon, where is the Moon relative to Earth and the Sun?",
       choices: [
         "Between Earth and the Sun, so we see its dark side.",
-        "On the opposite side of Earth from the Sun, so we see its fully lit side.",
         "Directly behind the Sun.",
+        "On the opposite side of Earth from the Sun, so we see its fully lit side.",
         "Below Earth where sunlight can't reach it."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "At full moon the Moon is on the far side of Earth from the Sun, so the entire sunlit half faces us.",
       hintLadder: [
         "A full moon means we see the WHOLE lit half.",
@@ -171,12 +171,12 @@ export const winterG6ScienceW4D3 = {
           type: "multiple_choice",
           stem: "It is June and the Northern Hemisphere is having summer. What season is it in the Southern Hemisphere, and why?",
           choices: [
-            "Summer too — the whole Earth shares one season.",
             "Winter — the Southern Hemisphere is tilted away from the Sun then.",
+            "Summer too — the whole Earth shares one season.",
             "Fall — because the Moon blocks the Sun.",
             "It depends on how close Earth is to the Sun."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "When the north tilts toward the Sun (summer), the south tilts away, so it's winter there.",
           hintLadder: [
             "The hemispheres always have OPPOSITE seasons.",

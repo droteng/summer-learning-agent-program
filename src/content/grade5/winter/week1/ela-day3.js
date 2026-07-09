@@ -37,11 +37,11 @@ export const winterG5ElaW1D3 = {
       stem: "Which of these is a SPECIFIC, MEASURABLE goal?",
       choices: [
         "I want to be smarter this winter.",
-        "I will read 10 pages each night until winter break.",
         "I will try harder at school.",
+        "I will read 10 pages each night until winter break.",
         "I hope to do well."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "It names exactly what ('read 10 pages'), a measurable amount ('each night'), and a time frame ('until winter break') — so you can check whether you did it.",
       hintLadder: [
         "A measurable goal has a number or amount you can count.",
@@ -54,12 +54,12 @@ export const winterG5ElaW1D3 = {
       type: "multiple_choice",
       stem: "Why is 'I want to get better at basketball this winter' a WEAK goal?",
       choices: [
-        "It is too long a sentence",
         "It has no number or time frame, so you cannot tell if you reached it",
+        "It is too long a sentence",
         "Basketball is not a winter sport",
         "It uses the word 'want'"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "'Get better' has no number and no deadline, so there is no way to measure success. Adding an amount and a time frame fixes it.",
       hintLadder: [
         "Ask yourself: how would you PROVE you reached this goal?",
@@ -74,11 +74,11 @@ export const winterG5ElaW1D3 = {
       stem: "Which change makes the goal 'practice piano more' MEASURABLE?",
       choices: [
         "Practice piano a lot this winter.",
-        "Really focus on piano.",
         "Practice piano for 15 minutes every day until February.",
+        "Really focus on piano.",
         "Get good at piano soon."
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "It adds an exact amount (15 minutes), how often (every day), and a time frame (until February) — all things you can measure.",
       hintLadder: [
         "Look for a number you could actually count or time.",
@@ -174,10 +174,10 @@ export const winterG5ElaW1D3 = {
           choices: [
             "Do better in science this winter.",
             "Study science sometimes.",
-            "Read my science notes for 10 minutes after school, three days a week, until winter break.",
-            "Try to like science more."
+            "Try to like science more.",
+            "Read my science notes for 10 minutes after school, three days a week, until winter break."
           ],
-          answerIndex: 2,
+          answerIndex: 3,
           explanation: "It names the exact action (read notes), a measurable amount (10 minutes, three days a week), and a time frame (until winter break) — all three marks of a strong goal.",
           hintLadder: [
             "A strong goal is specific, measurable, AND timed.",

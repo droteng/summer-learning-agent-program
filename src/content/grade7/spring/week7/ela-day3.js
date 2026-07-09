@@ -37,11 +37,11 @@ export const springG7ElaW7D3 = {
       stem: "Which passage correctly pairs a COUNTERARGUMENT with a strong REBUTTAL?",
       choices: [
         "Recycling is good. Everyone should recycle. Recycling helps.",
-        "Some argue recycling is too expensive for the city. However, studies show recycling programs create jobs and cut landfill costs, so they often save money over time.",
+        "Recycling is important because it is important to recycle.",
         "People who dislike recycling are just lazy and wrong.",
-        "Recycling is important because it is important to recycle."
+        "Some argue recycling is too expensive for the city. However, studies show recycling programs create jobs and cut landfill costs, so they often save money over time."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "It states the opponent's real objection (too expensive) and then answers it with evidence (jobs, lower landfill costs) — a genuine counterargument followed by a rebuttal. The others only repeat the claim or attack the opponent.",
       hintLadder: [
         "A counterargument states the OTHER side; a rebuttal answers it with reasons.",
@@ -55,11 +55,11 @@ export const springG7ElaW7D3 = {
       stem: "What makes a REBUTTAL strong rather than weak?",
       choices: [
         "It repeats the original claim in a louder voice.",
-        "It uses evidence or logic to show why the objection is wrong or outweighed, sometimes conceding any true part first.",
         "It insults the people who disagree.",
+        "It uses evidence or logic to show why the objection is wrong or outweighed, sometimes conceding any true part first.",
         "It ignores the objection and changes the subject."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A strong rebuttal actually dismantles the objection with evidence or reasoning — and often concedes a true part — instead of merely restating the claim or attacking the opponent.",
       hintLadder: [
         "Does repeating your claim answer the objection?",
@@ -73,12 +73,12 @@ export const springG7ElaW7D3 = {
       type: "multiple_choice",
       stem: "Which sentence uses the SHARPEST, most persuasive word choice?",
       choices: [
-        "Pollution is kind of bad for the water and stuff.",
         "Oil spills smother coastlines, poison shellfish beds, and choke seabirds in slicks of black tar.",
+        "Pollution is kind of bad for the water and stuff.",
         "The water gets messed up when there are spills.",
         "Spills are not very good for the ocean."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Precise, vivid verbs ('smother,' 'poison,' 'choke') and concrete nouns make the writing forceful and convincing. The others are vague and flat.",
       hintLadder: [
         "Look for exact, powerful verbs and concrete nouns.",

@@ -34,12 +34,12 @@ export const grade6ElaWeek8Day5 = {
       type: "multiple_choice",
       stem: "What's the FIRST thing to do before showing your project?",
       choices: [
-        "Start over from scratch.",
         "Check it against your Day-1 criteria; fix the weakest one.",
+        "Start over from scratch.",
         "Memorize the whole thing.",
         "Pick out new clothes."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Criteria are how you decided 'done' looked. Check them. Fix only the failing one.",
       hintLadder: [
         "What did you say 'done' meant?",
@@ -53,11 +53,11 @@ export const grade6ElaWeek8Day5 = {
       stem: "Why read your intro aloud BEFORE the showcase?",
       choices: [
         "To memorize it.",
-        "To catch awkward or unclear sentences your eye missed.",
         "To make it louder.",
+        "To catch awkward or unclear sentences your eye missed.",
         "Because rules say so."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Reading aloud reveals rhythm problems and unclear phrases that silent reading skips over.",
       hintLadder: [
         "What do your ears notice that your eyes miss?",
@@ -91,11 +91,11 @@ export const grade6ElaWeek8Day5 = {
         "After your presentation, a family member asks a tough question. Best response:",
       choices: [
         "Pretend you didn't hear.",
-        "Take a breath, say 'great question — here's what I think,' then answer or admit you don't know.",
+        "Walk away.",
         "Argue.",
-        "Walk away."
+        "Take a breath, say 'great question — here's what I think,' then answer or admit you don't know."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Acknowledging buys you a beat to think. Honesty about gaps is fine — better than guessing.",
       hintLadder: [
         "What if you don't know?",
@@ -170,11 +170,11 @@ export const grade6ElaWeek8Day5 = {
           stem: "A family member asks a tough question you don't know the answer to. What's the BEST response?",
           choices: [
             "Make up an answer that sounds confident.",
-            "Take a breath and say 'Great question — I'm not sure, but here's what I'd check next.'",
+            "Say 'that's not important' and move on.",
             "Pretend you didn't hear it.",
-            "Say 'that's not important' and move on."
+            "Take a breath and say 'Great question — I'm not sure, but here's what I'd check next.'"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Acknowledging the question buys a beat to think, and honesty about a gap is stronger than guessing. Naming what you'd check shows real thinking.",
           hintLadder: [
             "Guessing or dodging both backfire.",

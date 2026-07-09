@@ -34,12 +34,12 @@ export const grade6WorldWeek6Day4 = {
       type: "multiple_choice",
       stem: "What does 'perspective' mean in a news context?",
       choices: [
-        "An opinion is always wrong.",
         "The viewpoint someone speaks from — what they see and care about.",
+        "An opinion is always wrong.",
         "A type of camera lens.",
         "A fake story."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Perspective is the viewpoint someone speaks from. It's not the same as 'wrong'; it's just partial.",
       hintLadder: [
         "Think 'where someone's standing.'",
@@ -54,11 +54,11 @@ export const grade6WorldWeek6Day4 = {
         "A news article quotes only a company spokesperson about a factory's effects on the river. What's missing?",
       choices: [
         "Nothing — one source is enough.",
-        "The perspective of people who live near or use the river.",
+        "Bigger fonts.",
         "The factory's logo.",
-        "Bigger fonts."
+        "The perspective of people who live near or use the river."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "One perspective is partial. People affected by the river should be heard too.",
       hintLadder: [
         "Who else is affected?",
@@ -92,11 +92,11 @@ export const grade6WorldWeek6Day4 = {
         "Two students disagree about whether a school rule is fair. What's a respectful way to keep the conversation going?",
       choices: [
         "Yell over each other.",
-        "Each names what they see and what they value, then ask one specific question of the other.",
         "Stop talking to each other.",
+        "Each names what they see and what they value, then ask one specific question of the other.",
         "Vote and end it."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Naming values and asking specific questions turns disagreement into shared problem-solving.",
       hintLadder: [
         "How do you keep listening when you disagree?",
@@ -170,11 +170,11 @@ export const grade6WorldWeek6Day4 = {
           stem: "A news report on a new skatepark quotes only the city mayor praising it. What is the BEST way to describe this report?",
           choices: [
             "Complete and balanced — one official source is enough.",
-            "Biased toward lying about the skatepark.",
             "Partial — it's missing perspectives like neighbors, skaters, or nearby businesses.",
+            "Biased toward lying about the skatepark.",
             "Useless and should be ignored entirely."
           ],
-          answerIndex: 2,
+          answerIndex: 1,
           explanation: "One source isn't necessarily lying, but the report is partial: it leaves out other affected perspectives like neighbors, skaters, and local businesses.",
           hintLadder: [
             "Is one voice the whole picture?",

@@ -37,11 +37,11 @@ export const fallG7WorldW5D4 = {
       stem: "'9 out of 10 families choose us — don't be the only one left out!' Which technique is this, and why is the reasoning weak?",
       choices: [
         "Sound evidence — the number proves the product is best",
-        "Bandwagon — it pressures you to follow the crowd, but popularity doesn't prove quality",
         "A fair side-by-side comparison of products",
+        "Bandwagon — it pressures you to follow the crowd, but popularity doesn't prove quality",
         "A controlled scientific study"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "It's bandwagon: it pressures you to conform. The reasoning is weak because how many people choose something doesn't prove it's actually good.",
       hintLadder: [
         "What feeling does 'don't be left out' create?",
@@ -54,12 +54,12 @@ export const fallG7WorldW5D4 = {
       type: "multiple_choice",
       stem: "Which statement is a REASONED CLAIM (an opinion backed by evidence), not a bare fact or a bare opinion?",
       choices: [
-        "This is the most fun park ever.",
-        "The park covers 12 acres and opened in 2019.",
         "The park is worth expanding, because attendance has doubled since 2019 and weekend lines now top an hour.",
+        "The park covers 12 acres and opened in 2019.",
+        "This is the most fun park ever.",
         "Everyone loves this park."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "It takes a position ('worth expanding') AND supports it with evidence (doubled attendance, hour-long lines). The first and last are bare opinions; the second is a bare fact.",
       hintLadder: [
         "A reasoned claim = a position PLUS supporting evidence.",
@@ -172,11 +172,11 @@ export const fallG7WorldW5D4 = {
           stem: "A cider ad shows a beloved TV chef by a cozy fire saying 'This is the only cider MY family drinks,' but gives no facts about the cider. Which TWO techniques is it MAINLY stacking?",
           choices: [
             "Sound evidence and a controlled study",
-            "Testimonial (celebrity endorsement) and emotional appeal (cozy feeling)",
+            "Bandwagon and a fact-check",
             "A fair side-by-side comparison and statistics",
-            "Bandwagon and a fact-check"
+            "Testimonial (celebrity endorsement) and emotional appeal (cozy feeling)"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "It stacks a celebrity testimonial (the chef) with an emotional appeal (the cozy fireside mood) — and offers no actual evidence about the cider.",
           hintLadder: [
             "Who is speaking, and what feeling is the scene selling?",

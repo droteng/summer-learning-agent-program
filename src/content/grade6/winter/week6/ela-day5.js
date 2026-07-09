@@ -53,12 +53,12 @@ export const winterG6ElaW6D5 = {
       type: "multiple_choice",
       stem: "In a persuasive pitch, what is the job of EVIDENCE?",
       choices: [
-        "To repeat the claim in different words",
         "To back up a reason with something concrete, like a test result or measurement",
+        "To repeat the claim in different words",
         "To make the pitch longer",
         "To list the writer's feelings"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Evidence supports each reason with concrete facts — data, tests, examples — so the audience believes you.",
       hintLadder: [
         "Evidence answers 'how do you know?'",
@@ -167,11 +167,11 @@ export const winterG6ElaW6D5 = {
           stem: "A pitch reads: 'My sled is great. My sled is really great. You should like my sled.' What is this pitch MISSING most?",
           choices: [
             "A claim",
-            "Reasons and evidence to support the claim",
+            "A title",
             "Correct spelling",
-            "A title"
+            "Reasons and evidence to support the claim"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "It repeats the claim but never gives reasons or evidence — the support that makes a pitch persuasive.",
           hintLadder: [
             "It keeps saying the same opinion over and over.",

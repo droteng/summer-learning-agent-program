@@ -73,12 +73,12 @@ export const fallG7ElaW6D5 = {
       type: "multiple_choice",
       stem: "Why deliberately organize a description (e.g., whole-to-detail or base-to-tip)?",
       choices: [
-        "To make the writing longer",
         "So the reader assembles the image in a controlled, followable order",
+        "To make the writing longer",
         "Because there's a rule with no real reason",
         "To hide the most important detail at random"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A deliberate spatial or zooming order controls how the reader builds the picture, so the description stays coherent.",
       hintLadder: [
         "Imagine describing a face in random jumps.",
@@ -168,11 +168,11 @@ export const fallG7ElaW6D5 = {
           stem: "Which passage uses an EXTENDED metaphor (one comparison developed across sentences)?",
           choices: [
             "The pinecone was cool. It was also brown. It sat there.",
-            "The pinecone was a tiny brown fortress: its scales overlapped like armored plates, and each row climbed the walls in a tightening spiral toward the sealed gate at its tip.",
+            "The pinecone had many parts and existed on the ground.",
             "The pinecone was like a rock, then like a shoe, then like a cloud.",
-            "The pinecone had many parts and existed on the ground."
+            "The pinecone was a tiny brown fortress: its scales overlapped like armored plates, and each row climbed the walls in a tightening spiral toward the sealed gate at its tip."
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "It sustains ONE comparison — the pinecone as a fortress — developing it with plates, walls, and a gate across the sentence, which is what makes a metaphor extended.",
           hintLadder: [
             "Look for a SINGLE comparison that keeps going.",

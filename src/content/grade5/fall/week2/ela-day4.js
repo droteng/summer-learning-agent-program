@@ -35,12 +35,12 @@ export const fallG5ElaW2D4 = {
       type: "multiple_choice",
       stem: "Which is the BEST topic sentence for a paragraph about decomposers?",
       choices: [
-        "Decomposers are cool.",
-        "There are many things in nature.",
         "Decomposers are living things that break down dead plants and animals and put nutrients back in the soil.",
+        "There are many things in nature.",
+        "Decomposers are cool.",
         "I like mushrooms."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "It names the subject and clearly says what the paragraph will explain.",
       hintLadder: [
         "A topic sentence names the subject AND tells the point.",
@@ -67,11 +67,11 @@ export const fallG5ElaW2D4 = {
       stem: "You use the word 'producer' in your explanation. What should you do for a younger reader?",
       choices: [
         "Use it and move on",
-        "Explain it right away and give an example, like 'a producer is a plant that makes its own food, such as grass'",
+        "Skip explaining anything",
         "Change it to a harder word",
-        "Skip explaining anything"
+        "Explain it right away and give an example, like 'a producer is a plant that makes its own food, such as grass'"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Explaining the word right away with an example keeps your writing clear.",
       hintLadder: [
         "A younger reader may not know 'producer.'",
@@ -162,11 +162,11 @@ export const fallG5ElaW2D4 = {
           stem: "Which sentence best EXPLAINS a word for a younger reader the moment it is used?",
           choices: [
             "Decomposers are needed for nutrient cycling in ecosystems.",
-            "Decomposers, like mushrooms, are living things that break down dead plants and animals.",
             "Decomposers do their job well.",
+            "Decomposers, like mushrooms, are living things that break down dead plants and animals.",
             "You already know what decomposers are."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "It explains the word in plain language AND gives an example you can picture (mushrooms), which is exactly what a young reader needs.",
           hintLadder: [
             "Which option explains the word instead of assuming the reader knows it?",

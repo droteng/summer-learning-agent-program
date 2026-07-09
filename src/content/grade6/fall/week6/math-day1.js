@@ -63,11 +63,11 @@ export const fallG6MathW6D1 = {
       stem: "What is the RULE of the Fibonacci sequence?",
       choices: [
         "Add 1 each time",
-        "Multiply by 2 each time",
         "Each number is the sum of the two before it",
+        "Multiply by 2 each time",
         "Subtract 1 each time"
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "Fibonacci adds the previous two numbers to get the next.",
       hintLadder: [
         "Look at 2, 3, 5 — how do you get 5?",

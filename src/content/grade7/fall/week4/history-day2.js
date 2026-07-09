@@ -53,12 +53,12 @@ export const fallG7HistoryW4D2 = {
       type: "multiple_choice",
       stem: "A royal inscription praises the king who ordered it carved. This is an example of possible...",
       choices: [
-        "corroboration",
         "bias, because the author benefits from the message",
+        "corroboration",
         "prehistory",
         "a summary"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "When an author benefits from the message, the source may be biased and should be checked against independent evidence.",
       hintLadder: [
         "Who benefits from the record's message?",
@@ -73,11 +73,11 @@ export const fallG7HistoryW4D2 = {
       stem: "Two independent records — a Mesopotamian tablet and an Egyptian letter — both describe a trade agreement between the two regions. Why does this strengthen a historian's confidence?",
       choices: [
         "Because two records are always longer",
-        "Because independent sources corroborate each other, making the trade more likely to be real",
         "Because Egyptian records outrank Mesopotamian ones",
+        "Because independent sources corroborate each other, making the trade more likely to be real",
         "Because older records are automatically correct"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Independent corroboration — two unrelated sources agreeing — is strong evidence a claim is accurate.",
       hintLadder: [
         "What do the two records have in common?",
@@ -165,11 +165,11 @@ export const fallG7HistoryW4D2 = {
           stem: "A king's inscription and an enemy kingdom's letter BOTH mention a battle, but disagree on who won. What is the BEST historian move?",
           choices: [
             "Believe the king's own inscription because it's carved in stone",
-            "Recognize both authors are biased toward their own side and look for a neutral third source or physical evidence",
+            "Decide the battle never happened",
             "Believe the letter because letters are private",
-            "Decide the battle never happened"
+            "Recognize both authors are biased toward their own side and look for a neutral third source or physical evidence"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Both sources are biased toward their own side. Corroborating with a neutral source or archaeology is the sound move — and the shared mention still confirms a battle occurred.",
           hintLadder: [
             "Why might EACH side slant the story?",

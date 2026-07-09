@@ -35,12 +35,12 @@ export const springG6WorldW7D4 = {
       type: "multiple_choice",
       stem: "A city is covered by thick smog that makes it hard to breathe. Which environmental issue is this?",
       choices: [
-        "Habitat loss",
         "Air pollution",
+        "Habitat loss",
         "A water shortage",
         "Too many trees"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Smog is harmful particles and gases in the air — that is air pollution.",
       hintLadder: [
         "What part of the environment is affected — air, water, or land?",
@@ -165,11 +165,11 @@ export const springG6WorldW7D4 = {
           stem: "Coral reefs around the world are dying, leaving thousands of fish species without a home. This is mainly an example of:",
           choices: [
             "A water shortage on land",
-            "Habitat loss in the ocean",
+            "A community response",
             "Too much clean water",
-            "A community response"
+            "Habitat loss in the ocean"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Reefs are the home (habitat) of many ocean species; when reefs die, those species lose their habitat — habitat loss.",
           hintLadder: [
             "A reef is a HOME for ocean animals.",

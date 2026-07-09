@@ -78,11 +78,11 @@ export const springG6MathW6D3 = {
       stem: "Why does exponential (doubling) growth eventually shoot far past linear (adding) growth?",
       choices: [
         "Doubling always starts with a bigger number",
-        "Each step, doubling adds MORE than the last step, while adding a fixed amount always adds the same",
+        "They actually grow at the same rate forever",
         "Linear growth stops after a few steps",
-        "They actually grow at the same rate forever"
+        "Each step, doubling adds MORE than the last step, while adding a fixed amount always adds the same"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Doubling's added amount grows each step (2→4 adds 2, 16→32 adds 16), so it accelerates past the steady linear climb.",
       hintLadder: [
         "How much does +3 add each step? Always the same.",

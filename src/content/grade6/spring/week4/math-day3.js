@@ -64,12 +64,12 @@ export const springG6MathW4D3 = {
       type: "multiple_choice",
       stem: "A cross gives 2 purple-flowered boxes and 2 white-flowered boxes. What is the ratio of purple to white, and the percent chance of purple?",
       choices: [
-        "1:1 ratio, 50% purple",
         "3:1 ratio, 75% purple",
+        "1:1 ratio, 50% purple",
         "2:1 ratio, 66% purple",
         "1:2 ratio, 25% purple"
       ],
-      answerIndex: 0,
+      answerIndex: 1,
       explanation: "2 purple to 2 white reduces to 1:1. Purple is 2 out of 4 = 2 ÷ 4 = 0.50 = 50%.",
       hintLadder: [
         "Compare 2 purple to 2 white — simplify the ratio.",

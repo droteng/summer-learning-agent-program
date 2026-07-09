@@ -57,10 +57,10 @@ export const winterG7ElaW4D5 = {
       choices: [
         "The Moon is definitely the prettiest thing in the sky.",
         "I think everyone should stare at the Moon more.",
-        "The Moon, Earth's only natural satellite, completes one orbit about every 27.3 days, which keeps the same face turned toward us.",
-        "The Moon makes me feel calm at night."
+        "The Moon makes me feel calm at night.",
+        "The Moon, Earth's only natural satellite, completes one orbit about every 27.3 days, which keeps the same face turned toward us."
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "It states verifiable facts with precise vocabulary (natural satellite, orbit) and links them cohesively. The others are opinions or feelings that don't belong in a fact-based explainer.",
       hintLadder: [
         "Which sentence gives checkable facts, not feelings?",
@@ -74,11 +74,11 @@ export const winterG7ElaW4D5 = {
       stem: "Which choice is a COHESION device that clarifies the RELATIONSHIP between two ideas in an explainer?",
       choices: [
         "Suddenly the dragon roared",
-        "As a result",
         "The End",
+        "As a result",
         "Once upon a time"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "'As a result' signals a cause-and-effect relationship, linking ideas cohesively — exactly the work transitions do in informational writing. The others belong to stories.",
       hintLadder: [
         "A cohesion device shows HOW two ideas relate (cause, contrast, addition).",
@@ -172,12 +172,12 @@ export const winterG7ElaW4D5 = {
           type: "multiple_choice",
           stem: "Which sentence makes the BEST concluding statement for an explainer whose controlling idea is that Saturn's rings make it uniquely recognizable?",
           choices: [
-            "And that's why I love Saturn the most.",
             "Composed of countless ice and rock particles that brightly reflect sunlight, Saturn's rings give it a silhouette no other planet shares.",
+            "And that's why I love Saturn the most.",
             "Saturn is a planet with some stuff around it.",
             "Once, a space wizard flew through the rings and vanished."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "It reinforces the controlling idea (unique recognizability) with precise, evidence-based detail — the job of a strong conclusion. The others are opinion, too vague, or fictional.",
           hintLadder: [
             "A conclusion should reinforce the controlling idea with a fact.",

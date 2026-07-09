@@ -37,11 +37,11 @@ export const fallG5MathW5D3 = {
       stem: "A bar graph makes a small difference look gigantic. What is the most common trick?",
       choices: [
         "Using bright colors",
-        "The bottom of the graph does not start at zero",
         "Too many labels",
+        "The bottom of the graph does not start at zero",
         "Bars that are too thin"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Starting the bottom above zero stretches small differences so they look dramatic.",
       hintLadder: [
         "It is about the scale, not the colors.",
@@ -68,12 +68,12 @@ export const fallG5MathW5D3 = {
       type: "multiple_choice",
       stem: "'9 out of 10 kids like our snack!' — but they only asked 10 kids total. Why might this be misleading?",
       choices: [
-        "10 is plenty of people",
         "Asking only 10 kids is too few to speak for all kids",
+        "10 is plenty of people",
         "The snack is healthy",
         "Percents are always wrong"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A tiny group cannot fairly stand in for everyone — the result might not be true for a bigger group.",
       hintLadder: [
         "How many kids did they actually ask?",

@@ -55,11 +55,11 @@ export const summerG7ScienceW5D2 = {
       stem: "A company invents a single-use plastic straw that is cheap and waterproof. What is the main ENVIRONMENTAL trade-off?",
       choices: [
         "It is too expensive for most people",
-        "It creates long-lasting waste that pollutes ecosystems for centuries",
+        "It has no downside at all",
         "It uses only renewable sunlight",
-        "It has no downside at all"
+        "It creates long-lasting waste that pollutes ecosystems for centuries"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "The benefit (cheap, waterproof) comes with a cost: plastic persists in the environment for a very long time, harming ecosystems. Every design choice has trade-offs.",
       hintLadder: [
         "A trade-off is a downside that comes WITH the benefit.",
@@ -73,12 +73,12 @@ export const summerG7ScienceW5D2 = {
       type: "multiple_choice",
       stem: "Which design choice BEST fits the definition of sustainability?",
       choices: [
-        "Using as much nonrenewable material as possible to make it cheap",
         "Designing a product to be reused and repaired instead of thrown away",
+        "Using as much nonrenewable material as possible to make it cheap",
         "Ignoring pollution to speed up production",
         "Using a resource faster than it can be replaced"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Sustainability means meeting needs without using up future resources. Reusing and repairing reduces resource use and waste.",
       hintLadder: [
         "Sustainability protects resources for future generations.",
@@ -174,11 +174,11 @@ export const summerG7ScienceW5D2 = {
           stem: "A city replaces gas buses with electric buses charged from a SOLAR array. Which statement best describes the systems trade-off?",
           choices: [
             "There is no trade-off — it is perfect in every way",
-            "It cuts tailpipe pollution and uses renewable energy, but building the buses and panels still takes materials and energy up front",
             "It uses more gasoline than before",
+            "It cuts tailpipe pollution and uses renewable energy, but building the buses and panels still takes materials and energy up front",
             "It makes the air dirtier"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "The switch reduces pollution and taps a renewable source (big benefits), but manufacturing the buses and solar panels still requires materials and energy — a real, smaller trade-off.",
           hintLadder: [
             "Even a clean solution has SOME cost — where is it hiding?",

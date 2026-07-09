@@ -53,12 +53,12 @@ export const springG6ElaW4D5 = {
       type: "multiple_choice",
       stem: "Which word signals a CAUSE-AND-EFFECT relationship?",
       choices: [
-        "Meanwhile",
         "Because",
+        "Meanwhile",
         "For example",
         "In addition"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "'Because' links a cause to its effect. The others signal time, examples, or added details.",
       hintLadder: [
         "You want a word that connects a reason to a result.",
@@ -72,11 +72,11 @@ export const springG6ElaW4D5 = {
       stem: "Which sentence uses PRECISE science vocabulary to explain inheritance?",
       choices: [
         "The baby got its looks from some stuff inside it.",
-        "The offspring inherited the recessive allele from both parents, so it showed the blue-eyed trait.",
+        "It happened for no clear reason.",
         "The kid just looks like the parents somehow.",
-        "It happened for no clear reason."
+        "The offspring inherited the recessive allele from both parents, so it showed the blue-eyed trait."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "It uses exact terms — offspring, recessive allele, inherited, trait — and a cause/effect link ('so'), making the explanation clear and precise.",
       hintLadder: [
         "Which sentence uses exact genetics words?",

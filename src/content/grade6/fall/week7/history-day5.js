@@ -35,11 +35,11 @@ export const fallG6HistoryW7D5 = {
       stem: "On a cause-and-effect map, an arrow between two boxes means...",
       choices: [
         "they happened on the same day",
-        "the first event led to (caused) the second",
+        "the second is older",
         "they are unrelated",
-        "the second is older"
+        "the first event led to (caused) the second"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Arrows show direction of causation: the first led to the second.",
       hintLadder: [
         "Arrows show direction.",
@@ -52,12 +52,12 @@ export const fallG6HistoryW7D5 = {
       type: "multiple_choice",
       stem: "If an event box has TWO arrows pointing INTO it, that shows...",
       choices: [
-        "the event had two causes",
         "the event had two effects",
+        "the event had two causes",
         "the map is wrong",
         "the event never happened"
       ],
-      answerIndex: 0,
+      answerIndex: 1,
       explanation: "Arrows in = causes; two arrows in means two causes contributed to that event.",
       hintLadder: [
         "Arrows IN come from causes.",
@@ -71,12 +71,12 @@ export const fallG6HistoryW7D5 = {
       type: "multiple_choice",
       stem: "What makes a cause-effect map an EXPLANATION, not just a diagram?",
       choices: [
-        "Bright colors",
         "Labeling arrows with a short 'why' for each link",
+        "Bright colors",
         "Using many boxes",
         "Making it large"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Labeling each arrow with the reason turns connections into explanations.",
       hintLadder: [
         "A diagram shows; an explanation tells why.",
@@ -165,11 +165,11 @@ export const fallG6HistoryW7D5 = {
           stem: "On a cause-effect map, an event box has TWO arrows pointing OUT of it. What does that show?",
           choices: [
             "The event had two causes",
-            "The event led to two different effects",
             "The map is drawn incorrectly",
+            "The event led to two different effects",
             "The two boxes happened at the same time"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Arrows OUT point to effects, so two arrows out means the event caused two different results.",
           hintLadder: [
             "Arrows OUT lead to effects.",

@@ -56,10 +56,10 @@ export const winterG6ElaW3D5 = {
       choices: [
         "Do the stuff with the ramp thing.",
         "Put it up somehow.",
-        "Next, slide the crate slowly up the ramp until it reaches the top of the platform.",
-        "Get the crate up there."
+        "Get the crate up there.",
+        "Next, slide the crate slowly up the ramp until it reaches the top of the platform."
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "It uses a sequence word ('Next'), a precise verb ('slide'), and specific details a reader can actually follow.",
       hintLadder: [
         "Which one names exactly what to do and in what order?",
@@ -73,12 +73,12 @@ export const winterG6ElaW3D5 = {
       type: "multiple_choice",
       stem: "Why do sequence words like FIRST, NEXT, THEN, and FINALLY matter in how-it-works writing?",
       choices: [
-        "They make the writing longer",
         "They show the reader the correct ORDER of the steps",
+        "They make the writing longer",
         "They add emotion to the story",
         "They are only used in poems"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Sequence words signal the order of steps so the reader performs them in the right order.",
       hintLadder: [
         "What would happen if the steps were out of order?",
@@ -168,11 +168,11 @@ export const winterG6ElaW3D5 = {
           stem: "A student's how-it-works paragraph lists the steps in the WRONG order. What is the best fix?",
           choices: [
             "Add more adjectives to describe the machine",
-            "Reorder the steps into the true sequence and add sequence words (first, next, then, finally)",
             "Make the paragraph shorter by deleting steps",
+            "Reorder the steps into the true sequence and add sequence words (first, next, then, finally)",
             "Change it into a persuasive essay"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Procedural writing must follow the real order of the process, and sequence words help the reader track that order.",
           hintLadder: [
             "The main problem is the ORDER of the steps.",

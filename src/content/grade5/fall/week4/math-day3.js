@@ -76,12 +76,12 @@ export const fallG5MathW4D3 = {
       type: "multiple_choice",
       stem: "Why is place value a better way to write numbers than tally marks?",
       choices: [
-        "Tally marks are not allowed",
         "Place value can write very big numbers with just a few digits",
+        "Tally marks are not allowed",
         "Tally marks use more colors",
         "Place value only works for small numbers"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Place value writes 1,000 with just 4 digits; tally marks would need 1,000 marks.",
       hintLadder: [
         "Imagine tallying one thousand.",

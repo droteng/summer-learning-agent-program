@@ -35,12 +35,12 @@ export const summerG7HistoryW6D5 = {
       type: "multiple_choice",
       stem: "What does 'historical context' give the reader of an explainer?",
       choices: [
-        "A prediction of exactly what will happen next",
         "The background of past events that helped cause the current issue",
+        "A prediction of exactly what will happen next",
         "The writer's personal opinion about who is right",
         "A list of unrelated old facts"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Historical context is the relevant past background that helps explain why a current issue exists.",
       hintLadder: [
         "The word 'historical' points to the PAST.",
@@ -54,11 +54,11 @@ export const summerG7HistoryW6D5 = {
       stem: "A country's water dispute is set off this summer by a sudden drought, but the deeper reason is a border drawn 60 years ago. Which is the LONG-TERM cause?",
       choices: [
         "The sudden drought this summer",
-        "The border drawn 60 years ago",
+        "The weather forecast for tomorrow",
         "A news report published today",
-        "The weather forecast for tomorrow"
+        "The border drawn 60 years ago"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "The 60-year-old border built up the conditions over time — that's the long-term cause. The drought is the short-term trigger.",
       hintLadder: [
         "Long-term causes build up over many years.",
@@ -73,11 +73,11 @@ export const summerG7HistoryW6D5 = {
       stem: "Why does leaving out historical context make an explainer LESS fair?",
       choices: [
         "It makes the explainer longer than needed",
-        "Readers can't understand why people feel the way they do, so one side may look unreasonable",
         "History is always boring to readers",
+        "Readers can't understand why people feel the way they do, so one side may look unreasonable",
         "It uses up too many transition words"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Without context, a current event seems to come from nowhere, and a group's actions may look unreasonable when history explains them.",
       hintLadder: [
         "What does a reader miss without the backstory?",

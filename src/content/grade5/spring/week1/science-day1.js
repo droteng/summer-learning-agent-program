@@ -75,11 +75,11 @@ export const springG5ScienceW1D1 = {
       stem: "A bear wakes up from its long winter sleep in spring. Which need is now MUCH easier to meet than in deep winter?",
       choices: [
         "Air to breathe",
-        "Finding food, as plants and bugs come back",
+        "Sunlight to make its own food",
         "Gravity",
-        "Sunlight to make its own food"
+        "Finding food, as plants and bugs come back"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Spring brings back food — new plants and bugs — so finding food gets much easier. (Bears are animals, so they cannot make their own food.)",
       hintLadder: [
         "What is hard for a bear to find in deep winter?",
@@ -167,11 +167,11 @@ export const springG5ScienceW1D1 = {
           stem: "A gardener says, 'My plant got bigger, so it must have eaten a lot of soil.' What is the best correction?",
           choices: [
             "The gardener is right — plants eat soil",
-            "Most of a plant is built from air and water using sunlight, not from eating soil",
             "Plants grow only from what they eat as seeds",
+            "Most of a plant is built from air and water using sunlight, not from eating soil",
             "Plants do not really get bigger"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Plants make their own food from air and water using light. Soil gives some nutrients, but the plant does not 'eat' it as food.",
           hintLadder: [
             "Does the soil in a pot drop a lot as a plant gets big?",

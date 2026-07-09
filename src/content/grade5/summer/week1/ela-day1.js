@@ -40,12 +40,12 @@ export const summerG5ElaW1D1 = {
       type: "multiple_choice",
       stem: "Which sentence is a claim?",
       choices: [
-        "The school day starts at 8 AM.",
-        "Pizza has cheese on it.",
         "Kids learn more when recess is longer.",
+        "Pizza has cheese on it.",
+        "The school day starts at 8 AM.",
         "There are 12 months in a year."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "A claim is something you can agree or disagree with. Kids learn more when recess is longer can be argued, so it is the claim. The others are plain facts.",
       hintLadder: [
         "Which sentence could you agree or disagree with?",
@@ -61,10 +61,10 @@ export const summerG5ElaW1D1 = {
       choices: [
         "Recess is fun.",
         "Many kids at our school like recess.",
-        "Kids who take a break do better on the work right after.",
-        "My teacher said recess is important."
+        "My teacher said recess is important.",
+        "Kids who take a break do better on the work right after."
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "Strong evidence is specific and connects to the claim. Kids doing better right after a break supports the focus-in-class claim.",
       hintLadder: [
         "Which choice connects a break to doing better on work?",
@@ -97,11 +97,11 @@ export const summerG5ElaW1D1 = {
       stem: "What is missing from this sentence: Sleep is important for kids.",
       choices: [
         "A period",
-        "A capital letter",
         "Evidence to back it up",
+        "A capital letter",
         "A person's name"
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "The sentence makes a claim but gives no evidence. Strong writing adds a fact, example, or reason.",
       hintLadder: [
         "The sentence makes a claim. What does strong writing add to a claim?",
@@ -183,12 +183,12 @@ export const summerG5ElaW1D1 = {
           type: "multiple_choice",
           stem: "Claim: Reading every day helps you learn new words. Which is the BEST evidence?",
           choices: [
-            "Reading is fun.",
             "Kids who read 20 minutes a day learned more new words on a class test.",
+            "Reading is fun.",
             "My friend likes books.",
             "Everyone knows reading is good."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Specific, real information tied to the claim is the strongest evidence.",
           hintLadder: [
             "Strong evidence is specific and matches the claim.",

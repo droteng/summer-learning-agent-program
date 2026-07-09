@@ -61,10 +61,10 @@ export const grade6ScienceWeek1Day2 = {
       choices: [
         "Use ice cubes the same size.",
         "Put one cube on metal and one on wood.",
-        "Make sure the room is the same temperature for both cubes.",
-        "Use a big cube on metal and a tiny cube on wood."
+        "Use a big cube on metal and a tiny cube on wood.",
+        "Make sure the room is the same temperature for both cubes."
       ],
-      answerIndex: 3,
+      answerIndex: 2,
       explanation:
         "If the cubes are different sizes, the size — not the surface — could be why one melts faster. A fair test changes only one thing at a time.",
       hintLadder: [
@@ -94,8 +94,8 @@ export const grade6ScienceWeek1Day2 = {
       type: "multiple_choice",
       stem:
         "Three trials of a paper airplane flight measured 4.5 m, 5.0 m, and 5.5 m. What's the average distance?",
-      choices: ["4.5 m", "5.0 m", "5.5 m", "15.0 m"],
-      answerIndex: 1,
+      choices: ["4.5 m", "15.0 m", "5.5 m", "5.0 m"],
+      answerIndex: 3,
       explanation: "Add the distances and divide by the number of trials: (4.5 + 5.0 + 5.5) ÷ 3 = 15 ÷ 3 = 5.0 m.",
       hintLadder: [
         "Add up the three distances first.",
@@ -182,12 +182,12 @@ export const grade6ScienceWeek1Day2 = {
           type: "multiple_choice",
           stem: "To test if a fertilizer helps tomatoes grow, which makes the test FAIR?",
           choices: [
-            "Give one plant more water AND fertilizer",
             "Keep everything the same except the fertilizer",
+            "Give one plant more water AND fertilizer",
             "Use two different plant types",
             "Put one plant in sun and one in shade"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Only the fertilizer should differ, so any change is caused by the fertilizer alone.",
           hintLadder: [
             "A fair test changes only ONE thing.",

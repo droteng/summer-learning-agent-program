@@ -36,12 +36,12 @@ export const grade6StudyDay5 = {
       type: "multiple_choice",
       stem: "Which is the BEST goal?",
       choices: [
-        "Be good at piano.",
         "Practice piano for 20 minutes 5 days a week and learn 'Für Elise' in 4 weeks.",
+        "Be good at piano.",
         "Try harder.",
         "Get better."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Specific (Für Elise), measurable (20 min × 5 days), time-bound (4 weeks). The others can't be checked.",
       hintLadder: [
         "Skip vague options.",
@@ -74,11 +74,11 @@ export const grade6StudyDay5 = {
         "Your goal was 6 books in 8 weeks. After 4 weeks, you've finished 2. Best move:",
       choices: [
         "Give up.",
-        "Adjust: pick 4 total books and finish strong, OR add 30 min/day to catch up — but decide on purpose.",
+        "Restart from scratch.",
         "Pretend you're on track.",
-        "Restart from scratch."
+        "Adjust: pick 4 total books and finish strong, OR add 30 min/day to catch up — but decide on purpose."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Mid-flight adjustment beats quitting OR pretending. Decide whether to shrink the goal or add time.",
       hintLadder: [
         "Don't quit and don't lie.",
@@ -93,11 +93,11 @@ export const grade6StudyDay5 = {
       stem: "When a goal is HIT, what's the right next step?",
       choices: [
         "Set a much bigger goal immediately.",
-        "Celebrate briefly, write what worked, then pick the next goal one step bigger.",
         "Coast for a month.",
+        "Celebrate briefly, write what worked, then pick the next goal one step bigger.",
         "Tell everyone you've peaked."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Pause to learn, then build on it. Skipping the learning step wastes the goal.",
       hintLadder: [
         "What's the cheap-but-skipped step?",

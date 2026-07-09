@@ -36,11 +36,11 @@ export const fallG7ElaW4D4 = {
       stem: "Which BEST shows synthesis of two sources — Source A: 'Mesopotamians built city walls for defense.' Source B: 'Walls also held back river floods.'?",
       choices: [
         "Mesopotamians built city walls for defense. (only Source A, copied)",
-        "Mesopotamian walls served two purposes — defending against raiders and holding back floods (Sources A and B).",
+        "Source B is about floods.",
         "Walls are tall structures.",
-        "Source B is about floods."
+        "Mesopotamian walls served two purposes — defending against raiders and holding back floods (Sources A and B)."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Synthesis combines the key idea of BOTH sources into one summary, in the writer's own words, with a citation.",
       hintLadder: [
         "Synthesis blends more than one source.",
@@ -73,11 +73,11 @@ export const fallG7ElaW4D4 = {
       stem: "Two sources DISAGREE on a civilization's population. What should your fact-file do?",
       choices: [
         "Pick one number secretly and hide the other",
-        "Note both figures, cite each source, and flag that they conflict",
         "Leave population out entirely",
+        "Note both figures, cite each source, and flag that they conflict",
         "Average them without saying so"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Honest research reports the disagreement and cites both, letting the reader see the uncertainty.",
       hintLadder: [
         "Hiding a conflict is dishonest research.",
@@ -165,12 +165,12 @@ export const fallG7ElaW4D4 = {
           type: "multiple_choice",
           stem: "Source A (a museum site) says the wheel spread from Mesopotamia; Source B (an anonymous blog with no citations) says it came from somewhere else. How should a careful researcher handle this?",
           choices: [
-            "Believe the blog because it's newer",
             "Weight the museum source more (expert, cited) but note the disagreement and seek a third source to corroborate",
+            "Believe the blog because it's newer",
             "Average the two claims",
             "Ignore both and guess"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Credibility differs: the cited expert source outweighs an anonymous uncited one, but a careful researcher still notes the conflict and corroborates.",
           hintLadder: [
             "Are both sources equally credible? Check author and citations.",

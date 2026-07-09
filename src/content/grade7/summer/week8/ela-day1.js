@@ -72,12 +72,12 @@ export const summerG7ElaW8D1 = {
       type: "multiple_choice",
       stem: "You'll present your capstone to a panel of PARENTS. How should that audience change your plan?",
       choices: [
-        "It shouldn't change anything — a plan is a plan.",
-        "Use more slang so it feels casual.",
         "Choose evidence and vocabulary the panel will trust and understand, and anticipate the questions parents are likely to ask.",
+        "Use more slang so it feels casual.",
+        "It shouldn't change anything — a plan is a plan.",
         "Remove your thesis so you don't sound pushy."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "Audience shapes evidence, tone, and which objections you prepare for — the core of persuasive planning.",
       hintLadder: [
         "Who you're speaking to changes what convinces them.",
@@ -166,11 +166,11 @@ export const summerG7ElaW8D1 = {
           stem: "A student writes: 'My capstone will cover everything about climate change for anyone who watches.' What is the BIGGEST planning flaw?",
           choices: [
             "It has too narrow a scope.",
-            "The scope is far too broad and the audience is undefined, so the project can't be focused or finished well.",
+            "There is nothing wrong with it.",
             "It uses the word 'capstone.'",
-            "There is nothing wrong with it."
+            "The scope is far too broad and the audience is undefined, so the project can't be focused or finished well."
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "'Everything' for 'anyone' means no scope boundary and no real audience — the two things that make a capstone finishable and persuasive.",
           hintLadder: [
             "Check the scope: what's left OUT?",

@@ -37,11 +37,11 @@ export const springG5ElaW7D3 = {
       stem: "Which revision uses the STRONGEST, clearest word choice?",
       choices: [
         "Pollution is bad for the water.",
-        "Oil spills poison rivers and harm the fish that live in them.",
+        "Water stuff is not great.",
         "The water gets kind of messed up sometimes.",
-        "Water stuff is not great."
+        "Oil spills poison rivers and harm the fish that live in them."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Clear, powerful words ('poison,' 'harm') and specific nouns make the writing vivid and convincing. The others are fuzzy.",
       hintLadder: [
         "Look for clear, powerful verbs and specific nouns.",
@@ -73,12 +73,12 @@ export const springG5ElaW7D3 = {
       type: "multiple_choice",
       stem: "Which sentence is the strongest CALL TO ACTION to end an environmental piece?",
       choices: [
-        "In conclusion, the environment is important to think about.",
-        "Thank you for reading my essay.",
         "Bring a reusable bag to the store this week and ask your family to do the same.",
+        "Thank you for reading my essay.",
+        "In conclusion, the environment is important to think about.",
         "There are many issues in the world today."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "A call to action tells the reader a specific, doable next step. The others just wrap up or thank the reader.",
       hintLadder: [
         "A call to action tells the reader what to DO.",
@@ -166,11 +166,11 @@ export const springG5ElaW7D3 = {
           stem: "Which sentence BEST names an objection and answers it?",
           choices: [
             "Recycling is good and everyone should do it.",
-            "Some say recycling takes too much effort, but sorting a few bins for five minutes a week keeps a lot of waste out of landfills.",
             "I think recycling is really important.",
+            "Some say recycling takes too much effort, but sorting a few bins for five minutes a week keeps a lot of waste out of landfills.",
             "Landfills are getting very full these days."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "It names the objection ('takes too much effort') and answers it with a benefit — exactly how you answer an objection.",
           hintLadder: [
             "Look for the sentence that names the OTHER side, then replies.",

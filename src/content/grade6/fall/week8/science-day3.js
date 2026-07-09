@@ -51,8 +51,8 @@ export const fallG6ScienceW8D3 = {
       id: "g6.fall.sci.w8.d3.q2",
       type: "multiple_choice",
       stem: "In a food web, roughly how much energy passes from one level to the next?",
-      choices: ["About 90%", "About 50%", "About 10%", "100%"],
-      answerIndex: 2,
+      choices: ["About 90%", "About 50%", "100%", "About 10%"],
+      answerIndex: 3,
       explanation: "About 10% passes up each level; the rest is used for living and lost as heat.",
       hintLadder: [
         "Recall the energy pyramid.",
@@ -65,12 +65,12 @@ export const fallG6ScienceW8D3 = {
       type: "multiple_choice",
       stem: "Removing a keystone species from an ecosystem most likely...",
       choices: [
-        "has no effect",
         "can cause big ripples that disrupt the whole web",
+        "has no effect",
         "makes all other species stronger",
         "adds more sunlight"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Keystone species hold the web together; losing one can collapse parts of the ecosystem.",
       hintLadder: [
         "Recall sea otters and kelp.",

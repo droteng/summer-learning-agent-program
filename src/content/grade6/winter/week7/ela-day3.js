@@ -35,11 +35,11 @@ export const winterG6ElaW7D3 = {
       stem: "Which line reveals a character's bravery INDIRECTLY (through what they say or do) instead of just telling us?",
       choices: [
         "Sam was a very brave person.",
-        "Everyone knew Sam was brave.",
         "\"Tie the rope to me — I'll test the ice first,\" Sam said, already stepping onto the frozen lake.",
+        "Everyone knew Sam was brave.",
         "Sam felt brave inside."
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "The line shows bravery through Sam's words and action (volunteering to test the ice) rather than flatly stating it.",
       hintLadder: [
         "Which one SHOWS bravery through a choice or words?",
@@ -52,12 +52,12 @@ export const winterG6ElaW7D3 = {
       type: "multiple_choice",
       stem: "Which sentence is punctuated CORRECTLY as dialogue?",
       choices: [
-        "\"We have to hurry\" she whispered.",
         "\"We have to hurry,\" she whispered.",
+        "\"We have to hurry\" she whispered.",
         "We have to hurry, \"she whispered.\"",
         "\"We have to hurry.\" she whispered."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "The comma goes inside the closing quotation mark, and the dialogue tag ('she whispered') continues the sentence in lowercase.",
       hintLadder: [
         "Where should the comma go — inside or outside the quotes?",
@@ -72,11 +72,11 @@ export const winterG6ElaW7D3 = {
       stem: "When should you start a NEW paragraph in a scene of dialogue?",
       choices: [
         "Every time the same person keeps talking",
-        "Each time a DIFFERENT person begins to speak",
+        "Never — dialogue stays in one paragraph",
         "Only at the very end of the conversation",
-        "Never — dialogue stays in one paragraph"
+        "Each time a DIFFERENT person begins to speak"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A new paragraph each time the speaker changes helps readers track who is talking.",
       hintLadder: [
         "The rule is about keeping speakers clear for the reader.",
@@ -170,11 +170,11 @@ export const winterG6ElaW7D3 = {
           stem: "Which sentence correctly punctuates dialogue that comes AFTER the tag?",
           choices: [
             "She turned and said \"the ice won't hold.\"",
-            "She turned and said, \"The ice won't hold.\"",
             "She turned and said, \"the ice won't hold\".",
+            "She turned and said, \"The ice won't hold.\"",
             "She turned and said \"The ice won't hold\"."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "A comma follows the tag, the first spoken word is capitalized, and the period sits inside the closing quotation mark.",
           hintLadder: [
             "There should be a comma after 'said' before the quote.",

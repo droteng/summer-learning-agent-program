@@ -38,11 +38,11 @@ export const winterG5ElaW8D1 = {
       stem: "Which is the BEST small topic for a one-week capstone project?",
       choices: [
         "Explain everything about winter, space, and energy.",
-        "Explain why a frozen lake stays liquid at the very bottom.",
         "Winter is cold.",
+        "Explain why a frozen lake stays liquid at the very bottom.",
         "Do a project."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "It is ONE clear idea you can explain and finish in a week. The others are too big, just a fact, or not really a topic.",
       hintLadder: [
         "A good topic is small enough to finish in a week.",
@@ -55,12 +55,12 @@ export const winterG5ElaW8D1 = {
       type: "multiple_choice",
       stem: "Why does knowing your AUDIENCE change how you plan your talk?",
       choices: [
-        "It doesn't — you talk the same way to everyone.",
         "It tells you how much to explain and which hard words to spell out.",
+        "It doesn't — you talk the same way to everyone.",
         "It only decides the color of your poster.",
         "It only matters for the teacher's grade."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Your audience helps you pick your words and decide how much to explain. Family and classmates may need some science words explained.",
       hintLadder: [
         "Think about who is listening.",
@@ -75,11 +75,11 @@ export const winterG5ElaW8D1 = {
       stem: "Which of these is a real CHECKLIST item (something you can check off yes or no)?",
       choices: [
         "Make it good.",
-        "Try hard.",
         "Include at least one labeled picture and finish in under 4 minutes.",
+        "Try hard.",
         "Winter."
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "A checklist item is clear — you can look and say yes or no. 'Make it good' and 'try hard' can't be checked off.",
       hintLadder: [
         "A checklist item is something you can mark yes or no.",
@@ -174,11 +174,11 @@ export const winterG5ElaW8D1 = {
           stem: "A student's plan says: 'Topic: winter. Audience: people. Goal: be good.' What is the BIGGEST problem with it?",
           choices: [
             "It is way too long.",
-            "The topic, audience, and goal are all too fuzzy to guide the work or be checked.",
+            "Nothing — it is a great plan.",
             "It has no title.",
-            "Nothing — it is a great plan."
+            "The topic, audience, and goal are all too fuzzy to guide the work or be checked."
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Every part is fuzzy: 'winter' is too big, 'people' isn't a real audience, and 'be good' can't be checked. A strong plan is clear and checkable.",
           hintLadder: [
             "Check each part: is it clear enough to act on?",

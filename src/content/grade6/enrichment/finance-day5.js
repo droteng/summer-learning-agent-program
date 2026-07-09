@@ -37,12 +37,12 @@ export const grade6FinanceDay5 = {
       type: "multiple_choice",
       stem: "What's PROFIT in a simple business?",
       choices: [
-        "Total money the customer pays.",
         "Money left after subtracting costs from revenue.",
+        "Total money the customer pays.",
         "The cost of materials.",
         "Whatever's in the cash box at the end of the day."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Profit = revenue minus costs. Cash on hand isn't the same as profit (you might have unpaid bills).",
       hintLadder: [
         "What goes in vs what goes out?",

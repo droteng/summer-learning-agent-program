@@ -38,11 +38,11 @@ export const springG7ElaW8D1 = {
       stem: "Which of these is a THESIS (an arguable claim) rather than just a topic or question?",
       choices: [
         "My capstone is about how caterpillars change.",
-        "How does a caterpillar become a butterfly?",
         "Metamorphosis proves that dramatic change is really built from many small, ordered stages — not one sudden leap.",
+        "How does a caterpillar become a butterfly?",
         "Caterpillars and butterflies are interesting."
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "A thesis takes a defendable position. The others are a topic, a question, and an opinion with nothing to defend — only the third makes a claim you could argue with evidence.",
       hintLadder: [
         "A thesis is something someone could disagree with and you'd defend.",
@@ -55,12 +55,12 @@ export const springG7ElaW8D1 = {
       type: "multiple_choice",
       stem: "Why does AUDIENCE ANALYSIS (not just naming the audience) strengthen a Grade 7 capstone?",
       choices: [
-        "It doesn't change anything about the project.",
         "It reveals what the audience already believes and might resist, so you can choose evidence that actually shifts them.",
+        "It doesn't change anything about the project.",
         "It only affects how long the project is.",
         "It matters solely for the final grade."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Analyzing what an audience already thinks — and where they'll push back — lets you select framing and evidence that genuinely persuades, rather than presenting into a vacuum.",
       hintLadder: [
         "Naming the audience is step one; analysis asks what they THINK.",
@@ -76,10 +76,10 @@ export const springG7ElaW8D1 = {
       choices: [
         "Make the project really good.",
         "Try my hardest and be creative.",
-        "Defends my thesis with at least three of my own data points AND addresses one alternative explanation.",
-        "Include lots of pictures."
+        "Include lots of pictures.",
+        "Defends my thesis with at least three of my own data points AND addresses one alternative explanation."
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "It's checkable (count the data points, find the counter-argument) AND tied to evidence quality that supports the thesis — the mark of Grade 7 rigor.",
       hintLadder: [
         "A criterion must be something you can COUNT or CHECK.",
@@ -174,11 +174,11 @@ export const springG7ElaW8D1 = {
           stem: "A student's capstone plan reads: 'I'll explain how nature works.' What is the BIGGEST weakness for a Grade 7 thesis-driven project?",
           choices: [
             "It is far too specific and narrow.",
-            "It states no arguable claim and its scope is limitless — there's nothing to defend and no way to finish.",
             "It names too many measurable criteria.",
+            "It states no arguable claim and its scope is limitless — there's nothing to defend and no way to finish.",
             "It analyzes the audience too deeply."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "It's both unfocused AND thesis-less: 'how nature works' is limitless and makes no defendable claim. A strong capstone narrows to one arguable position backed by evidence.",
           hintLadder: [
             "Could anyone finish — or ARGUE — a project about all of 'how nature works'?",

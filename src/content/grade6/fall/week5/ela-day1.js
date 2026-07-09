@@ -34,12 +34,12 @@ export const fallG6ElaW5D1 = {
       type: "multiple_choice",
       stem: "Which sentence is a CLAIM (an arguable position)?",
       choices: [
-        "The sky is blue.",
         "Our town should build a new bike lane on Main Street.",
+        "The sky is blue.",
         "I had cereal for breakfast.",
         "Water is wet."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "It takes a position someone could agree or disagree with — that's a claim. The others are facts or personal statements.",
       hintLadder: [
         "A claim is something you could argue for or against.",
@@ -165,10 +165,10 @@ export const fallG6ElaW5D1 = {
           choices: [
             "Autumn has leaves.",
             "I think fall is nice.",
-            "Our school should plant native trees on the front lawn to provide shade and clean air.",
-            "Trees exist."
+            "Trees exist.",
+            "Our school should plant native trees on the front lawn to provide shade and clean air."
           ],
-          answerIndex: 2,
+          answerIndex: 3,
           explanation: "It is specific, takes a clear position, and can be supported with reasons — the marks of a strong claim. The others are facts or vague preferences.",
           hintLadder: [
             "A strong claim is specific AND arguable.",

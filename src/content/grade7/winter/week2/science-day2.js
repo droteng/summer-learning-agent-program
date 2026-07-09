@@ -35,12 +35,12 @@ export const winterG7ScienceW2D2 = {
       type: "multiple_choice",
       stem: "A beaker of ice-water mix is heated steadily, but a thermometer reads 0 degrees C the whole time until all the ice is gone. Why doesn't the temperature rise while ice is still melting?",
       choices: [
-        "The thermometer is broken",
         "The added energy is going into breaking the bonds holding the ice together, not into raising the temperature",
+        "The thermometer is broken",
         "Ice cannot absorb any energy at all",
         "Water has no melting point"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "At a phase change, incoming energy breaks the intermolecular bonds of the solid rather than increasing molecular speed, so temperature holds constant until melting is complete.",
       hintLadder: [
         "Energy is still flowing in — where is it going if not into temperature?",
@@ -55,11 +55,11 @@ export const winterG7ScienceW2D2 = {
       stem: "Droplets appear on the OUTSIDE of a cold soda can on a humid day, even though the can is sealed. What is happening, and what does the energy do?",
       choices: [
         "The can leaks soda through the metal",
-        "Water vapor in the air condenses on the cold can; the vapor RELEASES energy to the can as it becomes liquid",
         "The metal melts into water",
+        "Water vapor in the air condenses on the cold can; the vapor RELEASES energy to the can as it becomes liquid",
         "The air freezes instantly onto the can"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Airborne water vapor loses energy to the cold surface and condenses into liquid droplets. Condensation is exothermic, so the vapor releases energy to the can — no leaking through metal is involved.",
       hintLadder: [
         "The can is sealed, so the water is not from inside.",
@@ -172,11 +172,11 @@ export const winterG7ScienceW2D2 = {
           stem: "After exercising outdoors in winter you feel a sudden chill as sweat evaporates from your skin. Why does evaporation cool you?",
           choices: [
             "Evaporation releases energy into your skin, warming it",
-            "Evaporation absorbs energy from your skin to turn the sweat into vapor, so your skin loses energy and cools",
+            "Evaporation has no effect on temperature",
             "Sweat freezes instantly and that is what you feel",
-            "Evaporation has no effect on temperature"
+            "Evaporation absorbs energy from your skin to turn the sweat into vapor, so your skin loses energy and cools"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Evaporation is endothermic: turning liquid sweat into vapor requires energy, and that energy is drawn from your skin, lowering its temperature and cooling you.",
           hintLadder: [
             "Does evaporation absorb or release energy?",

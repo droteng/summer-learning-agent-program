@@ -59,12 +59,12 @@ export const summerG5WorldW1D4 = {
       type: "multiple_choice",
       stem: "Which sentence is an opinion?",
       choices: [
-        "The Pacific Ocean is larger than the Atlantic Ocean.",
+        "Tokyo is the most exciting city in the world.",
         "Antarctica is very cold.",
         "Tokyo has a lot of people.",
-        "Tokyo is the most exciting city in the world."
+        "The Pacific Ocean is larger than the Atlantic Ocean."
       ],
-      answerIndex: 3,
+      answerIndex: 0,
       explanation: "Most exciting is a personal feeling. The other three are facts you could check.",
       hintLadder: [
         "Look for the sentence with a feeling word like exciting.",
@@ -76,8 +76,8 @@ export const summerG5WorldW1D4 = {
       id: "g5.summer.world.w1.d4.q3",
       type: "multiple_choice",
       stem: "Which continent is Egypt on?",
-      choices: ["Asia", "Africa", "Europe", "South America"],
-      answerIndex: 1,
+      choices: ["Asia", "South America", "Europe", "Africa"],
+      answerIndex: 3,
       explanation: "Egypt is in the northeast part of Africa, near the Mediterranean Sea and the Red Sea.",
       hintLadder: [
         "Picture a world map. Egypt is at the top of which continent?",
@@ -91,11 +91,11 @@ export const summerG5WorldW1D4 = {
       stem: "Which source is most likely to give you a reliable fact about a recent event?",
       choices: [
         "A funny picture a friend shared",
-        "A newspaper article that names where it got its information",
         "A random comment on a video",
+        "A newspaper article that names where it got its information",
         "A flyer with no author and no date"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A newspaper article that names its sources can be checked. The others have no author or no source.",
       hintLadder: [
         "Pick the one you could trace back to a real person or group.",
@@ -171,12 +171,12 @@ export const summerG5WorldW1D4 = {
           type: "multiple_choice",
           stem: "Which statement is a FACT (you can check it)?",
           choices: [
-            "Mount Everest is the most beautiful mountain.",
             "Mount Everest is the tallest mountain above sea level.",
+            "Mount Everest is the most beautiful mountain.",
             "Everyone should climb Everest.",
             "Everest is scary."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Its height can be measured and checked. The others are feelings.",
           hintLadder: [
             "Which one could you look up and prove?",

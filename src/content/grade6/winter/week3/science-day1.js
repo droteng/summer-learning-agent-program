@@ -37,11 +37,11 @@ export const winterG6ScienceW3D1 = {
       stem: "What is a FORCE?",
       choices: [
         "A type of energy stored in food",
-        "A push or a pull that can change how something moves",
         "The speed of an object",
+        "A push or a pull that can change how something moves",
         "The weight of the air"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A force is any push or pull. It can make an object speed up, slow down, or change direction.",
       hintLadder: [
         "Think about what you do to open a door or slide a box.",
@@ -54,12 +54,12 @@ export const winterG6ScienceW3D1 = {
       type: "multiple_choice",
       stem: "Why is it so easy to slip and slide on ice compared to a rough sidewalk?",
       choices: [
-        "Ice has more gravity than a sidewalk",
         "Ice is smooth, so there is very LOW friction between your feet and the surface",
+        "Ice has more gravity than a sidewalk",
         "There is no gravity on ice",
         "Ice pushes you sideways on purpose"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Smooth ice has low friction, so there is little force gripping your feet — that lets you slide.",
       hintLadder: [
         "Friction is the force that grips two surfaces together.",
@@ -163,11 +163,11 @@ export const winterG6ScienceW3D1 = {
           stem: "A sled slides much farther on packed ice than on bare grass. Why?",
           choices: [
             "Grass has stronger gravity than ice",
-            "Ice has LOWER friction than grass, so less force resists the sled's motion",
+            "There is no force acting on the sled at all",
             "The sled is heavier on ice",
-            "There is no force acting on the sled at all"
+            "Ice has LOWER friction than grass, so less force resists the sled's motion"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Ice is smooth with low friction, so little force resists the sled — it glides far. Grass is rough with high friction, so it stops the sled sooner.",
           hintLadder: [
             "Which surface is smoother, ice or grass?",

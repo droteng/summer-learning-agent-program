@@ -37,11 +37,11 @@ export const grade6WorldWeek6Day1 = {
         "In: 'Brazil opened 12 new wind farms in 2024 to reduce reliance on imported fuel,' what is the WHY?",
       choices: [
         "Brazil",
-        "Opened 12 new wind farms",
+        "To reduce reliance on imported fuel",
         "In 2024",
-        "To reduce reliance on imported fuel"
+        "Opened 12 new wind farms"
       ],
-      answerIndex: 3,
+      answerIndex: 1,
       explanation: "WHY answers the reason or motive. The reason given is reducing reliance on imported fuel.",
       hintLadder: [
         "WHY is the motive.",
@@ -55,11 +55,11 @@ export const grade6WorldWeek6Day1 = {
       stem: "What's the most important thing the lead paragraph of a news story should do?",
       choices: [
         "Make you laugh.",
-        "Cover the headline news quickly — usually who + what + where.",
+        "Use as many big words as possible.",
         "Hide the conclusion until later.",
-        "Use as many big words as possible."
+        "Cover the headline news quickly — usually who + what + where."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "The lead gives the most important news first. Reverse-pyramid writing — top loaded, then details.",
       hintLadder: [
         "Where does the most important info go in a news story?",
@@ -73,11 +73,11 @@ export const grade6WorldWeek6Day1 = {
       stem: "An article makes a big claim but doesn't name any source. Best move:",
       choices: [
         "Believe it because it's published.",
-        "Look for the same fact in another reliable source before accepting it.",
         "Share it immediately.",
+        "Look for the same fact in another reliable source before accepting it.",
         "Assume it's false."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Cross-check. One unsourced claim is a rumor until you can confirm it elsewhere.",
       hintLadder: [
         "Can you verify the claim?",
@@ -166,11 +166,11 @@ export const grade6WorldWeek6Day1 = {
           stem: "In 'On Saturday, volunteers in Lagos planted 2,000 trees to fight air pollution,' what is the WHAT?",
           choices: [
             "On Saturday",
-            "Volunteers in Lagos",
             "Planted 2,000 trees",
+            "Volunteers in Lagos",
             "To fight air pollution"
           ],
-          answerIndex: 2,
+          answerIndex: 1,
           explanation: "WHAT is the event or action that happened: planting 2,000 trees. 'On Saturday' is when, 'volunteers in Lagos' is who/where, and the last clause is why.",
           hintLadder: [
             "WHAT names the action that happened.",

@@ -83,11 +83,11 @@ export const winterG6CodingW8D4 = {
       stem: "Your countdown program should stop at 0, but it keeps going into negative numbers forever. What is the MOST likely fix?",
       choices: [
         "Add more colors to the screen.",
-        "Fix the loop's stopping condition so it stops when the counter reaches 0.",
+        "Delete the whole program and give up.",
         "Make the numbers bigger.",
-        "Delete the whole program and give up."
+        "Fix the loop's stopping condition so it stops when the counter reaches 0."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A loop that never stops usually has a wrong or missing stopping condition. Fixing it to stop at 0 solves the endless countdown.",
       hintLadder: [
         "Why would a countdown NOT stop?",

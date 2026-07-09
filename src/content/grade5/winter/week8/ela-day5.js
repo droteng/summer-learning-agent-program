@@ -55,12 +55,12 @@ export const winterG5ElaW8D5 = {
       type: "multiple_choice",
       stem: "During your talk, when you show your data graph, what should you do RIGHT AFTER showing it?",
       choices: [
-        "Say nothing and move on.",
         "Explain in plain words what the graph shows and why it matters.",
+        "Say nothing and move on.",
         "Say sorry for the graph.",
         "Show ten more graphs quickly."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Evidence needs explaining — show it, then say plainly what it means. That's how your findings reach the audience.",
       hintLadder: [
         "A graph doesn't explain itself.",
@@ -75,11 +75,11 @@ export const winterG5ElaW8D5 = {
       stem: "Which delivery habit will make you seem MOST clear and confident?",
       choices: [
         "Talking as fast as you can to finish quickly.",
-        "Looking up at the audience, speaking clearly, and pausing between points.",
+        "Whispering so no one notices mistakes.",
         "Reading every word while staring at the floor.",
-        "Whispering so no one notices mistakes."
+        "Looking up at the audience, speaking clearly, and pausing between points."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Looking up, speaking clearly, and pausing let your ideas land and show you feel confident.",
       hintLadder: [
         "What helps an audience follow and trust you?",
@@ -174,11 +174,11 @@ export const winterG5ElaW8D5 = {
           stem: "A presenter shows a cool data graph and then jumps to the next slide without saying a word. What did they most likely do wrong?",
           choices: [
             "They used a graph — talks shouldn't have graphs.",
-            "They showed evidence but never explained what it means, so the audience is left guessing.",
             "They talked way too long about the graph.",
+            "They showed evidence but never explained what it means, so the audience is left guessing.",
             "Nothing — moving on fast is best."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Evidence must be explained. Showing a graph without saying what it means wastes it — they skipped the 'show, then explain' step.",
           hintLadder: [
             "What should come after every piece of evidence?",

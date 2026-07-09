@@ -50,12 +50,12 @@ export const winterG7MathW1D1 = {
       type: "multiple_choice",
       stem: "Two storms are compared. Storm A: 24 cm in 3 hours. Storm B: 30 cm in 5 hours. Which storm has the GREATER snowfall rate per hour?",
       choices: [
-        "Storm A (it drops more per hour)",
         "Storm B (it drops more per hour)",
+        "Storm A (it drops more per hour)",
         "They fall at exactly the same rate",
         "You cannot compare them without more data"
       ],
-      answerIndex: 0,
+      answerIndex: 1,
       explanation: "Find each unit rate: Storm A is 24 ÷ 3 = 8 cm/hr; Storm B is 30 ÷ 5 = 6 cm/hr. 8 > 6, so Storm A has the greater rate even though Storm B dropped more total snow.",
       hintLadder: [
         "Don't compare the totals — compare the RATE per hour.",
@@ -180,12 +180,12 @@ export const winterG7MathW1D1 = {
           type: "multiple_choice",
           stem: "A plow clears 15 km of road using 45 kg of salt at a steady rate. At the SAME rate, how much salt is needed for 20 km of road?",
           choices: [
-            "60 kg",
-            "50 kg",
             "65 kg",
+            "50 kg",
+            "60 kg",
             "45 kg"
           ],
-          answerIndex: 0,
+          answerIndex: 2,
           explanation: "Find the unit rate: 45 kg ÷ 15 km = 3 kg per km. For 20 km: 3 × 20 = 60 kg. (You can also scale proportionally: 45 × (20/15) = 60.)",
           hintLadder: [
             "First find salt per kilometer: 45 ÷ 15.",

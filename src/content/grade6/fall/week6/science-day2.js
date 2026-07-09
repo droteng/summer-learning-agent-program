@@ -35,11 +35,11 @@ export const fallG6ScienceW6D2 = {
       stem: "An object has LINE symmetry if...",
       choices: [
         "it is very large",
-        "you can fold it along a line and the halves match",
         "it spins quickly",
+        "you can fold it along a line and the halves match",
         "it has many colors"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Line symmetry means a fold line splits it into matching mirror halves.",
       hintLadder: [
         "Think about folding it in half.",
@@ -53,11 +53,11 @@ export const fallG6ScienceW6D2 = {
       stem: "Why might a spiral shape help a sunflower?",
       choices: [
         "It looks scary to bugs",
-        "It packs the most seeds into the smallest space",
+        "It has no purpose",
         "It helps the flower run away",
-        "It has no purpose"
+        "It packs the most seeds into the smallest space"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Spiral seed arrangements fit the maximum number of seeds efficiently.",
       hintLadder: [
         "Think about fitting lots of seeds in a round head.",
@@ -160,12 +160,12 @@ export const fallG6ScienceW6D2 = {
           type: "multiple_choice",
           stem: "A snowflake has 6 matching arms around its center. What kind of symmetry is that BEST described as?",
           choices: [
-            "No symmetry — it's random",
             "Symmetry around a center point (it matches as you rotate it)",
+            "No symmetry — it's random",
             "Only top-to-bottom symmetry",
             "Spiral growth"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Six identical arms arranged around a center repeat as you rotate the snowflake — that's symmetry around a central point, not a spiral.",
           hintLadder: [
             "Picture turning the snowflake a little — does it look the same?",

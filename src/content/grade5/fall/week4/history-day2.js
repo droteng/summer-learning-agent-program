@@ -37,11 +37,11 @@ export const fallG5HistoryW4D2 = {
       stem: "What did the very first writing mostly keep track of?",
       choices: [
         "Songs and poems",
-        "Counts of goods, like grain and animals",
         "The weather next week",
+        "Counts of goods, like grain and animals",
         "Sports scores"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Writing began as a practical way to count goods, before it was used for stories.",
       hintLadder: [
         "Think about what a busy trading city needed to count.",
@@ -55,11 +55,11 @@ export const fallG5HistoryW4D2 = {
       stem: "Cuneiform and hieroglyphs are examples of...",
       choices: [
         "modern computers",
-        "early writing systems",
+        "rivers",
         "farming tools",
-        "rivers"
+        "early writing systems"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Cuneiform (Mesopotamia) and hieroglyphs (Egypt) were two of the earliest ways to write.",
       hintLadder: [
         "Both are ways of writing.",
@@ -165,12 +165,12 @@ export const fallG5HistoryW4D2 = {
           type: "multiple_choice",
           stem: "Why do we call the time BEFORE written records 'prehistory'?",
           choices: [
-            "Because nothing important happened then",
             "Because there is no writing from then, so we learn about it from objects and bones",
+            "Because nothing important happened then",
             "Because people could not talk yet",
             "Because it was before Earth existed"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "'Prehistory' means before written records. Lots happened — we just study it through artifacts, not writing.",
           hintLadder: [
             "'Pre' means before. Before WHAT?",

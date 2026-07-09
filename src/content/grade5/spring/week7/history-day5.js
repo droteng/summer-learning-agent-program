@@ -36,12 +36,12 @@ export const springG5HistoryW7D5 = {
       type: "multiple_choice",
       stem: "What does CONSERVATION mean?",
       choices: [
-        "Using up natural resources as fast as possible",
         "Protecting nature and using resources wisely so they last for the future",
+        "Using up natural resources as fast as possible",
         "Building as many factories as you can",
         "Ignoring the environment completely"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Conservation is about protecting nature and using resources carefully so they are still there for the future.",
       hintLadder: [
         "The word is about 'conserving' — saving something.",
@@ -55,11 +55,11 @@ export const springG5HistoryW7D5 = {
       stem: "Which was the world's FIRST national park, created in 1872?",
       choices: [
         "The Grand Canyon",
-        "Yellowstone",
         "Central Park",
+        "Yellowstone",
         "The Amazon Rainforest"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Yellowstone, made in 1872, was the world's first national park — wild land set aside to be protected forever.",
       hintLadder: [
         "It is a famous park known for geysers like Old Faithful.",
@@ -73,11 +73,11 @@ export const springG5HistoryW7D5 = {
       stem: "The first Earth Day in 1970 is best described as:",
       choices: [
         "A single scientist's private experiment",
-        "A huge public event where millions of people asked for a cleaner environment",
+        "A national park in Europe",
         "A law that banned all cars",
-        "A national park in Europe"
+        "A huge public event where millions of people asked for a cleaner environment"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "The first Earth Day brought millions of Americans together in 1970 to ask for action on the environment — a big public movement.",
       hintLadder: [
         "Was it one person or a huge group of people?",

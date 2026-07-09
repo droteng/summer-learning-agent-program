@@ -80,11 +80,11 @@ export const winterG5CodingW5D4 = {
       stem: "In an averaging program, where must the 'divide by count' step go?",
       choices: [
         "Inside the loop, after every single value is added",
-        "After the loop finishes, once the total is complete",
         "Before the loop starts, while total is still 0",
+        "After the loop finishes, once the total is complete",
         "It does not matter where it goes"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "You can only divide by the count once the loop has finished adding every value; dividing inside the loop uses an incomplete total.",
       hintLadder: [
         "The average needs the FULL total first.",

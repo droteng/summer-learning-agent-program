@@ -34,12 +34,12 @@ export const grade6ElaWeek6Day3 = {
       type: "multiple_choice",
       stem: "Which is a BANDWAGON appeal?",
       choices: [
-        "Studies show this lowers blood pressure.",
         "Join the millions who already love this product!",
+        "Studies show this lowers blood pressure.",
         "Made by a Nobel-winning scientist.",
         "Costs only $5."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Bandwagon: 'everyone's doing it, so you should too.' Crowds aren't evidence.",
       hintLadder: [
         "Look for the option about the crowd.",
@@ -51,8 +51,8 @@ export const grade6ElaWeek6Day3 = {
       id: "g6.ela.w6.d3.q2",
       type: "multiple_choice",
       stem: "Which word is most LOADED?",
-      choices: ["chair", "person", "miracle", "tomorrow"],
-      answerIndex: 2,
+      choices: ["chair", "person", "tomorrow", "miracle"],
+      answerIndex: 3,
       explanation: "'Miracle' carries strong positive feelings. The others are neutral.",
       hintLadder: [
         "Loaded = strong feeling baked in.",
@@ -65,8 +65,8 @@ export const grade6ElaWeek6Day3 = {
       type: "multiple_choice",
       stem:
         "'If you don't buy this water filter, your family could get sick.' Main technique?",
-      choices: ["Bandwagon", "Fear / emotional appeal", "Statistics", "Logic"],
-      answerIndex: 1,
+      choices: ["Bandwagon", "Statistics", "Fear / emotional appeal", "Logic"],
+      answerIndex: 2,
       explanation: "It threatens harm to your family to push action. Classic fear appeal.",
       hintLadder: [
         "What feeling does the sentence try to trigger?",
@@ -82,11 +82,11 @@ export const grade6ElaWeek6Day3 = {
         "Which sentence is the MOST factual (least persuasive)?",
       choices: [
         "This phone is the absolute best on the market!",
-        "9 out of 10 people upgraded last year.",
         "This phone has a 6.1-inch display and 128 GB of storage.",
+        "9 out of 10 people upgraded last year.",
         "Don't miss out — sales end soon!"
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "Specifications are checkable facts. The others use superlatives, bandwagon, or urgency.",
       hintLadder: [
         "Which option can you verify?",

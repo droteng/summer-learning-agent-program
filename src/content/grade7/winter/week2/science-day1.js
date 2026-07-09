@@ -56,11 +56,11 @@ export const winterG7ScienceW2D1 = {
       stem: "The sun warms your face on a clear −10 degrees C day, but the air between you and the sun stays freezing cold. Which statement best explains this?",
       choices: [
         "Conduction carries the heat because the cold air touches your face",
-        "Radiation delivers energy as infrared waves that heat your skin directly without needing to heat the air in between",
         "Convection carries warm air all the way from the sun to Earth",
+        "Radiation delivers energy as infrared waves that heat your skin directly without needing to heat the air in between",
         "The cold air blocks all heat, so you cannot really feel warmth"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Radiation travels as electromagnetic waves through the near-vacuum of space and is absorbed by your skin, warming it directly — the thin, cold air in between is barely heated.",
       hintLadder: [
         "There is almost no material between you and the sun.",
@@ -75,11 +75,11 @@ export const winterG7ScienceW2D1 = {
       stem: "A puffy down coat and a thin windbreaker are the same temperature when you put them on. Why does the down coat keep you warmer?",
       choices: [
         "The down coat generates its own heat from the feathers",
-        "The down traps thick pockets of still air, and still air is a poor conductor, so it slows the energy leaving your body",
+        "The windbreaker reflects all your body heat back inward",
         "The down coat pulls warmth in from the cold outdoor air",
-        "The windbreaker reflects all your body heat back inward"
+        "The down traps thick pockets of still air, and still air is a poor conductor, so it slows the energy leaving your body"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "No coat makes heat. The down loft traps still air — a poor conductor and a barrier to convection — so it slows the rate at which your body's thermal energy escapes.",
       hintLadder: [
         "A coat is an insulator, not a heater.",

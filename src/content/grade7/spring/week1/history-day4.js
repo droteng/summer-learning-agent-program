@@ -36,11 +36,11 @@ export const springG7HistoryW1D4 = {
       stem: "Which of these would a historian classify as a PRIMARY source about ancient spring planting?",
       choices: [
         "A textbook chapter written in 2020 summarizing ancient farming",
-        "A stone calendar carved by ancient farmers marking planting dates",
+        "A modern documentary interviewing today's historians",
         "A blog post retelling old festival stories",
-        "A modern documentary interviewing today's historians"
+        "A stone calendar carved by ancient farmers marking planting dates"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A primary source is created during the time under study. The stone calendar carved by the farmers themselves is from the period; the others are later, secondary accounts.",
       hintLadder: [
         "A primary source comes from the time being studied.",
@@ -54,11 +54,11 @@ export const springG7HistoryW1D4 = {
       stem: "Nowruz (Persia/Central Asia), Holi (South Asia), and May Day (Europe) developed in cultures with little contact, yet all tie spring to renewal. Why does this agreement make the 'spring = renewal' pattern MORE convincing to a historian?",
       choices: [
         "Because famous historians said so",
-        "Because independent, unconnected sources corroborate the same pattern, which is stronger than a single source",
         "Because all three festivals happen on the exact same day",
+        "Because independent, unconnected sources corroborate the same pattern, which is stronger than a single source",
         "Because older sources are always automatically correct"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "When separate, independent cultures record the same pattern, they corroborate one another — agreement across unconnected sources is stronger evidence than any single account.",
       hintLadder: [
         "Think about what happens when independent witnesses agree.",
@@ -72,12 +72,12 @@ export const springG7HistoryW1D4 = {
       type: "multiple_choice",
       stem: "Which explanation best shows MULTIPLE causes behind ancient spring festivals?",
       choices: [
-        "They happened only because the weather got warmer.",
-        "They happened only because rulers ordered them.",
         "Returning warmth and rain (environmental) let farmers begin the food year (economic), and communities marked this high-stakes moment together (social).",
+        "They happened only because rulers ordered them.",
+        "They happened only because the weather got warmer.",
         "They happened for no reason historians can identify."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "Historical patterns usually have several interacting causes. This option weaves environmental, economic, and social causes together rather than crediting just one.",
       hintLadder: [
         "Look for the option that names more than one KIND of cause.",
@@ -172,11 +172,11 @@ export const springG7HistoryW1D4 = {
           stem: "A festival hymn from the period says spring planting saved the village, while a modern historian argues the festival mainly served rulers' power. What is the BEST historian's move when two sources disagree?",
           choices: [
             "Believe the older source automatically because it is oldest.",
-            "Believe the modern source automatically because it is newer.",
             "Weigh each source's purpose and evidence, then seek more sources to see which interpretation is better supported.",
+            "Believe the modern source automatically because it is newer.",
             "Ignore both sources since they disagree."
           ],
-          answerIndex: 2,
+          answerIndex: 1,
           explanation: "When sources conflict, historians don't just pick by age — they consider each source's purpose and evidence and look for additional sources to corroborate one interpretation over the other.",
           hintLadder: [
             "Neither 'oldest wins' nor 'newest wins' is how historians decide.",

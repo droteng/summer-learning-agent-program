@@ -60,11 +60,11 @@ export const summerG5HistoryW7D3 = {
       stem: "Which is a job of a good citizen?",
       choices: [
         "Only the President has any jobs.",
-        "Voting, following laws, helping neighbors, and speaking up kindly.",
+        "Memorizing every single law.",
         "Watching and doing nothing.",
-        "Memorizing every single law."
+        "Voting, following laws, helping neighbors, and speaking up kindly."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Being a citizen means taking part: voting, following laws, helping others, and using your voice respectfully.",
       hintLadder: [
         "What does a citizen actually do?",
@@ -78,11 +78,11 @@ export const summerG5HistoryW7D3 = {
       stem: "Why did the Montgomery bus boycott need so many people, not just one leader?",
       choices: [
         "Leaders like to be alone.",
-        "A boycott only works if thousands of people really stop riding the buses.",
         "Big crowds look nice in photos.",
+        "A boycott only works if thousands of people really stop riding the buses.",
         "Only large protests are allowed."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A boycott works when enough people stop taking part. One leader alone cannot refuse to ride for a whole city.",
       hintLadder: [
         "What does a boycott need to work?",
@@ -174,12 +174,12 @@ export const summerG5HistoryW7D3 = {
           type: "multiple_choice",
           stem: "The Montgomery bus boycott lasted over a year. Which thing was MOST important for making it work?",
           choices: [
-            "One famous person refusing to ride the bus alone.",
             "Thousands of people staying off the buses together, with carpools to help.",
+            "One famous person refusing to ride the bus alone.",
             "The buses getting a new coat of paint.",
             "The protest being short and over fast."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "A boycott needs many people. Thousands staying off the buses for over a year, with carpools to help, is what made real change. One person alone could not do it.",
           hintLadder: [
             "A boycott means many people NOT doing something.",

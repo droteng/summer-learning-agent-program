@@ -54,11 +54,11 @@ export const springG7ScienceW3D1 = {
       stem: "In insects, molting and the shift toward adult features are controlled by hormones. Which statement is MOST accurate?",
       choices: [
         "Metamorphosis just happens when the animal decides it is ready",
-        "Hormones such as ecdysone trigger molting, and changing hormone levels allow adult features to develop",
         "Sunlight alone turns a nymph into an adult",
+        "Hormones such as ecdysone trigger molting, and changing hormone levels allow adult features to develop",
         "The nymph must eat a pupa to become an adult"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Development is regulated by hormones: ecdysone drives each molt, and as juvenile hormone declines the animal molts into more adult-like forms. It is a controlled biological program, not a choice.",
       hintLadder: [
         "Is metamorphosis a choice, or a controlled internal process?",
@@ -72,12 +72,12 @@ export const springG7ScienceW3D1 = {
       type: "multiple_choice",
       stem: "A tadpole has gills and a tail; the adult frog has lungs and legs. A caterpillar and butterfly also differ dramatically. What do BOTH examples show about metamorphosis?",
       choices: [
-        "The young and adult are different species",
         "A single organism can be reorganized into a very different body between stages of ONE life cycle",
+        "The young and adult are different species",
         "Metamorphosis only happens in insects",
         "The adult stage always comes before the young stage"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "In both cases it is one organism with one genome, reorganized between stages of a single life cycle — that is the essence of metamorphosis, whether in an amphibian or an insect.",
       hintLadder: [
         "Is a tadpole a different animal from its adult frog?",
@@ -173,11 +173,11 @@ export const springG7ScienceW3D1 = {
           stem: "A dragonfly hatches as an aquatic nymph that hunts underwater, molts several times, then emerges as a flying adult — with no pupa. Which statement BEST describes this life cycle?",
           choices: [
             "Complete metamorphosis, because the adult looks different from the nymph",
-            "Incomplete metamorphosis, because there is no pupa and the nymph molts directly toward the adult form",
+            "Complete metamorphosis, because it lives in water",
             "No metamorphosis, because the animal only grows larger",
-            "Complete metamorphosis, because it lives in water"
+            "Incomplete metamorphosis, because there is no pupa and the nymph molts directly toward the adult form"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Despite the aquatic nymph looking somewhat different, the absence of a pupa and the direct molting toward the adult mark this as incomplete metamorphosis (hemimetabolism).",
           hintLadder: [
             "Focus on the defining feature: was there a pupa stage?",

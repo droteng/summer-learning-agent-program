@@ -51,10 +51,10 @@ export const grade6StudyDay1 = {
       choices: [
         "Study for the test.",
         "Be good at math.",
-        "Solve practice problems 1–10 in chapter 4.",
-        "Just feel ready."
+        "Just feel ready.",
+        "Solve practice problems 1–10 in chapter 4."
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "A real one-thing is testable — you know when it's done. Goals aren't tasks.",
       hintLadder: [
         "Which option has a clear finish line?",
@@ -87,12 +87,12 @@ export const grade6StudyDay1 = {
       type: "multiple_choice",
       stem: "What counts as a real 5-minute break BETWEEN focus blocks?",
       choices: [
-        "Checking social media.",
         "Walking, stretching, drinking water — no screens.",
+        "Checking social media.",
         "Watching one quick video.",
         "Texting a friend."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Real breaks rest your eyes and brain. Screens during breaks feel like rest but aren't.",
       hintLadder: [
         "What does a brain break need?",

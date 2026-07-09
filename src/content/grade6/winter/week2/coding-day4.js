@@ -68,11 +68,11 @@ export const winterG6CodingW2D4 = {
       stem: "Why does a cooling loop need a STOPPING condition (like 'run 6 minutes' or 'stop at room temperature')?",
       choices: [
         "So the cocoa gets hotter",
-        "Without one, the loop would repeat forever and never end",
+        "Loops always stop by themselves after one run",
         "Stopping conditions make the code look nicer only",
-        "Loops always stop by themselves after one run"
+        "Without one, the loop would repeat forever and never end"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A loop keeps repeating until its condition tells it to stop. With no stopping condition, it would run endlessly.",
       hintLadder: [
         "What tells a loop when to quit?",
@@ -174,11 +174,11 @@ export const winterG6CodingW2D4 = {
           stem: "A loop uses the rule 'IF temp > 40, keep subtracting 10; otherwise stop.' Starting at temp = 60, after how many minutes does the loop STOP?",
           choices: [
             "After 1 minute (temp 50)",
-            "After 2 minutes (temp 40), because 40 is not greater than 40",
             "It never stops",
+            "After 2 minutes (temp 40), because 40 is not greater than 40",
             "After 6 minutes"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Minute 1: 60 → 50 (50 > 40, continue). Minute 2: 50 → 40. Now 40 > 40 is false, so the loop stops after 2 minutes.",
           hintLadder: [
             "Trace it: 60 → 50 → 40.",

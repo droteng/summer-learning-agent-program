@@ -56,10 +56,10 @@ export const grade6WorldWeek1Day4 = {
       choices: [
         "The Pacific Ocean is larger than the Atlantic.",
         "Antarctica is colder than the Sahara desert.",
-        "Tokyo has more people than New York City.",
-        "Tokyo is the most exciting city in the world."
+        "Tokyo is the most exciting city in the world.",
+        "Tokyo has more people than New York City."
       ],
-      answerIndex: 3,
+      answerIndex: 2,
       explanation: "\"Most exciting\" is a personal judgment. The other three are checkable facts.",
       hintLadder: [
         "Look for the sentence with a feeling word like \"exciting\".",
@@ -71,8 +71,8 @@ export const grade6WorldWeek1Day4 = {
       id: "g6.world.w1.d4.q3",
       type: "multiple_choice",
       stem: "Which continent is Egypt on?",
-      choices: ["Asia", "Africa", "Europe", "South America"],
-      answerIndex: 1,
+      choices: ["Africa", "Asia", "Europe", "South America"],
+      answerIndex: 0,
       explanation: "Egypt is in northeastern Africa, on the Mediterranean and Red Sea coasts.",
       hintLadder: [
         "Picture a world map. North of which continent is Egypt?",
@@ -86,11 +86,11 @@ export const grade6WorldWeek1Day4 = {
       stem: "Which source is most likely to give you a reliable fact about a recent event?",
       choices: [
         "A meme shared by a friend",
-        "A news article from a major newspaper that names its sources",
+        "A flyer with no author or date",
         "A random comment on a video",
-        "A flyer with no author or date"
+        "A news article from a major newspaper that names its sources"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation:
         "A news article from a major paper that names its sources can be checked. The others are unsigned, unsourced, or just personal sharing.",
       hintLadder: [
@@ -174,11 +174,11 @@ export const grade6WorldWeek1Day4 = {
           stem: "Which statement is a FACT (checkable)?",
           choices: [
             "Mount Everest is the most beautiful mountain.",
-            "Mount Everest is the tallest mountain above sea level.",
             "Everyone should climb Everest.",
+            "Mount Everest is the tallest mountain above sea level.",
             "Everest is scary."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Its height can be measured and verified; the others are judgments.",
           hintLadder: [
             "Which one could you look up and confirm?",

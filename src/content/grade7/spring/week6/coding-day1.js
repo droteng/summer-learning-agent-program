@@ -64,12 +64,12 @@ export const springG7CodingW6D1 = {
       type: "multiple_choice",
       stem: "In a loop body, the two lines 'height = height + 1' then 'height = height * 3' run each step, in that order, starting from height = 2. What is height after ONE step, and why does order matter?",
       choices: [
-        "9, because you add 1 (→3) then multiply by 3 (→9)",
-        "7, because you multiply first (→6) then add 1",
         "6, because only the multiply line runs",
+        "7, because you multiply first (→6) then add 1",
+        "9, because you add 1 (→3) then multiply by 3 (→9)",
         "3, because only the add line runs"
       ],
-      answerIndex: 0,
+      answerIndex: 2,
       explanation: "Lines run top to bottom: 2 + 1 = 3, then 3 * 3 = 9. Reversing the order would give (2*3)+1 = 7, so order changes the result.",
       hintLadder: [
         "Which line runs first, top or bottom?",
@@ -83,12 +83,12 @@ export const springG7CodingW6D1 = {
       type: "multiple_choice",
       stem: "You want to store the height AFTER each of 5 loop steps so you can graph the growth later. What data structure fits best?",
       choices: [
-        "A single variable that gets overwritten each step",
         "A list (array) that you append the new height to each step",
+        "A single variable that gets overwritten each step",
         "No structure — you cannot save past values",
         "A single number that only holds the final height"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A list stores every step's value so you can look back or graph them; a single variable would lose each old value when it is overwritten.",
       hintLadder: [
         "Do you need only the last value, or every value?",

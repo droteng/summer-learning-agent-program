@@ -37,11 +37,11 @@ export const winterG7ElaW8D1 = {
       stem: "Which statement is a THESIS (a defensible claim) rather than just a topic?",
       choices: [
         "A frozen lake.",
-        "Frozen lakes stay liquid at the bottom because floating ice insulates the water below it.",
+        "Winter lakes are interesting.",
         "Something about frozen lakes.",
-        "Winter lakes are interesting."
+        "Frozen lakes stay liquid at the bottom because floating ice insulates the water below it."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A thesis makes a cause-and-effect claim you can defend with evidence ('...because floating ice insulates...'). The others name a subject or an opinion but assert no arguable claim.",
       hintLadder: [
         "A thesis argues WHY or HOW, not just WHAT.",
@@ -55,11 +55,11 @@ export const winterG7ElaW8D1 = {
       stem: "You've analyzed your audience: classmates and families who know snow is white but not why. How should this MOST change your plan?",
       choices: [
         "It shouldn't — explain it the same way you'd explain it to a physicist.",
-        "Skip the 'why' entirely, since they already know snow is white.",
         "Spend your time defining 'light scattering' with an everyday analogy, not re-proving that snow is white.",
+        "Skip the 'why' entirely, since they already know snow is white.",
         "Add more technical jargon to sound impressive."
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "Audience analysis targets the GAP: they know the fact but not the mechanism, so you invest effort in explaining the mechanism accessibly, not in what they already know or in jargon that widens the gap.",
       hintLadder: [
         "Where is the gap between what they know and what they need?",
@@ -73,12 +73,12 @@ export const winterG7ElaW8D1 = {
       type: "multiple_choice",
       stem: "Which success criterion is MEASURABLE and DEFENSIBLE — meaning an outside judge would score it the same way you would?",
       choices: [
-        "The presentation feels really good.",
-        "I try my best and stay positive.",
         "Every technical term is defined the first time it appears, and the talk runs under 4 minutes.",
+        "I try my best and stay positive.",
+        "The presentation feels really good.",
         "The project is impressive and creative."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "'Defines every term on first use' and 'under 4 minutes' are objective — two judges would agree. 'Feels good,' 'impressive,' and 'creative' are subjective and can't be scored consistently.",
       hintLadder: [
         "Measurable means two different judges would agree on the score.",
@@ -177,11 +177,11 @@ export const winterG7ElaW8D1 = {
           stem: "A student's plan reads: 'Thesis: winter. Audience: everyone. Rubric: be impressive.' What is the deepest flaw?",
           choices: [
             "It is far too long.",
-            "None of the three parts is defensible or measurable: 'winter' is not a claim, 'everyone' is not an analyzable audience, and 'impressive' cannot be scored.",
             "It is missing a title.",
+            "None of the three parts is defensible or measurable: 'winter' is not a claim, 'everyone' is not an analyzable audience, and 'impressive' cannot be scored.",
             "Nothing — it is a strong plan."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "A strong plan needs a defensible claim, a specific analyzable audience, and measurable criteria. Here 'winter' is a topic not a thesis, 'everyone' can't be analyzed for a knowledge gap, and 'impressive' is subjective.",
           hintLadder: [
             "Check each part against the day's standards: claim, audience gap, measurability.",

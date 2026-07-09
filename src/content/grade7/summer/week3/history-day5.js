@@ -53,12 +53,12 @@ export const summerG7HistoryW3D5 = {
       type: "multiple_choice",
       stem: "Which of these is a PRIMARY source for a story set during the American Revolution?",
       choices: [
-        "A textbook written in 2024 about the Revolution",
         "A soldier's handwritten diary from 1777",
+        "A textbook written in 2024 about the Revolution",
         "A modern movie about the Revolution",
         "A blog post summarizing the war"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A primary source comes directly from the time period; a 1777 diary is firsthand evidence. The others are secondary or later interpretations.",
       hintLadder: [
         "A primary source is made DURING the time period.",
@@ -74,10 +74,10 @@ export const summerG7HistoryW3D5 = {
       choices: [
         "The technology available in that era",
         "The laws and major events of the period",
-        "The individual characters and their personal adventure",
-        "The clothing people actually wore"
+        "The clothing people actually wore",
+        "The individual characters and their personal adventure"
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "Writers invent characters and their personal plots, but the surrounding world — technology, laws, events, clothing — must stay true to the real era.",
       hintLadder: [
         "What must stay TRUE, and what can be made up?",
@@ -166,11 +166,11 @@ export const summerG7HistoryW3D5 = {
           stem: "Which sentence would belong in a WELL-RESEARCHED story set in the 1200s, with no anachronisms?",
           choices: [
             "The knight checked his watch, then rode toward the castle.",
-            "The messenger sealed the letter with hot wax and handed it to a rider bound for the castle.",
             "The squire snapped a quick photo of the tournament.",
+            "The messenger sealed the letter with hot wax and handed it to a rider bound for the castle.",
             "The lord turned on the lamp and read the newspaper."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Wax-sealed letters carried by riders fit the 1200s; watches, photos, electric lamps, and newspapers are all anachronisms for that era.",
           hintLadder: [
             "Which items simply didn't exist in the 1200s?",

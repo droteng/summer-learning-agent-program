@@ -34,12 +34,12 @@ export const summerG7CodingW4D2 = {
       type: "multiple_choice",
       stem: "A door unlocks if hasKey == true AND level >= 3. A player has hasKey = true and level = 2. Does the door unlock?",
       choices: [
-        "Yes — hasKey is true, so that's enough",
         "No — level >= 3 is false (2 is not ≥ 3), and AND needs BOTH sides true",
+        "Yes — hasKey is true, so that's enough",
         "Yes — AND only needs one side true",
         "It errors because level is too low"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "level >= 3 is 2 >= 3, which is false. AND requires both sides true, so true AND false is false — the door stays locked.",
       hintLadder: [
         "Evaluate each side separately first.",
@@ -54,11 +54,11 @@ export const summerG7CodingW4D2 = {
       stem: "A hint appears if the player is stuck OR has clicked 'help'. A player is NOT stuck but clicked 'help'. Does the hint appear?",
       choices: [
         "No — the player must be stuck",
-        "Yes — OR is true when AT LEAST ONE side is true, and 'clicked help' is true",
+        "Only if they are also stuck",
         "No — OR needs both sides true",
-        "Only if they are also stuck"
+        "Yes — OR is true when AT LEAST ONE side is true, and 'clicked help' is true"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "OR is true when at least one condition is true. 'Clicked help' is true, so false OR true is true — the hint appears.",
       hintLadder: [
         "OR needs only one side to be true.",
@@ -72,11 +72,11 @@ export const summerG7CodingW4D2 = {
       stem: "A quiz marks an answer wrong if NOT (answer == correctAnswer). The player's answer equals the correct answer. Is it marked wrong?",
       choices: [
         "Yes — NOT always marks it wrong",
-        "No — (answer == correctAnswer) is true, and NOT true is false, so it is NOT marked wrong",
         "Yes — because NOT flips it to true",
+        "No — (answer == correctAnswer) is true, and NOT true is false, so it is NOT marked wrong",
         "It depends on the score"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "The inner condition is true (answers match). NOT flips true to false, so the 'mark wrong' condition is false — the answer is counted correct.",
       hintLadder: [
         "Evaluate the inside first: answer == correctAnswer.",

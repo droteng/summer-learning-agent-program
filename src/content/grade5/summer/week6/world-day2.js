@@ -39,8 +39,8 @@ export const summerG5WorldW6D2 = {
       id: "g5.summer.world.w6.d2.q1",
       type: "multiple_choice",
       stem: "How many continents are there?",
-      choices: ["5", "6", "7", "8"],
-      answerIndex: 2,
+      choices: ["5", "6", "8", "7"],
+      answerIndex: 3,
       explanation: "There are 7: Africa, Antarctica, Asia, Australia, Europe, North America, and South America.",
       hintLadder: [
         "Count them: Africa, Antarctica, Asia, Australia, Europe, N. America, S. America.",
@@ -52,8 +52,8 @@ export const summerG5WorldW6D2 = {
       id: "g5.summer.world.w6.d2.q2",
       type: "multiple_choice",
       stem: "Which ocean is the LARGEST?",
-      choices: ["Atlantic", "Indian", "Pacific", "Arctic"],
-      answerIndex: 2,
+      choices: ["Atlantic", "Pacific", "Indian", "Arctic"],
+      answerIndex: 1,
       explanation: "The Pacific is the biggest ocean. It covers about one third of the whole Earth.",
       hintLadder: [
         "Picture a globe.",
@@ -66,12 +66,12 @@ export const summerG5WorldW6D2 = {
       type: "multiple_choice",
       stem: "Australia is below the equator and east of the prime meridian. Which halves is it in?",
       choices: [
-        "Northern + Western",
+        "Southern + Eastern",
         "Northern + Eastern",
         "Southern + Western",
-        "Southern + Eastern"
+        "Northern + Western"
       ],
-      answerIndex: 3,
+      answerIndex: 0,
       explanation: "Below the equator means Southern. East of the prime meridian means Eastern. So Australia is Southern + Eastern.",
       hintLadder: [
         "Below the equator is which half, north or south?",
@@ -177,10 +177,10 @@ export const summerG5WorldW6D2 = {
           choices: [
             "Northern + Eastern",
             "Northern + Western",
-            "Southern + Eastern",
-            "Southern + Western"
+            "Southern + Western",
+            "Southern + Eastern"
           ],
-          answerIndex: 3,
+          answerIndex: 2,
           explanation: "Below the equator means Southern. West of the prime meridian means Western. So Brazil is Southern + Western.",
           hintLadder: [
             "Below the equator = which half, north or south?",

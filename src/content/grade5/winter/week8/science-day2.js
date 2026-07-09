@@ -55,12 +55,12 @@ export const winterG5ScienceW8D2 = {
       type: "multiple_choice",
       stem: "Which way does HEAT naturally move?",
       choices: [
-        "From colder things to warmer things.",
         "From warmer things to colder things.",
+        "From colder things to warmer things.",
         "Heat never moves.",
         "Only up, never sideways."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Heat always moves from warmer to colder — that's why your warm hand loses heat to a cold snowball.",
       hintLadder: [
         "Think about holding a snowball in a warm hand.",
@@ -75,11 +75,11 @@ export const winterG5ScienceW8D2 = {
       stem: "Why is winter COLDER than summer in a place like Connecticut?",
       choices: [
         "Earth is much farther from the Sun in winter.",
-        "Earth's tilt means winter sunlight hits at a low angle and for fewer hours, so less heat reaches the ground.",
         "The Sun turns off part of the year.",
+        "Earth's tilt means winter sunlight hits at a low angle and for fewer hours, so less heat reaches the ground.",
         "Snow makes the Sun weaker."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Earth's tilt spreads winter sunlight out at a low angle and gives fewer daylight hours, so each patch of ground gets less heat.",
       hintLadder: [
         "It's about Earth's tilt, not how far away the Sun is.",
@@ -175,11 +175,11 @@ export const winterG5ScienceW8D2 = {
           stem: "A warm cup of cocoa left outside on a cold day slowly gets cold. Which explanation uses the science correctly?",
           choices: [
             "Cold moves from the air into the cocoa.",
-            "Heat moves out of the warm cocoa into the colder air until they are closer in temperature.",
+            "Nothing happens; the temperature never changes.",
             "The cocoa gains heat from the cold air.",
-            "Nothing happens; the temperature never changes."
+            "Heat moves out of the warm cocoa into the colder air until they are closer in temperature."
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Heat always moves from warmer to colder, so heat leaves the cocoa and warms the air until they even out. There is no 'cold' moving in.",
           hintLadder: [
             "Which is warmer, the cocoa or the cold air?",

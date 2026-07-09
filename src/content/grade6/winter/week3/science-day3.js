@@ -36,11 +36,11 @@ export const winterG6ScienceW3D3 = {
       stem: "What is the MAIN reason people use simple machines?",
       choices: [
         "To create brand-new energy out of nothing",
-        "To make work easier by changing the size or direction of a force",
+        "To slow everything down",
         "To make objects heavier",
-        "To slow everything down"
+        "To make work easier by changing the size or direction of a force"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Simple machines make work easier by changing how much force you need or the direction you apply it — they don't create energy.",
       hintLadder: [
         "Think about why a ramp or a lever is helpful.",
@@ -53,8 +53,8 @@ export const winterG6ScienceW3D3 = {
       id: "g6.winter.sci.w3.d3.q2",
       type: "multiple_choice",
       stem: "You use a long crowbar to pry a frozen manhole cover loose by pushing down on the far end. Which simple machine is the crowbar acting as?",
-      choices: ["A pulley", "A lever", "An inclined plane", "A wheel-and-axle"],
-      answerIndex: 1,
+      choices: ["A pulley", "An inclined plane", "A lever", "A wheel-and-axle"],
+      answerIndex: 2,
       explanation: "A crowbar pivots on a fixed point (fulcrum) to multiply your force — that's a lever.",
       hintLadder: [
         "The bar pivots around one fixed point.",
@@ -81,12 +81,12 @@ export const winterG6ScienceW3D3 = {
       type: "multiple_choice",
       stem: "A snow-shoveler wheels a heavy load using a wheelbarrow. The wheel turning on its rod is an example of which simple machine?",
       choices: [
-        "An inclined plane",
-        "A lever only",
         "A wheel-and-axle",
+        "A lever only",
+        "An inclined plane",
         "A pulley"
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "A wheel fixed to a rod (axle) that turn together is a wheel-and-axle, which makes rolling loads easier.",
       hintLadder: [
         "Look at the wheel and the rod it spins on.",

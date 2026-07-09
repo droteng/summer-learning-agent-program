@@ -35,8 +35,8 @@ export const grade6StudyDay4 = {
       id: "g6.study.e.d4.q1",
       type: "multiple_choice",
       stem: "How long does a basic weekly plan usually take?",
-      choices: ["Hours", "10–15 minutes", "Multiple days", "Never works"],
-      answerIndex: 1,
+      choices: ["Hours", "Multiple days", "10–15 minutes", "Never works"],
+      answerIndex: 2,
       explanation: "A real planning session is short. Long planning often means avoiding the actual work.",
       hintLadder: [
         "How much planning is too much?",
@@ -51,11 +51,11 @@ export const grade6StudyDay4 = {
         "Which is the BEST 'task' to schedule?",
       choices: [
         "Sometime this week, study math.",
-        "Tuesday after dinner: 30 minutes of math practice problems.",
+        "Whenever I feel like it: math.",
         "Soon: math.",
-        "Whenever I feel like it: math."
+        "Tuesday after dinner: 30 minutes of math practice problems."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Specific day + time + duration + content. Each detail makes it more likely to happen.",
       hintLadder: [
         "Which option has a day, time, and duration?",
@@ -69,12 +69,12 @@ export const grade6StudyDay4 = {
       type: "multiple_choice",
       stem: "Why leave BUFFER (unscheduled time) in your week?",
       choices: [
-        "Laziness.",
         "Surprises happen — a sick day, an extra-long homework, a friend who needs help. Buffer absorbs them.",
+        "Laziness.",
         "Teachers prefer it.",
         "To look productive."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Real life has surprises. A week with no buffer falls apart at the first one.",
       hintLadder: [
         "Will the week go exactly as planned?",

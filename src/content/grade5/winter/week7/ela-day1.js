@@ -34,8 +34,8 @@ export const winterG5ElaW7D1 = {
       id: "g5.winter.ela.w7.d1.q1",
       type: "multiple_choice",
       stem: "Which part of a story is where we FIRST meet the characters and the setting?",
-      choices: ["The climax", "The beginning", "The middle", "The ending"],
-      answerIndex: 1,
+      choices: ["The climax", "The ending", "The middle", "The beginning"],
+      answerIndex: 3,
       explanation: "The beginning introduces the characters and the setting before the problem grows.",
       hintLadder: [
         "Which part comes FIRST?",
@@ -67,12 +67,12 @@ export const winterG5ElaW7D1 = {
       type: "multiple_choice",
       stem: "In a frozen-world story, which event best fits the MIDDLE, where the problem GROWS?",
       choices: [
-        "The traveler is safely home by the fire at the end.",
-        "We learn the traveler lives alone in a snowy cabin.",
         "The blizzard gets worse, the trail disappears, and the traveler's food runs low.",
+        "We learn the traveler lives alone in a snowy cabin.",
+        "The traveler is safely home by the fire at the end.",
         "The traveler finally decides whether to cross the frozen river."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "The middle is where the problem keeps growing, event after event, and the worsening blizzard shows that.",
       hintLadder: [
         "The middle is where trouble keeps GROWING, not the ending or the one big moment.",
@@ -158,8 +158,8 @@ export const winterG5ElaW7D1 = {
           id: "g5.winter.ela.w7.d1.arena1",
           type: "multiple_choice",
           stem: "A frozen-world story ends: 'The ice bridge holds. Mara reaches the far shore, lights the beacon, and finally breathes easy.' Which part of the story is this?",
-          choices: ["Beginning", "Middle", "Climax", "Ending"],
-          answerIndex: 3,
+          choices: ["Beginning", "Middle", "Ending", "Climax"],
+          answerIndex: 2,
           explanation: "The danger is over and things settle as the character reaches safety, so this is the ending.",
           hintLadder: [
             "Is the problem still growing, or is it winding down?",

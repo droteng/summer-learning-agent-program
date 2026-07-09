@@ -36,12 +36,12 @@ export const fallG5ElaW8D1 = {
       type: "multiple_choice",
       stem: "What are the three main parts of a strong presentation?",
       choices: [
-        "Title, name, and date",
         "A beginning that hooks, a middle with main ideas, and an ending message",
+        "Title, name, and date",
         "Hello, hello, and goodbye",
         "Beginning, snack break, and end"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A presentation has a hook to start, a middle with your main ideas, and an ending that gives one big message.",
       hintLadder: [
         "Think beginning, middle, and end.",
@@ -55,11 +55,11 @@ export const fallG5ElaW8D1 = {
       stem: "Why should you show your BEST 2 or 3 pieces instead of everything you made?",
       choices: [
         "To save paper",
-        "So you can go deeper and your audience stays interested",
         "Because a rule says so",
+        "So you can go deeper and your audience stays interested",
         "Because audiences like to be confused"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Showing a few pieces well lets you explain more and keeps your audience paying attention.",
       hintLadder: [
         "Imagine rushing through 20 things really fast.",
@@ -168,10 +168,10 @@ export const fallG5ElaW8D1 = {
           choices: [
             "Hi, my project is about the fall season.",
             "Today I will tell you some things I did.",
-            "Did you know one tree can drop over 200,000 leaves in the fall?",
-            "Um, so, this is my presentation."
+            "Um, so, this is my presentation.",
+            "Did you know one tree can drop over 200,000 leaves in the fall?"
           ],
-          answerIndex: 2,
+          answerIndex: 3,
           explanation: "A surprising fact makes the audience curious right away. The others are flat openings with no hook.",
           hintLadder: [
             "Which line makes you want to hear more?",

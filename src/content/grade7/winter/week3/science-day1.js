@@ -39,11 +39,11 @@ export const winterG7ScienceW3D1 = {
       stem: "Two kids push a stuck sled from the SAME side, one with 25 N and one with 35 N, while nothing pushes back. What is the net force on the sled?",
       choices: [
         "10 N (you subtract the pushes)",
-        "60 N in the direction they are both pushing",
+        "35 N, only the bigger push counts",
         "0 N, because two forces always cancel",
-        "35 N, only the bigger push counts"
+        "60 N in the direction they are both pushing"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Forces in the SAME direction add: 25 + 35 = 60 N. The net force is 60 N in the direction of the pushes.",
       hintLadder: [
         "Are the two pushes in the same direction or opposite directions?",
@@ -75,12 +75,12 @@ export const winterG7ScienceW3D1 = {
       type: "multiple_choice",
       stem: "You load extra bricks onto a sled so it presses much harder on the ground. What happens to the friction force when you try to drag it?",
       choices: [
-        "Friction disappears because the sled is heavier",
         "Friction increases, because friction grows as the surfaces press together harder",
+        "Friction disappears because the sled is heavier",
         "Friction stays exactly the same regardless of weight",
         "Gravity now pushes the sled sideways"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Friction depends on how hard the surfaces press together. Adding weight presses them harder, so the friction force resisting the drag increases.",
       hintLadder: [
         "What makes two surfaces grip more — pressing lightly or pressing hard?",

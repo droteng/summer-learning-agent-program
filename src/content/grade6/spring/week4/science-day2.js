@@ -34,12 +34,12 @@ export const springG6ScienceW4D2 = {
       type: "multiple_choice",
       stem: "Which allele will show its trait even if there is only ONE copy?",
       choices: [
-        "The recessive allele",
         "The dominant allele",
+        "The recessive allele",
         "Neither allele",
         "Both equally"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A dominant allele shows its trait with just one copy. A recessive trait only appears when both alleles are recessive.",
       hintLadder: [
         "One allele is 'stronger' and shows up with a single copy.",
@@ -86,11 +86,11 @@ export const springG6ScienceW4D2 = {
       stem: "Two brown-eyed parents who are each Bb have a child. Could that child have blue eyes (bb)?",
       choices: [
         "No, brown parents can only have brown children",
-        "Yes, if the child inherits the recessive b allele from each parent",
+        "No, blue eyes are impossible",
         "Only if one parent is blue-eyed",
-        "No, blue eyes are impossible"
+        "Yes, if the child inherits the recessive b allele from each parent"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Each Bb parent can pass the recessive b. If the child gets b from both, it is bb and has blue eyes — even though both parents look brown-eyed.",
       hintLadder: [
         "Each Bb parent secretly carries one recessive b.",

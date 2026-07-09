@@ -59,11 +59,11 @@ export const summerG5HistoryW3D4 = {
       stem: "Which one is most clearly a TURNING POINT in a story?",
       choices: [
         "A leader is born.",
-        "A treaty is signed that ends a long war.",
+        "A meeting is put on the calendar.",
         "A paper is filed away in a library.",
-        "A meeting is put on the calendar."
+        "A treaty is signed that ends a long war."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Signing a treaty that ends a war changes everything that follows and cannot be undone.",
       hintLadder: [
         "Which option causes a big, lasting change?",
@@ -93,11 +93,11 @@ export const summerG5HistoryW3D4 = {
       stem: "Which is the BEST opening for a history story about the moon landing?",
       choices: [
         "On July 20, 1969, two astronauts stepped onto the moon.",
-        "By the late 1960s, the U.S. and the Soviet Union had been racing to space for over ten years.",
         "Things happened in 1969.",
+        "By the late 1960s, the U.S. and the Soviet Union had been racing to space for over ten years.",
         "The moon goes around the Earth."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A good opening sets things up. Naming the space race that led to the landing makes the moment feel earned.",
       hintLadder: [
         "Which option gives background that makes the event matter?",
@@ -166,12 +166,12 @@ export const summerG5HistoryW3D4 = {
           type: "multiple_choice",
           stem: "Timeline: 1879 -- Edison makes a light bulb that lasts a long time. 1882 -- His company wires the first power station in New York. 1900s -- Cities glow at night and factories run after dark. Which event is the TURNING POINT?",
           choices: [
-            "Cities glow at night in the 1900s.",
             "Edison makes a long-lasting light bulb in 1879.",
+            "Cities glow at night in the 1900s.",
             "Factories run after dark.",
             "The 1900s in general."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Making the long-lasting bulb is the big moment that made everything after -- power stations, glowing cities, night-shift factories -- possible. The rest are results that circle around it.",
           hintLadder: [
             "The turning point comes before the results and makes them possible.",

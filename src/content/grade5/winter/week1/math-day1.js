@@ -35,8 +35,8 @@ export const winterG5MathW1D1 = {
       id: "g5.winter.math.w1.d1.q1",
       type: "multiple_choice",
       stem: "In the snowfall total 652 cm, what is the value of the digit 5?",
-      choices: ["5 hundreds", "5 tens", "5 ones", "5 thousands"],
-      answerIndex: 1,
+      choices: ["5 tens", "5 hundreds", "5 ones", "5 thousands"],
+      answerIndex: 0,
       explanation: "In 652 the 5 sits in the tens place, so its value is 5 tens, which is 50.",
       hintLadder: [
         "Name each place from the right: ones, tens, hundreds.",
@@ -76,8 +76,8 @@ export const winterG5MathW1D1 = {
       id: "g5.winter.math.w1.d1.q4",
       type: "multiple_choice",
       stem: "Four towns reported snowfall: Frostville 291 cm, Icehaven 219 cm, Snowridge 290 cm, Glacier Bay 209 cm. Which town had the MOST snow?",
-      choices: ["Frostville", "Icehaven", "Snowridge", "Glacier Bay"],
-      answerIndex: 0,
+      choices: ["Icehaven", "Frostville", "Snowridge", "Glacier Bay"],
+      answerIndex: 1,
       explanation: "Compare place by place. All start with 2 hundreds. In the tens place Frostville and Snowridge have 9; then in the ones Frostville has 1 and Snowridge has 0, so Frostville (291) is greatest.",
       hintLadder: [
         "Compare the hundreds digit first — they are all 2.",
@@ -170,12 +170,12 @@ export const winterG5MathW1D1 = {
           type: "multiple_choice",
           stem: "Which pair of snowfall totals BOTH round to the same value, 300 cm, when rounded to the nearest hundred?",
           choices: [
-            "251 cm and 349 cm",
+            "350 cm and 299 cm",
             "240 cm and 360 cm",
             "149 cm and 451 cm",
-            "350 cm and 299 cm"
+            "251 cm and 349 cm"
           ],
-          answerIndex: 0,
+          answerIndex: 3,
           explanation: "251 rounds up to 300 (tens digit 5) and 349 rounds down to 300 (tens digit 4). Both land on 300. In the other pairs at least one value rounds to a different hundred.",
           hintLadder: [
             "Round each number in a pair to the nearest hundred separately.",

@@ -36,12 +36,12 @@ export const fallG5HistoryW1D4 = {
       type: "multiple_choice",
       stem: "What let early people stop moving around all the time to find food?",
       choices: [
-        "They invented cars.",
         "They learned to farm and store harvests.",
+        "They invented cars.",
         "Winters became warmer.",
         "They stopped eating."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Farming let people grow and store food in one place, so they could settle down instead of roaming.",
       hintLadder: [
         "Think about what changes when you can store food.",
@@ -55,11 +55,11 @@ export const fallG5HistoryW1D4 = {
       stem: "A 'surplus' of harvest means there is...",
       choices: [
         "not enough food",
-        "exactly enough food",
         "more food than needed right now",
+        "exactly enough food",
         "spoiled food"
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "A surplus is extra — more than is needed right now — which can be stored or traded.",
       hintLadder: [
         "The word 'surplus' means 'extra.'",
@@ -74,11 +74,11 @@ export const fallG5HistoryW1D4 = {
       stem: "Which is an EFFECT of having stored extra food (a surplus)?",
       choices: [
         "People had to hunt every single day.",
-        "Some people could become builders, traders, or leaders.",
+        "Farming was forgotten.",
         "Everyone moved away.",
-        "Farming was forgotten."
+        "Some people could become builders, traders, or leaders."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "With food stored, not everyone had to gather it, so some people could do other jobs.",
       hintLadder: [
         "An effect is what HAPPENS BECAUSE of the cause.",
@@ -166,11 +166,11 @@ export const fallG5HistoryW1D4 = {
           stem: "Which is the best example of a CAUSE leading to an EFFECT in early history?",
           choices: [
             "Towns already existed, so people decided to invent farming.",
-            "People learned to store extra harvest, so some could do other jobs.",
             "Festivals were fun, so winters became warmer.",
+            "People learned to store extra harvest, so some could do other jobs.",
             "People moved around all the time, so they built permanent towns."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Stored extra food (cause) freed people from gathering food, so they could do other jobs (effect). The other options mix up or break the cause-and-effect link.",
           hintLadder: [
             "The cause must come first and actually make the effect happen.",

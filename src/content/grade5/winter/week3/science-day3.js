@@ -38,11 +38,11 @@ export const winterG5ScienceW3D3 = {
       stem: "What is the MAIN reason people use simple machines?",
       choices: [
         "To make brand-new energy out of nothing",
-        "To make work easier by changing how much force you need or which way you push",
         "To make objects heavier",
+        "To make work easier by changing how much force you need or which way you push",
         "To slow everything down"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Simple machines make work easier by changing the force you need or the direction you push — they do not make energy.",
       hintLadder: [
         "Think about why a ramp or a lever is helpful.",
@@ -85,10 +85,10 @@ export const winterG5ScienceW3D3 = {
       choices: [
         "A ramp",
         "A lever only",
-        "A wheel-and-axle",
-        "A pulley"
+        "A pulley",
+        "A wheel-and-axle"
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "A wheel joined to a rod (axle) so they turn together is a wheel-and-axle, which makes rolling a load easier.",
       hintLadder: [
         "Look at the wheel and the rod it spins on.",

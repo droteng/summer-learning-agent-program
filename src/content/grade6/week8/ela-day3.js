@@ -55,11 +55,11 @@ export const grade6ElaWeek8Day3 = {
       stem: "Why use placeholders like [example needed]?",
       choices: [
         "To make the draft look messy.",
-        "So you can keep the flow going without stopping to research mid-draft.",
         "To pad the word count.",
+        "So you can keep the flow going without stopping to research mid-draft.",
         "Because computers like brackets."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Stopping to perfect each missing piece kills draft momentum. Placeholders let you finish the shape first.",
       hintLadder: [
         "What kills writing momentum?",
@@ -74,11 +74,11 @@ export const grade6ElaWeek8Day3 = {
         "Your script is 75 seconds long; your goal was 90. Best Day-3 move:",
       choices: [
         "Cut the project to 60 seconds.",
-        "Note '+15s needed' and keep working — fix tomorrow.",
+        "Give up.",
         "Add filler to reach 90.",
-        "Give up."
+        "Note '+15s needed' and keep working — fix tomorrow."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Today is shape, not size. Mark the gap and fix it on revision day with real content.",
       hintLadder: [
         "What's the day's goal?",
@@ -170,11 +170,11 @@ export const grade6ElaWeek8Day3 = {
           stem: "Halfway through your first draft you realize you're missing a key statistic. Best Day-3 move?",
           choices: [
             "Stop everything and research until you find the exact number.",
-            "Write [stat needed] and keep drafting the rest of the sections.",
+            "Delete the whole section.",
             "Make up a number so it looks finished.",
-            "Delete the whole section."
+            "Write [stat needed] and keep drafting the rest of the sections."
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "A placeholder keeps your momentum so you finish the whole shape today. You fill it with a real, sourced number tomorrow — never invent data.",
           hintLadder: [
             "Day 3 is about completing the shape, not perfecting parts.",

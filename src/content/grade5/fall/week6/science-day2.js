@@ -54,12 +54,12 @@ export const fallG5ScienceW6D2 = {
       type: "multiple_choice",
       stem: "How might a spiral shape help a sunflower?",
       choices: [
-        "It looks scary to bugs",
         "It packs the most seeds into the smallest space",
+        "It looks scary to bugs",
         "It helps the flower run away",
         "It has no job at all"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A spiral arrangement fits the most seeds into the round flower head with no gaps.",
       hintLadder: [
         "Think about fitting lots of seeds in a round flower head.",
@@ -72,8 +72,8 @@ export const fallG5ScienceW6D2 = {
       id: "g5.fall.sci.w6.d2.q3",
       type: "multiple_choice",
       stem: "Which of these has the CLEAREST line symmetry?",
-      choices: ["A random splatter of paint", "A human face (left and right)", "A pile of leaves", "Fuzzy TV static"],
-      answerIndex: 1,
+      choices: ["A random splatter of paint", "A pile of leaves", "A human face (left and right)", "Fuzzy TV static"],
+      answerIndex: 2,
       explanation: "A face roughly matches on the left and right across a middle line — that is line symmetry.",
       hintLadder: [
         "Which one has matching left and right halves?",
@@ -163,11 +163,11 @@ export const fallG5ScienceW6D2 = {
           stem: "A snowflake has 6 matching arms around its center. What is that BEST described as?",
           choices: [
             "No symmetry — it's random",
-            "Symmetry around a center point (it matches as you turn it)",
+            "Spiral growth",
             "Only top-to-bottom symmetry",
-            "Spiral growth"
+            "Symmetry around a center point (it matches as you turn it)"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Six matching arms arranged around a center look the same as you turn the snowflake — that is symmetry around a center point, not a spiral.",
           hintLadder: [
             "Picture turning the snowflake a little — does it look the same?",

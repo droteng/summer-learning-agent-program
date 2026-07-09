@@ -36,11 +36,11 @@ export const springG6ElaW7D2 = {
       stem: "Which of these is the strongest EVIDENCE to support the claim 'Our town should protect its forest'?",
       choices: [
         "Forests are really pretty in spring.",
-        "One acre of forest can absorb about 2.5 tons of carbon dioxide each year.",
+        "Everybody knows forests are good.",
         "I really love walking in the woods.",
-        "Everybody knows forests are good."
+        "One acre of forest can absorb about 2.5 tons of carbon dioxide each year."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "It is a specific, checkable fact with data that directly supports why the forest matters. The others are feelings or vague statements.",
       hintLadder: [
         "Evidence is proof you can check, often with numbers.",
@@ -53,12 +53,12 @@ export const springG6ElaW7D2 = {
       type: "multiple_choice",
       stem: "What is the difference between a REASON and EVIDENCE?",
       choices: [
-        "They are exactly the same thing.",
         "A reason answers 'why?' about your claim; evidence is the facts, data, or examples that prove the reason.",
+        "They are exactly the same thing.",
         "A reason is always a number; evidence is always an opinion.",
         "Evidence comes first, then the claim, then the reason."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A reason explains why your claim is true; evidence is the specific proof (facts, data, examples) that backs up the reason.",
       hintLadder: [
         "One answers 'why?' and one is the proof.",
@@ -73,11 +73,11 @@ export const springG6ElaW7D2 = {
       stem: "A student's claim is 'Our city should build more bike lanes.' Which reason is best supported by EVIDENCE?",
       choices: [
         "Bikes are more fun than cars.",
-        "Bike lanes cut car pollution — cities with good bike lanes report lower traffic emissions.",
         "I think everyone should ride bikes.",
+        "Bike lanes cut car pollution — cities with good bike lanes report lower traffic emissions.",
         "Bikes come in cool colors."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "This reason is tied to real, checkable evidence about emissions. The others are preferences with no proof behind them.",
       hintLadder: [
         "Which reason could you back with a fact or data?",
@@ -171,11 +171,11 @@ export const springG6ElaW7D2 = {
           stem: "Claim: 'Our town should reduce plastic waste.' Which sentence is the strongest EVIDENCE, not just a reason or a feeling?",
           choices: [
             "Plastic waste is a big problem for everyone.",
-            "We should really care about this issue.",
             "Studies estimate about 8 million tons of plastic enter the ocean each year.",
+            "We should really care about this issue.",
             "Plastic is bad and we all know it."
           ],
-          answerIndex: 2,
+          answerIndex: 1,
           explanation: "It is a specific, checkable statistic that proves the problem is real and large. The others are general statements or feelings with no proof.",
           hintLadder: [
             "Evidence is checkable proof, often with numbers.",

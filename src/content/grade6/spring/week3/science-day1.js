@@ -35,11 +35,11 @@ export const springG6ScienceW3D1 = {
       stem: "Which set of stages describes COMPLETE metamorphosis?",
       choices: [
         "Egg → nymph → adult",
-        "Egg → larva → pupa → adult",
+        "Larva → adult → egg",
         "Seed → sprout → adult",
-        "Larva → adult → egg"
+        "Egg → larva → pupa → adult"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Complete metamorphosis has four distinct stages — egg, larva, pupa, adult — like a butterfly.",
       hintLadder: [
         "Complete metamorphosis has FOUR stages, not three.",
@@ -72,11 +72,11 @@ export const springG6ScienceW3D1 = {
       stem: "A frog begins life as a tadpole with a tail and gills, then grows legs and lungs to become an adult frog. What does this show?",
       choices: [
         "The tadpole and frog are different species",
-        "The frog undergoes metamorphosis — a big body change between stages",
         "Frogs skip the egg stage",
+        "The frog undergoes metamorphosis — a big body change between stages",
         "The frog never changes after hatching"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "The tadpole and frog are the same animal at different life-cycle stages; the dramatic body change is metamorphosis.",
       hintLadder: [
         "A tadpole and a frog are the SAME animal.",
@@ -165,12 +165,12 @@ export const springG6ScienceW3D1 = {
           type: "multiple_choice",
           stem: "A dragonfly hatches from an egg as a water-dwelling nymph, molts several times, then becomes a winged adult — with no pupa stage. Which type of life cycle is this?",
           choices: [
-            "Complete metamorphosis",
             "Incomplete metamorphosis",
+            "Complete metamorphosis",
             "No metamorphosis at all",
             "Plant germination"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "No pupa stage and a nymph that grows into the adult form means this is incomplete metamorphosis.",
           hintLadder: [
             "Was there a pupa (resting) stage? No.",

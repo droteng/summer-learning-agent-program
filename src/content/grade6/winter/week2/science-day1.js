@@ -33,8 +33,8 @@ export const winterG6ScienceW2D1 = {
       id: "g6.winter.sci.w2.d1.q1",
       type: "multiple_choice",
       stem: "You grab a cold metal doorknob and your hand instantly feels chilled. Which type of heat transfer is happening?",
-      choices: ["Radiation", "Convection", "Conduction", "Evaporation"],
-      answerIndex: 2,
+      choices: ["Radiation", "Convection", "Evaporation", "Conduction"],
+      answerIndex: 3,
       explanation: "Heat flows by direct contact from your warm hand into the cold metal — that is conduction.",
       hintLadder: [
         "Are the two objects touching?",
@@ -48,11 +48,11 @@ export const winterG6ScienceW2D1 = {
       stem: "The sun warms your face on a cold, clear day even though space between you and the sun is nearly empty. This works by...",
       choices: [
         "Conduction, because the air touches your face",
-        "Radiation, because heat travels as waves that need no material",
         "Convection, because warm air rises",
+        "Radiation, because heat travels as waves that need no material",
         "It is impossible for heat to cross empty space"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Radiation carries heat as electromagnetic waves, so it can cross the vacuum of space with no material to travel through.",
       hintLadder: [
         "There is almost no air between you and the sun.",
@@ -165,12 +165,12 @@ export const winterG6ScienceW2D1 = {
           type: "multiple_choice",
           stem: "A campfire warms your face from across the snow, even though the cold air between you and the fire is not warm. Which transfer type reaches your face?",
           choices: [
-            "Conduction, because you are touching the fire",
-            "Convection, because cold air flows toward you",
             "Radiation, because heat travels as waves to your skin",
+            "Convection, because cold air flows toward you",
+            "Conduction, because you are touching the fire",
             "No heat can reach you across cold air"
           ],
-          answerIndex: 2,
+          answerIndex: 0,
           explanation: "The fire sends out infrared radiation that travels straight to your skin as waves, warming you without heating all the air in between.",
           hintLadder: [
             "You are not touching the fire, so it is not conduction.",

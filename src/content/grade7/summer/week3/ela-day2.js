@@ -35,12 +35,12 @@ export const summerG7ElaW3D2 = {
       type: "multiple_choice",
       stem: "Which sentence uses INDIRECT characterization?",
       choices: [
-        "Marcus was a generous boy.",
         "Marcus slipped half his lunch to the new kid who had none, then looked away so no one would thank him.",
+        "Marcus was a generous boy.",
         "Everyone knew Marcus was kind.",
         "Marcus had a generous personality."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "It SHOWS generosity through action rather than TELLING the trait, letting the reader infer it. The others state the trait directly.",
       hintLadder: [
         "Which one shows a trait through action instead of naming it?",
@@ -73,11 +73,11 @@ export const summerG7ElaW3D2 = {
       stem: "Why do skilled writers often prefer indirect over direct characterization?",
       choices: [
         "It uses fewer words",
-        "Readers trust conclusions they reach themselves more than traits they're simply told",
+        "It avoids using any dialogue",
         "It is required by grammar rules",
-        "It avoids using any dialogue"
+        "Readers trust conclusions they reach themselves more than traits they're simply told"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Letting readers infer a trait makes it more convincing and memorable than announcing it — 'prove it, don't announce it.'",
       hintLadder: [
         "Think about what readers believe more.",

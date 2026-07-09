@@ -35,12 +35,12 @@ export const springG6ElaW1D3 = {
       type: "multiple_choice",
       stem: "Which of these is a TESTABLE question for a growth experiment?",
       choices: [
-        "Are flowers the best part of spring?",
         "Does the type of soil change how tall a bean plant grows in three weeks?",
+        "Are flowers the best part of spring?",
         "Why is gardening fun?",
         "Do you like sunflowers?"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "It names something to change (type of soil) and something to measure (plant height over three weeks), so it can be tested with observations.",
       hintLadder: [
         "A testable question can be answered by measuring, not by opinion.",
@@ -54,11 +54,11 @@ export const springG6ElaW1D3 = {
       stem: "In the question 'Does more sunlight make a plant grow taller?', what is the thing being MEASURED?",
       choices: [
         "The amount of sunlight",
-        "How tall the plant grows",
+        "The kind of seed",
         "The color of the pot",
-        "The kind of seed"
+        "How tall the plant grows"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "You change the sunlight, but the RESULT you measure is how tall the plant grows.",
       hintLadder: [
         "One thing is changed on purpose; the other is the result you observe.",
@@ -73,11 +73,11 @@ export const springG6ElaW1D3 = {
       stem: "Which sentence is the strongest GOAL statement for a spring growth experiment?",
       choices: [
         "I like plants a lot.",
-        "Plants are green.",
         "I want to find out whether warmer temperatures help radish seeds sprout faster, so I can plant at the best time.",
+        "Plants are green.",
         "Spring is nice."
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "It states what will be tested (temperature and sprouting speed) AND why it matters (planting at the best time) — a clear, purposeful goal.",
       hintLadder: [
         "A goal says what you want to learn AND why it matters.",

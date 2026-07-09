@@ -1323,6 +1323,31 @@ export function getAuthoredMissionById(id) {
   return authoredMissions[id] ?? null;
 }
 
+// Item lookup across core items AND Daily Hour arena items. Built lazily so
+// module load stays cheap. Used by the grading route to resolve the
+// canonical (answer-bearing) item — clients only ever see stripped items.
+//
+// Subject + topicTag live on the mission, not the item, but mastery tracking
+// keys skills as `${subject}:${topicTag}`. We fold them onto the returned
+// item so graded skills bucket by real subject instead of collapsing into a
+// single "undefined" skill. The stored item objects are left untouched.
+let itemIndex = null;
+export function getAuthoredItemById(itemId) {
+  if (!itemIndex) {
+    itemIndex = new Map();
+    for (const mission of ALL_MISSIONS) {
+      const context = { subject: mission.subject, topicTag: mission.topicTag ?? null };
+      for (const item of mission.items ?? []) {
+        itemIndex.set(item.id, { ...item, ...context });
+      }
+      for (const item of mission.dailyHour?.challengeArena?.items ?? []) {
+        itemIndex.set(item.id, { ...item, ...context });
+      }
+    }
+  }
+  return itemIndex.get(itemId) ?? null;
+}
+
 export function findEnrichmentMissions(track) {
   return ALL_MISSIONS.filter(
     (mission) => mission.enrichment === true && (track ? mission.track === track : true)

@@ -42,7 +42,8 @@
   font-weight: 700;
   color: #1f2937;
 }
-.ls-auth-form input {
+.ls-auth-form input,
+.ls-auth-form select {
   appearance: none;
   width: 100%;
   padding: 12px 14px;
@@ -53,10 +54,19 @@
   font-family: inherit;
   transition: border-color 0.15s, background 0.15s;
 }
-.ls-auth-form input:focus {
+/* Chevron for the select, drawn inline so no asset request is needed. */
+.ls-auth-form select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 38px;
+  cursor: pointer;
+}
+.ls-auth-form input:focus,
+.ls-auth-form select:focus {
   outline: none;
   border-color: var(--ls-accent, #f97316);
-  background: white;
+  background-color: white;
 }
 .ls-auth-hint {
   font-size: 12px;

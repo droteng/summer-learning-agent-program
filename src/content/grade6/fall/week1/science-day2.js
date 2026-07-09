@@ -36,11 +36,11 @@ export const fallG6ScienceW1D2 = {
       stem: "Which of these is an OBSERVATION, not an inference?",
       choices: [
         "The tree is sad that summer ended.",
-        "The maple leaves have turned orange.",
+        "Winter will be harsh this year.",
         "The cold made the leaves change.",
-        "Winter will be harsh this year."
+        "The maple leaves have turned orange."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "'Leaves have turned orange' is something you can directly see. The others are guesses or predictions.",
       hintLadder: [
         "An observation is what your senses detect directly.",
@@ -53,12 +53,12 @@ export const fallG6ScienceW1D2 = {
       type: "multiple_choice",
       stem: "What mainly triggers leaves to change color in fall?",
       choices: [
-        "Shorter daylight (longer nights)",
-        "The first snowfall",
         "Animals eating the leaves",
+        "The first snowfall",
+        "Shorter daylight (longer nights)",
         "Rain washing out the green"
       ],
-      answerIndex: 0,
+      answerIndex: 2,
       explanation: "Shorter days signal the tree to stop making chlorophyll, revealing other colors. Temperature affects the shade but daylight is the main trigger.",
       hintLadder: [
         "It's a signal the plant senses before it gets cold.",
@@ -157,12 +157,12 @@ export const fallG6ScienceW1D2 = {
           type: "multiple_choice",
           stem: "Which statement is an INFERENCE rather than an observation?",
           choices: [
-            "The pond has a thin layer of ice this morning.",
-            "I counted eleven geese flying south.",
             "The birds are leaving because they know a storm is coming.",
+            "I counted eleven geese flying south.",
+            "The pond has a thin layer of ice this morning.",
             "Three maple leaves fell while I watched."
           ],
-          answerIndex: 2,
+          answerIndex: 0,
           explanation: "Saying the birds 'know a storm is coming' explains WHY — that's an untested inference. The others are things you directly sense.",
           hintLadder: [
             "An observation is something your senses detect directly.",

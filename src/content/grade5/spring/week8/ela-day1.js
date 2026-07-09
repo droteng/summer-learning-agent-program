@@ -56,11 +56,11 @@ export const springG5ElaW8D1 = {
       stem: "Why does knowing your AUDIENCE before you build help?",
       choices: [
         "It doesn't change anything.",
-        "It helps you pick the right words and examples so your audience understands.",
+        "It only matters for your grade.",
         "It just makes the project longer.",
-        "It only matters for your grade."
+        "It helps you pick the right words and examples so your audience understands."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "You'd explain a life cycle very differently to a little kid than to a grown-up — knowing your audience shapes your choices.",
       hintLadder: [
         "Think about explaining to a 5-year-old vs. an adult.",
@@ -173,12 +173,12 @@ export const springG5ElaW8D1 = {
           type: "multiple_choice",
           stem: "A student writes this capstone plan: 'I'll explain nature.' What is the BIGGEST problem?",
           choices: [
-            "It's too small.",
             "The topic is way too big — 'nature' can't be covered in one project.",
+            "It's too small.",
             "It has too many checklist goals.",
             "It picks the wrong audience."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "The topic is the problem: 'nature' is endless. A strong capstone picks ONE small, clear thing to show.",
           hintLadder: [
             "Could anyone finish a project about all of 'nature'?",

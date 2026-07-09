@@ -34,12 +34,12 @@ export const springG6ScienceW2D1 = {
       type: "multiple_choice",
       stem: "Which THREE ingredients does a plant use for photosynthesis?",
       choices: [
-        "Soil, wind, and moonlight",
         "Sunlight, water, and carbon dioxide",
+        "Soil, wind, and moonlight",
         "Oxygen, sugar, and salt",
         "Sunlight, oxygen, and rocks"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Photosynthesis combines sunlight (energy), water from the roots, and carbon dioxide from the air.",
       hintLadder: [
         "One ingredient is the energy source in the sky.",
@@ -67,11 +67,11 @@ export const springG6ScienceW2D1 = {
       stem: "Where in the plant does most photosynthesis happen, and what captures the sunlight?",
       choices: [
         "In the roots, using water",
-        "In the flowers, using pollen",
         "In the leaves, using chlorophyll",
+        "In the flowers, using pollen",
         "In the stem, using sugar"
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "Leaves hold chloroplasts full of chlorophyll, the green pigment that captures sunlight energy.",
       hintLadder: [
         "Think about the flat, green, sun-catching part of a plant.",
@@ -161,11 +161,11 @@ export const springG6ScienceW2D1 = {
           stem: "A scientist seals a healthy plant in a clear jar with plenty of light and water. Over the day, what happens to the oxygen level inside the jar?",
           choices: [
             "Oxygen goes DOWN because the plant uses it up",
-            "Oxygen goes UP because the plant releases oxygen during photosynthesis",
+            "The jar fills only with carbon dioxide",
             "Oxygen stays exactly the same",
-            "The jar fills only with carbon dioxide"
+            "Oxygen goes UP because the plant releases oxygen during photosynthesis"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "With light and water, the plant does photosynthesis, taking in CO2 and releasing oxygen, so oxygen rises.",
           hintLadder: [
             "In the light, is the plant doing photosynthesis?",

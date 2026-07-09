@@ -33,8 +33,8 @@ export const springG6ScienceW2D2 = {
       id: "g6.spring.sci.w2.d2.q1",
       type: "multiple_choice",
       stem: "Which plant part absorbs water and minerals from the soil?",
-      choices: ["Leaves", "Flower", "Roots", "Stem"],
-      answerIndex: 2,
+      choices: ["Roots", "Flower", "Leaves", "Stem"],
+      answerIndex: 0,
       explanation: "Roots anchor the plant and pull water and minerals up from the soil.",
       hintLadder: [
         "Think about the part that is underground.",
@@ -48,11 +48,11 @@ export const springG6ScienceW2D2 = {
       stem: "What is the MAIN job of the flower?",
       choices: [
         "To make food by photosynthesis",
-        "To reproduce — make seeds for new plants",
         "To absorb water from the soil",
+        "To reproduce — make seeds for new plants",
         "To hold the plant upright"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Flowers are the reproductive part; they produce seeds, often with help from pollinators.",
       hintLadder: [
         "Which part attracts bees and butterflies?",
@@ -67,11 +67,11 @@ export const springG6ScienceW2D2 = {
       stem: "The stem works like a pipeline. What does it transport?",
       choices: [
         "Only sunlight",
-        "Water up from the roots and sugar around the plant",
+        "Nothing — it just holds the plant up",
         "Only oxygen down to the roots",
-        "Nothing — it just holds the plant up"
+        "Water up from the roots and sugar around the plant"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "The stem supports the plant AND carries water up from the roots and sugar made in the leaves to the rest of the plant.",
       hintLadder: [
         "The stem connects roots to leaves.",
@@ -161,11 +161,11 @@ export const springG6ScienceW2D2 = {
           stem: "A celery stalk placed in colored water turns the water-carrying tubes colored. Which plant PART is the celery stalk acting as, and what is it doing?",
           choices: [
             "A root — absorbing minerals",
-            "A leaf — making food",
             "A stem — transporting water upward",
+            "A leaf — making food",
             "A flower — making seeds"
           ],
-          answerIndex: 2,
+          answerIndex: 1,
           explanation: "The celery stalk is a stem; the colored water shows the stem's tubes carrying water upward.",
           hintLadder: [
             "The stalk connects the base to the leaves.",

@@ -35,8 +35,8 @@ export const winterG5ScienceW2D1 = {
       id: "g5.winter.sci.w2.d1.q1",
       type: "multiple_choice",
       stem: "You grab a cold metal doorknob and your hand quickly feels cold. Which type of heat transfer is happening?",
-      choices: ["Radiation", "Convection", "Conduction", "Evaporation"],
-      answerIndex: 2,
+      choices: ["Conduction", "Convection", "Radiation", "Evaporation"],
+      answerIndex: 0,
       explanation: "Heat moves by touch from your warm hand into the cold metal — that is conduction.",
       hintLadder: [
         "Are your hand and the doorknob touching?",
@@ -50,11 +50,11 @@ export const winterG5ScienceW2D1 = {
       stem: "The sun warms your face on a cold, clear day, even though the sun is very far away. This works by...",
       choices: [
         "Conduction, because the sun is touching your face",
-        "Radiation, because heat travels as rays that need no touching",
+        "It is impossible for heat to travel that far",
         "Convection, because warm air rises",
-        "It is impossible for heat to travel that far"
+        "Radiation, because heat travels as rays that need no touching"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Radiation carries heat as invisible rays, so it can travel all the way from the sun to your skin without anything touching.",
       hintLadder: [
         "The sun is not touching your face.",

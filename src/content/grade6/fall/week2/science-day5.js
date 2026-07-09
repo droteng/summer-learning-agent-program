@@ -53,12 +53,12 @@ export const fallG6ScienceW2D5 = {
       type: "multiple_choice",
       stem: "Why can an INVASIVE species cause so much damage to a new ecosystem?",
       choices: [
-        "It is always poisonous",
         "It often has no natural predators there, so its population can explode",
+        "It is always poisonous",
         "It refuses to eat",
         "It makes the sun brighter"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Without natural predators or competition, an invasive species can multiply unchecked and crowd out native species.",
       hintLadder: [
         "What usually keeps a population in balance?",
@@ -73,11 +73,11 @@ export const fallG6ScienceW2D5 = {
       stem: "Which action would most likely HELP restore a damaged kelp forest?",
       choices: [
         "Remove all the kelp",
-        "Bring back the sea otters that control the urchins",
+        "Pour in more salt water",
         "Add more urchins",
-        "Pour in more salt water"
+        "Bring back the sea otters that control the urchins"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Restoring the keystone predator (otters) brings urchin numbers back down so kelp can regrow.",
       hintLadder: [
         "What controlled the urchins originally?",
@@ -166,12 +166,12 @@ export const fallG6ScienceW2D5 = {
           type: "multiple_choice",
           stem: "Wolves are removed from a forest. Deer (which wolves hunted) then multiply. What is the MOST likely next effect?",
           choices: [
-            "The deer eat so many young trees and plants that the forest thins out",
-            "The deer immediately disappear",
             "The sun gets brighter",
+            "The deer immediately disappear",
+            "The deer eat so many young trees and plants that the forest thins out",
             "Nothing changes at all"
           ],
-          answerIndex: 0,
+          answerIndex: 2,
           explanation: "With no wolves controlling them, deer overgraze the plants, so the producers (and species that depend on them) decline — a classic keystone-removal cascade.",
           hintLadder: [
             "What kept the deer numbers down before?",

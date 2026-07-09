@@ -78,11 +78,11 @@ export const summerG7CodingW2D4 = {
       stem: "A friend's average function divides by 5 no matter what list is passed in. Why is this a bug?",
       choices: [
         "Division is never allowed inside a function.",
-        "It should divide by the list's LENGTH, so it breaks for lists that don't have 5 items.",
+        "Averages should use multiplication, not division.",
         "Functions can't take a list as a parameter.",
-        "Averages should use multiplication, not division."
+        "It should divide by the list's LENGTH, so it breaks for lists that don't have 5 items."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "The divisor must be the number of items in THIS list (its length). Hard-coding 5 gives wrong answers for any list that isn't exactly 5 items long.",
       hintLadder: [
         "What number should you divide the sum by to get an average?",

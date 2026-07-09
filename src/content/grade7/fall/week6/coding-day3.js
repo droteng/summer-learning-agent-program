@@ -64,12 +64,12 @@ export const fallG7CodingW6D3 = {
       type: "multiple_choice",
       stem: "In a nested loop, how many times does the INNER loop's body run in total?",
       choices: [
-        "Outer count + inner count",
-        "Just the inner count (the outer doesn't matter)",
         "Outer count × inner count",
+        "Just the inner count (the outer doesn't matter)",
+        "Outer count + inner count",
         "Only once, no matter the counts"
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "The inner loop completes fully for every outer pass, so the body runs outer × inner times.",
       hintLadder: [
         "The inner loop restarts on every outer pass.",

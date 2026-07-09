@@ -36,12 +36,12 @@ export const fallG7ElaW5D1 = {
       type: "multiple_choice",
       stem: "Which sentence is the most PRECISE, arguable claim (defensible AND debatable)?",
       choices: [
-        "Schools should be better.",
         "Our district should push middle-school start times to 8:30 a.m. to align with adolescent sleep research.",
+        "Schools should be better.",
         "Mornings are hard for a lot of students.",
         "The sun rises in the east."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "It names a specific change (8:30 start, middle school), is backed by evidence (sleep research), yet a reasonable person could still object (busing, sports, parents' schedules). That's precise, defensible, and debatable.",
       hintLadder: [
         "Rule out the fact and the vague statements first.",
@@ -55,11 +55,11 @@ export const fallG7ElaW5D1 = {
       stem: "Why is 'Autumn is the best season' a weak claim for a Grade 7 argument essay?",
       choices: [
         "It is grammatically incorrect",
-        "It rests on personal taste, so there is no shared evidence a reader could weigh",
+        "It is far too specific",
         "It is a verifiable fact",
-        "It is far too specific"
+        "It rests on personal taste, so there is no shared evidence a reader could weigh"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "'Best season' is a preference; there's no agreed-upon evidence to argue it. A claim needs to be supportable with reasons others can evaluate.",
       hintLadder: [
         "Could you give a reader evidence, or only your feelings?",
@@ -172,11 +172,11 @@ export const fallG7ElaW5D1 = {
           stem: "Which is the STRONGEST Grade 7 persuasive claim — precise, defensible, AND debatable?",
           choices: [
             "Autumn has leaves.",
-            "I think fall is nice.",
             "Our school should plant 20 native maples along the front lawn to cut summer cooling costs and shade the walkway.",
+            "I think fall is nice.",
             "Trees are good for everyone, obviously."
           ],
-          answerIndex: 2,
+          answerIndex: 1,
           explanation: "It's precise (20 native maples, a named location), backed by a benefit you can measure (cooling costs, shade), and still debatable (cost, maintenance) — the marks of a strong claim. The others are facts, vague preferences, or overclaims.",
           hintLadder: [
             "Rule out the fact and the vague statements.",

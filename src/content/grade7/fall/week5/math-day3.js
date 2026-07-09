@@ -37,11 +37,11 @@ export const fallG7MathW5D3 = {
       stem: "Which sample lets you most VALIDLY infer what all 800 students in a school think?",
       choices: [
         "The 8 students sitting at your lunch table",
-        "80 students chosen at random from the whole school",
+        "The first 5 students who walk in the door",
         "The 25 members of the debate club only",
-        "The first 5 students who walk in the door"
+        "80 students chosen at random from the whole school"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A large, RANDOM sample from the whole population is representative. The others are too small or biased toward one group.",
       hintLadder: [
         "A valid inference needs a random AND reasonably large sample.",
@@ -69,11 +69,11 @@ export const fallG7MathW5D3 = {
       stem: "An ad says '9 out of 10 kids prefer our snack!' — but they only asked 10 kids, all from one class. Why is the inference untrustworthy?",
       choices: [
         "10 kids is more than enough to speak for everyone",
-        "The sample is both too small AND not random, so it can't represent all kids",
         "Percentages can never be trusted",
+        "The sample is both too small AND not random, so it can't represent all kids",
         "The snack must be unhealthy"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A tiny, non-random sample (10 kids, one class) can't fairly stand in for a whole population — the result likely won't hold for a bigger, fairer group.",
       hintLadder: [
         "How many kids, and from where, were actually asked?",

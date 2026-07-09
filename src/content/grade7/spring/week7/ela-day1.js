@@ -37,11 +37,11 @@ export const springG7ElaW7D1 = {
       stem: "Which sentence is the most PRECISE and DEFENSIBLE Grade 7 claim about an environmental issue?",
       choices: [
         "The environment matters to everyone.",
-        "Our city council should require new downtown buildings to include rooftop gardens to reduce summer heat.",
+        "Pollution is a serious global problem.",
         "People should care more about nature.",
-        "Pollution is a serious global problem."
+        "Our city council should require new downtown buildings to include rooftop gardens to reduce summer heat."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "It names a specific actor (city council), a specific action (require rooftop gardens on new buildings), and a specific purpose (reduce heat) — precise, arguable, and defensible. The others are vague statements almost no one would dispute.",
       hintLadder: [
         "A defensible claim names WHO should do WHAT, and WHY.",
@@ -55,11 +55,11 @@ export const springG7ElaW7D1 = {
       stem: "Why does a strong Grade 7 claim need you to anticipate the OPPOSING view before you even finish writing it?",
       choices: [
         "So you can leave the opposing view out of your essay entirely.",
-        "Because a claim you cannot argue against is either too obvious or too vague, and knowing the objection helps you make the claim sharp and defensible.",
         "Because the opposing view replaces your claim.",
+        "Because a claim you cannot argue against is either too obvious or too vague, and knowing the objection helps you make the claim sharp and defensible.",
         "Because teachers require exactly three objections."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "If no reasonable objection exists, the claim is not really arguable. Knowing the strongest objection lets you sharpen your claim and plan your defense — a step beyond simply stating a position.",
       hintLadder: [
         "What does it mean if NO one could object to your claim?",
@@ -73,12 +73,12 @@ export const springG7ElaW7D1 = {
       type: "multiple_choice",
       stem: "A student writes: 'Our town should protect the wetland by the river instead of paving it for parking.' Which revision makes the claim MORE defensible without losing its position?",
       choices: [
-        "Wetlands are nice places to visit.",
         "Our town should permanently zone the riverside wetland as protected habitat rather than approve the proposed parking lot, because the wetland filters stormwater and shelters native species.",
+        "Wetlands are nice places to visit.",
         "Somebody should really do something about that wetland.",
         "Parking lots are usually bad."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "It keeps the position but adds a defensible scope (permanent zoning), the specific alternative it opposes (the proposed lot), and the reasons that make it arguable — exactly what a Grade 7 claim needs.",
       hintLadder: [
         "A more defensible claim adds specifics you can back up.",

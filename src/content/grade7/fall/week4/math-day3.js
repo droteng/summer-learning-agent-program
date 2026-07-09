@@ -34,8 +34,8 @@ export const fallG7MathW4D3 = {
       id: "g7.fall.math.w4.d3.q1",
       type: "multiple_choice",
       stem: "In a base-60 system, how many times bigger is the second place than the ones place?",
-      choices: ["10 times", "6 times", "60 times", "100 times"],
-      answerIndex: 2,
+      choices: ["10 times", "60 times", "6 times", "100 times"],
+      answerIndex: 1,
       explanation: "In base-b, each place is b times the one to its right, so base-60 places grow by ×60.",
       hintLadder: [
         "The base IS the jump between places.",
@@ -77,11 +77,11 @@ export const fallG7MathW4D3 = {
       stem: "A full circle is 360°, a leftover of base-60. If a slice is 1/6 of the circle, how many degrees is it — and what proportion did you use?",
       choices: [
         "36°, using 360 ÷ 10",
-        "60°, using 360 × (1/6)",
+        "6°, using 360 ÷ 60",
         "72°, using 360 ÷ 5",
-        "6°, using 360 ÷ 60"
+        "60°, using 360 × (1/6)"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "One-sixth of 360° is 360 × 1/6 = 60°. The proportion is (part/whole) = (degrees/360).",
       hintLadder: [
         "A whole circle is 360°.",

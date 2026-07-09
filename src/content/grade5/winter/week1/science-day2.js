@@ -69,11 +69,11 @@ export const winterG5ScienceW1D2 = {
       stem: "When liquid water FREEZES into ice, what happens?",
       choices: [
         "Heat is added and the water spreads apart",
-        "Heat is taken away and the water becomes a firm solid",
+        "The water disappears",
         "The water turns into a different substance",
-        "The water disappears"
+        "Heat is taken away and the water becomes a firm solid"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Freezing takes heat away, so the water gets colder and becomes a firm, solid block of ice — but it is still water.",
       hintLadder: [
         "Freezing means the water is getting colder, not warmer.",
@@ -168,12 +168,12 @@ export const winterG5ScienceW1D2 = {
           type: "multiple_choice",
           stem: "On a warm afternoon, a puddle from melted snow slowly dries up and is gone by evening. What change of state happened to the puddle?",
           choices: [
-            "Freezing: liquid turning to solid",
-            "Melting: solid turning to liquid",
             "Evaporation: liquid turning to water vapor",
+            "Melting: solid turning to liquid",
+            "Freezing: liquid turning to solid",
             "Condensation: gas turning to liquid"
           ],
-          answerIndex: 2,
+          answerIndex: 0,
           explanation: "The liquid puddle turned into water vapor and spread into the air. Liquid changing into a gas is called evaporation.",
           hintLadder: [
             "The puddle is a liquid; it disappeared into the air.",

@@ -39,8 +39,8 @@ export const summerG5CodingW1D3 = {
       id: "g5.summer.code.w1.d3.q1",
       type: "multiple_choice",
       stem: "What does this code print?\n\nFOR each number in [1, 2, 3]:\n    PRINT number + 2",
-      choices: ["1 2 3", "3 4 5", "2 4 6", "1 4 9"],
-      answerIndex: 1,
+      choices: ["3 4 5", "1 2 3", "2 4 6", "1 4 9"],
+      answerIndex: 0,
       explanation: "The loop runs three times, printing number + 2 each time: 3, 4, 5.",
       hintLadder: [
         "What is the first number?",
@@ -85,8 +85,8 @@ export const summerG5CodingW1D3 = {
       id: "g5.summer.code.w1.d3.q4",
       type: "multiple_choice",
       stem: "Follow this loop. What does it print?\n\nFOR each number in [1, 2, 3]:\n    PRINT number\n    SET number = number + 10",
-      choices: ["1 2 3", "11 12 13", "1 11 21", "10 20 30"],
-      answerIndex: 0,
+      choices: ["10 20 30", "11 12 13", "1 11 21", "1 2 3"],
+      answerIndex: 3,
       explanation: "The loop gives number a fresh value each time from the list, so adding 10 inside the loop does not last. It still prints 1, 2, 3.",
       hintLadder: [
         "Where does number get its value each time?",

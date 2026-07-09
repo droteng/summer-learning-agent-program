@@ -65,12 +65,12 @@ export const springG5CodingW8D4 = {
       type: "multiple_choice",
       stem: "Your growth tool should ADD 4 each day but it prints numbers going DOWN. Which line is most likely the BUG?",
       choices: [
-        "The line that prints the result",
-        "The line that sets up the starting height",
         "The update line — it probably says height = height − 4 instead of + 4",
+        "The line that sets up the starting height",
+        "The line that prints the result",
         "There is no bug; going down is fine"
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "If the numbers shrink when they should grow, the update rule has the wrong sign — a minus where a plus belongs.",
       hintLadder: [
         "Which line actually CHANGES the height each day?",
@@ -85,11 +85,11 @@ export const springG5CodingW8D4 = {
       stem: "Why is TRACING a program by hand helpful before you demo it?",
       choices: [
         "It makes the program run faster",
-        "It lets you predict each value and catch a wrong answer before your audience sees it",
+        "It only helps for very long programs",
         "It changes the code by itself",
-        "It only helps for very long programs"
+        "It lets you predict each value and catch a wrong answer before your audience sees it"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Tracing lets you predict the exact answer step by step, so you spot and fix a wrong value before the demo.",
       hintLadder: [
         "What do you learn by writing each value down?",

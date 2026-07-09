@@ -82,11 +82,11 @@ export const fallG6MathW2D2 = {
       stem: "An energy pyramid is widest at the bottom. What does the WIDTH of each level represent?",
       choices: [
         "How tall the animals are",
-        "How much energy (and usually how many organisms) that level holds",
+        "The temperature",
         "How fast the animals run",
-        "The temperature"
+        "How much energy (and usually how many organisms) that level holds"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Wider levels hold more energy and support more organisms; that's why producers form the wide base.",
       hintLadder: [
         "The bottom has the most of something.",

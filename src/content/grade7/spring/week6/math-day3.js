@@ -79,12 +79,12 @@ export const springG7MathW6D3 = {
       type: "multiple_choice",
       stem: "Two rules start at the same value: value = 20 + 10n (linear) and value = 20 × 1.5^n (exponential, +50% each step). Why does the exponential rule eventually pass the linear one even though it adds LESS at first?",
       choices: [
-        "Because 1.5 is bigger than 10",
         "Because the exponential jump is a fixed PERCENT of a growing number, so the jumps get bigger every step while the linear jump stays 10",
+        "Because 1.5 is bigger than 10",
         "Because the linear rule stops growing after a few steps",
         "Because multiplying by 1.5 is the same as adding 10"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A ×1.5 step adds 50% of the current value; as that value grows, 50% of it grows too, so the jumps overtake the fixed +10 of the linear rule.",
       hintLadder: [
         "How big is the linear jump each step? Always 10.",

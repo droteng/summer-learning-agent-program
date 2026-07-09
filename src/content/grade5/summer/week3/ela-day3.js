@@ -41,11 +41,11 @@ export const summerG5ElaW3D3 = {
       stem: "Which line has correct dialogue punctuation?",
       choices: [
         "\"Stop right there\", he yelled.",
-        "\"Stop right there!\" he yelled.",
         "\"Stop right there.\" he yelled.",
+        "\"Stop right there!\" he yelled.",
         "\"Stop right there\" he yelled!"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Inside the quotes, the exclamation mark takes the place of the comma, and it stays inside the quote marks.",
       hintLadder: [
         "The end punctuation goes inside the quote marks.",
@@ -93,8 +93,8 @@ export const summerG5ElaW3D3 = {
       id: "g5.summer.ela.w3.d3.q4",
       type: "multiple_choice",
       stem: "In: \"Hold on,\" she whispered, \"did you hear that?\" -- how many things does she say?",
-      choices: ["One thing", "Two things", "Three things", "None"],
-      answerIndex: 1,
+      choices: ["One thing", "None", "Three things", "Two things"],
+      answerIndex: 3,
       explanation: "Hold on and did you hear that? are two separate spoken parts, split by she whispered.",
       hintLadder: [
         "Look at the two sets of quotation marks.",
@@ -169,12 +169,12 @@ export const summerG5ElaW3D3 = {
           type: "multiple_choice",
           stem: "Which line is punctuated CORRECTLY?",
           choices: [
-            "\"Are you coming with us\"? asked Dev.",
             "\"Are you coming with us?\" asked Dev.",
+            "\"Are you coming with us\"? asked Dev.",
             "\"Are you coming with us?\", asked Dev.",
             "Are you coming with us? \"asked Dev\"."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "The question mark belongs inside the quotes because it is part of what is spoken, and you do not add an extra comma after it before the tag.",
           hintLadder: [
             "The end punctuation goes inside the quote marks.",

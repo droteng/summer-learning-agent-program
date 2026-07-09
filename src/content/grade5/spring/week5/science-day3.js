@@ -37,11 +37,11 @@ export const springG5ScienceW5D3 = {
       stem: "You are tracking a seedling's height every day for two weeks. Why should you measure from the SAME point (soil to tip) each time?",
       choices: [
         "So the plant grows faster",
-        "So the only thing changing in your numbers is the plant's real growth, not how you measured",
+        "So the measurement is always a whole number",
         "Because rulers only work from the soil",
-        "So the measurement is always a whole number"
+        "So the only thing changing in your numbers is the plant's real growth, not how you measured"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Keeping the method the same means any change in your numbers comes from real growth, not from measuring differently — that makes the data trustworthy.",
       hintLadder: [
         "Think about what you want your numbers to show.",

@@ -56,11 +56,11 @@ export const springG7ElaW1D3 = {
       stem: "In the hypothesis 'If radish seeds are kept warmer, then they will sprout sooner, because warmth speeds sprouting,' which is the INDEPENDENT variable (the thing changed on purpose)?",
       choices: [
         "How many days until the seeds sprout",
-        "The temperature the seeds are kept at",
         "The type of seed used",
+        "The temperature the seeds are kept at",
         "The size of the pot"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "The independent variable is what the experimenter changes on purpose — here, the temperature. Days-to-sprout is the dependent variable (what is measured).",
       hintLadder: [
         "The independent variable is the cause you deliberately change.",
@@ -74,12 +74,12 @@ export const springG7ElaW1D3 = {
       type: "multiple_choice",
       stem: "A student's proposal claims more sunlight made plants taller. Which sentence BEST strengthens the argument by anticipating a counterpoint?",
       choices: [
-        "Everyone already knows sunlight helps plants grow.",
-        "Sunlight is my favorite variable to study.",
         "Someone might argue the sunny plants just got warmer, so I kept all plants in the same room to hold temperature constant and isolate light.",
+        "Sunlight is my favorite variable to study.",
+        "Everyone already knows sunlight helps plants grow.",
         "I really hope my hypothesis turns out to be correct."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "A strong Grade 7 argument names a likely objection (warmth, not light) and answers it by explaining how that variable was controlled — this makes the claim credible.",
       hintLadder: [
         "Which sentence raises an objection AND answers it?",
@@ -174,11 +174,11 @@ export const springG7ElaW1D3 = {
           stem: "Which experiment is NOT a fair test of the hypothesis 'More sunlight makes bean plants grow taller'?",
           choices: [
             "Two groups differ only in sunlight; water, soil, and seed type are identical.",
-            "The sunny group also gets more water and richer soil than the shaded group.",
+            "All plants sit in the same warm room, differing only in hours of light.",
             "Both groups use the same seeds and pots, changing only light exposure.",
-            "All plants sit in the same warm room, differing only in hours of light."
+            "The sunny group also gets more water and richer soil than the shaded group."
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "If the sunny group also gets more water and richer soil, those uncontrolled variables could cause the difference — so it isn't a fair test of sunlight alone.",
           hintLadder: [
             "A fair test changes only ONE variable.",

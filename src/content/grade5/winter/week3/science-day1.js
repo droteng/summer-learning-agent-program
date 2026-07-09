@@ -37,11 +37,11 @@ export const winterG5ScienceW3D1 = {
       stem: "What is a FORCE?",
       choices: [
         "A kind of food energy",
-        "A push or a pull that can change how something moves",
+        "The weight of the air",
         "How fast something goes",
-        "The weight of the air"
+        "A push or a pull that can change how something moves"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A force is any push or pull. It can make something speed up, slow down, or change direction.",
       hintLadder: [
         "Think about what you do to open a door or slide a box.",
@@ -54,12 +54,12 @@ export const winterG5ScienceW3D1 = {
       type: "multiple_choice",
       stem: "Why is it so easy to slip and slide on ice but NOT on a rough sidewalk?",
       choices: [
-        "Ice has more gravity than a sidewalk",
         "Ice is smooth, so there is very LOW friction between your feet and the ice",
+        "Ice has more gravity than a sidewalk",
         "There is no gravity on ice",
         "Ice pushes you sideways on purpose"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Smooth ice has low friction, so there is very little grip on your feet — that lets you slide.",
       hintLadder: [
         "Friction is the force that grips two surfaces together.",
@@ -72,8 +72,8 @@ export const winterG5ScienceW3D1 = {
       id: "g5.winter.sci.w3.d1.q3",
       type: "multiple_choice",
       stem: "A snowball rolls off a roof and drops toward the ground. Which force pulls it down?",
-      choices: ["Friction", "Gravity", "A push from the wind only", "Magnetism"],
-      answerIndex: 1,
+      choices: ["Friction", "A push from the wind only", "Gravity", "Magnetism"],
+      answerIndex: 2,
       explanation: "Gravity is the force that pulls things down toward Earth, so the snowball falls.",
       hintLadder: [
         "What force always pulls things down toward Earth?",

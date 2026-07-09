@@ -36,12 +36,12 @@ export const springG7ElaW7D2 = {
       type: "multiple_choice",
       stem: "You are arguing that a local river is unsafe. Which source is the MOST credible evidence?",
       choices: [
-        "A comment on a social media post saying 'the river seems gross.'",
         "A recent water-quality report from the state environmental agency showing pollutant levels above the safe limit.",
+        "A comment on a social media post saying 'the river seems gross.'",
         "An ad from a company that wants to build a dock on the river.",
         "A meme that says rivers are dirty."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A recent report from a state environmental agency is independent, expert, and based on measured data — the most credible and relevant source. The others are anonymous, biased, or not real evidence.",
       hintLadder: [
         "Ask who made each source and whether they are an expert.",
@@ -55,11 +55,11 @@ export const springG7ElaW7D2 = {
       stem: "When two sources give conflicting evidence about an environmental issue, what is the best way to decide which to trust?",
       choices: [
         "Always pick the one that agrees with your claim.",
-        "Compare who created each source, how they gathered their evidence, and whether either has a reason to be biased.",
         "Pick whichever one is shorter.",
+        "Compare who created each source, how they gathered their evidence, and whether either has a reason to be biased.",
         "Flip a coin, since both are just opinions."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Evaluating conflicting sources means comparing the author, the method, the recency, and any bias — not simply choosing the one you like or that is easiest to read.",
       hintLadder: [
         "Should you pick a source just because it agrees with you?",
@@ -74,11 +74,11 @@ export const springG7ElaW7D2 = {
       stem: "A student supports 'Our city should expand bike lanes' with this evidence. Which is the STRONGEST — most credible AND relevant?",
       choices: [
         "'My uncle says bikes are better than cars.'",
-        "A 2023 transportation-department study finding that neighborhoods with protected bike lanes saw a 30% drop in car trips and lower emissions.",
+        "A tweet with no source that says 'cars are the worst.'",
         "'Everybody knows biking is healthy.'",
-        "A tweet with no source that says 'cars are the worst.'"
+        "A 2023 transportation-department study finding that neighborhoods with protected bike lanes saw a 30% drop in car trips and lower emissions."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "It is recent, comes from an expert body, uses measured data (30% drop), and directly connects bike lanes to the claim's benefit. The others are anecdote, common assumption, or an unsourced opinion.",
       hintLadder: [
         "Look for a source that is expert, recent, and uses real data.",

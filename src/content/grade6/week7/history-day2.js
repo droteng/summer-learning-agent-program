@@ -33,8 +33,8 @@ export const grade6HistoryWeek7Day2 = {
       id: "g6.hist.w7.d2.q1",
       type: "multiple_choice",
       stem: "Which branch WRITES the laws?",
-      choices: ["Executive", "Legislative", "Judicial", "All three together"],
-      answerIndex: 1,
+      choices: ["Legislative", "Executive", "Judicial", "All three together"],
+      answerIndex: 0,
       explanation: "Congress (Legislative) writes laws. The Executive enforces and the Judicial interprets.",
       hintLadder: [
         "Writing = legislating.",
@@ -61,11 +61,11 @@ export const grade6HistoryWeek7Day2 = {
       stem: "What is a 'veto'?",
       choices: [
         "A type of law.",
-        "The President's refusal to sign a bill into law.",
         "A Supreme Court decision.",
+        "The President's refusal to sign a bill into law.",
         "A type of election."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Veto is the President's tool to push back on Congress. It can still be overridden by a two-thirds vote.",
       hintLadder: [
         "Who has a veto?",
@@ -80,11 +80,11 @@ export const grade6HistoryWeek7Day2 = {
         "Why do we have three branches instead of just one big government?",
       choices: [
         "It looks fancy.",
-        "Each branch can check the others, so no single person or group has all the power.",
+        "It's faster.",
         "Tradition only.",
-        "It's faster."
+        "Each branch can check the others, so no single person or group has all the power."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Separation of powers prevents tyranny. Each branch limits the others.",
       hintLadder: [
         "What does 'checks and balances' mean?",
@@ -159,11 +159,11 @@ export const grade6HistoryWeek7Day2 = {
           stem: "Congress passes a bill, the President vetoes it, and Congress votes again to override the veto. What fraction of each chamber is needed to override?",
           choices: [
             "A simple majority (just over half)",
-            "Two-thirds of both chambers",
+            "Only the Supreme Court can override",
             "Three-quarters of the states",
-            "Only the Supreme Court can override"
+            "Two-thirds of both chambers"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "A presidential veto can be overridden by a two-thirds vote in both the House and the Senate. That high bar is part of checks and balances.",
           hintLadder: [
             "Overriding a veto is harder than passing a normal bill.",

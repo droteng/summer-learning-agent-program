@@ -548,9 +548,22 @@ function DoneStage({
   journalPrompt?: string;
 }) {
   const totalScore = Object.values(grades).reduce((sum, g) => sum + g.score, 0);
-  const max = mission.items.length;
-  const pct = max === 0 ? 0 : Math.round((totalScore / max) * 100);
+  // Grades include Arena items, so the denominator must too — otherwise a
+  // kid who aces the bonus round sees a score over 100%.
+  const arenaCount = mission.dailyHour?.challengeArena?.items?.length ?? 0;
+  const max = mission.items.length + arenaCount;
+  const pct = max === 0 ? 0 : Math.min(100, Math.round((totalScore / max) * 100));
   const terms = Array.isArray(mission.keyTerms) ? mission.keyTerms : [];
+  const doneTitle =
+    pct === 100
+      ? "Perfect run — every single one!"
+      : pct >= 80
+        ? badge
+          ? "Power-Up complete — strong work!"
+          : "Quest complete — strong work!"
+        : badge
+          ? "Power-Up complete — you stuck with it!"
+          : "Quest complete — you stuck with it!";
   return (
     <div className="qr-done">
       {badge && (
@@ -583,7 +596,7 @@ function DoneStage({
           <rect x="20" y="42" width="24" height="6" rx="2" fill="#92400e" />
         </svg>
       </div>
-      <h2 className="qr-done-title">{badge ? "Power-Up complete!" : "Quest complete!"}</h2>
+      <h2 className="qr-done-title">{doneTitle}</h2>
       <p className="qr-done-score">Score: {pct}%</p>
       {badge && <p className="qr-done-powerup">🔥 You finished the whole hour — Warm-Up, Mission, Creative Lab, Arena, Move, and Reflect. That's a full Power-Up!</p>}
       <p className="qr-done-reflect">{mission.reflectionPrompt}</p>

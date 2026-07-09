@@ -64,11 +64,11 @@ export const fallG7MathW6D1 = {
       stem: "Which statement BEST describes the recursive rule of the Fibonacci sequence?",
       choices: [
         "Multiply the previous term by the golden ratio",
-        "F(n) = F(n-1) + F(n-2): each term is the sum of the two before it",
+        "Add the term's position number each time",
         "F(n) = 2 × F(n-1): each term doubles",
-        "Add the term's position number each time"
+        "F(n) = F(n-1) + F(n-2): each term is the sum of the two before it"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Fibonacci is defined recursively as F(n) = F(n-1) + F(n-2); the golden ratio only emerges from the ratios of terms.",
       hintLadder: [
         "Recursive means each term is built from earlier terms.",

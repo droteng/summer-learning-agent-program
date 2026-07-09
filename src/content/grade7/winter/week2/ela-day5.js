@@ -36,11 +36,11 @@ export const winterG7ElaW2D5 = {
       stem: "What is the role of a CONTROLLING IDEA in a multi-paragraph informational report?",
       choices: [
         "It argues an opinion the reader should adopt",
-        "It states the main point the report develops, so every paragraph supports one clear line of reasoning",
+        "It lists the materials used in the experiment",
         "It is a fun fact placed at the very end",
-        "It lists the materials used in the experiment"
+        "It states the main point the report develops, so every paragraph supports one clear line of reasoning"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "The controlling idea is the central point (thesis) an informational report develops; each paragraph should connect back to it, keeping the whole piece focused and coherent.",
       hintLadder: [
         "What holds a multi-paragraph report together?",
@@ -73,12 +73,12 @@ export const winterG7ElaW2D5 = {
       type: "multiple_choice",
       stem: "Which transition word best signals a CAUSE-AND-EFFECT or interpretive relationship (not just sequence) in an analytical report?",
       choices: [
-        "First",
-        "Next",
         "As a result",
+        "Next",
+        "First",
         "Meanwhile"
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "'As a result' signals cause and effect, linking evidence to a conclusion. 'First,' 'next,' and 'meanwhile' only signal time order, not analysis.",
       hintLadder: [
         "Which word shows one thing CAUSING another?",
@@ -173,11 +173,11 @@ export const winterG7ElaW2D5 = {
           stem: "A report states: 'The ice melted in 22 minutes.' What single addition would most raise it from a bare fact to grade-7 EVIDENCE?",
           choices: [
             "Making the sentence longer with extra adjectives",
-            "Adding analysis of what the result means, such as 'which suggests the warm sill transferred energy steadily'",
             "Removing the exact time to keep it simple",
+            "Adding analysis of what the result means, such as 'which suggests the warm sill transferred energy steadily'",
             "Changing it to first person"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "The fact is precise but not yet evidence. Adding interpretation — what the result suggests — turns a data point into analytical evidence that supports a controlling idea.",
           hintLadder: [
             "The sentence already has a precise number. What is missing?",

@@ -37,11 +37,11 @@ export const fallG5ElaW8D5 = {
       stem: "Which is the BEST way to speak when you present?",
       choices: [
         "Read every word from the page and never look up",
-        "Speak clearly, look at the audience, and pause between ideas",
+        "Mumble so you seem humble",
         "Talk as fast as you can",
-        "Mumble so you seem humble"
+        "Speak clearly, look at the audience, and pause between ideas"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Clear speech, eye contact, and pauses help your audience follow along and stay interested.",
       hintLadder: [
         "What helps an audience follow you?",
@@ -55,11 +55,11 @@ export const fallG5ElaW8D5 = {
       stem: "A strong ENDING to a presentation should...",
       choices: [
         "add brand-new information",
-        "say your big message again and leave one thing to remember",
         "just say 'the end'",
+        "say your big message again and leave one thing to remember",
         "say sorry for the talk"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "An ending says the big message again and leaves a takeaway — it doesn't add new stuff.",
       hintLadder: [
         "What should the audience remember?",
@@ -73,12 +73,12 @@ export const fallG5ElaW8D5 = {
       type: "multiple_choice",
       stem: "Why is REFLECTING (looking back) on your project a good idea?",
       choices: [
-        "It wastes time",
         "It turns the project into learning by naming what worked and what to fix",
+        "It wastes time",
         "It only matters for grades",
         "It makes the project longer"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Reflecting helps the learning stick and shows you how to do even better next time.",
       hintLadder: [
         "What do you gain by thinking back?",

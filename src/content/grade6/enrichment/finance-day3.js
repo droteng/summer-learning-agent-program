@@ -81,11 +81,11 @@ export const grade6FinanceDay3 = {
         "When does a SMALLER package ACTUALLY beat the big one on unit cost?",
       choices: [
         "Never.",
-        "Sometimes — when the small one is on sale or when the big one has a markup.",
         "Always.",
+        "Sometimes — when the small one is on sale or when the big one has a markup.",
         "Only at certain stores."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Sales and markups can flip the math. Always compute, don't assume.",
       hintLadder: [
         "What changes pricing?",

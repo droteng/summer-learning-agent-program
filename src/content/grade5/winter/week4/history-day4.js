@@ -36,8 +36,8 @@ export const winterG5HistoryW4D4 = {
       id: "g5.winter.hist.w4.d4.q1",
       type: "multiple_choice",
       stem: "The GEOCENTRIC model said WHAT was at the center of everything?",
-      choices: ["The Sun", "Earth", "The Moon", "Jupiter"],
-      answerIndex: 1,
+      choices: ["The Sun", "The Moon", "Earth", "Jupiter"],
+      answerIndex: 2,
       explanation: "'Geo' means Earth. The geocentric model put a still Earth at the center with everything going around it.",
       hintLadder: [
         "The word part 'geo-' means Earth (like in geography).",
@@ -65,11 +65,11 @@ export const winterG5HistoryW4D4 = {
       stem: "What NEW TOOL did Galileo use in 1609 to study the sky?",
       choices: [
         "A spaceship",
-        "A telescope",
+        "A radio dish",
         "A computer",
-        "A radio dish"
+        "A telescope"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Galileo used the newly improved telescope to see Jupiter's moons and the changing shapes of Venus, which supported the Sun-centered model.",
       hintLadder: [
         "It was a tool for seeing far-off things more clearly.",
@@ -157,12 +157,12 @@ export const winterG5HistoryW4D4 = {
           type: "multiple_choice",
           stem: "Put these in the correct time order: (1) Galileo's telescope (1609), (2) Ptolemy's Earth-centered model (about the year 150), (3) Copernicus's Sun-centered model (1543).",
           choices: [
-            "1 → 2 → 3",
             "2 → 3 → 1",
+            "1 → 2 → 3",
             "3 → 2 → 1",
             "2 → 1 → 3"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Ptolemy (about 150) came first, then Copernicus (1543), then Galileo's telescope (1609): 2 → 3 → 1.",
           hintLadder: [
             "Which one happened in ancient times (about the year 150)?",

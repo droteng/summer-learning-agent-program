@@ -35,12 +35,12 @@ export const springG6ScienceW5D3 = {
       type: "multiple_choice",
       stem: "You're tracking a seedling's height every day for two weeks. Why should you measure from the SAME point (soil to tip) each time?",
       choices: [
-        "So the plant grows faster",
         "So the only thing changing in your data is the plant's actual growth, not how you measured",
+        "So the plant grows faster",
         "Because rulers only work from the soil",
         "So the measurement is always a whole number"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Keeping the method identical means any change in your numbers reflects real growth, not differences in how you measured — that makes the data repeatable and trustworthy.",
       hintLadder: [
         "Think about what you want your numbers to show.",
@@ -68,11 +68,11 @@ export const springG6ScienceW5D3 = {
       stem: "Which measurement is recorded with the MOST useful precision for tracking small daily plant growth?",
       choices: [
         "About 5 cm",
-        "Around 4 to 5 cm",
         "4.7 cm (measured to the nearest millimeter)",
+        "Around 4 to 5 cm",
         "Pretty tall"
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "4.7 cm reads the smallest ruler markings (millimeters), so it can capture small day-to-day changes that a rough 'about 5 cm' would miss.",
       hintLadder: [
         "Small daily growth needs a measurement that can detect small changes.",

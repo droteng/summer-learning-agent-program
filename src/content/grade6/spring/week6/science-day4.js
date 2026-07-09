@@ -35,11 +35,11 @@ export const springG6ScienceW6D4 = {
       stem: "What is a LIMITING FACTOR for a population?",
       choices: [
         "Anything that makes a population grow faster",
-        "A resource or condition (like food or space) that slows or caps population growth",
         "The number of species in an ecosystem",
+        "A resource or condition (like food or space) that slows or caps population growth",
         "The color of an animal"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A limiting factor — food, water, space, predators, disease — restricts how large a population can grow.",
       hintLadder: [
         "The word 'limiting' means it puts a limit on something.",
@@ -67,11 +67,11 @@ export const springG6ScienceW6D4 = {
       stem: "What is CARRYING CAPACITY?",
       choices: [
         "The number of babies born in one spring",
-        "The largest population an environment can support long-term with its resources",
+        "The number of predators in an area",
         "The speed a population grows at first",
-        "The number of predators in an area"
+        "The largest population an environment can support long-term with its resources"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Carrying capacity is the maximum population an area's food, water, and space can sustain over time.",
       hintLadder: [
         "It's about how MANY the environment can 'carry' or hold.",
@@ -85,12 +85,12 @@ export const springG6ScienceW6D4 = {
       type: "multiple_choice",
       stem: "A rabbit population grows fast in spring, then levels off in summer. What most likely happened?",
       choices: [
-        "The rabbits stopped reproducing for no reason",
         "Limiting factors like food, space, or predators slowed the growth as the population neared carrying capacity",
+        "The rabbits stopped reproducing for no reason",
         "The rabbits turned into a different species",
         "Growth always stops exactly halfway through the year"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "As a population grows, resources get scarcer and predators/disease increase, pushing growth toward the carrying-capacity ceiling.",
       hintLadder: [
         "What runs low when a population gets large?",

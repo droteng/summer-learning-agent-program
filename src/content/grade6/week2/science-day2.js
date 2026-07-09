@@ -32,8 +32,8 @@ export const grade6ScienceWeek2Day2 = {
       id: "g6.sci.w2.d2.q1",
       type: "multiple_choice",
       stem: "Which unit is best for measuring the length of a pencil?",
-      choices: ["Millimeters", "Centimeters", "Meters", "Kilometers"],
-      answerIndex: 1,
+      choices: ["Millimeters", "Meters", "Centimeters", "Kilometers"],
+      answerIndex: 2,
       explanation: "Pencils are usually 15–20 cm. Centimeters give a comfortable, readable number.",
       hintLadder: [
         "Pick the unit that won't give a gigantic or tiny number.",
@@ -73,8 +73,8 @@ export const grade6ScienceWeek2Day2 = {
       id: "g6.sci.w2.d2.q4",
       type: "multiple_choice",
       stem: "Which tool measures the mass of a bag of apples?",
-      choices: ["Ruler", "Stopwatch", "Kitchen scale", "Thermometer"],
-      answerIndex: 2,
+      choices: ["Kitchen scale", "Stopwatch", "Ruler", "Thermometer"],
+      answerIndex: 0,
       explanation: "A scale measures mass. A thermometer measures temperature. A ruler measures length. A stopwatch measures time.",
       hintLadder: [
         "Match the tool to the property: length / mass / time / temperature.",
@@ -166,12 +166,12 @@ export const grade6ScienceWeek2Day2 = {
           stem:
             "Three measurements each lost their unit: a cake baked for '40,' a dog's leash is '2,' and a watermelon's mass is '5.' Which set of units fits each measurement sensibly, in order (baking time, leash length, watermelon mass)?",
           choices: [
-            "minutes, meters, kilograms",
             "minutes, kilometers, grams",
+            "minutes, meters, kilograms",
             "seconds, meters, kilometers",
             "hours, millimeters, kilograms"
           ],
-          answerIndex: 0,
+          answerIndex: 1,
           explanation:
             "Baking time is measured in minutes (40 minutes is reasonable; 40 seconds is too short and 40 hours far too long). A leash length fits meters (2 meters; 2 kilometers or 2 millimeters make no sense). A watermelon's mass fits kilograms (5 kg; 5 grams is a feather, not a melon). So: minutes, meters, kilograms.",
           hintLadder: [

@@ -83,11 +83,11 @@ export const springG6CodingW8D4 = {
       stem: "Why is TRACING a program by hand useful before you demo it?",
       choices: [
         "It makes the program run faster",
-        "It lets you predict each value and catch a wrong result before your audience sees it",
+        "It's only useful for very long programs",
         "It changes the code automatically",
-        "It's only useful for very long programs"
+        "It lets you predict each value and catch a wrong result before your audience sees it"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Tracing lets you predict the exact output step by step, so you spot and fix wrong values before the demo.",
       hintLadder: [
         "What do you learn by writing each value down?",

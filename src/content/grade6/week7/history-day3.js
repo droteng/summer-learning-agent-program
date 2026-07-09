@@ -52,12 +52,12 @@ export const grade6HistoryWeek7Day3 = {
       type: "multiple_choice",
       stem: "Which is a CITIZEN'S job in a democracy?",
       choices: [
-        "Only the president has jobs.",
         "Vote, serve on juries, follow laws, and speak up respectfully.",
+        "Only the president has jobs.",
         "Citizens watch and do nothing.",
         "Memorize all the laws."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Citizenship is participation. It includes voting, juries, taxes, and respectful civic voice.",
       hintLadder: [
         "What does a citizen actually do?",
@@ -72,11 +72,11 @@ export const grade6HistoryWeek7Day3 = {
         "Why did the Montgomery bus boycott need so many people, not just one leader?",
       choices: [
         "Leaders prefer being alone.",
-        "Tens of thousands had to actually stop riding the buses for the protest to work.",
+        "Movements only count if they're big.",
         "Crowds look better in photos.",
-        "Movements only count if they're big."
+        "Tens of thousands had to actually stop riding the buses for the protest to work."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A boycott only works if enough people actually stop participating. One leader can't refuse to ride for 40,000.",
       hintLadder: [
         "What does a boycott require?",
@@ -91,11 +91,11 @@ export const grade6HistoryWeek7Day3 = {
         "A class wants to convince the school to add a recycling program. Which is the STRONGEST first step?",
       choices: [
         "Yell at the principal.",
-        "Research how much waste their school produces and draft a one-page proposal.",
         "Wait for someone else to act.",
+        "Research how much waste their school produces and draft a one-page proposal.",
         "Quit talking about it."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Strong civic action pairs facts (waste numbers) with a clear ask (proposal). Yelling and waiting don't move decisions.",
       hintLadder: [
         "Decisions need data and a clear ask.",
@@ -169,12 +169,12 @@ export const grade6HistoryWeek7Day3 = {
           type: "multiple_choice",
           stem: "The Montgomery bus boycott lasted over a year. Which factor was MOST essential to making it work?",
           choices: [
-            "One famous leader refusing to ride the bus alone.",
             "Tens of thousands of people sustaining the boycott together with organized carpools.",
+            "One famous leader refusing to ride the bus alone.",
             "Buses being painted a new color.",
             "The protest being short and over quickly."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "A boycott only works at scale: tens of thousands of riders staying off the buses for over a year, supported by organized carpools, is what created real pressure. No single leader can boycott for a whole community.",
           hintLadder: [
             "A boycott means lots of people NOT doing something.",

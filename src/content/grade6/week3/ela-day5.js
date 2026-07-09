@@ -32,8 +32,8 @@ export const grade6ElaWeek3Day5 = {
       id: "g6.ela.w3.d5.q1",
       type: "multiple_choice",
       stem: "Which word is filler that should usually be cut?",
-      choices: ["because", "really", "however", "therefore"],
-      answerIndex: 1,
+      choices: ["because", "however", "really", "therefore"],
+      answerIndex: 2,
       explanation: "'Really' rarely adds meaning. The others connect ideas.",
       hintLadder: [
         "Which option doesn't connect or argue?",
@@ -46,12 +46,12 @@ export const grade6ElaWeek3Day5 = {
       type: "multiple_choice",
       stem: "Which is the tightest version of: 'She walked very, very quickly to the door'?",
       choices: [
-        "She walked very, very quickly to the door.",
-        "She walked quickly to the door.",
         "She hurried to the door.",
+        "She walked quickly to the door.",
+        "She walked very, very quickly to the door.",
         "She moved with great speed to the door."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "'Hurried' replaces 'walked very, very quickly' with one strong verb. Five words → four.",
       hintLadder: [
         "Look for the version with the strongest single verb.",
@@ -67,10 +67,10 @@ export const grade6ElaWeek3Day5 = {
       choices: [
         "It saves paper.",
         "It looks fancier.",
-        "Variety controls pacing — short snaps, long flows.",
-        "It's a rule from textbooks."
+        "It's a rule from textbooks.",
+        "Variety controls pacing — short snaps, long flows."
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "Sentence length controls how the reader experiences time. Short = punchy. Long = sweeping. Mixing keeps attention.",
       hintLadder: [
         "What does sentence length affect for the reader?",
@@ -84,11 +84,11 @@ export const grade6ElaWeek3Day5 = {
       stem: "Which sentence has the strongest verb?",
       choices: [
         "He went down the stairs quickly.",
-        "He moved his way down the stairs in a fast manner.",
         "He bolted down the stairs.",
+        "He moved his way down the stairs in a fast manner.",
         "He used the stairs to get downstairs."
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "'Bolted' is one specific, vivid verb. The others rely on weaker verbs propped up by adverbs.",
       hintLadder: [
         "Find the version with no adverb.",
@@ -160,12 +160,12 @@ export const grade6ElaWeek3Day5 = {
           type: "multiple_choice",
           stem: "Which is the tightest, strongest revision of: 'He was really very scared and so he quickly ran in a fast way out of the dark room'?",
           choices: [
-            "He was very scared and ran quickly out of the dark room.",
             "Terrified, he bolted from the dark room.",
+            "He was very scared and ran quickly out of the dark room.",
             "He was scared and so he ran fast out of the room that was dark.",
             "In a fast way, he ran scared from the dark room."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "'Terrified' replaces 'really very scared' and 'bolted' replaces 'quickly ran in a fast way' — every filler word is gone and the verbs do the work.",
           hintLadder: [
             "Find the version with no filler words (really, very, so, in a fast way).",

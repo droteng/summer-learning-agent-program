@@ -119,11 +119,11 @@ export const grade6BookClubDay3 = {
       stem: "Which is the BEST description of what 'box breathing' (4-count) does for someone in a panic attack, in the book and in real life?",
       choices: [
         "It cures all anxiety forever.",
-        "It slows breathing, calms the fight-or-flight system, and gives the body and brain time to reset.",
+        "It's a punishment for being anxious.",
         "It makes you fall asleep.",
-        "It's a punishment for being anxious."
+        "It slows breathing, calms the fight-or-flight system, and gives the body and brain time to reset."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Leo breathes 'in two three four, hold two three four, out two three four, hold two three four' with Nia. Slow breathing tells the body the danger is over.",
       hintLadder: [
         "Check today's key terms.",

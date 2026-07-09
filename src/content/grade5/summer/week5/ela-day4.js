@@ -42,12 +42,12 @@ export const summerG5ElaW5D4 = {
       type: "multiple_choice",
       stem: "Which source is the MOST reliable for a fact about dinosaurs?",
       choices: [
-        "A museum website written by scientists.",
         "A comment on a video with no name.",
+        "A museum website written by scientists.",
         "A dream your friend had.",
         "A cartoon about talking dinosaurs."
       ],
-      answerIndex: 0,
+      answerIndex: 1,
       explanation: "A museum website is made by scientists, has real names, and you can check it. The other choices cannot be trusted for real facts.",
       hintLadder: [
         "Which one is made by real experts?",
@@ -60,12 +60,12 @@ export const summerG5ElaW5D4 = {
       type: "multiple_choice",
       stem: "Which source is the LEAST reliable for a science fact?",
       choices: [
-        "A science book from your school library.",
-        "A page from a space agency like NASA.",
         "A comment with no name on a video.",
+        "A page from a space agency like NASA.",
+        "A science book from your school library.",
         "An article by a named science reporter."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "A comment with no name cannot be checked, so it is the least reliable. The other three all have known authors or editors.",
       hintLadder: [
         "Which one has no name attached?",
@@ -79,11 +79,11 @@ export const summerG5ElaW5D4 = {
       stem: "A good citation should tell your reader at least three things. Which three?",
       choices: [
         "The color of the page, the price, and the font.",
-        "Who made it, what it is called, and when it was made.",
+        "The weather, your mood, and the time of day.",
         "If you liked it, how long it was, and your name.",
-        "The weather, your mood, and the time of day."
+        "Who made it, what it is called, and when it was made."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Who made it, what it is called, and when it was made. With those three things, a reader can find the same source.",
       hintLadder: [
         "What does a reader need to find the same source?",
@@ -97,11 +97,11 @@ export const summerG5ElaW5D4 = {
       stem: "Two sources give different facts. One is a science website from this year, and one is an old website with no name and no date. What should you do?",
       choices: [
         "Just pick the one you like better.",
-        "Trust the newer science website with a known author.",
         "Believe both at the same time.",
+        "Trust the newer science website with a known author.",
         "Ignore both and make up your own fact."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "When sources disagree, trust the one you can check that has a known author and a recent date. That is the science website.",
       hintLadder: [
         "Which source can you actually check?",
@@ -181,12 +181,12 @@ export const summerG5ElaW5D4 = {
           type: "multiple_choice",
           stem: "You are writing a report about how plants grow. Which is the MOST reliable source to use?",
           choices: [
-            "A funny meme a friend sent you.",
             "A science book written by a botanist (a plant scientist).",
+            "A funny meme a friend sent you.",
             "A comment with no name under a video.",
             "A made-up story about magic plants."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "A science book by a plant scientist has a known expert author and real facts you can check, so it is the most reliable choice.",
           hintLadder: [
             "Which one was written by a real expert?",

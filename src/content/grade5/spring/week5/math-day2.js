@@ -67,11 +67,11 @@ export const springG5MathW5D2 = {
       stem: "Over the SAME 5 days, Plant A grew 20 cm and Plant B grew 15 cm. Which plant grew MORE, and how do you know?",
       choices: [
         "Plant B, because 15 is a rounder number",
-        "Plant A, because 20 cm is more growth than 15 cm over the same 5 days",
         "They grew the same amount",
+        "Plant A, because 20 cm is more growth than 15 cm over the same 5 days",
         "Plant B, because it started shorter"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Both grew for the same 5 days, so you can compare their totals directly. Plant A grew 20 cm and Plant B grew 15 cm, so Plant A grew more.",
       hintLadder: [
         "Both plants grew for the same number of days.",
@@ -173,12 +173,12 @@ export const springG5MathW5D2 = {
           type: "multiple_choice",
           stem: "Over the same 10 days, Vine X grew 30 cm and Vine Y grew 20 cm. Which vine grew MORE?",
           choices: [
-            "Vine Y, because 20 is easier to divide",
             "Vine X, because 30 cm is more growth than 20 cm over the same 10 days",
+            "Vine Y, because 20 is easier to divide",
             "They grew the same because both took 10 days",
             "You cannot compare them"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Both grew for the same 10 days, so compare the totals. Vine X grew 30 cm and Vine Y grew 20 cm, so Vine X grew more.",
           hintLadder: [
             "Both vines grew for the same number of days.",

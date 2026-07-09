@@ -36,12 +36,12 @@ export const fallG7ElaW1D3 = {
       type: "multiple_choice",
       stem: "Which sentence best ANSWERS a counterargument to a reading goal?",
       choices: [
-        "I want to read more books this fall.",
-        "Reading is important for everyone.",
         "Some nights I'll be too tired to read, so I'll keep a short graphic novel ready for those days.",
+        "Reading is important for everyone.",
+        "I want to read more books this fall.",
         "I'll read four books by November."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "It first names the obstacle ('too tired some nights') and then gives a plan to handle it — that is answering a counterargument, not just stating a goal.",
       hintLadder: [
         "A counterargument is the obstacle or objection; answering it means having a plan for it.",
@@ -55,11 +55,11 @@ export const fallG7ElaW1D3 = {
       stem: "In the goal 'I'll write one short story by November even though revising is my weak spot, so I'll ask for feedback after each draft,' which part is the COUNTERARGUMENT?",
       choices: [
         "I'll write one short story by November",
-        "even though revising is my weak spot",
         "so I'll ask for feedback after each draft",
+        "even though revising is my weak spot",
         "one short story"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "The 'even though revising is my weak spot' clause names the obstacle/objection — that's the counterargument. The final clause is the rebuttal that answers it.",
       hintLadder: [
         "The counterargument names a reason the goal could fail.",
@@ -170,10 +170,10 @@ export const fallG7ElaW1D3 = {
           choices: [
             "I want to do better in science this fall.",
             "I'll study science more because grades matter.",
-            "I'll review science notes 15 minutes every school night through October because I want the unit test to feel easy; busy nights could derail me, so I'll review on the bus those days.",
-            "I'll try harder even though science is hard."
+            "I'll try harder even though science is hard.",
+            "I'll review science notes 15 minutes every school night through October because I want the unit test to feel easy; busy nights could derail me, so I'll review on the bus those days."
           ],
-          answerIndex: 2,
+          answerIndex: 3,
           explanation: "Option 3 has a measurable action and deadline, a genuine reason, AND names an obstacle ('busy nights') with a plan to answer it. The others miss the measure, the reason, or the counterargument.",
           hintLadder: [
             "First find the option with a number and deadline.",

@@ -77,8 +77,8 @@ export const springG6CodingW5D4 = {
       id: "g6.spring.code.w5.d4.q4",
       type: "multiple_choice",
       stem: "A list of 6 daily heights has how many day-to-day CHANGES (differences between neighboring days)?",
-      choices: ["6 changes", "5 changes", "7 changes", "1 change"],
-      answerIndex: 1,
+      choices: ["6 changes", "7 changes", "5 changes", "1 change"],
+      answerIndex: 2,
       explanation: "Each change compares two neighboring days, so a list of 6 values has 6 − 1 = 5 gaps between them, giving 5 changes.",
       hintLadder: [
         "A change compares one day to the next.",

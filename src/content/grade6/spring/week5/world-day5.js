@@ -35,12 +35,12 @@ export const springG6WorldW5D5 = {
       type: "multiple_choice",
       stem: "You see a line graph titled 'Sea Ice Over Time' in the news. What should you check FIRST to understand it?",
       choices: [
-        "The color of the line",
         "The title, both axis labels, and the units",
+        "The color of the line",
         "How many people shared it",
         "Whether it looks nice"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "The title, axis labels, and units tell you what is actually being measured and over what — without them you can't judge what the line means.",
       hintLadder: [
         "What tells you WHAT the graph is measuring?",
@@ -87,11 +87,11 @@ export const springG6WorldW5D5 = {
       stem: "A headline says 'Bird Numbers Crash!' but the graph only shows data from one unusually cold month. What's the smartest response?",
       choices: [
         "Believe the headline — graphs never lie",
-        "Ask whether one short, unusual month can really show a long-term trend",
+        "Assume the birds are fine no matter what",
         "Ignore all graphs about birds",
-        "Assume the birds are fine no matter what"
+        "Ask whether one short, unusual month can really show a long-term trend"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A single unusual month is too short to prove a real trend; you'd want a longer, clearly labeled time span before trusting a dramatic claim.",
       hintLadder: [
         "Is one month enough to show a lasting trend?",
@@ -164,11 +164,11 @@ export const springG6WorldW5D5 = {
           stem: "A graph claims pollen levels 'skyrocketed.' The y-axis starts at 95 and the two bars read 96 and 100. What's really going on?",
           choices: [
             "Pollen truly skyrocketed — the bars prove it",
-            "The real change is only 4, but the y-axis starting at 95 makes it look enormous",
             "The graph has no problem",
+            "The real change is only 4, but the y-axis starting at 95 makes it look enormous",
             "Pollen can't be measured"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "The actual change is 100 − 96 = 4. Because the y-axis starts at 95 (not 0), that small change is stretched to look like a huge spike.",
           hintLadder: [
             "Use the real numbers: 96 and 100.",

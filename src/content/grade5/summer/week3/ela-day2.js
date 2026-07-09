@@ -40,12 +40,12 @@ export const summerG5ElaW3D2 = {
       type: "multiple_choice",
       stem: "Which sentence SHOWS that a character is excited?",
       choices: [
-        "She was excited.",
-        "She was very, very excited.",
         "She bounced on her toes and could not stop talking.",
+        "She was very, very excited.",
+        "She was excited.",
         "Excitement filled her."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "The third option uses actions (bouncing, talking) that let us feel the excitement without naming it.",
       hintLadder: [
         "Skip the options that say excited right out.",
@@ -88,11 +88,11 @@ export const summerG5ElaW3D2 = {
       stem: "What is the problem with: It was a beautiful, lovely, gorgeous, amazing day?",
       choices: [
         "Too few words",
-        "Too many vague words instead of one clear detail",
+        "Wrong tense",
         "Wrong punctuation",
-        "Wrong tense"
+        "Too many vague words instead of one clear detail"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Piling up describing words does not paint a picture. One clear detail (like sunlight in clean stripes through the trees) does more work.",
       hintLadder: [
         "Are those words specific?",

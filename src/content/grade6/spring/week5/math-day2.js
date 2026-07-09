@@ -64,11 +64,11 @@ export const springG6MathW5D2 = {
       stem: "Plant A grows 20 cm in 5 days. Plant B grows 18 cm in 6 days. Which plant is growing FASTER, and how do you know?",
       choices: [
         "Plant B, because 18 is a larger total than 5",
-        "Plant A, because its rate is 4 cm/day while Plant B's is 3 cm/day",
+        "Plant B, because it grew for more days",
         "They grow at the same rate",
-        "Plant B, because it grew for more days"
+        "Plant A, because its rate is 4 cm/day while Plant B's is 3 cm/day"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Plant A: 20 ÷ 5 = 4 cm/day. Plant B: 18 ÷ 6 = 3 cm/day. Comparing rates, 4 > 3, so Plant A grows faster.",
       hintLadder: [
         "Don't compare the totals — compare the rates (per day).",
@@ -170,11 +170,11 @@ export const springG6MathW5D2 = {
           stem: "Vine X grows 30 cm in 10 days. Vine Y grows 30 cm in 6 days. Both grew the SAME total. Which has the greater rate of change?",
           choices: [
             "Vine X, because 10 days is longer",
-            "Vine Y, because it reached 30 cm in fewer days (5 cm/day vs. 3 cm/day)",
             "They have the same rate because the totals match",
+            "Vine Y, because it reached 30 cm in fewer days (5 cm/day vs. 3 cm/day)",
             "Neither — you can't compare them"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Vine X: 30 ÷ 10 = 3 cm/day. Vine Y: 30 ÷ 6 = 5 cm/day. Same total, but Vine Y did it faster, so it has the greater rate.",
           hintLadder: [
             "Same total doesn't mean same rate — divide by the days.",

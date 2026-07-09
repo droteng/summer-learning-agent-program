@@ -50,11 +50,11 @@ export const summerG7ScienceW2D3 = {
       stem: "A ruler is marked only in whole centimeters (no millimeter lines). Which reported length claims MORE precision than the tool can support?",
       choices: [
         "About 7 cm",
-        "7 cm",
         "7.35 cm",
+        "7 cm",
         "Between 7 and 8 cm"
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "A ruler marked only in whole centimeters cannot justify hundredths of a centimeter, so '7.35 cm' overstates the tool's precision.",
       hintLadder: [
         "Look at the smallest division the ruler actually shows.",
@@ -82,12 +82,12 @@ export const summerG7ScienceW2D3 = {
       type: "multiple_choice",
       stem: "Two groups measure the SAME 10.0 cm bar. Group A gets 9.9, 10.0, 10.1 cm. Group B gets 8.4, 8.5, 8.4 cm. Which statement is correct?",
       choices: [
-        "Group B is more accurate because its values are closer together.",
         "Group A is both accurate (near 10.0) and precise (values close together).",
+        "Group B is more accurate because its values are closer together.",
         "Group A is precise but not accurate.",
         "Both groups are equally accurate."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Group A's values cluster tightly (precise) AND sit near the true 10.0 cm (accurate). Group B is precise but not accurate — its values are close together but far from 10.0.",
       hintLadder: [
         "Accurate = close to the true value (10.0 cm). Precise = trials close to each other.",

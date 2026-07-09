@@ -61,11 +61,11 @@ export const summerG5ElaW8D2 = {
       stem: "Two sources are stronger when they:",
       choices: [
         "Both copy the exact same blog post.",
-        "Come from different kinds (a book and a website) so they can check each other.",
         "Are both from an unknown person.",
+        "Come from different kinds (a book and a website) so they can check each other.",
         "Are both really long."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Two different kinds of sources can check each other. Two copies of the same thing is really just one source.",
       hintLadder: [
         "What does 'check each other' need?",
@@ -80,11 +80,11 @@ export const summerG5ElaW8D2 = {
       stem: "Which one is a COMPLETE research note?",
       choices: [
         "Sources are good.",
-        "Tokyo changed 5,000 streetlights to LED bulbs in 2020. (Tokyo Energy Report)",
+        "Tokyo is cool.",
         "I saw it on a website somewhere.",
-        "Tokyo is cool."
+        "Tokyo changed 5,000 streetlights to LED bulbs in 2020. (Tokyo Energy Report)"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "It has a fact AND where it came from. The others are missing the fact, the source, or both.",
       hintLadder: [
         "A good note has two parts: fact and source.",
@@ -175,12 +175,12 @@ export const summerG5ElaW8D2 = {
           type: "multiple_choice",
           stem: "You want to prove a fact about traffic in your town. Which is the STRONGEST source?",
           choices: [
-            "An unknown person's comment on a video.",
             "A city website with dated traffic counts.",
+            "An unknown person's comment on a video.",
             "A funny meme about traffic.",
             "Your friend's guess."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "A city website with real, dated traffic counts is something you can check and trust. The others have no date, no source, or are just opinions.",
           hintLadder: [
             "Strong sources have real facts you can check.",

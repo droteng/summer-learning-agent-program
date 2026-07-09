@@ -13,6 +13,7 @@ export default function SignupPage() {
   const [password, setPassword] = useState("");
   const [parentName, setParentName] = useState("");
   const [childName, setChildName] = useState("");
+  const [gradeLevel, setGradeLevel] = useState(6);
   const [childPin, setChildPin] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -25,7 +26,7 @@ export default function SignupPage() {
       const res = await fetch("/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password, parentName, childName, childPin })
+        body: JSON.stringify({ email, password, parentName, childName, childPin, gradeLevel })
       });
       if (res.ok) {
         router.push("/parent");
@@ -79,6 +80,19 @@ export default function SignupPage() {
             <label>
               Child's first name
               <input type="text" required value={childName} onChange={(e) => setChildName(e.target.value)} placeholder="Avery" />
+            </label>
+            <label>
+              Child's grade
+              <select
+                value={gradeLevel}
+                onChange={(e) => setGradeLevel(Number(e.target.value))}
+                aria-label="Child's grade level"
+              >
+                <option value={5}>Grade 5</option>
+                <option value={6}>Grade 6</option>
+                <option value={7}>Grade 7</option>
+              </select>
+              <span className="ls-auth-hint">Sets which summer voyage your child starts on. Grades 5–7 are live.</span>
             </label>
             <label>
               Child's sign-in PIN

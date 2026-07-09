@@ -50,11 +50,11 @@ export const fallG6CodingW1D5 = {
       stem: "What is the rule for this sequence: 2, 4, 8, 16, 32?",
       choices: [
         "Add 2 each time",
-        "Multiply by 2 each time",
         "Add the position number",
+        "Multiply by 2 each time",
         "Subtract 2 each time"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Each number is double the one before it: ×2 each step.",
       hintLadder: [
         "Check if it's adding the same amount — 2 to 4 is +2, but 8 to 16 is +8.",
@@ -67,8 +67,8 @@ export const fallG6CodingW1D5 = {
       id: "g6.fall.code.w1.d5.q3",
       type: "multiple_choice",
       stem: "A leaf pattern repeats: red, orange, red, orange, red, ... What color is 8th?",
-      choices: ["Red", "Orange", "Yellow", "Green"],
-      answerIndex: 1,
+      choices: ["Red", "Green", "Yellow", "Orange"],
+      answerIndex: 3,
       explanation: "Odd positions are red, even positions are orange. The 8th position is even, so orange.",
       hintLadder: [
         "Notice odd spots vs. even spots.",

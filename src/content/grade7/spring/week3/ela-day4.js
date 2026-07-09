@@ -36,11 +36,11 @@ export const springG7ElaW3D4 = {
       stem: "Which revision uses the MOST precise, domain-specific vocabulary for explanatory writing about a plant's life cycle?",
       choices: [
         "First the seed does its thing, then the plant gets big and makes stuff.",
-        "First the seed germinates, then the plant matures and produces flowers that are pollinated.",
+        "The plant is nice and green and has parts that help it.",
         "First the seed starts, then the plant grows and there are some flowers.",
-        "The plant is nice and green and has parts that help it."
+        "First the seed germinates, then the plant matures and produces flowers that are pollinated."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Precise terms like 'germinates,' 'matures,' and 'pollinated' communicate the process exactly, while the other options use vague fillers like 'does its thing' or 'makes stuff.'",
       hintLadder: [
         "Which option names the actual scientific stages?",
@@ -53,12 +53,12 @@ export const springG7ElaW3D4 = {
       type: "multiple_choice",
       stem: "Two sources describe a butterfly's chrysalis stage. Source A is a 2005 kids' website with no author listed; Source B is a 2023 article by an entomologist that cites its data. If they disagree on the number of days, which is the BETTER source to rely on, and why?",
       choices: [
-        "Source A, because older information is always more trusted",
         "Source B, because it is more current AND written by an expert who cites data",
+        "Source A, because older information is always more trusted",
         "Whichever gives the smaller number, since smaller is simpler",
         "Neither — you should ignore both and guess"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Source B is more reliable: it is more recent and written by an expert (an entomologist) who cites data. Currency, authorship, and evidence are key tests of source reliability.",
       hintLadder: [
         "Think about who WROTE each source and when.",
@@ -173,11 +173,11 @@ export const springG7ElaW3D4 = {
           stem: "Which revision BEST synthesizes these two notes into ordered, precise writing? Note 1: 'seed sprouts, roughly 1 week.' Note 2 (expert, cited): 'germination takes 5–8 days in warm soil.'",
           choices: [
             "The seed does its thing in about a week, more or less, I think.",
-            "Initially, the seed germinates — roughly 5 to 8 days in warm soil — after which the seedling grows and matures.",
             "The seed sprouts and then stuff happens for a week.",
+            "Initially, the seed germinates — roughly 5 to 8 days in warm soil — after which the seedling grows and matures.",
             "Germination, growth, week, warm, seed."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "This version leads with a transition ('initially'), uses precise vocabulary ('germinates'), leans on the more specific expert range (5–8 days in warm soil), and continues the process in order.",
           hintLadder: [
             "Which option uses precise terms and a transition?",

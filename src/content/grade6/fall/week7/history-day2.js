@@ -35,11 +35,11 @@ export const fallG6HistoryW7D2 = {
       stem: "A 'turning point' in history is an event that...",
       choices: [
         "no one remembers",
-        "changes the direction of things so the future is different",
+        "has no effects",
         "happens every year",
-        "has no effects"
+        "changes the direction of things so the future is different"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Turning points redirect history — there's a clear 'before' and 'after.'",
       hintLadder: [
         "Think 'before and after.'",
@@ -52,12 +52,12 @@ export const fallG6HistoryW7D2 = {
       type: "multiple_choice",
       stem: "Best question to test whether something was a turning point:",
       choices: [
-        "Was it popular?",
         "What became possible AFTER it that wasn't before?",
+        "Was it popular?",
         "Did it happen long ago?",
         "Was it written down?"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A real turning point opens up new possibilities — compare before vs. after.",
       hintLadder: [
         "Turning points change what's possible.",
@@ -71,11 +71,11 @@ export const fallG6HistoryW7D2 = {
       stem: "Which is most clearly a turning point in everyday technology?",
       choices: [
         "A store changed its hours",
-        "The invention of the smartphone, which changed how billions communicate",
         "Someone bought a new pen",
+        "The invention of the smartphone, which changed how billions communicate",
         "A TV show ended"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Smartphones transformed communication worldwide — a major before/after shift.",
       hintLadder: [
         "Which one changed life for huge numbers of people?",

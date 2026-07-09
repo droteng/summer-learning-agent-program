@@ -55,12 +55,12 @@ export const grade6ElaWeek1Day1 = {
       stem:
         "Claim: Soccer practice helps students focus in class. Which sentence is the strongest evidence for the claim?",
       choices: [
-        "Soccer is fun to play.",
-        "Many students at our school play soccer.",
         "After-school exercise programs improve afternoon test scores.",
+        "Many students at our school play soccer.",
+        "Soccer is fun to play.",
         "Coach said practice is important."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation:
         "Strong evidence is specific and connects directly to the claim. After-school exercise improving afternoon test scores supports the focus-in-class claim.",
       hintLadder: [
@@ -76,11 +76,11 @@ export const grade6ElaWeek1Day1 = {
       stem: "Which sentence uses a linking word that connects evidence to a claim?",
       choices: [
         "I want to play outside.",
-        "Pizza is delicious and so is ice cream.",
         "We should walk more because walking improves mood and focus.",
+        "Pizza is delicious and so is ice cream.",
         "The dog ran fast."
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "\"Because\" links the claim (we should walk more) to the evidence (walking improves mood and focus).",
       hintLadder: [
         "Look for words like because, since, therefore, or so.",
@@ -95,10 +95,10 @@ export const grade6ElaWeek1Day1 = {
       choices: [
         "Punctuation",
         "A capital letter",
-        "Specific evidence",
-        "A subject"
+        "A subject",
+        "Specific evidence"
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "The sentence is a claim with no evidence. Strong writing adds a specific fact, example, or stat.",
       hintLadder: [
         "The sentence makes a claim. What does strong writing add to a claim?",
@@ -186,12 +186,12 @@ export const grade6ElaWeek1Day1 = {
           type: "multiple_choice",
           stem: "Claim: 'Reading every day improves your vocabulary.' Which is the STRONGEST evidence?",
           choices: [
-            "Reading is fun.",
             "A study found students who read 20 minutes a day scored higher on vocabulary tests.",
+            "Reading is fun.",
             "My friend likes books.",
             "Everyone knows reading is good."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Specific, relevant data from a study directly supports the claim.",
           hintLadder: [
             "Strong evidence is specific and relevant.",

@@ -50,11 +50,11 @@ export const springG7CodingW2D4 = {
       stem: "In grow(start, rate, days), what is the purpose of the RETURN statement at the end?",
       choices: [
         "It prints every day's height to the screen",
-        "It hands the final computed height back to the code that called the function",
         "It resets the height to zero",
+        "It hands the final computed height back to the code that called the function",
         "It repeats the loop one more time"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A return statement passes the function's result (the final height) back to the caller so it can be stored or used elsewhere.",
       hintLadder: [
         "A function does work, then gives back an answer.",

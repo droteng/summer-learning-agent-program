@@ -36,11 +36,11 @@ export const summerG7HistoryW7D2 = {
       stem: "Which of these is best described as a LONG-TERM cause of a conflict?",
       choices: [
         "A single insulting speech given the day before fighting broke out",
-        "Decades of unfair taxes that slowly built resentment between two regions",
         "A rumor that spread in a single afternoon",
+        "Decades of unfair taxes that slowly built resentment between two regions",
         "One leader's sudden decision made in an hour"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Long-term causes build slowly over years or decades. Decades of unfair taxes fit; the other choices are sudden, short-term events or triggers.",
       hintLadder: [
         "Which cause took years, not hours, to build?",
@@ -73,11 +73,11 @@ export const summerG7HistoryW7D2 = {
       stem: "Two historians agree on the SAME list of causes but disagree about which mattered MOST. Is that a problem?",
       choices: [
         "Yes — only one of them can be doing real history",
-        "No — weighing which cause mattered most is an argument historians defend with evidence, so reasonable people can differ",
+        "No — because the causes don't actually matter",
         "Yes — historians must always agree on the single true cause",
-        "No — because the causes don't actually matter"
+        "No — weighing which cause mattered most is an argument historians defend with evidence, so reasonable people can differ"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Ranking causes by importance is an interpretation supported by evidence, not a lookup fact, so well-reasoned historians can reach different conclusions.",
       hintLadder: [
         "Is 'most important cause' a fact you look up or a judgment you defend?",
@@ -171,12 +171,12 @@ export const summerG7HistoryW7D2 = {
           type: "multiple_choice",
           stem: "A town's factory closed. Causes: (1) cheaper factories opened overseas over 20 years, (2) the main machine broke last month, (3) the owner announced the closure on Monday. Which correctly labels them?",
           choices: [
-            "1 trigger, 2 long-term, 3 short-term",
             "1 long-term, 2 short-term, 3 trigger",
+            "1 trigger, 2 long-term, 3 short-term",
             "1 short-term, 2 trigger, 3 long-term",
             "All three are triggers"
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "The 20-year overseas competition is the slow-building long-term cause; the recent machine breakdown is a short-term cause; Monday's closure announcement is the immediate trigger.",
           hintLadder: [
             "Which cause took 20 years to build?",

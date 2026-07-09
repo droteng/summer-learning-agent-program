@@ -34,8 +34,8 @@ export const winterG6ElaW7D1 = {
       id: "g6.winter.ela.w7.d1.q1",
       type: "multiple_choice",
       stem: "Which part of a story introduces the characters, the setting, and the ordinary world before the trouble begins?",
-      choices: ["Climax", "Exposition", "Rising action", "Resolution"],
-      answerIndex: 1,
+      choices: ["Climax", "Resolution", "Rising action", "Exposition"],
+      answerIndex: 3,
       explanation: "Exposition sets the stage — who, where, and what life is like — before the conflict grows.",
       hintLadder: [
         "It comes first, before the problem builds.",
@@ -48,12 +48,12 @@ export const winterG6ElaW7D1 = {
       type: "multiple_choice",
       stem: "The CLIMAX of a story is best described as:",
       choices: [
-        "Any exciting scene with lots of action",
         "The turning point of greatest tension, after which things cannot go back to how they were",
+        "Any exciting scene with lots of action",
         "The first time we meet the main character",
         "The calm ending that ties up loose ends"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "The climax is the single high point the whole story builds toward — the decisive turning point, not just any thrilling moment.",
       hintLadder: [
         "There is usually only ONE climax per story.",
@@ -158,8 +158,8 @@ export const winterG6ElaW7D1 = {
           id: "g6.winter.ela.w7.d1.arena1",
           type: "multiple_choice",
           stem: "A frozen-world story ends: 'The ice bridge holds. Mara reaches the far shore, lights the beacon, and finally lets herself breathe.' Which part of the arc is this?",
-          choices: ["Exposition", "Rising action", "Climax", "Resolution"],
-          answerIndex: 3,
+          choices: ["Exposition", "Resolution", "Climax", "Rising action"],
+          answerIndex: 1,
           explanation: "The danger is past and things settle as the character reaches safety and changes — that is the resolution.",
           hintLadder: [
             "Is tension still building, or is it winding down?",

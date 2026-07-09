@@ -36,11 +36,11 @@ export const winterG6ElaW8D5 = {
       stem: "Which is the BEST structure for a showcase presentation?",
       choices: [
         "Only a closing, no beginning or middle.",
-        "An opening hook, main findings with evidence, and a strong closing.",
+        "Just reading your data table out loud.",
         "A random list of every fact you know.",
-        "Just reading your data table out loud."
+        "An opening hook, main findings with evidence, and a strong closing."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A clear beginning, middle (findings + evidence), and end helps the audience follow and remember your capstone.",
       hintLadder: [
         "A good talk has a beginning, middle, and end.",
@@ -54,11 +54,11 @@ export const winterG6ElaW8D5 = {
       stem: "During your talk, when you show your data graph, what should you do RIGHT AFTER showing it?",
       choices: [
         "Say nothing and move on.",
-        "Explain in plain words what the graph shows and why it matters.",
         "Apologize for the graph.",
+        "Explain in plain words what the graph shows and why it matters.",
         "Show ten more graphs quickly."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Evidence needs explanation — show it, then say plainly what it means. That's how findings land with an audience.",
       hintLadder: [
         "A graph doesn't explain itself.",
@@ -72,12 +72,12 @@ export const winterG6ElaW8D5 = {
       type: "multiple_choice",
       stem: "Which delivery habit will make you seem MOST clear and confident?",
       choices: [
-        "Talking as fast as you can to finish quickly.",
         "Looking up at the audience, speaking clearly, and pausing between points.",
+        "Talking as fast as you can to finish quickly.",
         "Reading every word while staring at the floor.",
         "Whispering so no one notices mistakes."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Eye contact, clear speech, and pauses let your ideas land and show confidence.",
       hintLadder: [
         "What helps an audience follow and trust you?",

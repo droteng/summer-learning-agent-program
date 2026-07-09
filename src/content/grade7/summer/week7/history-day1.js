@@ -35,12 +35,12 @@ export const summerG7HistoryW7D1 = {
       type: "multiple_choice",
       stem: "Which of these is a PRIMARY source about a 1963 protest march?",
       choices: [
-        "A textbook chapter written in 2020 describing the march",
         "A photograph taken by a marcher on the day of the event",
+        "A textbook chapter written in 2020 describing the march",
         "A documentary produced fifty years later",
         "An encyclopedia summary of the civil rights era"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A photograph taken by a participant on the day is a firsthand record from the moment — a primary source. The other three were created later by people studying the event, so they are secondary.",
       hintLadder: [
         "Which one was created AT the event by someone who was there?",
@@ -73,11 +73,11 @@ export const summerG7HistoryW7D1 = {
       stem: "Three sources all agree a bridge collapsed in 1907 — but you discover two of them simply copied the first. How much does this corroborate the claim?",
       choices: [
         "Strongly — three sources always beat one",
-        "Weakly — copied sources are not independent, so it is really just one account",
+        "Completely — repetition proves truth",
         "Not at all — copying makes the event fake",
-        "Completely — repetition proves truth"
+        "Weakly — copied sources are not independent, so it is really just one account"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Corroboration only works when sources are INDEPENDENT. Two copies of the first source add no new evidence, so you effectively have one account, not three.",
       hintLadder: [
         "Does repeating the same story make it more independent?",

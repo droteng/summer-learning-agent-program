@@ -35,8 +35,8 @@ export const springG5ElaW3D4 = {
       id: "g5.spring.ela.w3.d4.q1",
       type: "multiple_choice",
       stem: "Which word is a TRANSITION that shows the order of steps?",
-      choices: ["Because", "Next", "Loud", "But"],
-      answerIndex: 1,
+      choices: ["Next", "Because", "Loud", "But"],
+      answerIndex: 0,
       explanation: "'Next' tells the reader which step comes after another, so it shows order. 'Because' shows a reason, 'but' shows a difference, and 'loud' just describes something.",
       hintLadder: [
         "Which word tells you what happens AFTER something else?",
@@ -50,11 +50,11 @@ export const springG5ElaW3D4 = {
       stem: "A student writes: 'The butterfly flies away. The egg hatches. The caterpillar eats leaves.' What is the main problem?",
       choices: [
         "The sentences are too long",
-        "The steps are out of order",
+        "It uses too many transitions",
         "There are no describing words",
-        "It uses too many transitions"
+        "The steps are out of order"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "The stages are in the wrong order. The egg hatching should come first, not the butterfly flying away. Process writing must follow the real order.",
       hintLadder: [
         "Does a butterfly fly away BEFORE the egg hatches?",
@@ -163,11 +163,11 @@ export const springG5ElaW3D4 = {
           stem: "Which revision BEST fixes these sentences so the steps flow in order? 'The plant makes seeds. The seed sprouts. The plant grows and flowers.'",
           choices: [
             "The plant makes seeds, and sprouts, and grows.",
-            "First the seed sprouts, then the plant grows and flowers, and finally it makes new seeds.",
             "The plant flowers because it makes seeds first.",
+            "First the seed sprouts, then the plant grows and flowers, and finally it makes new seeds.",
             "Seeds, plant, flower, sprout."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "This version puts the stages in the correct order (sprout → grow/flower → make seeds) and uses transition words (first, then, finally) to guide the reader.",
           hintLadder: [
             "Which real step comes first — sprouting or making seeds?",

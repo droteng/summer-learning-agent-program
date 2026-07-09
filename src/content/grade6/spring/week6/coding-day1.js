@@ -63,11 +63,11 @@ export const springG6CodingW6D1 = {
       stem: "In the loop 'FOR each day: height = height + 3', what does the variable 'height' do as the loop runs?",
       choices: [
         "It stays the same every step",
-        "It is updated and remembers its new value for the next step",
+        "It only changes on the last step",
         "It resets to 0 each step",
-        "It only changes on the last step"
+        "It is updated and remembers its new value for the next step"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A variable keeps (remembers) its updated value, so each loop step builds on the previous one.",
       hintLadder: [
         "What happens to 'height' after one step of the loop?",
@@ -82,11 +82,11 @@ export const springG6CodingW6D1 = {
       stem: "Why do programmers use a LOOP to simulate growth instead of writing the growth rule out 100 times?",
       choices: [
         "Loops make the value grow faster",
-        "A loop repeats one rule automatically, so you write it once and run it many times",
         "Loops delete the variable",
+        "A loop repeats one rule automatically, so you write it once and run it many times",
         "You cannot grow a value without copying the rule 100 times"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A loop lets you write the rule once and repeat it as many steps as you want — the whole point of a loop.",
       hintLadder: [
         "What is the job of a loop?",

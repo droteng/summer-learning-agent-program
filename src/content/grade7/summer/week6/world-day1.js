@@ -36,11 +36,11 @@ export const summerG7WorldW6D1 = {
       stem: "What does 'stakeholder' mean when we analyze a world issue?",
       choices: [
         "A person who owns stocks in a company",
-        "Anyone who is affected by the issue or its outcome",
+        "A person who has no opinion about the issue",
         "The reporter who wrote the news story",
-        "A person who has no opinion about the issue"
+        "Anyone who is affected by the issue or its outcome"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A stakeholder is anyone whose life is touched by the issue, so they have a real interest in how it turns out.",
       hintLadder: [
         "Think about who WINS or LOSES something depending on what happens.",
@@ -72,12 +72,12 @@ export const summerG7WorldW6D1 = {
       type: "multiple_choice",
       stem: "You are writing a fair explainer about an international fishing dispute. Which step should come FIRST?",
       choices: [
-        "Decide which side is right before you research",
         "Map out the stakeholders and what each one wants and fears",
+        "Decide which side is right before you research",
         "Pick the most dramatic quote you can find",
         "Leave out any perspective that disagrees with yours"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Mapping stakeholders first lets you understand every perspective before you explain the issue, keeping it fair.",
       hintLadder: [
         "A FAIR explainer does not start by picking a winner.",
@@ -165,11 +165,11 @@ export const summerG7WorldW6D1 = {
           stem: "A headline says 'New Dam Will Destroy Downstream Farms.' A fair explainer of the dam dispute should ALSO include which perspective?",
           choices: [
             "Only the views of people who oppose the dam",
-            "The upstream community that wants the dam for electricity and jobs",
             "No perspectives at all, just the headline",
+            "The upstream community that wants the dam for electricity and jobs",
             "Only celebrities' opinions about the dam"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "The headline gives only the downstream side; a fair explainer must also include the upstream stakeholders who want the dam, so readers see the whole issue.",
           hintLadder: [
             "The headline shows only one stakeholder's side.",

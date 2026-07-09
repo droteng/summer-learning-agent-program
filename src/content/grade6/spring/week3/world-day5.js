@@ -36,11 +36,11 @@ export const springG6WorldW3D5 = {
       stem: "What does BIODIVERSITY mean?",
       choices: [
         "The number of rocks in an area",
-        "The variety of different living species in a place",
+        "The age of the oldest tree",
         "How hot an ecosystem is",
-        "The age of the oldest tree"
+        "The variety of different living species in a place"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Biodiversity is the variety of different living things — the more kinds of species, the higher the biodiversity.",
       hintLadder: [
         "Break the word apart: 'bio' = life, 'diversity' = variety.",
@@ -53,12 +53,12 @@ export const springG6WorldW3D5 = {
       type: "multiple_choice",
       stem: "Why is HIGH biodiversity good for an ecosystem?",
       choices: [
-        "It makes the ecosystem more fragile",
         "It makes the ecosystem more resilient, so it can recover from problems",
+        "It makes the ecosystem more fragile",
         "It means fewer species to worry about",
         "It stops all change from ever happening"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "With more species, if one is lost others can fill its role, so a diverse ecosystem bounces back from disturbances more easily.",
       hintLadder: [
         "Think about a team with many players versus just one.",
@@ -167,11 +167,11 @@ export const springG6WorldW3D5 = {
           stem: "A pond has just ONE kind of fish and no other species. A disease strikes that fish. Compared to a pond with many species, this pond is likely to...",
           choices: [
             "Recover more easily because it's simpler",
-            "Collapse more easily because it has no backup species",
             "Be completely unaffected",
+            "Collapse more easily because it has no backup species",
             "Gain more species automatically"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Low biodiversity means no other species to fill the gap, so a single disease can collapse the whole system — the opposite of a resilient, diverse ecosystem.",
           hintLadder: [
             "Is there any other species to take over if the fish is lost?",

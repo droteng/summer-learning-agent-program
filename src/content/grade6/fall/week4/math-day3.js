@@ -34,8 +34,8 @@ export const fallG6MathW4D3 = {
       id: "g6.fall.math.w4.d3.q1",
       type: "multiple_choice",
       stem: "In our base-10 system, each place is worth how many times the place to its right?",
-      choices: ["2", "5", "10", "60"],
-      answerIndex: 2,
+      choices: ["2", "10", "5", "60"],
+      answerIndex: 1,
       explanation: "Base-10 means each place is 10 times the one to its right.",
       hintLadder: [
         "'Base-10' is a strong hint.",
@@ -76,11 +76,11 @@ export const fallG6MathW4D3 = {
       stem: "Why is place value a more powerful way to write numbers than tally marks?",
       choices: [
         "Tally marks are illegal",
-        "Place value can write huge numbers compactly with just a few digits",
+        "Place value only works for small numbers",
         "Tally marks use more colors",
-        "Place value only works for small numbers"
+        "Place value can write huge numbers compactly with just a few digits"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Place value writes 1,000,000 in 7 digits; tallies would need a million marks.",
       hintLadder: [
         "Imagine tallying one million.",
@@ -166,8 +166,8 @@ export const fallG6MathW4D3 = {
           id: "g6.fall.math.w4.d3.arena2",
           type: "multiple_choice",
           stem: "The Babylonians used base-60. In a base-60 system, how many times bigger is the second place than the first (ones) place?",
-          choices: ["10 times", "60 times", "100 times", "6 times"],
-          answerIndex: 1,
+          choices: ["10 times", "100 times", "60 times", "6 times"],
+          answerIndex: 2,
           explanation: "In base-60, each place is worth 60 times the place to its right — just like base-10 places are worth 10 times more.",
           hintLadder: [
             "In base-10, each place is ×10. What's the pattern?",

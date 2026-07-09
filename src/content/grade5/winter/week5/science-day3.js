@@ -35,12 +35,12 @@ export const winterG5ScienceW5D3 = {
       type: "multiple_choice",
       stem: "Which statement describes CLIMATE rather than weather?",
       choices: [
-        "A snowstorm is happening this afternoon.",
-        "The wind is strong right now.",
         "Winters here are usually cold and snowy every year.",
+        "The wind is strong right now.",
+        "A snowstorm is happening this afternoon.",
         "It is 3°C outside at lunchtime today."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "'Usually cold and snowy every year' is a long-term pattern — that is climate. The others are single, short-term events (weather).",
       hintLadder: [
         "Climate is a pattern over many years, not one event.",
@@ -54,11 +54,11 @@ export const winterG5ScienceW5D3 = {
       stem: "Which tool would a scientist use to measure a piece of today's WEATHER?",
       choices: [
         "A calculator averaging many years of data",
-        "A thermometer reading the temperature right now",
         "A history book about past winters",
+        "A thermometer reading the temperature right now",
         "A globe"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "A thermometer measures the temperature happening now — a weather reading. Averaging many years of data is how we learn about climate.",
       hintLadder: [
         "Weather is measured with tools in the moment.",
@@ -166,11 +166,11 @@ export const winterG5ScienceW5D3 = {
           stem: "Which of these is part of studying CLIMATE, not just today's weather?",
           choices: [
             "Reading the temperature off a thermometer right now",
-            "Finding the usual winter temperature by looking at many years of records",
+            "Measuring today's wind with a wind vane",
             "Checking if it is snowing right now",
-            "Measuring today's wind with a wind vane"
+            "Finding the usual winter temperature by looking at many years of records"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Looking at many years of records shows the usual pattern — that is climate. The others are single, in-the-moment weather readings.",
           hintLadder: [
             "Climate needs data over many years.",

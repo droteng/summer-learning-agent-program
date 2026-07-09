@@ -42,11 +42,11 @@ export const summerG5ElaW6D3 = {
       stem: "Which sentence uses the BANDWAGON trick?",
       choices: [
         "A test showed this soap cleans well.",
-        "Join the millions who already love this snack!",
         "Made by a famous chef.",
+        "Join the millions who already love this snack!",
         "It costs only $5."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Bandwagon says 'everyone is doing it, so you should too.' 'Join the millions' points to the crowd.",
       hintLadder: [
         "Look for the choice that talks about a crowd.",
@@ -58,8 +58,8 @@ export const summerG5ElaW6D3 = {
       id: "g5.summer.ela.w6.d3.q2",
       type: "multiple_choice",
       stem: "Which word is the MOST loaded (has the strongest feeling)?",
-      choices: ["chair", "person", "amazing", "tomorrow"],
-      answerIndex: 2,
+      choices: ["amazing", "person", "chair", "tomorrow"],
+      answerIndex: 0,
       explanation: "'Amazing' carries a strong good feeling. The other words are plain and calm.",
       hintLadder: [
         "Loaded words have strong feelings inside them.",
@@ -71,8 +71,8 @@ export const summerG5ElaW6D3 = {
       id: "g5.summer.ela.w6.d3.q3",
       type: "multiple_choice",
       stem: "'If you don't buy this water filter, your family could get sick.' Which trick is this?",
-      choices: ["Bandwagon", "Fear / emotional appeal", "A fact", "A number"],
-      answerIndex: 1,
+      choices: ["Bandwagon", "A number", "A fact", "Fear / emotional appeal"],
+      answerIndex: 3,
       explanation: "It tries to scare you about your family so you act fast. That is a fear or emotional appeal.",
       hintLadder: [
         "What feeling does the sentence try to make?",

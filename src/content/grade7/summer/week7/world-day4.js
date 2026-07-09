@@ -36,11 +36,11 @@ export const summerG7WorldW7D4 = {
       stem: "Which branch of government has the main job of MAKING laws?",
       choices: [
         "The judicial branch",
-        "The legislative branch",
         "The executive branch",
+        "The legislative branch",
         "The military"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "The legislative branch (such as a congress or parliament) writes and passes laws. The executive enforces them and the judicial branch interprets them.",
       hintLadder: [
         "Which branch is made of representatives who debate and vote on bills?",
@@ -53,12 +53,12 @@ export const summerG7WorldW7D4 = {
       type: "multiple_choice",
       stem: "A legislature passes a bill, but the president refuses to sign it and sends it back. This power is called a:",
       choices: [
-        "Veto",
         "Verdict",
+        "Veto",
         "Petition",
         "Filibuster"
       ],
-      answerIndex: 0,
+      answerIndex: 1,
       explanation: "A veto is the executive's power to reject a bill — a classic check on the legislative branch. A verdict is a court decision, and a petition is a citizen request.",
       hintLadder: [
         "It's a power of the executive branch over new bills.",
@@ -72,12 +72,12 @@ export const summerG7WorldW7D4 = {
       type: "multiple_choice",
       stem: "Why does a government split power into branches that can check each other?",
       choices: [
-        "To make government slower for no reason",
         "To prevent any one branch or person from gaining too much power",
+        "To make government slower for no reason",
         "So only the courts have real power",
         "To make sure laws never change"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Checks and balances exist so no single branch can dominate — each can limit the others, protecting against abuse of power.",
       hintLadder: [
         "What problem happens if one branch controls everything?",
@@ -172,11 +172,11 @@ export const summerG7WorldW7D4 = {
           stem: "A court rules that a newly passed law violates the constitution and cannot be enforced. This is an example of:",
           choices: [
             "The legislative branch checking the executive",
-            "The judicial branch checking the legislative branch",
+            "A citizen petition",
             "The executive branch making a new law",
-            "A citizen petition"
+            "The judicial branch checking the legislative branch"
           ],
-          answerIndex: 1,
+          answerIndex: 3,
           explanation: "Courts belong to the judicial branch, and striking down a law made by the legislature is the judicial branch checking the legislative branch.",
           hintLadder: [
             "Which branch do courts belong to?",

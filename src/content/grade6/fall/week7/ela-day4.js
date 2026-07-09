@@ -35,11 +35,11 @@ export const fallG6ElaW7D4 = {
       stem: "Which sentence clearly shows CAUSE and EFFECT?",
       choices: [
         "The market grew. It was Tuesday.",
-        "Because trade increased, the market grew larger.",
         "The market is big and old.",
+        "Because trade increased, the market grew larger.",
         "Markets sell things."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "'Because trade increased' gives the cause; 'the market grew' is the effect — clearly linked.",
       hintLadder: [
         "Which sentence links a cause to a result?",
@@ -70,8 +70,8 @@ export const fallG6ElaW7D4 = {
       id: "g6.fall.ela.w7.d4.q3",
       type: "multiple_choice",
       stem: "Which linking phrase best introduces an EFFECT?",
-      choices: ["because of", "as a result", "due to", "since"],
-      answerIndex: 1,
+      choices: ["because of", "since", "due to", "as a result"],
+      answerIndex: 3,
       explanation: "'As a result' points to the effect; the others usually introduce the cause.",
       hintLadder: [
         "Which one comes right before the result?",
@@ -159,12 +159,12 @@ export const fallG6ElaW7D4 = {
           type: "multiple_choice",
           stem: "Which sentence correctly shows cause-and-effect WITHOUT falsely treating 'happening together' as proof?",
           choices: [
-            "The festival happened the same week the leaves turned red, so the leaves caused the festival.",
             "Because the harvest was large, the village held a bigger festival than usual.",
+            "The festival happened the same week the leaves turned red, so the leaves caused the festival.",
             "It was autumn and there was a festival.",
             "The festival and the cold weather both happened in October."
           ],
-          answerIndex: 1,
+          answerIndex: 0,
           explanation: "Only option B shows a real mechanism (a large harvest leading to a bigger festival). The others either confuse timing with causation or just list events.",
           hintLadder: [
             "Avoid sentences that say 'happened together, so one caused the other.'",

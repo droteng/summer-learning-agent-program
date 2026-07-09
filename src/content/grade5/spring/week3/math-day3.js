@@ -79,8 +79,8 @@ export const springG5MathW3D3 = {
       id: "g5.spring.math.w3.d3.q4",
       type: "multiple_choice",
       stem: "A moth's caterpillar stage is 20 days and its pupa stage is 5 days. How many TIMES as long is the caterpillar stage compared to the pupa stage?",
-      choices: ["2 times", "4 times", "15 times", "25 times"],
-      answerIndex: 1,
+      choices: ["2 times", "25 times", "15 times", "4 times"],
+      answerIndex: 3,
       explanation: "Divide the longer by the shorter: 20 ÷ 5 = 4, so the caterpillar stage is 4 times as long as the pupa stage. (25 is what you get if you add instead of divide.)",
       hintLadder: [
         "'How many times as long' means divide, not add.",

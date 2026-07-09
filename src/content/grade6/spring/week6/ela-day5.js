@@ -35,11 +35,11 @@ export const springG6ElaW6D5 = {
       stem: "What is the main GOAL of explanatory writing?",
       choices: [
         "To argue that your opinion is right",
-        "To clearly inform the reader about how something works",
+        "To list as many big words as possible",
         "To tell an exciting made-up story",
-        "To list as many big words as possible"
+        "To clearly inform the reader about how something works"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Explanatory (informative) writing exists to teach or inform clearly — not to argue or entertain with fiction.",
       hintLadder: [
         "Is explanatory writing trying to WIN an argument?",
@@ -52,12 +52,12 @@ export const springG6ElaW6D5 = {
       type: "multiple_choice",
       stem: "Which transition word best signals the ORDER of steps in explaining a simulation?",
       choices: [
-        "However",
         "Next",
+        "However",
         "Although",
         "Instead"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "'Next' signals sequence — it moves the reader from one step to the following step. The others signal contrast, not order.",
       hintLadder: [
         "Which word shows one thing happening AFTER another?",
@@ -165,12 +165,12 @@ export const springG6ElaW6D5 = {
           type: "multiple_choice",
           stem: "You are explaining a simulation and want to signal the FINAL result. Which transition fits best?",
           choices: [
-            "As a result,",
-            "On the other hand,",
             "For example,",
+            "On the other hand,",
+            "As a result,",
             "In contrast,"
           ],
-          answerIndex: 0,
+          answerIndex: 2,
           explanation: "'As a result' signals a conclusion or outcome — perfect for stating what the simulation finally predicts. The others signal contrast or examples.",
           hintLadder: [
             "Which phrase introduces an outcome or conclusion?",

@@ -66,12 +66,12 @@ export const winterG5MathW4D2 = {
       type: "multiple_choice",
       stem: "The distance from the Sun to Earth is about 150,000,000 km. In words, this number is:",
       choices: [
-        "One hundred fifty thousand",
         "One hundred fifty million",
+        "One hundred fifty thousand",
         "One hundred fifty billion",
         "Fifteen million"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "150,000,000 is the digits 150 followed by six zeros, which we say as one hundred fifty million.",
       hintLadder: [
         "Count the zeros: there are six after 150.",

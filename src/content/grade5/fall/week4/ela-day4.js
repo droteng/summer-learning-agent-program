@@ -54,12 +54,12 @@ export const fallG5ElaW4D4 = {
       type: "multiple_choice",
       stem: "Why should you cite where a fact came from?",
       choices: [
-        "To make the page longer",
         "So readers can trust your work and check it",
+        "To make the page longer",
         "Citing is a waste of time",
         "To hide where you found it"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Citing builds trust and lets readers check the fact for themselves.",
       hintLadder: [
         "What makes a report easy to trust?",
@@ -74,11 +74,11 @@ export const fallG5ElaW4D4 = {
       stem: "What belongs in a neat civilization fact-file?",
       choices: [
         "Three copied paragraphs",
-        "Short, neat notes: name, place, time, and why it mattered",
+        "A drawing with no labels",
         "Only your own opinions",
-        "A drawing with no labels"
+        "Short, neat notes: name, place, time, and why it mattered"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "A fact-file uses short, neat notes that cover the main categories.",
       hintLadder: [
         "A fact-file is notes, not long paragraphs.",
@@ -167,11 +167,11 @@ export const fallG5ElaW4D4 = {
           stem: "Source: 'Mesopotamians invented the wheel, which made carrying goods and traveling far easier.' Which is the BEST summary?",
           choices: [
             "Mesopotamians invented the wheel, which made carrying goods and traveling far easier. (copied)",
-            "The Mesopotamians invented the wheel, which made travel and moving goods much easier.",
             "Wheels are round.",
+            "The Mesopotamians invented the wheel, which made travel and moving goods much easier.",
             "Mesopotamia had goods."
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "It keeps the main idea but says it in different, shorter words — and it is not copied.",
           hintLadder: [
             "A summary is reworded, not copied word-for-word.",

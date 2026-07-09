@@ -38,11 +38,11 @@ export const grade6MediaDay5 = {
       stem: "Which is a STRONGER password?",
       choices: [
         "Pass123!",
-        "paper-otter-cloud-7",
         "abc123",
+        "paper-otter-cloud-7",
         "your first name"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Four random unrelated words + a number is much harder to crack than short tricky passwords.",
       hintLadder: [
         "What's harder to guess — short tricky or long phrases?",
@@ -57,11 +57,11 @@ export const grade6MediaDay5 = {
         "Which is OK to share publicly online?",
       choices: [
         "Your full home address.",
-        "Your school's name.",
         "Your favorite book.",
+        "Your school's name.",
         "Your full birthday."
       ],
-      answerIndex: 2,
+      answerIndex: 1,
       explanation: "A favorite book reveals taste, not identity or location. Address, school, birthday can all be used to find or impersonate you.",
       hintLadder: [
         "Three options reveal identity or location.",
@@ -77,11 +77,11 @@ export const grade6MediaDay5 = {
         "Someone you met online (and have never met in person) asks to meet at a park. Best response:",
       choices: [
         "Go to be polite.",
-        "Tell a parent or trusted adult and don't go without their involvement.",
+        "Tell them to come to your house instead.",
         "Go but bring a friend.",
-        "Tell them to come to your house instead."
+        "Tell a parent or trusted adult and don't go without their involvement."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Online strangers stay strangers. Always involve a trusted adult before any in-person plan.",
       hintLadder: [
         "Is online familiarity the same as knowing someone?",
@@ -95,12 +95,12 @@ export const grade6MediaDay5 = {
       stem:
         "Apps with 'endless scroll' are designed to:",
       choices: [
-        "Make sure you have all the information.",
         "Keep you scrolling so they can show more ads.",
+        "Make sure you have all the information.",
         "Hide content from you.",
         "Save battery."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Engagement is the metric for most apps. Endless scroll exists to maximize time-on-app, which maximizes ad views.",
       hintLadder: [
         "How do these apps make money?",

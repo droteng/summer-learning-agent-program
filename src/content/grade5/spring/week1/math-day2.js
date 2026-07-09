@@ -35,8 +35,8 @@ export const springG5MathW1D2 = {
       id: "g5.spring.math.w1.d2.q1",
       type: "multiple_choice",
       stem: "A gardener plants 12 seeds evenly across 4 rows. How many seeds are in each row?",
-      choices: ["2 seeds per row", "3 seeds per row", "4 seeds per row", "8 seeds per row"],
-      answerIndex: 1,
+      choices: ["2 seeds per row", "4 seeds per row", "3 seeds per row", "8 seeds per row"],
+      answerIndex: 2,
       explanation: "Share the seeds evenly: 12 seeds ÷ 4 rows = 3 seeds per row.",
       hintLadder: [
         "'Per row' means the amount for ONE row.",

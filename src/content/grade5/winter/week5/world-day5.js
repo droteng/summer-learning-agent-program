@@ -36,12 +36,12 @@ export const winterG5WorldW5D5 = {
       type: "multiple_choice",
       stem: "A winter snowfall bar chart makes a tiny difference look dramatic. What is the most common trick behind this?",
       choices: [
-        "The bars are different colors",
         "The side scale does not start at zero",
+        "The bars are different colors",
         "The chart has a title",
         "It shows two years of data"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Starting the side scale above zero cuts off the shared 'base' of the bars, stretching small differences into big-looking gaps.",
       hintLadder: [
         "Look at where the up-and-down scale begins.",
@@ -56,11 +56,11 @@ export const winterG5WorldW5D5 = {
       stem: "A headline shouts 'Snowfall way up this year!' What question should a careful reader ask FIRST?",
       choices: [
         "What font is the headline in?",
-        "Compared to what — how much snow fell last year?",
+        "How many people read the headline?",
         "Is snow cold?",
-        "How many people read the headline?"
+        "Compared to what — how much snow fell last year?"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "'Way up' means nothing without the other number: up compared to what? You need last year's amount to judge the change.",
       hintLadder: [
         "'Up' is always compared to something.",
@@ -169,11 +169,11 @@ export const winterG5WorldW5D5 = {
           stem: "A headline says 'Cold days DOUBLED this winter!' The city went from 3 cold days last winter to 6 this winter. Which statement is the FAIREST reading?",
           choices: [
             "The city now has a huge number of cold days",
-            "'Doubled' is true, but it is only 3 more cold days, so the alarming tone oversells a small change",
             "The headline must be false",
+            "'Doubled' is true, but it is only 3 more cold days, so the alarming tone oversells a small change",
             "You cannot tell anything from the numbers"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Going from 3 to 6 really is doubling, but it is only 3 more cold days — the word 'DOUBLED' makes a small change sound dramatic.",
           hintLadder: [
             "How many EXTRA cold days is that, in plain numbers?",

@@ -36,12 +36,12 @@ export const springG7WorldW7D4 = {
       type: "multiple_choice",
       stem: "Draining a wetland to build on it causes habitat loss. What is an ADDITIONAL downstream effect of losing that wetland?",
       choices: [
-        "The area automatically gets cleaner air worldwide.",
         "Water downstream can get dirtier and flooding can worsen, because the wetland no longer filters water or absorbs excess rain.",
+        "The area automatically gets cleaner air worldwide.",
         "Nothing else changes at all.",
         "The ocean instantly rises everywhere."
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "Wetlands filter water and absorb floodwater, so draining one not only destroys habitat but also dirties downstream water and increases flooding — a chain of effects.",
       hintLadder: [
         "Wetlands do more than house animals — what else do they DO?",
@@ -55,11 +55,11 @@ export const springG7WorldW7D4 = {
       stem: "Why can one country's pollution become another country's problem?",
       choices: [
         "Because pollution is always invisible.",
-        "Because shared systems — rivers, ocean currents, and wind — carry pollution across borders to places that did not create it.",
+        "Because pollution only affects the place where it starts.",
         "Because every country shares the same government.",
-        "Because pollution only affects the place where it starts."
+        "Because shared systems — rivers, ocean currents, and wind — carry pollution across borders to places that did not create it."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Rivers, ocean currents, and wind move pollution across national borders, so harm often lands far from the source — a key reason environmental issues are global.",
       hintLadder: [
         "Do rivers, oceans, and wind stop at borders?",
@@ -74,11 +74,11 @@ export const springG7WorldW7D4 = {
       stem: "A river is polluted by a factory upstream. Which community response treats the CAUSE rather than only the symptom?",
       choices: [
         "Volunteers scoop trash from the riverbank every weekend forever.",
-        "The community passes and enforces a law that stops the factory from dumping waste into the river.",
         "Residents put up signs saying the river is dirty.",
+        "The community passes and enforces a law that stops the factory from dumping waste into the river.",
         "People simply avoid the river and hope it improves."
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "Stopping the factory from dumping addresses the source of the pollution (the cause), while clean-ups, signs, and avoidance only manage the symptoms after the harm is done.",
       hintLadder: [
         "Which response stops NEW pollution from entering the river?",

@@ -35,8 +35,8 @@ export const fallG7MathW3D1 = {
       id: "g7.fall.math.w3.d1.q1",
       type: "multiple_choice",
       stem: "A recipe keeps 2 cups oats for every 5 cups flour. What is the constant of proportionality k = oats ÷ flour?",
-      choices: ["5/2", "2/5", "2", "10"],
-      answerIndex: 1,
+      choices: ["2/5", "5/2", "2", "10"],
+      answerIndex: 0,
       explanation: "k = oats ÷ flour = 2 ÷ 5 = 2/5 cup oats per cup flour.",
       hintLadder: [
         "The constant of proportionality is y ÷ x for the pair you're relating.",

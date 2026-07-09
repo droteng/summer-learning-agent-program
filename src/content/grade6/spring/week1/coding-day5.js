@@ -36,11 +36,11 @@ export const springG6CodingW1D5 = {
       stem: "Which of these best describes an ALGORITHM?",
       choices: [
         "A random pile of instructions in any order",
-        "A precise, ordered list of steps to complete a task",
         "A single word",
+        "A precise, ordered list of steps to complete a task",
         "A drawing of a plant"
       ],
-      answerIndex: 1,
+      answerIndex: 2,
       explanation: "An algorithm is a clear, ordered sequence of steps that reliably completes a task.",
       hintLadder: [
         "Think about a recipe or a set of directions.",
@@ -54,11 +54,11 @@ export const springG6CodingW1D5 = {
       stem: "For a planting algorithm, which pair of steps is in the CORRECT order?",
       choices: [
         "1. Water the soil.  2. Get a pot and add soil.",
-        "1. Get a pot and add soil.  2. Plant the seed.  3. Water it.",
+        "1. Water it.  2. Plant the seed.  3. Get a pot.",
         "1. Plant the seed.  2. Get a pot.",
-        "1. Water it.  2. Plant the seed.  3. Get a pot."
+        "1. Get a pot and add soil.  2. Plant the seed.  3. Water it."
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "You need the pot and soil first, then the seed, then water — each step depends on the one before it.",
       hintLadder: [
         "What has to exist before you can plant a seed?",

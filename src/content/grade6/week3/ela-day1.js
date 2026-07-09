@@ -54,10 +54,10 @@ export const grade6ElaWeek3Day1 = {
       choices: [
         "Then the storm hit and the lights went out.",
         "Liam smiled — finally, the bike was fixed.",
-        "It was a quiet Saturday morning in the park.",
-        "Suddenly, a dog bolted across the field."
+        "Suddenly, a dog bolted across the field.",
+        "It was a quiet Saturday morning in the park."
       ],
-      answerIndex: 2,
+      answerIndex: 3,
       explanation: "Setup establishes who/where/when. 'Quiet Saturday morning in the park' does that.",
       hintLadder: [
         "Setup tells you who, where, and when.",
@@ -70,12 +70,12 @@ export const grade6ElaWeek3Day1 = {
       type: "multiple_choice",
       stem: "Which is the strongest resolution sentence?",
       choices: [
-        "Maya was on stage.",
-        "Maya forgot her lines.",
         "Maya took a breath, made up a new line, and the audience laughed.",
+        "Maya forgot her lines.",
+        "Maya was on stage.",
         "Maya was nervous."
       ],
-      answerIndex: 2,
+      answerIndex: 0,
       explanation: "A resolution shows the change and ties it back to the conflict. Maya's improvisation resolves the freeze.",
       hintLadder: [
         "A resolution should show change.",
@@ -87,8 +87,8 @@ export const grade6ElaWeek3Day1 = {
       id: "g6.ela.w3.d1.q4",
       type: "multiple_choice",
       stem: "A story without a conflict feels:",
-      choices: ["Exciting", "Boring or flat", "Mysterious", "Long"],
-      answerIndex: 1,
+      choices: ["Exciting", "Mysterious", "Boring or flat", "Long"],
+      answerIndex: 2,
       explanation: "Conflict is what makes stories move. Without it, nothing changes and the reader loses interest.",
       hintLadder: [
         "What does conflict do for a story?",
@@ -161,12 +161,12 @@ export const grade6ElaWeek3Day1 = {
           type: "multiple_choice",
           stem: "In: 'Priya trained all summer for the race, but on race day her shoe strap snapped at the starting line. She tied it with her hair ribbon and ran anyway, finishing third.' — which sentence describes the RESOLUTION?",
           choices: [
-            "Priya trained all summer for the race.",
-            "On race day her shoe strap snapped at the starting line.",
             "She tied it with her hair ribbon and ran anyway, finishing third.",
+            "On race day her shoe strap snapped at the starting line.",
+            "Priya trained all summer for the race.",
             "It was race day."
           ],
-          answerIndex: 2,
+          answerIndex: 0,
           explanation: "The resolution shows what the character does about the conflict and how it changes things. Tying the strap and finishing third resolves the snapped-strap problem.",
           hintLadder: [
             "The resolution comes after the conflict and shows a change.",

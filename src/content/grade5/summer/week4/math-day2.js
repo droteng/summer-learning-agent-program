@@ -35,8 +35,8 @@ export const summerG5MathW4D2 = {
       id: "g5.summer.math.w4.d2.q1",
       type: "multiple_choice",
       stem: "true AND false is:",
-      choices: ["true", "false", "either one", "an error"],
-      answerIndex: 1,
+      choices: ["true", "either one", "false", "an error"],
+      answerIndex: 2,
       explanation: "AND needs BOTH parts true. One false part makes the whole thing false.",
       hintLadder: [
         "What does AND need from BOTH parts?",
@@ -48,8 +48,8 @@ export const summerG5MathW4D2 = {
       id: "g5.summer.math.w4.d2.q2",
       type: "multiple_choice",
       stem: "true OR false is:",
-      choices: ["true", "false", "either one", "an error"],
-      answerIndex: 0,
+      choices: ["false", "true", "either one", "an error"],
+      answerIndex: 1,
       explanation: "OR is true when AT LEAST ONE part is true. One true part is enough.",
       hintLadder: [
         "OR is true if at least one part is true.",
@@ -62,8 +62,8 @@ export const summerG5MathW4D2 = {
       type: "multiple_choice",
       stem:
         "Pool rule: you may swim if (you are with an adult) OR (you passed the swim test). Sam did NOT bring an adult, but Sam passed the swim test. May Sam swim?",
-      choices: ["Yes, may swim", "No, may not swim", "Need more info", "Only if also with an adult"],
-      answerIndex: 0,
+      choices: ["Only if also with an adult", "No, may not swim", "Need more info", "Yes, may swim"],
+      answerIndex: 3,
       explanation: "OR only needs one part true. Sam passed the swim test, so the rule allows it.",
       hintLadder: [
         "Does OR need BOTH parts, or just one?",
@@ -77,8 +77,8 @@ export const summerG5MathW4D2 = {
       type: "multiple_choice",
       stem:
         "Three friends each brought one different summer treat: popsicle, watermelon, or lemonade. Mia brought watermelon. Leo did NOT bring a popsicle. Who brought the popsicle?",
-      choices: ["Mia", "Leo", "Zoe", "Nobody"],
-      answerIndex: 2,
+      choices: ["Zoe", "Leo", "Mia", "Nobody"],
+      answerIndex: 0,
       explanation:
         "Mia has watermelon, so cross her off. Leo did NOT bring a popsicle, so cross Leo off too. Only Zoe is left for the popsicle.",
       hintLadder: [
@@ -173,8 +173,8 @@ export const summerG5MathW4D2 = {
           type: "multiple_choice",
           stem:
             "Three friends each play one different game: tag, cards, or checkers. Ann does NOT play tag. Ben plays checkers. Who plays tag?",
-          choices: ["Ann", "Ben", "Cara", "Nobody"],
-          answerIndex: 2,
+          choices: ["Ann", "Ben", "Nobody", "Cara"],
+          answerIndex: 3,
           explanation:
             "Ben plays checkers, so cross him off. Ann does NOT play tag, so cross her off. Only Cara is left, so Cara plays tag. (Ann then plays cards.)",
           hintLadder: [

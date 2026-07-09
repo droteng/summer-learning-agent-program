@@ -36,11 +36,11 @@ export const springG6ScienceW3D2 = {
       stem: "What is GERMINATION?",
       choices: [
         "When a flower is pollinated",
-        "When a seed sprouts and begins to grow roots and a shoot",
+        "When fruit ripens",
         "When a plant drops its leaves",
-        "When fruit ripens"
+        "When a seed sprouts and begins to grow roots and a shoot"
       ],
-      answerIndex: 1,
+      answerIndex: 3,
       explanation: "Germination is the sprouting stage — the seed uses water, warmth, and air to grow its first roots and shoot.",
       hintLadder: [
         "It's the very first growth stage after the seed.",
@@ -53,12 +53,12 @@ export const springG6ScienceW3D2 = {
       type: "multiple_choice",
       stem: "Which three things does a seed most need to GERMINATE?",
       choices: [
-        "Sunlight, soil, and fruit",
         "Water, warmth, and air (oxygen)",
+        "Sunlight, soil, and fruit",
         "Pollen, wind, and bees",
         "Flowers, seeds, and roots"
       ],
-      answerIndex: 1,
+      answerIndex: 0,
       explanation: "A seed needs water, warmth, and oxygen to begin germinating; sunlight matters mainly after the shoot emerges and makes leaves.",
       hintLadder: [
         "A seed can start sprouting even in the dark underground.",
@@ -167,11 +167,11 @@ export const springG6ScienceW3D2 = {
           stem: "A gardener notices her squash plants flower beautifully but never form squash. Which part of the life cycle has most likely failed?",
           choices: [
             "Germination",
-            "Pollination",
             "Seed dormancy",
+            "Pollination",
             "Leaf growth"
           ],
-          answerIndex: 1,
+          answerIndex: 2,
           explanation: "Flowers that never form fruit usually weren't pollinated — without pollination the flower can't be fertilized to make fruit and seeds.",
           hintLadder: [
             "The plant clearly germinated and grew — it made flowers.",
