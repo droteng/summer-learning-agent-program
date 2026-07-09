@@ -63,6 +63,40 @@ import { grade6BookClubDay3 } from "./grade6/enrichment/book-club-day3.js";
 import { grade6BookClubDay4 } from "./grade6/enrichment/book-club-day4.js";
 import { grade6BookClubDay5 } from "./grade6/enrichment/book-club-day5.js";
 
+// === Grade 5 enrichment tracks (Finance / Media / Study) ===
+import { grade5FinanceDay1 } from "./grade5/enrichment/finance-day1.js";
+import { grade5FinanceDay2 } from "./grade5/enrichment/finance-day2.js";
+import { grade5FinanceDay3 } from "./grade5/enrichment/finance-day3.js";
+import { grade5FinanceDay4 } from "./grade5/enrichment/finance-day4.js";
+import { grade5FinanceDay5 } from "./grade5/enrichment/finance-day5.js";
+import { grade5MediaDay1 } from "./grade5/enrichment/media-day1.js";
+import { grade5MediaDay2 } from "./grade5/enrichment/media-day2.js";
+import { grade5MediaDay3 } from "./grade5/enrichment/media-day3.js";
+import { grade5MediaDay4 } from "./grade5/enrichment/media-day4.js";
+import { grade5MediaDay5 } from "./grade5/enrichment/media-day5.js";
+import { grade5StudyDay1 } from "./grade5/enrichment/study-day1.js";
+import { grade5StudyDay2 } from "./grade5/enrichment/study-day2.js";
+import { grade5StudyDay3 } from "./grade5/enrichment/study-day3.js";
+import { grade5StudyDay4 } from "./grade5/enrichment/study-day4.js";
+import { grade5StudyDay5 } from "./grade5/enrichment/study-day5.js";
+
+// === Grade 7 enrichment tracks (Finance / Media / Study) ===
+import { grade7FinanceDay1 } from "./grade7/enrichment/finance-day1.js";
+import { grade7FinanceDay2 } from "./grade7/enrichment/finance-day2.js";
+import { grade7FinanceDay3 } from "./grade7/enrichment/finance-day3.js";
+import { grade7FinanceDay4 } from "./grade7/enrichment/finance-day4.js";
+import { grade7FinanceDay5 } from "./grade7/enrichment/finance-day5.js";
+import { grade7MediaDay1 } from "./grade7/enrichment/media-day1.js";
+import { grade7MediaDay2 } from "./grade7/enrichment/media-day2.js";
+import { grade7MediaDay3 } from "./grade7/enrichment/media-day3.js";
+import { grade7MediaDay4 } from "./grade7/enrichment/media-day4.js";
+import { grade7MediaDay5 } from "./grade7/enrichment/media-day5.js";
+import { grade7StudyDay1 } from "./grade7/enrichment/study-day1.js";
+import { grade7StudyDay2 } from "./grade7/enrichment/study-day2.js";
+import { grade7StudyDay3 } from "./grade7/enrichment/study-day3.js";
+import { grade7StudyDay4 } from "./grade7/enrichment/study-day4.js";
+import { grade7StudyDay5 } from "./grade7/enrichment/study-day5.js";
+
 // === Fall Expedition (Grade 6) — Week 1: Back to Basics ===
 import { fallG6MathW1D1 } from "./grade6/fall/week1/math-day1.js";
 import { fallG6ScienceW1D2 } from "./grade6/fall/week1/science-day2.js";
@@ -735,6 +769,36 @@ export const ALL_MISSIONS = [
   grade6BookClubDay3,
   grade6BookClubDay4,
   grade6BookClubDay5,
+  grade5FinanceDay1,
+  grade5FinanceDay2,
+  grade5FinanceDay3,
+  grade5FinanceDay4,
+  grade5FinanceDay5,
+  grade5MediaDay1,
+  grade5MediaDay2,
+  grade5MediaDay3,
+  grade5MediaDay4,
+  grade5MediaDay5,
+  grade5StudyDay1,
+  grade5StudyDay2,
+  grade5StudyDay3,
+  grade5StudyDay4,
+  grade5StudyDay5,
+  grade7FinanceDay1,
+  grade7FinanceDay2,
+  grade7FinanceDay3,
+  grade7FinanceDay4,
+  grade7FinanceDay5,
+  grade7MediaDay1,
+  grade7MediaDay2,
+  grade7MediaDay3,
+  grade7MediaDay4,
+  grade7MediaDay5,
+  grade7StudyDay1,
+  grade7StudyDay2,
+  grade7StudyDay3,
+  grade7StudyDay4,
+  grade7StudyDay5,
   // Fall Expedition — Week 1
   fallG6MathW1D1,
   fallG6ScienceW1D2,
@@ -1348,8 +1412,23 @@ export function getAuthoredItemById(itemId) {
   return itemIndex.get(itemId) ?? null;
 }
 
-export function findEnrichmentMissions(track) {
+/**
+ * Enrichment missions, optionally filtered by grade and/or track.
+ *
+ * Accepts either a track string (legacy) or an options object. Grade 5, 6,
+ * and 7 each have their own Finance/Media/Study tracks; the Book Club track
+ * is Grade-6-only (it's tied to a specific book), so a grade with no Book
+ * Club simply doesn't surface it.
+ *
+ * @param {string | { gradeLevel?: number, track?: string }} [arg]
+ */
+export function findEnrichmentMissions(arg) {
+  const opts = typeof arg === "string" ? { track: arg } : arg ?? {};
+  const { gradeLevel, track } = opts;
   return ALL_MISSIONS.filter(
-    (mission) => mission.enrichment === true && (track ? mission.track === track : true)
+    (mission) =>
+      mission.enrichment === true &&
+      (track ? mission.track === track : true) &&
+      (gradeLevel != null ? mission.gradeLevel === gradeLevel : true)
   );
 }

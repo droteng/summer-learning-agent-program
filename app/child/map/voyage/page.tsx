@@ -178,7 +178,7 @@ export default async function QuestMapPage({ searchParams }: { searchParams: Sea
     (island) => island.state === "complete" && island.weekNumber === (currentIsland?.weekNumber ?? 1) - 1
   );
 
-  const enrichmentMissions = findEnrichmentMissions().map((mission: any) => {
+  const enrichmentMissions = findEnrichmentMissions({ gradeLevel: studentGrade }).map((mission: any) => {
     const theme = themeForSubject(mission.subject);
     return {
       id: mission.id,
