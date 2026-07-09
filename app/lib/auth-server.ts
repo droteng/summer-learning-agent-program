@@ -20,6 +20,7 @@ export type CurrentUser = {
   emailVerified: boolean;
   childId: string | null;
   childName: string | null;
+  childGradeLevel: number;
 };
 
 export async function getCurrentUser(): Promise<CurrentUser | null> {
@@ -41,6 +42,7 @@ export async function requireStudent(
   user: CurrentUser;
   studentId: string;
   studentName: string;
+  studentGrade: number;
   parentName: string | null;
 }> {
   const user = await getCurrentUser();
@@ -51,6 +53,7 @@ export async function requireStudent(
     user: user!,
     studentId: user!.childId!,
     studentName: user!.childName ?? "Student",
+    studentGrade: user!.childGradeLevel ?? 6,
     parentName: user!.parentName
   };
 }

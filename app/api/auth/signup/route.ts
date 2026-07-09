@@ -34,7 +34,8 @@ export async function POST(request: Request) {
     password: body?.password,
     parentName: body?.parentName,
     childName: body?.childName,
-    childPin: body?.childPin
+    childPin: body?.childPin,
+    gradeLevel: body?.gradeLevel
   });
 
   if (result.status === "error") {

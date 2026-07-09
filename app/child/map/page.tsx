@@ -54,7 +54,7 @@ export default async function ChildHubPage({ searchParams }: { searchParams: Sea
   const params = await searchParams;
   const requestedQuestId = typeof params?.quest === "string" ? params.quest : null;
 
-  const { user, studentId, studentName } = await requireStudent("/child/signin");
+  const { user, studentId, studentName, studentGrade } = await requireStudent("/child/signin");
 
   // Deep-link compatibility: ?quest=X URLs route to the voyage view.
   if (requestedQuestId) {
@@ -62,7 +62,7 @@ export default async function ChildHubPage({ searchParams }: { searchParams: Sea
     redirect(target);
   }
 
-  const profile = { ...DEMO_PROFILE, id: studentId, firstName: studentName };
+  const profile = { ...DEMO_PROFILE, id: studentId, firstName: studentName, gradeLevel: studentGrade };
   const progress = await loadProgressSafely(studentId);
   const entitlement = await resolveEntitlement({ studentId });
 
@@ -75,7 +75,7 @@ export default async function ChildHubPage({ searchParams }: { searchParams: Sea
     diagnosticSummary: masteryToDiagnosticSummary(progress?.skillMastery ?? {})
   });
   const completedMissionIds: string[] = progress?.completedMissionIds ?? [];
-  const todayQuestId = pickTodayQuest(tuned.weeklyMissionPlans, completedMissionIds);
+  const todayQuestId = pickTodayQuest(tuned.weeklyMissionPlans, completedMissionIds, studentGrade);
 
   const streak = computeStreak({
     completionLog: progress?.completionLog ?? [],
@@ -187,12 +187,16 @@ export default async function ChildHubPage({ searchParams }: { searchParams: Sea
   );
 }
 
-function pickTodayQuest(weeklyMissionPlans: any[], completedMissionIds: string[]): string | null {
+function pickTodayQuest(
+  weeklyMissionPlans: any[],
+  completedMissionIds: string[],
+  gradeLevel: number
+): string | null {
   const completed = new Set(completedMissionIds);
   for (const weekly of weeklyMissionPlans) {
     for (const mission of weekly.missions) {
       const authored = findAuthoredMissionsForDay({
-        gradeLevel: 6,
+        gradeLevel,
         weekNumber: weekly.week.weekNumber,
         dayNumber: mission.dayNumber
       });
